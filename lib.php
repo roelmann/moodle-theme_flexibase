@@ -78,6 +78,10 @@ function theme_flexibase_set_logo($css, $logo) {
  * @return bool
  */
 function theme_flexibase_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
+	static $theme;
+	if (empty($theme)) {
+		$theme = theme_config::load('flexibase');
+	}
     if ($context->contextlevel == CONTEXT_SYSTEM && ($filearea === 'logo')) {
         $theme = theme_config::load('flexibase');
         return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
