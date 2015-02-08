@@ -1,0 +1,40 @@
+#region-main {
+	background-color: #fff;
+	border: 1px solid #b6c3ea;
+	border-radius: 6px;
+}
+input.form-submit, input#id_submitbutton, input#id_submitbutton2, .path-admin .buttons input[type="submit"], td.submit input {
+    background-color: #001122;
+    border-color: #001122;
+    color: #fff;
+}
+.alert .title {
+	font-weight:800;
+	font-size:110%;
+	padding:0 5px;
+}
+.alert .fa-stack {
+	font-size:150%;
+}
+.alert {
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+@media (min-width: 481px) {
+	.carousel-caption {
+		background-color: rgba(255,255,255,0.2);
+		border:5px solid rgba(255,255,255,0.5);
+		border-radius:12px;
+	}
+}
+@media (max-width: 768px) {
+	.carousel-caption p.carousel-caption-text {
+		display:none;
+	}
+}
+@media (max-width: 480px) {
+	.carousel-caption p.carousel-caption-text, .carousel-caption h1 {
+		display:none;
+	}
+}

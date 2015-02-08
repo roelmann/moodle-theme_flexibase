@@ -1,0 +1,128 @@
+/**
+ * This page is included for reference only - This is the pure flexbox
+ * layout required for this theme: No alterations via lib files or pre-
+ * and post-processing. Just about 100 lines of css. The main file which
+ * is used in the theme, however, also contains all the fallbacks for older
+ * browsers with partial (prefixed) support for flexbox. No fallbacks
+ * are provided for older browsers with no flexbox support, although an
+ * alert is provided suggesting users upgrade their browser, or apply a
+ * different theme.
+ *
+ * http://caniuse.com#feat=flexbox
+ * 
+ **/
+#page-content.flexcontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+    width:100%;
+    }
+#region-main.flexcontentmain {
+    order: 3;
+    flex: 4 1 60%;
+    align-self: stretch;
+    min-width:50%;
+    }
+#block-region-side-pre.flexcontentpre {
+    order: 1;
+    flex: 1 1 15%;
+    align-self: stretch;
+    margin-right:10px;
+    max-width:25%;
+    min-width:210px;
+    padding:0;
+    }
+#block-region-side-post.flexcontentpost {
+    order: 5;
+    flex: 1 1 15%;
+    align-self: stretch;
+    margin-left:10px;
+    max-width:25%;
+    min-width:210px;
+    padding:0;
+    }
+#block-region-side-pre.flexcontentpre.twopost {
+    order: 4;
+    margin-right:0;
+    margin-left:10px;
+    }
+#block-region-side-post.flexcontentpost.twopre {
+    order: 2;
+    margin-left:0;
+    margin-right:10px;
+    }
+.flexcontentpre.singlepre {
+    order: 1;
+    flex: 1 1 15%;
+    align-self: stretch;
+    margin-right:10px;
+    max-width:25%;
+    min-width:210px;
+    padding:0;
+}
+.has_dock.empty-region-side-pre.empty-region-side-post .flexcontentpre {
+    display: none;
+}
+.flexcontentpost.singlepost {
+    order: 5;
+    flex: 1 1 15%;
+    align-self: stretch;
+    margin-left:10px;
+    max-width:25%;
+    min-width:210px;
+    padding:0;
+}
+.has_dock.empty-region-side-pre.empty-region-side-post .flexcontentpost {
+    display: none;
+}
+.dir-rtl #block-region-side-pre.flexcontentpre {
+    margin-right:0;
+    margin-left:10px;
+    }
+.dir-rtl #block-region-side-post.flexcontentpost {
+    margin-left:0;
+    margin-right:10px;
+    }
+.dir-rtl #block-region-side-pre.flexcontentpre.twopost {
+    margin-right:10px;
+    margin-left:0;
+    }
+.dir-rtl #block-region-side-post.flexcontentpost.twopre {
+    margin-left:10px;
+    margin-right:0;
+    }
+.dir-rtl .flexcontentpre.singlepre {
+    margin-right:0;
+    margin-left:10px;
+}
+.dir-rtl .flexcontentpost.singlepost {
+    margin-left:0;
+    margin-right:10px;
+}
+@media (max-width: 768px) {
+	#page-content.flexcontainer {
+		flex-direction: column;
+	}
+}
+@media (max-width: 768px) {
+	#block-region-side-pre.flexcontentpre,
+	#block-region-side-pre.flexcontentpre.twopost,
+	#block-region-side-pre.flexcontentpre.twopre, 
+	.flexcontentpre.singlepre {
+		width:100%;
+		max-width: none;
+		order: 4;
+	}
+	#block-region-side-post.flexcontentpost,
+	#block-region-side-post.flexcontentpost.twopost,
+	#block-region-side-post.flexcontentpost.twopre,
+	.flexcontentpost.singlepost {
+		width:100%;
+		max-width: none;
+		order: 5;
+	}
+}
+

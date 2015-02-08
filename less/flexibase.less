@@ -1,0 +1,93 @@
+/**
+ *  This file is part of Moodle - http://moodle.org/
+ *
+ * Moodle is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Moodle is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+ **/
+
+/**
+ * Theme Flexibase base css file.
+ *
+ * @package    theme_flexibase
+ * @author     2015 Richard Oelmann
+ * @copyright  2015 R. Oelmann
+ * @parents    Bootstrap, Cerulean
+ * @copyright  2014 Bas Brands - et al per those themes
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ **/
+
+/**
+ * Import all the rules from the parent.
+ * Note, we are doing this as separate files because of the requirement to
+ * remove certain parts of the core.less file as we are dealing with layout
+ * through flexbox code and not using the bootstrap grid.
+ */
+//@import "../../bootstrap/less/moodle.less";
+
+// Upstream Bootstrap.
+@import "../../bootstrap/less/bootstrap3/bootstrap";
+
+@import "../../bootstrap/less/moodle/variables";
+// Override Bootstrap defaults.
+@import "../../bootstrap/less/moodle/bootstrapoverride";
+
+// Roll back nameclashes.
+@import "../../bootstrap/less/moodle/undo";
+
+//@import "../../bootstrap/less/moodle/core";
+@import "core"; // local copy of core.less with page layout sections removed
+@import "../../bootstrap/less/moodle/admin";
+@import "../../bootstrap/less/moodle/calendar";
+@import "../../bootstrap/less/moodle/course";
+@import "../../bootstrap/less/moodle/filemanager";
+@import "../../bootstrap/less/moodle/message";
+@import "../../bootstrap/less/moodle/question";
+@import "../../bootstrap/less/moodle/user";
+@import "../../bootstrap/less/moodle/userprofile";
+@import "../../bootstrap/less/moodle/login";
+@import "../../bootstrap/less/moodle/tags";
+@import "../../bootstrap/less/moodle/badges";
+@import "../../bootstrap/less/moodle/new";
+@import "../../bootstrap/less/moodle/blocks";
+@import "../../bootstrap/less/moodle/forms";
+@import "../../bootstrap/less/moodle/modules";
+@import "../../bootstrap/less/moodle/chat";
+@import "../../bootstrap/less/moodle/reports";
+@import "../../bootstrap/less/moodle/backup-restore";
+@import "../../bootstrap/less/moodle/tables";
+@import "../../bootstrap/less/moodle/buttons";
+@import "../../bootstrap/less/moodle/navs";
+@import "../../bootstrap/less/moodle/enrolment";
+@import "../../bootstrap/less/moodle/responsive";
+@import "../../bootstrap/less/moodle/debug";
+@import "../../bootstrap/less/moodle/zoom";
+@import "../../bootstrap/less/moodle/dock";
+@import "../../bootstrap/less/moodle/grade";
+
+
+@import "variables.less";
+@import "bootswatch.less";
+
+.block .header {
+    color: @white;
+    background-color: @brand-primary;
+}
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('[[font:theme|glyphicons-halflings-regular.eot]]');
+  src: url('[[font:theme|glyphicons-halflings-regular.eot]]?#iefix') format('embedded-opentype'),
+       url('[[font:theme|glyphicons-halflings-regular.woff]]') format('woff'),
+       url('[[font:theme|glyphicons-halflings-regular.ttf]]') format('truetype'),
+       url('[[font:theme|glyphicons-halflings-regular.svg]]') format('svg');
+}
