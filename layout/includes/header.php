@@ -19,6 +19,10 @@
     </div>
     </div>
 </nav>
+<!-- Browser flexbox warnings -->
+<div class="browserwarningnoflex useralerts alert alert-danger"><span class="fa fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-warning fa-stack-1x fa-inverse"></i></span><?php echo "Your Browser does not support Flexbox layouts, so some of the features and layouts of this theme may not be available to you. For best results please upgrade your browser (IE10+, Firefox22+, Chrome21+, Safari7+)"?></div>
+<div class="browserwarningflexleg useralerts alert alert-danger"><span class="fa fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-warning fa-stack-1x fa-inverse"></i></span><?php echo "Your Browser supports legacy flexbox layouts, so while you should be able to use this theme as intended, some of the features and layouts of this theme may not be available to you. For best results please upgrade your browser (IE10+, Firefox22+, Chrome21+, Safari7+)"?></div>
+
 <header class="moodleheader">
     <div class="container-fluid">
     <a href="<?php echo $CFG->wwwroot ?>" class="logo"></a>

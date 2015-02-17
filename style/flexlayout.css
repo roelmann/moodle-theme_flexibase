@@ -628,6 +628,8 @@
 #region-bottom {
 	margin-top:5px;
 }
+/* Hide empty regions
+ * ------------------ */
 .has_dock.empty-region-side-mainpre #block-region-side-mainpre,
 .has_dock.empty-region-side-mainpost #block-region-side-mainpost,
 .has_dock.empty-region-side-maintop #block-region-side-maintop,
@@ -641,4 +643,15 @@
 .empty-region-side-mainbottom #block-region-side-mainbottom,
 .empty-region-side-top #block-region-side-bottom {
 	display:none;
+}
+/* Browser warnings
+ * ---------------- */
+.no-js .browserwarningflexleg, .no-flexbox .browserwarningflexleg {
+    display:none;
+}
+.flexboxlegacy .browserwarningnoflex {
+    display:none;
+}
+.flexbox .browserwarningnoflex, .flexbox .browserwarningflexleg {
+    display:none;
 }

@@ -35,6 +35,7 @@ $plugins = array(
  * TODO: download a bootstrap.min.js with the required js element but
  * excluding those that cause clashes
  */
+    'modernizr' => array('files' => array('modernizr.js')),
     'carousel' => array('files' => array('carousel.js')),
     'alertdismissal' => array('files' => array('alertdismissal.js')),
     'transitions' => array('files' => array('transitions.js')),

@@ -235,6 +235,8 @@ function theme_flexibase_page_init(moodle_page $page) {
  * TODO: download a bootstrap.min.js with the required js element but
  * excluding those that cause clashes
  */
+    $page->requires->jquery_plugin('modernizr', 'theme_flexibase');
+
     $page->requires->jquery_plugin('carousel', 'theme_flexibase');
     $page->requires->jquery_plugin('alertdismissal', 'theme_flexibase');
     $page->requires->jquery_plugin('transitions', 'theme_flexibase');
