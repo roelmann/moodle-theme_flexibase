@@ -31,7 +31,15 @@ $THEME->parents = array('bootstrap');
 $THEME->doctype = 'html5';
 // Add this back in if not using LESS - 
 // faster for development if not changing variables in LESS----------
-$THEME->sheets = array('base','flexlayout','styles','custom');
+$THEME->sheets = array(
+	'base2',			//CSS constructed from LESS files - needs to be removed if using LESS
+	'flexlayout',	//Flexibox layout rules
+	'alerts',		//Alerts theme styles
+	'carousel',		//Carousel theme styles - no core styles as core carousel css is already included in bootstrap
+	'marketing',	//Marketing blocks core styles
+	'styles',	//Last but one - theme style overrides, including settings css
+	'custom'	//Must be last - contains the customcss setting
+	);
 //--------------------------------
 $THEME->parents_exclude_sheets = array('bootstrap' => array('moodle','moodle-rtl'));
 // Remove these if not using less--------------

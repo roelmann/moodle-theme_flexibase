@@ -1,0 +1,45 @@
+/* Carousel CSS
+ * ------------
+ * These are the style overrides beyond the default bootstrap carousel
+ * css rules included in the LESS and base CSS
+ */
+
+.carousel {
+	border:10px solid [[setting:carouselbordercolour]];
+	border-radius:6px;
+	background-color:[[setting:carouselbordercolour]];
+	margin:0 5px 10px 5px;
+}
+.carousel-inner {
+	border-radius:6px;
+	background-color:[[setting:carouselbordercolour]];
+}
+.carousel-control.left {
+	border-top-left-radius:6px;
+	border-bottom-left-radius:6px;
+}
+.carousel-control.right {
+	border-top-right-radius:6px;
+	border-bottom-right-radius:6px;
+}
+
+@media (min-width: 481px) {
+	.carousel-caption {
+		background-color: [[setting:captionbackgroundcolour]];
+		border:5px solid [[setting:captionbackgroundcolour]];
+		border-radius:6px;
+	}
+	.carousel-caption p.carousel-caption-text, .carousel-caption h1 {
+		color: [[setting:captiontextcolour]] ;
+	}
+}
+@media (max-width: 768px) {
+	.carousel-caption p.carousel-caption-text {
+		display:none;
+	}
+}
+@media (max-width: 480px) {
+	.carousel-caption p.carousel-caption-text, .carousel-caption h1 {
+		display:none;
+	}
+}

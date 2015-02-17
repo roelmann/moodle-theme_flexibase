@@ -27,6 +27,30 @@ function theme_flexibase_process_css($css, $theme) {
     // Set the background image for the logo.
     $logo = $theme->setting_file_url('logo', 'logo');
     $css = theme_flexibase_set_logo($css, $logo);
+    
+    // Set caption background.
+    if (!empty($theme->settings->captionbackgroundcolour)) {
+        if($theme->settings->captionbackgroundcolour === 'dark') {
+			$captionbackgroundcolour = 'rgba(0,0,0,0.2)';
+			$captionbordercolour = 'rgba(0,0,0,0.6)';
+			$carouselbordercolour = '#111111';
+		} else {
+			$captionbackgroundcolour = 'rgba(255,255,255,0.2)';
+			$captionbordercolour = 'rgba(255,255,255,0.6)';
+			$carouselbordercolour = '#ffffff';
+		}
+	}
+    $css = theme_flexibase_set_captionbackgroundcolour($css, $captionbackgroundcolour);
+    $css = theme_flexibase_set_captionbordercolour($css, $captionbordercolour);
+    $css = theme_flexibase_set_carouselbordercolour($css, $carouselbordercolour);
+
+    // Set caption text colour.
+    if (!empty($theme->settings->captiontextcolour)) {
+        $captiontextcolour = $theme->settings->captiontextcolour;
+    } else {
+        $captiontextcolour = '#ffffff';
+    }
+    $css = theme_flexibase_set_captiontextcolour($css, $captiontextcolour);
 
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
@@ -62,6 +86,42 @@ function theme_flexibase_set_logo($css, $logo) {
     $css = str_replace($logowidth, $width, $css);
     $css = str_replace($logodisplay, $display, $css);
 
+    return $css;
+}
+function theme_flexibase_set_captionbackgroundcolour($css, $captionbackgroundcolour) {
+    $tag = '[[setting:captionbackgroundcolour]]';
+    $replacement = $captionbackgroundcolour;
+    if (!($replacement)) {
+        $replacement = 'rgba(255,255,255,0.2)';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+function theme_flexibase_set_captionbordercolour($css, $captionbordercolour) {
+    $tag = '[[setting:captionbordercolour]]';
+    $replacement = $captionbordercolour;
+    if (!($replacement)) {
+        $replacement = 'rgba(255,255,255,0.6)';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+function theme_flexibase_set_captiontextcolour($css, $captiontextcolour) {
+    $tag = '[[setting:captiontextcolour]]';
+    $replacement = $captiontextcolour;
+    if (!($replacement)) {
+        $replacement = '#ffffff';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+function theme_flexibase_set_carouselbordercolour($css, $carouselbordercolour) {
+    $tag = '[[setting:carouselbordercolour]]';
+    $replacement = $carouselbordercolour;
+    if (!($replacement)) {
+        $replacement = '#ffffff';
+    }
+    $css = str_replace($tag, $replacement, $css);
     return $css;
 }
 

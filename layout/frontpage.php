@@ -14,12 +14,14 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-    if (!empty($PAGE->theme->settings->frontpagelayout)) {
-        $layoutoption = $PAGE->theme->settings->frontpagelayout;
-    } else {
-        $layoutoption = 'preandpost';
-    }
-    
+if (!empty($PAGE->theme->settings->frontpagelayout)) {
+    $layoutoption = $PAGE->theme->settings->frontpagelayout;
+} else {
+    $layoutoption = 'preandpost';
+}
+
+$hasmarketing = (empty($PAGE->theme->settings->togglemarketing)) ? false : $PAGE->theme->settings->togglemarketing;
+
 include('includes/preheaderlogic.php');
 include('includes/header.php');
 ?>
@@ -33,7 +35,22 @@ include('includes/header.php');
             <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
         </div>
         
+        <!-- Start Carousel -->
         <?php include('includes/carousel2.php');?>
+        <!-- End Carousel -->
+
+        <!-- Start Marketing Spots -->
+        <?php
+        	if($hasmarketing==1) {
+        		require_once(dirname(__FILE__).'/includes/marketing.php');
+        	} else if($hasmarketing==2 && !isloggedin()) {
+        		require_once(dirname(__FILE__).'/includes/marketing.php');
+        	} else if($hasmarketing==3 && isloggedin()) {
+        		require_once(dirname(__FILE__).'/includes/marketing.php');
+        	}
+        ?>
+        <!-- End Marketing Spots -->
+
 
         <div id="course-header">
             <?php echo $OUTPUT->course_header(); ?>

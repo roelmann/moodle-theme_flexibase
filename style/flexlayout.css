@@ -28,6 +28,7 @@
     -ms-flex-align: stretch;
     align-items: stretch;
     width:100%;
+    padding:0 5px;
     }
 /* Default layout for pre&post - no additional class added to css as
  * this is the fallback option.

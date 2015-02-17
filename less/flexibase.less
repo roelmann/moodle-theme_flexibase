@@ -78,11 +78,18 @@
 @import "variables.less";
 @import "bootswatch.less";
 
-.block .header {
-    color: @white;
-    background-color: @brand-primary;
+.btn-shadow(@color) {
+  #gradient > .vertical-three-colors(lighten(@color, 25%), @color, 60%, darken(@color, 10%));
+  filter: none;
+  border: 1px solid darken(@color, 10%);
 }
 
+.block .header {
+	  .btn-shadow(@navbar-default-bg);
+	}
+.block .header h2 {
+	color: @white;
+	}
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('[[font:theme|glyphicons-halflings-regular.eot]]');
