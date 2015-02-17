@@ -66,7 +66,7 @@ $string['layoutheading'] = 'Layout';
 $string['layoutheadingsub'] = 'Set the layouts used by pages in your site';
 $string['layoutdesc'] = '<p>There are 5 layouts available for your site pages:</p>
 <p><img style=margin:2px;" src ="../theme/image.php?theme=flexibase&amp;image=settings/layout1&amp;component=theme" alt="Pre and Post Layout" title="Pre and Post layout">  <img style=margin:2px;" src ="../theme/image.php?theme=flexibase&amp;image=settings/layout2&amp;component=theme" alt="Two Pre Layout" title="Two Pre layout"/>  <img style=margin:2px;" src ="../theme/image.php?theme=flexibase&amp;image=settings/layout3&amp;component=theme" alt="Two Pre Layout" title="Two Pre layout"/>  <img style=margin:2px;" src ="../theme/image.php?theme=flexibase&amp;image=settings/layout4&amp;component=theme" alt="Two Pre Layout" title="Two Pre layout"/>  <img style=margin:2px;" src ="../theme/image.php?theme=flexibase&amp;image=settings/layout5&amp;component=theme" alt="Two Pre Layout" title="Two Pre layout"/></p>
-<p>There are also additional block regions at the top and bottom and within the main content area, giving enormous flexibility without the need to set layout files in the code. These are available on all the page types below and can be used (or not) as required.<br>All layouts are designed to be RTL compatible and responsive.<br></p>';
+<p>There are also additional block regions at the top and bottom and within the main content area, giving enormous flexibility without the need to set layout files in the code. These are available on all the page types below and can be used (or not) as required. It is not really expected that anyone will use ALL these block regions on one page as that would probably create a very cluttered page (or require a very large monitor). However, the additional regions are provided to allow as much flexibility as possible in the design and layout of pages, in combination with th eability to adjust the main layout for different page types without needing to access the theme code or alter the config.php.<br />All layouts are designed to be RTL compatible and responsive.<br /></p>';
 $string['defaultlayout'] = 'Default';
 $string['defaultlayoutdesc'] = 'SideBar layout for default pages';
 $string['courseslayout'] = 'Courses';
@@ -156,6 +156,30 @@ $string['marketingbuttontext'] = 'Link Text';
 $string['marketingbuttontextdesc'] = 'Text to appear on the button.';
 $string['marketingbuttonurl'] = 'Link URL';
 $string['marketingbuttonurldesc'] = 'URL the button will point to.';
+
+
+// CustomMenu
+$string['mycoursesinfo'] = 'Enrolled courses menu';
+$string['mycoursesinfodesc'] = 'Displays a dynamic list of enrolled courses to the user.';
+$string['displaymycourses'] = 'Display enrolled courses';
+$string['displaymycoursesdesc'] = 'Display enrolled courses for users in the Custom Menu';
+$string['mycoursetitle'] = 'Terminology';
+$string['mycoursetitledesc'] = 'Change the terminology for the "My Courses" link in the dropdown menu';
+$string['mycourses'] = 'My courses';
+$string['myunits'] = 'My units';
+$string['mymodules'] = 'My modules';
+$string['myclasses'] = 'My classes';
+$string['allcourses'] = 'All courses';
+$string['allunits'] = 'All units';
+$string['allmodules'] = 'All modules';
+$string['allclasses'] = 'All classes';
+$string['noenrolments'] = 'You have no current enrolments';
+$string[ 'few'] = 'A few ';
+$string['loggedinas'] = ' logged in as ';
+$string['loggedinfrom'] = 'Logged in from ';
+$string['mygrades'] = 'My grades';
+$string['coursegrades'] = 'Course grades';
+$string['thiscourse'] = 'This course';
 
 
 // Regions

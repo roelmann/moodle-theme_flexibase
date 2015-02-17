@@ -152,7 +152,6 @@ include('includes/header.php');
     $('.carousel').carousel();
     });
 </script>
-	?>
 </div>
 </body>
 </html>

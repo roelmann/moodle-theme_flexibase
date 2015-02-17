@@ -1,3 +1,10 @@
+/* Flexbox Layout CSS
+ * TODO - Decide whether to separate vanilla code and fallbacks or keep
+ * together
+ * Keep together - probably easier future maintenance
+ * Separate - proper visibilty of how straightforward FlexBox is on
+ * modern browsers
+ */
 #page-content.flexcontainer {
     display: -webkit-box;
     display: -moz-box;
@@ -298,41 +305,6 @@
 .has_dock.empty-region-side-post #block-region-side-post {
     display: none;
 }
-@media (max-width: 768px) {
-	#page-content.flexcontainer {
-		-webkit-box-orient: vertical;
-		-moz-box-orient: vertical;
-		-webkit-flex-direction: column;
-		-ms-flex-direction: column;
-		flex-direction: column;
-	}
-}
-@media (max-width: 768px) {
-	#block-region-side-pre.flexcontentpre,
-	#block-region-side-pre.flexcontentpre.twopost,
-	#block-region-side-pre.flexcontentpre.twopre, 
-	.flexcontentpre.singlepre {
-		width:100%;
-		max-width: none;
-		-webkit-box-ordinal-group: 5;
-		-moz-box-ordinal-group: 5;
-		-webkit-order: 4;
-		-ms-flex-order: 4;
-		order: 4;
-	}
-	#block-region-side-post.flexcontentpost,
-	#block-region-side-post.flexcontentpost.twopost,
-	#block-region-side-post.flexcontentpost.twopre,
-	.flexcontentpost.singlepost {
-		width:100%;
-		max-width: none;
-		-webkit-box-ordinal-group: 6;
-		-moz-box-ordinal-group: 6;
-		-webkit-order: 5;
-		-ms-flex-order: 5;
-		order: 5;
-	}
-}
 
 /* Flexlayout for additional regions
  * --------------------------------- */
@@ -535,6 +507,124 @@
     -ms-flex-item-align: stretch;
     align-self: stretch;
     }
+
+/* Media calls to turn flexbox rows into columns.
+ * TODO - StreamLine this code, remove elements which are repeated in
+ * main body
+ */
+@media (max-width: 768px) {
+	#page-content.flexcontainer {
+		-webkit-box-orient: vertical;
+		-moz-box-orient: vertical;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+	#block-region-side-pre.flexcontentpre,
+	#block-region-side-pre.flexcontentpre.twopost,
+	#block-region-side-pre.flexcontentpre.twopre, 
+	.flexcontentpre.singlepre {
+		width:100%;
+		max-width: none;
+		margin-left:0;
+		margin-right:0;
+		-webkit-box-ordinal-group: 5;
+		-moz-box-ordinal-group: 5;
+		-webkit-order: 4;
+		-ms-flex-order: 4;
+		order: 4;
+	}
+	#block-region-side-post.flexcontentpost,
+	#block-region-side-post.flexcontentpost.twopost,
+	#block-region-side-post.flexcontentpost.twopre,
+	.flexcontentpost.singlepost {
+		width:100%;
+		max-width: none;
+		margin-left:0;
+		margin-right:0;
+		-webkit-box-ordinal-group: 6;
+		-moz-box-ordinal-group: 6;
+		-webkit-order: 5;
+		-ms-flex-order: 5;
+		order: 5;
+	}
+	.maincontentinnerwrap.flexcontainer {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+   	}
+	.maincontentinnerwrap div[role=main] {
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+	}
+	.maincontentinnerwrap .flexcontentmainpre {
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+	}
+	.maincontentinnerwrap .flexcontentmainpost {
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+	}
+}    
+    
 #region-bottom {
 	margin-top:5px;
 }

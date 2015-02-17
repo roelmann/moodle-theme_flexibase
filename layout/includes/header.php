@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
+        <a class="navbar-brand" href="<?php echo $CFG->wwwroot;?>"><i class="fa fa-home">&nbsp;</i><?php echo $SITE->shortname; ?></a>
     </div>
 
     <div id="moodle-navbar" class="navbar-collapse collapse">
