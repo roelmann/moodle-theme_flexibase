@@ -211,6 +211,7 @@ class theme_flexibase_core_renderer extends core_renderer {
             if (isloggedin()) {
 				$course = $this->page->course;
 				$context = context_course::instance($course->id);
+				$userpic = parent::user_picture($USER, array('link' => false));
                 $usermenu = $menu->add(fullname($USER), new moodle_url('#'), fullname($USER), 10001);
                 // RO Added based on Essential
 				if (\core\session\manager::is_loggedinas()) {
@@ -363,6 +364,7 @@ class theme_flexibase_core_renderer extends core_renderer {
         }
 
         return $content.'</ul>';
+        return $userpic;
     }
 
     protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
@@ -458,4 +460,9 @@ class theme_flexibase_core_renderer extends core_renderer {
             array('class' => 'btn btn-default pull-right moodlezoom'));
         return $content;
     }
+    
+
 }
+
+
+

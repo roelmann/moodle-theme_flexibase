@@ -32,11 +32,13 @@ $THEME->doctype = 'html5';
 // Add this back in if not using LESS - 
 // faster for development if not changing variables in LESS----------
 $THEME->sheets = array(
-	'base2',			//CSS constructed from LESS files - needs to be removed if using LESS
+	'base',			//CSS constructed from LESS files - needs to be removed if using LESS
+	'font-awesome',
 	'flexlayout',	//Flexibox layout rules
 	'alerts',		//Alerts theme styles
 	'carousel',		//Carousel theme styles - no core styles as core carousel css is already included in bootstrap
 	'marketing',	//Marketing blocks core styles
+	'coursebox',
 	'styles',	//Last but one - theme style overrides, including settings css
 	'custom'	//Must be last - contains the customcss setting
 	);

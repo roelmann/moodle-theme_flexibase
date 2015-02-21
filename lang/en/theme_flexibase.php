@@ -32,10 +32,6 @@ $string['choosereadme'] = '
 
 $string['configtitle'] = 'FlexiBase';
 
-$string['logo'] = 'Logo';
-$string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.<br>
-If the height of your logo is more than 75px add the following CSS rule to the Custom CSS box below.<br>
-a.logo {height: 100px;} or whatever height in pixels the logo is.';
 
 $string['pluginname'] = 'FlexiBase';
 $string['customcss'] = 'Custom CSS';
@@ -61,6 +57,29 @@ $string['readme_click'] = 'click for README.txt';
 $string['genericsettings'] = 'General';
 $string['generalheadingsub'] = 'General settings';
 $string['generalheadingdesc'] = 'Configure the general settings for the theme here.';
+$string['logo'] = 'Main Header Logo';
+$string['logodesc'] = 'Please upload your custom logo for the Main Heading here if you want to add it to the header.<br>
+If the height of your logo is more than 75px add the following CSS rule to the Custom CSS box below.<br>
+<code>a.logo {height: 100px;}</code> or whatever height in pixels the logo is.<br />Note, if you wish to hide the page header and only show the logo, add the following CSS rule to the Custom CSS box below<br /><code>.headerlogo h1 {display:none;}</code>';
+$string['showlogo'] = 'Show Main Header Logo';
+$string['showlogodesc'] = 'Hide Main Logo other than front page.<br />Note: for this and several other layout options (Alerts etc) the My Home page is treated in the same way as the Site Home Page.';
+$string['showlogofrontonly'] = 'Front page only';
+$string['showlogoeverywhere'] = 'All pages';
+$string['minilogo'] = 'Top Bar Logo';
+$string['minilogodesc'] = 'Please upload a custom logo for the Top NavBar here if required.<br>
+This should be a small logo - usually a maximum of 30px high and will replace any FontAwesome icon added in the setting above. If no icon or logo is added, the standard "home" icon will be used.';
+$string['falogo'] = 'Top Bar FontAwesome Icon';
+$string['falogodesc'] = 'Please add a FontAwesome icon for the Top NavBar Home link here if required.<br>
+This should be a small logo - usually a maximum of 40px high and will replace any FontAwesome icon added in the setting above. If no icon or logo is added, the stadard "home" icon will be used. Adding "o" here and no mini logo below will prevent any logo or icon appearing on the top navbar.<br />A full list of FontAwesome icons can be found at http://fontawesome.io/icons/';
+$string['topbarcolour'] = 'Top NavBar colour';
+$string['topbarcolourdesc'] = 'Top NavBar colour setting - default or inverse colour scheme';
+$string['menunavbarcolour'] = 'Top NavBar colour';
+$string['menunavbarcolourdesc'] = 'Top NavBar colour setting - default or inverse colour scheme';
+$string['default'] = 'default';
+$string['inverse'] = 'inverse';
+
+
+
 // Layouts
 $string['layoutheading'] = 'Layout';
 $string['layoutheadingsub'] = 'Set the layouts used by pages in your site';
@@ -156,6 +175,72 @@ $string['marketingbuttontext'] = 'Link Text';
 $string['marketingbuttontextdesc'] = 'Text to appear on the button.';
 $string['marketingbuttonurl'] = 'Link URL';
 $string['marketingbuttonurldesc'] = 'URL the button will point to.';
+//CourseBox rendering
+$string['frontpagecoursesettings'] = 'Frontpage Courses';
+$string['frontpagesettingsheading'] = 'Frontpage rendering';
+$string['frontpagedesc'] = 'Configure the way that the course boxes are rendered on the frontpage.';
+$string['frontpagerenderer'] = 'Frontpage Course Boxes';
+$string['frontpagerendererdesc'] = 'Control the way that the coure boxes on the front page are rendered.';
+$string['frontpagerendereroption1'] = 'Tiles';
+$string['frontpagerendereroption2'] = 'Tiles w/ overlay';
+$string['rendereroverlaycolour'] = 'Overlay colour';
+$string['rendereroverlaycolourdesc'] = 'The colour of the overlay, when the "Tiles w/ overlay" renderer is selected.';
+$string['rendereroverlayfontcolour'] = 'Overlay font colour';
+$string['rendereroverlayfontcolourdesc'] = 'The colour of the font, when hovering over a coursebox with "Tiles w/ overlay" renderer enabled.';
+$string['frontpagerendererdefaultimage'] = 'Default course image';
+$string['frontpagerendererdefaultimagedesc'] = 'The default image to use when no course image is found, (only applies for Tiles w/ overlay)';
+// Category Icons.
+$string['categoryiconheading'] = 'Category icons';
+$string['categoryiconheadingsub'] = 'Use icons to represent your categories';
+$string['categoryicondesc'] = 'If enabled this will allow you to set icons for each category of course.';
+$string['categoryiconcategory'] = 'The icon for the category: {$a->category}.';
+$string['enablecategoryicon'] = 'Enable category icons';
+$string['enablecategoryicondesc'] = 'If enabled you will be able to select category icons after clicking "Save changes".';
+$string['usecategoryicon'] = 'Enable category icons';
+$string['usecategoryicondesc'] = 'Use custom icons for categories';
+$string['defaultcategoryicon'] = 'Default category icons';
+$string['defaultcategoryicondesc'] = 'Set a default category icon';
+$string['enablecustomcategoryicon'] = 'Enable custom category icons';
+$string['enablecustomcategoryicondesc'] = 'If enabled below this section you will see each category with a customizable option behind each category, please save after enabling and disabling this option.';
+$string['categoryiconinfo'] = 'Set custom category icons';
+$string['categoryiconinfodesc'] = 'Enter the name of the icon you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after "fa-".';
+/* Social Networks */
+$string['socialheading'] = 'Social Networking';
+$string['socialheadingsub'] = 'Engage your users with social networking.';
+$string['socialdesc'] = 'Provide direct links to the core social networks that promote your brand.  These will appear in the header of every page.';
+$string['socialnetworks'] = 'Social Networks';
+$string['facebook'] = 'Facebook URL';
+$string['facebookdesc'] = 'Enter the URL of your Facebook page. (i.e http://www.facebook.com/pukunui)';
+$string['twitter'] = 'Twitter URL';
+$string['twitterdesc'] = 'Enter the URL of your Twitter feed. (i.e http://www.twitter.com/pukunui)';
+$string['googleplus'] = 'Google+ URL';
+$string['googleplusdesc'] = 'Enter the URL of your Google+ profile. (i.e https://google.com/+Pukunui/)';
+$string['linkedin'] = 'LinkedIn URL';
+$string['linkedindesc'] = 'Enter the URL of your LinkedIn profile. (i.e http://www.linkedin.com/company/pukunui-technology)';
+$string['youtube'] = 'YouTube URL';
+$string['youtubedesc'] = 'Enter the URL of your YouTube channel. (i.e http://www.youtube.com/moodleman)';
+$string['tumblr'] = 'Tumblr URL';
+$string['tumblrdesc'] = 'Enter the URL of your Tumblr. (i.e http://moodleman.tumblr.com)';
+$string['vimeo'] = 'Vimeo URL';
+$string['vimeodesc'] = 'Enter the URL of your Vimeo channel. (i.e http://vimeo.com/moodleman)';
+$string['flickr'] = 'Flickr URL';
+$string['flickrdesc'] = 'Enter the URL of your Flickr page. (i.e http://www.flickr.com/mycollege)';
+$string['vk'] = 'VKontakte URL';
+$string['vkdesc'] = 'Enter the URL of your Vkontakte page. (i.e http://www.vk.com/mycollege)';
+$string['skype'] = 'Skype Account';
+$string['skypedesc'] = 'Enter the Skype username of your organisations Skype account';
+$string['pinterest'] = 'Pinterest URL';
+$string['pinterestdesc'] = 'Enter the URL of your Pinterest page. (i.e http://pinterest.com/mycollege)';
+$string['instagram'] = 'Instagram URL';
+$string['instagramdesc'] = 'Enter the URL of your Instagram page. (i.e http://instagram.com/mycollege)';
+$string['website'] = 'Website URL';
+$string['websitedesc'] = 'Enter the URL of your own website. (i.e http://www.pukunui.com)';
+$string['blog'] = 'Blog URL';
+$string['blogdesc'] = 'Enter the URL of your institution blog. (i.e http://www.moodleman.net)';
+$string['sociallink'] = 'Custom Social Link';
+$string['sociallinkdesc'] = 'Enter the URL of your your custom social media link. (i.e http://www.moodleman.net)';
+$string['sociallinkicon'] = 'Link Icon';
+$string['sociallinkicondesc'] = 'Enter the fontawesome name of the icon for your link<br />A full list of FontAwesome icons can be found at http://fontawesome.io/icons/';
 
 
 // CustomMenu

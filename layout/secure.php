@@ -14,86 +14,141 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-    if (!empty($PAGE->theme->settings->defaultlayout)) {
-        $layoutoption = $PAGE->theme->settings->defaultlayout;
-    } else {
-        $layoutoption = 'preandpost';
-    }
+if (!empty($PAGE->theme->settings->frontpagelayout)) {
+    $layoutoption = $PAGE->theme->settings->frontpagelayout;
+} else {
+    $layoutoption = 'preandpost';
+}
 
-<?php include('includes/preheaderlogic'); ?>
+$hasmarketing = (empty($PAGE->theme->settings->togglemarketing)) ? false : $PAGE->theme->settings->togglemarketing;
 
-<html <?php echo $OUTPUT->htmlattributes(); ?>>
-<head>
-    <title><?php echo $OUTPUT->page_title(); ?></title>
-    <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
-    <?php echo $OUTPUT->standard_head_html(); ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
-</head>
+include('includes/preheaderlogic.php');
+include('includes/header.php');
+?>
 
-<body <?php echo $OUTPUT->body_attributes($setzoom); ?>>
+<div id="page" class="container-fluid">
+	<?php include('includes/alerts.php'); ?>
+	
+	<?php include('includes/breadcrumb.php'); ?>
+	
+    <div id="page-header" class="clearfix">
+        <!-- Start Carousel -->
+        <?php include('includes/carousel2.php');?>
+        <!-- End Carousel -->
 
-<?php echo $OUTPUT->standard_top_of_body_html() ?>
+        <!-- Start Marketing Spots -->
+        <?php
+        	if($hasmarketing==1) {
+        		require_once(dirname(__FILE__).'/includes/marketing.php');
+        	} else if($hasmarketing==2 && !isloggedin()) {
+        		require_once(dirname(__FILE__).'/includes/marketing.php');
+        	} else if($hasmarketing==3 && isloggedin()) {
+        		require_once(dirname(__FILE__).'/includes/marketing.php');
+        	}
+        ?>
+        <!-- End Marketing Spots -->
 
-<nav role="navigation" class="navbar navbar-default">
-    <div class="container-fluid">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#moodle-navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
+
+        <div id="course-header">
+            <?php echo $OUTPUT->course_header(); ?>
+        </div>
+        <div id="region-top">
+			<?php
+			if ($knownregiontop) {
+				echo $OUTPUT->blocks('side-top', "sidetop flexcontainer");
+			}
+			?>
+        </div>
     </div>
 
-    <div id="moodle-navbar" class="navbar-collapse collapse">
-        <?php echo $OUTPUT->custom_menu(); ?>
-        <?php echo $OUTPUT->user_menu(); ?>
-        <ul class="nav pull-right">
-            <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-        </ul>
-    </div>
-    </div>
-</nav>
-<header class="moodleheader">
-    <div class="container-fluid">
-    <a href="<?php echo $CFG->wwwroot ?>" class="logo"></a>
-    <?php echo $OUTPUT->page_heading(); ?>
-    </div>
-</header>
-
-
-    <div id="page-content" class="row">
-        <div id="region-main" class="<?php echo $regions['content']; ?>">
+    <div id="page-content" class="flexcontainer">
+        <div id="region-main" class="flexcontentmain <?php echo $layoutoption; ?>">
             <?php
             echo $OUTPUT->course_content_header();
-
-            echo $OUTPUT->main_content();
-            echo $OUTPUT->course_content_footer();
             ?>
+            <div class="maincontentwrap flexcontainer">
+            	<div class="maincontentinnerwrap flexcontainer">
+				<?php
+					echo $OUTPUT->main_content();
+					if ($knownregionmainpre) {
+						echo $OUTPUT->blocks('side-mainpre', "flexcontentmainpre $layoutoption");
+					}
+					if ($knownregionmainpost) {
+						echo $OUTPUT->blocks('side-mainpost', "flexcontentmainpost $layoutoption");
+					}
+				?>
+				</div>
+				<?php
+				if ($knownregionmaintop) {
+					echo $OUTPUT->blocks('side-maintop', "flexcontentmaintop flexcontainer $layoutoption");
+				}
+				?>
+				<?php
+				if ($knownregionbottom) {
+					echo $OUTPUT->blocks('side-mainbottom', "flexcontentmainbottom flexcontainer $layoutoption");
+				}
+			?>
+			</div>
+			<?php
+			echo $OUTPUT->course_content_footer();
+			?>
         </div>
-
-        <?php
+		<?php
+		if ($hassidepre || $hassidepost) {
+		if ($layoutoption=="singlepre") {
+			?>
+				<aside class="flexcontentpre <?php echo $layoutoption; ?>">
+					<?php
+					if ($hassidepre) {
+						echo $OUTPUT->blocks('side-pre');
+					}
+					if ($hassidepost) {
+						echo $OUTPUT->blocks('side-post');
+					}
+					?>
+				</aside>
+			<?php
+		} elseif  ($layoutoption=="singlepost") {
+			?>
+				<aside class="flexcontentpost <?php echo $layoutoption; ?>">
+					<?php
+					if ($hassidepre) {
+						echo $OUTPUT->blocks('side-pre');
+									}
+					if ($hassidepost) {
+						echo $OUTPUT->blocks('side-post');
+					}
+					?>
+				</aside>
+			<?php
+		} else {
 			if ($knownregionpre && $hassidepre) {
 				echo $OUTPUT->blocks('side-pre', "flexcontentpre $layoutoption");
 			}
 			if ($knownregionpost && $hassidepost) {
 				echo $OUTPUT->blocks('side-post', "flexcontentpost $layoutoption");
-			}?>
+			}
+		}
+		}
+		?>
+    </div>
+	<div id="region-bottom">
+	<?php
+	if ($knownregionbottom) {
+		echo $OUTPUT->blocks('side-bottom', "sidebottom flexcontainer");
+	}
+	?>
     </div>
 
-    <footer id="page-footer">
-        <div id="course-footer"><?php echo $OUTPUT->course_footer(); ?></div>
-        <p class="helplink"><?php echo $OUTPUT->page_doc_link(); ?></p>
-        <?php
-        echo $OUTPUT->login_info();
-        echo $OUTPUT->home_link();
-        echo $OUTPUT->standard_footer_html();
-        ?>
-    </footer>
-
-    <?php echo $OUTPUT->standard_end_of_body_html() ?>
-
+	<?php
+	include('includes/footer.php');
+	?>
+	<!-- Initialize slideshow -->
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+    $('.carousel').carousel();
+    });
+</script>
 </div>
 </body>
 </html>

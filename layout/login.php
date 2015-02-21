@@ -13,33 +13,19 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
-    
 
-$layoutoption = 'preandpost'; //temporary until login page is rebuilt as it will not have any regions - but needs to work in the meantime!
+    if (!empty($PAGE->theme->settings->defaultlayout)) {
+        $layoutoption = $PAGE->theme->settings->defaultlayout;
+    } else {
+        $layoutoption = 'preandpost';
+    }
 
-    
 include('includes/preheaderlogic.php');
 include('includes/header.php');
 ?>
 
 <div id="page" class="container-fluid">
-    <header id="page-header" class="clearfix">
-        <div id="page-navbar" class="clearfix">
-            <nav class="breadcrumb-nav" role="navigation" aria-label="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
-            <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
-        </div>
-
-        <div id="course-header">
-            <?php echo $OUTPUT->course_header(); ?>
-        </div>
-        <div id="region-top">
-			<?php
-			if ($knownregiontop) {
-				echo $OUTPUT->blocks('side-top', "sidetop flexcontainer");
-			}
-			?>
-        </div>
-    </header>
+	<?php include('includes/breadcrumb.php'); ?>
 
     <div id="page-content" class="flexcontainer">
         <div id="region-main" class="flexcontentmain <?php echo $layoutoption; ?>">

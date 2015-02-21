@@ -14,24 +14,24 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-    if (!empty($PAGE->theme->settings->myhomelayout)) {
-        $layoutoption = $PAGE->theme->settings->myhomelayout;
-    } else {
-        $layoutoption = 'preandpost';
-    }
-    
+if (!empty($PAGE->theme->settings->frontpagelayout)) {
+    $layoutoption = $PAGE->theme->settings->frontpagelayout;
+} else {
+    $layoutoption = 'preandpost';
+}
+
+$hasmarketing = (empty($PAGE->theme->settings->togglemarketing)) ? false : $PAGE->theme->settings->togglemarketing;
+
 include('includes/preheaderlogic.php');
 include('includes/header.php');
 ?>
 
 <div id="page" class="container-fluid">
 	<?php include('includes/alerts.php'); ?>
-
-    <header id="page-header" class="clearfix">
-        <div id="page-navbar" class="clearfix">
-            <nav class="breadcrumb-nav" role="navigation" aria-label="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
-            <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
-        </div>
+	
+	<?php include('includes/breadcrumb.php'); ?>
+	
+    <div id="page-header" class="clearfix">
 
         <div id="course-header">
             <?php echo $OUTPUT->course_header(); ?>
@@ -43,7 +43,7 @@ include('includes/header.php');
 			}
 			?>
         </div>
-    </header>
+    </div>
 
     <div id="page-content" class="flexcontainer">
         <div id="region-main" class="flexcontentmain <?php echo $layoutoption; ?>">
@@ -127,6 +127,12 @@ include('includes/header.php');
 	<?php
 	include('includes/footer.php');
 	?>
+	<!-- Initialize slideshow -->
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+    $('.carousel').carousel();
+    });
+</script>
 </div>
 </body>
 </html>

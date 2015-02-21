@@ -19,11 +19,21 @@ $knownregionmainpost = $PAGE->blocks->is_known_region('side-mainpost');
 $knownregionmaintop = $PAGE->blocks->is_known_region('side-maintop');
 $knownregionmainbottom = $PAGE->blocks->is_known_region('side-mainbottom');
 
+$hasnavbarlogo = (empty($PAGE->theme->settings->minilogo)) ? false : true;
+
+$topbarcolour = (empty($PAGE->theme->settings->topbarcolour)) ? 'default' : $PAGE->theme->settings->topbarcolour;
+$menunavbarcolour = (empty($PAGE->theme->settings->menunavbarcolour)) ? 'default' : $PAGE->theme->settings->menunavbarcolour;
+
+
 //$regions = bootstrap_grid($hassidepre, $hassidepost);
 //$layoutoption="twopre";
 
 $PAGE->set_popup_notification_allowed(false);
 
+$bodyclasses = array();
+if (theme_flexibase_get_setting('enablecategoryicon')) {
+    $bodyclasses[] = 'categoryicons';
+}
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
@@ -37,6 +47,6 @@ echo $OUTPUT->doctype() ?>
 
 </head>
 
-<body <?php echo $OUTPUT->body_attributes(); ?>>
+<body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>

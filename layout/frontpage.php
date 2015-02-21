@@ -29,12 +29,9 @@ include('includes/header.php');
 <div id="page" class="container-fluid">
 	<?php include('includes/alerts.php'); ?>
 	
-    <header id="page-header" class="clearfix">
-        <div id="page-navbar" class="clearfix">
-            <nav class="breadcrumb-nav" role="navigation" aria-label="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
-            <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
-        </div>
-        
+	<?php include('includes/breadcrumb.php'); ?>
+	
+    <div id="page-header" class="clearfix">
         <!-- Start Carousel -->
         <?php include('includes/carousel2.php');?>
         <!-- End Carousel -->
@@ -62,7 +59,7 @@ include('includes/header.php');
 			}
 			?>
         </div>
-    </header>
+    </div>
 
     <div id="page-content" class="flexcontainer">
         <div id="region-main" class="flexcontentmain <?php echo $layoutoption; ?>">

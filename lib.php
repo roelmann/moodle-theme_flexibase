@@ -27,6 +27,10 @@ function theme_flexibase_process_css($css, $theme) {
     // Set the background image for the logo.
     $logo = $theme->setting_file_url('logo', 'logo');
     $css = theme_flexibase_set_logo($css, $logo);
+    // Set the background image for the minilogo.
+    $minilogo = $theme->setting_file_url('minilogo', 'minilogo');
+    $css = theme_flexibase_set_minilogo($css, $minilogo);
+
     
     // Set caption background.
     if (!empty($theme->settings->captionbackgroundcolour)) {
@@ -51,6 +55,21 @@ function theme_flexibase_process_css($css, $theme) {
         $captiontextcolour = '#ffffff';
     }
     $css = theme_flexibase_set_captiontextcolour($css, $captiontextcolour);
+    
+    if(!empty($theme->settings->rendereroverlaycolour)) {
+        $rendereroverlaycolour = $theme->settings->rendereroverlaycolour;
+    } else {
+        $rendereroverlaycolour = null;
+    }
+    $css = theme_flexibase_set_rendereroverlaycolour($css, $rendereroverlaycolour);
+    
+    if (!empty($theme->settings->rendereroverlayfontcolour)) {
+        $rendereroverlayfontcolour = $theme->settings->rendereroverlayfontcolour;
+    } else {
+        $rendereroverlayfontcolour = null;
+    }
+    $css = theme_flexibase_set_rendereroverlayfontcolour($css, $rendereroverlayfontcolour);
+
 
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
@@ -85,6 +104,30 @@ function theme_flexibase_set_logo($css, $logo) {
     $css = str_replace($logoheight, $height, $css);
     $css = str_replace($logowidth, $width, $css);
     $css = str_replace($logodisplay, $display, $css);
+
+    return $css;
+}
+function theme_flexibase_set_minilogo($css, $minilogo) {
+    $minilogotag = '[[setting:minilogo]]';
+    $minilogoheight = '[[minilogoheight]]';
+    $minilogowidth = '[[minilogowidth]]';
+    $minilogodisplay = '[[minilogodisplay]]';
+    $miniwidth = '0';
+    $miniheight = '0';
+    $minidisplay = 'none';
+    $replacement = $minilogo;
+    if (is_null($replacement)) {
+        $replacement = '';
+    } else {
+        $dimensions = getimagesize('http:'.$minilogo);
+        $miniwidth = $dimensions[0] . 'px';
+        $miniheight = $dimensions[1] . 'px';
+        $minidisplay = 'block';
+    }
+    $css = str_replace($minilogotag, $replacement, $css);
+    $css = str_replace($minilogoheight, $miniheight, $css);
+    $css = str_replace($minilogowidth, $miniwidth, $css);
+    $css = str_replace($minilogodisplay, $minidisplay, $css);
 
     return $css;
 }
@@ -124,6 +167,26 @@ function theme_flexibase_set_carouselbordercolour($css, $carouselbordercolour) {
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
+function theme_flexibase_set_rendereroverlaycolour($css, $rendereroverlaycolour) {
+    $tag = '[[setting:rendereroverlaycolour]]';
+    $replacement = $rendereroverlaycolour;
+    if (is_null($replacement)) {
+        $replacement = '#001e3c';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_flexibase_set_rendereroverlayfontcolour($css, $rendereroverlayfontcolour) {
+    $tag = '[[setting:rendereroverlayfontcolour]]';
+    $replacement = $rendereroverlayfontcolour;
+    if (is_null($replacement)) {
+        $replacement = '#FFF';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
 
 /**
  * Serves any files associated with the theme settings.
@@ -147,6 +210,8 @@ function theme_flexibase_pluginfile($course, $cm, $context, $filearea, $args, $f
         return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
     } else if (preg_match("/slide[1-9][0-9]*image/", $filearea) !== false) { // carousel images
         return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
+    } else if ($filearea === 'minilogo') {
+            return $theme->setting_file_serve('minilogo', $args, $forcedownload, $options);
 
     } else {
         send_file_not_found();

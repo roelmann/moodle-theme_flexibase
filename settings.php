@@ -40,6 +40,62 @@ defined('MOODLE_INTERNAL') || die;
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'logo');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+    
+    // Show Main Logo
+    $name = 'theme_flexibase/showlogo';
+    $title = get_string('showlogo', 'theme_flexibase');
+    $description = get_string('showlogodesc', 'theme_flexibase');
+    $default = 1;
+    $choices = array(
+        'frontpage' => get_string('showlogofrontonly', 'theme_flexibase'),
+        'everywhere' => get_string('showlogoeverywhere', 'theme_flexibase'),
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+
+    // Top NavBar miniLogo file setting.
+    $name = 'theme_flexibase/minilogo';
+    $title = get_string('minilogo', 'theme_flexibase');
+    $description = get_string('minilogodesc', 'theme_flexibase');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'minilogo');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // Default mini icon setting.
+    $name = 'theme_flexibase/falogo';
+    $title = get_string('falogo', 'theme_flexibase');
+    $description = get_string('falogodesc', 'theme_flexibase');
+    $default = 'home';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $temp->add($setting);
+    
+    // Top bar colour scheme
+    $name = 'theme_flexibase/topbarcolour';
+    $title = get_string('topbarcolour', 'theme_flexibase');
+    $description = get_string('topbarcolourdesc', 'theme_flexibase');
+    $default = 1;
+    $choices = array(
+        'default' => get_string('default', 'theme_flexibase'),
+        'inverse' => get_string('inverse', 'theme_flexibase'),
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    // Menu bar colour scheme
+    $name = 'theme_flexibase/menunavbarcolour';
+    $title = get_string('menunavbarcolour', 'theme_flexibase');
+    $description = get_string('menunavbarcolourdesc', 'theme_flexibase');
+    $default = 1;
+    $choices = array(
+        'default' => get_string('default', 'theme_flexibase'),
+        'inverse' => get_string('inverse', 'theme_flexibase'),
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
 
     // Custom CSS file.
     $name = 'theme_flexibase/customcss';
@@ -550,4 +606,294 @@ defined('MOODLE_INTERNAL') || die;
  		$temp->add($setting);
 
  	$ADMIN->add('theme_flexibase', $temp);
+
+
+ 	/* CourseBox Spot Settings */
+    $temp = new admin_settingpage('theme_flexibase_frontpage_courses', get_string('frontpagecoursesettings', 'theme_flexibase'));
+    $temp->add(new admin_setting_heading('theme_flexibase_frontpage_courses', get_string('frontpagesettingsheading', 'theme_flexibase'),
+        format_text(get_string('frontpagedesc', 'theme_flexibase'), FORMAT_MARKDOWN))); 
+ 				
+    $name = 'theme_flexibase/frontpagerenderer';
+    $title = get_string('frontpagerenderer', 'theme_flexibase');
+    $description = get_string('frontpagerendererdesc', 'theme_flexibase');
+    $choices = array(
+        1 => get_string('frontpagerendereroption1', 'theme_flexibase'),
+        2 => get_string('frontpagerendereroption2', 'theme_flexibase'),
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, 2, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    $name = 'theme_flexibase/frontpagerendererdefaultimage';
+    $title = get_string('frontpagerendererdefaultimage', 'theme_flexibase');
+    $description = get_string('frontpagerendererdefaultimagedesc', 'theme_flexibase');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'frontpagerendererdefaultimage');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+
+
+    $name = 'theme_flexibase/rendereroverlaycolour';
+    $title = get_string('rendereroverlaycolour', 'theme_flexibase');
+    $description = get_string('rendereroverlaycolourdesc', 'theme_flexibase');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001E3C', $previewconfig);
+    $temp->add($setting);
+    
+    $name = 'theme_flexibase/rendereroverlayfontcolour';
+    $title = get_string('rendereroverlayfontcolour', 'theme_flexibase');
+    $description = get_string('rendereroverlayfontcolourdesc', 'theme_flexibase');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFF', $previewconfig);
+    $temp->add($setting);
+
+    $ADMIN->add('theme_flexibase', $temp);
+
+
+    /* Category Settings */
+    $temp = new admin_settingpage('theme_flexibase_categoryicon', get_string('categoryiconheading', 'theme_flexibase'));
+    $temp->add(new admin_setting_heading('theme_flexibase_categoryicon', get_string('categoryiconheadingsub', 'theme_flexibase'),
+        format_text(get_string('categoryicondesc', 'theme_flexibase'), FORMAT_MARKDOWN)));
+
+    // Category Icons.
+    $name = 'theme_flexibase/enablecategoryicon';
+    $title = get_string('enablecategoryicon', 'theme_flexibase');
+    $description = get_string('enablecategoryicondesc', 'theme_flexibase');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // We only want to output category icon options if the parent setting is enabled
+    if (get_config('theme_flexibase', 'enablecategoryicon')) {
+
+        // Default Icon Selector.
+        $name = 'theme_flexibase/defaultcategoryicon';
+        $title = get_string('defaultcategoryicon', 'theme_flexibase');
+        $description = get_string('defaultcategoryicondesc', 'theme_flexibase');
+        $default = 'folder-open';
+        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        // Category Icons.
+        $name = 'theme_flexibase/enablecustomcategoryicon';
+        $title = get_string('enablecustomcategoryicon', 'theme_flexibase');
+        $description = get_string('enablecustomcategoryicondesc', 'theme_flexibase');
+        $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        if (get_config('theme_flexibase', 'enablecustomcategoryicon')) {
+
+            // This is the descriptor for Custom Category Icons
+            $name = 'theme_flexibase/categoryiconinfo';
+            $heading = get_string('categoryiconinfo', 'theme_flexibase');
+            $information = get_string('categoryiconinfodesc', 'theme_flexibase');
+            $setting = new admin_setting_heading($name, $heading, $information);
+            $temp->add($setting);
+
+            // Get the default category icon.
+            $defaultcategoryicon = get_config('theme_flexibase', 'defaultcategoryicon');
+            if (empty($defaultcategoryicon)) {
+                $defaultcategoryicon = 'folder-open';
+            }
+
+            // Get all category IDs and their pretty names
+            require_once($CFG->libdir . '/coursecatlib.php');
+            $coursecats = coursecat::make_categories_list();
+
+            // Go through all categories and create the necessary settings
+            foreach ($coursecats as $key => $value) {
+
+                // Category Icons for each category.
+                $name = 'theme_flexibase/categoryicon';
+                $title = $value;
+                $description = get_string('categoryiconcategory', 'theme_flexibase', array('category' => $value));
+                $default = $defaultcategoryicon;
+                $setting = new admin_setting_configtext($name . $key, $title, $description, $default);
+                $setting->set_updatedcallback('theme_reset_all_caches');
+                $temp->add($setting);
+            }
+            unset($coursecats);
+        }
+    }
+
+ 				
+    $ADMIN->add('theme_flexibase', $temp);
+
+ 	/* Social Network Settings */
+	$temp = new admin_settingpage('theme_flexibase_social', get_string('socialheading', 'theme_flexibase'));
+	$temp->add(new admin_setting_heading('theme_flexibase_social', get_string('socialheadingsub', 'theme_flexibase'),
+            format_text(get_string('socialdesc' , 'theme_flexibase'), FORMAT_MARKDOWN)));
+
+    // Website url setting.
+    $name = 'theme_flexibase/website';
+    $title = get_string('website', 'theme_flexibase');
+    $description = get_string('websitedesc', 'theme_flexibase');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Blog url setting.
+    $name = 'theme_flexibase/blog';
+    $title = get_string('blog', 'theme_flexibase');
+    $description = get_string('blogdesc', 'theme_flexibase');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Facebook url setting.
+    $name = 'theme_flexibase/facebook';
+    $title = get_string(    	'facebook', 'theme_flexibase');
+    $description = get_string(    	'facebookdesc', 'theme_flexibase');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Flickr url setting.
+    $name = 'theme_flexibase/flickr';
+    $title = get_string('flickr', 'theme_flexibase');
+    $description = get_string('flickrdesc', 'theme_flexibase');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Twitter url setting.
+    $name = 'theme_flexibase/twitter';
+    $title = get_string('twitter', 'theme_flexibase');
+    $description = get_string('twitterdesc', 'theme_flexibase');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Google+ url setting.
+    $name = 'theme_flexibase/googleplus';
+    $title = get_string('googleplus', 'theme_flexibase');
+    $description = get_string('googleplusdesc', 'theme_flexibase');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // LinkedIn url setting.
+    $name = 'theme_flexibase/linkedin';
+    $title = get_string('linkedin', 'theme_flexibase');
+    $description = get_string('linkedindesc', 'theme_flexibase');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Tumblr url setting.
+    $name = 'theme_flexibase/tumblr';
+    $title = get_string('tumblr', 'theme_flexibase');
+    $description = get_string('tumblrdesc', 'theme_flexibase');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Pinterest url setting.
+    $name = 'theme_flexibase/pinterest';
+    $title = get_string('pinterest', 'theme_flexibase');
+    $description = get_string('pinterestdesc', 'theme_flexibase');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Instagram url setting.
+    $name = 'theme_flexibase/instagram';
+    $title = get_string('instagram', 'theme_flexibase');
+    $description = get_string('instagramdesc', 'theme_flexibase');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // YouTube url setting.
+    $name = 'theme_flexibase/youtube';
+    $title = get_string('youtube', 'theme_flexibase');
+    $description = get_string('youtubedesc', 'theme_flexibase');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Vimeo url setting.
+    $name = 'theme_flexibase/vimeo';
+    $title = get_string('vimeo', 'theme_flexibase');
+    $description = get_string('vimeodesc', 'theme_flexibase');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Skype url setting.
+    $name = 'theme_flexibase/skype';
+    $title = get_string('skype', 'theme_flexibase');
+    $description = get_string('skypedesc', 'theme_flexibase');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // General social url setting 1.
+    $name = 'theme_flexibase/social1';
+    $title = get_string('sociallink', 'theme_flexibase');
+    $description = get_string('sociallinkdesc', 'theme_flexibase');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // social icon setting 1.
+    $name = 'theme_flexibase/socialicon1';
+    $title = get_string('sociallinkicon', 'theme_flexibase');
+    $description = get_string('sociallinkicondesc', 'theme_flexibase');
+    $default = 'home';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $temp->add($setting);
+
+    // General social url setting 2.
+    $name = 'theme_flexibase/social2';
+    $title = get_string('sociallink', 'theme_flexibase');
+    $description = get_string('sociallinkdesc', 'theme_flexibase');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // social icon setting 2.
+    $name = 'theme_flexibase/socialicon2';
+    $title = get_string('sociallinkicon', 'theme_flexibase');
+    $description = get_string('sociallinkicondesc', 'theme_flexibase');
+    $default = 'home';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $temp->add($setting);
+
+    // General social url setting 3.
+    $name = 'theme_flexibase/social3';
+    $title = get_string('sociallink', 'theme_flexibase');
+    $description = get_string('sociallinkdesc', 'theme_flexibase');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // social icon setting 3.
+    $name = 'theme_flexibase/socialicon3';
+    $title = get_string('sociallinkicon', 'theme_flexibase');
+    $description = get_string('sociallinkicondesc', 'theme_flexibase');
+    $default = 'home';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $temp->add($setting);
+
+    $ADMIN->add('theme_flexibase', $temp);
 

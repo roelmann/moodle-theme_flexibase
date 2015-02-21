@@ -628,6 +628,10 @@
 #region-bottom {
 	margin-top:5px;
 }
+.container-fluid {
+    margin: 0 auto;
+    max-width: 100%;
+}
 /* Hide empty regions
  * ------------------ */
 .has_dock.empty-region-side-mainpre #block-region-side-mainpre,

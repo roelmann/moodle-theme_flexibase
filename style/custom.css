@@ -6,7 +6,7 @@ a.logo {
     display: [[logodisplay]];
     float: left;
     height: [[logoheight]];
-    margin: 0;
+    margin: 10px 0;
     padding: 0;
     width: [[logowidth]];
 }
@@ -15,7 +15,20 @@ a.logo {
     background: url([[setting:logo]]) no-repeat 0 0;
     float: right;
 }
+.navbar-image {
+    background: url([[setting:minilogo]]) no-repeat;
+    background-size: 100% auto;
+    display: [[minilogodisplay]];
+    float: left;
+    height: [[minilogoheight]];
+    width: [[minilogowidth]];
 
+}
+
+.dir-rtl .navbar-image {
+    background: url([[setting:minilogo]]) no-repeat;
+    float: right;
+}
 /* Custom CSS Settings
 -------------------------*/
 [[setting:customcss]]

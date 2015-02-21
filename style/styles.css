@@ -14,7 +14,71 @@ input.form-submit, input#id_submitbutton, input#id_submitbutton2, .path-admin .b
 .navbar-right .dropdown-menu {
     z-index: 2000;
 }
+.navbar-collapse {
+	padding-left:25px;
+	padding-right:25px;
+	}
+.navbarbranding {
+//	position:absolute;
+	border-radius:0;
+	margin-bottom:0;
+}
+#dock .dockeditem_container {
+	margin-top:67px;
+}
+#dockeditempanel {
+	min-width:250px;
+}
+.block_docked .content {
+	padding: 4px;
+}
+.dockeditempanel_bd, .dockeditempanel_hd {
+	border:1px solid #000;
+}
 hr.sep {
 	margin-top:0;
 	margin-bottom:0;
+}
+.navbar-right {
+	margin-right:85px;
+}
+.userpicture {
+	position:absolute;
+	top:5px;
+	right:5px;
+}
+.userpicture img {
+	height:100px;
+	width:100px;
+	border-radius:30px;
+	border: 4px ridge #fff;
+}
+.socials {
+	margin-right:80px;
+}
+.socials .socialicon {
+	float:right;
+}
+@media (max-width:1200px) {
+	.userpicture img {
+		height:75px;
+		width:75px;
+		border-radius:25px;
+		border: 2px ridge #fff;
+
+	}
+	.socials {
+		margin-right:65px;
+	}
+	.navbar-right {
+		margin-right:65px;
+	}
+}
+@media (max-width: 768px) {
+	.socials {
+		margin-right:0;
+	}
+	.navbar-right {
+		margin-right:-15px;
+	}
 }

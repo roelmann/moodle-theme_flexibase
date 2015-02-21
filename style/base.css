@@ -815,7 +815,7 @@ html {
     font-size: 10px;
 }
 body {
-    background-color: #e9f4ff;
+    background-color: #ffffff;
     color: #333333;
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
@@ -853,7 +853,7 @@ img {
     border-radius: 6px;
 }
 .img-thumbnail {
-    background-color: #e9f4ff;
+    background-color: #ffffff;
     border: 1px solid #999999;
     border-radius: 4px;
     display: inline-block;
@@ -1896,7 +1896,7 @@ th {
     border-top: 2px solid #cccccc;
 }
 .table .table {
-    background-color: #e9f4ff;
+    background-color: #ffffff;
 }
 .table-condensed > thead > tr > th, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > tbody > tr > td, .table-condensed > tfoot > tr > td {
     padding: 5px;
@@ -3022,7 +3022,7 @@ textarea.input-group-sm > .form-control, textarea.input-group-sm > .input-group-
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
-    background-color: #e9f4ff;
+    background-color: #ffffff;
     border-color: #999999 #999999 transparent;
     border-image: none;
     border-style: solid;
@@ -3092,7 +3092,7 @@ textarea.input-group-sm > .form-control, textarea.input-group-sm > .input-group-
     border-radius: 4px 4px 0 0;
 }
 .nav-tabs.nav-justified > .active > a, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:focus {
-    border-bottom-color: #e9f4ff;
+    border-bottom-color: #ffffff;
 }
 }
 .nav-tabs.nav-justified > li > a {
@@ -3114,7 +3114,7 @@ textarea.input-group-sm > .form-control, textarea.input-group-sm > .input-group-
     border-radius: 4px 4px 0 0;
 }
 .nav-tabs.nav-justified > .active > a, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:focus {
-    border-bottom-color: #e9f4ff;
+    border-bottom-color: #ffffff;
 }
 }
 .nav-pills > li {
@@ -3176,7 +3176,7 @@ textarea.input-group-sm > .form-control, textarea.input-group-sm > .input-group-
     border-radius: 4px 4px 0 0;
 }
 .nav-tabs-justified > .active > a, .nav-tabs-justified > .active > a:hover, .nav-tabs-justified > .active > a:focus {
-    border-bottom-color: #e9f4ff;
+    border-bottom-color: #ffffff;
 }
 }
 .tab-content > .tab-pane {
@@ -3907,7 +3907,7 @@ a.badge:hover, a.badge:focus {
 }
 }
 .thumbnail {
-    background-color: #e9f4ff;
+    background-color: #ffffff;
     border: 1px solid #999999;
     border-radius: 4px;
     display: block;
@@ -6255,7 +6255,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     margin: 0 0 0 0.2em;
 }
 .jsenabled .choosercontainer #chooseform .instruction, .jsenabled .choosercontainer #chooseform .typesummary {
-    background-color: #e9f4ff;
+    background-color: #ffffff;
     bottom: 0;
     display: none;
     left: 20.3em;
@@ -6272,7 +6272,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     display: block;
 }
 .choosercontainer #chooseform .selected {
-    background-color: #e9f4ff;
+    background-color: #ffffff;
     box-shadow: 0 0 10px 0 #ccc;
 }
 .section-modchooser-link img.smallicon {
@@ -9704,7 +9704,7 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
     border: 0 none;
 }
 .box.message .messagearea .messagehistory .box.center table.message_user_pictures td {
-    background-color: #e9f4ff;
+    background-color: #ffffff;
 }
 .box.message .messagearea .messagehistory .box.center table.message_user_pictures td#user1, .box.message .messagearea .messagehistory .box.center table.message_user_pictures td#user2 {
     display: block;
@@ -9742,7 +9742,7 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
-    background-color: #e9f4ff;
+    background-color: #ffffff;
     border-color: #999999 #999999 transparent;
     border-image: none;
     border-style: solid;
@@ -9812,7 +9812,7 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
     border-radius: 4px 4px 0 0;
 }
 .box.message .messagearea .messagehistory .messagehistorytype.nav-justified > .active > a, .box.message .messagearea .messagehistory .messagehistorytype.nav-justified > .active > a:hover, .box.message .messagearea .messagehistory .messagehistorytype.nav-justified > .active > a:focus {
-    border-bottom-color: #e9f4ff;
+    border-bottom-color: #ffffff;
 }
 }
 .box.message .messagearea .messagehistory .messagehistorytype.nav-justified > li > a {
@@ -9834,7 +9834,7 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
     border-radius: 4px 4px 0 0;
 }
 .box.message .messagearea .messagehistory .messagehistorytype.nav-justified > .active > a, .box.message .messagearea .messagehistory .messagehistorytype.nav-justified > .active > a:hover, .box.message .messagearea .messagehistory .messagehistorytype.nav-justified > .active > a:focus {
-    border-bottom-color: #e9f4ff;
+    border-bottom-color: #ffffff;
 }
 }
 .box.message .messagearea .messagehistory .messagehistorytype .hiddenelement {
@@ -10508,10 +10508,10 @@ a.que .correctness:hover, a.que .correctness:focus {
     padding: 0 0.3em;
 }
 #page-mod-quiz-edit div.question div.content div.questioncontrols {
-    background-color: #e9f4ff;
+    background-color: #ffffff;
 }
 #page-mod-quiz-edit div.question div.content div.points {
-    background-color: #e9f4ff;
+    background-color: #ffffff;
     border: medium none;
     float: right;
     margin-right: 60px;
@@ -10534,7 +10534,7 @@ a.que .correctness:hover, a.que .correctness:focus {
     padding: 1.5em;
 }
 #page-mod-quiz-edit .categoryinfo {
-    background-color: #e9f4ff;
+    background-color: #ffffff;
     border-bottom: medium none;
 }
 #page-mod-quiz-edit div.questionbank .categorysortopotionscontainer, #page-mod-quiz-edit div.questionbank .categoryselectallcontainer {
@@ -10548,10 +10548,10 @@ a.que .correctness:hover, a.que .correctness:focus {
     padding: 1em;
 }
 #page-mod-quiz-edit div.question div.content div.questioncontrols {
-    background-color: #e9f4ff;
+    background-color: #ffffff;
 }
 #page-mod-quiz-edit div.question div.content div.points {
-    background-color: #e9f4ff;
+    background-color: #ffffff;
     border: medium none;
     margin-top: -0.5em;
     padding-bottom: 0.5em;
@@ -10560,7 +10560,7 @@ a.que .correctness:hover, a.que .correctness:focus {
     display: inline-block;
 }
 #page-mod-quiz-edit div.quizpage .pagecontent .pagestatus {
-    background-color: #e9f4ff;
+    background-color: #ffffff;
 }
 #page-mod-quiz-edit .quizpagedelete, #page-mod-quiz-edit .quizpagedelete img {
     background-color: transparent;
@@ -10599,7 +10599,7 @@ a.que .correctness:hover, a.que .correctness:focus {
     width: auto;
 }
 #page-mod-quiz-edit div.editq div.question div.content {
-    background-color: #e9f4ff;
+    background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 2px;
     overflow: hidden;
@@ -10949,73 +10949,73 @@ body.path-question-type .mform fieldset.hidden {
     pointer-events: none;
 }
 .userprofile .messagebox a-default {
-    background-image: linear-gradient(#f2f2f2, #cccccc 50%, #c2c2c2);
+    background-image: linear-gradient(#ffffff, #cccccc 60%, #b3b3b3);
     background-repeat: no-repeat;
     border: 1px solid #b3b3b3;
     filter: none;
 }
 .userprofile .messagebox a-default:hover {
-    background-image: linear-gradient(#e8e8e8, #c2c2c2 50%, #b8b8b8);
+    background-image: linear-gradient(#ffffff, #c2c2c2 60%, #a8a8a8);
     background-repeat: no-repeat;
     border: 1px solid #a8a8a8;
     filter: none;
 }
 .userprofile .messagebox a-primary {
-    background-image: linear-gradient(#00376f, #001122 50%, #00070e);
+    background-image: linear-gradient(#0051a2, #001122 60%, #000000);
     background-repeat: no-repeat;
     border: 1px solid #000000;
     filter: none;
 }
 .userprofile .messagebox a-primary:hover {
-    background-image: linear-gradient(#002d5a, #00070e 50%, #000000);
+    background-image: linear-gradient(#00478d, #00070e 60%, #000000);
     background-repeat: no-repeat;
     border: 1px solid #000000;
     filter: none;
 }
 .userprofile .messagebox a-success {
-    background-image: linear-gradient(#52e646, #28c41b 50%, #24b219);
+    background-image: linear-gradient(#7cec73, #28c41b 60%, #1f9715);
     background-repeat: no-repeat;
     border: 1px solid #1f9715;
     filter: none;
 }
 .userprofile .messagebox a-success:hover {
-    background-image: linear-gradient(#42e334, #24b219 50%, #21a016);
+    background-image: linear-gradient(#6be961, #24b219 60%, #1b8512);
     background-repeat: no-repeat;
     border: 1px solid #1b8512;
     filter: none;
 }
 .userprofile .messagebox a-info {
-    background-image: linear-gradient(#85bdf7, #3d97f2 50%, #2a8df1);
+    background-image: linear-gradient(#b4d7fa, #3d97f2 60%, #107dec);
     background-repeat: no-repeat;
     border: 1px solid #107dec;
     filter: none;
 }
 .userprofile .messagebox a-info:hover {
-    background-image: linear-gradient(#72b3f6, #2a8df1 50%, #1783ef);
+    background-image: linear-gradient(#a1cdf9, #2a8df1 60%, #0f73d9);
     background-repeat: no-repeat;
     border: 1px solid #0f73d9;
     filter: none;
 }
 .userprofile .messagebox a-warning {
-    background-image: linear-gradient(#f89d64, #f46f1b 50%, #ef640c);
+    background-image: linear-gradient(#fabc95, #f46f1b 60%, #d2570a);
     background-repeat: no-repeat;
     border: 1px solid #d2570a;
     filter: none;
 }
 .userprofile .messagebox a-warning:hover {
-    background-image: linear-gradient(#f79151, #ef640c 50%, #dc5c0b);
+    background-image: linear-gradient(#f9b081, #ef640c 60%, #be4f09);
     background-repeat: no-repeat;
     border: 1px solid #be4f09;
     filter: none;
 }
 .userprofile .messagebox a-danger {
-    background-image: linear-gradient(#e56d72, #d92c33 50%, #cc252b);
+    background-image: linear-gradient(#ec989b, #d92c33 60%, #b22026);
     background-repeat: no-repeat;
     border: 1px solid #b22026;
     filter: none;
 }
 .userprofile .messagebox a-danger:hover {
-    background-image: linear-gradient(#e25c61, #cc252b 50%, #bb2228);
+    background-image: linear-gradient(#e9878b, #cc252b 60%, #a11d22);
     background-repeat: no-repeat;
     border: 1px solid #a11d22;
     filter: none;
@@ -11406,7 +11406,7 @@ table.collection > tbody + tbody {
     border-top: 2px solid #cccccc;
 }
 table.collection .table {
-    background-color: #e9f4ff;
+    background-color: #ffffff;
 }
 table.collection > thead > tr > th, table.collection > tbody > tr > th, table.collection > tfoot > tr > th, table.collection > thead > tr > td, table.collection > tbody > tr > td, table.collection > tfoot > tr > td {
     border: 1px solid #cccccc;
@@ -12703,7 +12703,7 @@ div#dock {
     background-color: #fae2e2;
 }
 #page-backup-restore .filealiasesfailures .aliaseslist {
-    background-color: #e9f4ff;
+    background-color: #ffffff;
     border: 1px dotted #cccccc;
     margin: 0.8em auto;
     width: 90%;
@@ -12812,7 +12812,7 @@ div#dock {
     border-top: 2px solid #cccccc;
 }
 .path-rating .ratingtable .table, table.flexible .table, .generaltable .table {
-    background-color: #e9f4ff;
+    background-color: #ffffff;
 }
 .path-rating .ratingtable > tbody > tr:nth-child(2n+1), table#explaincaps > tbody > tr:nth-child(2n+1), table#defineroletable > tbody > tr:nth-child(2n+1), table.grading-report > tbody > tr:nth-child(2n+1), table#listdirectories > tbody > tr:nth-child(2n+1), table.rolecaps > tbody > tr:nth-child(2n+1), table.userenrolment > tbody > tr:nth-child(2n+1), table#form > tbody > tr:nth-child(2n+1), form#movecourses table > tbody > tr:nth-child(2n+1), #page-admin-course-index .editcourse > tbody > tr:nth-child(2n+1), .forumheaderlist > tbody > tr:nth-child(2n+1), table.flexible > tbody > tr:nth-child(2n+1), .generaltable > tbody > tr:nth-child(2n+1) {
     background-color: #d5eaff;
@@ -13098,7 +13098,7 @@ input.fp-btn-choose {
     border-radius: 4px 4px 0 0;
 }
 .nav-tabs-justified > .active > a, .nav-tabs-justified > .active > a:hover, .nav-tabs-justified > .active > a:focus {
-    border-bottom-color: #e9f4ff;
+    border-bottom-color: #ffffff;
 }
 }
 .userenrolment {
@@ -13577,73 +13577,73 @@ body.has_dock div#dock {
     pointer-events: none;
 }
 #dock .dockedtitle-default {
-    background-image: linear-gradient(#f2f2f2, #cccccc 50%, #c2c2c2);
+    background-image: linear-gradient(#ffffff, #cccccc 60%, #b3b3b3);
     background-repeat: no-repeat;
     border: 1px solid #b3b3b3;
     filter: none;
 }
 #dock .dockedtitle-default:hover {
-    background-image: linear-gradient(#e8e8e8, #c2c2c2 50%, #b8b8b8);
+    background-image: linear-gradient(#ffffff, #c2c2c2 60%, #a8a8a8);
     background-repeat: no-repeat;
     border: 1px solid #a8a8a8;
     filter: none;
 }
 #dock .dockedtitle-primary {
-    background-image: linear-gradient(#00376f, #001122 50%, #00070e);
+    background-image: linear-gradient(#0051a2, #001122 60%, #000000);
     background-repeat: no-repeat;
     border: 1px solid #000000;
     filter: none;
 }
 #dock .dockedtitle-primary:hover {
-    background-image: linear-gradient(#002d5a, #00070e 50%, #000000);
+    background-image: linear-gradient(#00478d, #00070e 60%, #000000);
     background-repeat: no-repeat;
     border: 1px solid #000000;
     filter: none;
 }
 #dock .dockedtitle-success {
-    background-image: linear-gradient(#52e646, #28c41b 50%, #24b219);
+    background-image: linear-gradient(#7cec73, #28c41b 60%, #1f9715);
     background-repeat: no-repeat;
     border: 1px solid #1f9715;
     filter: none;
 }
 #dock .dockedtitle-success:hover {
-    background-image: linear-gradient(#42e334, #24b219 50%, #21a016);
+    background-image: linear-gradient(#6be961, #24b219 60%, #1b8512);
     background-repeat: no-repeat;
     border: 1px solid #1b8512;
     filter: none;
 }
 #dock .dockedtitle-info {
-    background-image: linear-gradient(#85bdf7, #3d97f2 50%, #2a8df1);
+    background-image: linear-gradient(#b4d7fa, #3d97f2 60%, #107dec);
     background-repeat: no-repeat;
     border: 1px solid #107dec;
     filter: none;
 }
 #dock .dockedtitle-info:hover {
-    background-image: linear-gradient(#72b3f6, #2a8df1 50%, #1783ef);
+    background-image: linear-gradient(#a1cdf9, #2a8df1 60%, #0f73d9);
     background-repeat: no-repeat;
     border: 1px solid #0f73d9;
     filter: none;
 }
 #dock .dockedtitle-warning {
-    background-image: linear-gradient(#f89d64, #f46f1b 50%, #ef640c);
+    background-image: linear-gradient(#fabc95, #f46f1b 60%, #d2570a);
     background-repeat: no-repeat;
     border: 1px solid #d2570a;
     filter: none;
 }
 #dock .dockedtitle-warning:hover {
-    background-image: linear-gradient(#f79151, #ef640c 50%, #dc5c0b);
+    background-image: linear-gradient(#f9b081, #ef640c 60%, #be4f09);
     background-repeat: no-repeat;
     border: 1px solid #be4f09;
     filter: none;
 }
 #dock .dockedtitle-danger {
-    background-image: linear-gradient(#e56d72, #d92c33 50%, #cc252b);
+    background-image: linear-gradient(#ec989b, #d92c33 60%, #b22026);
     background-repeat: no-repeat;
     border: 1px solid #b22026;
     filter: none;
 }
 #dock .dockedtitle-danger:hover {
-    background-image: linear-gradient(#e25c61, #cc252b 50%, #bb2228);
+    background-image: linear-gradient(#e9878b, #cc252b 60%, #a11d22);
     background-repeat: no-repeat;
     border: 1px solid #a11d22;
     filter: none;
@@ -13906,73 +13906,73 @@ body.has_dock div#dock {
     pointer-events: none;
 }
 #page-grade-grading-manage .actions .action-default {
-    background-image: linear-gradient(#f2f2f2, #cccccc 50%, #c2c2c2);
+    background-image: linear-gradient(#ffffff, #cccccc 60%, #b3b3b3);
     background-repeat: no-repeat;
     border: 1px solid #b3b3b3;
     filter: none;
 }
 #page-grade-grading-manage .actions .action-default:hover {
-    background-image: linear-gradient(#e8e8e8, #c2c2c2 50%, #b8b8b8);
+    background-image: linear-gradient(#ffffff, #c2c2c2 60%, #a8a8a8);
     background-repeat: no-repeat;
     border: 1px solid #a8a8a8;
     filter: none;
 }
 #page-grade-grading-manage .actions .action-primary {
-    background-image: linear-gradient(#00376f, #001122 50%, #00070e);
+    background-image: linear-gradient(#0051a2, #001122 60%, #000000);
     background-repeat: no-repeat;
     border: 1px solid #000000;
     filter: none;
 }
 #page-grade-grading-manage .actions .action-primary:hover {
-    background-image: linear-gradient(#002d5a, #00070e 50%, #000000);
+    background-image: linear-gradient(#00478d, #00070e 60%, #000000);
     background-repeat: no-repeat;
     border: 1px solid #000000;
     filter: none;
 }
 #page-grade-grading-manage .actions .action-success {
-    background-image: linear-gradient(#52e646, #28c41b 50%, #24b219);
+    background-image: linear-gradient(#7cec73, #28c41b 60%, #1f9715);
     background-repeat: no-repeat;
     border: 1px solid #1f9715;
     filter: none;
 }
 #page-grade-grading-manage .actions .action-success:hover {
-    background-image: linear-gradient(#42e334, #24b219 50%, #21a016);
+    background-image: linear-gradient(#6be961, #24b219 60%, #1b8512);
     background-repeat: no-repeat;
     border: 1px solid #1b8512;
     filter: none;
 }
 #page-grade-grading-manage .actions .action-info {
-    background-image: linear-gradient(#85bdf7, #3d97f2 50%, #2a8df1);
+    background-image: linear-gradient(#b4d7fa, #3d97f2 60%, #107dec);
     background-repeat: no-repeat;
     border: 1px solid #107dec;
     filter: none;
 }
 #page-grade-grading-manage .actions .action-info:hover {
-    background-image: linear-gradient(#72b3f6, #2a8df1 50%, #1783ef);
+    background-image: linear-gradient(#a1cdf9, #2a8df1 60%, #0f73d9);
     background-repeat: no-repeat;
     border: 1px solid #0f73d9;
     filter: none;
 }
 #page-grade-grading-manage .actions .action-warning {
-    background-image: linear-gradient(#f89d64, #f46f1b 50%, #ef640c);
+    background-image: linear-gradient(#fabc95, #f46f1b 60%, #d2570a);
     background-repeat: no-repeat;
     border: 1px solid #d2570a;
     filter: none;
 }
 #page-grade-grading-manage .actions .action-warning:hover {
-    background-image: linear-gradient(#f79151, #ef640c 50%, #dc5c0b);
+    background-image: linear-gradient(#f9b081, #ef640c 60%, #be4f09);
     background-repeat: no-repeat;
     border: 1px solid #be4f09;
     filter: none;
 }
 #page-grade-grading-manage .actions .action-danger {
-    background-image: linear-gradient(#e56d72, #d92c33 50%, #cc252b);
+    background-image: linear-gradient(#ec989b, #d92c33 60%, #b22026);
     background-repeat: no-repeat;
     border: 1px solid #b22026;
     filter: none;
 }
 #page-grade-grading-manage .actions .action-danger:hover {
-    background-image: linear-gradient(#e25c61, #cc252b 50%, #bb2228);
+    background-image: linear-gradient(#e9878b, #cc252b 60%, #a11d22);
     background-repeat: no-repeat;
     border: 1px solid #a11d22;
     filter: none;
@@ -14125,73 +14125,73 @@ body.has_dock div#dock {
     pointer-events: none;
 }
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .addlevel input-default {
-    background-image: linear-gradient(#f2f2f2, #cccccc 50%, #c2c2c2);
+    background-image: linear-gradient(#ffffff, #cccccc 60%, #b3b3b3);
     background-repeat: no-repeat;
     border: 1px solid #b3b3b3;
     filter: none;
 }
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .addlevel input-default:hover {
-    background-image: linear-gradient(#e8e8e8, #c2c2c2 50%, #b8b8b8);
+    background-image: linear-gradient(#ffffff, #c2c2c2 60%, #a8a8a8);
     background-repeat: no-repeat;
     border: 1px solid #a8a8a8;
     filter: none;
 }
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .addlevel input-primary {
-    background-image: linear-gradient(#00376f, #001122 50%, #00070e);
+    background-image: linear-gradient(#0051a2, #001122 60%, #000000);
     background-repeat: no-repeat;
     border: 1px solid #000000;
     filter: none;
 }
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .addlevel input-primary:hover {
-    background-image: linear-gradient(#002d5a, #00070e 50%, #000000);
+    background-image: linear-gradient(#00478d, #00070e 60%, #000000);
     background-repeat: no-repeat;
     border: 1px solid #000000;
     filter: none;
 }
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .addlevel input-success {
-    background-image: linear-gradient(#52e646, #28c41b 50%, #24b219);
+    background-image: linear-gradient(#7cec73, #28c41b 60%, #1f9715);
     background-repeat: no-repeat;
     border: 1px solid #1f9715;
     filter: none;
 }
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .addlevel input-success:hover {
-    background-image: linear-gradient(#42e334, #24b219 50%, #21a016);
+    background-image: linear-gradient(#6be961, #24b219 60%, #1b8512);
     background-repeat: no-repeat;
     border: 1px solid #1b8512;
     filter: none;
 }
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .addlevel input-info {
-    background-image: linear-gradient(#85bdf7, #3d97f2 50%, #2a8df1);
+    background-image: linear-gradient(#b4d7fa, #3d97f2 60%, #107dec);
     background-repeat: no-repeat;
     border: 1px solid #107dec;
     filter: none;
 }
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .addlevel input-info:hover {
-    background-image: linear-gradient(#72b3f6, #2a8df1 50%, #1783ef);
+    background-image: linear-gradient(#a1cdf9, #2a8df1 60%, #0f73d9);
     background-repeat: no-repeat;
     border: 1px solid #0f73d9;
     filter: none;
 }
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .addlevel input-warning {
-    background-image: linear-gradient(#f89d64, #f46f1b 50%, #ef640c);
+    background-image: linear-gradient(#fabc95, #f46f1b 60%, #d2570a);
     background-repeat: no-repeat;
     border: 1px solid #d2570a;
     filter: none;
 }
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .addlevel input-warning:hover {
-    background-image: linear-gradient(#f79151, #ef640c 50%, #dc5c0b);
+    background-image: linear-gradient(#f9b081, #ef640c 60%, #be4f09);
     background-repeat: no-repeat;
     border: 1px solid #be4f09;
     filter: none;
 }
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .addlevel input-danger {
-    background-image: linear-gradient(#e56d72, #d92c33 50%, #cc252b);
+    background-image: linear-gradient(#ec989b, #d92c33 60%, #b22026);
     background-repeat: no-repeat;
     border: 1px solid #b22026;
     filter: none;
 }
 #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .addlevel input-danger:hover {
-    background-image: linear-gradient(#e25c61, #cc252b 50%, #bb2228);
+    background-image: linear-gradient(#e9878b, #cc252b 60%, #a11d22);
     background-repeat: no-repeat;
     border: 1px solid #a11d22;
     filter: none;
@@ -14238,73 +14238,73 @@ body.has_dock div#dock {
     pointer-events: none;
 }
 #rubric-rubric.gradingform_rubric .addcriterion-default {
-    background-image: linear-gradient(#f2f2f2, #cccccc 50%, #c2c2c2);
+    background-image: linear-gradient(#ffffff, #cccccc 60%, #b3b3b3);
     background-repeat: no-repeat;
     border: 1px solid #b3b3b3;
     filter: none;
 }
 #rubric-rubric.gradingform_rubric .addcriterion-default:hover {
-    background-image: linear-gradient(#e8e8e8, #c2c2c2 50%, #b8b8b8);
+    background-image: linear-gradient(#ffffff, #c2c2c2 60%, #a8a8a8);
     background-repeat: no-repeat;
     border: 1px solid #a8a8a8;
     filter: none;
 }
 #rubric-rubric.gradingform_rubric .addcriterion-primary {
-    background-image: linear-gradient(#00376f, #001122 50%, #00070e);
+    background-image: linear-gradient(#0051a2, #001122 60%, #000000);
     background-repeat: no-repeat;
     border: 1px solid #000000;
     filter: none;
 }
 #rubric-rubric.gradingform_rubric .addcriterion-primary:hover {
-    background-image: linear-gradient(#002d5a, #00070e 50%, #000000);
+    background-image: linear-gradient(#00478d, #00070e 60%, #000000);
     background-repeat: no-repeat;
     border: 1px solid #000000;
     filter: none;
 }
 #rubric-rubric.gradingform_rubric .addcriterion-success {
-    background-image: linear-gradient(#52e646, #28c41b 50%, #24b219);
+    background-image: linear-gradient(#7cec73, #28c41b 60%, #1f9715);
     background-repeat: no-repeat;
     border: 1px solid #1f9715;
     filter: none;
 }
 #rubric-rubric.gradingform_rubric .addcriterion-success:hover {
-    background-image: linear-gradient(#42e334, #24b219 50%, #21a016);
+    background-image: linear-gradient(#6be961, #24b219 60%, #1b8512);
     background-repeat: no-repeat;
     border: 1px solid #1b8512;
     filter: none;
 }
 #rubric-rubric.gradingform_rubric .addcriterion-info {
-    background-image: linear-gradient(#85bdf7, #3d97f2 50%, #2a8df1);
+    background-image: linear-gradient(#b4d7fa, #3d97f2 60%, #107dec);
     background-repeat: no-repeat;
     border: 1px solid #107dec;
     filter: none;
 }
 #rubric-rubric.gradingform_rubric .addcriterion-info:hover {
-    background-image: linear-gradient(#72b3f6, #2a8df1 50%, #1783ef);
+    background-image: linear-gradient(#a1cdf9, #2a8df1 60%, #0f73d9);
     background-repeat: no-repeat;
     border: 1px solid #0f73d9;
     filter: none;
 }
 #rubric-rubric.gradingform_rubric .addcriterion-warning {
-    background-image: linear-gradient(#f89d64, #f46f1b 50%, #ef640c);
+    background-image: linear-gradient(#fabc95, #f46f1b 60%, #d2570a);
     background-repeat: no-repeat;
     border: 1px solid #d2570a;
     filter: none;
 }
 #rubric-rubric.gradingform_rubric .addcriterion-warning:hover {
-    background-image: linear-gradient(#f79151, #ef640c 50%, #dc5c0b);
+    background-image: linear-gradient(#f9b081, #ef640c 60%, #be4f09);
     background-repeat: no-repeat;
     border: 1px solid #be4f09;
     filter: none;
 }
 #rubric-rubric.gradingform_rubric .addcriterion-danger {
-    background-image: linear-gradient(#e56d72, #d92c33 50%, #cc252b);
+    background-image: linear-gradient(#ec989b, #d92c33 60%, #b22026);
     background-repeat: no-repeat;
     border: 1px solid #b22026;
     filter: none;
 }
 #rubric-rubric.gradingform_rubric .addcriterion-danger:hover {
-    background-image: linear-gradient(#e25c61, #cc252b 50%, #bb2228);
+    background-image: linear-gradient(#e9878b, #cc252b 60%, #a11d22);
     background-repeat: no-repeat;
     border: 1px solid #a11d22;
     filter: none;
@@ -14343,14 +14343,14 @@ body.has_dock div#dock {
     display: inline;
 }
 .navbar {
-    background-image: linear-gradient(#00376f, #001122 50%, #00070e);
+    background-image: linear-gradient(#0051a2, #001122 60%, #000000);
     background-repeat: no-repeat;
     border: 1px solid #000000;
     filter: none;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 .navbar-inverse {
-    background-image: linear-gradient(#ffffff, #bbddff 50%, #a7d3ff);
+    background-image: linear-gradient(#ffffff, #bbddff 60%, #88c3ff);
     background-repeat: no-repeat;
     border: 1px solid #88c3ff;
     filter: none;
@@ -14381,73 +14381,73 @@ body.has_dock div#dock {
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
 }
 .btn-default {
-    background-image: linear-gradient(#f2f2f2, #cccccc 50%, #c2c2c2);
+    background-image: linear-gradient(#ffffff, #cccccc 60%, #b3b3b3);
     background-repeat: no-repeat;
     border: 1px solid #b3b3b3;
     filter: none;
 }
 .btn-default:hover {
-    background-image: linear-gradient(#e8e8e8, #c2c2c2 50%, #b8b8b8);
+    background-image: linear-gradient(#ffffff, #c2c2c2 60%, #a8a8a8);
     background-repeat: no-repeat;
     border: 1px solid #a8a8a8;
     filter: none;
 }
 .btn-primary {
-    background-image: linear-gradient(#00376f, #001122 50%, #00070e);
+    background-image: linear-gradient(#0051a2, #001122 60%, #000000);
     background-repeat: no-repeat;
     border: 1px solid #000000;
     filter: none;
 }
 .btn-primary:hover {
-    background-image: linear-gradient(#002d5a, #00070e 50%, #000000);
+    background-image: linear-gradient(#00478d, #00070e 60%, #000000);
     background-repeat: no-repeat;
     border: 1px solid #000000;
     filter: none;
 }
 .btn-success {
-    background-image: linear-gradient(#52e646, #28c41b 50%, #24b219);
+    background-image: linear-gradient(#7cec73, #28c41b 60%, #1f9715);
     background-repeat: no-repeat;
     border: 1px solid #1f9715;
     filter: none;
 }
 .btn-success:hover {
-    background-image: linear-gradient(#42e334, #24b219 50%, #21a016);
+    background-image: linear-gradient(#6be961, #24b219 60%, #1b8512);
     background-repeat: no-repeat;
     border: 1px solid #1b8512;
     filter: none;
 }
 .btn-info {
-    background-image: linear-gradient(#85bdf7, #3d97f2 50%, #2a8df1);
+    background-image: linear-gradient(#b4d7fa, #3d97f2 60%, #107dec);
     background-repeat: no-repeat;
     border: 1px solid #107dec;
     filter: none;
 }
 .btn-info:hover {
-    background-image: linear-gradient(#72b3f6, #2a8df1 50%, #1783ef);
+    background-image: linear-gradient(#a1cdf9, #2a8df1 60%, #0f73d9);
     background-repeat: no-repeat;
     border: 1px solid #0f73d9;
     filter: none;
 }
 .btn-warning {
-    background-image: linear-gradient(#f89d64, #f46f1b 50%, #ef640c);
+    background-image: linear-gradient(#fabc95, #f46f1b 60%, #d2570a);
     background-repeat: no-repeat;
     border: 1px solid #d2570a;
     filter: none;
 }
 .btn-warning:hover {
-    background-image: linear-gradient(#f79151, #ef640c 50%, #dc5c0b);
+    background-image: linear-gradient(#f9b081, #ef640c 60%, #be4f09);
     background-repeat: no-repeat;
     border: 1px solid #be4f09;
     filter: none;
 }
 .btn-danger {
-    background-image: linear-gradient(#e56d72, #d92c33 50%, #cc252b);
+    background-image: linear-gradient(#ec989b, #d92c33 60%, #b22026);
     background-repeat: no-repeat;
     border: 1px solid #b22026;
     filter: none;
 }
 .btn-danger:hover {
-    background-image: linear-gradient(#e25c61, #cc252b 50%, #bb2228);
+    background-image: linear-gradient(#e9878b, #cc252b 60%, #a11d22);
     background-repeat: no-repeat;
     border: 1px solid #a11d22;
     filter: none;
@@ -14459,8 +14459,16 @@ body.has_dock div#dock {
 .panel-primary .panel-title {
     color: #fff;
 }
+header {
+    background-color: #e9f4ff;
+}
 .block .header {
-    background-color: #001122;
+    background-image: linear-gradient(#0051a2, #001122 60%, #000000);
+    background-repeat: no-repeat;
+    border: 1px solid #000000;
+    filter: none;
+}
+.block .header h2 {
     color: #ffffff;
 }
 @font-face {
