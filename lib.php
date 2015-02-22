@@ -22,6 +22,85 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+/**
+ * Returns variables for LESS.
+ *
+ * We will inject some LESS variables from the settings that the user has defined
+ * for the theme. No need to write some custom LESS for this.
+ *
+ * @param theme_config $theme The theme config object.
+ * @return array of LESS variables without the @.
+ */
+function theme_flexibase_less_variables($theme) {
+    $variables = array();
+    if (!empty($theme->settings->brandprimary)) {
+        $variables['brand-primary'] = $theme->settings->brandprimary;
+    }
+    if (!empty($theme->settings->brandsuccess)) {
+        $variables['brand-success'] = $theme->settings->brandsuccess;
+    }
+    if (!empty($theme->settings->brandinfo)) {
+        $variables['brand-info'] = $theme->settings->brandinfo;
+    }
+    if (!empty($theme->settings->brandwarning)) {
+        $variables['brand-warning'] = $theme->settings->brandwarning;
+    }
+    if (!empty($theme->settings->branddanger)) {
+        $variables['brand-danger'] = $theme->settings->branddanger;
+    }
+    if (!empty($theme->settings->black)) {
+        $variables['black'] = $theme->settings->black;
+    }
+    if (!empty($theme->settings->white)) {
+        $variables['white'] = $theme->settings->white;
+    }
+    if (!empty($theme->settings->graybase)) {
+        $variables['gray-base'] = $theme->settings->graybase;
+    }
+
+    if (!empty($theme->settings->brandprimarylight)) {
+        $variables['brand-primary-light'] = $theme->settings->brandprimarylight;
+    }
+    if (!empty($theme->settings->brandprimarylighter)) {
+        $variables['brand-primary-light'] = $theme->settings->brandprimarylighter;
+    }
+    if (!empty($theme->settings->brandprimarylightest)) {
+        $variables['brand-primary-light'] = $theme->settings->brandprimarylightest;
+    }
+    if (!empty($theme->settings->brandsuccesslight)) {
+        $variables['brand-success-light'] = $theme->settings->brandsuccesslight;
+    }
+    if (!empty($theme->settings->brandinfolight)) {
+        $variables['brand-info-light'] = $theme->settings->brandinfolight;
+    }
+    if (!empty($theme->settings->brandwarninglight)) {
+        $variables['brand-warning-light'] = $theme->settings->brandwarninglight;
+    }
+    if (!empty($theme->settings->branddangerlight)) {
+        $variables['brand-danger-light'] = $theme->settings->branddangerlight;
+    }
+    if (!empty($theme->settings->graydarker)) {
+        $variables['gray-darker'] = $theme->settings->graydarker;
+    }
+    if (!empty($theme->settings->graydark)) {
+        $variables['gray-dark'] = $theme->settings->graydark;
+    }
+    if (!empty($theme->settings->gray)) {
+        $variables['gray'] = $theme->settings->gray;
+    }
+    if (!empty($theme->settings->graylight)) {
+        $variables['gray-light'] = $theme->settings->graylight;
+    }
+    if (!empty($theme->settings->graylighter)) {
+        $variables['gray-lighter'] = $theme->settings->graylighter;
+    }
+    if (!empty($theme->settings->graylightest)) {
+        $variables['gray-lightest'] = $theme->settings->graylightest;
+    }
+
+    return $variables;
+}
+
 function theme_flexibase_process_css($css, $theme) {
 
     // Set the background image for the logo.
@@ -30,6 +109,9 @@ function theme_flexibase_process_css($css, $theme) {
     // Set the background image for the minilogo.
     $minilogo = $theme->setting_file_url('minilogo', 'minilogo');
     $css = theme_flexibase_set_minilogo($css, $minilogo);
+    // Set the background image for the login background.
+    $loginbg = $theme->setting_file_url('loginbg', 'loginbg');
+    $css = theme_flexibase_set_loginbg($css, $loginbg);
 
     
     // Set caption background.
@@ -131,6 +213,30 @@ function theme_flexibase_set_minilogo($css, $minilogo) {
 
     return $css;
 }
+function theme_flexibase_set_loginbg($css, $loginbg) {
+    $loginbgtag = '[[setting:loginbg]]';
+    $loginbgheight = '[[loginbgheight]]';
+    $loginbgwidth = '[[loginbgwidth]]';
+    $loginbgdisplay = '[[loginbgdisplay]]';
+    $loginbgwidth = '0';
+    $loginbgheight = '0';
+    $loginbgdisplay = 'none';
+    $replacement = $loginbg;
+    if (is_null($replacement)) {
+        $replacement = '';
+    } else {
+        $dimensions = getimagesize('http:'.$loginbg);
+        $loginbgwidth = $dimensions[0] . 'px';
+        $loginbgheight = $dimensions[1] . 'px';
+        $loginbgdisplay = 'block';
+    }
+    $css = str_replace($loginbgtag, $replacement, $css);
+    $css = str_replace($loginbgheight, $loginbgheight, $css);
+    $css = str_replace($loginbgwidth, $loginbgwidth, $css);
+    $css = str_replace($loginbgdisplay, $loginbgdisplay, $css);
+
+    return $css;
+}
 function theme_flexibase_set_captionbackgroundcolour($css, $captionbackgroundcolour) {
     $tag = '[[setting:captionbackgroundcolour]]';
     $replacement = $captionbackgroundcolour;
@@ -212,7 +318,8 @@ function theme_flexibase_pluginfile($course, $cm, $context, $filearea, $args, $f
         return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
     } else if ($filearea === 'minilogo') {
             return $theme->setting_file_serve('minilogo', $args, $forcedownload, $options);
-
+    } else if ($filearea === 'loginbg') {
+            return $theme->setting_file_serve('loginbg', $args, $forcedownload, $options);
     } else {
         send_file_not_found();
     }

@@ -21,7 +21,7 @@
  * @copyright  2014 Bas Brands
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-$settings = null;
+$temp = null;
 
 defined('MOODLE_INTERNAL') || die;
 
@@ -96,6 +96,14 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Login Page background file setting.
+    $name = 'theme_flexibase/loginbg';
+    $title = get_string('loginbg', 'theme_flexibase');
+    $description = get_string('loginbgdesc', 'theme_flexibase');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'loginbg');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
 
     // Custom CSS file.
     $name = 'theme_flexibase/customcss';
@@ -107,6 +115,192 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add($setting);
 
     $ADMIN->add('theme_flexibase', $temp);
+    
+    // Main LESS colour settings settingpage
+    $temp = new admin_settingpage('theme_flexibase_lessbrand',  get_string('lessbrandsettings', 'theme_flexibase'));
+    $temp->add(new admin_setting_heading('theme_flexibase_lessbrandheading', get_string('lessbrandsub', 'theme_flexibase'),
+        format_text(get_string('lessbranddesc', 'theme_flexibase'), FORMAT_MARKDOWN)));
+
+    // @brandprimary setting.
+    $name = 'theme_flexibase/brandprimary';
+    $title = get_string('brandprimary', 'theme_flexibase');
+    $description = get_string('brandprimarydesc', 'theme_flexibase');
+    $default = '#001122';
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    // @brandsuccess setting.
+    $name = 'theme_flexibase/brandsuccess';
+    $title = get_string('brandsuccess', 'theme_flexibase');
+    $description = get_string('brandsuccessdesc', 'theme_flexibase');
+    $default = '#28C41B';
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    // @brandinfo setting.
+    $name = 'theme_flexibase/brandinfo';
+    $title = get_string('brandinfo', 'theme_flexibase');
+    $description = get_string('brandinfodesc', 'theme_flexibase');
+    $default = '#3D97F2';
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    // @brandwarning setting.
+    $name = 'theme_flexibase/brandwarning';
+    $title = get_string('brandwarning', 'theme_flexibase');
+    $description = get_string('brandwarningdesc', 'theme_flexibase');
+    $default = '#F46F1B';
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    // @branddanger setting.
+    $name = 'theme_flexibase/branddanger';
+    $title = get_string('branddanger', 'theme_flexibase');
+    $description = get_string('branddangerdesc', 'theme_flexibase');
+    $default = '#D92C33';
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    // @black setting.
+    $name = 'theme_flexibase/black';
+    $title = get_string('black', 'theme_flexibase');
+    $description = get_string('blackdesc', 'theme_flexibase');
+    $default = '#000000';
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    // @white setting.
+    $name = 'theme_flexibase/white';
+    $title = get_string('white', 'theme_flexibase');
+    $description = get_string('whitedesc', 'theme_flexibase');
+    $default = '#ffffff';
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    // @graybase setting.
+    $name = 'theme_flexibase/graybase';
+    $title = get_string('graybase', 'theme_flexibase');
+    $description = get_string('graybasedesc', 'theme_flexibase');
+    $default = '#000000';
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $ADMIN->add('theme_flexibase', $temp);
+    
+    // Additional LESS colour settings settingpage
+    $temp = new admin_settingpage('theme_flexibase_lessadditional',  get_string('lessadditionalsettings', 'theme_flexibase'));
+    $temp->add(new admin_setting_heading('theme_flexibase_lessadditionalheading', get_string('lessadditionalsub', 'theme_flexibase'),
+        format_text(get_string('lessadditionaldesc', 'theme_flexibase'), FORMAT_MARKDOWN)));
+
+    // @brandprimary light setting.
+    $name = 'theme_flexibase/brandprimarylight';
+    $title = get_string('brandprimarylight', 'theme_flexibase');
+    $description = get_string('brandprimarylightdesc', 'theme_flexibase');
+    $default = 'lighten(@brand-primary, 80%)';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    // @brandprimary lighter setting.
+    $name = 'theme_flexibase/brandprimarylighter';
+    $title = get_string('brandprimarylighter', 'theme_flexibase');
+    $description = get_string('brandprimarylighterdesc', 'theme_flexibase');
+    $default = 'lighten(@brand-primary, 85%)';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    // @brandprimary lightest setting.
+    $name = 'theme_flexibase/brandprimarylightest';
+    $title = get_string('brandprimarylightest', 'theme_flexibase');
+    $description = get_string('brandprimarylightestdesc', 'theme_flexibase');
+    $default = 'lighten(@brand-primary, 89%)';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    // @brandsuccess light setting.
+    $name = 'theme_flexibase/brandsuccesslight';
+    $title = get_string('brandsuccesslight', 'theme_flexibase');
+    $description = get_string('brandsuccesslightdesc', 'theme_flexibase');
+    $default = 'lighten(@brand-success, 42%)';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    // @brandinfo light setting.
+    $name = 'theme_flexibase/brandinfolight';
+    $title = get_string('brandinfolight', 'theme_flexibase');
+    $description = get_string('brandinfolightdesc', 'theme_flexibase');
+    $default = 'lighten(@brand-info, 32%)';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    // @brandwarning light setting.
+    $name = 'theme_flexibase/brandwarninglight';
+    $title = get_string('brandwarninglight', 'theme_flexibase');
+    $description = get_string('brandwarninglightdesc', 'theme_flexibase');
+    $default = 'lighten(@brand-warning, 38%)';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    // @branddanger light setting.
+    $name = 'theme_flexibase/branddangerlight';
+    $title = get_string('branddangerlight', 'theme_flexibase');
+    $description = get_string('branddangerlightdesc', 'theme_flexibase');
+    $default = 'lighten(@brand-danger, 42%)';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    // @graydarker setting.
+    $name = 'theme_flexibase/graydarker';
+    $title = get_string('graydarker', 'theme_flexibase');
+    $description = get_string('graydarkerdesc', 'theme_flexibase');
+    $default = 'lighten(@gray-base, 10%)';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    // @graydark setting.
+    $name = 'theme_flexibase/graydark';
+    $title = get_string('graydark', 'theme_flexibase');
+    $description = get_string('graydarkdesc', 'theme_flexibase');
+    $default = 'lighten(@gray-base, 20%)';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    // @gray setting.
+    $name = 'theme_flexibase/gray';
+    $title = get_string('gray', 'theme_flexibase');
+    $description = get_string('graydesc', 'theme_flexibase');
+    $default = 'lighten(@gray-base, 40%)';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    // @graylight setting.
+    $name = 'theme_flexibase/graylight';
+    $title = get_string('graylight', 'theme_flexibase');
+    $description = get_string('graylightdesc', 'theme_flexibase');
+    $default = 'lighten(@gray-base, 60%)';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    // @graylighter setting.
+    $name = 'theme_flexibase/graylighter';
+    $title = get_string('graylighter', 'theme_flexibase');
+    $description = get_string('graylighterdesc', 'theme_flexibase');
+    $default = 'lighten(@gray-base, 80%)';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    // @graylightest setting.
+    $name = 'theme_flexibase/graylightest';
+    $title = get_string('graylightest', 'theme_flexibase');
+    $description = get_string('graylightestdesc', 'theme_flexibase');
+    $default = 'lighten(@gray-base, 95%)';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+
+    $ADMIN->add('theme_flexibase', $temp);
+
 
     $temp = new admin_settingpage('theme_flexibase_layout', get_string('layoutheading', 'theme_flexibase'));
     $temp->add(new admin_setting_heading('theme_flexibase_layout', get_string('layoutheadingsub', 'theme_flexibase'),

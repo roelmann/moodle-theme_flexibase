@@ -19,13 +19,11 @@
 			}
 			?>
 		</div>
-        <?php echo $OUTPUT->user_menu(); ?>
-        <div class="userpicture">
-		</div>
+        <?php echo $OUTPUT->flexibase_user_menu(); ?>
     </div>
 </nav>
 		<?php if (isloggedin() ) { ?>
-        <div class="userpicture">
+        <div class="navbaruserpicture">
 			<?php echo $OUTPUT->user_picture($USER, array('link' => false, 'size'=> 75)); ?>
 		</div>
 		<?php } ?>

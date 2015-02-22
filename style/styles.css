@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('[[font:theme|glyphicons-halflings-regular.eot]]');
+  src: url('[[font:theme|glyphicons-halflings-regular.eot]]?#iefix') format('embedded-opentype'),
+       url('[[font:theme|glyphicons-halflings-regular.woff]]') format('woff'),
+       url('[[font:theme|glyphicons-halflings-regular.ttf]]') format('truetype'),
+       url('[[font:theme|glyphicons-halflings-regular.svg]]') format('svg');
+}
+
 #region-main {
 	background-color: #fff;
 	border: 1px solid #b6c3ea;
@@ -42,12 +51,12 @@ hr.sep {
 .navbar-right {
 	margin-right:85px;
 }
-.userpicture {
+.navbaruserpicture {
 	position:absolute;
 	top:5px;
 	right:5px;
 }
-.userpicture img {
+.navbaruserpicture img {
 	height:100px;
 	width:100px;
 	border-radius:30px;
@@ -60,7 +69,7 @@ hr.sep {
 	float:right;
 }
 @media (max-width:1200px) {
-	.userpicture img {
+	.navbaruserpicture img {
 		height:75px;
 		width:75px;
 		border-radius:25px;
@@ -81,4 +90,17 @@ hr.sep {
 	.navbar-right {
 		margin-right:-15px;
 	}
+}
+.loginbox .loginpanel {
+	margin-bottom:0;
+	filter:alpha(opacity=90); /* IE */
+    -moz-opacity:0.9; /* Mozilla */
+	opacity:0.9;
+}
+.loginbox .signuppanel {
+	background-color: #fff;
+	filter:alpha(opacity=80); /* IE */
+    -moz-opacity:0.8; /* Mozilla */
+	opacity:0.8;
+	border-radius:6px;
 }

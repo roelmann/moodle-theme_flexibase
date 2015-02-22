@@ -181,13 +181,13 @@ class theme_flexibase_core_renderer extends core_renderer {
         return $content.'</ul>';
     }
 
-    public function user_menu($user = NULL, $withlinks = NULL) {
+    public function flexibase_user_menu($user = NULL, $withlinks = NULL) {
         global $CFG;
         $usermenu = new custom_menu('', current_language());
-        return $this->render_user_menu($usermenu);
+        return $this->flexibase_render_user_menu($usermenu);
     }
 
-    protected function render_user_menu(custom_menu $menu) {
+    protected function flexibase_render_user_menu(custom_menu $menu) {
         global $CFG, $USER, $DB;
 
         $addusermenu = true;
@@ -359,12 +359,10 @@ class theme_flexibase_core_renderer extends core_renderer {
         }
 
         $content = '<ul class="nav navbar-nav navbar-right">';
-        foreach ($menu->get_children() as $item) {
-            $content .= $this->render_custom_menu_item($item, 1);
-        }
-
+				foreach ($menu->get_children() as $item) {
+					$content .= $this->render_custom_menu_item($item, 1);
+				}
         return $content.'</ul>';
-        return $userpic;
     }
 
     protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {

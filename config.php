@@ -32,7 +32,7 @@ $THEME->doctype = 'html5';
 // Add this back in if not using LESS - 
 // faster for development if not changing variables in LESS----------
 $THEME->sheets = array(
-	'base',			//CSS constructed from LESS files - needs to be removed if using LESS
+//	'base',			//CSS constructed from LESS files - needs to be removed if using LESS
 	'font-awesome',
 	'flexlayout',	//Flexibox layout rules
 	'alerts',		//Alerts theme styles
@@ -46,9 +46,9 @@ $THEME->sheets = array(
 $THEME->parents_exclude_sheets = array('bootstrap' => array('moodle','moodle-rtl'));
 // Remove these if not using less--------------
 //$THEME->sheets = array('flexlayout','styles','custom');
-//$THEME->lessfile = 'flexibase';
-//$THEME->lessvariablescallback = 'theme_flexibase_less_variables';
-//$THEME->extralesscallback = 'theme_flexibase_extra_less';
+$THEME->lessfile = 'flexibase';
+$THEME->lessvariablescallback = 'theme_flexibase_less_variables';
+$THEME->extralesscallback = 'theme_flexibase_extra_less';
 //---------------------
 $THEME->supportscssoptimisation = false;
 $THEME->yuicssmodules = array();
