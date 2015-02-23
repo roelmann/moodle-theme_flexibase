@@ -28,9 +28,7 @@ include('includes/header.php');
 
 <div id="page" class="container-fluid">
 	<?php include('includes/alerts.php'); ?>
-	
-	<?php include('includes/breadcrumb.php'); ?>
-	
+
     <div id="page-header" class="clearfix">
         <!-- Start Carousel -->
         <?php include('includes/carousel2.php');?>
