@@ -1,6 +1,6 @@
-<?php global $PAGE, $USER;
+<?php global $PAGE, $USER; //Move to preheaderlogic.php
     $pageid=$PAGE->bodyid;
-    $showlogo = $PAGE->theme->settings->showlogo;
+	$showlogo = (empty($PAGE->theme->settings->showlogo)) ? 'everywhere' : $PAGE->theme->settings->showlogo;
 ?>
 
 <nav role="navigation" class='navbar navbar-<?php echo $topbarcolour; ?> navbarbranding'>
