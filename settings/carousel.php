@@ -12,7 +12,11 @@
     $displayafterlogin = get_string('displayafterlogin', 'theme_flexibase');
     $dontdisplay = get_string('dontdisplay', 'theme_flexibase');
     $default = 1;
-    $choices = array(1 => $alwaysdisplay, 2 => $displaybeforelogin, 3 => $displayafterlogin, 0 => $dontdisplay);
+    $choices = array(
+        1 => $alwaysdisplay,
+        2 => $displaybeforelogin,
+        3 => $displayafterlogin,
+        0 => $dontdisplay);
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
