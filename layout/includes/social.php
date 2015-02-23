@@ -22,7 +22,7 @@ $social3icon	= (empty($PAGE->theme->settings->socialicon3)) ? 'globe' : $PAGE->t
 
  
 // If any of the above social networks are true, sets this to true.
-$hassocialnetworks = ($hasfacebook || $hastwitter || $hasgoogleplus || $hasflickr || $hasinstagram || $hasvk || $haslinkedin || $haspinterest || $hasskype || $haslinkedin || $haswebsite || $hasyoutube || $hasblog ||$hasvimeo || $hastumbler || $hassocial1 || $hassocial2 || $hassocial3) ? true : false;
+$hassocialnetworks = ($hasfacebook || $hastwitter || $hasgoogleplus || $hasflickr || $hasinstagram || $hasvk || $haslinkedin || $haspinterest || $hasskype || $haslinkedin || $haswebsite || $hasyoutube || $hasblog ||$hasvimeo || $hastumblr || $hassocial1 || $hassocial2 || $hassocial3) ? true : false;
 ?>
 		<div class="col-md-4 pull-right">
 			<?php

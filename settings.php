@@ -45,7 +45,7 @@ defined('MOODLE_INTERNAL') || die;
     $name = 'theme_flexibase/showlogo';
     $title = get_string('showlogo', 'theme_flexibase');
     $description = get_string('showlogodesc', 'theme_flexibase');
-    $default = 1;
+    $default = 'everywhere';
     $choices = array(
         'frontpage' => get_string('showlogofrontonly', 'theme_flexibase'),
         'everywhere' => get_string('showlogoeverywhere', 'theme_flexibase'),
