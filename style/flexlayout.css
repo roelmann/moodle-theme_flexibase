@@ -508,6 +508,21 @@
     align-self: stretch;
     }
 
+.maincontentinnerwrap div[role=main] {
+	max-width:100%;
+}
+.used-region-side-mainpost .maincontentinnerwrap div[role=main],
+.used-region-side-mainpre .maincontentinnerwrap div[role=main] {
+	max-width:80%;
+}
+.used-region-side-mainpost.used-region-side-mainpre .maincontentinnerwrap div[role=main] {
+	max-width:60%;
+}
+.img-responsive {
+	max-width:98%;
+}
+
+
 /* Media calls to turn flexbox rows into columns.
  * TODO - StreamLine this code, remove elements which are repeated in
  * main body
@@ -593,6 +608,17 @@
     -ms-flex-item-align: stretch;
     align-self: stretch;
 	}
+.maincontentinnerwrap div[role=main] {
+	max-width:100%;
+}
+.used-region-side-mainpost .maincontentinnerwrap div[role=main],
+.used-region-side-mainpre .maincontentinnerwrap div[role=main] {
+	max-width:100%;
+}
+.used-region-side-mainpost.used-region-side-mainpre .maincontentinnerwrap div[role=main] {
+	max-width:100%;
+}
+
 	.maincontentinnerwrap .flexcontentmainpre {
     -webkit-box-ordinal-group: 1;
     -moz-box-ordinal-group: 1;
@@ -658,4 +684,8 @@
 }
 .flexbox .browserwarningnoflex, .flexbox .browserwarningflexleg {
     display:none;
+}
+
+.flexcontainer > img {
+	max-width:250px;
 }

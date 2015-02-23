@@ -24,6 +24,17 @@ $hasnavbarlogo = (empty($PAGE->theme->settings->minilogo)) ? false : true;
 $topbarcolour = (empty($PAGE->theme->settings->topbarcolour)) ? 'default' : $PAGE->theme->settings->topbarcolour;
 $menunavbarcolour = (empty($PAGE->theme->settings->menunavbarcolour)) ? 'default' : $PAGE->theme->settings->menunavbarcolour;
 
+$mainlayouts = '';
+if ($knownregionmainpre && $knownregionmainpost) {
+	$mainlayouts="twomainsides";
+}
+if ($knownregionmainpre && !$knownregionmainpost) {
+	$mainlayouts="onemainside";
+}
+if (!$knownregionmainpre && $knownregionmainpost) {
+	$mainlayouts="onemainside";
+}
+
 
 //$regions = bootstrap_grid($hassidepre, $hassidepost);
 //$layoutoption="twopre";
@@ -33,6 +44,7 @@ $PAGE->set_popup_notification_allowed(false);
 $bodyclasses = array();
 if (theme_flexibase_get_setting('enablecategoryicon')) {
     $bodyclasses[] = 'categoryicons';
+    $bodyclasses[] = $mainlayouts;
 }
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
