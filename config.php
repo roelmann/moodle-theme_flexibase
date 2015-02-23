@@ -20,49 +20,57 @@
  * @package    theme_flexibase
  * @author     2015 Richard Oelmann
  * @copyright  2015 R. Oelmann
- * @parents    Bootstrap, Cerulean
- * @copyright  2014 Bas Brands - et al per those themes
+ * @parents    Bootstrap
+ * @copyright  2014 Bas Brands
+ * @credits    Essential - Julian Ridden, Gareth Barnard;
+ *             Elegance - Julian Ridden, Danny Wahl;
+ *             BCU - Jez H, Mike Grant
+ *             Many others for non-specific but vital inspirations,
+ *             suggestions and support
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 $THEME->name = 'flexibase';
 $THEME->parents = array('bootstrap');
-
-$THEME->doctype = 'html5';
-// Add this back in if not using LESS - 
-// faster for development if not changing variables in LESS----------
-$THEME->sheets = array(
-//	'base',			//CSS constructed from LESS files - needs to be removed if using LESS
-	'font-awesome',
-	'flexlayout',	//Flexibox layout rules
-	'alerts',		//Alerts theme styles
-	'carousel',		//Carousel theme styles - no core styles as core carousel css is already included in bootstrap
-	'marketing',	//Marketing blocks core styles
-	'coursebox',
-	'styles',	//Last but one - theme style overrides, including settings css
-	'custom'	//Must be last - contains the customcss setting
-	);
-//--------------------------------
 $THEME->parents_exclude_sheets = array('bootstrap' => array('moodle','moodle-rtl'));
-// Remove these if not using less--------------
-//$THEME->sheets = array('flexlayout','styles','custom');
+
+$THEME->sheets = array(
+//  'base',         //CSS constructed from LESS files with default settings - needs to be removed if using LESS on the fly
+    'font-awesome', //Default FA css unaltered from upstream
+    'flexlayout',   //Flexibox layout rules
+    'alerts',       //Alerts theme styles
+    'carousel',     //Carousel theme styles - no core styles as core carousel css is already included in bootstrap
+    'marketing',    //Marketing blocks core styles
+    'coursebox',    //Course tile listing styles
+    'styles',       //Last but one - theme style overrides
+    'custom'        //Must be last - contains the css settings to override other css
+    );
+$THEME->editor_sheets = array(); //TODO
+
+//--------------------------------
+/* Remove these if not using less compilation
+ * NOTE: If using LESS compilation on the fly Theme Designer Mode is
+ * required but this will result in very slow page load times. DO NOT
+ * USE for production!
+ */
 $THEME->lessfile = 'flexibase';
 $THEME->lessvariablescallback = 'theme_flexibase_less_variables';
 $THEME->extralesscallback = 'theme_flexibase_extra_less';
 //---------------------
-$THEME->supportscssoptimisation = false;
-$THEME->yuicssmodules = array();
-$THEME->enable_dock = true;
-$THEME->editor_sheets = array();
 
-$THEME->rendererfactory = 'theme_overridden_renderer_factory';
-$THEME->csspostprocess = 'theme_flexibase_process_css';
+$THEME->doctype = 'html5';                  //Set doctype
+$THEME->supportscssoptimisation = false;    //Disable css optimisation because we are using LESS on the fly
+$THEME->yuicssmodules = array();            //List any additional YUI-CSS modules - none
+$THEME->enable_dock = true;                 //Enable docking
 
-$THEME->javascripts_footer[] = 'flexibase_bootstrap';
-//$THEME->javascripts_footer[] = 'moodlebootstrap';
-//$THEME->javascripts_footer[] = 'dock';
+$THEME->rendererfactory = 'theme_overridden_renderer_factory';      //Enable renderer overrides
+$THEME->csspostprocess = 'theme_flexibase_process_css';             //Enable css post processing
 
+$THEME->javascripts_footer[] = 'flexibase_bootstrap';               //JS scripts added to page footer
 
+/* Theme layouts - identifying regions, options and layout files
+ * -------------------------------------------------------------
+ */
 $THEME->layouts = array(
     // Most backwards compatible layout without the blocks - this is the layout used by default.
     'base' => array(
@@ -82,15 +90,15 @@ $THEME->layouts = array(
         'defaultregion' => 'side-pre',
         'options' => array('langmenu' => true),
     ),
-    'coursecategory' => array(
-        'file' => 'default.php',
-        'regions' => array('side-pre', 'side-post'),
-        'defaultregion' => 'side-pre',
-    ),
     // Part of course, typical for modules - default page layout if $cm specified in require_login().
     'incourse' => array(
         'file' => 'course.php',
         'regions' => array('side-pre', 'side-post', 'side-top', 'side-bottom', 'side-mainpre', 'side-mainpost', 'side-maintop', 'side-mainbottom'),
+        'defaultregion' => 'side-pre',
+    ),
+    'coursecategory' => array(
+        'file' => 'default.php',
+        'regions' => array('side-pre', 'side-post'),
         'defaultregion' => 'side-pre',
     ),
     // The site home page.
@@ -117,7 +125,7 @@ $THEME->layouts = array(
     // My public page.
     'mypublic' => array(
         'file' => 'default.php',
-        'regions' => array('side-pre', 'side-post'),
+        'regions' => array('side-pre', 'side-post', 'side-top', 'side-bottom', 'side-mainpre', 'side-mainpost', 'side-maintop', 'side-mainbottom'),
         'defaultregion' => 'side-pre',
     ),
     'login' => array(
@@ -125,7 +133,6 @@ $THEME->layouts = array(
         'regions' => array(),
         'options' => array('langmenu' => true, 'nonavbar' => true),
     ),
-
     // Pages that appear in pop-up windows - no navigation, no blocks, no header.
     'popup' => array(
         'file' => 'popup.php',
@@ -161,7 +168,7 @@ $THEME->layouts = array(
         'file' => 'embedded.php',
         'regions' => array(),
     ),
-    // The pagelayout used for reports.
+    // The pagelayout used for reports - minimal blocks to maximise space
     'report' => array(
         'file' => 'default.php',
         'regions' => array('side-pre'),

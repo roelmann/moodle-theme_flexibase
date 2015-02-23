@@ -15,12 +15,21 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Theme flexibase lib.
+ * Theme Flexibase lib file.
  *
  * @package    theme_flexibase
+ * @author     2015 Richard Oelmann
+ * @copyright  2015 R. Oelmann
+ * @parents    Bootstrap
  * @copyright  2014 Bas Brands
+ * @credits    Essential - Julian Ridden, Gareth Barnard;
+ *             Elegance - Julian Ridden, Danny Wahl;
+ *             BCU - Jez H, Mike Grant
+ *             Many others for non-specific but vital inspirations,
+ *             suggestions and support
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 
 /**
  * Returns variables for LESS.
@@ -100,7 +109,15 @@ function theme_flexibase_less_variables($theme) {
 
     return $variables;
 }
-
+/**
+ * Parses CSS before it is cached.
+ *
+ * This function can make alterations and replace patterns within the CSS.
+ *
+ * @param string $css The CSS
+ * @param theme_config $theme The theme config object.
+ * @return string The parsed CSS The parsed CSS.
+ */
 function theme_flexibase_process_css($css, $theme) {
 
     // Set the background image for the logo.
@@ -113,45 +130,43 @@ function theme_flexibase_process_css($css, $theme) {
     $loginbg = $theme->setting_file_url('loginbg', 'loginbg');
     $css = theme_flexibase_set_loginbg($css, $loginbg);
 
-    
-    // Set caption background.
+
+    // Set caption background for carousel.
     if (!empty($theme->settings->captionbackgroundcolour)) {
         if($theme->settings->captionbackgroundcolour === 'dark') {
-			$captionbackgroundcolour = 'rgba(0,0,0,0.2)';
-			$captionbordercolour = 'rgba(0,0,0,0.6)';
-			$carouselbordercolour = '#111111';
-		} else {
-			$captionbackgroundcolour = 'rgba(255,255,255,0.2)';
-			$captionbordercolour = 'rgba(255,255,255,0.6)';
-			$carouselbordercolour = '#ffffff';
-		}
-	}
+            $captionbackgroundcolour = 'rgba(0,0,0,0.2)';
+            $captionbordercolour = 'rgba(0,0,0,0.6)';
+            $carouselbordercolour = '#111111';
+        } else {
+            $captionbackgroundcolour = 'rgba(255,255,255,0.2)';
+            $captionbordercolour = 'rgba(255,255,255,0.6)';
+            $carouselbordercolour = '#ffffff';
+        }
+    }
     $css = theme_flexibase_set_captionbackgroundcolour($css, $captionbackgroundcolour);
     $css = theme_flexibase_set_captionbordercolour($css, $captionbordercolour);
     $css = theme_flexibase_set_carouselbordercolour($css, $carouselbordercolour);
-
-    // Set caption text colour.
+    // Set caption text colour for carousel.
     if (!empty($theme->settings->captiontextcolour)) {
         $captiontextcolour = $theme->settings->captiontextcolour;
     } else {
         $captiontextcolour = '#ffffff';
     }
     $css = theme_flexibase_set_captiontextcolour($css, $captiontextcolour);
-    
+    // Colour overlay for course tiles
     if(!empty($theme->settings->rendereroverlaycolour)) {
         $rendereroverlaycolour = $theme->settings->rendereroverlaycolour;
     } else {
         $rendereroverlaycolour = null;
     }
     $css = theme_flexibase_set_rendereroverlaycolour($css, $rendereroverlaycolour);
-    
+    // Font colour for course tiles
     if (!empty($theme->settings->rendereroverlayfontcolour)) {
         $rendereroverlayfontcolour = $theme->settings->rendereroverlayfontcolour;
     } else {
         $rendereroverlayfontcolour = null;
     }
     $css = theme_flexibase_set_rendereroverlayfontcolour($css, $rendereroverlayfontcolour);
-
 
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
@@ -282,7 +297,6 @@ function theme_flexibase_set_rendereroverlaycolour($css, $rendereroverlaycolour)
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
-
 function theme_flexibase_set_rendereroverlayfontcolour($css, $rendereroverlayfontcolour) {
     $tag = '[[setting:rendereroverlayfontcolour]]';
     $replacement = $rendereroverlayfontcolour;
@@ -292,7 +306,6 @@ function theme_flexibase_set_rendereroverlayfontcolour($css, $rendereroverlayfon
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
-
 
 /**
  * Serves any files associated with the theme settings.
@@ -307,10 +320,10 @@ function theme_flexibase_set_rendereroverlayfontcolour($css, $rendereroverlayfon
  * @return bool
  */
 function theme_flexibase_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
-	static $theme;
-	if (empty($theme)) {
-		$theme = theme_config::load('flexibase');
-	}
+    static $theme;
+    if (empty($theme)) {
+        $theme = theme_config::load('flexibase');
+    }
     if ($context->contextlevel == CONTEXT_SYSTEM && ($filearea === 'logo')) {
         $theme = theme_config::load('flexibase');
         return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
@@ -324,6 +337,13 @@ function theme_flexibase_pluginfile($course, $cm, $context, $filearea, $args, $f
         send_file_not_found();
     }
 }
+/**
+ * This function creates the dynamic HTML needed for some
+ * settings and then passes it back in an object so it can
+ * be echo'd to the page.
+ *
+ * This keeps the logic out of the layout files.
+ */
 function theme_flexibase_get_setting($setting, $format = false) {
     global $CFG;
     require_once($CFG->dirroot . '/lib/weblib.php');
@@ -396,8 +416,7 @@ function theme_flexibase_get_course_activities() {
 
     return $modfullnames;
 }
-function theme_flexibase_page_init(moodle_page $page) {
-    global $CFG;
+
 /* NOTE: basic js and yui are inherited from the parent. However, we want
  * to be able to add additional bootstrap features (or allow users to use
  * them in their content. BUT we can't add ALL bootstrap jQuery as it
@@ -407,6 +426,8 @@ function theme_flexibase_page_init(moodle_page $page) {
  * TODO: download a bootstrap.min.js with the required js element but
  * excluding those that cause clashes
  */
+function theme_flexibase_page_init(moodle_page $page) {
+    global $CFG;
     $page->requires->jquery_plugin('modernizr', 'theme_flexibase');
 
     $page->requires->jquery_plugin('carousel', 'theme_flexibase');
