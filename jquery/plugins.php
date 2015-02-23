@@ -15,16 +15,21 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Theme Flexibase config file.
+ * Theme Flexibase Plugins file.
  *
  * @package    theme_flexibase
  * @author     2015 Richard Oelmann
  * @copyright  2015 R. Oelmann
- * @parents    Bootstrap, Cerulean
- * @copyright  2014 Bas Brands - et al per those themes
+ * @parents    Bootstrap
+ * @copyright  2014 Bas Brands
+ * @credits    Essential - Julian Ridden, Gareth Barnard;
+ *             Elegance - Julian Ridden, Danny Wahl;
+ *             BCU - Jez H, Mike Grant
+ *             Many others for non-specific but vital inspirations,
+ *             suggestions and support
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
- 
+
 $plugins = array(
 /* NOTE: basic js and yui are inherited from the parent. However, we want
  * to be able to add additional bootstrap features (or allow users to use

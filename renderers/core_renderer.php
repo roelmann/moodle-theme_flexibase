@@ -1,5 +1,5 @@
 <?php
-// This file is part of The Bootstrap 3 Moodle theme
+// This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -13,6 +13,22 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Theme Flexibase renderer file.
+ *
+ * @package    theme_flexibase
+ * @author     2015 Richard Oelmann
+ * @copyright  2015 R. Oelmann
+ * @parents    Bootstrap
+ * @copyright  2014 Bas Brands
+ * @credits    Essential - Julian Ridden, Gareth Barnard;
+ *             Elegance - Julian Ridden, Danny Wahl;
+ *             BCU - Jez H, Mike Grant
+ *             Many others for non-specific but vital inspirations,
+ *             suggestions and support
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
 defined('MOODLE_INTERNAL') || die();
 
@@ -28,7 +44,7 @@ require_once($CFG->dirroot . "/course/renderer.php");
 require_once($CFG->libdir. '/coursecatlib.php');
 
 class theme_flexibase_core_renderer extends core_renderer {
-	
+
     public function edit_button(moodle_url $url) {
         $url->param('sesskey', sesskey());
         if ($this->page->user_is_editing()) {
@@ -120,7 +136,7 @@ class theme_flexibase_core_renderer extends core_renderer {
             $branchsort  = -9999;
 
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
-            
+
             $branchtitle = get_string('myhome');
             $branchlabel = '<i class="fa fa-dashboard"></i> '.$branchtitle;
             $branchurl   = new moodle_url('/my/index.php');
@@ -209,149 +225,149 @@ class theme_flexibase_core_renderer extends core_renderer {
 
         if ($addusermenu) {
             if (isloggedin()) {
-				$course = $this->page->course;
-				$context = context_course::instance($course->id);
-				$userpic = parent::user_picture($USER, array('link' => false));
+                $course = $this->page->course;
+                $context = context_course::instance($course->id);
+                $userpic = parent::user_picture($USER, array('link' => false));
                 $usermenu = $menu->add(fullname($USER), new moodle_url('#'), fullname($USER), 10001);
                 // RO Added based on Essential
-				if (\core\session\manager::is_loggedinas()) {
-					$realuser = \core\session\manager::get_realuser();
-					$usermenu->add(
-						'<em><i class="fa fa-key"> </i>' .' '. fullname($realuser, true) . get_string('loggedinas', 'theme_flexibase') . fullname($USER, true) . '</em>',
-						new moodle_url('/user/profile.php', array('id' => $USER->id)),
-						get_string('loggedinas', 'theme_flexibase')
-					);
-				} else {
-					$usermenu->add(
-						'<em><i class="fa fa-user"> </i>' .' '. fullname($USER, true) . '</em>',
-						new moodle_url('/user/profile.php', array('id' => $USER->id)),
-						fullname($USER, true)
-					);
-				}
-				if (is_mnet_remote_user($USER) && $idprovider = $DB->get_record('mnet_host', array('id' => $USER->mnethostid))) {
-					$usermenu->add(
-						'<em><i class="fa fa-users"></i>' .' '. get_string('loggedinfrom', 'theme_flexibase') . $idprovider->name . '</em>',
-						new moodle_url($idprovider->wwwroot),
-						get_string('loggedinfrom', 'theme_flexibase')
-					);
-				}
-				if (is_role_switched($course->id)) { // Has switched roles
-					$usermenu->add(
-						'<em><i class="fa fa-users"></i>' .' '. get_string('switchrolereturn') . '</em>',
-						new moodle_url('/course/switchrole.php', array('id' => $course->id, 'sesskey' => sesskey(), 'switchrole' => 0, 'returnurl' => $this->page->url->out_as_local_url(false))),
-						get_string('switchrolereturn')
-					);
-				}
+                if (\core\session\manager::is_loggedinas()) {
+                    $realuser = \core\session\manager::get_realuser();
+                    $usermenu->add(
+                        '<em><i class="fa fa-key"> </i>' .' '. fullname($realuser, true) . get_string('loggedinas', 'theme_flexibase') . fullname($USER, true) . '</em>',
+                        new moodle_url('/user/profile.php', array('id' => $USER->id)),
+                        get_string('loggedinas', 'theme_flexibase')
+                    );
+                } else {
+                    $usermenu->add(
+                        '<em><i class="fa fa-user"> </i>' .' '. fullname($USER, true) . '</em>',
+                        new moodle_url('/user/profile.php', array('id' => $USER->id)),
+                        fullname($USER, true)
+                    );
+                }
+                if (is_mnet_remote_user($USER) && $idprovider = $DB->get_record('mnet_host', array('id' => $USER->mnethostid))) {
+                    $usermenu->add(
+                        '<em><i class="fa fa-users"></i>' .' '. get_string('loggedinfrom', 'theme_flexibase') . $idprovider->name . '</em>',
+                        new moodle_url($idprovider->wwwroot),
+                        get_string('loggedinfrom', 'theme_flexibase')
+                    );
+                }
+                if (is_role_switched($course->id)) { // Has switched roles
+                    $usermenu->add(
+                        '<em><i class="fa fa-users"></i>' .' '. get_string('switchrolereturn') . '</em>',
+                        new moodle_url('/course/switchrole.php', array('id' => $course->id, 'sesskey' => sesskey(), 'switchrole' => 0, 'returnurl' => $this->page->url->out_as_local_url(false))),
+                        get_string('switchrolereturn')
+                    );
+                }
                 $usermenu->add('<hr class="sep">');
 
-				if (has_capability('moodle/user:editownprofile', $context)) {
-					$usermenu->add(
-						'<em><i class="fa fa-user"></i>' .' '. get_string('editmyprofile') . '</em>',
-						new moodle_url('/user/edit.php', array('id' => $USER->id)),
-						get_string('editmyprofile')
-					);
-				}
-				if (has_capability('moodle/user:changeownpassword', $context)) {
-					$usermenu->add(
-						'<em><i class="fa fa-key"></i>' .' '. get_string('changepassword') . '</em>',
-						new moodle_url('/login/change_password.php'),
-						get_string('changepassword')
-					);
-				}
-		        if (has_capability('moodle/user:editownmessageprofile', $context)) {
-					$usermenu->add(
-						'<em><i class="fa fa-comments"></i>' .' '. get_string('messagepreferences', 'theme_essential') . '</em>',
-						new moodle_url('/message/edit.php', array('id' => $USER->id)),
-						get_string('messagepreferences', 'theme_essential')
-					);
-				}
-				if ($CFG->enableblogs) {
-					$usermenu->add(
-						'<em><i class="fa fa-rss-square"></i>' .' '. get_string('blogpreferences', 'theme_essential') . '</em>',
-						new moodle_url('/blog/preferences.php'),
-						get_string('blogpreferences', 'theme_essential')
-					);
-				}
-		        if ($CFG->enablebadges && has_capability('moodle/badges:manageownbadges', $context)) {
-					$usermenu->add(
-						'<em><i class="fa fa-certificate"></i>' .' '. get_string('badgepreferences', 'theme_essential') . '</em>',
-						new moodle_url('/badges/preferences.php'),
-						get_string('badgepreferences', 'theme_essential')
-					);
-				}
+                if (has_capability('moodle/user:editownprofile', $context)) {
+                    $usermenu->add(
+                        '<em><i class="fa fa-user"></i>' .' '. get_string('editmyprofile') . '</em>',
+                        new moodle_url('/user/edit.php', array('id' => $USER->id)),
+                        get_string('editmyprofile')
+                    );
+                }
+                if (has_capability('moodle/user:changeownpassword', $context)) {
+                    $usermenu->add(
+                        '<em><i class="fa fa-key"></i>' .' '. get_string('changepassword') . '</em>',
+                        new moodle_url('/login/change_password.php'),
+                        get_string('changepassword')
+                    );
+                }
+                if (has_capability('moodle/user:editownmessageprofile', $context)) {
+                    $usermenu->add(
+                        '<em><i class="fa fa-comments"></i>' .' '. get_string('messagepreferences', 'theme_essential') . '</em>',
+                        new moodle_url('/message/edit.php', array('id' => $USER->id)),
+                        get_string('messagepreferences', 'theme_essential')
+                    );
+                }
+                if ($CFG->enableblogs) {
+                    $usermenu->add(
+                        '<em><i class="fa fa-rss-square"></i>' .' '. get_string('blogpreferences', 'theme_essential') . '</em>',
+                        new moodle_url('/blog/preferences.php'),
+                        get_string('blogpreferences', 'theme_essential')
+                    );
+                }
+                if ($CFG->enablebadges && has_capability('moodle/badges:manageownbadges', $context)) {
+                    $usermenu->add(
+                        '<em><i class="fa fa-certificate"></i>' .' '. get_string('badgepreferences', 'theme_essential') . '</em>',
+                        new moodle_url('/badges/preferences.php'),
+                        get_string('badgepreferences', 'theme_essential')
+                    );
+                }
 
                 $usermenu->add('<hr class="sep">');
-				// Check if messaging is enabled.
-				if (!empty($CFG->messaging)) {
-					$usermenu->add(
-						'<em><i class="fa fa-envelope"></i>' .' '. get_string('pluginname', 'block_messages') . '</em>',
-						new moodle_url('/message/index.php'),
-						get_string('pluginname', 'block_messages')
-					);
-				}
-				// Check if user is allowed to manage files
-				if (has_capability('moodle/user:manageownfiles', $context)) {
-					$usermenu->add(
-						'<em><i class="fa fa-file"></i>' .' '. get_string('privatefiles', 'block_private_files') . '</em>',
-						new moodle_url('/user/files.php'),
-						get_string('privatefiles', 'block_private_files')
-					);
-				}
-				// Check if user is allowed to view discussions
-				if (has_capability('mod/forum:viewdiscussion', $context)) {
-					$usermenu->add(
-						'<em><i class="fa fa-list-alt"></i>' .' '. get_string('forumposts', 'mod_forum') . '</em>',
-						new moodle_url('/mod/forum/user.php', array('id' => $USER->id)),
-						get_string('forumposts', 'mod_forum')
-					);
-					$usermenu->add(
-						'<em><i class="fa fa-list"></i>' .' '. get_string('discussions', 'mod_forum') . '</em>',
-						new moodle_url('/mod/forum/user.php', array('id' => $USER->id, 'mode' => 'discussions')),
-						get_string('discussions', 'mod_forum')
-					);					
-				}
+                // Check if messaging is enabled.
+                if (!empty($CFG->messaging)) {
+                    $usermenu->add(
+                        '<em><i class="fa fa-envelope"></i>' .' '. get_string('pluginname', 'block_messages') . '</em>',
+                        new moodle_url('/message/index.php'),
+                        get_string('pluginname', 'block_messages')
+                    );
+                }
+                // Check if user is allowed to manage files
+                if (has_capability('moodle/user:manageownfiles', $context)) {
+                    $usermenu->add(
+                        '<em><i class="fa fa-file"></i>' .' '. get_string('privatefiles', 'block_private_files') . '</em>',
+                        new moodle_url('/user/files.php'),
+                        get_string('privatefiles', 'block_private_files')
+                    );
+                }
+                // Check if user is allowed to view discussions
+                if (has_capability('mod/forum:viewdiscussion', $context)) {
+                    $usermenu->add(
+                        '<em><i class="fa fa-list-alt"></i>' .' '. get_string('forumposts', 'mod_forum') . '</em>',
+                        new moodle_url('/mod/forum/user.php', array('id' => $USER->id)),
+                        get_string('forumposts', 'mod_forum')
+                    );
+                    $usermenu->add(
+                        '<em><i class="fa fa-list"></i>' .' '. get_string('discussions', 'mod_forum') . '</em>',
+                        new moodle_url('/mod/forum/user.php', array('id' => $USER->id, 'mode' => 'discussions')),
+                        get_string('discussions', 'mod_forum')
+                    );
+                }
                 $usermenu->add('<hr class="sep">');
-				// Output user grade links course sensitive, workaround for frontpage, selecting first enrolled course
-				if ($course->id == 1) {
-					$hascourses = enrol_get_my_courses(NULL, 'visible DESC,id ASC', 1);
-					foreach ($hascourses as $hascourse) {
-						$reportcontext = context_course::instance($hascourse->id);
-						if (has_capability('gradereport/user:view', $reportcontext) && $hascourse->visible) {
-							$usermenu->add(
-								'<em><i class="fa fa-list-alt"></i>' .' '. get_string('mygrades', 'theme_essential') . '</em>',
-								new moodle_url('/grade/report/overview/index.php' , array('id' => $hascourse->id, 'userid' => $USER->id)),
-								get_string('mygrades', 'theme_essential')
-							);					
-						}
-					}
-				} else if (has_capability('gradereport/user:view', $context)) {
-							$usermenu->add(
-								'<em><i class="fa fa-list-alt"></i>' .' '. get_string('mygrades', 'theme_essential') . '</em>',
-								new moodle_url('/grade/report/overview/index.php' , array('id' => $course->id, 'userid' => $USER->id)),
-								get_string('mygrades', 'theme_essential')
-							);
-							$usermenu->add(
-								'<em><i class="fa fa-list-alt"></i>' .' '. get_string('coursegrades', 'theme_essential') . '</em>',
-								new moodle_url('/grade/report/user/index.php' , array('id' => $course->id, 'userid' => $USER->id)),
-								get_string('coursegrades', 'theme_essential')
-							);					
+                // Output user grade links course sensitive, workaround for frontpage, selecting first enrolled course
+                if ($course->id == 1) {
+                    $hascourses = enrol_get_my_courses(NULL, 'visible DESC,id ASC', 1);
+                    foreach ($hascourses as $hascourse) {
+                        $reportcontext = context_course::instance($hascourse->id);
+                        if (has_capability('gradereport/user:view', $reportcontext) && $hascourse->visible) {
+                            $usermenu->add(
+                                '<em><i class="fa fa-list-alt"></i>' .' '. get_string('mygrades', 'theme_essential') . '</em>',
+                                new moodle_url('/grade/report/overview/index.php' , array('id' => $hascourse->id, 'userid' => $USER->id)),
+                                get_string('mygrades', 'theme_essential')
+                            );
+                        }
+                    }
+                } else if (has_capability('gradereport/user:view', $context)) {
+                            $usermenu->add(
+                                '<em><i class="fa fa-list-alt"></i>' .' '. get_string('mygrades', 'theme_essential') . '</em>',
+                                new moodle_url('/grade/report/overview/index.php' , array('id' => $course->id, 'userid' => $USER->id)),
+                                get_string('mygrades', 'theme_essential')
+                            );
+                            $usermenu->add(
+                                '<em><i class="fa fa-list-alt"></i>' .' '. get_string('coursegrades', 'theme_essential') . '</em>',
+                                new moodle_url('/grade/report/user/index.php' , array('id' => $course->id, 'userid' => $USER->id)),
+                                get_string('coursegrades', 'theme_essential')
+                            );
 
-				}
-				// Check if badges are enabled.
-				if (!empty($CFG->enablebadges) && has_capability('moodle/badges:manageownbadges', $context)) {
-					$usermenu->add(
-						'<em><i class="fa fa-certificate"></i>' .' '. get_string('badges') . '</em>',
-						new moodle_url('/badges/mybadges.php'),
-						get_string('badges')
-					);					
-				}
+                }
+                // Check if badges are enabled.
+                if (!empty($CFG->enablebadges) && has_capability('moodle/badges:manageownbadges', $context)) {
+                    $usermenu->add(
+                        '<em><i class="fa fa-certificate"></i>' .' '. get_string('badges') . '</em>',
+                        new moodle_url('/badges/mybadges.php'),
+                        get_string('badges')
+                    );
+                }
                 $usermenu->add('<hr class="sep">');
-				// Render direct logout link
-					$usermenu->add(
-						'<em><i class="fa fa-sign-out"></i>' .' '. get_string('logout') . '</em>',
-						new moodle_url('/login/logout.php?sesskey=' . sesskey()),
-						get_string('logout')
-					);					
+                // Render direct logout link
+                    $usermenu->add(
+                        '<em><i class="fa fa-sign-out"></i>' .' '. get_string('logout') . '</em>',
+                        new moodle_url('/login/logout.php?sesskey=' . sesskey()),
+                        get_string('logout')
+                    );
 
             } else {
                 $usermenu = $menu->add(get_string('login'), new moodle_url('/login/index.php'), get_string('login'), 10001);
@@ -359,9 +375,9 @@ class theme_flexibase_core_renderer extends core_renderer {
         }
 
         $content = '<ul class="nav navbar-nav navbar-right">';
-				foreach ($menu->get_children() as $item) {
-					$content .= $this->render_custom_menu_item($item, 1);
-				}
+                foreach ($menu->get_children() as $item) {
+                    $content .= $this->render_custom_menu_item($item, 1);
+                }
         return $content.'</ul>';
     }
 
@@ -451,16 +467,4 @@ class theme_flexibase_core_renderer extends core_renderer {
         return parent::box($contents, $classes, $id, $attributes);
     }
 
-    public function content_zoom() {
-        $zoomin = html_writer::span(get_string('fullscreen', 'theme_bootstrap'), 'zoomin');
-        $zoomout = html_writer::span(get_string('closefullscreen', 'theme_bootstrap'), 'zoomout');
-        $content = html_writer::link('#',  $zoomin . $zoomout,
-            array('class' => 'btn btn-default pull-right moodlezoom'));
-        return $content;
-    }
-    
-
 }
-
-
-

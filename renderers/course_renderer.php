@@ -1,5 +1,5 @@
 <?php
-// This file is part of The Bootstrap 3 Moodle theme
+// This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -15,9 +15,18 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Renderers to align Moodle's HTML with that expected by Bootstrap
+ * Theme Flexibase renderer file.
  *
  * @package    theme_flexibase
+ * @author     2015 Richard Oelmann
+ * @copyright  2015 R. Oelmann
+ * @parents    Bootstrap
+ * @copyright  2014 Bas Brands
+ * @credits    Essential - Julian Ridden, Gareth Barnard;
+ *             Elegance - Julian Ridden, Danny Wahl;
+ *             BCU - Jez H, Mike Grant
+ *             Many others for non-specific but vital inspirations,
+ *             suggestions and support
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -62,7 +71,7 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
         $coursename = $chelper->get_course_formatted_name($course);
         $content .= html_writer::start_tag('div', array('class' => 'panel-heading'));
         if($type==1) {
-            
+
             $content .= html_writer::link(new moodle_url('/course/view.php', array('id' => $course->id)),
                     $coursename, array('class' => $course->visible ? '' : 'dimmed', 'title' => $coursename));
         }
@@ -75,10 +84,10 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
                         array('data-toggle' => 'collapse', 'data-parent' => '#frontpage-category-combo'));
             }
         }
-        
+
         if($type==1) {
             $content .= $this->coursecat_coursebox_enrolmenticons($course, $type);
-        }        
+        }
 
         $content .= html_writer::end_tag('div'); // End .panel-heading.
 
@@ -112,7 +121,7 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
         $content .= html_writer::end_tag('div'); // End .panel.
         return $content;
     }
-    
+
     protected function coursecat_coursebox_enrolmenticons($course) {
         $content = '';
         if ($icons = enrol_get_course_info_icons($course)) {
@@ -153,7 +162,7 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
                     $contentimages .= html_writer::link($link, html_writer::empty_tag('img', array('src' => $url)));
                     $contentimages .= html_writer::end_tag('div');
                 } else {
-                    $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center; background-size: contain;'></div>";    
+                    $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center; background-size: contain;'></div>";
                 }
             } else {
                 $image = $this->output->pix_icon(file_file_icon($file, 24), $file->get_filename(), 'moodle');
@@ -170,11 +179,11 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
             $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center; background-size: contain;'></div>";
         }
         $content .= $contentimages. $contentfiles;
-        
+
         if($type==2) {
             $content .= $this->coursecat_coursebox_enrolmenticons($course);
-        }    
-        
+        }
+
         if($type==2) {
             $content .= html_writer::start_tag('div', array('class'=>'coursebox-content'));
             $coursename = $chelper->get_course_formatted_name($course);
@@ -187,18 +196,18 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
         }
         // Display course summary.
         if ($course->has_summary()) {
-            
+
             $summs = $chelper->get_course_formatted_summary($course, array('overflowdiv' => false, 'noclean' => true,
                     'para' => false));
             $summs = strip_tags($summs);
             $var=$PAGE->bodyid;
             if ($var == 'page-site-index') {
-				$truncsum = strlen($summs) > 70 ? substr($summs, 0, 70)."..." : $summs;
-				$content .= html_writer::tag('span', $truncsum, array('title' => $summs));
-			} else {
-				$content .= html_writer::tag('span', $summs, array('title' => $summs));
-			}
-            
+                $truncsum = strlen($summs) > 70 ? substr($summs, 0, 70)."..." : $summs;
+                $content .= html_writer::tag('span', $truncsum, array('title' => $summs));
+            } else {
+                $content .= html_writer::tag('span', $summs, array('title' => $summs));
+            }
+
         }
 
         // Display course contacts. See course_in_list::get_course_contacts().
@@ -233,7 +242,7 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
 
         return $content;
     }
-    
+
     public function course_search_form($value = '', $format = 'plain') {
         static $count = 0;
         $formid = 'coursesearch';
@@ -398,7 +407,7 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
         }
         return $content;
     }
-    
+
         protected function coursecat_category(coursecat_helper $chelper, $coursecat, $depth)
     {
         global $CFG;
