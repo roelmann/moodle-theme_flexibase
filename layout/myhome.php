@@ -30,20 +30,6 @@ include('includes/header.php');
 	<?php include('includes/alerts.php'); ?>
 	
 	<?php include('includes/breadcrumb.php'); ?>
-	
-    <div id="page-header" class="clearfix">
-
-        <div id="course-header">
-            <?php echo $OUTPUT->course_header(); ?>
-        </div>
-        <div id="region-top">
-			<?php
-			if ($knownregiontop) {
-				echo $OUTPUT->blocks('side-top', "sidetop flexcontainer");
-			}
-			?>
-        </div>
-    </div>
 
     <div id="page-content" class="flexcontainer">
         <div id="region-main" class="flexcontentmain <?php echo $layoutoption; ?>">
