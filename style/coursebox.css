@@ -130,7 +130,7 @@
     -o-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
 }
-.panel.hover .coursebtn.submit.btn {
+.coursebtn.submit.btn {
     float: none;
     display: block;
     width: 100%;
@@ -169,10 +169,12 @@
 
 .coursebox.panel {
     position: relative;
-    height: 210px;
+    height: 275px;
     margin-bottom: 20px;
 }
-
+.coursebox .summary {
+	height:130px;
+}
 .coursebox .boxfooter {
     clear: both;
     margin-bottom: 30px;

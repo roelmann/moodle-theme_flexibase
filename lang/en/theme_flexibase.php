@@ -78,8 +78,8 @@ $string['falogodesc'] = 'Please add a FontAwesome icon for the Top NavBar Home l
 This should be a small logo - usually a maximum of 40px high and will replace any FontAwesome icon added in the setting above. If no icon or logo is added, the stadard "home" icon will be used. Adding "o" here and no mini logo below will prevent any logo or icon appearing on the top navbar.<br />A full list of FontAwesome icons can be found at http://fontawesome.io/icons/';
 $string['topbarcolour'] = 'Top NavBar colour';
 $string['topbarcolourdesc'] = 'Top NavBar colour setting - default or inverse colour scheme';
-$string['menunavbarcolour'] = 'Top NavBar colour';
-$string['menunavbarcolourdesc'] = 'Top NavBar colour setting - default or inverse colour scheme';
+$string['menunavbarcolour'] = 'Main Menu NavBar colour';
+$string['menunavbarcolourdesc'] = 'Main Menu NavBar colour setting - default or inverse colour scheme';
 $string['default'] = 'default';
 $string['inverse'] = 'inverse';
 $string['loginbg'] = 'Login Background';
@@ -206,7 +206,7 @@ $string['captiontheme'] = 'Theme primary brand colour';
 /* Marketing Spots */
 $string['marketingheading'] = 'Marketing Spots';
 $string['marketinginfodesc'] = 'Enter the settings for your marketing spot.';
-$string['marketingheadingsub'] = 'Three locations on the front page to add information and links.';
+$string['marketingheadingsub'] = 'Four locations on the front page to add information and links.';
 $string['marketingheight'] = 'Height of Marketing Images';
 $string['marketingheightdesc'] = 'If you want to display images in the Marketing boxes you can specify their height here.';
 $string['marketingdesc'] = 'This theme provides the option of enabling four "marketing" or "ad" spots just under the slideshow.  These allow you to easily identify core information to your users and provide direct links.';
