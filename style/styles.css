@@ -1,3 +1,35 @@
+/* This file is part of Moodle - http://moodle.org/
+ *
+ * Moodle is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Moodle is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/**
+ * Theme Flexibase css file.
+ *
+ * @package    theme_flexibase
+ * @author     2015 Richard Oelmann
+ * @copyright  2015 R. Oelmann
+ * @parents    Bootstrap
+ * @copyright  2014 Bas Brands
+ * @credits    Essential - Julian Ridden, Gareth Barnard;
+ *             Elegance - Julian Ridden, Danny Wahl;
+ *             BCU - Jez H, Mike Grant
+ *             Many others for non-specific but vital inspirations,
+ *             suggestions and support
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('[[font:theme|glyphicons-halflings-regular.eot]]');
@@ -8,9 +40,9 @@
 }
 
 #region-main {
-	background-color: #fff;
-	border: 1px solid #b6c3ea;
-	border-radius: 6px;
+    background-color: #fff;
+    border: 1px solid #b6c3ea;
+    border-radius: 6px;
 }
 input.form-submit, input#id_submitbutton, input#id_submitbutton2, .path-admin .buttons input[type="submit"], td.submit input {
     background-color: #001122;
@@ -18,89 +50,89 @@ input.form-submit, input#id_submitbutton, input#id_submitbutton2, .path-admin .b
     color: #fff;
 }
 .navbar {
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 .navbar-right .dropdown-menu {
     z-index: 2000;
 }
 .navbar-collapse {
-	padding-left:25px;
-	padding-right:25px;
-	}
+    padding-left:25px;
+    padding-right:25px;
+    }
 .navbarbranding {
-//	position:absolute;
-	border-radius:0;
-	margin-bottom:0;
+//  position:absolute;
+    border-radius:0;
+    margin-bottom:0;
 }
 #dock .dockeditem_container {
-	margin-top:67px;
+    margin-top:67px;
 }
 #dockeditempanel {
-	min-width:250px;
+    min-width:250px;
 }
 .block_docked .content {
-	padding: 4px;
+    padding: 4px;
 }
 .dockeditempanel_bd, .dockeditempanel_hd {
-	border:1px solid #000;
+    border:1px solid #000;
 }
 hr.sep {
-	margin-top:0;
-	margin-bottom:0;
+    margin-top:0;
+    margin-bottom:0;
 }
 .navbar-right {
-	margin-right:85px;
+    margin-right:85px;
 }
 .navbaruserpicture {
-	position:absolute;
-	top:5px;
-	right:5px;
+    position:absolute;
+    top:5px;
+    right:5px;
 }
 .navbaruserpicture img {
-	height:100px;
-	width:100px;
-	border-radius:30px;
-	border: 4px ridge #fff;
+    height:100px;
+    width:100px;
+    border-radius:30px;
+    border: 4px ridge #fff;
 }
 .socials {
-	margin-right:80px;
+    margin-right:80px;
 }
 .socials .socialicon {
-	float:right;
+    float:right;
 }
 @media (max-width:1200px) {
-	.navbaruserpicture img {
-		height:75px;
-		width:75px;
-		border-radius:25px;
-		border: 2px ridge #fff;
+    .navbaruserpicture img {
+        height:75px;
+        width:75px;
+        border-radius:25px;
+        border: 2px ridge #fff;
 
-	}
-	.socials {
-		margin-right:65px;
-	}
-	.navbar-right {
-		margin-right:65px;
-	}
+    }
+    .socials {
+        margin-right:65px;
+    }
+    .navbar-right {
+        margin-right:65px;
+    }
 }
 @media (max-width: 768px) {
-	.socials {
-		margin-right:0;
-	}
-	.navbar-right {
-		margin-right:-15px;
-	}
+    .socials {
+        margin-right:0;
+    }
+    .navbar-right {
+        margin-right:-15px;
+    }
 }
 .loginbox .loginpanel {
-	margin-bottom:0;
-	filter:alpha(opacity=90); /* IE */
+    margin-bottom:0;
+    filter:alpha(opacity=90); /* IE */
     -moz-opacity:0.9; /* Mozilla */
-	opacity:0.9;
+    opacity:0.9;
 }
 .loginbox .signuppanel {
-	background-color: #fff;
-	filter:alpha(opacity=80); /* IE */
+    background-color: #fff;
+    filter:alpha(opacity=80); /* IE */
     -moz-opacity:0.8; /* Mozilla */
-	opacity:0.8;
-	border-radius:6px;
+    opacity:0.8;
+    border-radius:6px;
 }

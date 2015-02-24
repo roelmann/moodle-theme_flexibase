@@ -1,3 +1,35 @@
+/* This file is part of Moodle - http://moodle.org/
+ *
+ * Moodle is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Moodle is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/**
+ * Theme Flexibase css file.
+ *
+ * @package    theme_flexibase
+ * @author     2015 Richard Oelmann
+ * @copyright  2015 R. Oelmann
+ * @parents    Bootstrap
+ * @copyright  2014 Bas Brands
+ * @credits    Essential - Julian Ridden, Gareth Barnard;
+ *             Elegance - Julian Ridden, Danny Wahl;
+ *             BCU - Jez H, Mike Grant
+ *             Many others for non-specific but vital inspirations,
+ *             suggestions and support
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
 /* Flexbox Layout CSS
  * TODO - Decide whether to separate vanilla code and fallbacks or keep
  * together
@@ -201,13 +233,13 @@
 .has_dock.empty-region-side-pre.empty-region-side-post .flexcontentpost {
     display: none;
 }
-    
+
 /* RTL positioning of blocks is handled automatically. Just requires
  * margins swapping around.
  * ----------------------------------------------------------------- */
 .dir-rtl #region-main.flexcontentmain {
 /* Nothing to change */
-	}
+    }
 .dir-rtl #block-region-side-pre.flexcontentpre {
     margin-right:0;
     margin-left:10px;
@@ -442,25 +474,25 @@
     margin:5px 5px;
     }
 .maincontentinnerwrap .flexcontentmainpre {
-		-webkit-box-ordinal-group: 2;
-		-moz-box-ordinal-group: 2;
-		-webkit-order: 1;
-		-ms-flex-order: 1;
-		order: 1;
+        -webkit-box-ordinal-group: 2;
+        -moz-box-ordinal-group: 2;
+        -webkit-order: 1;
+        -ms-flex-order: 1;
+        order: 1;
     }
 .maincontentinnerwrap .flexcontentmainpost {
-		-webkit-box-ordinal-group: 4;
-		-moz-box-ordinal-group: 4;
-		-webkit-order: 3;
-		-ms-flex-order: 3;
-		order: 3;
+        -webkit-box-ordinal-group: 4;
+        -moz-box-ordinal-group: 4;
+        -webkit-order: 3;
+        -ms-flex-order: 3;
+        order: 3;
     }
 .maincontentinnerwrap div[role=main] {
-		-webkit-box-ordinal-group: 3;
-		-moz-box-ordinal-group: 3;
-		-webkit-order: 2;
-		-ms-flex-order: 2;
-		order: 2;
+        -webkit-box-ordinal-group: 3;
+        -moz-box-ordinal-group: 3;
+        -webkit-order: 2;
+        -ms-flex-order: 2;
+        order: 2;
     }
 .maincontentwrap .maincontentinnerwrap {
     -webkit-box-ordinal-group: 3;
@@ -509,17 +541,17 @@
     }
 
 .maincontentinnerwrap div[role=main] {
-	max-width:100%;
+    max-width:100%;
 }
 .used-region-side-mainpost .maincontentinnerwrap div[role=main],
 .used-region-side-mainpre .maincontentinnerwrap div[role=main] {
-	max-width:80%;
+    max-width:80%;
 }
 .used-region-side-mainpost.used-region-side-mainpre .maincontentinnerwrap div[role=main] {
-	max-width:60%;
+    max-width:60%;
 }
 .img-responsive {
-	max-width:98%;
+    max-width:98%;
 }
 
 
@@ -528,42 +560,42 @@
  * main body
  */
 @media (max-width: 768px) {
-	#page-content.flexcontainer {
-		-webkit-box-orient: vertical;
-		-moz-box-orient: vertical;
-		-webkit-flex-direction: column;
-		-ms-flex-direction: column;
-		flex-direction: column;
-	}
-	#block-region-side-pre.flexcontentpre,
-	#block-region-side-pre.flexcontentpre.twopost,
-	#block-region-side-pre.flexcontentpre.twopre, 
-	.flexcontentpre.singlepre {
-		width:100%;
-		max-width: none;
-		margin-left:0;
-		margin-right:0;
-		-webkit-box-ordinal-group: 5;
-		-moz-box-ordinal-group: 5;
-		-webkit-order: 4;
-		-ms-flex-order: 4;
-		order: 4;
-	}
-	#block-region-side-post.flexcontentpost,
-	#block-region-side-post.flexcontentpost.twopost,
-	#block-region-side-post.flexcontentpost.twopre,
-	.flexcontentpost.singlepost {
-		width:100%;
-		max-width: none;
-		margin-left:0;
-		margin-right:0;
-		-webkit-box-ordinal-group: 6;
-		-moz-box-ordinal-group: 6;
-		-webkit-order: 5;
-		-ms-flex-order: 5;
-		order: 5;
-	}
-	.maincontentinnerwrap.flexcontainer {
+    #page-content.flexcontainer {
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    #block-region-side-pre.flexcontentpre,
+    #block-region-side-pre.flexcontentpre.twopost,
+    #block-region-side-pre.flexcontentpre.twopre,
+    .flexcontentpre.singlepre {
+        width:100%;
+        max-width: none;
+        margin-left:0;
+        margin-right:0;
+        -webkit-box-ordinal-group: 5;
+        -moz-box-ordinal-group: 5;
+        -webkit-order: 4;
+        -ms-flex-order: 4;
+        order: 4;
+    }
+    #block-region-side-post.flexcontentpost,
+    #block-region-side-post.flexcontentpost.twopost,
+    #block-region-side-post.flexcontentpost.twopre,
+    .flexcontentpost.singlepost {
+        width:100%;
+        max-width: none;
+        margin-left:0;
+        margin-right:0;
+        -webkit-box-ordinal-group: 6;
+        -moz-box-ordinal-group: 6;
+        -webkit-order: 5;
+        -ms-flex-order: 5;
+        order: 5;
+    }
+    .maincontentinnerwrap.flexcontainer {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -592,8 +624,8 @@
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
     align-items: flex-start;
-   	}
-	.maincontentinnerwrap div[role=main] {
+    }
+    .maincontentinnerwrap div[role=main] {
     -webkit-box-ordinal-group: 1;
     -moz-box-ordinal-group: 1;
     -webkit-order: 0;
@@ -607,19 +639,19 @@
     -webkit-align-self: stretch;
     -ms-flex-item-align: stretch;
     align-self: stretch;
-	}
+    }
 .maincontentinnerwrap div[role=main] {
-	max-width:100%;
+    max-width:100%;
 }
 .used-region-side-mainpost .maincontentinnerwrap div[role=main],
 .used-region-side-mainpre .maincontentinnerwrap div[role=main] {
-	max-width:100%;
+    max-width:100%;
 }
 .used-region-side-mainpost.used-region-side-mainpre .maincontentinnerwrap div[role=main] {
-	max-width:100%;
+    max-width:100%;
 }
 
-	.maincontentinnerwrap .flexcontentmainpre {
+    .maincontentinnerwrap .flexcontentmainpre {
     -webkit-box-ordinal-group: 1;
     -moz-box-ordinal-group: 1;
     -webkit-order: 0;
@@ -633,8 +665,8 @@
     -webkit-align-self: stretch;
     -ms-flex-item-align: stretch;
     align-self: stretch;
-	}
-	.maincontentinnerwrap .flexcontentmainpost {
+    }
+    .maincontentinnerwrap .flexcontentmainpost {
     -webkit-box-ordinal-group: 1;
     -moz-box-ordinal-group: 1;
     -webkit-order: 0;
@@ -648,11 +680,11 @@
     -webkit-align-self: stretch;
     -ms-flex-item-align: stretch;
     align-self: stretch;
-	}
-}    
-    
+    }
+}
+
 #region-bottom {
-	margin-top:5px;
+    margin-top:5px;
 }
 .container-fluid {
     margin: 0 auto;
@@ -665,14 +697,14 @@
 .has_dock.empty-region-side-maintop #block-region-side-maintop,
 .has_dock.empty-region-side-mainbottom #block-region-side-mainbottom,
 .has_dock.empty-region-side-top #block-region-side-bottom {
-	display:none;
+    display:none;
 }
 .empty-region-side-mainpre #block-region-side-mainpre,
 .empty-region-side-mainpost #block-region-side-mainpost,
 .empty-region-side-maintop #block-region-side-maintop,
 .empty-region-side-mainbottom #block-region-side-mainbottom,
 .empty-region-side-top #block-region-side-bottom {
-	display:none;
+    display:none;
 }
 /* Browser warnings
  * ---------------- */
@@ -687,5 +719,5 @@
 }
 
 .flexcontainer > img {
-	max-width:250px;
+    max-width:250px;
 }
