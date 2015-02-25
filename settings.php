@@ -40,6 +40,7 @@ defined('MOODLE_INTERNAL') || die;
     include('settings/mainless.php');
     include('settings/additionalless.php');
     include('settings/layoutsettings.php');
+    include('settings/awesomebar.php');
     include('settings/alerts.php');
     include('settings/carousel.php');
     include('settings/marketing.php');

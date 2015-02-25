@@ -35,13 +35,14 @@ $THEME->parents = array('bootstrap');
 $THEME->parents_exclude_sheets = array('bootstrap' => array('moodle','moodle-rtl'));
 
 $THEME->sheets = array(
-//  'base',         //CSS constructed from LESS files with default settings - needs to be removed if using LESS on the fly
+  'base',         //CSS constructed from LESS files with default settings - needs to be removed if using LESS on the fly
     'font-awesome', //Default FA css unaltered from upstream
     'flexlayout',   //Flexibox layout rules
     'alerts',       //Alerts theme styles
     'carousel',     //Carousel theme styles - no core styles as core carousel css is already included in bootstrap
     'marketing',    //Marketing blocks core styles
     'coursebox',    //Course tile listing styles
+    'awesomebar',	//Awesomebar clone of upstream
     'styles',       //Last but one - theme style overrides
     'custom'        //Must be last - contains the css settings to override other css
     );
@@ -53,9 +54,9 @@ $THEME->editor_sheets = array(); //TODO
  * required but this will result in very slow page load times. DO NOT
  * USE for production!
  */
-$THEME->lessfile = 'flexibase';
-$THEME->lessvariablescallback = 'theme_flexibase_less_variables';
-$THEME->extralesscallback = 'theme_flexibase_extra_less';
+//$THEME->lessfile = 'flexibase';
+//$THEME->lessvariablescallback = 'theme_flexibase_less_variables';
+//$THEME->extralesscallback = 'theme_flexibase_extra_less';
 //---------------------
 
 $THEME->doctype = 'html5';                  //Set doctype
@@ -131,19 +132,19 @@ $THEME->layouts = array(
     'login' => array(
         'file' => 'login.php',
         'regions' => array(),
-        'options' => array('langmenu' => true, 'nonavbar' => true),
+        'options' => array('langmenu' => true, 'nonavbar' => true, 'noawesomebar' => true),
     ),
     // Pages that appear in pop-up windows - no navigation, no blocks, no header.
     'popup' => array(
         'file' => 'popup.php',
         'regions' => array(),
-        'options' => array('nofooter' => true, 'nonavbar' => true),
+        'options' => array('nofooter' => true, 'nonavbar' => true, 'noawesomebar' => true),
     ),
     // No blocks and minimal footer - used for legacy frame layouts only!
     'frametop' => array(
         'file' => 'default.php',
         'regions' => array(),
-        'options' => array('nofooter' => true, 'nocoursefooter' => true),
+        'options' => array('nofooter' => true, 'nocoursefooter' => true, 'noawesomebar' => true),
     ),
     // Embeded pages, like iframe/object embeded in moodleform - it needs as much space as possible.
     'embedded' => array(
@@ -161,7 +162,7 @@ $THEME->layouts = array(
     'print' => array(
         'file' => 'default.php',
         'regions' => array(),
-        'options' => array('nofooter' => true, 'nonavbar' => false),
+        'options' => array('nofooter' => true, 'nonavbar' => false, 'noawesomebar' => true),
     ),
     // The pagelayout used when a redirection is occuring.
     'redirect' => array(

@@ -38,7 +38,12 @@
        url('[[font:theme|glyphicons-halflings-regular.ttf]]') format('truetype'),
        url('[[font:theme|glyphicons-halflings-regular.svg]]') format('svg');
 }
-
+body {
+	margin-top:25px;
+}
+body.flexibase_no_awesomebar {
+	margin-top:0;
+}
 #region-main {
     background-color: #fff;
     border: 1px solid #b6c3ea;
@@ -84,6 +89,11 @@ hr.sep {
     margin-right:85px;
 }
 .navbaruserpicture {
+    position:absolute;
+    top:30px;
+    right:5px;
+}
+.flexibase_no_awesomebar .navbaruserpicture {
     position:absolute;
     top:5px;
     right:5px;
