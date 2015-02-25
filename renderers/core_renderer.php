@@ -22,7 +22,7 @@
  * @copyright  2015 R. Oelmann
  * @parents    Bootstrap
  * @copyright  2014 Bas Brands
- * @credits    Essential - Julian Ridden, Gareth Barnard;
+ * @credits    flexibase - Julian Ridden, Gareth Barnard;
  *             Elegance - Julian Ridden, Danny Wahl;
  *             BCU - Jez H, Mike Grant
  *             Many others for non-specific but vital inspirations,
@@ -229,7 +229,7 @@ class theme_flexibase_core_renderer extends core_renderer {
                 $context = context_course::instance($course->id);
                 $userpic = parent::user_picture($USER, array('link' => false));
                 $usermenu = $menu->add(fullname($USER), new moodle_url('#'), fullname($USER), 10001);
-                // RO Added based on Essential
+                // RO Added based on flexibase
                 if (\core\session\manager::is_loggedinas()) {
                     $realuser = \core\session\manager::get_realuser();
                     $usermenu->add(
@@ -276,23 +276,23 @@ class theme_flexibase_core_renderer extends core_renderer {
                 }
                 if (has_capability('moodle/user:editownmessageprofile', $context)) {
                     $usermenu->add(
-                        '<em><i class="fa fa-comments"></i>' .' '. get_string('messagepreferences', 'theme_essential') . '</em>',
+                        '<em><i class="fa fa-comments"></i>' .' '. get_string('messagepreferences', 'theme_flexibase') . '</em>',
                         new moodle_url('/message/edit.php', array('id' => $USER->id)),
-                        get_string('messagepreferences', 'theme_essential')
+                        get_string('messagepreferences', 'theme_flexibase')
                     );
                 }
                 if ($CFG->enableblogs) {
                     $usermenu->add(
-                        '<em><i class="fa fa-rss-square"></i>' .' '. get_string('blogpreferences', 'theme_essential') . '</em>',
+                        '<em><i class="fa fa-rss-square"></i>' .' '. get_string('blogpreferences', 'theme_flexibase') . '</em>',
                         new moodle_url('/blog/preferences.php'),
-                        get_string('blogpreferences', 'theme_essential')
+                        get_string('blogpreferences', 'theme_flexibase')
                     );
                 }
                 if ($CFG->enablebadges && has_capability('moodle/badges:manageownbadges', $context)) {
                     $usermenu->add(
-                        '<em><i class="fa fa-certificate"></i>' .' '. get_string('badgepreferences', 'theme_essential') . '</em>',
+                        '<em><i class="fa fa-certificate"></i>' .' '. get_string('badgepreferences', 'theme_flexibase') . '</em>',
                         new moodle_url('/badges/preferences.php'),
-                        get_string('badgepreferences', 'theme_essential')
+                        get_string('badgepreferences', 'theme_flexibase')
                     );
                 }
 
@@ -334,22 +334,22 @@ class theme_flexibase_core_renderer extends core_renderer {
                         $reportcontext = context_course::instance($hascourse->id);
                         if (has_capability('gradereport/user:view', $reportcontext) && $hascourse->visible) {
                             $usermenu->add(
-                                '<em><i class="fa fa-list-alt"></i>' .' '. get_string('mygrades', 'theme_essential') . '</em>',
+                                '<em><i class="fa fa-list-alt"></i>' .' '. get_string('mygrades', 'theme_flexibase') . '</em>',
                                 new moodle_url('/grade/report/overview/index.php' , array('id' => $hascourse->id, 'userid' => $USER->id)),
-                                get_string('mygrades', 'theme_essential')
+                                get_string('mygrades', 'theme_flexibase')
                             );
                         }
                     }
                 } else if (has_capability('gradereport/user:view', $context)) {
                             $usermenu->add(
-                                '<em><i class="fa fa-list-alt"></i>' .' '. get_string('mygrades', 'theme_essential') . '</em>',
+                                '<em><i class="fa fa-list-alt"></i>' .' '. get_string('mygrades', 'theme_flexibase') . '</em>',
                                 new moodle_url('/grade/report/overview/index.php' , array('id' => $course->id, 'userid' => $USER->id)),
-                                get_string('mygrades', 'theme_essential')
+                                get_string('mygrades', 'theme_flexibase')
                             );
                             $usermenu->add(
-                                '<em><i class="fa fa-list-alt"></i>' .' '. get_string('coursegrades', 'theme_essential') . '</em>',
+                                '<em><i class="fa fa-list-alt"></i>' .' '. get_string('coursegrades', 'theme_flexibase') . '</em>',
                                 new moodle_url('/grade/report/user/index.php' , array('id' => $course->id, 'userid' => $USER->id)),
-                                get_string('coursegrades', 'theme_essential')
+                                get_string('coursegrades', 'theme_flexibase')
                             );
 
                 }
