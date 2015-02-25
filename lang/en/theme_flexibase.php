@@ -299,10 +299,13 @@ $string['sociallinkicondesc'] = 'Enter the fontawesome name of the icon for your
 
 
 // CustomMenu
+$string['badgepreferences'] = 'Badge Preferences';
+$string['blogpreferences'] = 'Blog Preferences';
 $string['mycoursesinfo'] = 'Enrolled courses menu';
 $string['mycoursesinfodesc'] = 'Displays a dynamic list of enrolled courses to the user.';
 $string['displaymycourses'] = 'Display enrolled courses';
 $string['displaymycoursesdesc'] = 'Display enrolled courses for users in the Custom Menu';
+$string['messagepreferences'] = 'Message Preferences';
 $string['mycoursetitle'] = 'Terminology';
 $string['mycoursetitledesc'] = 'Change the terminology for the "My Courses" link in the dropdown menu';
 $string['mycourses'] = 'My courses';
