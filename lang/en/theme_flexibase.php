@@ -320,6 +320,9 @@ $string['loggedinfrom'] = 'Logged in from ';
 $string['mygrades'] = 'My grades';
 $string['coursegrades'] = 'Course grades';
 $string['thiscourse'] = 'This course';
+$string['blogpreferences'] = 'Blog preferences';
+$string['badgepreferences'] = 'Badge preferences';
+$string['messagepreferences'] = 'Message preferences';
 
 
 // Regions

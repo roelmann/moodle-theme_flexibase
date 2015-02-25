@@ -22,7 +22,7 @@
  * @copyright  2015 R. Oelmann
  * @parents    Bootstrap
  * @copyright  2014 Bas Brands
- * @credits    flexibase - Julian Ridden, Gareth Barnard;
+ * @credits    Essential - Julian Ridden, Gareth Barnard;
  *             Elegance - Julian Ridden, Danny Wahl;
  *             BCU - Jez H, Mike Grant
  *             Many others for non-specific but vital inspirations,
@@ -229,7 +229,7 @@ class theme_flexibase_core_renderer extends core_renderer {
                 $context = context_course::instance($course->id);
                 $userpic = parent::user_picture($USER, array('link' => false));
                 $usermenu = $menu->add(fullname($USER), new moodle_url('#'), fullname($USER), 10001);
-                // RO Added based on flexibase
+                // RO Added based on essential
                 if (\core\session\manager::is_loggedinas()) {
                     $realuser = \core\session\manager::get_realuser();
                     $usermenu->add(
