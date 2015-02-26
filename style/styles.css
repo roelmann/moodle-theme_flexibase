@@ -146,3 +146,6 @@ hr.sep {
     opacity:0.8;
     border-radius:6px;
 }
+#awesomebar ul#awesomeHomeMenu > li > span, #awesomebar ul#awesomeHomeMenu > li > a {
+    padding: 2px 8px;
+}
