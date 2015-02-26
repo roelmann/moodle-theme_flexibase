@@ -38,7 +38,7 @@
     $name = 'theme_flexibase/showawesomebar';
     $title = /*get_string('showawesomebar','theme_flexibase')*/'Show Awesomebar';
     $description = /*get_string('showawesomebardesc', 'theme_flexibase')*/ 'Show awesomebar';
-    $default = 1;
+    $default = 0;
     $choices = array(1=>'Yes', 0=>'No');
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $temp->add($setting);
@@ -47,7 +47,7 @@
     $name = 'theme_flexibase/hidesettingsblock';
     $title = get_string('hidesettingsblock','theme_flexibase');
     $description = get_string('hidesettingsblockdesc', 'theme_flexibase');
-    $default = 1;
+    $default = 0;
     $choices = array(1=>'Yes', 0=>'No');
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $temp->add($setting);

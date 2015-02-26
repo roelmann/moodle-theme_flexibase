@@ -31,14 +31,14 @@ body #dock {top:26px; height:auto; bottom:0px;} /* Start dock at bottom of Aweso
 /* Awesomebar - appearance */
 .flexibase-awesome-bar {border-bottom: 1px solid #1a1a1a;}
 .flexibase-awesome-bar .topadminsearchform {float:right;}
-.flexibase-awesome-bar .topadminsearchform input[type="text"] {font-size:0.9em; height:15px; border:1px solid #aaa; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; background:#fff url([[pix:theme|search_icon]]) no-repeat 2px 1px; width:200px; margin:4px 4px 2px 0; padding:1px 0 0 17px;}
+.flexibase-awesome-bar .topadminsearchform input[type="text"] {font-size:0.9em; height:15px; border:1px solid #aaa; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; background:#fff url([[pix:theme|awesomebar/search_icon]]) no-repeat 2px 1px; width:200px; margin:4px 4px 2px 0; padding:1px 0 0 17px;}
 .flexibase-awesome-bar a, .flexibase-awesome-bar a:visited, .flexibase-awesome-bar a:hover, .flexibase-awesome-bar a:link {color:#fff;}
 .flexibase-awesome-bar a:hover {background-color:#76b900;}
 .flexibase-awesome-bar, .flexibase-awesome-bar li {background-color:#333; color:#fff;}
 .flexibase-awesome-bar li:hover {background-color:#595959;}
-.flexibase-awesome-bar ul ul li span, .flexibase-awesome-bar li.clickable-with-children > a {padding:3px 24px; margin:0; text-indent:0; background-image:url([[pix:theme|nav-arrow-right]]); background-position:100% 50%; background-repeat:no-repeat;}
+.flexibase-awesome-bar ul ul li span, .flexibase-awesome-bar li.clickable-with-children > a {padding:3px 24px; margin:0; text-indent:0; background-image:url([[pix:theme|awesomebar/nav-arrow-right]]); background-position:100% 50%; background-repeat:no-repeat;}
 .flexibase-awesome-bar ul ul a {display:block; height:100%; margin:0 0 0 24px; text-indent:-24px; vertical-align:top;}
-.flexibase-awesome-bar ul ul li:hover > span, .flexibase-awesome-bar li.clickable-with-children:hover > a {background-image:url([[pix:theme|ab-arrowover]]);}
+.flexibase-awesome-bar ul ul li:hover > span, .flexibase-awesome-bar li.clickable-with-children:hover > a {background-image:url([[pix:theme|awesomebar/ab-arrowover]]);}
 .flexibase-awesome-bar ul ul li:hover > span {cursor:default;}
 .flexibase-awesome-bar li {border-color:#404040 #1a1a1a #1a1a1a #505050; border-style:solid; border-width:1px;}
 .flexibase-awesome-bar > ul > li.clickable-with-children > a, .flexibase-awesome-bar > ul > li.clickable-with-children:hover > a {padding:2px 8px; background-image:none;}

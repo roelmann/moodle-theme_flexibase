@@ -15,8 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Theme Flexibase renderers file.
- * Link to individual renderer files for easier organisation
+ * Theme Flexibase lib file.
  *
  * @package    theme_flexibase
  * @author     2015 Richard Oelmann
@@ -31,9 +30,36 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+function theme_flexibase_get_course_activities() {
+    GLOBAL $CFG, $PAGE, $OUTPUT;
+    // A copy of block_activity_modules.
+    $course = $PAGE->course;
+    $content = new stdClass();
+    $modinfo = get_fast_modinfo($course);
+    $modfullnames = array();
 
-require_once('renderers/core_renderer.php');
-require_once('renderers/course_renderer.php');
-require_once('renderers/navigation_block_renderer.php');
-require_once('renderers/settings_block_renderer.php');
-require_once('renderers/topsettings_renderer.php');
+    $archetypes = array();
+
+    foreach ($modinfo->cms as $cm) {
+        // Exclude activities which are not visible or have no link (=label).
+        if (!$cm->uservisible or !$cm->has_view()) {
+            continue;
+        }
+        if (array_key_exists($cm->modname, $modfullnames)) {
+            continue;
+        }
+        if (!array_key_exists($cm->modname, $archetypes)) {
+            $archetypes[$cm->modname] = plugin_supports('mod', $cm->modname, FEATURE_MOD_ARCHETYPE, MOD_ARCHETYPE_OTHER);
+        }
+        if ($archetypes[$cm->modname] == MOD_ARCHETYPE_RESOURCE) {
+            if (!array_key_exists('resources', $modfullnames)) {
+                $modfullnames['resources'] = get_string('resources');
+            }
+        } else {
+            $modfullnames[$cm->modname] = $cm->modplural;
+        }
+    }
+    core_collator::asort($modfullnames);
+
+    return $modfullnames;
+}
