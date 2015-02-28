@@ -67,7 +67,7 @@ $THEME->enable_dock = true;                 //Enable docking
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';      //Enable renderer overrides
 $THEME->csspostprocess = 'theme_flexibase_process_css';             //Enable css post processing
 
-$THEME->javascripts_footer[] = 'flexibase_bootstrap';               //JS scripts added to page footer
+//$THEME->javascripts_footer[] = 'flexibase_bootstrap';               //JS scripts added to page footer
 
 /* Theme layouts - identifying regions, options and layout files
  * -------------------------------------------------------------

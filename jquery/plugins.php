@@ -51,8 +51,8 @@ $plugins = array(
     'togglabletabs' => array('files' => array('togglabletabs.js')),
     'affix' => array('files' => array('affix.js')),
     'scrollspy' => array('files' => array('scrollspy.js')),
-
 //    'dropdowns' => array('files' => array('dropdowns.js')), Excluded as this clashes with the parent version and causes the dropdowns in the nav bar to fail
 //    'collapse' => array('files' => array('collapse.js')), Excluded as this clashes with the parent version and causes the nav bar collapse to fail
 
+// 'bootstrapjs' => array('files' => array('bootstrap3_3_2_min.js')),
 );

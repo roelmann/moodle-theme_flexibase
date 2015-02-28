@@ -149,3 +149,64 @@ hr.sep {
 #awesomebar ul#awesomeHomeMenu > li > span, #awesomebar ul#awesomeHomeMenu > li > a {
     padding: 2px 8px;
 }
+
+/* RTL
+ * ---
+ */
+.dir-rtl .flexibase-awesome-bar > ul > li {
+    float: right;
+}
+.dir-rtl .flexibase-awesome-bar .topadminsearchform {
+    float: left;
+}
+.dir-rtl .flexibase-awesome-bar .topadminsearchform input[type="text"] {
+	background:#fff url([[pix:theme|awesomebar/search_icon]]) no-repeat right 1px;
+	padding:1px 17px 0 0;
+}
+.dir-rtl .navbar-header {
+    float: right;
+}
+.dir-rtl .navbar-right {
+    float: left !important;
+    margin-left: 85px;
+}
+.dir-rtl .navbar-nav > li {
+    float: right;
+}
+.dir-rtl .navbaruserpicture {
+    left: 105px;
+    right:100%;
+}
+.dir-rtl header .pull-right {
+	float:left !important;
+}
+.dir-rtl header .pull-left {
+	float:right !important;
+}
+.dir-rtl .socials {
+	margin-right:0;
+	margin-left:85px;
+}
+.dir-rtl .socialicon {
+	float:left;
+}
+.dir-rtl .dropdown-menu {
+    font-size: 14px;
+    list-style: outside none none;
+    text-align: right;
+}
+.dir-rtl .navbar-nav {
+    float: right;
+}
+.dir-rtl .close {
+	float:left;
+}
+.dir-rtl .block .header .block_action {
+    float: left;
+}
+.dir-rtl .breadcrumb-nav {
+    float: right;
+}
+.dir-rtl .breadcrumb-button {
+    float: left;
+}
