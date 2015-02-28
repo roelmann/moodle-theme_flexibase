@@ -43,12 +43,18 @@
         $displaybeforelogin = get_string('displaybeforelogin', 'theme_flexibase');
         $displayafterlogin = get_string('displayafterlogin', 'theme_flexibase');
         $dontdisplay = get_string('dontdisplay', 'theme_flexibase');
-        $default = 'display';
-        $choices = array('1'=>$alwaysdisplay, '2'=>$displaybeforelogin, '3'=>$displayafterlogin, '0'=>$dontdisplay);
+        $default = '1';
+        $choices = array(
+			'1'=>$alwaysdisplay,
+			'2'=>$displaybeforelogin,
+			'3'=>$displayafterlogin,
+			'0'=>$dontdisplay
+		);
         $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $temp->add($setting);
 
+/*		Marketing area title settings hidden as not used in flexibase, but left in for porting to other themes
         $name = 'theme_flexibase/marketingtitle';
         $title = get_string('marketingtitle', 'theme_flexibase');
         $description = get_string('marketingtitledesc', 'theme_flexibase');
@@ -62,6 +68,21 @@
         $description = get_string('marketingtitleicondesc', 'theme_flexibase');
         $default = 'globe';
         $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+*/
+        // Flex Marketing Spots.
+        $name = 'theme_flexibase/flexmarketing';
+        $title = get_string('flexmarketing' , 'theme_flexibase');
+        $description = get_string('flexmarketingdesc', 'theme_flexibase');
+        $flexmkting = get_string('flexmktingspots', 'theme_flexibase');
+        $evenmkting = get_string('evenmktingspots', 'theme_flexibase');
+        $default = '1';
+        $choices = array(
+			'1'=>$flexmkting,
+			'2'=>$evenmkting,
+		);
+        $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $temp->add($setting);
 

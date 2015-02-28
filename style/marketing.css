@@ -74,9 +74,9 @@
     order: 0;
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
-    -webkit-flex: 1 1 25%;
-    -ms-flex: 1 1 25%;
-    flex: 1 1 25%;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
     -webkit-align-self: stretch;
     -ms-flex-item-align: stretch;
     align-self: stretch;
@@ -90,3 +90,19 @@
 .marketing-block-content {
     padding: 5px 10px;
     }
+/* no need for evenmkting1 setting as that is 100% anyway */
+.evenmkting2 .marketing-block {
+    -webkit-flex: 1 1 50%;
+    -ms-flex: 1 1 50%;
+    flex: 1 1 50%;
+}
+.evenmkting3 .marketing-block {
+    -webkit-flex: 1 1 33.3%;
+    -ms-flex: 1 1 33.3%;
+    flex: 1 1 33.3%;
+}
+.evenmkting4 .marketing-block {
+    -webkit-flex: 1 1 25%;
+    -ms-flex: 1 1 25%;
+    flex: 1 1 25%;
+}

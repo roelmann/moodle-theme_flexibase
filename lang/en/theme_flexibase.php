@@ -212,6 +212,10 @@ $string['marketingheightdesc'] = 'If you want to display images in the Marketing
 $string['marketingdesc'] = 'This theme provides the option of enabling four "marketing" or "ad" spots just under the slideshow.  These allow you to easily identify core information to your users and provide direct links.';
 $string['togglemarketing'] = 'Marketing Spot display';
 $string['togglemarketingdesc'] = 'Choose if you wish to hide or show the four Marketing Spots.';
+$string['flexmarketing'] = 'Flex marketing spots';
+$string['flexmarketingdesc'] = 'Set whether marketing spots flex with content or are even widths';
+$string['flexmktingspots'] = 'Flex with content';
+$string['evenmktingspots'] = 'Even width';
 $string['marketingtitleicon'] = 'Heading Icon';
 $string['marketingtitleicondesc'] = 'Name of the icon you wish to use in the heading for the marketing spots. List is <a href="http://fontawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "fa-".';
 $string['marketing1'] = 'Marketing Spot One';

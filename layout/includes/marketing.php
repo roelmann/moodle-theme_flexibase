@@ -23,12 +23,15 @@
  * @author     Based on code originally written by Julian (@moodleman) Ridden, G J Bernard, Mary Evans, Bas Brands, Stuart Lamour and David Scotson.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
- 
+
+$mktingcount=0;
+
  $hasmarketing1 = (!empty($PAGE->theme->settings->marketing1));
  if ($hasmarketing1) {
  	$marketing1title = $PAGE->theme->settings->marketing1;
  	$marketing1icon = $PAGE->theme->settings->marketing1icon;
  	$marketing1content = $PAGE->theme->settings->marketing1content;
+ 	$mktingcount += 1;
  }
  
  $hasmarketing2 = (!empty($PAGE->theme->settings->marketing2));
@@ -36,6 +39,7 @@
  	$marketing2title = $PAGE->theme->settings->marketing2;
  	$marketing2icon = $PAGE->theme->settings->marketing2icon;
  	$marketing2content = $PAGE->theme->settings->marketing2content;
+ 	$mktingcount += 1;
  }
  
  $hasmarketing3 = (!empty($PAGE->theme->settings->marketing3));
@@ -43,6 +47,7 @@
  	$marketing3title = $PAGE->theme->settings->marketing3;
  	$marketing3icon = $PAGE->theme->settings->marketing3icon;
  	$marketing3content = $PAGE->theme->settings->marketing3content;
+ 	$mktingcount += 1;
  }
  
  $hasmarketing4 = (!empty($PAGE->theme->settings->marketing4));
@@ -50,18 +55,25 @@
  	$marketing4title = $PAGE->theme->settings->marketing4;
  	$marketing4icon = $PAGE->theme->settings->marketing4icon;
  	$marketing4content = $PAGE->theme->settings->marketing4content;
+ 	$mktingcount += 1;
  }
- 
+$evenflexmkting='';
+if (!empty($PAGE->theme->settings->flexmarketing)) {
+	if($PAGE->theme->settings->flexmarketing == 2) {
+		$evenflexmkting = 'evenmkting'.$mktingcount;
+	}
+}
  ?>
 
 	<div id="page-marketing" class="">
-<?php /*		<h2 class="marketingheader panel-title header">
+<?php /* Section hidden as not used in flexibase but left in for porting to other themes.
+		<h2 class="marketingheader panel-title header">
 			<i class="fa fa-<?php echo $PAGE->theme->settings->marketingtitleicon ?>"></i>
 			<?php echo $PAGE->theme->settings->marketingtitle ?>
 		</h2>
 		*/ ?>
 		
-		<div class="marketing-wrapper">
+		<div class="marketing-wrapper <?php echo $evenflexmkting; ?>">
 
 			<!-- Start Spot One -->
 			<?php if ($hasmarketing1) { ?>
