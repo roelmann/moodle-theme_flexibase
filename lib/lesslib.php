@@ -108,3 +108,11 @@ function theme_flexibase_less_variables($theme) {
 
     return $variables;
 }
+function theme_flexibase_extra_less ($theme) {
+	$extraless = '';
+	if (!empty($theme->settings->customless)) {
+        $extraless = $theme->settings->customless;
+    }
+    
+    return $extraless;
+}

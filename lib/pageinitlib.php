@@ -57,5 +57,4 @@ function theme_flexibase_page_init(moodle_page $page) {
 //    $page->requires->jquery_plugin('collapse', 'theme_flexibase');Excluded as this clashes with the parent version and causes the nav bar collapse to fail
 
 //    $page->requires->jquery_plugin('bootstrap3_3_2_min', 'theme_flexibase');
-
 }

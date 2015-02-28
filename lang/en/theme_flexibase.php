@@ -39,8 +39,6 @@ $string['configtitle'] = 'FlexiBase';
 
 
 $string['pluginname'] = 'FlexiBase';
-$string['customcss'] = 'Custom CSS';
-$string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
 
 // Regions
 $string['region-side-post'] = 'Right';
@@ -58,6 +56,7 @@ $string['region-side-bottom'] = 'Bottom';
 $string['readme_title'] = 'FlexiBase read-me';
 $string['readme_desc'] = 'Please {$a->url} containing more information about the FlexiBase theme.';
 $string['readme_click'] = 'click for README.txt';
+
 // General.
 $string['genericsettings'] = 'General';
 $string['generalheadingsub'] = 'General settings';
@@ -84,6 +83,9 @@ $string['default'] = 'default';
 $string['inverse'] = 'inverse';
 $string['loginbg'] = 'Login Background';
 $string['loginbgdesc'] = 'Login Page Background image - should be around 1200x800px';
+$string['customcss'] = 'Custom CSS';
+$string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
+
 // Brand Colour Settings.
 $string['lessbrandsettings'] = 'Main Brand Colours';
 $string['lessbrandsub'] = 'Main Brand Colours';
@@ -104,10 +106,9 @@ $string['white'] = 'White';
 $string['whitedesc'] = 'White setting - Default will be #fff, but this can be adapted if there is a need to adjust contrast levels';
 $string['graybase'] = 'Gray Base';
 $string['graybasedesc'] = 'Gray Base setting - Default will be #000, but this can be adapted if there is a need to adjust contrast levels';
-$string['lessadditionalsettings'] = 'Additional Colours';
-$string['lessadditionalsub'] = 'Additional Colours';
+$string['lessadditionalsettings'] = 'Additional LESS';
+$string['lessadditionalsub'] = 'Additional LESS Settings';
 $string['lessadditionaldesc'] = 'Additional for the theme - These are the secondary colours, usually lighter/darker forms of the primary colours - these should proably only be adjusted where contrast levels need changing because of choice of brand colours.<br />These settings have been left as a text field so that LESS rules can be added (as per the default) but they can also set an html colour name, hex value or rgb/rgba colour value.<br /><b>NOTE:</b> An error or typo in these fields can cause the LESS compiler to fail and for the page to be returned with no CSS applied. <b style="background-color:yellow;">TODO</b> Error trapping for these entries - difficult as there are many optional styles of entry, LESS - which could include mixins, html names, hex, rgb(a)';
-
 $string['brandprimarylight'] = 'Brand Primary Light';
 $string['brandprimarylightdesc'] = 'Brand Primary Light';
 $string['brandprimarylighter'] = 'Brand Primary Lighter';
@@ -134,6 +135,11 @@ $string['graylighter'] = 'Gray Lighter';
 $string['graylighterdesc'] = 'Gray Lighter';
 $string['graylightest'] = 'Gray Lightest';
 $string['graylightestdesc'] = 'Gray Lightest';
+$string['customless'] = 'Custom LESS';
+$string['customlessdesc'] = 'Whatever LESS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
+$string['lessvarclick'] = 'LESS Variables file';
+$string['lessvariablesfile'] = 'LESS Variables';
+$string['lessvariablesfiledesc'] = 'For reference purposes when editing the additional LESS settings or CustomLESS, please click to see a text version of the {$a->url}';
 
 // Layouts
 $string['layoutheading'] = 'Layout';
@@ -168,6 +174,7 @@ $string['alerttextdesc'] = 'What is the text you wish to display in your alert.'
 $string['alert_info'] = 'Information';
 $string['alert_warning'] = 'Warning';
 $string['alert_general'] = 'Announcement';
+
 // Carousel.
 $string['carouselheading'] = 'Carousel Slideshow';
 $string['carouselheadingsub'] = 'Set images and captions for the frontpage carousel';
@@ -203,6 +210,7 @@ $string['captionbackgroundcolourdesc'] = 'Colour for the carousel slide caption 
 $string['captionlight'] = 'Light background';
 $string['captiondark'] = 'Dark background';
 $string['captiontheme'] = 'Theme primary brand colour';
+
 /* Marketing Spots */
 $string['marketingheading'] = 'Marketing Spots';
 $string['marketinginfodesc'] = 'Enter the settings for your marketing spot.';
@@ -234,6 +242,7 @@ $string['marketingbuttontext'] = 'Link Text';
 $string['marketingbuttontextdesc'] = 'Text to appear on the button.';
 $string['marketingbuttonurl'] = 'Link URL';
 $string['marketingbuttonurldesc'] = 'URL the button will point to.';
+
 //CourseBox rendering
 $string['frontpagecoursesettings'] = 'Frontpage Courses';
 $string['frontpagesettingsheading'] = 'Frontpage rendering';
@@ -248,6 +257,7 @@ $string['rendereroverlayfontcolour'] = 'Overlay font colour';
 $string['rendereroverlayfontcolourdesc'] = 'The colour of the font, when hovering over a coursebox with "Tiles w/ overlay" renderer enabled.';
 $string['frontpagerendererdefaultimage'] = 'Default course image';
 $string['frontpagerendererdefaultimagedesc'] = 'The default image to use when no course image is found, (only applies for Tiles w/ overlay)';
+
 // Category Icons.
 $string['categoryiconheading'] = 'Category icons';
 $string['categoryiconheadingsub'] = 'Use icons to represent your categories';
@@ -263,6 +273,7 @@ $string['enablecustomcategoryicon'] = 'Enable custom category icons';
 $string['enablecustomcategoryicondesc'] = 'If enabled below this section you will see each category with a customizable option behind each category, please save after enabling and disabling this option.';
 $string['categoryiconinfo'] = 'Set custom category icons';
 $string['categoryiconinfodesc'] = 'Enter the name of the icon you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after "fa-".';
+
 /* Social Networks */
 $string['socialheading'] = 'Social Networking';
 $string['socialheadingsub'] = 'Engage your users with social networking.';
@@ -300,7 +311,6 @@ $string['sociallink'] = 'Custom Social Link';
 $string['sociallinkdesc'] = 'Enter the URL of your your custom social media link. (i.e http://www.moodleman.net)';
 $string['sociallinkicon'] = 'Link Icon';
 $string['sociallinkicondesc'] = 'Enter the fontawesome name of the icon for your link<br />A full list of FontAwesome icons can be found at http://fontawesome.io/icons/';
-
 
 // CustomMenu
 $string['mycoursesinfo'] = 'Enrolled courses menu';

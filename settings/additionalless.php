@@ -151,5 +151,21 @@
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+    
+    // Custom LESS file.
+    $name = 'theme_flexibase/customless';
+    $title = get_string('customless', 'theme_flexibase');
+    $description = get_string('customlessdesc', 'theme_flexibase');
+    $default = '';
+    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    $variables = new moodle_url('/theme/flexibase/readmes/lessvariables.txt');
+    $variables = html_writer::link($variables, get_string('lessvarclick', 'theme_flexibase'), array('target' => '_blank'));
+    
+    $temp->add(new admin_setting_heading('theme_flexibase_lessvariables', get_string('lessvariablesfile', 'theme_flexibase'),
+        get_string('lessvariablesfiledesc', 'theme_flexibase', array('url' => $variables))));
+
 
     $ADMIN->add('theme_flexibase', $temp);
