@@ -29,15 +29,15 @@
  *             suggestions and support
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
- 
+
     // Awesomebar / Navigation heading
-    $temp = new admin_settingpage('theme_flexibase_awesomebar', 'AwesomeBar'/*get_string('alertsheading', 'theme_flexibase')*/);
-    $temp->add(new admin_setting_heading('themedecafawesombarsettings', get_string('awesomebarsettings', 'theme_flexibase'), get_string('awesomebarsettingsdesc', 'theme_flexibase')));
+    $temp = new admin_settingpage('theme_flexibase_awesomebar', get_string('awesomebarheading', 'theme_flexibase'));
+    $temp->add(new admin_setting_heading('themeflexibaseawesombarsettings', get_string('awesomebarsettings', 'theme_flexibase'), get_string('awesomebarsettingsdesc', 'theme_flexibase')));
 
     // Show Awesomebar
     $name = 'theme_flexibase/showawesomebar';
-    $title = /*get_string('showawesomebar','theme_flexibase')*/'Show Awesomebar';
-    $description = /*get_string('showawesomebardesc', 'theme_flexibase')*/ 'Show awesomebar';
+    $title = get_string('showawesomebar','theme_flexibase');
+    $description = get_string('showawesomebardesc', 'theme_flexibase');
     $default = 0;
     $choices = array(1=>'Yes', 0=>'No');
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);

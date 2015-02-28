@@ -324,6 +324,9 @@ $string['blogpreferences'] = 'Blog preferences';
 $string['badgepreferences'] = 'Badge preferences';
 $string['messagepreferences'] = 'Message preferences';
 //AwesomeBar
+$string['awesomebarheading'] = 'AwesomeBar Settings';
+$string['showawesomebar'] = 'Show AwesomeBar';
+$string['awesomebarheading'] = 'Show Awesomebar';
 $string['hidesettingsblock'] = 'Hide Settings block';
 $string['hidesettingsblockdesc'] = 'This setting removes the standard Settings block from all pages.';
 $string['hidenavigationblock'] = 'Hide Navigation block';
