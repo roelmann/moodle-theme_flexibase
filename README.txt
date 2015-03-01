@@ -17,4 +17,3 @@ at the same time has simplfied the code.
 For more info on Boostrap 3 themes read
 https://github.com/bmbrands/theme_bootstrap/blob/master/README.md
 
-
