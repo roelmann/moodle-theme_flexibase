@@ -54,6 +54,7 @@ a.logo {
     float: left;
     height: [[minilogoheight]];
     width: [[minilogowidth]];
+    margin-right:5px;
 }
 .dir-rtl .navbar-image {
     background: url([[setting:minilogo]]) no-repeat;

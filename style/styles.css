@@ -61,9 +61,16 @@ input.form-submit, input#id_submitbutton, input#id_submitbutton2, .path-admin .b
     z-index: 2000;
 }
 .navbar-collapse {
-    padding-left:25px;
+    padding-left:5px;
     padding-right:25px;
     }
+body.has_dock .navbar-collapse {
+	padding-left:40px;
+}
+.navbar-nav > li > a {
+	padding-left:0;
+	padding-right:30px;
+}
 .navbarbranding {
 //  position:absolute;
     border-radius:0;
@@ -109,6 +116,15 @@ hr.sep {
 }
 .socials .socialicon {
     float:right;
+}
+.headerlogo {
+	padding-left:5px;
+}
+body.has_dock .moodleheader .container-fluid {
+	padding-left:0px;
+}
+.navbar-header {
+	margin:0 5px !important;
 }
 @media (max-width:1200px) {
     .navbaruserpicture img {
