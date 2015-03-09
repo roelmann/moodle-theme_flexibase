@@ -33,9 +33,9 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2015022800;
+$plugin->version   = 2015030100;
 $plugin->requires  = 2014051200;
-$plugin->release  = 2015022800;
+$plugin->release  = 2015030100; //CodeName: StDavid
 $plugin->maturity  = MATURITY_BETA;
 $plugin->component = 'theme_flexibase';
 $plugin->dependencies = array(
