@@ -721,3 +721,10 @@
 .flexcontainer > img {
     max-width:250px;
 }
+/* IE9 Fallback - blocks will appear in a single full width column
+.no-flexbox #block-region-side-pre,
+.no-flexbox #block-region-side-post,
+.no-flexbox #block-region-side-mainpre,
+.no-flexbox #block-region-side-mainpost {
+	max-width:100%;
+}
