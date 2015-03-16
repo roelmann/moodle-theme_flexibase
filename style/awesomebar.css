@@ -76,3 +76,32 @@ body #dock {top:26px; height:auto; bottom:0px;} /* Start dock at bottom of Aweso
     #awesomebar.touchmode-active .topadminsearchform {width:90%;float:none;margin:0 auto;text-align:center;}
     #awesomebar.touchmode-active .search-box input {width:80%; height:24px;background-position:2px 4px;}
 }
+
+/* RTL
+ * --- */
+ 
+/* Awesomebar - workings and structure */
+.dir-rtl .flexibase-awesome-bar {right:0;}
+.dir-rtl .flexibase-awesome-bar > ul > li {float:right; padding:0;}
+.dir-rtl .flexibase-awesome-bar li.clickable-with-children > a {padding:4px 23px 4px 2px;}
+.dir-rtl .flexibase-awesome-bar ul.dropdown li:hover > ul, .dir-rtl .flexibase-awesome-bar ul.dropdown li.extended-hover > ul {right:100%;}
+.dir-rtl .flexibase-awesome-bar ul.dropdown > li:hover > ul, .dir-rtl .flexibase-awesome-bar ul.dropdown > li.extended-hover > ul {right:0;}
+
+/* Awesomebar - appearance */
+.dir-rtl  .flexibase-awesome-bar .topadminsearchform {float:left;}
+.dir-rtl .flexibase-awesome-bar .topadminsearchform input[type="text"] {font-size:0.9em; height:15px; border:1px solid #aaa; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; background:#fff url([[pix:theme|awesomebar/search_icon]]) no-repeat 2px 1px; width:200px; margin:4px 0 2px 4px; padding:1px 17px 0 0;}
+.dir-rtl .flexibase-awesome-bar ul ul li span, .dir-rtl .flexibase-awesome-bar li.clickable-with-children > a {padding:3px 24px; margin:0; text-indent:0; background-image:url([[pix:theme|awesomebar/nav-arrow-left]]); background-position:0 50%; background-repeat:no-repeat;}
+.dir-rtl .flexibase-awesome-bar ul ul li:hover > span, .flexibase-awesome-bar li.clickable-with-children:hover > a {background-image:url([[pix:theme|awesomebar/ab-arrowover-rtl]]);}
+.dir-rtl .flexibase-awesome-bar ul ul a {margin:0 24px 0 0;}
+.dir-rtl .flexibase-awesome-bar li {border-color:#404040 #505050 #1a1a1a #1a1a1a #505050;}
+.dir-rtl .flexibase-awesome-bar > ul > li.clickable-with-children > a, .flexibase-awesome-bar > ul > li.clickable-with-children:hover > a {padding:2px 8px; background-image:none;}
+
+/* Custom menu */
+.dir-rtl #awesomebar > .nav {margin-left:0;}
+.dir-rtl .navbar .flexibase-awesome-bar .nav > li > .dropdown-menu a {margin-right:24px;padding-right:24px;}
+
+/* Touch-/Mobile-Friendly Awesomebar replacement */
+@media(max-width:767px){
+    .dir-rtl #awesomebar.touchmode-active {right:5%;}
+    .dir-rtl #awesomebar.touchmode-active ul.dropdown li:hover > ul {right:0;}
+}
