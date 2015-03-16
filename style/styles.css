@@ -250,12 +250,19 @@ caption {
     float: left !important;
     margin-left: 85px;
 }
+.dir-rtl .navbar-nav > li > a {
+    padding-left: 30px;
+    padding-right: 0;
+}
 .dir-rtl .navbar-nav > li {
     float: right;
 }
 .dir-rtl .navbaruserpicture {
     left: 105px;
     right:100%;
+}
+body.has_dock.dir-rtl .navbar-collapse {
+    padding-right: 40px;
 }
 .dir-rtl header .pull-right {
 	float:left !important;

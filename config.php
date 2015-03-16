@@ -35,7 +35,7 @@ $THEME->parents = array('bootstrap');
 $THEME->parents_exclude_sheets = array('bootstrap' => array('moodle','moodle-rtl'));
 
 $THEME->sheets = array(
-//  'base',         //CSS constructed from LESS files with default settings - needs to be removed if using LESS on the fly
+  'base',         //CSS constructed from LESS files with default settings - needs to be removed if using LESS on the fly
     'font-awesome', //Default FA css unaltered from upstream
     'flexlayout',   //Flexibox layout rules
     'alerts',       //Alerts theme styles
@@ -54,9 +54,9 @@ $THEME->editor_sheets = array(); //TODO
  * required but this will result in very slow page load times. DO NOT
  * USE for production!
  */
-$THEME->lessfile = 'flexibase';
-$THEME->lessvariablescallback = 'theme_flexibase_less_variables';
-$THEME->extralesscallback = 'theme_flexibase_extra_less';
+//$THEME->lessfile = 'flexibase';
+//$THEME->lessvariablescallback = 'theme_flexibase_less_variables';
+//$THEME->extralesscallback = 'theme_flexibase_extra_less';
 //---------------------
 
 $THEME->doctype = 'html5';                  //Set doctype

@@ -17,7 +17,11 @@ if ($enable1alert || $enable2alert || $enable3alert) {
                 <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
                 <?php
                 $alert1icon = 'alert' . theme_flexibase_get_setting('alert1type');
-                echo $$alert1icon . '<span class="title">' . theme_flexibase_get_setting('alert1title', true) . '</span>' . theme_flexibase_get_setting('alert1text', true); ?>
+                if ('ltr' === get_string('thisdirection', 'langconfig')) {
+					echo $$alert1icon . '<span class="title">' . theme_flexibase_get_setting('alert1title', true) . '</span>' . theme_flexibase_get_setting('alert1text', true);
+				} else {
+					echo $$alert1icon . theme_flexibase_get_setting('alert1text', true). '<span class="title">' . theme_flexibase_get_setting('alert1title', true) . '</span>';
+				} ?>
             </div>
         <?php } ?>
 
@@ -27,7 +31,11 @@ if ($enable1alert || $enable2alert || $enable3alert) {
                 <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
                 <?php
                 $alert2icon = 'alert' . theme_flexibase_get_setting('alert2type');
-                echo $$alert2icon . '<span class="title">' . theme_flexibase_get_setting('alert2title', true) . '</span>' . theme_flexibase_get_setting('alert2text', true); ?>
+                if ('ltr' === get_string('thisdirection', 'langconfig')) {
+					echo $$alert2icon . '<span class="title">' . theme_flexibase_get_setting('alert2title', true) . '</span>' . theme_flexibase_get_setting('alert2text', true);
+				} else {
+					echo $$alert2icon . theme_flexibase_get_setting('alert2text', true). '<span class="title">' . theme_flexibase_get_setting('alert2title', true) . '</span>';
+				} ?>
             </div>
         <?php } ?>
 
@@ -37,7 +45,11 @@ if ($enable1alert || $enable2alert || $enable3alert) {
                 <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
                 <?php
                 $alert3icon = 'alert' . theme_flexibase_get_setting('alert3type');
-                echo $$alert3icon . '<span class="title">' . theme_flexibase_get_setting('alert3title', true) . '</span>' . theme_flexibase_get_setting('alert3text', true); ?>
+                if ('ltr' === get_string('thisdirection', 'langconfig')) {
+					echo $$alert3icon . '<span class="title">' . theme_flexibase_get_setting('alert3title', true) . '</span>' . theme_flexibase_get_setting('alert3text', true);
+				} else {
+					echo $$alert3icon . theme_flexibase_get_setting('alert3text', true). '<span class="title">' . theme_flexibase_get_setting('alert3title', true) . '</span>';
+				} ?>
             </div>
         <?php } ?>
         <!-- End Alerts -->
