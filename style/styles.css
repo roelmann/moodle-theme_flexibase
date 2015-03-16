@@ -192,7 +192,7 @@ body.has_dock .moodleheader .container-fluid {
     text-align: left;
 }
 .dir-rtl .mform fieldset.collapsed legend a.fheader {
-    background-image: url("/moodlemaster/theme/image.php?theme=flexibase&component=core&image=t%2Fcollapsed_rtl");
+    background-image: url([[pix:core|t/collapsed_rtl]]);
 }
 .mform fieldset.collapsible legend a.fheader {
     margin-left: -5px;
@@ -214,7 +214,7 @@ body.has_dock .moodleheader .container-fluid {
     margin-right:4px;
 }
 .dir-rtl .collapsible-actions .collapseexpand {
-    background-image: url("/moodlemaster/theme/image.php?theme=flexibase&component=core&image=t%2Fcollapsed");
+    background-image: url([[pix:core|t/collapsed_rtl]]);
     background-position: right center;
     background-repeat: no-repeat;
     padding-right: 20px;
@@ -227,7 +227,7 @@ dir-rtl .userenrolment .col_userdetails .subfield_picture {
     margin: 0 5px;
 }
 .dir-rtl .ygtvtn, .dir-rtl .ygtvtm, .dir-rtl .ygtvtmh, .dir-rtl .ygtvtmhh, .dir-rtl .ygtvtp, .dir-rtl .ygtvtph, .dir-rtl .ygtvtphh, .dir-rtl .ygtvln, .dir-rtl .ygtvlm, .dir-rtl .ygtvlmh, .dir-rtl .ygtvlmhh, .dir-rtl .ygtvlp, .dir-rtl .ygtvlph, .dir-rtl .ygtvlphh, .dir-rtl .ygtvdepthcell, .dir-rtl .ygtvok, .dir-rtl .ygtvok:hover, .dir-rtl .ygtvcancel, .dir-rtl .ygtvcancel:hover {
-    background-image: url("/moodlemaster/theme/image.php?theme=flexibase&component=theme&image=yui2-treeview-sprite-rtl");
+    background-image: url([[pix:core|yui2-treeview-sprite-rtl]]);
 }
 caption {
     text-align: center;
