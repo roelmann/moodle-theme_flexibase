@@ -33,6 +33,7 @@
 /* Copy of entire css used when turning LESS compiling off during development
  * -------------------------------------------------------------------------- */
 
+
 @import "//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700";
 html {
     font-family: sans-serif;
@@ -14504,8 +14505,4 @@ header {
 }
 .block .header h2 {
     color: #ffffff;
-}
-@font-face {
-    font-family: "Glyphicons Halflings";
-    src: url("/moodlemaster/theme/font.php?theme=flexibase&component=theme&font=glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("/moodlemaster/theme/font.php?theme=flexibase&component=theme&font=glyphicons-halflings-regular.woff") format("woff"), url("/moodlemaster/theme/font.php?theme=flexibase&component=theme&font=glyphicons-halflings-regular.ttf") format("truetype"), url("/moodlemaster/theme/font.php?theme=flexibase&component=theme&font=glyphicons-halflings-regular.svg") format("svg");
 }
