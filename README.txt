@@ -17,6 +17,8 @@ About this theme
 This is the flexibase theme for Moodle. It is a Bootstrap3 theme, but uses
 flexbox to create the layouts, rather than the bootstrap grid.
 
+This theme depends upon Bas Brands bootstrap theme for bootstrap3.
+
 The aim of the theme is to provide an experimental format for making use of the
 flexbox css layouts to provide greater options for administrators and to simplify
 the layout code when considering rtl languages, editing on/off, use of side-bars
