@@ -15,6 +15,23 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Theme Flexibase layout file.
+ *
+ * @package    theme_flexibase
+ * @author     2015 Richard Oelmann
+ * @copyright  2015 R. Oelmann
+ * @parents    Bootstrap
+ * @copyright  2014 Bas Brands
+ * @credits    Essential - Julian Ridden, Gareth Barnard;
+ *             Elegance - Julian Ridden, Danny Wahl;
+ *             BCU - Jez H, Mike Grant
+ *             Decaf - Paul Nichols
+ *             Many others for non-specific but vital inspirations,
+ *             suggestions and support
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+/**
  * This layout file is designed maintenance related tasks such as upgrade and installation of plugins.
  *
  * It's ultra important that this layout file makes no use of API's unless it absolutely needs to.
