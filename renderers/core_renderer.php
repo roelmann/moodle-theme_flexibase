@@ -33,7 +33,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-/**
+/*
  * Renderers to align Moodle's HTML with that expected by Bootstrap
  *
  * @package    theme_flexibase
@@ -95,7 +95,7 @@ class theme_flexibase_core_renderer extends core_renderer {
 
     public function navbar() {
         $items = $this->page->navbar->get_items();
-        if (empty($items)) { // MDL-46107
+        if (empty($items)) { // MDL-46107.
             return '';
         }
         $breadcrumbs = '';
@@ -111,7 +111,7 @@ class theme_flexibase_core_renderer extends core_renderer {
         // are configured in the global theme settings page.
         global $CFG;
 
-        if (empty($custommenuitems) && !empty($CFG->custommenuitems)) { // MDL-45507
+        if (empty($custommenuitems) && !empty($CFG->custommenuitems)) { // MDL-45507.
             $custommenuitems = $CFG->custommenuitems;
         }
         $custommenu = new custom_menu($custommenuitems, current_language());
@@ -149,7 +149,9 @@ class theme_flexibase_core_renderer extends core_renderer {
             if ($sortedcourses) {
                 foreach ($sortedcourses as $course) {
                     if ($course->visible) {
-                        $branch->add(format_string($course->fullname), new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
+                        $branch->add(format_string($course->fullname),
+                                new moodle_url('/course/view.php?id='.$course->id),
+                                format_string($course->shortname));
                     }
                 }
             } else {
@@ -198,7 +200,7 @@ class theme_flexibase_core_renderer extends core_renderer {
         return $content.'</ul>';
     }
 
-    public function flexibase_user_menu($user = NULL, $withlinks = NULL) {
+    public function flexibase_user_menu($user = null, $withlinks = null) {
         global $CFG;
         $usermenu = new custom_menu('', current_language());
         return $this->flexibase_render_user_menu($usermenu);
@@ -230,7 +232,7 @@ class theme_flexibase_core_renderer extends core_renderer {
                 $context = context_course::instance($course->id);
                 $userpic = parent::user_picture($USER, array('link' => false));
                 $usermenu = $menu->add(fullname($USER), new moodle_url('#'), fullname($USER), 10001);
-                // RO Added based on essential
+                // RO Added based on Essential.
                 if (\core\session\manager::is_loggedinas()) {
                     $realuser = \core\session\manager::get_realuser();
                     $usermenu->add(
@@ -247,15 +249,19 @@ class theme_flexibase_core_renderer extends core_renderer {
                 }
                 if (is_mnet_remote_user($USER) && $idprovider = $DB->get_record('mnet_host', array('id' => $USER->mnethostid))) {
                     $usermenu->add(
-                        '<em><i class="fa fa-users"></i>' .' '. get_string('loggedinfrom', 'theme_flexibase') . $idprovider->name . '</em>',
+                        '<em><i class="fa fa-users"></i>' .' '. get_string('loggedinfrom', 'theme_flexibase')
+                                . $idprovider->name . '</em>',
                         new moodle_url($idprovider->wwwroot),
                         get_string('loggedinfrom', 'theme_flexibase')
                     );
                 }
-                if (is_role_switched($course->id)) { // Has switched roles
+                if (is_role_switched($course->id)) { // Has switched roles.
                     $usermenu->add(
                         '<em><i class="fa fa-users"></i>' .' '. get_string('switchrolereturn') . '</em>',
-                        new moodle_url('/course/switchrole.php', array('id' => $course->id, 'sesskey' => sesskey(), 'switchrole' => 0, 'returnurl' => $this->page->url->out_as_local_url(false))),
+                        new moodle_url('/course/switchrole.php', array('id' => $course->id,
+                                                                       'sesskey' => sesskey(),
+                                                                       'switchrole' => 0,
+                                                                       'returnurl' => $this->page->url->out_as_local_url(false))),
                         get_string('switchrolereturn')
                     );
                 }
@@ -306,7 +312,7 @@ class theme_flexibase_core_renderer extends core_renderer {
                         get_string('pluginname', 'block_messages')
                     );
                 }
-                // Check if user is allowed to manage files
+                // Check if user is allowed to manage files.
                 if (has_capability('moodle/user:manageownfiles', $context)) {
                     $usermenu->add(
                         '<em><i class="fa fa-file"></i>' .' '. get_string('privatefiles', 'block_private_files') . '</em>',
@@ -314,7 +320,7 @@ class theme_flexibase_core_renderer extends core_renderer {
                         get_string('privatefiles', 'block_private_files')
                     );
                 }
-                // Check if user is allowed to view discussions
+                // Check if user is allowed to view discussions.
                 if (has_capability('mod/forum:viewdiscussion', $context)) {
                     $usermenu->add(
                         '<em><i class="fa fa-list-alt"></i>' .' '. get_string('forumposts', 'mod_forum') . '</em>',
@@ -328,9 +334,9 @@ class theme_flexibase_core_renderer extends core_renderer {
                     );
                 }
                 $usermenu->add('<hr class="sep">');
-                // Output user grade links course sensitive, workaround for frontpage, selecting first enrolled course
+                // Output user grade links course sensitive, workaround for frontpage, selecting first enrolled course.
                 if ($course->id == 1) {
-                    $hascourses = enrol_get_my_courses(NULL, 'visible DESC,id ASC', 1);
+                    $hascourses = enrol_get_my_courses(null, 'visible DESC,id ASC', 1);
                     foreach ($hascourses as $hascourse) {
                         $reportcontext = context_course::instance($hascourse->id);
                         if (has_capability('gradereport/user:view', $reportcontext) && $hascourse->visible) {
@@ -363,7 +369,7 @@ class theme_flexibase_core_renderer extends core_renderer {
                     );
                 }
                 $usermenu->add('<hr class="sep">');
-                // Render direct logout link
+                // Render direct logout link.
                     $usermenu->add(
                         '<em><i class="fa fa-sign-out"></i>' .' '. get_string('logout') . '</em>',
                         new moodle_url('/login/logout.php?sesskey=' . sesskey()),
@@ -376,9 +382,9 @@ class theme_flexibase_core_renderer extends core_renderer {
         }
 
         $content = '<ul class="nav navbar-nav navbar-right">';
-                foreach ($menu->get_children() as $item) {
-                    $content .= $this->render_custom_menu_item($item, 1);
-                }
+        foreach ($menu->get_children() as $item) {
+            $content .= $this->render_custom_menu_item($item, 1);
+        }
         return $content.'</ul>';
     }
 

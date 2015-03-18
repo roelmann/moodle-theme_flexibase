@@ -38,7 +38,7 @@ class theme_flexibase_dummy_page extends moodle_page {
      */
     public function set_context($context) {
         if ($context === null) {
-            // extremely ugly hack which sets context to some value in order to prevent warnings,
+            // Extremely ugly hack which sets context to some value in order to prevent warnings,
             // use only for core error handling!!!!
             if (!$this->_context) {
                 $this->_context = context_system::instance();
@@ -92,7 +92,7 @@ class theme_flexibase_expand_navigation extends global_navigation {
             $this->expandtocourses = false;
         }
 
-        if(function_exists('enrol_user_sees_own_courses')) {
+        if (function_exists('enrol_user_sees_own_courses')) {
             // Determine if the user is enrolled in any course.
             $enrolledinanycourse = enrol_user_sees_own_courses();
 
@@ -115,8 +115,8 @@ class theme_flexibase_expand_navigation extends global_navigation {
 
     public function expand($branchtype, $id) {
         global $CFG, $DB, $PAGE, $USER;
-        static $flexibase_course_activities = array();
-        // Branchtype will be one of navigation_node::TYPE_*
+        static $flexibasecourseactivities = array();
+        // Branchtype will be one of navigation_node::TYPE_*.
         switch ($branchtype) {
             case self::TYPE_ROOTNODE :
             case self::TYPE_SITE_ADMIN :
@@ -144,7 +144,7 @@ class theme_flexibase_expand_navigation extends global_navigation {
                 if (!empty($CFG->navcourselimit)) {
                     $limit = (int)$CFG->navcourselimit;
                 }
-                $courses = $DB->get_records('course', array('category' => $id), 'sortorder','*', 0, $limit);
+                $courses = $DB->get_records('course', array('category' => $id), 'sortorder', '*', 0, $limit);
                 foreach ($courses as $course) {
                     $this->add_course($course);
                 }
@@ -152,7 +152,7 @@ class theme_flexibase_expand_navigation extends global_navigation {
             case self::TYPE_COURSE :
                 $course = $DB->get_record('course', array('id' => $id), '*', MUST_EXIST);
                 try {
-                    if(!array_key_exists($course->id, $this->expandedcourses)) {
+                    if (!array_key_exists($course->id, $this->expandedcourses)) {
                         $coursenode = $this->add_course($course);
                         if (!$coursenode) {
                             break;
@@ -165,13 +165,14 @@ class theme_flexibase_expand_navigation extends global_navigation {
                         $coursecontext = context_course::instance($course->id);
                         $this->page->set_context($coursecontext);
                         $this->add_course_essentials($coursenode, $course);
-                        if ($PAGE->course->id == $course->id && (!method_exists($this, 'format_display_course_content') || $this->format_display_course_content($course->format))) {
+                        if ($PAGE->course->id == $course->id && (!method_exists($this, 'format_display_course_content')
+                                || $this->format_display_course_content($course->format))) {
                             if (is_enrolled($coursecontext, $USER, '', true)) {
                                 $this->expandedcourses[$course->id] = $this->expand_course($course, $coursenode);
                             }
                         }
                     }
-                } catch(require_login_exception $rle) {
+                } catch (require_login_exception $rle) {
                     $coursenode = $this->add_course($course);
                 }
                 break;
@@ -183,7 +184,7 @@ class theme_flexibase_expand_navigation extends global_navigation {
                 $course = $DB->get_record_sql($sql, array($id), MUST_EXIST);
                 try {
                     $this->page->set_context(context_course::instance($course->id));
-                    if(!array_key_exists($course->id, $this->expandedcourses)) {
+                    if (!array_key_exists($course->id, $this->expandedcourses)) {
                         $coursenode = $this->add_course($course);
                         if (!$coursenode) {
                             break;
@@ -192,30 +193,34 @@ class theme_flexibase_expand_navigation extends global_navigation {
                         $this->expandedcourses[$course->id] = $this->expand_course($course, $coursenode);
                     }
                     if (property_exists($PAGE->theme->settings, 'expandtoactivities') && $PAGE->theme->settings->expandtoactivities) {
-                        if(!array_key_exists($course->id, $flexibase_course_activities)) {
+                        if (!array_key_exists($course->id, $flexibasecourseactivities)) {
                             list($sectionarray, $activities) = $this->generate_sections_and_activities($course);
-                            $flexibase_course_activities[$course->id] = $activities;
+                            $flexibasecourseactivities[$course->id] = $activities;
                         }
                         $sections = $this->expandedcourses[$course->id];
-                        $activities = $flexibase_course_activities[$course->id];
+                        $activities = $flexibasecourseactivities[$course->id];
 
-                        if (!array_key_exists($course->sectionnumber, $sections)) break;
+                        if (!array_key_exists($course->sectionnumber, $sections)) {
+                            break;
+                        }
                         $section = $sections[$course->sectionnumber];
-                        if (is_null($section) || is_null($section->sectionnode)) break;
+                        if (is_null($section) || is_null($section->sectionnode)) {
+                            break;
+                        }
                         $activitynodes = $this->load_section_activities($section->sectionnode, $course->sectionnumber, $activities);
-                        foreach ($activitynodes as $id=>$node) {
-                            // load all section activities now
-                            $cm_stub = new stdClass();
-                            $cm_stub->id = $id;
-                            $this->load_activity($cm_stub, $course, $node);
+                        foreach ($activitynodes as $id => $node) {
+                            // Load all section activities now.
+                            $cmstub = new stdClass();
+                            $cmstub->id = $id;
+                            $this->load_activity($cmstub, $course, $node);
                         }
                     }
-                } catch(require_login_exception $rle) {
+                } catch (require_login_exception $rle) {
                     $coursenode = $this->add_course($course);
                 }
                 break;
             case self::TYPE_ACTIVITY :
-                // Now expanded above, as part of the section expansion
+                // Now expanded above, as part of the section expansion.
                 break;
             default:
                 throw new Exception('Unknown type');
@@ -226,15 +231,17 @@ class theme_flexibase_expand_navigation extends global_navigation {
     private function expand_course(stdClass $course, navigation_node $coursenode) {
         $sectionnodes = $this->load_course_sections($course, $coursenode);
         if (empty($sectionnodes)) {
-            // 2.4 compat - load_course_sections no longer returns the list of sections
+            // 2.4 compat - load_course_sections no longer returns the list of sections.
             $sectionnodes = array();
             foreach ($coursenode->children as $node) {
-                if($node->type != self::TYPE_SECTION) continue;
+                if ($node->type != self::TYPE_SECTION) {
+                    continue;
+                }
                 $section = new stdClass();
                 $section->sectionnode = $node;
-                // Get section number out of action URL (it doesn't seem to be available elsewhere!)
+                // Get section number out of action URL (it doesn't seem to be available elsewhere!).
                 $hasparams = false;
-                if (!empty($node->action) && $params = $node->action->params()){
+                if (!empty($node->action) && $params = $node->action->params()) {
                     $hasparams = true;
                 }
                 if ($hasparams && array_key_exists('section', $params)) {
@@ -259,7 +266,7 @@ class theme_flexibase_expand_navigation extends global_navigation {
      */
     protected function load_section_activities(navigation_node $sectionnode, $sectionnumber, array $activities, $course = null) {
         global $CFG, $SITE;
-        // A static counter for JS function naming
+        // A static counter for JS function naming.
         static $legacyonclickcounter = 0;
 
         $activitynodes = array();
@@ -285,7 +292,7 @@ class theme_flexibase_expand_navigation extends global_navigation {
                 $icon = new pix_icon('icon', get_string('modulename', $activity->modname), $activity->modname);
             }
 
-            // Prepare the default name and url for the node
+            // Prepare the default name and url for the node.
             $activityname = format_string($activity->name, true, array('context' => context_module::instance($activity->id)));
             $action = new moodle_url($activity->url);
 
@@ -335,7 +342,7 @@ class theme_flexibase_expand_navigation extends global_navigation {
             list($sql, $params) = $DB->get_in_or_equal($categoryids);
             $categories = $DB->get_recordset_select('course_categories', 'id '.$sql.' AND parent <> 0', $params, 'sortorder, id', 'id, path');
             foreach ($categories as $category) {
-                $bits = explode('/', trim($category->path,'/'));
+                $bits = explode('/', trim($category->path, '/'));
                 $toplevelcats[$category->id] = $bits[0];
                 $categoryids[] = array_shift($bits);
             }
@@ -357,7 +364,7 @@ class theme_flexibase_expand_navigation extends global_navigation {
             foreach ($courses as $course) {
                 $node = $this->add_course($course, false, self::COURSE_MY);
                 if (!$this->rootnodes['mycourses']->find($node->key, self::TYPE_COURSE)) {
-                    // Hasn't been added to this node
+                    // Hasn't been added to this node.
                     $this->rootnodes['mycourses']->add_node($node);
                 }
             }
@@ -371,7 +378,7 @@ class theme_flexibase_expand_navigation extends global_navigation {
      * @param navigation_node $parent
      */
     protected function add_category(stdClass $category, navigation_node $parent, $nodetype = self::TYPE_CATEGORY) {
-        if ((!$this->expandtocourses && $parent->key=='courses') || $parent->find($category->id, self::TYPE_CATEGORY)) {
+        if ((!$this->expandtocourses && $parent->key == 'courses') || $parent->find($category->id, self::TYPE_CATEGORY)) {
             return;
         }
         $url = new moodle_url('/course/category.php', array('id' => $category->id));
@@ -404,7 +411,7 @@ class theme_flexibase_expand_navigation extends global_navigation {
 
         if ($course->id != $SITE->id && !$course->visible) {
             if (is_role_switched($course->id)) {
-                // user has to be able to access course in order to switch, let's skip the visibility test here
+                // User has to be able to access course in order to switch, let's skip the visibility test here.
             } else if (!has_capability('moodle/course:viewhiddencourses', $coursecontext)) {
                 return false;
             }
@@ -412,7 +419,7 @@ class theme_flexibase_expand_navigation extends global_navigation {
 
         $shortname = format_string($course->shortname, true, array('context' => $coursecontext));
 
-        $url = new moodle_url('/course/view.php', array('id'=>$course->id));
+        $url = new moodle_url('/course/view.php', array('id' => $course->id));
 
         $coursenode = $parent->add($shortname, $url, self::TYPE_COURSE, $shortname, $course->id);
         $coursenode->nodetype = self::NODETYPE_BRANCH;

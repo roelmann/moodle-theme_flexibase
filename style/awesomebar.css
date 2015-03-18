@@ -101,7 +101,7 @@ body #dock {top:26px; height:auto; bottom:0px;} /* Start dock at bottom of Aweso
 
 /* RTL
  * --- */
- 
+
 /* Awesomebar - workings and structure */
 .dir-rtl .flexibase-awesome-bar {right:0;}
 .dir-rtl .flexibase-awesome-bar > ul > li {float:right; padding:0;}

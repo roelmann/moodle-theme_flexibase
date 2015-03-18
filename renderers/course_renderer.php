@@ -42,7 +42,7 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
         global $CFG, $OUTPUT;
         $type = theme_flexibase_get_setting('frontpagerenderer');
         $additionalcss = '';
-        if($type==2) {
+        if ($type == 2) {
             $additionalcss = 'hover';
         }
         if ($OUTPUT->body_id() != 'page-site-index') {
@@ -71,7 +71,7 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
         $content .= "<a href='$urlb'>";
         $coursename = $chelper->get_course_formatted_name($course);
         $content .= html_writer::start_tag('div', array('class' => 'panel-heading'));
-        if($type==1) {
+        if ($type == 1) {
 
             $content .= html_writer::link(new moodle_url('/course/view.php', array('id' => $course->id)),
                     $coursename, array('class' => $course->visible ? '' : 'dimmed', 'title' => $coursename));
@@ -86,7 +86,7 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
             }
         }
 
-        if($type==1) {
+        if ($type == 1) {
             $content .= $this->coursecat_coursebox_enrolmenticons($course, $type);
         }
 
@@ -135,8 +135,8 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
         return $content;
     }
 
-    // Type - 1 = No Overlay
-    // Type - 2 = Overlay
+    // Type - 1 = No Overlay.
+    // Type - 2 = Overlay.
     protected function coursecat_coursebox_content(coursecat_helper $chelper, $course, $type=1) {
         global $CFG, $OUTPUT, $PAGE;
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
@@ -157,7 +157,7 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
                     '/'. $file->get_contextid(). '/'. $file->get_component(). '/'.
                     $file->get_filearea(). $file->get_filepath(). $file->get_filename(), !$isimage);
             if ($isimage) {
-                if($type==1) {
+                if ($type == 1) {
                     $contentimages .= html_writer::start_tag('div', array('class' => 'courseimage'));
                     $link = new moodle_url('/course/view.php', array('id' => $course->id));
                     $contentimages .= html_writer::link($link, html_writer::empty_tag('img', array('src' => $url)));
@@ -174,25 +174,25 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
                         array('class' => 'coursefile fp-filename-icon'));
             }
         }
-        if(strlen($contentimages)==0 && $type==2) {
-            // Default image
+        if (strlen($contentimages) == 0 && $type == 2) {
+            // Default image.
             $url = $PAGE->theme->setting_file_url('frontpagerendererdefaultimage', 'frontpagerendererdefaultimage');
             $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center; background-size: contain;'></div>";
         }
         $content .= $contentimages. $contentfiles;
 
-        if($type==2) {
+        if ($type == 2) {
             $content .= $this->coursecat_coursebox_enrolmenticons($course);
         }
 
-        if($type==2) {
-            $content .= html_writer::start_tag('div', array('class'=>'coursebox-content'));
+        if ($type == 2) {
+            $content .= html_writer::start_tag('div', array('class' => 'coursebox-content'));
             $coursename = $chelper->get_course_formatted_name($course);
             $content .= html_writer::tag('h3', html_writer::link(new moodle_url('/course/view.php', array('id' => $course->id)),
                     $coursename, array('class' => $course->visible ? '' : 'dimmed', 'title' => $coursename)));
         }
         $content .= html_writer::start_tag('div', array('class' => 'summary'));
-        if(ISSET($coursename)) {
+        if (ISSET($coursename)) {
             $content .= html_writer::tag('p', html_writer::tag('b', $coursename));
         }
         // Display course summary.
@@ -201,7 +201,7 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
             $summs = $chelper->get_course_formatted_summary($course, array('overflowdiv' => false, 'noclean' => true,
                     'para' => false));
             $summs = strip_tags($summs);
-            $var=$PAGE->bodyid;
+            $var = $PAGE->bodyid;
             if ($var == 'page-site-index') {
                 $truncsum = strlen($summs) > 70 ? substr($summs, 0, 70)."..." : $summs;
                 $content .= html_writer::tag('span', $truncsum, array('title' => $summs));
@@ -236,7 +236,7 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
                 $content .= html_writer::end_tag('div'); // Coursecat.
             }
         }
-        if($type==2) {
+        if ($type == 2) {
             $content .= html_writer::end_tag('div');
         }
         $content .= html_writer::tag('div', '', array('class' => 'boxfooter')); // Coursecat.
@@ -409,16 +409,15 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
         return $content;
     }
 
-        protected function coursecat_category(coursecat_helper $chelper, $coursecat, $depth)
-    {
+    protected function coursecat_category(coursecat_helper $chelper, $coursecat, $depth) {
         global $CFG;
-        // open category tag
+        // Open category tag.
         $classes = array('category');
         if (empty($coursecat->visible)) {
             $classes[] = 'dimmed_category';
         }
         if ($chelper->get_subcat_depth() > 0 && $depth >= $chelper->get_subcat_depth()) {
-            // do not load content
+            // Do not load content.
             $categorycontent = '';
             $classes[] = 'notloaded';
             if ($coursecat->get_children_count() ||
@@ -428,7 +427,7 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
                 $classes[] = 'collapsed';
             }
         } else {
-            // load category content
+            // Load category content.
             $categorycontent = $this->coursecat_category_content($chelper, $coursecat, $depth);
             $classes[] = 'loaded';
             if (!empty($categorycontent)) {
@@ -456,21 +455,20 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
                 array('title' => get_string('numberofcourses'), 'class' => 'numberofcourse'));
         }
 
-
-        // category name
+        // Category name.
         $categoryname = html_writer::tag('span', $coursecat->get_formatted_name());
 
         $categoryiconnum = 'categoryicon' . $coursecat->id;
 
-        // Do a settings check to output our icon for the category
+        // Do a settings check to output our icon for the category.
         if (theme_flexibase_get_setting('enablecategoryicon')) {
             if (theme_flexibase_get_setting($categoryiconnum) &&
                 theme_flexibase_get_setting('enablecustomcategoryicon')
             ) {
-                // User has set a value for the category
+                // User has set a value for the category.
                 $val = theme_flexibase_get_setting($categoryiconnum);
             } else {
-                // User hasn't set a value for the category, get the default
+                // User hasn't set a value for the category, get the default.
                 $val = theme_flexibase_get_setting('defaultcategoryicon');
             }
         }
@@ -486,12 +484,12 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
         $content .= html_writer::start_tag('div', array('class' => 'info'));
 
         $content .= html_writer::tag(($depth > 1) ? 'h4' : 'h3', $categoryname, array('class' => 'categoryname'));
-        $content .= html_writer::end_tag('div'); // .info
+        $content .= html_writer::end_tag('div');
 
-        // add category content to the output
+        // Add category content to the output.
         $content .= html_writer::tag('div', $categorycontent, array('class' => 'content'));
 
-        $content .= html_writer::end_tag('div'); // .category
+        $content .= html_writer::end_tag('div');
         return $content;
     }
 }

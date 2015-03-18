@@ -39,36 +39,36 @@ if (!empty($PAGE->theme->settings->frontpagelayout)) {
 
 $hasmarketing = (empty($PAGE->theme->settings->togglemarketing)) ? false : $PAGE->theme->settings->togglemarketing;
 
-include('includes/preheaderlogic.php');
-include('includes/header.php');
+require('includes/preheaderlogic.php');
+require('includes/header.php');
 ?>
 
 <div id="page" class="container-fluid">
-    <?php include('includes/alerts.php'); ?>
+    <?php require('includes/alerts.php'); ?>
 
     <div id="page-header" class="clearfix">
         <!-- Start Carousel -->
         <?php
         $toggleslideshow = theme_flexibase_get_setting('toggleslideshow');
         if ($toggleslideshow == 1) {
-            include('includes/carousel2.php');
+            require('includes/carousel2.php');
         } else if ($toggleslideshow == 2 && !isloggedin()) {
-            include('includes/carousel2.php');
+            require('includes/carousel2.php');
         } else if ($toggleslideshow == 3 && isloggedin()) {
-            include('includes/carousel2.php');
+            require('includes/carousel2.php');
         }
         ?>
         <!-- End Carousel -->
 
         <!-- Start Marketing Spots -->
         <?php
-            if($hasmarketing==1) {
-                require_once(dirname(__FILE__).'/includes/marketing.php');
-            } else if($hasmarketing==2 && !isloggedin()) {
-                require_once(dirname(__FILE__).'/includes/marketing.php');
-            } else if($hasmarketing==3 && isloggedin()) {
-                require_once(dirname(__FILE__).'/includes/marketing.php');
-            }
+        if ($hasmarketing == 1) {
+            require_once(dirname(__FILE__).'/includes/marketing.php');
+        } else if ($hasmarketing == 2 && !isloggedin()) {
+            require_once(dirname(__FILE__).'/includes/marketing.php');
+        } else if ($hasmarketing == 3 && isloggedin()) {
+            require_once(dirname(__FILE__).'/includes/marketing.php');
+        }
         ?>
         <!-- End Marketing Spots -->
 
@@ -119,7 +119,7 @@ include('includes/header.php');
         </div>
         <?php
         if ($hassidepre || $hassidepost) {
-        if ($layoutoption=="singlepre") {
+            if ($layoutoption == "singlepre") {
             ?>
                 <aside class="flexcontentpre <?php echo $layoutoption; ?>">
                     <?php
@@ -132,7 +132,7 @@ include('includes/header.php');
                     ?>
                 </aside>
             <?php
-        } elseif  ($layoutoption=="singlepost") {
+            } else if ($layoutoption == "singlepost") {
             ?>
                 <aside class="flexcontentpost <?php echo $layoutoption; ?>">
                     <?php
@@ -145,14 +145,14 @@ include('includes/header.php');
                     ?>
                 </aside>
             <?php
-        } else {
-            if ($knownregionpre && $hassidepre) {
-                echo $OUTPUT->blocks('side-pre', "flexcontentpre $layoutoption");
+            } else {
+                if ($knownregionpre && $hassidepre) {
+                    echo $OUTPUT->blocks('side-pre', "flexcontentpre $layoutoption");
+                }
+                if ($knownregionpost && $hassidepost) {
+                    echo $OUTPUT->blocks('side-post', "flexcontentpost $layoutoption");
+                }
             }
-            if ($knownregionpost && $hassidepost) {
-                echo $OUTPUT->blocks('side-post', "flexcontentpost $layoutoption");
-            }
-        }
         }
         ?>
     </div>
@@ -165,7 +165,7 @@ include('includes/header.php');
     </div>
 
     <?php
-    include('includes/footer.php');
+    require('includes/footer.php');
     ?>
     <!-- Initialize slideshow -->
 <script type="text/javascript">

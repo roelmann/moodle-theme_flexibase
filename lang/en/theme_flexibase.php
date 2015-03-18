@@ -36,10 +36,12 @@ $string['choosereadme'] = '
 <p>However, it uses flexbox layouts for the main layout component areas, rather than bootstrap grids in order to provide an easy way for admins to manage a wide variety of layouts on their site through the theme settings pages, without needing to customise any code.</p><p class="alert-warning"><b>NOTE:</b> These layout options are not applied in browsers which do not support Flexbox at all such as IE 9 and below. Flexbox legacy and prefixed versions are supported.</p>';
 
 $string['configtitle'] = 'FlexiBase';
-
 $string['pluginname'] = 'FlexiBase';
 
-// Regions
+$string['noflexbox'] = 'Your Browser does not support Flexbox layouts, so some of the features and layouts of this theme may not be available to you. For best results please upgrade your browser (IE10+, Firefox22+, Chrome21+, Safari7+)';
+$string['legacyflexbox'] = 'Your Browser supports legacy flexbox layouts, so while you should be able to use this theme as intended, some of the features and layouts of this theme may not be available to you. For best results please upgrade your browser (IE10+, Firefox22+, Chrome21+, Safari7+)';
+
+// Regions.
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
 
@@ -50,7 +52,7 @@ $string['region-side-mainbottom'] = 'Main Content Bottom';
 $string['region-side-top'] = 'Top';
 $string['region-side-bottom'] = 'Bottom';
 
-// Settings
+// Settings.
 // Readme.
 $string['readme_title'] = 'FlexiBase read-me';
 $string['readme_desc'] = 'Please {$a->url} containing more information about the FlexiBase theme.';
@@ -140,7 +142,7 @@ $string['lessvarclick'] = 'LESS Variables file';
 $string['lessvariablesfile'] = 'LESS Variables';
 $string['lessvariablesfiledesc'] = 'For reference purposes when editing the additional LESS settings or CustomLESS, please click to see a text version of the {$a->url}';
 
-// Layouts
+// Layouts.
 $string['layoutheading'] = 'Layout';
 $string['layoutheadingsub'] = 'Set the layouts used by pages in your site';
 $string['layoutdesc'] = '<p>There are 5 layouts available for your site pages:</p>
@@ -210,7 +212,7 @@ $string['captionlight'] = 'Light background';
 $string['captiondark'] = 'Dark background';
 $string['captiontheme'] = 'Theme primary brand colour';
 
-/* Marketing Spots */
+// Marketing Spots.
 $string['marketingheading'] = 'Marketing Spots';
 $string['marketinginfodesc'] = 'Enter the settings for your marketing spot.';
 $string['marketingheadingsub'] = 'Four locations on the front page to add information and links.';
@@ -242,7 +244,7 @@ $string['marketingbuttontextdesc'] = 'Text to appear on the button.';
 $string['marketingbuttonurl'] = 'Link URL';
 $string['marketingbuttonurldesc'] = 'URL the button will point to.';
 
-//CourseBox rendering
+// CourseBox rendering.
 $string['frontpagecoursesettings'] = 'Frontpage Courses';
 $string['frontpagesettingsheading'] = 'Frontpage rendering';
 $string['frontpagedesc'] = 'Configure the way that the course boxes are rendered on the frontpage.';
@@ -273,7 +275,7 @@ $string['enablecustomcategoryicondesc'] = 'If enabled below this section you wil
 $string['categoryiconinfo'] = 'Set custom category icons';
 $string['categoryiconinfodesc'] = 'Enter the name of the icon you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after "fa-".';
 
-/* Social Networks */
+// Social Networks.
 $string['socialheading'] = 'Social Networking';
 $string['socialheadingsub'] = 'Engage your users with social networking.';
 $string['socialdesc'] = 'Provide direct links to the core social networks that promote your brand.  These will appear in the header of every page.';
@@ -311,7 +313,7 @@ $string['sociallinkdesc'] = 'Enter the URL of your your custom social media link
 $string['sociallinkicon'] = 'Link Icon';
 $string['sociallinkicondesc'] = 'Enter the fontawesome name of the icon for your link<br />A full list of FontAwesome icons can be found at http://fontawesome.io/icons/';
 
-// CustomMenu
+// CustomMenu.
 $string['mycoursesinfo'] = 'Enrolled courses menu';
 $string['mycoursesinfodesc'] = 'Displays a dynamic list of enrolled courses to the user.';
 $string['displaymycourses'] = 'Display enrolled courses';
@@ -336,7 +338,8 @@ $string['thiscourse'] = 'This course';
 $string['blogpreferences'] = 'Blog preferences';
 $string['badgepreferences'] = 'Badge preferences';
 $string['messagepreferences'] = 'Message preferences';
-//AwesomeBar
+
+// AwesomeBar.
 $string['awesomebarheading'] = 'AwesomeBar Settings';
 $string['showawesomebar'] = 'Show AwesomeBar';
 $string['showawesomebardesc'] = 'Show Awesomebar';
@@ -359,22 +362,14 @@ $string['coursesleafonlydesc'] = 'On sites with large numbers of courses, genera
 $string['alwaysexpandsiteadmin'] = 'Always populate site administration menu';
 $string['alwaysexpandsiteadmindesc'] = 'Enabling this option will populate the Site Administration menu (if applicable), at the expense of performance.';
 
-
-// Regions
+// Regions.
 $string['preandpost'] = 'Pre and Post sidebars';
 $string['twopre'] = 'Two sidebars - Pre';
 $string['twopost'] = 'Two sidebars - Post';
 $string['singlepre'] = 'Single sidebar - Pre';
 $string['singlepost'] = 'Single sidebar - Post';
 
-
-
-
-
-
-
-// Colours
+// Colours.
 $string['colorheading'] = 'Colour';
 $string['colorheadingsub'] = 'Set the colours used in your theme';
 $string['colordesc'] = 'Here you can find various settings to change many of the colours found in this theme.';
-

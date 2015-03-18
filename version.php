@@ -33,10 +33,10 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2015030100;
+$plugin->version   = 2015031800;
 $plugin->requires  = 2014051200;
-$plugin->release  = 2015030100; //CodeName: StDavid
-$plugin->maturity  = MATURITY_BETA;
+$plugin->release  = 2015031800;
+$plugin->maturity  = MATURITY_RC;
 $plugin->component = 'theme_flexibase';
 $plugin->dependencies = array(
     'theme_bootstrap'  => 2014051300

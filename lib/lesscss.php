@@ -52,10 +52,9 @@ function theme_flexibase_process_css($css, $theme) {
     $loginbg = $theme->setting_file_url('loginbg', 'loginbg');
     $css = theme_flexibase_set_loginbg($css, $loginbg);
 
-
     // Set caption background for carousel.
     if (!empty($theme->settings->captionbackgroundcolour)) {
-        if($theme->settings->captionbackgroundcolour === 'dark') {
+        if ($theme->settings->captionbackgroundcolour === 'dark') {
             $captionbackgroundcolour = 'rgba(0,0,0,0.2)';
             $captionbordercolour = 'rgba(0,0,0,0.6)';
             $carouselbordercolour = '#111111';
@@ -75,14 +74,14 @@ function theme_flexibase_process_css($css, $theme) {
         $captiontextcolour = '#ffffff';
     }
     $css = theme_flexibase_set_captiontextcolour($css, $captiontextcolour);
-    // Colour overlay for course tiles
-    if(!empty($theme->settings->rendereroverlaycolour)) {
+    // Colour overlay for course tiles.
+    if (!empty($theme->settings->rendereroverlaycolour)) {
         $rendereroverlaycolour = $theme->settings->rendereroverlaycolour;
     } else {
         $rendereroverlaycolour = null;
     }
     $css = theme_flexibase_set_rendereroverlaycolour($css, $rendereroverlaycolour);
-    // Font colour for course tiles
+    // Font colour for course tiles.
     if (!empty($theme->settings->rendereroverlayfontcolour)) {
         $rendereroverlayfontcolour = $theme->settings->rendereroverlayfontcolour;
     } else {
@@ -100,7 +99,6 @@ function theme_flexibase_process_css($css, $theme) {
 
     return $css;
 }
-
 
 function theme_flexibase_set_logo($css, $logo) {
     $logotag = '[[setting:logo]]';
@@ -228,6 +226,7 @@ function theme_flexibase_set_rendereroverlayfontcolour($css, $rendereroverlayfon
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
+
 /**
  * Adds any custom CSS to the CSS before it is cached.
  *

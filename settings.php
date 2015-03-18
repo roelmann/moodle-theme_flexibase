@@ -36,14 +36,14 @@ defined('MOODLE_INTERNAL') || die;
 
     $ADMIN->add('themes', new admin_category('theme_flexibase', 'FlexiBase Settings'));
 
-    include('settings/generalsettings.php');
-    include('settings/mainless.php');
-    include('settings/additionalless.php');
-    include('settings/layoutsettings.php');
-    include('settings/awesomebar.php');
-    include('settings/alerts.php');
-    include('settings/carousel.php');
-    include('settings/marketing.php');
-    include('settings/coursetiles.php');
-    include('settings/categoryicons.php');
-    include('settings/socialicons.php');
+    require('settings/generalsettings.php');
+    require('settings/mainless.php');
+    require('settings/additionalless.php');
+    require('settings/layoutsettings.php');
+    require('settings/awesomebar.php');
+    require('settings/alerts.php');
+    require('settings/carousel.php');
+    require('settings/marketing.php');
+    require('settings/coursetiles.php');
+    require('settings/categoryicons.php');
+    require('settings/socialicons.php');

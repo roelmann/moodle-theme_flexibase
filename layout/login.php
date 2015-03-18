@@ -31,33 +31,33 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-    if (!empty($PAGE->theme->settings->defaultlayout)) {
-        $layoutoption = $PAGE->theme->settings->defaultlayout;
-    } else {
-        $layoutoption = 'preandpost';
-    }
+if (!empty($PAGE->theme->settings->defaultlayout)) {
+    $layoutoption = $PAGE->theme->settings->defaultlayout;
+} else {
+    $layoutoption = 'preandpost';
+}
 
-include('includes/preheaderlogic.php');
-include('includes/header.php');
+require('includes/preheaderlogic.php');
+require('includes/header.php');
 ?>
 
 <div id="page" class="container-fluid">
-	<?php include('includes/breadcrumb.php'); ?>
+    <?php require('includes/breadcrumb.php'); ?>
 
     <div id="page-content" class="flexcontainer">
         <div id="region-main" class="flexcontentmain <?php echo $layoutoption; ?>">
             <div class="maincontentwrap flexcontainer">
-            	<div class="maincontentinnerwrap flexcontainer">
-				<?php
-					echo $OUTPUT->main_content();
-				?>
-				</div>
-			</div>
+                <div class="maincontentinnerwrap flexcontainer">
+                <?php
+                    echo $OUTPUT->main_content();
+                ?>
+                </div>
+            </div>
         </div>
     </div>
-	<?php
-	include('includes/footer.php');
-	?>
+    <?php
+    require('includes/footer.php');
+    ?>
 </div>
 </body>
 </html>

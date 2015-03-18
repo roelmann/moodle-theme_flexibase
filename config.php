@@ -33,42 +33,40 @@
 
 $THEME->name = 'flexibase';
 $THEME->parents = array('bootstrap');
-$THEME->parents_exclude_sheets = array('bootstrap' => array('moodle','moodle-rtl'));
+$THEME->parents_exclude_sheets = array('bootstrap' => array('moodle', 'moodle-rtl'));
 
 $THEME->sheets = array(
-  'base',         //CSS constructed from LESS files with default settings - needs to be removed if using LESS on the fly
-    'font-awesome', //Default FA css unaltered from upstream
-    'flexlayout',   //Flexibox layout rules
-    'alerts',       //Alerts theme styles
-    'carousel',     //Carousel theme styles - no core styles as core carousel css is already included in bootstrap
-    'marketing',    //Marketing blocks core styles
-    'coursebox',    //Course tile listing styles
-    'awesomebar',	//Awesomebar clone of upstream
-    'styles',       //Last but one - theme style overrides
-    'custom'        //Must be last - contains the css settings to override other css
+    'base',         // CSS constructed from LESS files with default settings - needs to be removed if using LESS on the fly.
+    'font-awesome', // Default FA css unaltered from upstream.
+    'flexlayout',   // Flexibox layout rules.
+    'alerts',       // Alerts theme styles.
+    'carousel',     // Carousel theme styles - no core styles as core carousel css is already included in bootstrap.
+    'marketing',    // Marketing blocks core styles.
+    'coursebox',    // Course tile listing styles.
+    'awesomebar',   // Awesomebar clone of upstream.
+    'styles',       // Last but one - theme style overrides.
+    'custom'        // Must be last - contains the css settings to override other css.
     );
-$THEME->editor_sheets = array(); //TODO
+$THEME->editor_sheets = array(); // TODO.
 
-//--------------------------------
+// --------------------------------
 /* Remove these if not using less compilation
  * NOTE: If using LESS compilation on the fly Theme Designer Mode is
  * required but this will result in very slow page load times. DO NOT
  * USE for production!
  */
-//$THEME->lessfile = 'flexibase';
-//$THEME->lessvariablescallback = 'theme_flexibase_less_variables';
-//$THEME->extralesscallback = 'theme_flexibase_extra_less';
-//---------------------
+// $THEME->lessfile = 'flexibase';
+// $THEME->lessvariablescallback = 'theme_flexibase_less_variables';
+// $THEME->extralesscallback = 'theme_flexibase_extra_less';
+// ---------------------
 
-$THEME->doctype = 'html5';                  //Set doctype
-$THEME->supportscssoptimisation = false;    //Disable css optimisation because we are using LESS on the fly
-$THEME->yuicssmodules = array();            //List any additional YUI-CSS modules - none
-$THEME->enable_dock = true;                 //Enable docking
+$THEME->doctype = 'html5';                  // Set doctype.
+$THEME->supportscssoptimisation = false;    // Disable css optimisation because we are using LESS on the fly.
+$THEME->yuicssmodules = array();            // List any additional YUI-CSS modules - none.
+$THEME->enable_dock = true;                 // Enable docking.
 
-$THEME->rendererfactory = 'theme_overridden_renderer_factory';      //Enable renderer overrides
-$THEME->csspostprocess = 'theme_flexibase_process_css';             //Enable css post processing
-
-//$THEME->javascripts_footer[] = 'flexibase_bootstrap';               //JS scripts added to page footer
+$THEME->rendererfactory = 'theme_overridden_renderer_factory';      // Enable renderer overrides.
+$THEME->csspostprocess = 'theme_flexibase_process_css';             // Enable css post processing.
 
 /* Theme layouts - identifying regions, options and layout files
  * -------------------------------------------------------------
@@ -88,14 +86,32 @@ $THEME->layouts = array(
     // Main course page.
     'course' => array(
         'file' => 'course.php',
-        'regions' => array('side-pre', 'side-post', 'side-top', 'side-bottom', 'side-mainpre', 'side-mainpost', 'side-maintop', 'side-mainbottom'),
+        'regions' => array(
+            'side-pre',
+            'side-post',
+            'side-top',
+            'side-bottom',
+            'side-mainpre',
+            'side-mainpost',
+            'side-maintop',
+            'side-mainbottom'
+        ),
         'defaultregion' => 'side-pre',
         'options' => array('langmenu' => true),
     ),
     // Part of course, typical for modules - default page layout if $cm specified in require_login().
     'incourse' => array(
         'file' => 'course.php',
-        'regions' => array('side-pre', 'side-post', 'side-top', 'side-bottom', 'side-mainpre', 'side-mainpost', 'side-maintop', 'side-mainbottom'),
+        'regions' => array(
+            'side-pre',
+            'side-post',
+            'side-top',
+            'side-bottom',
+            'side-mainpre',
+            'side-mainpost',
+            'side-maintop',
+            'side-mainbottom'
+        ),
         'defaultregion' => 'side-pre',
     ),
     'coursecategory' => array(
@@ -106,7 +122,16 @@ $THEME->layouts = array(
     // The site home page.
     'frontpage' => array(
         'file' => 'frontpage.php',
-        'regions' => array('side-pre', 'side-post', 'side-top', 'side-bottom', 'side-mainpre', 'side-mainpost', 'side-maintop', 'side-mainbottom'),
+        'regions' => array(
+            'side-pre',
+            'side-post',
+            'side-top',
+            'side-bottom',
+            'side-mainpre',
+            'side-mainpost',
+            'side-maintop',
+            'side-mainbottom'
+        ),
         'defaultregion' => 'side-pre',
         'options' => array('nonavbar' => true),
     ),
@@ -120,14 +145,32 @@ $THEME->layouts = array(
     // My dashboard page.
     'mydashboard' => array(
         'file' => 'myhome.php',
-        'regions' => array('side-pre', 'side-post', 'side-top', 'side-bottom', 'side-mainpre', 'side-mainpost', 'side-maintop', 'side-mainbottom'),
+        'regions' => array(
+            'side-pre',
+            'side-post',
+            'side-top',
+            'side-bottom',
+            'side-mainpre',
+            'side-mainpost',
+            'side-maintop',
+            'side-mainbottom'
+        ),
         'defaultregion' => 'side-pre',
         'options' => array('langmenu' => true),
     ),
     // My public page.
     'mypublic' => array(
         'file' => 'default.php',
-        'regions' => array('side-pre', 'side-post', 'side-top', 'side-bottom', 'side-mainpre', 'side-mainpost', 'side-maintop', 'side-mainbottom'),
+        'regions' => array(
+            'side-pre',
+            'side-post',
+            'side-top',
+            'side-bottom',
+            'side-mainpre',
+            'side-mainpost',
+            'side-maintop',
+            'side-mainbottom'
+        ),
         'defaultregion' => 'side-pre',
     ),
     'login' => array(
@@ -170,7 +213,7 @@ $THEME->layouts = array(
         'file' => 'embedded.php',
         'regions' => array(),
     ),
-    // The pagelayout used for reports - minimal blocks to maximise space
+    // The pagelayout used for reports - minimal blocks to maximise space.
     'report' => array(
         'file' => 'default.php',
         'regions' => array('side-pre'),

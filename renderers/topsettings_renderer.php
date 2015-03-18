@@ -56,7 +56,7 @@ class theme_flexibase_topsettings_renderer extends plugin_renderer_base {
         }
         $content = html_writer::start_tag('ul', array('id' => 'awesomeHomeMenu', 'class' => 'dropdown  dropdown-horizontal'));
         $content .= html_writer::start_tag('li');
-        $content .= html_writer::start_tag('span', array('id' =>'awesomeNavMenu'));
+        $content .= html_writer::start_tag('span', array('id' => 'awesomeNavMenu'));
         $content .= 'Navigation';
         $content .= html_writer::end_tag('span');
         $content .= $this->navigation_node($navigation, array());
@@ -70,14 +70,15 @@ class theme_flexibase_topsettings_renderer extends plugin_renderer_base {
         static $mainsubnav;
         static $coursessubnav;
         $items = $node->children;
-        $hidecourses = (property_exists($PAGE->theme->settings, 'coursesloggedinonly') && $PAGE->theme->settings->coursesloggedinonly && !isloggedin());
+        $hidecourses = (property_exists($PAGE->theme->settings, 'coursesloggedinonly')
+                && $PAGE->theme->settings->coursesloggedinonly && !isloggedin());
 
-        // exit if empty, we don't want an empty ul element
+        // Exit if empty, we don't want an empty ul element.
         if ($items->count() == 0) {
             return '';
         }
 
-        // array of nested li elements
+        // Array of nested li elements.
         $lis = array();
         foreach ($items as $item) {
             if (!$item->display) {
@@ -87,30 +88,32 @@ class theme_flexibase_topsettings_renderer extends plugin_renderer_base {
                 continue;
             }
 
-            // Skip pointless "Current course" node, go straight to its last (sole) child
+            // Skip pointless "Current course" node, go straight to its last (sole) child.
             if ($item->key === 'currentcourse') {
                 $item = $item->children->last();
             }
 
-            $isbranch = ($item->children->count() > 0 || $item->nodetype == navigation_node::NODETYPE_BRANCH || (property_exists($item, 'isexpandable') && $item->isexpandable));
+            $isbranch = ($item->children->count() > 0 || $item->nodetype == navigation_node::NODETYPE_BRANCH
+                    || (property_exists($item, 'isexpandable') && $item->isexpandable));
             $hasicon = (!$isbranch && $item->icon instanceof renderable);
 
             if ($isbranch) {
                 $item->hideicon = true;
             }
 
-            if ($item->action instanceof action_link && $hasicon && !$item->hideicon && (strip_tags($item->action->text)==$item->action->text)) {
+            if ($item->action instanceof action_link && $hasicon && !$item->hideicon
+                    && (strip_tags($item->action->text) == $item->action->text)) {
                 // Icon hasn't already been rendered - render it now.
                 $item->action->text = $this->output->render($item->icon) . $item->action->text;
             }
 
             $content = $this->output->render($item);
-            if($isbranch && $item->children->count()==0) {
+            if ($isbranch && $item->children->count() == 0) {
                 $expanded = false;
-                // Navigation block does this via AJAX - we'll merge it in directly instead
+                // Navigation block does this via AJAX - we'll merge it in directly instead.
                 if (!empty($CFG->navshowallcourses) && $item->key === 'courses') {
-                    if(!$coursessubnav) {
-                        // Prepare dummy page for subnav initialisation
+                    if (!$coursessubnav) {
+                        // Prepare dummy page for subnav initialisation.
                         $dummypage = new theme_flexibase_dummy_page();
                         $dummypage->set_context($PAGE->context);
                         $dummypage->set_url($PAGE->url);
@@ -119,8 +122,8 @@ class theme_flexibase_topsettings_renderer extends plugin_renderer_base {
                     }
                     $subnav = $coursessubnav;
                 } else {
-                    if(!$mainsubnav) {
-                        // Prepare dummy page for subnav initialisation
+                    if (!$mainsubnav) {
+                        // Prepare dummy page for subnav initialisation.
                         $dummypage = new theme_flexibase_dummy_page();
                         $dummypage->set_context($PAGE->context);
                         $dummypage->set_url($PAGE->url);
@@ -132,7 +135,7 @@ class theme_flexibase_topsettings_renderer extends plugin_renderer_base {
                 $branch = $subnav->find($item->key, $item->type);
                 if ($branch === false) {
                     if (!$expanded) {
-                        // re-use subnav so we don't have to reinitialise everything
+                        // Re-use subnav so we don't have to reinitialise everything.
                         $subnav->expand($item->type, $item->key);
                     }
                     if (!isloggedin() || isguestuser()) {
@@ -140,13 +143,14 @@ class theme_flexibase_topsettings_renderer extends plugin_renderer_base {
                     }
                     $branch = $subnav->find($item->key, $item->type);
                 }
-                if($branch!==false) $content .= $this->navigation_node($branch);
+                if ($branch !== false) {
+                    $content .= $this->navigation_node($branch);
+                }
             } else {
                 $content .= $this->navigation_node($item);
             }
 
-
-            if($isbranch && !(is_string($item->action) || empty($item->action))) {
+            if ($isbranch && !(is_string($item->action) || empty($item->action))) {
                 $content = html_writer::tag('li', $content, array('class' => 'clickable-with-children'));
             } else {
                 $content = html_writer::tag('li', $content);
@@ -166,9 +170,10 @@ class theme_flexibase_topsettings_renderer extends plugin_renderer_base {
 
         $content = html_writer::start_tag('form', array('class' => 'topadminsearchform', 'method' => 'get', 'action' => $formtarget));
         $content .= html_writer::start_tag('div', array('class' => 'search-box'));
-        $content .= html_writer::tag('label', s(get_string('searchinsettings', 'admin')), array('for' => 'adminsearchquery', 'class' => 'accesshide'));
-        $content .= html_writer::empty_tag('input', array('id' => 'topadminsearchquery', 'type' => 'text', 'name' => 'query', 'value' => s($searchvalue), 'placeholder' => 'Search Settings...'));
-        //$content .= html_writer::empty_tag('input', array('class'=>'search-go','type'=>'submit', 'value'=>''));
+        $content .= html_writer::tag('label', s(get_string('searchinsettings', 'admin')),
+                array('for' => 'adminsearchquery', 'class' => 'accesshide'));
+        $content .= html_writer::empty_tag('input', array('id' => 'topadminsearchquery',
+                'type' => 'text', 'name' => 'query', 'value' => s($searchvalue), 'placeholder' => 'Search Settings...'));
         $content .= html_writer::end_tag('div');
         $content .= html_writer::end_tag('form');
 

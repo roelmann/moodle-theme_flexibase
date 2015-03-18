@@ -29,10 +29,10 @@
  *             Many others for non-specific but vital inspirations,
  *             suggestions and support
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later */
- 
-include('lib/lesslib.php');
-include('lib/lesscss.php');
-include('lib/filesettingslib.php');
-include('lib/pageinitlib.php');
-include('lib/activitieslib.php');
-include('lib/awesomelib.php');
+
+require('lib/lesslib.php');
+require('lib/lesscss.php');
+require('lib/filesettingslib.php');
+require('lib/pageinitlib.php');
+require('lib/activitieslib.php');
+require('lib/awesomelib.php');

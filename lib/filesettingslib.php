@@ -30,7 +30,7 @@
  *             suggestions and support
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
- 
+
 /**
  * Serves any files associated with the theme settings.
  *
@@ -51,7 +51,7 @@ function theme_flexibase_pluginfile($course, $cm, $context, $filearea, $args, $f
     if ($context->contextlevel == CONTEXT_SYSTEM && ($filearea === 'logo')) {
         $theme = theme_config::load('flexibase');
         return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
-    } else if (preg_match("/slide[1-9][0-9]*image/", $filearea) !== false) { // carousel images
+    } else if (preg_match("/slide[1-9][0-9]*image/", $filearea) !== false) { // Carousel images.
         return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
     } else if ($filearea === 'minilogo') {
             return $theme->setting_file_serve('minilogo', $args, $forcedownload, $options);

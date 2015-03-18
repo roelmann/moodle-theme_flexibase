@@ -40,6 +40,7 @@
  * @param theme_config $theme The theme config object.
  * @return array of LESS variables without the @.
  */
+
 function theme_flexibase_less_variables($theme) {
     $variables = array();
     if (!empty($theme->settings->brandprimary)) {
@@ -109,11 +110,12 @@ function theme_flexibase_less_variables($theme) {
 
     return $variables;
 }
+
 function theme_flexibase_extra_less ($theme) {
-	$extraless = '';
-	if (!empty($theme->settings->customless)) {
+    $extraless = '';
+    if (!empty($theme->settings->customless)) {
         $extraless = $theme->settings->customless;
     }
-    
+
     return $extraless;
 }
