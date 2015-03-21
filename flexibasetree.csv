@@ -1,5 +1,5 @@
 ,PHPLint,PHP Coding Styles,JS Coding Style,CSSLint,PHPDocs
-,"(0 errors, 0 warnings)","(142 errors, 53 warnings)","(10 errors, 2037 warnings)","(21 errors, 155 warnings)","(154 errors, 0 warnings)"
+Original submission to plugns,"(0 errors, 0 warnings)","(142 errors, 53 warnings)","(10 errors, 2037 warnings)","(21 errors, 155 warnings)","(154 errors, 0 warnings)"
 ├── config.php,,,This is upstream code directly from bootstrap and not to be changed,,
 ├── flexibasetree.txt,,,,,
 ├── fonts,,,,,
@@ -291,13 +291,13 @@
 ├── style,,,,,
 │   ├── alerts.css,,,,,
 │   ├── awesomebar.css,,,,,
-│   ├── carousel.css,,,,,
-│   ├── coursebox.css,,,,,
-│   ├── custom.css,,,,,
+│   ├── carousel.css,,,,Errors relate to csslint not recognising moodle settings,
+│   ├── coursebox.css,,,,Remaining errors relate to csslint not recognising moodle settings,
+│   ├── custom.css,,,,Remaining errors relate to csslint not recognising moodle settings,
 │   ├── flexlayout.css,,,,,
 │   ├── font-awesome.css,,,,,
 │   ├── marketing.css,,,,,
-│   └── styles.css,,,,,
+│   └── styles.css,,,,Important used,
 ├── version.php,,,,,
 └── yui,,,,,
     └── awesomebar.js,,,,,
