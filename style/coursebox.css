@@ -20,22 +20,13 @@
  * @package    theme_flexibase
  * @author     2015 Richard Oelmann
  * @copyright  2015 R. Oelmann
- * @parents    Bootstrap
- * @copyright  2014 Bas Brands
- * @credits    Essential - Julian Ridden, Gareth Barnard;
+ * @copyright  Bootstrap - 2014 Bas Brands
+ *             Essential - Julian Ridden, Gareth Barnard;
  *             Elegance - Julian Ridden, Danny Wahl;
  *             BCU - Jez H, Mike Grant
  *             Decaf - Paul Nichols
- *             Many others for non-specific but vital inspirations,
- *             suggestions and support
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-.courses .coursebox.even, .courses .coursebox {
-}
-
-.courses .coursebox.even {
-}
 
 .coursebox > .info > .coursename a {
     font-weight: normal;
@@ -138,7 +129,7 @@
     margin: 0px auto 15px;
     padding-left: 0px;
     padding-right: 0px;
-    border: 1px solid #eee !important;
+    border: 1px solid #eee;
     box-shadow: none;
     color: inherit;
     font-weight: 300;
@@ -243,7 +234,7 @@
 .categoryicons .course_category_tree .category.with_children.collapsed>.info>.categoryname,
 .categoryicons .course_category_tree .category.with_children>.info>.categoryname,
 .categoryicons .course_category_tree .category>.info>.categoryname {
-    background-image:none!important;
+    background-image:none !important;
     padding:0;
     margin:0;
 }
@@ -302,7 +293,6 @@
     font-size:140px;
     width:100%;
 }
-.categoryicons .course_category_tree .category[data-categoryid] {}
 .categoryicons .course_category_tree .category[data-categoryid]:hover {
     -webkit-transition:all .3s ease;
     -moz-transition:all .3s ease;
@@ -326,12 +316,10 @@
     clear:both;
 }
 .course_category_tree .coursebox .content .courseimage {
-    display:inline-block;
     float:left;
     width:30%;
 }
 .course_category_tree .coursebox .content .summary {
-    display:inline-block;
     float:right;
     width:65%;
 }

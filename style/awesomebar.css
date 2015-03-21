@@ -20,14 +20,11 @@
  * @package    theme_flexibase
  * @author     2015 Richard Oelmann
  * @copyright  2015 R. Oelmann
- * @parents    Bootstrap
- * @copyright  2014 Bas Brands
- * @credits    Essential - Julian Ridden, Gareth Barnard;
+ * @copyright  Bootstrap - 2014 Bas Brands
+ *             Essential - Julian Ridden, Gareth Barnard;
  *             Elegance - Julian Ridden, Danny Wahl;
  *             BCU - Jez H, Mike Grant
  *             Decaf - Paul Nichols
- *             Many others for non-specific but vital inspirations,
- *             suggestions and support
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -59,7 +56,7 @@ body #dock {top:26px; height:auto; bottom:0px;} /* Start dock at bottom of Aweso
 .flexibase-awesome-bar, .flexibase-awesome-bar li {background-color:#333; color:#fff;}
 .flexibase-awesome-bar li:hover {background-color:#595959;}
 .flexibase-awesome-bar ul ul li span, .flexibase-awesome-bar li.clickable-with-children > a {padding:3px 24px; margin:0; text-indent:0; background-image:url([[pix:theme|awesomebar/nav-arrow-right]]); background-position:100% 50%; background-repeat:no-repeat;}
-.flexibase-awesome-bar ul ul a {display:block; height:100%; margin:0 0 0 24px; text-indent:-24px; vertical-align:top;}
+.flexibase-awesome-bar ul ul a {display:block; height:100%; margin:0 0 0 24px; text-indent:-24px;}
 .flexibase-awesome-bar ul ul li:hover > span, .flexibase-awesome-bar li.clickable-with-children:hover > a {background-image:url([[pix:theme|awesomebar/ab-arrowover]]);}
 .flexibase-awesome-bar ul ul li:hover > span {cursor:default;}
 .flexibase-awesome-bar li {border-color:#404040 #1a1a1a #1a1a1a #505050; border-style:solid; border-width:1px;}
@@ -101,7 +98,9 @@ body #dock {top:26px; height:auto; bottom:0px;} /* Start dock at bottom of Aweso
 
 /* RTL
  * --- */
-
+.dir-rtl .flexibase-awesome-bar > ul > li {float: right;}
+.dir-rtl .flexibase-awesome-bar .topadminsearchform {float: left;}
+.dir-rtl .flexibase-awesome-bar .topadminsearchform input[type="text"] {background:#fff url([[pix:theme|awesomebar/search_icon]]) no-repeat right 1px; padding:1px 17px 0 0;}
 /* Awesomebar - workings and structure */
 .dir-rtl .flexibase-awesome-bar {right:0;}
 .dir-rtl .flexibase-awesome-bar > ul > li {float:right; padding:0;}
@@ -115,7 +114,7 @@ body #dock {top:26px; height:auto; bottom:0px;} /* Start dock at bottom of Aweso
 .dir-rtl .flexibase-awesome-bar ul ul li span, .dir-rtl .flexibase-awesome-bar li.clickable-with-children > a {padding:3px 24px; margin:0; text-indent:0; background-image:url([[pix:theme|awesomebar/nav-arrow-left]]); background-position:0 50%; background-repeat:no-repeat;}
 .dir-rtl .flexibase-awesome-bar ul ul li:hover > span, .flexibase-awesome-bar li.clickable-with-children:hover > a {background-image:url([[pix:theme|awesomebar/ab-arrowover-rtl]]);}
 .dir-rtl .flexibase-awesome-bar ul ul a {margin:0 24px 0 0;}
-.dir-rtl .flexibase-awesome-bar li {border-color:#404040 #505050 #1a1a1a #1a1a1a #505050;}
+.dir-rtl .flexibase-awesome-bar li {border-color:#404040 #505050 #1a1a1a #1a1a1a;}
 .dir-rtl .flexibase-awesome-bar > ul > li.clickable-with-children > a, .flexibase-awesome-bar > ul > li.clickable-with-children:hover > a {padding:2px 8px; background-image:none;}
 
 /* Custom menu */

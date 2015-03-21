@@ -20,14 +20,11 @@
  * @package    theme_flexibase
  * @author     2015 Richard Oelmann
  * @copyright  2015 R. Oelmann
- * @parents    Bootstrap
- * @copyright  2014 Bas Brands
- * @credits    Essential - Julian Ridden, Gareth Barnard;
+ * @copyright  Bootstrap - 2014 Bas Brands
+ *             Essential - Julian Ridden, Gareth Barnard;
  *             Elegance - Julian Ridden, Danny Wahl;
  *             BCU - Jez H, Mike Grant
  *             Decaf - Paul Nichols
- *             Many others for non-specific but vital inspirations,
- *             suggestions and support
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -169,15 +166,6 @@
 /* Layoutoption4 - singlepre
  * Additional wrap put in to put all sidebar content in single column
  * ------------------------------------------------------------------ */
-#region-main.flexcontentmain.singlepre {
-/* Nothing to change */
-    }
-#block-region-side-pre.flexcontentpre.singlepre {
-/* Nothing to change */
-    }
-#block-region-side-post.flexcontentpost.singlepre {
-/* Nothing to change */
-    }
 .flexcontentpre.singlepre {
     -webkit-box-ordinal-group: 2;
     -moz-box-ordinal-group: 2;
@@ -203,15 +191,6 @@
 /* Layoutoption5 - singlepost
  * Additional wrap put in to put all sidebar content in single column
  * ------------------------------------------------------------------ */
-#region-main.flexcontentmain.singlepost {
-/* Nothing to change */
-    }
-#block-region-side-pre.flexcontentpre.singlepost {
-/* Nothing to change */
-    }
-#block-region-side-post.flexcontentpost.singlepost {
-/* Nothing to change */
-    }
 .flexcontentpost.singlepost {
     -webkit-box-ordinal-group: 6;
     -moz-box-ordinal-group: 6;
@@ -238,9 +217,6 @@
 /* RTL positioning of blocks is handled automatically. Just requires
  * margins swapping around.
  * ----------------------------------------------------------------- */
-.dir-rtl #region-main.flexcontentmain {
-/* Nothing to change */
-    }
 .dir-rtl #block-region-side-pre.flexcontentpre {
     margin-right:0;
     margin-left:10px;
@@ -252,22 +228,13 @@
 /* Layoutoption2 - 2 post
  * Order 3(main),4(pre),5(post)
  * ---------------------------- */
-.dir-rtl #region-main.flexcontentmain.twopost {
-/* Nothing to change */
-    }
 .dir-rtl #block-region-side-pre.flexcontentpre.twopost {
     margin-right:10px;
     margin-left:0;
     }
-.dir-rtl #block-region-side-post.flexcontentpost.twopost {
-/* Nothing to change */
-    }
 /* Layoutoption3 - 2 pre
  * Order 3(main),1(pre),2(post)
  * ---------------------------- */
-.dir-rtl #region-main.flexcontentmain.twopre {
-/* Nothing to change */
-    }
 .dir-rtl #block-region-side-post.flexcontentpost.twopre {
     margin-left:10px;
     margin-right:0;
@@ -275,15 +242,6 @@
 /* Layoutoption4 - singlepre
  * Additional wrap put in to put all sidebar content in single column
  * ------------------------------------------------------------------ */
-.dir-rtl #region-main.flexcontentmain.singlepre {
-/* Nothing to change */
-    }
-.dir-rtl #block-region-side-pre.flexcontentpre.singlepre {
-/* Nothing to change */
-    }
-.dir-rtl #block-region-side-post.flexcontentpost.singlepre {
-/* Nothing to change */
-    }
 .dir-rtl .flexcontentpre.singlepre {
     margin-right:0;
     margin-left:10px;
@@ -291,15 +249,7 @@
 /* Layoutoption5 - singlepost
  * Additional wrap put in to put all sidebar content in single column
  * ------------------------------------------------------------------ */
-.dir-rtl #region-main.flexcontentmain.singlepost {
-/* Nothing to change */
-    }
-.dir-rtl #block-region-side-pre.flexcontentpre.singlepost {
-/* Nothing to change */
-    }
-.dir-rtl #block-region-side-post.flexcontentpost.singlepost {
-/* Nothing to change */
-    }
+.dir-r
 .dir-rtl .flexcontentpost.singlepost {
     margin-left:0;
     margin-right:10px;

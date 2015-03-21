@@ -20,14 +20,11 @@
  * @package    theme_flexibase
  * @author     2015 Richard Oelmann
  * @copyright  2015 R. Oelmann
- * @parents    Bootstrap
- * @copyright  2014 Bas Brands
- * @credits    Essential - Julian Ridden, Gareth Barnard;
+ * @copyright  Bootstrap - 2014 Bas Brands
+ *             Essential - Julian Ridden, Gareth Barnard;
  *             Elegance - Julian Ridden, Danny Wahl;
  *             BCU - Jez H, Mike Grant
  *             Decaf - Paul Nichols
- *             Many others for non-specific but vital inspirations,
- *             suggestions and support
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -40,10 +37,10 @@
        url('[[font:theme|glyphicons-halflings-regular.svg]]') format('svg');
 }
 body {
-	margin-top:25px;
+    margin-top:25px;
 }
 body.flexibase_no_awesomebar {
-	margin-top:0;
+    margin-top:0;
 }
 #region-main {
     background-color: #fff;
@@ -66,14 +63,13 @@ input.form-submit, input#id_submitbutton, input#id_submitbutton2, .path-admin .b
     padding-right:25px;
     }
 body.has_dock .navbar-collapse {
-	padding-left:40px;
+    padding-left:40px;
 }
 .navbar-nav > li > a {
-	padding-left:0;
-	padding-right:30px;
+    padding-left:0;
+    padding-right:30px;
 }
 .navbarbranding {
-//  position:absolute;
     border-radius:0;
     margin-bottom:0;
 }
@@ -119,13 +115,13 @@ hr.sep {
     float:right;
 }
 .headerlogo {
-	padding-left:5px;
+    padding-left:5px;
 }
 body.has_dock .moodleheader .container-fluid {
-	padding-left:0px;
+    padding-left:0px;
 }
 .navbar-header {
-	margin:0 5px !important;
+    margin:0 5px !important;
 }
 @media (max-width:1200px) {
     .navbaruserpicture img {
@@ -234,16 +230,6 @@ caption {
     text-align: center;
 }
 
-.dir-rtl .flexibase-awesome-bar > ul > li {
-    float: right;
-}
-.dir-rtl .flexibase-awesome-bar .topadminsearchform {
-    float: left;
-}
-.dir-rtl .flexibase-awesome-bar .topadminsearchform input[type="text"] {
-	background:#fff url([[pix:theme|awesomebar/search_icon]]) no-repeat right 1px;
-	padding:1px 17px 0 0;
-}
 .dir-rtl .navbar-header {
     float: right;
 }
@@ -266,17 +252,17 @@ body.has_dock.dir-rtl .navbar-collapse {
     padding-right: 40px;
 }
 .dir-rtl header .pull-right {
-	float:left !important;
+    float:left !important;
 }
 .dir-rtl header .pull-left {
-	float:right !important;
+    float:right !important;
 }
 .dir-rtl .socials {
-	margin-right:0;
-	margin-left:85px;
+    margin-right:0;
+    margin-left:85px;
 }
 .dir-rtl .socialicon {
-	float:left;
+    float:left;
 }
 .dir-rtl .dropdown-menu {
     font-size: 14px;
@@ -287,7 +273,7 @@ body.has_dock.dir-rtl .navbar-collapse {
     float: right;
 }
 .dir-rtl .close {
-	float:left;
+    float:left;
 }
 .dir-rtl .block .header .block_action {
     float: left;
