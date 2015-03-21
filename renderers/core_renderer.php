@@ -20,14 +20,11 @@
  * @package    theme_flexibase
  * @author     2015 Richard Oelmann
  * @copyright  2015 R. Oelmann
- * @parents    Bootstrap
- * @copyright  2014 Bas Brands
- * @credits    Essential - Julian Ridden, Gareth Barnard;
+ * @copyright  Bootstrap - 2014 Bas Brands
+ *             Essential - Julian Ridden, Gareth Barnard;
  *             Elegance - Julian Ridden, Danny Wahl;
  *             BCU - Jez H, Mike Grant
  *             Decaf - Paul Nichols
- *             Many others for non-specific but vital inspirations,
- *             suggestions and support
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -180,10 +177,12 @@ class theme_flexibase_core_renderer extends core_renderer {
                 foreach ($data as $modname => $modfullname) {
                     if ($modname === 'resources') {
                         $icon = $OUTPUT->pix_icon('icon', '', 'mod_page', array('class' => 'icon'));
-                        $branch->add($icon.$modfullname, new moodle_url('/course/resources.php', array('id' => $PAGE->course->id)));
+                        $branch->add($icon.$modfullname, new moodle_url('/course/resources.php',
+                                array('id' => $PAGE->course->id)));
                     } else {
                         $icon = '<img src="'.$OUTPUT->pix_url('icon', $modname) . '" class="icon" alt="" />';
-                        $branch->add($icon.$modfullname, new moodle_url('/mod/'.$modname.'/index.php', array('id' => $PAGE->course->id)));
+                        $branch->add($icon.$modfullname, new moodle_url('/mod/'.$modname.'/index.php',
+                                array('id' => $PAGE->course->id)));
                     }
                 }
             }
@@ -236,7 +235,8 @@ class theme_flexibase_core_renderer extends core_renderer {
                 if (\core\session\manager::is_loggedinas()) {
                     $realuser = \core\session\manager::get_realuser();
                     $usermenu->add(
-                        '<em><i class="fa fa-key"> </i>' .' '. fullname($realuser, true) . get_string('loggedinas', 'theme_flexibase') . fullname($USER, true) . '</em>',
+                        '<em><i class="fa fa-key"> </i>' .' '. fullname($realuser, true) .
+                                get_string('loggedinas', 'theme_flexibase') . fullname($USER, true) . '</em>',
                         new moodle_url('/user/profile.php', array('id' => $USER->id)),
                         get_string('loggedinas', 'theme_flexibase')
                     );
@@ -342,7 +342,8 @@ class theme_flexibase_core_renderer extends core_renderer {
                         if (has_capability('gradereport/user:view', $reportcontext) && $hascourse->visible) {
                             $usermenu->add(
                                 '<em><i class="fa fa-list-alt"></i>' .' '. get_string('mygrades', 'theme_flexibase') . '</em>',
-                                new moodle_url('/grade/report/overview/index.php' , array('id' => $hascourse->id, 'userid' => $USER->id)),
+                                new moodle_url('/grade/report/overview/index.php',
+                                        array('id' => $hascourse->id, 'userid' => $USER->id)),
                                 get_string('mygrades', 'theme_flexibase')
                             );
                         }
@@ -350,12 +351,14 @@ class theme_flexibase_core_renderer extends core_renderer {
                 } else if (has_capability('gradereport/user:view', $context)) {
                             $usermenu->add(
                                 '<em><i class="fa fa-list-alt"></i>' .' '. get_string('mygrades', 'theme_flexibase') . '</em>',
-                                new moodle_url('/grade/report/overview/index.php' , array('id' => $course->id, 'userid' => $USER->id)),
+                                new moodle_url('/grade/report/overview/index.php',
+                                        array('id' => $course->id, 'userid' => $USER->id)),
                                 get_string('mygrades', 'theme_flexibase')
                             );
                             $usermenu->add(
                                 '<em><i class="fa fa-list-alt"></i>' .' '. get_string('coursegrades', 'theme_flexibase') . '</em>',
-                                new moodle_url('/grade/report/user/index.php' , array('id' => $course->id, 'userid' => $USER->id)),
+                                new moodle_url('/grade/report/user/index.php',
+                                        array('id' => $course->id, 'userid' => $USER->id)),
                                 get_string('coursegrades', 'theme_flexibase')
                             );
 

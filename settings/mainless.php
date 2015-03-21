@@ -20,14 +20,11 @@
  * @package    theme_flexibase
  * @author     2015 Richard Oelmann
  * @copyright  2015 R. Oelmann
- * @parents    Bootstrap
- * @copyright  2014 Bas Brands
- * @credits    Essential - Julian Ridden, Gareth Barnard;
+ * @copyright  Bootstrap - 2014 Bas Brands
+ *             Essential - Julian Ridden, Gareth Barnard;
  *             Elegance - Julian Ridden, Danny Wahl;
  *             BCU - Jez H, Mike Grant
  *             Decaf - Paul Nichols
- *             Many others for non-specific but vital inspirations,
- *             suggestions and support
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -36,7 +33,7 @@ $temp = new admin_settingpage('theme_flexibase_lessbrand',  get_string('lessbran
 $temp->add(new admin_setting_heading('theme_flexibase_lessbrandheading', get_string('lessbrandsub', 'theme_flexibase'),
     format_text(get_string('lessbranddesc', 'theme_flexibase'), FORMAT_MARKDOWN)));
 
-// @brandprimary setting.
+// Brandprimary setting.
 $name = 'theme_flexibase/brandprimary';
 $title = get_string('brandprimary', 'theme_flexibase');
 $description = get_string('brandprimarydesc', 'theme_flexibase');
@@ -45,7 +42,7 @@ $setting = new admin_setting_configcolourpicker($name, $title, $description, $de
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
-// @brandsuccess setting.
+// Brandsuccess setting.
 $name = 'theme_flexibase/brandsuccess';
 $title = get_string('brandsuccess', 'theme_flexibase');
 $description = get_string('brandsuccessdesc', 'theme_flexibase');
@@ -54,7 +51,7 @@ $setting = new admin_setting_configcolourpicker($name, $title, $description, $de
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
-// @brandinfo setting.
+// Brandinfo setting.
 $name = 'theme_flexibase/brandinfo';
 $title = get_string('brandinfo', 'theme_flexibase');
 $description = get_string('brandinfodesc', 'theme_flexibase');
@@ -63,7 +60,7 @@ $setting = new admin_setting_configcolourpicker($name, $title, $description, $de
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
-// @brandwarning setting.
+// Brandwarning setting.
 $name = 'theme_flexibase/brandwarning';
 $title = get_string('brandwarning', 'theme_flexibase');
 $description = get_string('brandwarningdesc', 'theme_flexibase');
@@ -72,7 +69,7 @@ $setting = new admin_setting_configcolourpicker($name, $title, $description, $de
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
-// @branddanger setting.
+// Branddanger setting.
 $name = 'theme_flexibase/branddanger';
 $title = get_string('branddanger', 'theme_flexibase');
 $description = get_string('branddangerdesc', 'theme_flexibase');
@@ -81,7 +78,7 @@ $setting = new admin_setting_configcolourpicker($name, $title, $description, $de
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
-// @black setting.
+// Black setting.
 $name = 'theme_flexibase/black';
 $title = get_string('black', 'theme_flexibase');
 $description = get_string('blackdesc', 'theme_flexibase');
@@ -90,7 +87,7 @@ $setting = new admin_setting_configcolourpicker($name, $title, $description, $de
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
-// @white setting.
+// White setting.
 $name = 'theme_flexibase/white';
 $title = get_string('white', 'theme_flexibase');
 $description = get_string('whitedesc', 'theme_flexibase');
@@ -99,7 +96,7 @@ $setting = new admin_setting_configcolourpicker($name, $title, $description, $de
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
-// @graybase setting.
+// Graybase setting.
 $name = 'theme_flexibase/graybase';
 $title = get_string('graybase', 'theme_flexibase');
 $description = get_string('graybasedesc', 'theme_flexibase');

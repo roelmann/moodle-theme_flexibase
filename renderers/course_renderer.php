@@ -20,14 +20,11 @@
  * @package    theme_flexibase
  * @author     2015 Richard Oelmann
  * @copyright  2015 R. Oelmann
- * @parents    Bootstrap
- * @copyright  2014 Bas Brands
- * @credits    Essential - Julian Ridden, Gareth Barnard;
+ * @copyright  Bootstrap - 2014 Bas Brands
+ *             Essential - Julian Ridden, Gareth Barnard;
  *             Elegance - Julian Ridden, Danny Wahl;
  *             BCU - Jez H, Mike Grant
  *             Decaf - Paul Nichols
- *             Many others for non-specific but vital inspirations,
- *             suggestions and support
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -163,7 +160,8 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
                     $contentimages .= html_writer::link($link, html_writer::empty_tag('img', array('src' => $url)));
                     $contentimages .= html_writer::end_tag('div');
                 } else {
-                    $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center; background-size: contain;'></div>";
+                    $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center;
+                            background-size: contain;'></div>";
                 }
             } else {
                 $image = $this->output->pix_icon(file_file_icon($file, 24), $file->get_filename(), 'moodle');
@@ -177,7 +175,8 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
         if (strlen($contentimages) == 0 && $type == 2) {
             // Default image.
             $url = $PAGE->theme->setting_file_url('frontpagerendererdefaultimage', 'frontpagerendererdefaultimage');
-            $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center; background-size: contain;'></div>";
+            $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center;
+                    background-size: contain;'></div>";
         }
         $content .= $contentimages. $contentfiles;
 
@@ -304,7 +303,8 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
                     ));
                 $totalcount = $DB->count_records('course') - 1;
             }
-            $chelper->set_show_courses(self::COURSECAT_SHOW_COURSES_EXPANDED)->set_attributes(array('class' => 'frontpage-course-list-enrolled'));
+            $chelper->set_show_courses(self::COURSECAT_SHOW_COURSES_EXPANDED)->set_attributes(array('class' =>
+                    'frontpage-course-list-enrolled'));
             $output .= $this->coursecat_courses($chelper, $sortedcourses, $totalcount);
 
             if (!empty($rcourses)) {

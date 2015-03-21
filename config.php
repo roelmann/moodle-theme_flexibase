@@ -20,14 +20,11 @@
  * @package    theme_flexibase
  * @author     2015 Richard Oelmann
  * @copyright  2015 R. Oelmann
- * @parents    Bootstrap
- * @copyright  2014 Bas Brands
- * @credits    Essential - Julian Ridden, Gareth Barnard;
+ * @copyright  Bootstrap - 2014 Bas Brands
+ *             Essential - Julian Ridden, Gareth Barnard;
  *             Elegance - Julian Ridden, Danny Wahl;
  *             BCU - Jez H, Mike Grant
  *             Decaf - Paul Nichols
- *             Many others for non-specific but vital inspirations,
- *             suggestions and support
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -36,7 +33,7 @@ $THEME->parents = array('bootstrap');
 $THEME->parents_exclude_sheets = array('bootstrap' => array('moodle', 'moodle-rtl'));
 
 $THEME->sheets = array(
-//    'base',         // CSS constructed from LESS files with default settings - needs to be removed if using LESS on the fly.
+// If the less files are removed below during development then the readmes/base.txt file can be added here.
     'font-awesome', // Default FA css unaltered from upstream.
     'flexlayout',   // Flexibox layout rules.
     'alerts',       // Alerts theme styles.
@@ -49,12 +46,7 @@ $THEME->sheets = array(
     );
 $THEME->editor_sheets = array(); // TODO.
 
-// --------------------------------
-/* Remove these if not using less compilation
- * NOTE: If using LESS compilation on the fly Theme Designer Mode is
- * required but this will result in very slow page load times. DO NOT
- * USE for production!
- */
+// Remove these if not using less compilation.
 $THEME->lessfile = 'flexibase';
 $THEME->lessvariablescallback = 'theme_flexibase_less_variables';
 $THEME->extralesscallback = 'theme_flexibase_extra_less';

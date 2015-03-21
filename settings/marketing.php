@@ -20,14 +20,11 @@
  * @package    theme_flexibase
  * @author     2015 Richard Oelmann
  * @copyright  2015 R. Oelmann
- * @parents    Bootstrap
- * @copyright  2014 Bas Brands
- * @credits    Essential - Julian Ridden, Gareth Barnard;
+ * @copyright  Bootstrap - 2014 Bas Brands
+ *             Essential - Julian Ridden, Gareth Barnard;
  *             Elegance - Julian Ridden, Danny Wahl;
  *             BCU - Jez H, Mike Grant
  *             Decaf - Paul Nichols
- *             Many others for non-specific but vital inspirations,
- *             suggestions and support
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -55,23 +52,24 @@ $temp->add(new admin_setting_heading('theme_flexibase_marketing', get_string('ma
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-/* Marketing area title settings hidden as not used in flexibase, but left in for porting to other themes
-    $name = 'theme_flexibase/marketingtitle';
-    $title = get_string('marketingtitle', 'theme_flexibase');
-    $description = get_string('marketingtitledesc', 'theme_flexibase');
-    $default = 'More about Us';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+/* Marketing area title settings hidden as not used in flexibase, but left in for porting to other themes.
+ *  $name = 'theme_flexibase/marketingtitle';
+ *  $title = get_string('marketingtitle', 'theme_flexibase');
+ *  $description = get_string('marketingtitledesc', 'theme_flexibase');
+ *  $default = 'More about Us';
+ *  $setting = new admin_setting_configtext($name, $title, $description, $default);
+ *  $setting->set_updatedcallback('theme_reset_all_caches');
+ *  $temp->add($setting);
+ *
+ *  $name = 'theme_flexibase/marketingtitleicon';
+ *  $title = get_string('marketingtitleicon', 'theme_flexibase');
+ *  $description = get_string('marketingtitleicondesc', 'theme_flexibase');
+ *  $default = 'globe';
+ *  $setting = new admin_setting_configtext($name, $title, $description, $default);
+ *  $setting->set_updatedcallback('theme_reset_all_caches');
+ *  $temp->add($setting);
+ */
 
-    $name = 'theme_flexibase/marketingtitleicon';
-    $title = get_string('marketingtitleicon', 'theme_flexibase');
-    $description = get_string('marketingtitleicondesc', 'theme_flexibase');
-    $default = 'globe';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-*/
     // Flex Marketing Spots.
     $name = 'theme_flexibase/flexmarketing';
     $title = get_string('flexmarketing' , 'theme_flexibase');

@@ -20,14 +20,11 @@
  * @package    theme_flexibase
  * @author     2015 Richard Oelmann
  * @copyright  2015 R. Oelmann
- * @parents    Bootstrap
- * @copyright  2014 Bas Brands
- * @credits    Essential - Julian Ridden, Gareth Barnard;
+ * @copyright  Bootstrap - 2014 Bas Brands
+ *             Essential - Julian Ridden, Gareth Barnard;
  *             Elegance - Julian Ridden, Danny Wahl;
  *             BCU - Jez H, Mike Grant
  *             Decaf - Paul Nichols
- *             Many others for non-specific but vital inspirations,
- *             suggestions and support
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -42,7 +39,8 @@ class theme_flexibase_topsettings_renderer extends plugin_renderer_base {
         global $CFG;
         $content = "";
         if (has_capability('moodle/site:config', context_system::instance())) {
-            $content .= $this->search_form(new moodle_url("$CFG->wwwroot/$CFG->admin/search.php"), optional_param('query', '', PARAM_RAW));
+            $content .= $this->search_form(new moodle_url("$CFG->wwwroot/$CFG->admin/search.php"),
+                    optional_param('query', '', PARAM_RAW));
         }
         $content .= html_writer::empty_tag('br', array('clear' => 'all'));
         return $content;
@@ -168,7 +166,8 @@ class theme_flexibase_topsettings_renderer extends plugin_renderer_base {
     public function search_form(moodle_url $formtarget, $searchvalue) {
         global $CFG;
 
-        $content = html_writer::start_tag('form', array('class' => 'topadminsearchform', 'method' => 'get', 'action' => $formtarget));
+        $content = html_writer::start_tag('form',
+                array('class' => 'topadminsearchform', 'method' => 'get', 'action' => $formtarget));
         $content .= html_writer::start_tag('div', array('class' => 'search-box'));
         $content .= html_writer::tag('label', s(get_string('searchinsettings', 'admin')),
                 array('for' => 'adminsearchquery', 'class' => 'accesshide'));

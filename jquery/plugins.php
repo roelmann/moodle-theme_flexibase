@@ -20,15 +20,13 @@
  * @package    theme_flexibase
  * @author     2015 Richard Oelmann
  * @copyright  2015 R. Oelmann
- * @parents    Bootstrap
- * @copyright  2014 Bas Brands
- * @credits    Essential - Julian Ridden, Gareth Barnard;
+ * @copyright  Bootstrap - 2014 Bas Brands
+ *             Essential - Julian Ridden, Gareth Barnard;
  *             Elegance - Julian Ridden, Danny Wahl;
  *             BCU - Jez H, Mike Grant
  *             Decaf - Paul Nichols
- *             Many others for non-specific but vital inspirations,
- *             suggestions and support
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later */
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
 $plugins = array(
 /* NOTE: basic js and yui are inherited from the parent. However, we want
@@ -37,8 +35,6 @@ $plugins = array(
  * clashes with the existing yui ported javascript.
  * For development I have included all the sections of bootstrap js
  * separately.
- * TODO: download a bootstrap.min.js with the required js element but
- * excluding those that cause clashes
  */
     'modernizr' => array('files' => array('modernizr.js')),
 
@@ -52,8 +48,4 @@ $plugins = array(
     'togglabletabs' => array('files' => array('togglabletabs.js')),
     'affix' => array('files' => array('affix.js')),
     'scrollspy' => array('files' => array('scrollspy.js')),
-//    'dropdowns' => array('files' => array('dropdowns.js')), Excluded as this clashes with the parent version and causes the dropdowns in the nav bar to fail
-//    'collapse' => array('files' => array('collapse.js')), Excluded as this clashes with the parent version and causes the nav bar collapse to fail
-
-// 'bootstrapjs' => array('files' => array('bootstrap3_3_2_min.js')),
 );

@@ -20,14 +20,11 @@
  * @package    theme_flexibase
  * @author     2015 Richard Oelmann
  * @copyright  2015 R. Oelmann
- * @parents    Bootstrap
- * @copyright  2014 Bas Brands
- * @credits    Essential - Julian Ridden, Gareth Barnard;
+ * @copyright  Bootstrap - 2014 Bas Brands
+ *             Essential - Julian Ridden, Gareth Barnard;
  *             Elegance - Julian Ridden, Danny Wahl;
  *             BCU - Jez H, Mike Grant
  *             Decaf - Paul Nichols
- *             Many others for non-specific but vital inspirations,
- *             suggestions and support
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -64,23 +61,24 @@ $choices = array(1 => 'Yes', 0 => 'No');
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $temp->add($setting);
 
-// Add custom menu to Awesomebar - not used in Flexibase, but left in for porting to other themes.
-//    $name = 'theme_flexibase/custommenuinawesomebar';
-//    $title = get_string('custommenuinawesomebar', 'theme_flexibase');
-//    $description = get_string('custommenuinawesomebardesc', 'theme_flexibase');
-//    $default = 0;
-//    $choices = array(1 => 'Yes', 0 => 'No');
-//    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-//    $temp->add($setting);
-
-// Place custom menu after Awesomebar - not used in Flexibase, but left in for porting to other themes.
-//    $name = 'theme_flexibase/custommenuafterawesomebar';
-//    $title = get_string('custommenuafterawesomebar', 'theme_flexibase');
-//    $description = get_string('custommenuafterawesomebardesc', 'theme_flexibase');
-//    $default = 0;
-//    $choices = array(0 => 'No', 1 => 'Yes');
-//    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-//    $temp->add($setting);
+/* Add custom menu to Awesomebar - not used in Flexibase, but left in for porting to other themes.
+ *    $name = 'theme_flexibase/custommenuinawesomebar';
+ *    $title = get_string('custommenuinawesomebar', 'theme_flexibase');
+ *    $description = get_string('custommenuinawesomebardesc', 'theme_flexibase');
+ *    $default = 0;
+ *    $choices = array(1 => 'Yes', 0 => 'No');
+ *    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+ *    $temp->add($setting);
+ */
+/* Place custom menu after Awesomebar - not used in Flexibase, but left in for porting to other themes.
+ *    $name = 'theme_flexibase/custommenuafterawesomebar';
+ *    $title = get_string('custommenuafterawesomebar', 'theme_flexibase');
+ *    $description = get_string('custommenuafterawesomebardesc', 'theme_flexibase');
+ *    $default = 0;
+ *    $choices = array(0 => 'No', 1 => 'Yes');
+ *    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+ *    $temp->add($setting);
+ */
 
 // Hide courses menu from non-logged-in users.
 $name = 'theme_flexibase/coursesloggedinonly';
@@ -96,7 +94,7 @@ $name = 'theme_flexibase/coursesleafonly';
 $title = get_string('coursesleafonly', 'theme_flexibase');
 $description = get_string('coursesleafonlydesc', 'theme_flexibase');
 $default = 0;
-$choices = array(0 => 'Yes', 1 => 'No'); // This seems backwards, but makes it easier for users to understand as it eliminates the double-negative.
+$choices = array(0 => 'Yes', 1 => 'No');
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $temp->add($setting);
 

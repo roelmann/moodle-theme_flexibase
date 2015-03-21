@@ -20,18 +20,13 @@
  * @package    theme_flexibase
  * @author     2015 Richard Oelmann
  * @copyright  2015 R. Oelmann
- * @parents    Bootstrap
- * @copyright  2014 Bas Brands
- * @credits    Essential - Julian Ridden, Gareth Barnard;
+ * @copyright  Bootstrap - 2014 Bas Brands
+ *             Essential - Julian Ridden, Gareth Barnard;
  *             Elegance - Julian Ridden, Danny Wahl;
  *             BCU - Jez H, Mike Grant
  *             Decaf - Paul Nichols
- *             Many others for non-specific but vital inspirations,
- *             suggestions and support
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-// Awesombar - some settings not used in Flexibase but left in for porting to other themes.
 
 if (!empty($PAGE->theme->settings->showawesomebar) && $PAGE->theme->settings->showawesomebar = 1) {
     $custommenu = $OUTPUT->custom_menu();
@@ -44,13 +39,17 @@ if (!empty($PAGE->theme->settings->showawesomebar) && $PAGE->theme->settings->sh
             if ($this->page->pagelayout != 'maintenance' && !(get_user_preferences('auth_forcepasswordchange')
             && !session_is_loggedinas())) {
                 echo $flexibase->awesome_nav;
-/*              if ($hascustommenu && !empty($flexibase->custommenuinawesomebar) && empty($flexibase->custommenuafterawesomebar)) {
- *                    echo $custommenu;
+/*              Awesomebar setting not used in flexibase but left in for porting to other themes.
+ *              if ($hascustommenu && !empty($flexibase->custommenuinawesomebar)
+ *                      && empty($flexibase->custommenuafterawesomebar)) {
+ *                  echo $custommenu;
  *              }
  */
                 echo $flexibase->awesome_settings;
-/*              if ($hascustommenu && !empty($flexibase->custommenuinawesomebar) && !empty($flexibase->custommenuafterawesomebar)) {
- *                    echo $custommenu;
+/*              Awesomebar setting not used in flexibase but left in for porting to other themes.
+ *              if ($hascustommenu && !empty($flexibase->custommenuinawesomebar)
+ *                      && !empty($flexibase->custommenuafterawesomebar)) {
+ *                  echo $custommenu;
  *              }
  */
                 echo $flexibase->topsettings->settings_search_box();

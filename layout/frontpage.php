@@ -20,14 +20,12 @@
  * @package    theme_flexibase
  * @author     2015 Richard Oelmann
  * @copyright  2015 R. Oelmann
- * @parents    Bootstrap
- * @copyright  2014 Bas Brands
- * @credits    Essential - Julian Ridden, Gareth Barnard;
+ * @copyright  Bootstrap - 2014 Bas Brands
+ *             Essential - Julian Ridden, Gareth Barnard;
  *             Elegance - Julian Ridden, Danny Wahl;
  *             BCU - Jez H, Mike Grant
  *             Decaf - Paul Nichols
- *             Many others for non-specific but vital inspirations,
- *             suggestions and support
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -138,7 +136,7 @@ require('includes/header.php');
                     <?php
                     if ($hassidepre) {
                         echo $OUTPUT->blocks('side-pre');
-                                    }
+                    }
                     if ($hassidepost) {
                         echo $OUTPUT->blocks('side-post');
                     }

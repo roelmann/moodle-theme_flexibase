@@ -20,14 +20,11 @@
  * @package    theme_flexibase
  * @author     2015 Richard Oelmann
  * @copyright  2015 R. Oelmann
- * @parents    Bootstrap
- * @copyright  2014 Bas Brands
- * @credits    Essential - Julian Ridden, Gareth Barnard;
+ * @copyright  Bootstrap - 2014 Bas Brands
+ *             Essential - Julian Ridden, Gareth Barnard;
  *             Elegance - Julian Ridden, Danny Wahl;
  *             BCU - Jez H, Mike Grant
  *             Decaf - Paul Nichols
- *             Many others for non-specific but vital inspirations,
- *             suggestions and support
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -84,11 +81,16 @@ class theme_flexibase_expand_navigation extends global_navigation {
 
         $this->rootnodes = array();
         $this->rootnodes['site']      = $this->add_course($SITE);
-        $this->rootnodes['currentcourse'] = $this->add(get_string('currentcourse'), null, self::TYPE_ROOTNODE, null, 'currentcourse');
-        $this->rootnodes['mycourses'] = $this->add(get_string('mycourses'), new moodle_url('/my'), self::TYPE_ROOTNODE, null, 'mycourses');
-        $this->rootnodes['courses'] = $this->add(get_string('courses'), null, self::TYPE_ROOTNODE, null, 'courses');
+        $this->rootnodes['currentcourse'] = $this->add(get_string('currentcourse'),
+                null, self::TYPE_ROOTNODE, null, 'currentcourse');
+        $this->rootnodes['mycourses'] = $this->add(get_string('mycourses'),
+                new moodle_url('/my'), self::TYPE_ROOTNODE, null, 'mycourses');
+        $this->rootnodes['courses'] = $this->add(get_string('courses'),
+                null, self::TYPE_ROOTNODE, null, 'courses');
 
-        if (!empty($PAGE->theme->settings->coursesleafonly) || (!empty($PAGE->theme->settings->coursesloggedinonly) && !isloggedin())) {
+        if (!empty($PAGE->theme->settings->coursesleafonly) ||
+                (!empty($PAGE->theme->settings->coursesloggedinonly) &&
+                !isloggedin())) {
             $this->expandtocourses = false;
         }
 
@@ -192,7 +194,8 @@ class theme_flexibase_expand_navigation extends global_navigation {
                         $this->add_course_essentials($coursenode, $course);
                         $this->expandedcourses[$course->id] = $this->expand_course($course, $coursenode);
                     }
-                    if (property_exists($PAGE->theme->settings, 'expandtoactivities') && $PAGE->theme->settings->expandtoactivities) {
+                    if (property_exists($PAGE->theme->settings, 'expandtoactivities') &&
+                            $PAGE->theme->settings->expandtoactivities) {
                         if (!array_key_exists($course->id, $flexibasecourseactivities)) {
                             list($sectionarray, $activities) = $this->generate_sections_and_activities($course);
                             $flexibasecourseactivities[$course->id] = $activities;
@@ -340,7 +343,8 @@ class theme_flexibase_expand_navigation extends global_navigation {
             }
             $categoryids = array_unique($categoryids);
             list($sql, $params) = $DB->get_in_or_equal($categoryids);
-            $categories = $DB->get_recordset_select('course_categories', 'id '.$sql.' AND parent <> 0', $params, 'sortorder, id', 'id, path');
+            $categories = $DB->get_recordset_select('course_categories', 'id '.$sql.
+                    ' AND parent <> 0', $params, 'sortorder, id', 'id, path');
             foreach ($categories as $category) {
                 $bits = explode('/', trim($category->path, '/'));
                 $toplevelcats[$category->id] = $bits[0];
@@ -405,14 +409,20 @@ class theme_flexibase_expand_navigation extends global_navigation {
      * @param bool $ismycourse
      * @return navigation_node
      */
-    public function add_course_to(stdClass $course, $forcegeneric = false, $coursetype = self::COURSE_OTHER, navigation_node $parent) {
+    public function add_course_to(stdClass $course,
+                                  $forcegeneric = false,
+                                  $coursetype = self::COURSE_OTHER,
+                                  navigation_node $parent) {
         global $CFG, $SITE;
         $coursecontext = context_course::instance($course->id);
 
         if ($course->id != $SITE->id && !$course->visible) {
-            if (is_role_switched($course->id)) {
-                // User has to be able to access course in order to switch, let's skip the visibility test here.
-            } else if (!has_capability('moodle/course:viewhiddencourses', $coursecontext)) {
+/*          Remove empty IF statement from upstream awesomebar code - left in for reference.
+ *          if (is_role_switched($course->id)) {
+ *              // User has to be able to access course in order to switch, let's skip the visibility test here.
+ *          } else if (!has_capability('moodle/course:viewhiddencourses', $coursecontext)) {
+ */
+            if (!has_capability('moodle/course:viewhiddencourses', $coursecontext)) {
                 return false;
             }
         }
