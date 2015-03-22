@@ -28,6 +28,18 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+/**
+ * Returns course activities for custom menu item.
+ *
+ * @param stdclass $PAGE
+ * @param stdclass $OUPUT
+ * @param string $course
+ * @param stdclass $content
+ * @param array $modinfo
+ * @param array $modfullnames
+ * @param array $archetypes
+ * @return array activities in course
+ */
 function theme_flexibase_get_course_activities() {
     GLOBAL $CFG, $PAGE, $OUTPUT;
     // A copy of block_activity_modules.

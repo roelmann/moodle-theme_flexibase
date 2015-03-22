@@ -37,7 +37,6 @@
  * @param theme_config $theme The theme config object.
  * @return array of LESS variables without the @.
  */
-
 function theme_flexibase_less_variables($theme) {
     $variables = array();
     if (!empty($theme->settings->brandprimary)) {
@@ -107,7 +106,15 @@ function theme_flexibase_less_variables($theme) {
 
     return $variables;
 }
-
+/**
+ * Returns extra variables for LESS.
+ *
+ * We will inject some LESS variables from the settings that the user has defined
+ * for the theme. This will apply extra less as a custom setting.
+ *
+ * @param theme_config $theme The theme config object.
+ * @return array of LESS selectors and rules.
+ */
 function theme_flexibase_extra_less ($theme) {
     $extraless = '';
     if (!empty($theme->settings->customless)) {

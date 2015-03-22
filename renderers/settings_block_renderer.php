@@ -28,7 +28,19 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later */
 
 require_once($CFG->dirroot."/blocks/settings/renderer.php");
+/**
+ * Extends settings block renderer
+ *
+ * @copyright  2010 Sam Hemelryk
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 class theme_flexibase_block_settings_renderer extends block_settings_renderer {
+    /**
+     * Extends navigation node from core
+     *
+     * @copyright  2010 Sam Hemelryk
+     * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+     */
     protected function navigation_node(navigation_node $node, $attrs=array()) {
         $items = $node->children;
         // Exit if empty, we don't want an empty ul element.
@@ -96,6 +108,12 @@ class theme_flexibase_block_settings_renderer extends block_settings_renderer {
             return '';
         }
     }
+    /**
+     * Extends search form from core
+     *
+     * @copyright  2010 Sam Hemelryk
+     * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+     */
     public function search_form(moodle_url $formtarget, $searchvalue) {
         $content = html_writer::start_tag('form',
             array(

@@ -96,7 +96,23 @@ function theme_flexibase_process_css($css, $theme) {
 
     return $css;
 }
-
+/**
+ * Set the main site logo.
+ *
+ * @param string $css
+ * @param string $logo
+ * @param string $logotag
+ * @param integer $logoheight
+ * @param integer $logowidth
+ * @param string $logodisplay
+ * @param integer $width
+ * @param integer $height
+ * @param string $display
+ * @param string $replacement
+ * @param array $dimensions
+ * 
+ * @return string
+ */
 function theme_flexibase_set_logo($css, $logo) {
     $logotag = '[[setting:logo]]';
     $logoheight = '[[logoheight]]';
@@ -121,6 +137,23 @@ function theme_flexibase_set_logo($css, $logo) {
 
     return $css;
 }
+/**
+ * Set the mini site logo.
+ *
+ * @param string $css
+ * @param string $minilogo
+ * @param string $minilogotag
+ * @param integer $minilogoheight
+ * @param integer $minilogowidth
+ * @param string $minilogodisplay
+ * @param integer $miniwidth
+ * @param integer $miniheight
+ * @param string $minidisplay
+ * @param string $replacement
+ * @param array $dimensions
+ * 
+ * @return string
+ */
 function theme_flexibase_set_minilogo($css, $minilogo) {
     $minilogotag = '[[setting:minilogo]]';
     $minilogoheight = '[[minilogoheight]]';
@@ -145,6 +178,22 @@ function theme_flexibase_set_minilogo($css, $minilogo) {
 
     return $css;
 }
+/**
+ * Set the login page background image.
+ *
+ * @param string $css
+ * @param string $loginbgtag
+ * @param integer $loginbgheight
+ * @param integer $loginbgwidth
+ * @param string $loginbgdisplay
+ * @param integer $loginbgwidth
+ * @param integer $loginbgheight
+ * @param string $loginbgdisplay
+ * @param string $replacement
+ * @param array $dimensions
+ * 
+ * @return string
+ */
 function theme_flexibase_set_loginbg($css, $loginbg) {
     $loginbgtag = '[[setting:loginbg]]';
     $loginbgheight = '[[loginbgheight]]';
@@ -169,6 +218,16 @@ function theme_flexibase_set_loginbg($css, $loginbg) {
 
     return $css;
 }
+/**
+ * Set the capton background colour on the slider.
+ *
+ * @param string $css
+ * @param string $captionbackgroundcolour
+ * @param string $tag
+ * @param string $replacement
+ * 
+ * @return string
+ */
 function theme_flexibase_set_captionbackgroundcolour($css, $captionbackgroundcolour) {
     $tag = '[[setting:captionbackgroundcolour]]';
     $replacement = $captionbackgroundcolour;
@@ -178,6 +237,16 @@ function theme_flexibase_set_captionbackgroundcolour($css, $captionbackgroundcol
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
+/**
+ * Set the capton border colour on the slider.
+ *
+ * @param string $css
+ * @param string $captionbordercolour
+ * @param string $tag
+ * @param string $replacement
+ * 
+ * @return string
+ */
 function theme_flexibase_set_captionbordercolour($css, $captionbordercolour) {
     $tag = '[[setting:captionbordercolour]]';
     $replacement = $captionbordercolour;
@@ -187,6 +256,16 @@ function theme_flexibase_set_captionbordercolour($css, $captionbordercolour) {
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
+/**
+ * Set the capton text colour on the slider.
+ *
+ * @param string $css
+ * @param string $captiontextcolour
+ * @param string $tag
+ * @param string $replacement
+ * 
+ * @return string
+ */
 function theme_flexibase_set_captiontextcolour($css, $captiontextcolour) {
     $tag = '[[setting:captiontextcolour]]';
     $replacement = $captiontextcolour;
@@ -196,6 +275,16 @@ function theme_flexibase_set_captiontextcolour($css, $captiontextcolour) {
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
+/**
+ * Set the carousel border colour on the slider.
+ *
+ * @param string $css
+ * @param string $carouselbordercolour
+ * @param string $tag
+ * @param string $replacement
+ * 
+ * @return string
+ */
 function theme_flexibase_set_carouselbordercolour($css, $carouselbordercolour) {
     $tag = '[[setting:carouselbordercolour]]';
     $replacement = $carouselbordercolour;
@@ -205,6 +294,16 @@ function theme_flexibase_set_carouselbordercolour($css, $carouselbordercolour) {
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
+/**
+ * Set the overlay background colour for course tiles.
+ *
+ * @param string $css
+ * @param string $rendereroverlaycolour
+ * @param string $tag
+ * @param string $replacement
+ * 
+ * @return string
+ */
 function theme_flexibase_set_rendereroverlaycolour($css, $rendereroverlaycolour) {
     $tag = '[[setting:rendereroverlaycolour]]';
     $replacement = $rendereroverlaycolour;
@@ -214,6 +313,16 @@ function theme_flexibase_set_rendereroverlaycolour($css, $rendereroverlaycolour)
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
+/**
+ * Set the overlay text colour for course tiles.
+ *
+ * @param string $css
+ * @param string $rendereroverlayfontcolour
+ * @param string $tag
+ * @param string $replacement
+ * 
+ * @return string
+ */
 function theme_flexibase_set_rendereroverlayfontcolour($css, $rendereroverlayfontcolour) {
     $tag = '[[setting:rendereroverlayfontcolour]]';
     $replacement = $rendereroverlayfontcolour;

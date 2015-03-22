@@ -33,8 +33,19 @@ defined('MOODLE_INTERNAL') || die();
 require_once($CFG->dirroot.'/blocks/course_overview/locallib.php');
 require_once($CFG->dirroot . "/course/renderer.php");
 require_once($CFG->libdir. '/coursecatlib.php');
-
+/**
+ * The theme course renderer extends core course renderer
+ */
 class theme_flexibase_core_course_renderer extends core_course_renderer {
+    /**
+     * Renders a course box object.
+     *
+     * @param stdclass coursecat_helper
+     * @param string $chelper
+     * @param string $course
+     * @param string $additionalclasses
+     * @return string $content
+     */
     protected function coursecat_coursebox(coursecat_helper $chelper, $course, $additionalclasses = '') {
         global $CFG, $OUTPUT;
         $type = theme_flexibase_get_setting('frontpagerenderer');
@@ -119,7 +130,12 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
         $content .= html_writer::end_tag('div'); // End .panel.
         return $content;
     }
-
+    /**
+     * Renders enrolment icons for coursebox.
+     *
+     * @param string $course
+     * @return string $content
+     */
     protected function coursecat_coursebox_enrolmenticons($course) {
         $content = '';
         if ($icons = enrol_get_course_info_icons($course)) {
@@ -132,8 +148,15 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
         return $content;
     }
 
-    // Type - 1 = No Overlay.
-    // Type - 2 = Overlay.
+    /**
+     * Renders content for a course box object.
+     *
+     * @param stdclass coursecat_helper
+     * @param string $chelper
+     * @param string $course
+     * @param integer $type - type1 = No Overlay, type2 = overlay
+     * @return string $content
+     */
     protected function coursecat_coursebox_content(coursecat_helper $chelper, $course, $type=1) {
         global $CFG, $OUTPUT, $PAGE;
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
@@ -242,6 +265,13 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
 
         return $content;
     }
+    /**
+     * Renders a course search form.
+     *
+     * @param string $value
+     * @param string $format
+     * @return string $output
+     */
 
     public function course_search_form($value = '', $format = 'plain') {
         static $count = 0;
@@ -274,6 +304,11 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
 
         return $output;
     }
+    /**
+     * Renders mycourses for front page.
+     *
+     * @return string $content
+     */
 
     public function frontpage_my_courses() {
         global $USER, $CFG, $DB;

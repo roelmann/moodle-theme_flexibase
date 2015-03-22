@@ -34,8 +34,11 @@
  * clashes with the existing yui ported javascript.
  * For development I have included all the sections of bootstrap js
  * separately.
- * TODO: download a bootstrap.min.js with the required js element but
- * excluding those that cause clashes
+ */
+/**
+ * Call the javascript for the page.
+ *
+ * @param stdClass $page
  */
 function theme_flexibase_page_init(moodle_page $page) {
     global $CFG;

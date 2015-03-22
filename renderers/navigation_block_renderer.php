@@ -29,6 +29,13 @@
  */
 
 require_once($CFG->dirroot."/blocks/navigation/renderer.php");
+
+/**
+ * Extends renderer for block navigation
+ *
+ * @copyright 2009 Sam Hemelryk
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 class theme_flexibase_block_navigation_renderer extends block_navigation_renderer {
     /**
      * Produces a navigation node for the navigation tree

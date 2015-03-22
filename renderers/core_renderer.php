@@ -30,6 +30,10 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+require_once($CFG->dirroot.'/blocks/course_overview/locallib.php');
+require_once($CFG->dirroot . "/course/renderer.php");
+require_once($CFG->libdir. '/coursecatlib.php');
+
 /*
  * Renderers to align Moodle's HTML with that expected by Bootstrap
  *
@@ -37,12 +41,13 @@ defined('MOODLE_INTERNAL') || die();
  * @copyright  2015
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-require_once($CFG->dirroot.'/blocks/course_overview/locallib.php');
-require_once($CFG->dirroot . "/course/renderer.php");
-require_once($CFG->libdir. '/coursecatlib.php');
-
 class theme_flexibase_core_renderer extends core_renderer {
-
+    /*
+     * Render Editing link as a bootstrap style button with fontawesome icon.
+     * @param stdclass moodle_url
+     * @param string $url
+     * return string
+     */
     public function edit_button(moodle_url $url) {
         $url->param('sesskey', sesskey());
         if ($this->page->user_is_editing()) {
@@ -59,7 +64,12 @@ class theme_flexibase_core_renderer extends core_renderer {
         return html_writer::tag('a', html_writer::start_tag('i', array('class' => $icon . ' fa fa-fw')) .
             html_writer::end_tag('i') . $title, array('href' => $url, 'class' => 'btn ' . $btn, 'title' => $title));
     }
-
+    /*
+     * Render notifications as a bootstrap style.
+     * @param string $classes
+     * @param string $message
+     * return string
+     */
     public function notification($message, $classes = 'notifyproblem') {
         $message = clean_text($message);
 
@@ -84,12 +94,21 @@ class theme_flexibase_core_renderer extends core_renderer {
         }
         return html_writer::div($message, $classes);
     }
-
+    /*
+     * Render debug listing as a bootstrap style.
+     * @param string $message
+     * return string
+     */
     private function debug_listing($message) {
         $message = str_replace('<ul style', '<ul class="list-unstyled" style', $message);
         return html_writer::tag('pre', $message, array('class' => 'alert alert-info'));
     }
-
+    /*
+     * Render navbar for theme styling
+     * @param array $items
+     * @param string $breadcrumbs
+     * return string
+     */
     public function navbar() {
         $items = $this->page->navbar->get_items();
         if (empty($items)) { // MDL-46107.
@@ -102,7 +121,11 @@ class theme_flexibase_core_renderer extends core_renderer {
         }
         return "<ol class=breadcrumb>$breadcrumbs</ol>";
     }
-
+    /*
+     * Render custommenu for theme styling, with custom items
+     * @param array $custommenuitems
+     * return stdclass $this
+     */
     public function custom_menu($custommenuitems = '') {
         // The custom menu is always shown, even if no menu items
         // are configured in the global theme settings page.
@@ -114,7 +137,11 @@ class theme_flexibase_core_renderer extends core_renderer {
         $custommenu = new custom_menu($custommenuitems, current_language());
         return $this->render_custom_menu($custommenu);
     }
-
+    /*
+     * Render custommenu for theme styling, with custom items
+     * @param array $menu
+     * return string $content
+     */
     protected function render_custom_menu(custom_menu $menu) {
         global $CFG, $PAGE, $OUTPUT, $COURSE;
 
@@ -198,13 +225,22 @@ class theme_flexibase_core_renderer extends core_renderer {
 
         return $content.'</ul>';
     }
-
+    /*
+     * Render theme specific user menu
+     * @param string $user
+     * @param string $withlinks
+     * return stdclass $this
+     */
     public function flexibase_user_menu($user = null, $withlinks = null) {
         global $CFG;
         $usermenu = new custom_menu('', current_language());
         return $this->flexibase_render_user_menu($usermenu);
     }
-
+    /*
+     * Render ctheme specific user menu
+     * @param array $menu
+     * return string $content
+     */
     protected function flexibase_render_user_menu(custom_menu $menu) {
         global $CFG, $USER, $DB;
 
@@ -390,7 +426,13 @@ class theme_flexibase_core_renderer extends core_renderer {
         }
         return $content.'</ul>';
     }
-
+    /*
+     * Render individual items for custommenu for theme styling
+     * @param array $menunode
+     * @param stdclass custom_menu_item
+     * @param $level
+     * return string $content
+     */
     protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
         static $submenucount = 0;
 
@@ -439,7 +481,12 @@ class theme_flexibase_core_renderer extends core_renderer {
         }
         return $content;
     }
-
+    /**
+     * Extends tabtree from core, with bootstrap styles
+     * @param stdclass tabtree
+     * @param array $tabtree
+     * @return string
+     */
     protected function render_tabtree(tabtree $tabtree) {
         if (empty($tabtree->subtree)) {
             return '';
@@ -453,7 +500,12 @@ class theme_flexibase_core_renderer extends core_renderer {
         }
         return html_writer::tag('ul', $firstrow, array('class' => 'nav nav-tabs nav-justified')) . $secondrow;
     }
-
+    /**
+     * Extends tabtree items from core
+     * @param stdclass tabobject
+     * @param array $tab
+     * @return string
+     */
     protected function render_tabobject(tabobject $tab) {
         if ($tab->selected or $tab->activated) {
             return html_writer::tag('li', html_writer::tag('a', $tab->text), array('class' => 'active'));
@@ -469,7 +521,14 @@ class theme_flexibase_core_renderer extends core_renderer {
             return html_writer::tag('li', $link);
         }
     }
-
+    /**
+     * Extends box from core with bootstrap styles
+     * @param array $contents
+     * @param string $classes
+     * @param string $id
+     * @param array $attributes
+     * @return stdclass
+     */
     public function box($contents, $classes = 'generalbox', $id = null, $attributes = array()) {
         if (isset($attributes['data-rel']) && $attributes['data-rel'] === 'fatalerror') {
             return html_writer::div($contents, 'alert alert-danger', $attributes);
