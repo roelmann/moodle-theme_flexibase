@@ -79,7 +79,7 @@ if ($numslides) {
                         <div class="carousel-caption">
                             <h1><?php echo $slidetitle?></h1>
                             <p class="carousel-caption-text"><?php echo $slidecaption; ?></p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">
+                            <p><a class="btn btn-lg btn-primary" href="<?php echo $slideurl; ?>" role="button">
                                 <?php echo get_string('readmore', 'theme_flexibase')?></a></p>
                         </div>
                     </div>
