@@ -85,6 +85,13 @@ function theme_flexibase_process_css($css, $theme) {
         $rendereroverlayfontcolour = null;
     }
     $css = theme_flexibase_set_rendereroverlayfontcolour($css, $rendereroverlayfontcolour);
+    // Course Header image height.
+    if (!empty($theme->settings->courseheaderimageheight)) {
+        $courseheaderimageheight = $theme->settings->courseheaderimageheight;
+    } else {
+        $courseheaderimageheight = '175px';
+    }
+    $css = theme_flexibase_set_courseheaderimageheight($css, $courseheaderimageheight);
 
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
@@ -332,7 +339,25 @@ function theme_flexibase_set_rendereroverlayfontcolour($css, $rendereroverlayfon
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
-
+/**
+ * Set the height for course header images.
+ *
+ * @param string $css
+ * @param string $courseheaderimageheight
+ * @param string $tag
+ * @param string $replacement
+ * 
+ * @return string
+ */
+function theme_flexibase_set_courseheaderimageheight($css, $courseheaderimageheight) {
+    $tag = '[[setting:courseheaderimageheight]]';
+    $replacement = $courseheaderimageheight;
+    if (is_null($replacement)) {
+        $replacement = '175px';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
 /**
  * Adds any custom CSS to the CSS before it is cached.
  *

@@ -163,7 +163,7 @@ body.has_dock .moodleheader .container-fluid {
     padding: 2px 8px;
 }
 .headerimage.withimage {
-	height:175px;
+	height:[[setting:courseheaderimageheight]];
     background-size: cover;
     background-repeat:no-repeat;
 }

@@ -69,8 +69,10 @@ $PAGE->set_popup_notification_allowed(false);
 $bodyclasses = array();
 if (theme_flexibase_get_setting('enablecategoryicon')) {
     $bodyclasses[] = 'categoryicons';
-    $bodyclasses[] = $mainlayouts;
 }
+    $bodyclasses[] = $mainlayouts;
+
+$coursepage=0;
 
 //AwesomeBar
 require($CFG->dirroot .'/theme/flexibase/plugins/awesomebar/awesomebarpreheaderinc.php');

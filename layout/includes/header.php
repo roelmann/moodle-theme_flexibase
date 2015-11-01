@@ -66,16 +66,6 @@ if (isloggedin() ) {
 <?php
 }
 ?>
-<?php 
-	$moodleheaderclass='';
-	$headerimage='';
-	if ($headerimagetype=='banner') {
-	    if ($courseimage) {
-		    $moodleheaderclass='withimage';
-		    $headerimage=$courseimage;
-		}
-	}
-?>
 <header class="moodleheader">
   <div class="headerimage <?php echo $moodleheaderclass;?>"  style="background-image: url('<?php echo $headerimage;?>')">
     <div class="container-fluid">
@@ -135,14 +125,6 @@ if (isloggedin() ) {
     ?>
 </div>
 
-<?php 
-	$courseheaderclass='';
-	if ($headerimagetype == 'course') {
-	    if ($courseimage) {
-		    $courseheaderclass='withimage';
-		}
-	}
-?>
 <div class="courseheaderimage">
   <div class="courseimage <?php echo $courseheaderclass;?>"  style="background-image: url('<?php echo $courseimage;?>')">&nbsp;</div>
 </div>

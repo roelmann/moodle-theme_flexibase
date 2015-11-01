@@ -35,8 +35,28 @@
 				$courseimage = file_encode_url("$CFG->wwwroot/pluginfile.php",
                     '/'. $file->get_contextid(). '/'. $file->get_component(). '/'.
                     $file->get_filearea(). $file->get_filepath(). $file->get_filename(), !$isimage);
-
             }
         }
+        // Default image.
+        if ($courseimage == '') {
+            $courseimage = $PAGE->theme->setting_file_url('courseimagedefaultheader', 'courseimagedefaultheader');
+        }
         
-$headerimagetype='banner';
+$headerimagetype=(empty($PAGE->theme->settings->courseimageheader)) ? 1 : $PAGE->theme->settings->courseimageheader;
+
+$moodleheaderclass='';
+$headerimage='';
+$courseheaderclass='';
+if ($coursepage==1) {
+	if ($headerimagetype == 1) {
+		if ($courseimage) {
+			$moodleheaderclass='withimage';
+			$headerimage=$courseimage;
+		}
+	}
+	if ($headerimagetype == 2) {
+		if ($courseimage) {
+			$courseheaderclass='withimage';
+		}
+	}
+}

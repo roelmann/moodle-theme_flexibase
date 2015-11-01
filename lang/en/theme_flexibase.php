@@ -153,6 +153,7 @@ $string['frontpagelayout'] = 'Front Page';
 $string['frontpagelayoutdesc'] = 'SideBar layout for the front page';
 $string['myhomelayout'] = 'My Home';
 $string['myhomelayoutdesc'] = 'SideBar layout for the My Home dashboard page';
+
 // Alerts.
     require($CFG->dirroot .'/theme/flexibase/plugins/alerts/alertslang_en.php');
 
@@ -224,10 +225,12 @@ $string['marketingbuttontextdesc'] = 'Text to appear on the button.';
 $string['marketingbuttonurl'] = 'Link URL';
 $string['marketingbuttonurldesc'] = 'URL the button will point to.';
 
-// CourseBox rendering.
-$string['frontpagecoursesettings'] = 'Frontpage Courses';
-$string['frontpagesettingsheading'] = 'Frontpage rendering';
-$string['frontpagedesc'] = 'Configure the way that the course boxes are rendered on the frontpage.';
+// Course Image rendering.
+$string['frontpagecoursesettings'] = 'Course Images';
+$string['frontpagesettingsheading'] = 'Using Course Images';
+$string['frontpagedesc'] = 'Configure the way that the images are used for course tiles on the frontpage and as course images on the course pages.';
+$string['coursetileimagesinfo'] = 'Front Page Course Tile Images';
+$string['coursetileimagesinfodesc'] = 'Settings for Front Page course tile images';
 $string['frontpagerenderer'] = 'Frontpage Course Boxes';
 $string['frontpagerendererdesc'] = 'Control the way that the coure boxes on the front page are rendered.';
 $string['frontpagerendereroption1'] = 'Tiles';
@@ -236,8 +239,19 @@ $string['rendereroverlaycolour'] = 'Overlay colour';
 $string['rendereroverlaycolourdesc'] = 'The colour of the overlay, when the "Tiles w/ overlay" renderer is selected.';
 $string['rendereroverlayfontcolour'] = 'Overlay font colour';
 $string['rendereroverlayfontcolourdesc'] = 'The colour of the font, when hovering over a coursebox with "Tiles w/ overlay" renderer enabled.';
-$string['frontpagerendererdefaultimage'] = 'Default course image';
-$string['frontpagerendererdefaultimagedesc'] = 'The default image to use when no course image is found, (only applies for Tiles w/ overlay)';
+$string['frontpagerendererdefaultimage'] = 'Default Front Page course tile image';
+$string['frontpagerendererdefaultimagedesc'] = 'The default image to be used for front page course tiles when no course image is found, (applies for Tiles w/ overlay)';
+$string['courseheaderdefaultimage'] = 'Default course header image';
+$string['courseheaderdefaultimagedesc'] = 'The default image to be used for course header images when no course image is found - if this is left empty, then only courses with a course image in the Course Summary files will have a heading image.';
+$string['courseimageheaderoption'] = 'Course Header Images';
+$string['courseimageheaderoptiondesc'] = 'Configure the way the images are used for course headers';
+$string['courseimageheaderoption1'] = 'Course image as a header banner';
+$string['courseimageheaderoption2'] = 'Course image as a separate image';
+$string['courseimageheaderoption3'] = 'No course header image';
+$string['coursepageimagesinfo'] = 'Course Page Images';
+$string['coursepageimagesinfodesc'] = 'Settings for Course Page header images';
+$string['courseheaderimageheight'] = 'Course Header image height';
+$string['courseheaderimageheightdesc'] = 'Set the height for any images used as header banners (recommended height 150-175px)';
 
 // Category Icons.
 $string['categoryiconheading'] = 'Category icons';
@@ -252,8 +266,7 @@ $string['defaultcategoryicon'] = 'Default category icons';
 $string['defaultcategoryicondesc'] = 'Set a default category icon';
 $string['enablecustomcategoryicon'] = 'Enable custom category icons';
 $string['enablecustomcategoryicondesc'] = 'If enabled below this section you will see each category with a customizable option behind each category, please save after enabling and disabling this option.';
-$string['categoryiconinfo'] = 'Set custom category icons';
-$string['categoryiconinfodesc'] = 'Enter the name of the icon you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after "fa-".';
+
 
 // Social Networks.
 $string['socialheading'] = 'Social Networking';
