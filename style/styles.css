@@ -162,7 +162,23 @@ body.has_dock .moodleheader .container-fluid {
 #awesomebar ul#awesomeHomeMenu > li > span, #awesomebar ul#awesomeHomeMenu > li > a {
     padding: 2px 8px;
 }
-
+.headerimage.withimage {
+	height:175px;
+    background-size: cover;
+    background-repeat:no-repeat;
+}
+.courseimage {
+	display:none;
+}
+.courseimage.withimage {
+	display:block;
+	width:600px;height:300px;
+	margin:auto;
+	border:3px solid #000;
+	border-radius:18px;
+    background-size: 600px 300px;
+    background-repeat:no-repeat;
+}
 
 /* RTL Adjustments
  * --------------- */

@@ -1,0 +1,65 @@
+First of all copy the /plugins/awesombar folder into your theme and
+find/replace all instances of 'flexibase' with your theme name
+e.g. (for linux users)
+grep -rl "flexibase" /var/www/html/moodle/theme/yourthemename/plugins/awesomebar  | xargs sed -i 's|flexibase|yourthemename|g'
+
+If you want to keep most of the files within the plugins folder you can
+add includes that point to them using the guides below. Alternatively you
+could copy and paste the content of each file into the relevant main file,
+or move it into the relevant folder - depending on how your theme is
+organised. However, some of the code is adjusted to make sure it works
+directly within this plugins folder and would need to be ammended if the
+files are moved out to their 'traditional' locations - e.g. images in the
+css are served directly from the awesomebarpix folder rather than using
+the [[pix:theme|filename]] format.
+
+awesomebarpreheaderinc.php
+Immeditately prior to the doctype statement in your layout file
+    require('path/to/awesomebarpreheaderinc.php');
+    
+awesomebarinc.php
+In the layout files, positioned where you want the awesomebar - usually
+immediately prior to the main navbar
+    require('path/to/awesomebarinc.php');
+
+awesomebarlang_en.php
+In your language file
+    require('path/to/awesomebarlang_en.php');
+
+topsettings_renderer.php
+In your renderers.php file
+    require_once('path/to/topsettings_renderer.php');
+
+awesomelib.php
+In your lib.php file
+    require('path/to/awesomelib.php');
+
+awesomebar_settings.php
+In your settings.php file
+    require('path/to/awesomebar_settings.php');
+
+awesomebar.css - Add the following line into your <head> section of your
+layout pages.
+      <link href='path/to/awesomebar.css' rel="stylesheet">
+
+path/to = $CFG->dirroot/theme/yourthemename/plugins/awesomebar
+eg.
+    require($CFG->dirroot .'/theme/flexibase/plugins/awesomebar/awesomebarpreheaderinc.php');
+    <link href="<?php echo $CFG->wwwroot.'/theme/flexibase/plugins/awesomebar/awesomebar.css';?>" rel="stylesheet">
+    require($CFG->dirroot .'/theme/flexibase/plugins/awesomebar/awesomebarinc.php');
+    require($CFG->dirroot .'/theme/flexibase/plugins/awesomebar/awesomebarlang_en.php');
+    require_once($CFG->dirroot .'/theme/flexibase/plugins/awesomebar/topsettings_renderer.php');
+    require($CFG->dirroot .'/theme/flexibase/plugins/awesomebar/awesomelib.php');
+    require($CFG->dirroot .'/theme/flexibase/plugins/awesomebar/awesomebar_settings.php');
+OR
+    require($CFG->dirroot .'/theme/flexibase/plugins/awesomebar/awesomebar_settings_alternate.php');
+
+
+REMEMBER: Purge All Caches when complete - theme designer mode does not
+clear language caches.
+
+***TESTED BY ADDING INTO BCU theme***
+***TESTED BY ADDING INTO CLEAN THEME***
+IMPORTANT NOTES:
+1. Clean (and some other themes) theme only has a single settings page and so requires the awesomebar_settings_alternate.php file for its settings and not the one used in flexibase.
+2. Some css alteration is required when using awesomebar as by default in Clean (and other themes) it is present but behind the top navbar - as this varies from theme to theme it is not part of the plugin, but in most cases adding a top margin to body will remove any display issues like this.

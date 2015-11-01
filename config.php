@@ -40,7 +40,6 @@ $THEME->sheets = array(
     'carousel',     // Carousel theme styles - no core styles as core carousel css is already included in bootstrap.
     'marketing',    // Marketing blocks core styles.
     'coursebox',    // Course tile listing styles.
-    'awesomebar',   // Awesomebar clone of upstream.
     'styles',       // Last but one - theme style overrides.
     'custom'        // Must be last - contains the css settings to override other css.
     );

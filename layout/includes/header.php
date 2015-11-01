@@ -30,7 +30,9 @@
 global $PAGE, $USER;
     $pageid = $PAGE->bodyid;
     $showlogo = (empty($PAGE->theme->settings->showlogo)) ? 'everywhere' : $PAGE->theme->settings->showlogo;
-require('awesomebarinc.php');?>
+
+require($CFG->dirroot .'/theme/flexibase/plugins/awesomebar/awesomebarinc.php');
+require('courseimage.php');?>
 
 <nav role="navigation" class='navbar navbar-<?php echo $topbarcolour; ?> navbarbranding'>
     <div class="container-fluid">
@@ -64,7 +66,18 @@ if (isloggedin() ) {
 <?php
 }
 ?>
+<?php 
+	$moodleheaderclass='';
+	$headerimage='';
+	if ($headerimagetype=='banner') {
+	    if ($courseimage) {
+		    $moodleheaderclass='withimage';
+		    $headerimage=$courseimage;
+		}
+	}
+?>
 <header class="moodleheader">
+  <div class="headerimage <?php echo $moodleheaderclass;?>"  style="background-image: url('<?php echo $headerimage;?>')">
     <div class="container-fluid">
         <div class="headerlogo col-md-8 pull-left">
             <?php
@@ -82,6 +95,7 @@ if (isloggedin() ) {
         </div>
         <?php require('social.php'); ?>
     </div>
+  </div>
 </header>
 
 <nav role="navigation" class="navbar navbar-<?php echo $menunavbarcolour ?>">
@@ -121,3 +135,14 @@ if (isloggedin() ) {
     ?>
 </div>
 
+<?php 
+	$courseheaderclass='';
+	if ($headerimagetype == 'course') {
+	    if ($courseimage) {
+		    $courseheaderclass='withimage';
+		}
+	}
+?>
+<div class="courseheaderimage">
+  <div class="courseimage <?php echo $courseheaderclass;?>"  style="background-image: url('<?php echo $courseimage;?>')">&nbsp;</div>
+</div>

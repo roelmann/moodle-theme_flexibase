@@ -33,4 +33,4 @@ require_once('renderers/core_renderer.php');
 require_once('renderers/course_renderer.php');
 require_once('renderers/navigation_block_renderer.php');
 require_once('renderers/settings_block_renderer.php');
-require_once('renderers/topsettings_renderer.php');
+require_once($CFG->dirroot .'/theme/flexibase/plugins/awesomebar/topsettings_renderer.php');

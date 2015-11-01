@@ -33,4 +33,5 @@ require('lib/lesscss.php');
 require('lib/filesettingslib.php');
 require('lib/pageinitlib.php');
 require('lib/activitieslib.php');
-require('lib/awesomelib.php');
+require($CFG->dirroot .'/theme/flexibase/plugins/awesomebar/awesomelib.php');
+require($CFG->dirroot .'/theme/flexibase/plugins/alerts/alertslib.php');

@@ -42,7 +42,7 @@ require('includes/header.php');
 ?>
 
 <div id="page" class="container-fluid">
-    <?php require('includes/alerts.php'); ?>
+    <?php require($CFG->dirroot .'/theme/flexibase/plugins/alerts/alerts.php');?>
 
     <div id="page-header" class="clearfix">
         <!-- Start Carousel -->
