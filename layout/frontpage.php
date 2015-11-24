@@ -35,8 +35,6 @@ if (!empty($PAGE->theme->settings->frontpagelayout)) {
     $layoutoption = 'preandpost';
 }
 
-$hasmarketing = (empty($PAGE->theme->settings->togglemarketing)) ? false : $PAGE->theme->settings->togglemarketing;
-
 require('includes/preheaderlogic.php');
 require('includes/header.php');
 ?>
@@ -59,15 +57,7 @@ require('includes/header.php');
         <!-- End Carousel -->
 
         <!-- Start Marketing Spots -->
-        <?php
-        if ($hasmarketing == 1) {
-            require_once(dirname(__FILE__).'/includes/marketing.php');
-        } else if ($hasmarketing == 2 && !isloggedin()) {
-            require_once(dirname(__FILE__).'/includes/marketing.php');
-        } else if ($hasmarketing == 3 && isloggedin()) {
-            require_once(dirname(__FILE__).'/includes/marketing.php');
-        }
-        ?>
+        <?php require_once($CFG->dirroot .'/theme/flexibase/plugins/marketing/marketingconditions.php'); ?>
         <!-- End Marketing Spots -->
 
 

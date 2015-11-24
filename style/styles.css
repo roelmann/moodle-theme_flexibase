@@ -300,3 +300,29 @@ body.has_dock.dir-rtl .navbar-collapse {
 .dir-rtl .breadcrumb-button {
     float: left;
 }
+
+
+/* Course grades css */
+.courseheadergradepercentage {display:none;}
+.pagelayout-course .courseheadergradepercentage {display:block;}
+.courseheadergradepercentage {background-color:#fff; opacity:0.8; border-radius:6px; float:right; margin-top:15px; margin-right:125px;}
+.courseheadergradepercentage table.generaltable {margin:0;}
+
+.courseheadergradepercentage table tbody tr,
+.courseheadergradepercentage table thead {display:none;}
+.courseheadergradepercentage table tbody tr:last-of-type th,
+.courseheadergradepercentage table tbody tr:last-of-type td {border-top:none;}
+
+.courseheadergradepercentage table tbody tr:last-of-type {display:block;border-radius:6px;}
+
+.courseheadergradepercentage table tbody tr:last-of-type .column-itemname {font-weight:900;font-size:150%;text-align:right;width:120px;}
+.courseheadergradepercentage table tbody tr:last-of-type .column-itemname img {display:none;}
+.courseheadergradepercentage table tbody tr:last-of-type .column-weight {display:none;}
+.courseheadergradepercentage table tbody tr:last-of-type .column-grade {display:none;}
+.courseheadergradepercentage table tbody tr:last-of-type .column-range {display:none;}
+.courseheadergradepercentage table tbody tr:last-of-type .column-percentage {font-weight:900;font-size:150%;width:100px;}
+.courseheadergradepercentage table tbody tr:last-of-type .column-feedback {display:none;}
+.courseheadergradepercentage table tbody tr:last-of-type .column-lettergrade {display:none;}
+.courseheadergradepercentage table tbody tr:last-of-type .column-rank {display:none;}
+.courseheadergradepercentage table tbody tr:last-of-type .column-average {display:none;}
+.courseheadergradepercentage table tbody tr:last-of-type .column-contributiontocoursetotal {display:none;}

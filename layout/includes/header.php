@@ -83,6 +83,7 @@ if (isloggedin() ) {
             ?>
             <?php echo $OUTPUT->page_heading(); ?>
         </div>
+        <?php require('coursegrade.php');?>
         <?php require('social.php'); ?>
     </div>
   </div>

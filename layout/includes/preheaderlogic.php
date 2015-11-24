@@ -72,8 +72,6 @@ if (theme_flexibase_get_setting('enablecategoryicon')) {
 }
     $bodyclasses[] = $mainlayouts;
 
-$coursepage=0;
-
 //AwesomeBar
 require($CFG->dirroot .'/theme/flexibase/plugins/awesomebar/awesomebarpreheaderinc.php');
     
@@ -87,6 +85,7 @@ echo $OUTPUT->doctype() ?>
     
     <link href="<?php echo $CFG->wwwroot.'/theme/flexibase/plugins/awesomebar/awesomebar.css';?>" rel="stylesheet">
     <link href="<?php echo $CFG->wwwroot.'/theme/flexibase/plugins/alerts/alerts.css';?>" rel="stylesheet">
+    <link href="<?php echo $CFG->wwwroot.'/theme/flexibase/plugins/marketing/marketing.css';?>" rel="stylesheet">
 
     <script>Modernizr.addTest('flexbox', Modernizr.testAllProps('flex'));</script>
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->

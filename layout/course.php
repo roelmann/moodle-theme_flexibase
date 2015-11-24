@@ -36,7 +36,6 @@ if (!empty($PAGE->theme->settings->courseslayout)) {
 }
 
 require('includes/preheaderlogic.php');
-$coursepage=1;
 require('includes/header.php');
 ?>
 
