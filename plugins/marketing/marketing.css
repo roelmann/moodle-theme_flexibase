@@ -17,7 +17,7 @@
 /**
  * Theme Flexibase css file.
  *
- * @package    theme_flexibase
+ * @package    theme_clean
  * @author     2015 Richard Oelmann
  * @copyright  2015 R. Oelmann
  * @copyright  Bootstrap - 2014 Bas Brands
@@ -83,7 +83,6 @@
 /* Styles for marketing blocks */
 .marketing-block.panel .panel-title.header {
     font-size:175%;
-    color:#fff;
     }
 .marketing-block-content {
     padding: 5px 10px;

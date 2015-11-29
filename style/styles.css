@@ -159,6 +159,9 @@ body.has_dock .moodleheader .container-fluid {
     opacity:0.8;
     border-radius:6px;
 }
+.marketing-block.panel .panel-title.header {
+    color:#fff;
+}
 #awesomebar ul#awesomeHomeMenu > li > span, #awesomebar ul#awesomeHomeMenu > li > a {
     padding: 2px 8px;
 }
@@ -326,3 +329,24 @@ body.has_dock.dir-rtl .navbar-collapse {
 .courseheadergradepercentage table tbody tr:last-of-type .column-rank {display:none;}
 .courseheadergradepercentage table tbody tr:last-of-type .column-average {display:none;}
 .courseheadergradepercentage table tbody tr:last-of-type .column-contributiontocoursetotal {display:none;}
+
+/* Renderer - user menu
+*/
+.yui3-menu.useractionmenu {
+    /*width: 40px;*/
+    width: 0;
+    position: relative;
+}
+.yui3-menu.useractionmenu .yui3-menu-content {border: none;padding: 0;}
+.yui3-skin-sam .yui3-menu .yui3-menu.yui3-loading .yui3-menu-content {
+    display: none;
+}
+.dir-rtl.yui3-skin-sam .yui3-menu.yui3-menu.useractionmenu .yui3-menu .yui3-menu-content {
+    font-size: 100%;
+    right: 110px;
+    position: relative;
+}
+.dir-rtl.yui3-skin-sam .yui3-menu-label,
+.dir-rtl.yui3-skin-sam .yui3-menu .yui3-menu .yui3-menu-label,
+.dir-rtl.yui3-skin-sam .yui3-menuitem-content,
+.dir-rtl.yui3-skin-sam .yui3-menu .yui3-menu .yui3-menuitem-content {text-align: right;}

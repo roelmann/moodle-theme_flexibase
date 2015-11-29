@@ -30,4 +30,9 @@ $string['marketingbuttontext'] = 'Link Text';
 $string['marketingbuttontextdesc'] = 'Text to appear on the button.';
 $string['marketingbuttonurl'] = 'Link URL';
 $string['marketingbuttonurldesc'] = 'URL the button will point to.';
+$string['alwaysdisplay'] = 'Always show';
+$string['displaybeforelogin'] = 'Show before login only';
+$string['displayafterlogin'] = 'Show after login only';
+$string['dontdisplay'] = 'Never show';
+
 ?>

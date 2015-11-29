@@ -43,7 +43,7 @@ require('includes/header.php');
     <?php require($CFG->dirroot .'/theme/flexibase/plugins/alerts/alerts.php');?>
 
     <div id="page-header" class="clearfix">
-        <!-- Start Carousel -->
+        <!-- Carousel -->
         <?php
         $toggleslideshow = theme_flexibase_get_setting('toggleslideshow');
         if ($toggleslideshow == 1) {
@@ -54,12 +54,8 @@ require('includes/header.php');
             require('includes/carousel2.php');
         }
         ?>
-        <!-- End Carousel -->
-
-        <!-- Start Marketing Spots -->
+        <!-- Marketing Spots -->
         <?php require_once($CFG->dirroot .'/theme/flexibase/plugins/marketing/marketingconditions.php'); ?>
-        <!-- End Marketing Spots -->
-
 
         <div id="course-header">
             <?php echo $OUTPUT->course_header(); ?>

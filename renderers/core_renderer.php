@@ -21,7 +21,7 @@
  * @author     2015 Richard Oelmann
  * @copyright  2015 R. Oelmann
  * @copyright  Bootstrap - 2014 Bas Brands
- *             Essential - Julian Ridden, Gareth Barnard;
+ *             flexibase - Julian Ridden, Gareth Barnard;
  *             Elegance - Julian Ridden, Danny Wahl;
  *             BCU - Jez H, Mike Grant
  *             Decaf - Paul Nichols
@@ -42,6 +42,7 @@ require_once($CFG->libdir. '/coursecatlib.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class theme_flexibase_core_renderer extends core_renderer {
+
     /*
      * Render Editing link as a bootstrap style button with fontawesome icon.
      * @param stdclass moodle_url
@@ -267,7 +268,7 @@ class theme_flexibase_core_renderer extends core_renderer {
                 $context = context_course::instance($course->id);
                 $userpic = parent::user_picture($USER, array('link' => false));
                 $usermenu = $menu->add(fullname($USER), new moodle_url('#'), fullname($USER), 10001);
-                // RO Added based on Essential.
+                // RO Added based on flexibase.
                 if (\core\session\manager::is_loggedinas()) {
                     $realuser = \core\session\manager::get_realuser();
                     $usermenu->add(

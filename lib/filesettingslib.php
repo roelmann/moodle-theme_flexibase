@@ -39,6 +39,7 @@
  * @param array $options
  * @return bool
  */
+
 function theme_flexibase_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
     static $theme;
     if (empty($theme)) {
@@ -57,6 +58,7 @@ function theme_flexibase_pluginfile($course, $cm, $context, $filearea, $args, $f
         send_file_not_found();
     }
 }
+
 /**
  * This function creates the dynamic HTML needed for some
  * settings and then passes it back in an object so it can

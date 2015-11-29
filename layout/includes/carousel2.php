@@ -30,7 +30,6 @@
 
 /* Carousel
  * ======== */
-
 global $CFG;
 $numslides = $PAGE->theme->settings->numberofslides;
 if ($numslides && (intval($CFG->version) >= 2013111800)) {
@@ -67,7 +66,6 @@ if ($numslides) {
                     $slideimage = $PAGE->theme->setting_file_url('slide' . $carouselslide .
                             'image', 'slide' . $carouselslide . 'image');
                 }
-
                 $active = '';
                 if ($carouselslide === 1 ) {
                     $active = "active";
