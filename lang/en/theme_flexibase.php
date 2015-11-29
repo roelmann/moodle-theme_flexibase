@@ -155,7 +155,24 @@ $string['myhomelayout'] = 'My Home';
 $string['myhomelayoutdesc'] = 'SideBar layout for the My Home dashboard page';
 
 // Alerts.
-    require($CFG->dirroot .'/theme/flexibase/plugins/alerts/alertslang_en.php');
+$string['alertsheading'] = 'User alerts';
+$string['alertsheadingsub'] = 'Display important messages to your users on the front page';
+$string['alertsdesc'] = 'This will display an alert (or multiple) in three different styles to your users on the Moodle frontpage. Please remember to disable these when no longer needed.';
+$string['enablealert'] = 'Enable alerts';
+$string['enablealertdesc'] = 'Enable or disable alerts';
+$string['alert1'] = 'First alert';
+$string['alert2'] = 'Second alert';
+$string['alert3'] = 'Third alert';
+$string['alertinfodesc'] = 'Enter the settings for your alert.';
+$string['alerttitle'] = 'Title';
+$string['alerttitledesc'] = 'Main title/heading for your alert.';
+$string['alerttype'] = 'Level';
+$string['alerttypedesc'] = 'Set the appropriate alert level/type to best inform your users.';
+$string['alerttext'] = 'Alert text';
+$string['alerttextdesc'] = 'What is the text you wish to display in your alert.';
+$string['alert_info'] = 'Information';
+$string['alert_warning'] = 'Warning';
+$string['alert_general'] = 'Announcement';
 
 // Carousel.
 $string['carouselheading'] = 'Carousel Slideshow';
@@ -240,7 +257,78 @@ $string['enablecustomcategoryicondesc'] = 'If enabled below this section you wil
 
 
 // Social Networks.
-    require($CFG->dirroot .'/theme/flexibase/plugins/social/sociallang_en.php');
+$string['socialheading'] = 'Social Networking';
+$string['socialheadingsub'] = 'Engage your users with social networking.';
+$string['socialdesc'] = 'Provide direct links to the core social networks that promote your brand.  These will appear in the header of every page.';
+$string['socialnetworks'] = 'Social Networks';
+$string['facebook'] = 'Facebook URL';
+$string['facebookdesc'] = 'Enter the URL of your Facebook page. (i.e http://www.facebook.com/pukunui)';
+$string['twitter'] = 'Twitter URL';
+$string['twitterdesc'] = 'Enter the URL of your Twitter feed. (i.e http://www.twitter.com/pukunui)';
+$string['googleplus'] = 'Google+ URL';
+$string['googleplusdesc'] = 'Enter the URL of your Google+ profile. (i.e https://google.com/+Pukunui/)';
+$string['linkedin'] = 'LinkedIn URL';
+$string['linkedindesc'] = 'Enter the URL of your LinkedIn profile. (i.e http://www.linkedin.com/company/pukunui-technology)';
+$string['youtube'] = 'YouTube URL';
+$string['youtubedesc'] = 'Enter the URL of your YouTube channel. (i.e http://www.youtube.com/moodleman)';
+$string['tumblr'] = 'Tumblr URL';
+$string['tumblrdesc'] = 'Enter the URL of your Tumblr. (i.e http://moodleman.tumblr.com)';
+$string['vimeo'] = 'Vimeo URL';
+$string['vimeodesc'] = 'Enter the URL of your Vimeo channel. (i.e http://vimeo.com/moodleman)';
+$string['flickr'] = 'Flickr URL';
+$string['flickrdesc'] = 'Enter the URL of your Flickr page. (i.e http://www.flickr.com/mycollege)';
+$string['vk'] = 'VKontakte URL';
+$string['vkdesc'] = 'Enter the URL of your Vkontakte page. (i.e http://www.vk.com/mycollege)';
+$string['skype'] = 'Skype Account';
+$string['skypedesc'] = 'Enter the Skype username of your organisations Skype account';
+$string['pinterest'] = 'Pinterest URL';
+$string['pinterestdesc'] = 'Enter the URL of your Pinterest page. (i.e http://pinterest.com/mycollege)';
+$string['instagram'] = 'Instagram URL';
+$string['instagramdesc'] = 'Enter the URL of your Instagram page. (i.e http://instagram.com/mycollege)';
+$string['website'] = 'Website URL';
+$string['websitedesc'] = 'Enter the URL of your own website. (i.e http://www.pukunui.com)';
+$string['blog'] = 'Blog URL';
+$string['blogdesc'] = 'Enter the URL of your institution blog. (i.e http://www.moodleman.net)';
+$string['sociallink'] = 'Custom Social Link';
+$string['sociallinkdesc'] = 'Enter the URL of your your custom social media link. (i.e http://www.moodleman.net)';
+$string['sociallinkicon'] = 'Link Icon';
+$string['sociallinkicondesc'] = 'Enter the fontawesome name of the icon for your link<br />A full list of FontAwesome icons can be found at http://fontawesome.io/icons/';
+
+// Marketing Spots.
+$string['marketingheading'] = 'Marketing Spots';
+$string['marketinginfodesc'] = 'Enter the settings for your marketing spot.';
+$string['marketingheadingsub'] = 'Four locations on the front page to add information and links.';
+$string['marketingheight'] = 'Height of Marketing Images';
+$string['marketingheightdesc'] = 'If you want to display images in the Marketing boxes you can specify their height here.';
+$string['marketingdesc'] = 'This theme provides the option of enabling four "marketing" or "ad" spots just under the slideshow.  These allow you to easily identify core information to your users and provide direct links.';
+$string['togglemarketing'] = 'Marketing Spot display';
+$string['togglemarketingdesc'] = 'Choose if you wish to hide or show the four Marketing Spots.';
+$string['flexmarketing'] = 'Flex marketing spots';
+$string['flexmarketingdesc'] = 'Set whether marketing spots flex with content or are even widths';
+$string['flexmktingspots'] = 'Flex with content';
+$string['evenmktingspots'] = 'Even width';
+$string['marketingtitleicon'] = 'Heading Icon';
+$string['marketingtitleicondesc'] = 'Name of the icon you wish to use in the heading for the marketing spots. List is <a href="http://fontawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "fa-".';
+$string['marketing1'] = 'Marketing Spot One';
+$string['marketing2'] = 'Marketing Spot Two';
+$string['marketing3'] = 'Marketing Spot Three';
+$string['marketing4'] = 'Marketing Spot Four';
+$string['marketingtitle'] = 'Title';
+$string['marketingtitledesc'] = 'Title to show in this marketing spot.';
+$string['marketingicon'] = 'Icon';
+$string['marketingicondesc'] = 'Name of the icon you wish to use. List is <a href="http://fontawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "fa-".';
+$string['marketingimage'] = 'Image';
+$string['marketingimagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot.';
+$string['marketingcontent'] = 'Content';
+$string['marketingcontentdesc'] = 'Content to display in the marketing box. Keep it short and sweet.';
+$string['marketingbuttontext'] = 'Link Text';
+$string['marketingbuttontextdesc'] = 'Text to appear on the button.';
+$string['marketingbuttonurl'] = 'Link URL';
+$string['marketingbuttonurldesc'] = 'URL the button will point to.';
+$string['alwaysdisplay'] = 'Always show';
+$string['displaybeforelogin'] = 'Show before login only';
+$string['displayafterlogin'] = 'Show after login only';
+$string['dontdisplay'] = 'Never show';
 
 // CustomMenu.
 $string['mycoursesinfo'] = 'Enrolled courses menu';

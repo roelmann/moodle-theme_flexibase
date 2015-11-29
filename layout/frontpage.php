@@ -40,7 +40,7 @@ require('includes/header.php');
 ?>
 
 <div id="page" class="container-fluid">
-    <?php require($CFG->dirroot .'/theme/flexibase/plugins/alerts/alerts.php');?>
+    <?php require('includes/alerts.php');?>
 
     <div id="page-header" class="clearfix">
         <!-- Carousel -->
@@ -55,8 +55,18 @@ require('includes/header.php');
         }
         ?>
         <!-- Marketing Spots -->
-        <?php require_once($CFG->dirroot .'/theme/flexibase/plugins/marketing/marketingconditions.php'); ?>
+		<?php
+		$hasmarketing = (empty($PAGE->theme->settings->togglemarketing)) ? false : $PAGE->theme->settings->togglemarketing;
 
+		if ($hasmarketing == 1) {
+			require_once('includes/marketing.php');
+		} else if ($hasmarketing == 2 && !isloggedin()) {
+			require_once('includes/marketing.php');
+		} else if ($hasmarketing == 3 && isloggedin()) {
+			require_once('includes/marketing.php');
+		}
+		?>
+		
         <div id="course-header">
             <?php echo $OUTPUT->course_header(); ?>
         </div>

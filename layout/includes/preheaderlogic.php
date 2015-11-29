@@ -84,10 +84,6 @@ echo $OUTPUT->doctype() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
     
     <link href="<?php echo $CFG->wwwroot.'/theme/flexibase/plugins/awesomebar/awesomebar.css';?>" rel="stylesheet">
-    <link href="<?php echo $CFG->wwwroot.'/theme/flexibase/plugins/alerts/alerts.css';?>" rel="stylesheet">
-    <link href="<?php echo $CFG->wwwroot.'/theme/flexibase/plugins/marketing/marketing.css';?>" rel="stylesheet">
-    <link href="<?php echo $CFG->wwwroot.'/theme/flexibase/plugins/carousel/carousel.css';?>" rel="stylesheet">
-
 
     <script>Modernizr.addTest('flexbox', Modernizr.testAllProps('flex'));</script>
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->

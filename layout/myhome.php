@@ -41,7 +41,7 @@ require('includes/header.php');
 ?>
 
 <div id="page" class="container-fluid">
-    <?php require($CFG->dirroot .'/theme/flexibase/plugins/alerts/alerts.php');?>
+    <?php require('includes/alerts.php');?>
 
     <?php require('includes/breadcrumb.php'); ?>
 
