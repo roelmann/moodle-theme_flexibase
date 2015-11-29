@@ -31,7 +31,7 @@ global $PAGE, $USER;
     $pageid = $PAGE->bodyid;
     $showlogo = (empty($PAGE->theme->settings->showlogo)) ? 'everywhere' : $PAGE->theme->settings->showlogo;
 
-require($CFG->dirroot .'/theme/flexibase/plugins/awesomebar/awesomebarinc.php');
+require('awesomebarinc.php');
 require('courseimage.php');?>
 
 <nav role="navigation" class='navbar navbar-<?php echo $topbarcolour; ?> navbarbranding'>

@@ -73,7 +73,7 @@ if (theme_flexibase_get_setting('enablecategoryicon')) {
     $bodyclasses[] = $mainlayouts;
 
 //AwesomeBar
-require($CFG->dirroot .'/theme/flexibase/plugins/awesomebar/awesomebarpreheaderinc.php');
+require('awesomebarpreheaderinc.php');
     
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
@@ -82,9 +82,6 @@ echo $OUTPUT->doctype() ?>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
     <?php echo $OUTPUT->standard_head_html(); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
-    
-    <link href="<?php echo $CFG->wwwroot.'/theme/flexibase/plugins/awesomebar/awesomebar.css';?>" rel="stylesheet">
-
     <script>Modernizr.addTest('flexbox', Modernizr.testAllProps('flex'));</script>
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 

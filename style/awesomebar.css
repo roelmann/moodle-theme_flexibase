@@ -44,7 +44,7 @@
 .flexibase-awesome-bar ul.dropdown > li:hover > ul, .flexibase-awesome-bar ul.dropdown > li.extended-hover > ul {left:0; top:100%;}
 .flexibase-awesome-bar img.smallicon {margin:-4px 4px 0 4px; width:16px; height:16px;}
 .flexibase-awesome-bar span, .flexibase-awesome-bar a {display:block;}
-.flexibase-awesome-bar ul ul a, .flexibase-awesome-bar ul ul span {height:16px; padding-top:1px; padding-bottom:1px;}
+.flexibase-awesome-bar ul ul a, .flexibase-awesome-bar ul ul span {height:24px; padding-top:1px; padding-bottom:1px;}
 body #dock {top:26px; height:auto; bottom:0px;} /* Start dock at bottom of Awesomebar */
 
 /* Awesomebar - appearance */
