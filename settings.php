@@ -38,7 +38,7 @@ defined('MOODLE_INTERNAL') || die;
     require('settings/mainless.php');
     require('settings/additionalless.php');
     require('settings/layoutsettings.php');
-    require('settings/awesomebar_settings.php');
+    require('settings/awesomebar.php');
     require('settings/alerts.php');
     require('settings/carousel.php');
     require('settings/marketing.php');
