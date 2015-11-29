@@ -44,4 +44,4 @@ defined('MOODLE_INTERNAL') || die;
     require($CFG->dirroot .'/theme/flexibase/plugins/marketing/marketing_settings.php');
     require('settings/coursetiles.php');
     require('settings/categoryicons.php');
-    require('settings/socialicons.php');
+    require($CFG->dirroot .'/theme/flexibase/plugins/social/socialicons_settings.php');

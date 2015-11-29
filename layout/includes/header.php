@@ -84,7 +84,8 @@ if (isloggedin() ) {
             <?php echo $OUTPUT->page_heading(); ?>
         </div>
         <?php require('coursegrade.php');?>
-        <?php require('social.php'); ?>
+        <?php require($CFG->dirroot .'/theme/flexibase/plugins/social/social.php');
+ ?>
     </div>
   </div>
 </header>
