@@ -34,6 +34,7 @@ $THEME->parents_exclude_sheets = array('bootstrap' => array('moodle', 'moodle-rt
 
 $THEME->sheets = array(
 // If the less files are removed below during development then the readmes/base.txt file can be added here.
+    'awesomebar',   // Awesomebar css
     'font-awesome', // Default FA css unaltered from upstream.
     'flexlayout',   // Flexibox layout rules.
     'alerts',       // Alerts theme styles.

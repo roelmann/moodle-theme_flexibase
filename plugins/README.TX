@@ -21,9 +21,12 @@ Please bear in mind that the splitting of the language file into the
 separate plugin areas may have undesirable effects on translations, which
 may then need to be added manually.
 
-This theme has been built using the plugins directly as a demonstration
-for those who need to use them in that way and not necessarily as a guide
-to good theme development practice for those releasing/creating themes for
-outside their own institution. Once the README files are complete it is
-intended to put the theme back into a more normal method of using these
-files!
+A version of this theme where the features are used by accessing the files
+in the plugins folder rather than standard methodologies can be found at
+https://github.com/roelmann/moodle-theme_flexibase/tree/PLUGINS_30
+Note: that branch will be frozen as it is (29Nov2015) other than for bug
+fixes directly relating to the plugins folder itself. All other development
+work and bug fixes for the main version of the theme will continue in the
+master branch which will be made STABLE each time a version is released to
+the Moodle themes database.
+
