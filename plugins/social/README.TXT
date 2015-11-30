@@ -44,10 +44,10 @@ Settings file (settings.php)
 -------------
     require('path/to/social_settings.php');
 e.g.
-    require($CFG->dirroot .'/theme/flexibase/plugins/socail/social_settings.php');
+    require($CFG->dirroot .'/theme/flexibase/plugins/social/socialicons_settings.php');
 Note - the original settings file is suitable for themes which use several
 settings pages - although the variable names need to be checked for consistency
-with your theme. An alerts_settings_alternate.php is provided for themes
+with your theme. A socialicons_settings_alternate.php is provided for themes
 such as Clean which use a single settings page - again variable names
 must be checked for consistency.
 

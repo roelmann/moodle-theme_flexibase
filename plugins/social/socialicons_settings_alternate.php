@@ -40,7 +40,7 @@ $description = get_string('websitedesc', 'theme_flexibase');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // Blog url setting.
 $name = 'theme_flexibase/blog';
@@ -49,7 +49,7 @@ $description = get_string('blogdesc', 'theme_flexibase');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // Facebook url setting.
 $name = 'theme_flexibase/facebook';
@@ -58,7 +58,7 @@ $description = get_string(      'facebookdesc', 'theme_flexibase');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // Flickr url setting.
 $name = 'theme_flexibase/flickr';
@@ -67,7 +67,7 @@ $description = get_string('flickrdesc', 'theme_flexibase');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // Twitter url setting.
 $name = 'theme_flexibase/twitter';
@@ -76,7 +76,7 @@ $description = get_string('twitterdesc', 'theme_flexibase');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // Google+ url setting.
 $name = 'theme_flexibase/googleplus';
@@ -85,7 +85,7 @@ $description = get_string('googleplusdesc', 'theme_flexibase');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // LinkedIn url setting.
 $name = 'theme_flexibase/linkedin';
@@ -94,7 +94,7 @@ $description = get_string('linkedindesc', 'theme_flexibase');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // Tumblr url setting.
 $name = 'theme_flexibase/tumblr';
@@ -103,7 +103,7 @@ $description = get_string('tumblrdesc', 'theme_flexibase');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // Pinterest url setting.
 $name = 'theme_flexibase/pinterest';
@@ -112,7 +112,7 @@ $description = get_string('pinterestdesc', 'theme_flexibase');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // Instagram url setting.
 $name = 'theme_flexibase/instagram';
@@ -121,7 +121,7 @@ $description = get_string('instagramdesc', 'theme_flexibase');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // YouTube url setting.
 $name = 'theme_flexibase/youtube';
@@ -130,7 +130,7 @@ $description = get_string('youtubedesc', 'theme_flexibase');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // Vimeo url setting.
 $name = 'theme_flexibase/vimeo';
@@ -139,7 +139,7 @@ $description = get_string('vimeodesc', 'theme_flexibase');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // Skype url setting.
 $name = 'theme_flexibase/skype';
@@ -148,7 +148,7 @@ $description = get_string('skypedesc', 'theme_flexibase');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // General social url setting 1.
 $name = 'theme_flexibase/social1';
@@ -157,7 +157,7 @@ $description = get_string('sociallinkdesc', 'theme_flexibase');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // Social icon setting 1.
 $name = 'theme_flexibase/socialicon1';
@@ -165,7 +165,7 @@ $title = get_string('sociallinkicon', 'theme_flexibase');
 $description = get_string('sociallinkicondesc', 'theme_flexibase');
 $default = 'home';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
-$settings->($setting);
+$settings->add($setting);
 
 // General social url setting 2.
 $name = 'theme_flexibase/social2';
@@ -174,7 +174,7 @@ $description = get_string('sociallinkdesc', 'theme_flexibase');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // Social icon setting 2.
 $name = 'theme_flexibase/socialicon2';
@@ -182,7 +182,7 @@ $title = get_string('sociallinkicon', 'theme_flexibase');
 $description = get_string('sociallinkicondesc', 'theme_flexibase');
 $default = 'home';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
-$settings->($setting);
+$settings->add($setting);
 
 // General social url setting 3.
 $name = 'theme_flexibase/social3';
@@ -191,7 +191,7 @@ $description = get_string('sociallinkdesc', 'theme_flexibase');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // Social icon setting 3.
 $name = 'theme_flexibase/socialicon3';
@@ -199,6 +199,6 @@ $title = get_string('sociallinkicon', 'theme_flexibase');
 $description = get_string('sociallinkicondesc', 'theme_flexibase');
 $default = 'home';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
-$settings->($setting);
+$settings->add($setting);
 
 $ADMIN->add('theme_flexibase', $temp);
