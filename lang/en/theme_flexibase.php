@@ -254,7 +254,8 @@ $string['defaultcategoryicon'] = 'Default category icons';
 $string['defaultcategoryicondesc'] = 'Set a default category icon';
 $string['enablecustomcategoryicon'] = 'Enable custom category icons';
 $string['enablecustomcategoryicondesc'] = 'If enabled below this section you will see each category with a customizable option behind each category, please save after enabling and disabling this option.';
-
+$string['categoryiconinfo'] = 'Category Icon';
+$string['categoryiconinfodesc'] = 'Category Icon';
 
 // Social Networks.
 $string['socialheading'] = 'Social Networking';

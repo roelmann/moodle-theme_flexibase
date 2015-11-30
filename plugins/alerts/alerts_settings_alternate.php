@@ -39,7 +39,7 @@ $information = get_string('alertinfodesc', 'theme_flexibase'); // Standard for e
 $name = 'theme_flexibase/alert1info';
 $heading = get_string('alert1', 'theme_flexibase');
 $setting = new admin_setting_heading($name, $heading, $information);
-$settings->($setting);
+$settings->add($setting);
 
 // Enable Alert.
 $name = 'theme_flexibase/enable1alert';
@@ -61,7 +61,7 @@ $default = 'info';
 $choices = array('info' => $alertinfo, 'warning' => $alertwarning, 'success' => $alertgeneral);
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // Alert Title.
 $name = 'theme_flexibase/alert1title';
@@ -70,7 +70,7 @@ $description = get_string('alerttitledesc', 'theme_flexibase');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // Alert Text.
 $name = 'theme_flexibase/alert1text';
@@ -79,13 +79,13 @@ $description = get_string('alerttextdesc', 'theme_flexibase');
 $default = '';
 $setting = new admin_setting_configtextarea($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // This is the descriptor for Alert Two.
 $name = 'theme_flexibase/alert2info';
 $heading = get_string('alert2', 'theme_flexibase');
 $setting = new admin_setting_heading($name, $heading, $information);
-$settings->($setting);
+$settings->add($setting);
 
 // Enable Alert.
 $name = 'theme_flexibase/enable2alert';
@@ -94,7 +94,7 @@ $description = get_string('enablealertdesc', 'theme_flexibase');
 $default = false;
 $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // Alert Type.
 $name = 'theme_flexibase/alert2type';
@@ -107,7 +107,7 @@ $default = 'info';
 $choices = array('info' => $alertinfo, 'warning' => $alertwarning, 'success' => $alertgeneral);
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // Alert Title.
 $name = 'theme_flexibase/alert2title';
@@ -116,7 +116,7 @@ $description = get_string('alerttitledesc', 'theme_flexibase');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // Alert Text.
 $name = 'theme_flexibase/alert2text';
@@ -125,13 +125,13 @@ $description = get_string('alerttextdesc', 'theme_flexibase');
 $default = '';
 $setting = new admin_setting_configtextarea($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // This is the descriptor for Alert Three.
 $name = 'theme_flexibase/alert3info';
 $heading = get_string('alert3', 'theme_flexibase');
 $setting = new admin_setting_heading($name, $heading, $information);
-$settings->($setting);
+$settings->add($setting);
 
 // Enable Alert.
 $name = 'theme_flexibase/enable3alert';
@@ -140,7 +140,7 @@ $description = get_string('enablealertdesc', 'theme_flexibase');
 $default = false;
 $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // Alert Type.
 $name = 'theme_flexibase/alert3type';
@@ -153,7 +153,7 @@ $default = 'info';
 $choices = array('info' => $alertinfo, 'warning' => $alertwarning, 'success' => $alertgeneral);
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // Alert Title.
 $name = 'theme_flexibase/alert3title';
@@ -162,7 +162,7 @@ $description = get_string('alerttitledesc', 'theme_flexibase');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
 
 // Alert Text.
 $name = 'theme_flexibase/alert3text';
@@ -171,4 +171,4 @@ $description = get_string('alerttextdesc', 'theme_flexibase');
 $default = '';
 $setting = new admin_setting_configtextarea($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
-$settings->($setting);
+$settings->add($setting);
