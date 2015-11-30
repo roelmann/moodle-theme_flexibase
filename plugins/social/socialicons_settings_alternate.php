@@ -200,5 +200,3 @@ $description = get_string('sociallinkicondesc', 'theme_flexibase');
 $default = 'home';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $settings->add($setting);
-
-$ADMIN->add('theme_flexibase', $temp);
