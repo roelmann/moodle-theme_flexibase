@@ -54,6 +54,9 @@ $hassocialnetworks = ($hasfacebook || $hastwitter || $hasgoogleplus || $hasflick
     || $hasvk || $haslinkedin || $haspinterest || $hasskype || $haslinkedin || $haswebsite || $hasyoutube
     || $hasblog ||$hasvimeo || $hastumblr || $hassocial1 || $hassocial2 || $hassocial3) ? true : false;
 ?>
+<style>
+.sr-only {display:none;}
+</style>
 <div class="col-md-4 pull-right">
     <?php
     if ($hassocialnetworks) {
