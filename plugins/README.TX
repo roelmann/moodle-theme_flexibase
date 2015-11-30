@@ -21,12 +21,9 @@ Please bear in mind that the splitting of the language file into the
 separate plugin areas may have undesirable effects on translations, which
 may then need to be added manually.
 
-A version of this theme where the features are used by accessing the files
-in the plugins folder rather than standard methodologies can be found at
-https://github.com/roelmann/moodle-theme_flexibase/tree/PLUGINS_30
-Note: that branch will be frozen as it is (29Nov2015) other than for bug
-fixes directly relating to the plugins folder itself. All other development
-work and bug fixes for the main version of the theme will continue in the
-master branch which will be made STABLE each time a version is released to
-the Moodle themes database.
+A version of Clean (CleanPlugged) is included in this folder as an example
+of applying these features in a theme. No attempt has been made to add
+theme specific styling to that example, simply to apply the features as
+they are. Styling them beyonf the very basic application is down to the
+site admin/theme designer.
 
