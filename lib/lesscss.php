@@ -117,7 +117,7 @@ function theme_flexibase_process_css($css, $theme) {
  * @param string $display
  * @param string $replacement
  * @param array $dimensions
- * 
+ *
  * @return string
  */
 function theme_flexibase_set_logo($css, $logo) {
@@ -158,7 +158,7 @@ function theme_flexibase_set_logo($css, $logo) {
  * @param string $minidisplay
  * @param string $replacement
  * @param array $dimensions
- * 
+ *
  * @return string
  */
 function theme_flexibase_set_minilogo($css, $minilogo) {
@@ -198,7 +198,7 @@ function theme_flexibase_set_minilogo($css, $minilogo) {
  * @param string $loginbgdisplay
  * @param string $replacement
  * @param array $dimensions
- * 
+ *
  * @return string
  */
 function theme_flexibase_set_loginbg($css, $loginbg) {
@@ -232,7 +232,7 @@ function theme_flexibase_set_loginbg($css, $loginbg) {
  * @param string $captionbackgroundcolour
  * @param string $tag
  * @param string $replacement
- * 
+ *
  * @return string
  */
 function theme_flexibase_set_captionbackgroundcolour($css, $captionbackgroundcolour) {
@@ -251,7 +251,7 @@ function theme_flexibase_set_captionbackgroundcolour($css, $captionbackgroundcol
  * @param string $captionbordercolour
  * @param string $tag
  * @param string $replacement
- * 
+ *
  * @return string
  */
 function theme_flexibase_set_captionbordercolour($css, $captionbordercolour) {
@@ -270,7 +270,7 @@ function theme_flexibase_set_captionbordercolour($css, $captionbordercolour) {
  * @param string $captiontextcolour
  * @param string $tag
  * @param string $replacement
- * 
+ *
  * @return string
  */
 function theme_flexibase_set_captiontextcolour($css, $captiontextcolour) {
@@ -289,7 +289,7 @@ function theme_flexibase_set_captiontextcolour($css, $captiontextcolour) {
  * @param string $carouselbordercolour
  * @param string $tag
  * @param string $replacement
- * 
+ *
  * @return string
  */
 function theme_flexibase_set_carouselbordercolour($css, $carouselbordercolour) {
@@ -308,7 +308,7 @@ function theme_flexibase_set_carouselbordercolour($css, $carouselbordercolour) {
  * @param string $rendereroverlaycolour
  * @param string $tag
  * @param string $replacement
- * 
+ *
  * @return string
  */
 function theme_flexibase_set_rendereroverlaycolour($css, $rendereroverlaycolour) {
@@ -327,7 +327,7 @@ function theme_flexibase_set_rendereroverlaycolour($css, $rendereroverlaycolour)
  * @param string $rendereroverlayfontcolour
  * @param string $tag
  * @param string $replacement
- * 
+ *
  * @return string
  */
 function theme_flexibase_set_rendereroverlayfontcolour($css, $rendereroverlayfontcolour) {
@@ -346,7 +346,7 @@ function theme_flexibase_set_rendereroverlayfontcolour($css, $rendereroverlayfon
  * @param string $courseheaderimageheight
  * @param string $tag
  * @param string $replacement
- * 
+ *
  * @return string
  */
 function theme_flexibase_set_courseheaderimageheight($css, $courseheaderimageheight) {

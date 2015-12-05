@@ -55,18 +55,18 @@ require('includes/header.php');
         }
         ?>
         <!-- Marketing Spots -->
-		<?php
-		$hasmarketing = (empty($PAGE->theme->settings->togglemarketing)) ? false : $PAGE->theme->settings->togglemarketing;
+        <?php
+        $hasmarketing = (empty($PAGE->theme->settings->togglemarketing)) ? false : $PAGE->theme->settings->togglemarketing;
 
-		if ($hasmarketing == 1) {
-			require_once('includes/marketing.php');
-		} else if ($hasmarketing == 2 && !isloggedin()) {
-			require_once('includes/marketing.php');
-		} else if ($hasmarketing == 3 && isloggedin()) {
-			require_once('includes/marketing.php');
-		}
-		?>
-		
+        if ($hasmarketing == 1) {
+            require('includes/marketing.php');
+        } else if ($hasmarketing == 2 && !isloggedin()) {
+            require('includes/marketing.php');
+        } else if ($hasmarketing == 3 && isloggedin()) {
+            require('includes/marketing.php');
+        }
+        ?>
+
         <div id="course-header">
             <?php echo $OUTPUT->course_header(); ?>
         </div>

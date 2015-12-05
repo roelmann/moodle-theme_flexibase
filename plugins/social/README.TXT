@@ -27,8 +27,8 @@ Layout files (various files depending on theme design - note if your theme
               more detail on this area.)
 Inside your <head> section, but only if your theme does not already have
 fontawesome installed
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
 Where you want to position the social icons
     require('path/to/social.php');
 e.g.

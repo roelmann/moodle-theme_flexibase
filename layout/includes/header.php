@@ -127,5 +127,6 @@ if (isloggedin() ) {
 </div>
 
 <div class="courseheaderimage">
-  <div class="courseimage <?php echo $courseheaderclass;?>"  style="background-image: url('<?php echo $courseimage;?>')">&nbsp;</div>
+  <div class="courseimage <?php echo $courseheaderclass;?>" 
+      style="background-image: url('<?php echo $courseimage;?>')">&nbsp;</div>
 </div>

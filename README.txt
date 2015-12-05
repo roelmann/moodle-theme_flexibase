@@ -34,11 +34,11 @@ also makes use of a 'CustomLess' setting in the same manner as many themes have 
 
 IMPORTANT NOTE: Older versions of IE do not support any version of the flexbox
 format. So, although provision has been made for vendor prefix support in some older
-browsers, as well as support for legacy versions of the flexbox structure itself, 
-older IE versions do not support either (IE 9 and below - IE 10 supports legacy, 
+browsers, as well as support for legacy versions of the flexbox structure itself,
+older IE versions do not support either (IE 9 and below - IE 10 supports legacy,
 prefixed forms and is supported). This means that elements of this theme, including
 the main layouts will not work as expected in IE9 and below. They do give a similar
-look and layout to the small screen responsive view, along with identifying the 
+look and layout to the small screen responsive view, along with identifying the
 browser as not supporting flexbox in an alert warning.
 Suggested workarounds: Update the browser - any PC using IE9 is capable of running
 IE10/11 or FF/Chrome - given that some IT departments in some institutions do not
@@ -60,4 +60,3 @@ moodle.org forums or any bugs via the github issues page
 https://github.com/roelmann/theme_flexibase/issues
 
 Richard
-

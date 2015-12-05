@@ -28,11 +28,11 @@ Layout files (various files depending on theme design - note if your theme
 Inside your <head> section
     <link href="<?php echo $CFG->wwwroot.'/theme/clean/plugins/marketing/marketing.css';?>" rel="stylesheet">
 If your theme does not already have fontawesome installed
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 If your theme is based on Bootstrap2 (Panels were added in BS3, but do
 not require javascript so this is a css only addition)
-	<link href="<?php echo $CFG->wwwroot.'/theme/flexibase/plugins/marketing/bootstrap3panels.css';?>" rel="stylesheet">
-	
+    <link href="<?php echo $CFG->wwwroot.'/theme/flexibase/plugins/marketing/bootstrap3panels.css';?>" rel="stylesheet">
+
 Where you want to position the alerts
     require('path/to/marketingconditions.php');
 e.g.

@@ -379,7 +379,7 @@ $string['coursesleafonly'] = 'Populate "Courses" menu'; // This seems backwards,
 $string['coursesleafonlydesc'] = 'On sites with large numbers of courses, generating the full list of courses in the Awesomebar can cause performance issues.  Disable this setting (set it to "No") to prevent the list from being generated - the "Courses" node will remain as a quick way to reach the course list.';
 $string['alwaysexpandsiteadmin'] = 'Always populate site administration menu';
 $string['alwaysexpandsiteadmindesc'] = 'Enabling this option will populate the Site Administration menu (if applicable), at the expense of performance.';
-    
+
 // Regions.
 $string['preandpost'] = 'Pre and Post sidebars';
 $string['twopre'] = 'Two sidebars - Pre';

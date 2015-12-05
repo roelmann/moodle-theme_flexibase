@@ -35,7 +35,7 @@ $temp = new admin_settingpage('theme_flexibase_frontpage_courses', get_string('f
 // Page subheading.
 $temp->add(new admin_setting_heading('theme_flexibase_frontpage_courses', get_string('frontpagesettingsheading', 'theme_flexibase'),
     format_text(get_string('frontpagedesc', 'theme_flexibase'), FORMAT_MARKDOWN)));
-    
+
 // Front Page Course tile images.
 $name = 'theme_flexibase/coursetileimagesinfo';
 $heading = get_string('coursetileimagesinfo', 'theme_flexibase');

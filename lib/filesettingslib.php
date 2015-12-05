@@ -65,7 +65,7 @@ function theme_flexibase_pluginfile($course, $cm, $context, $filearea, $args, $f
  * be echo'd to the page.
  *
  * This keeps the logic out of the layout files.
- * 
+ *
  * @param string $setting bring the required setting into the function
  * @param bool $format
  * @param string $setting

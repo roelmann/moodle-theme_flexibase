@@ -72,9 +72,9 @@ if (theme_flexibase_get_setting('enablecategoryicon')) {
 }
     $bodyclasses[] = $mainlayouts;
 
-//AwesomeBar
+// AwesomeBar.
 require('awesomebarpreheaderinc.php');
-    
+
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>

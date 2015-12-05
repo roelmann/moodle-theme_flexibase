@@ -28,13 +28,13 @@ Immeditately prior to the doctype statement in your layout file(s)
     require('path/to/awesomebarpreheaderinc.php');
 e.g.
     require($CFG->dirroot .'/theme/flexibase/plugins/awesomebar/awesomebarpreheaderinc.php');
-    
+
 In the layout files, positioned where you want the awesomebar - usually
 immediately prior to the main navbar
     require('path/to/awesomebarinc.php');
 e.g.
     require($CFG->dirroot .'/theme/flexibase/plugins/awesomebar/awesomebarinc.php');
-    
+
 Add the following line into your <head> section of your layout pages.
     <link href='path/to/awesomebar.css' rel="stylesheet">
 e.g.

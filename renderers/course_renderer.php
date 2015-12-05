@@ -176,6 +176,7 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
             $url = file_encode_url("$CFG->wwwroot/pluginfile.php",
                     '/'. $file->get_contextid(). '/'. $file->get_component(). '/'.
                     $file->get_filearea(). $file->get_filepath(). $file->get_filename(), !$isimage);
+            if ($contentimages == '') {
             if ($isimage) {
                 if ($type == 1) {
                     $contentimages .= html_writer::start_tag('div', array('class' => 'courseimage'));
@@ -194,6 +195,7 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
                         html_writer::link($url, $filename),
                         array('class' => 'coursefile fp-filename-icon'));
             }
+		    }
         }
         if (strlen($contentimages) == 0 && $type == 2) {
             // Default image.

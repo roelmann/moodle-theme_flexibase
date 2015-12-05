@@ -350,3 +350,67 @@ body.has_dock.dir-rtl .navbar-collapse {
 .dir-rtl.yui3-skin-sam .yui3-menu .yui3-menu .yui3-menu-label,
 .dir-rtl.yui3-skin-sam .yui3-menuitem-content,
 .dir-rtl.yui3-skin-sam .yui3-menu .yui3-menu .yui3-menuitem-content {text-align: right;}
+
+/* User Profile. */
+.userprofile .profile_tree section {
+    padding:0;
+}
+.userprofile .profile_tree section .panel-heading h3 {
+    margin-top:10px;
+}
+.userprofile .profile_tree section.Userdetails .panel-heading h3:before {
+  font-family: 'FontAwesome';
+  font-weight:500;
+  content: "\f0c0";
+  margin-right: 5px;
+}
+.userprofile .profile_tree section.Coursedetails .panel-heading h3:before {
+  font-family: 'FontAwesome';
+  font-weight:500;
+  content: "\f0b1";
+  margin-right: 5px;
+}
+.userprofile .profile_tree section.Miscellaneous .panel-heading h3:before {
+  font-family: 'FontAwesome';
+  font-weight:500;
+  content: "\f1b3";
+  margin-right: 5px;
+}
+.userprofile .profile_tree section.Reports .panel-heading h3:before {
+  font-family: 'FontAwesome';
+  font-weight:500;
+  content: "\f1c0";
+  margin-right: 5px;
+}
+.userprofile .profile_tree section.Loginactivity .panel-heading h3:before {
+  font-family: 'FontAwesome';
+  font-weight:500;
+  content: "\f0ae";
+  margin-right: 5px;
+}
+.userprofile ul {
+    margin-left: 15px;
+    margin-top:10px;
+}
+.userprofile .profile_tree section ul li dl {
+    margin-bottom:15px;
+}
+.forumpost {
+    padding:0;
+}
+.forumpost .row.header {
+    padding:8px;
+}
+.forumpost .row.maincontent {
+    padding:8px;
+}
+.forumpost .subject {
+    font-size:160%;
+}
+.forumpost .picture img {
+    height:46px;
+    width:46px;
+}
+.maincontentinnerwrap div[role="main"] {
+    max-width:99%;
+}
