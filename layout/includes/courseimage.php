@@ -76,7 +76,7 @@ $headerimagetype=(empty($PAGE->theme->settings->courseimageheader)) ? 1 : $PAGE-
 $moodleheaderclass = '';
 $headerimage = '';
 $courseheaderclass = '';
-if ($PAGE->pagelayout == 'course') {
+if ($PAGE->pagelayout == 'course' || $PAGE->pagelayout == 'incourse') {
     if ($headerimagetype == 1) {
         if ($courseimage) {
             $moodleheaderclass = 'withimage';
