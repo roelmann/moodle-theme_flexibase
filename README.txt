@@ -25,12 +25,19 @@ the layout code when considering rtl languages, editing on/off, use of side-bars
 and docking as well as other factors which influence the layouts. The theme allows
 administrators to choose layout structures for set page layout types (standard pre
 and post, 2 pre, 2 post etc) from a settings page without the need to edit theme
-files.
+files. To supplement the layouts, the theme has a wide range of additional block
+regions - page top and page bottom, main content top and bottom, and main content
+left and right. While it is not anticipated that all of these block regions will
+be used on a single page, they provide a huge amount of flexibility for the
+course creator.
 
 The theme also makes use of less compilation on the fly through its settings pages.
 It has a range of colour and branding options which affect the less variables, but
 also makes use of a 'CustomLess' setting in the same manner as many themes have a
-'CustomCSS' (as flexibase also does).
+'CustomCSS' (as flexibase also does). It should be noted that the LESS compiler is
+not as error tolerant as most css and if there is a simple typo, this can cause the
+page to be served with no css at all. In this instance, simply backtrack your latest
+change to the LESS and you will restore the less/css styling.
 
 IMPORTANT NOTE: Older versions of IE do not support any version of the flexbox
 format. So, although provision has been made for vendor prefix support in some older
@@ -50,13 +57,38 @@ versions of IE.
 
 As a secondary consideration, this theme is also being used to develop several of
 the features as 'plugable' options for other themes, which you can find in the
-'theme components' folder of flexibase. Each component comes with its own set of
+'plugins' folder of flexibase. Each component comes with its own set of
 instructions, but these can vary according to the theme the component is being added
 to - as folder structure, existance/inheritance of layout files, lib.php etc will
-all have a bearing on implementing these components.
+all have a bearing on implementing these components. The plugins have been tested
+on Clean and should work on any reasonably modern theme.
+
+A readmes folder is also provided which contains some of the theme support
+materials - in this case a text version of the base css and less that is used to
+create the theme. The less file in particular is useful as a starting point if
+editing the customLESS setting as it allows you to copy and paste the existing
+LESS which can then be edited, without necesarily searching for it in the
+parent theme or bootswatch. This folder also contains a demo course backup. This
+can be restored to any Moodle3+ site and will give an example of some of the 
+layout options as well as some documentation about the theme and its settings
+pages.
 
 I hope you find the theme useful. Please submit any comments and feedback via the
 moodle.org forums or any bugs via the github issues page
 https://github.com/roelmann/theme_flexibase/issues
 
 Richard
+
+CHANGELOG:
+==========
+3.0 	- (There is no 2.x release - major version numbering updated to match Moodle)
+	- Course page header images
+	- Course grade display on course header
+	- 'theme feature plugins' development feature added (including example 'cleanplugged' theme suing those features)
+	- example course backup added to readmes folder to demonstrate some features and provide documentation for theme
+	- Various minor style developments
+	- No major changes to flex layout or bootstrap upstream code
+
+1.1 	- Update for 2.9 - Update parent requirement for changes to Bootstrap parent
+
+1.0 	- Initial Release
