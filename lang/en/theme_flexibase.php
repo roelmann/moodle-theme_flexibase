@@ -57,7 +57,19 @@ $string['readme_click'] = 'click for README.txt';
 
 // General.
 $string['genericsettings'] = 'General';
-$string['generalheadingsub'] = 'General settings';
+$string['generalheadingsub'] = 'Quick Settings Links:<br>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_carousel">Carousel Slideshow</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_marketing">Marketing</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_frontpage_courses">Course Images</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_categoryicon">Category Icons</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_social">Social Networking</a>
+<br><br>General settings';
 $string['generalheadingdesc'] = 'Configure the general settings for the theme here.';
 $string['logo'] = 'Main Header Logo';
 $string['logodesc'] = 'Please upload your custom logo for the Main Heading here if you want to add it to the header.<br>
@@ -86,7 +98,19 @@ $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be 
 
 // Brand Colour Settings.
 $string['lessbrandsettings'] = 'Main Brand Colours';
-$string['lessbrandsub'] = 'Main Brand Colours';
+$string['lessbrandsub'] = 'Quick Settings Links:<br>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_carousel">Carousel Slideshow</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_marketing">Marketing</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_frontpage_courses">Course Images</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_categoryicon">Category Icons</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_social">Social Networking</a>
+<br><br>Main Brand Colours';
 $string['lessbranddesc'] = 'Main colours for the theme - These are the key colours that everything else is built from.';
 $string['brandprimary'] = 'Brand Primary';
 $string['brandprimarydesc'] = 'Main brand colour';
@@ -105,7 +129,19 @@ $string['whitedesc'] = 'White setting - Default will be #fff, but this can be ad
 $string['graybase'] = 'Gray Base';
 $string['graybasedesc'] = 'Gray Base setting - Default will be #000, but this can be adapted if there is a need to adjust contrast levels';
 $string['lessadditionalsettings'] = 'Additional LESS';
-$string['lessadditionalsub'] = 'Additional LESS Settings';
+$string['lessadditionalsub'] = 'Quick Settings Links:<br>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_carousel">Carousel Slideshow</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_marketing">Marketing</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_frontpage_courses">Course Images</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_categoryicon">Category Icons</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_social">Social Networking</a>
+<br><br>Additional LESS Settings';
 $string['lessadditionaldesc'] = 'Additional for the theme - These are the secondary colours, usually lighter/darker forms of the primary colours - these should proably only be adjusted where contrast levels need changing because of choice of brand colours.<br />These settings have been left as a text field so that LESS rules can be added (as per the default) but they can also set an html colour name, hex value or rgb/rgba colour value.<br /><b>NOTE:</b> An error or typo in these fields can cause the LESS compiler to fail and for the page to be returned with no CSS applied. <b style="background-color:yellow;">TODO</b> Error trapping for these entries - difficult as there are many optional styles of entry, LESS - which could include mixins, html names, hex, rgb(a)';
 $string['brandprimarylight'] = 'Brand Primary Light';
 $string['brandprimarylightdesc'] = 'Brand Primary Light';
@@ -141,7 +177,19 @@ $string['lessvariablesfiledesc'] = 'For reference purposes when editing the addi
 
 // Layouts.
 $string['layoutheading'] = 'Layout';
-$string['layoutheadingsub'] = 'Set the layouts used by pages in your site';
+$string['layoutheadingsub'] = 'Quick Settings Links:<br>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_carousel">Carousel Slideshow</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_marketing">Marketing</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_frontpage_courses">Course Images</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_categoryicon">Category Icons</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_social">Social Networking</a>
+<br><br>Set the layouts used by pages in your site';
 $string['layoutdesc'] = '<p>There are 5 layouts available for your site pages:</p>
 <p><img style=margin:2px;" src ="../theme/image.php?theme=flexibase&amp;image=settings/layout1&amp;component=theme" alt="Pre and Post Layout" title="Pre and Post layout">  <img style=margin:2px;" src ="../theme/image.php?theme=flexibase&amp;image=settings/layout2&amp;component=theme" alt="Two Pre Layout" title="Two Pre layout"/>  <img style=margin:2px;" src ="../theme/image.php?theme=flexibase&amp;image=settings/layout3&amp;component=theme" alt="Two Pre Layout" title="Two Pre layout"/>  <img style=margin:2px;" src ="../theme/image.php?theme=flexibase&amp;image=settings/layout4&amp;component=theme" alt="Two Pre Layout" title="Two Pre layout"/>  <img style=margin:2px;" src ="../theme/image.php?theme=flexibase&amp;image=settings/layout5&amp;component=theme" alt="Two Pre Layout" title="Two Pre layout"/></p>
 <p>There are also additional block regions at the top and bottom and within the main content area, giving enormous flexibility without the need to set layout files in the code. These are available on all the page types below and can be used (or not) as required. It is not really expected that anyone will use ALL these block regions on one page as that would probably create a very cluttered page (or require a very large monitor). However, the additional regions are provided to allow as much flexibility as possible in the design and layout of pages, in combination with th eability to adjust the main layout for different page types without needing to access the theme code or alter the config.php.<br />All layouts are designed to be RTL compatible and responsive.<br /></p><p class="alert-warning"><b>NOTE:</b> These layout options are not applied in browsers which do not support Flexbox at all such as IE 9 and below. Flexbox legacy and prefixed versions are supported.</p>';
@@ -156,7 +204,19 @@ $string['myhomelayoutdesc'] = 'SideBar layout for the My Home dashboard page';
 
 // Alerts.
 $string['alertsheading'] = 'User alerts';
-$string['alertsheadingsub'] = 'Display important messages to your users on the front page';
+$string['alertsheadingsub'] = 'Quick Settings Links:<br>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_carousel">Carousel Slideshow</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_marketing">Marketing</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_frontpage_courses">Course Images</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_categoryicon">Category Icons</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_social">Social Networking</a>
+<br><br>Display important messages to your users on the front page';
 $string['alertsdesc'] = 'This will display an alert (or multiple) in three different styles to your users on the Moodle frontpage. Please remember to disable these when no longer needed.';
 $string['enablealert'] = 'Enable alerts';
 $string['enablealertdesc'] = 'Enable or disable alerts';
@@ -176,7 +236,19 @@ $string['alert_general'] = 'Announcement';
 
 // Carousel.
 $string['carouselheading'] = 'Carousel Slideshow';
-$string['carouselheadingsub'] = 'Set images and captions for the frontpage carousel';
+$string['carouselheadingsub'] = 'Quick Settings Links:<br>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_carousel">Carousel Slideshow</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_marketing">Marketing</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_frontpage_courses">Course Images</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_categoryicon">Category Icons</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_social">Social Networking</a>
+<br><br>Set images and captions for the frontpage carousel';
 $string['carouseldesc'] = 'Set upto 8 images, with title, caption and link url for the front page carousel.';
 $string['toggleslideshow'] = 'Toggle Carousel display';
 $string['toggleslideshowdesc'] = 'Choose if you wish to hide or show the carousel.';
@@ -210,12 +282,21 @@ $string['captionlight'] = 'Light background';
 $string['captiondark'] = 'Dark background';
 $string['captiontheme'] = 'Theme primary brand colour';
 
-// Marketing.
-    require($CFG->dirroot .'/theme/flexibase/plugins/marketing/marketinglang_en.php');
-
 // Course Image rendering.
 $string['frontpagecoursesettings'] = 'Course Images';
-$string['frontpagesettingsheading'] = 'Using Course Images';
+$string['frontpagesettingsheading'] = 'Quick Settings Links:<br>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_carousel">Carousel Slideshow</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_marketing">Marketing</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_frontpage_courses">Course Images</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_categoryicon">Category Icons</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_social">Social Networking</a>
+<br><br>Using Course Images';
 $string['frontpagedesc'] = 'Configure the way that the images are used for course tiles on the frontpage and as course images on the course pages.';
 $string['coursetileimagesinfo'] = 'Front Page Course Tile Images';
 $string['coursetileimagesinfodesc'] = 'Settings for Front Page course tile images';
@@ -243,7 +324,19 @@ $string['courseheaderimageheightdesc'] = 'Set the height for any images used as 
 
 // Category Icons.
 $string['categoryiconheading'] = 'Category icons';
-$string['categoryiconheadingsub'] = 'Use icons to represent your categories';
+$string['categoryiconheadingsub'] = 'Quick Settings Links:<br>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_carousel">Carousel Slideshow</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_marketing">Marketing</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_frontpage_courses">Course Images</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_categoryicon">Category Icons</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_social">Social Networking</a>
+<br><br>Use icons to represent your categories';
 $string['categoryicondesc'] = 'If enabled this will allow you to set icons for each category of course.';
 $string['categoryiconcategory'] = 'The icon for the category: {$a->category}.';
 $string['enablecategoryicon'] = 'Enable category icons';
@@ -259,7 +352,19 @@ $string['categoryiconinfodesc'] = 'Category Icon';
 
 // Social Networks.
 $string['socialheading'] = 'Social Networking';
-$string['socialheadingsub'] = 'Engage your users with social networking.';
+$string['socialheadingsub'] = 'Quick Settings Links:<br>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_carousel">Carousel Slideshow</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_marketing">Marketing</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_frontpage_courses">Course Images</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_categoryicon">Category Icons</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_social">Social Networking</a>
+<br><br>Engage your users with social networking.';
 $string['socialdesc'] = 'Provide direct links to the core social networks that promote your brand.  These will appear in the header of every page.';
 $string['socialnetworks'] = 'Social Networks';
 $string['facebook'] = 'Facebook URL';
@@ -298,7 +403,19 @@ $string['sociallinkicondesc'] = 'Enter the fontawesome name of the icon for your
 // Marketing Spots.
 $string['marketingheading'] = 'Marketing Spots';
 $string['marketinginfodesc'] = 'Enter the settings for your marketing spot.';
-$string['marketingheadingsub'] = 'Four locations on the front page to add information and links.';
+$string['marketingheadingsub'] = 'Quick Settings Links:<br>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_carousel">Carousel Slideshow</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_marketing">Marketing</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_frontpage_courses">Course Images</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_categoryicon">Category Icons</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_social">Social Networking</a>
+<br><br>Four locations on the front page to add information and links.';
 $string['marketingheight'] = 'Height of Marketing Images';
 $string['marketingheightdesc'] = 'If you want to display images in the Marketing boxes you can specify their height here.';
 $string['marketingdesc'] = 'This theme provides the option of enabling four "marketing" or "ad" spots just under the slideshow.  These allow you to easily identify core information to your users and provide direct links.';
@@ -373,7 +490,19 @@ $string['coursesloggedinonly'] = 'Hide Courses menu from non-logged-in users';
 $string['coursesloggedinonlydesc'] = 'If you do not want users who are not logged in to see the "Courses" menu in the Awesomebar, enable this setting.';
 $string['expandtoactivities'] = 'Expand to show activities within sections';
 $string['expandtoactivitiesdesc'] = 'Enabling this option shows activities underneath the sections in the Awesomebar, but degrades performance - especially in courses with lots of activities/resources.';
-$string['awesomebarsettings'] = 'Awesomebar / Navigation Settings';
+$string['awesomebarsettings'] = 'Quick Settings Links:<br>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_carousel">Carousel Slideshow</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_marketing">Marketing</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_frontpage_courses">Course Images</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_categoryicon">Category Icons</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_social">Social Networking</a>
+<br><br>Awesomebar / Navigation Settings';
 $string['awesomebarsettingsdesc'] = 'The "Awesomebar" is the black navigation bar that is fixed to the top of the browser window when using Decaf.<br>The following settings relate to the "Awesomebar" and other page navigation.';
 $string['coursesleafonly'] = 'Populate "Courses" menu'; // This seems backwards, but makes it easier for users to understand as it eliminates the double-negative.
 $string['coursesleafonlydesc'] = 'On sites with large numbers of courses, generating the full list of courses in the Awesomebar can cause performance issues.  Disable this setting (set it to "No") to prevent the list from being generated - the "Courses" node will remain as a quick way to reach the course list.';
