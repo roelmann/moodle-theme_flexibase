@@ -87,6 +87,7 @@ CHANGELOG:
 	- 'theme feature plugins' development feature added (including example 'cleanplugged' theme suing those features)
 	- example course backup added to readmes folder to demonstrate some features and provide documentation for theme
 	- Various minor style developments
+	- horizontal 'quick links' added to settings pages
 	- No major changes to flex layout or bootstrap upstream code
 
 1.1 	- Update for 2.9 - Update parent requirement for changes to Bootstrap parent
