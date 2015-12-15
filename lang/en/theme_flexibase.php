@@ -29,8 +29,9 @@
  */
 
 $string['choosereadme'] = '
-<p>flexibase is based on the Bootstrap3 parent theme (bootstrap), child theme (Cerulean) and the bootswatch Spacelab</p>
-<p>However, it uses flexbox layouts for the main layout component areas, rather than bootstrap grids in order to provide an easy way for admins to manage a wide variety of layouts on their site through the theme settings pages, without needing to customise any code.</p><p class="alert-warning"><b>NOTE:</b> These layout options are not applied in browsers which do not support Flexbox at all such as IE 9 and below. Flexbox legacy and prefixed versions are supported.</p>';
+<p>flexibase was based on the Bootstrap3 parent theme (bootstrap) and the bootswatch Spacelab</p>
+<p>However, it uses flexbox layouts for the main layout component areas, rather than bootstrap grids in order to provide an easy way for admins to manage a wide variety of layouts on their site through the theme settings pages, without needing to customise any code.</p><p class="alert-warning"><b>NOTE:</b> These layout options are not applied in browsers which do not support Flexbox at all such as IE 9 and below. Flexbox legacy and prefixed versions are supported.</p>
+<p>You can find more details in the theme README.txt file and also in the included course backup file which can be restored to your own site for more information about some of the theme features.</p>';
 
 $string['configtitle'] = 'FlexiBase';
 $string['pluginname'] = 'FlexiBase';
