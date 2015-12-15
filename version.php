@@ -31,10 +31,10 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2015120800;
+$plugin->version   = 2015121400;
 $plugin->requires  = 2015051100;
-$plugin->release  = 'v3.0.3';
-$plugin->maturity  = MATURITY_RC;
+$plugin->release  = 'v3.0.5';
+$plugin->maturity  = MATURITY_STABLE;
 $plugin->component = 'theme_flexibase';
 $plugin->dependencies = array(
     'theme_bootstrap'  => 2015103000
