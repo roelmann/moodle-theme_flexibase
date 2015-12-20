@@ -123,6 +123,10 @@ body.has_dock .moodleheader .container-fluid {
 .navbar-header {
     margin:0 5px !important;
 }
+.moodleheader{
+    min-height:60px;
+}
+
 @media (max-width:1200px) {
     .navbaruserpicture img {
         height:75px;
