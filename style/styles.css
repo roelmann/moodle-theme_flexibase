@@ -426,3 +426,6 @@ body.has_dock.dir-rtl .navbar-collapse {
 .maincontentinnerwrap div[role="main"] {
     max-width:99%;
 }
+#coursesearch.form-inline .btn {
+    margin-top:-6px;
+}
