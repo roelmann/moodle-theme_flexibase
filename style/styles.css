@@ -130,6 +130,9 @@ body.has_dock .moodleheader .container-fluid {
     padding-left:30px;
 }
 
+form label {
+    margin-right:10px;
+}
 @media (max-width:1200px) {
     .navbaruserpicture img {
         height:75px;
@@ -310,7 +313,9 @@ body.has_dock.dir-rtl .navbar-collapse {
 .dir-rtl .breadcrumb-button {
     float: left;
 }
-
+.dir-rtl form label {
+    margin-left:10px;
+}
 
 /* Course grades css */
 .courseheadergradepercentage {display:none;}
