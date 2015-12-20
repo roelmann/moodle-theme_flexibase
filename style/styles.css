@@ -126,6 +126,9 @@ body.has_dock .moodleheader .container-fluid {
 .moodleheader{
     min-height:60px;
 }
+.has_dock .navbar-header {
+    padding-left:30px;
+}
 
 @media (max-width:1200px) {
     .navbaruserpicture img {
