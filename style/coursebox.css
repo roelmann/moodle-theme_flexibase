@@ -164,7 +164,7 @@
     height: 275px;
     margin-bottom: 20px;
 }
-.coursebox .summary {
+#frontpage-course-list .coursebox .summary {
 	height:130px;
 }
 .coursebox .boxfooter {
