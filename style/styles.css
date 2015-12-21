@@ -429,3 +429,6 @@ body.has_dock.dir-rtl .navbar-collapse {
 #coursesearch.form-inline .btn {
     margin-top:-6px;
 }
+.section .label .mod-indent-outer {
+    display: table;
+}
