@@ -432,3 +432,6 @@ body.has_dock.dir-rtl .navbar-collapse {
 .section .label .mod-indent-outer {
     display: table;
 }
+nav#page-header {
+    margin-bottom:10px;
+}
