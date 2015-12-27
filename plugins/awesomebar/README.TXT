@@ -71,6 +71,13 @@ with your theme. An awesomebar_settings_alternate.php is provided for themes
 such as Clean which use a single settings page - again variable names
 must be checked for consistency.
 
+yui folder
+----------
+You will need to move the entire yui folder into the root of your theme, so that you
+have /yourtheme/yui/awesomebar/awesombar.js
+If your theme has a yui folder already, then extract the contents of the included one
+and add them to the existing yourtheme/yui folder.
+
 ***************************************************************************
 * REMEMBER: Purge All Caches when complete - theme designer mode does not *
 * clear language caches.                                                  *
