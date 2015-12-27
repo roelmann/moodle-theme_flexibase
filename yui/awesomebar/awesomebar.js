@@ -13,7 +13,7 @@ AwesomeBar.prototype = {
     initializer : function(config) {
         Y.all('.flexibase-awesome-bar ul.dropdown li > span').each(this.enhanceAwesomeBar, this);
         Y.all('.flexibase-awesome-bar ul.dropdown li.clickable-with-children > a').each(this.enhanceAwesomeBar, this);
-        Y.one('.btn-navbar').on('click', this.toggleTouchMode, this);
+/*        Y.one('.btn-navbar').on('click', this.toggleTouchMode, this); */
     },
     toggleTouchMode : function() {
         Y.one('#awesomebar').toggleClass('touchmode-active');
