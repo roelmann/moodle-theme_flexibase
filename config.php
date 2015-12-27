@@ -202,8 +202,9 @@ $THEME->layouts = array(
     ),
     // The pagelayout used when a redirection is occuring.
     'redirect' => array(
-        'file' => 'embedded.php',
+        'file' => 'redirect.php',
         'regions' => array(),
+        'options' => array(),
     ),
     // The pagelayout used for reports - minimal blocks to maximise space.
     'report' => array(
