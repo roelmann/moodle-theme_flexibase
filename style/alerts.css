@@ -45,3 +45,6 @@
     padding-left:70px;
     text-indent:-48px;
 }
+.rtl .alertmessage {
+    padding-right:70px;
+}
