@@ -81,6 +81,9 @@ Richard
 
 CHANGELOG:
 ==========
+3.0.6   - Bug fixes to awesomebar (hiding nav & settings, correctly applying yui)
+          Adding a site header background setting
+          Various minor styling and minor bug fixes
 3.0 	- (There is no 2.x release - major version numbering updated to match Moodle)
 	- Course page header images
 	- Course grade display on course header
