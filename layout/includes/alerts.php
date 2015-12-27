@@ -92,8 +92,8 @@ if ($enable3alert) {
         <?php
         $alert3icon = 'alert' . theme_flexibase_get_setting('alert3type');
         if ('ltr' === get_string('thisdirection', 'langconfig')) {
-            echo $$alert3icon . '<span class="title">' . theme_flexibase_get_setting('alert3title', true)
-                . '</span>' . theme_flexibase_get_setting('alert3text', true);
+            echo '<div class="alertmessage">' . $$alert3icon . '<span class="title">' . theme_flexibase_get_setting('alert3title', true)
+                . '</span>' . theme_flexibase_get_setting('alert3text', true) .'</div>';
         } else {
             echo $$alert3icon . theme_flexibase_get_setting('alert3text', true) . '<span class="title">'
                 . theme_flexibase_get_setting('alert3title', true) . '</span>';
