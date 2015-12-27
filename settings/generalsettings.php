@@ -70,6 +70,14 @@ $default = 'home';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $temp->add($setting);
 
+// Site header background file setting.
+$name = 'theme_flexibase/headerbg';
+$title = get_string('headerbg', 'theme_flexibase');
+$description = get_string('headerbgdesc', 'theme_flexibase');
+$setting = new admin_setting_configstoredfile($name, $title, $description, 'headerbg');
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
 // Top bar colour scheme.
 $name = 'theme_flexibase/topbarcolour';
 $title = get_string('topbarcolour', 'theme_flexibase');

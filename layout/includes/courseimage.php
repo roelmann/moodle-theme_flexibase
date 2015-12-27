@@ -67,6 +67,8 @@ foreach ($files as $file) {
 }
 
 // Default image.
+$headerimage = $PAGE->theme->setting_file_url('headerbg', 'headerbg');
+
 if ($courseimage == '') {
     $courseimage = $PAGE->theme->setting_file_url('courseimagedefaultheader', 'courseimagedefaultheader');
 }
@@ -74,7 +76,6 @@ if ($courseimage == '') {
 $headerimagetype=(empty($PAGE->theme->settings->courseimageheader)) ? 1 : $PAGE->theme->settings->courseimageheader;
 
 $moodleheaderclass = '';
-$headerimage = '';
 $courseheaderclass = '';
 if ($PAGE->pagelayout == 'course' || $PAGE->pagelayout == 'incourse') {
     if ($headerimagetype == 1) {
@@ -85,6 +86,7 @@ if ($PAGE->pagelayout == 'course' || $PAGE->pagelayout == 'incourse') {
     }
     if ($headerimagetype == 2) {
         if ($courseimage) {
+			$moodleheaderclass = '';
             $courseheaderclass = 'withimage';
         }
     }

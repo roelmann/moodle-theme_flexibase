@@ -54,6 +54,8 @@ function theme_flexibase_pluginfile($course, $cm, $context, $filearea, $args, $f
             return $theme->setting_file_serve('minilogo', $args, $forcedownload, $options);
     } else if ($filearea === 'loginbg') {
             return $theme->setting_file_serve('loginbg', $args, $forcedownload, $options);
+    } else if ($filearea === 'headerbg') {
+            return $theme->setting_file_serve('headerbg', $args, $forcedownload, $options);
     } else {
         send_file_not_found();
     }

@@ -86,6 +86,8 @@ This should be a small logo - usually a maximum of 30px high and will replace an
 $string['falogo'] = 'Top Bar FontAwesome Icon';
 $string['falogodesc'] = 'Please add a FontAwesome icon for the Top NavBar Home link here if required.<br>
 This should be a small logo - usually a maximum of 40px high and will replace any FontAwesome icon added in the setting above. If no icon or logo is added, the stadard "home" icon will be used. Adding "o" here and no mini logo below will prevent any logo or icon appearing on the top navbar.<br />A full list of FontAwesome icons can be found at http://fontawesome.io/icons/';
+$string['headerbg'] = 'A site header background image';
+$string['headerbgdesc'] = 'A background image for the header of your site - this will be overwritten on course pages if a course image (or default course image) is used.<br>Suggested image size 1200px x 75px. There is deliberately no default image stored, although there are several example header images in the pix/header folder of the theme.';
 $string['topbarcolour'] = 'Top NavBar colour';
 $string['topbarcolourdesc'] = 'Top NavBar colour setting - default or inverse colour scheme';
 $string['menunavbarcolour'] = 'Main Menu NavBar colour';
