@@ -52,6 +52,8 @@ Renderers file (renderers.php)
 e.g.
     require_once($CFG->dirroot .'/theme/flexibase/plugins/awesomebar/topsettings_renderer.php');
 
+If your theme does not already override core_renderer, then you can include the awesomebar core renderer in the same way. If it does already have a core_renderer override however, you will need to copy the function in that file into the existing core_renderer file.
+
 Lib file (lib.php)
 --------
     require('path/to/awesomelib.php');
