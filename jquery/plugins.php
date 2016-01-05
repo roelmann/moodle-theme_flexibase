@@ -37,7 +37,6 @@ $plugins = array(
  * separately.
  */
     'modernizr' => array('files' => array('modernizr.js')),
-
     'carousel' => array('files' => array('carousel.js')),
     'alertdismissal' => array('files' => array('alertdismissal.js')),
     'transitions' => array('files' => array('transitions.js')),

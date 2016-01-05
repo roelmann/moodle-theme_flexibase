@@ -423,6 +423,9 @@ body.has_dock.dir-rtl .navbar-collapse {
     height:46px;
     width:46px;
 }
+
+/* Style bug fixes - to be organised
+ * --------------------------------- */
 .maincontentinnerwrap div[role="main"] {
     max-width:99%;
 }
@@ -435,3 +438,5 @@ body.has_dock.dir-rtl .navbar-collapse {
 nav#page-header {
     margin-bottom:10px;
 }
+body div math {display:none;visibility:hidden;}
+.block .minicalendar th, .block .minicalendar td  {padding: 0px;}
