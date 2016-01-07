@@ -202,7 +202,7 @@ $THEME->layouts = array(
     ),
     // The pagelayout used when a redirection is occuring.
     'redirect' => array(
-        'file' => 'redirect.php',
+        'file' => 'embedded.php',
         'regions' => array(),
         'options' => array(),
     ),
