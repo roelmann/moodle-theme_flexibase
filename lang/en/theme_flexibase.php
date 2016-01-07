@@ -340,7 +340,7 @@ $string['categoryiconheadingsub'] = 'Quick Settings Links:<br>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_categoryicon">Category Icons</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_social">Social Networking</a>
 <br><br>Use icons to represent your categories';
-$string['categoryicondesc'] = 'If enabled this will allow you to set icons for each category of course.';
+$string['categoryicondesc'] = 'If enabled this will allow you to set icons for each category of course.<br>Note: If category icons are used, then they are given a fixed height suitable for a single line name with a small lower margin, or a two line name. If your categories sometimes have titles longer than this you may want to reset that in your customcss to allow additional space eg. <code>.flexibasecats.panel {height: 230px;}</code>';
 $string['categoryiconcategory'] = 'The icon for the category: {$a->category}.';
 $string['enablecategoryicon'] = 'Enable category icons';
 $string['enablecategoryicondesc'] = 'If enabled you will be able to select category icons after clicking "Save changes".';
