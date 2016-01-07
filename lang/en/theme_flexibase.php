@@ -323,7 +323,7 @@ $string['courseimageheaderoption3'] = 'No course header image';
 $string['coursepageimagesinfo'] = 'Course Page Images';
 $string['coursepageimagesinfodesc'] = 'Settings for Course Page header images';
 $string['courseheaderimageheight'] = 'Course Header image height';
-$string['courseheaderimageheightdesc'] = 'Set the height for any images used as header banners (recommended height 150-175px)';
+$string['courseheaderimageheightdesc'] = 'Set the height for any images used as header banners (recommended height 150-175px)<br>Note: If you set this to less than 125px, you may also need to alter the font-size on the course grade to bring it to a single line (add <code>.courseheadergradepercentage table tbody tr:last-of-type .column-itemname, .courseheadergradepercentage table tbody tr:last-of-type .column-percentage {font-size:120%;}</code> to your customcss.';
 
 // Category Icons.
 $string['categoryiconheading'] = 'Category icons';
