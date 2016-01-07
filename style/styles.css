@@ -438,5 +438,6 @@ body.has_dock.dir-rtl .navbar-collapse {
 nav#page-header {
     margin-bottom:10px;
 }
+.nav-tabs.nav-justified {width: auto;}
 body div math {display:none;visibility:hidden;}
 .block .minicalendar th, .block .minicalendar td  {padding: 0px;}
