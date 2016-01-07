@@ -81,6 +81,8 @@ Richard
 
 CHANGELOG:
 ==========
+3.0.7   - Style fixes (thanks Derek Chirnside for valuable extended use and testing)
+        - Updated modernizr.js
 3.0.6   - Bug fixes to awesomebar (hiding nav & settings, correctly applying yui)
           Adding a site header background setting
           Various minor styling and minor bug fixes
