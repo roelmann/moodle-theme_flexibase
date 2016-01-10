@@ -43,6 +43,14 @@ require_once($CFG->libdir. '/coursecatlib.php');
  */
 class theme_flexibase_core_renderer extends core_renderer {
 
+	public function __construct(moodle_page $page, $target) {
+        global $PAGE, $USER;
+        if (!empty($PAGE->theme->settings->alwaysexpandsiteadmin)) {
+            navigation_node::require_admin_tree();
+        }
+        parent::__construct($page, $target);
+    }
+    
     /*
      * Render Editing link as a bootstrap style button with fontawesome icon.
      * @param stdclass moodle_url
