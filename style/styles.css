@@ -437,6 +437,7 @@ nav#page-header {margin-bottom:10px;} /* Add spacing below page header */
 .flexibasecats.panel {height: 230px;} /* Fix height of category panels. */
 .has_dock .navbar-header {margin-left:30px;} /* Add spacing to header when dock is used. */
 .eventlist .event .icon {display:none;} /* Hide calendar icon on event view. */
+.eventlist .event h3 {margin-top:0;} /* Then improves the top spacing as well. */
 /* Bring Forum controls onto single line. */
 #page-mod-forum-discuss .discussioncontrols .discussioncontrol,
 #page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscussion.movediscussion {width:auto; float:right;}
