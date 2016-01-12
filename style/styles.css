@@ -429,16 +429,17 @@ body.has_dock.dir-rtl .navbar-collapse {
 .maincontentinnerwrap div[role="main"] {
     max-width:99%;
 }
-#coursesearch.form-inline .btn {
-    margin-top:-6px;
-}
-.section .label .mod-indent-outer {
-    display: table;
-}
-nav#page-header {
-    margin-bottom:10px;
-}
-.nav-tabs.nav-justified {width: auto;}
-body div math {display:none;visibility:hidden;}
-.block .minicalendar th, .block .minicalendar td  {padding: 0px;}
-.flexibasecats.panel {height: 230px;}
+#coursesearch.form-inline .btn {margin-top:-6px;} /* Correct button alignment. */
+.section .label .mod-indent-outer {display: table;} /* Correct upstream bug that prevented indented labels */
+nav#page-header {margin-bottom:10px;} /* Add spacing below page header */
+.nav-tabs.nav-justified {width: auto;} /* Override tabs width setting to prevent overlap */
+.block .minicalendar th, .block .minicalendar td  {padding: 0px;} /* Remove overlap of minicalendar block on smaller screens */
+.flexibasecats.panel {height: 230px;} /* Fix height of category panels. */
+.has_dock .navbar-header {margin-left:30px;} /* Add spacing to header when dock is used. */
+.eventlist .event .icon {display:none;} /* Hide calendar icon on event view. */
+/* Bring Forum controls onto single line. */
+#page-mod-forum-discuss .discussioncontrols .discussioncontrol,
+#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscussion.movediscussion {width:auto; float:right;}
+#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscussion.movediscussion {margin-top:0;}
+/* Bring Course category page controls onto single line. */
+#page-course-index-category .categorypicker, #page-course-index-category #coursesearch {float:right;width:auto; margin:0 0 0 20px}
