@@ -444,3 +444,4 @@ nav#page-header {margin-bottom:10px;} /* Add spacing below page header */
 #page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscussion.movediscussion {margin-top:0;}
 /* Bring Course category page controls onto single line. */
 #page-course-index-category .categorypicker, #page-course-index-category #coursesearch {float:right;width:auto; margin:0 0 0 20px}
+.atto-fullscreen #awesomebar {display: none;visibility: hidden;} /* Hide awesomebar when atto-fullscreen plugin is used */
