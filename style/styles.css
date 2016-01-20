@@ -428,10 +428,10 @@ body.has_dock.dir-rtl .navbar-collapse {
  * --------------------------------- */
 .maincontentinnerwrap div[role="main"] {max-width:99%;}
 #coursesearch.form-inline .btn {margin-top:-6px;} /* Correct button alignment. */
-.section .label .mod-indent-outer {display: table;} /* Correct upstream bug that prevented indented labels */
-nav#page-header {margin-bottom:10px;} /* Add spacing below page header */
-.nav-tabs.nav-justified {width: auto;} /* Override tabs width setting to prevent overlap */
-.block .minicalendar th, .block .minicalendar td  {padding: 0px;} /* Remove overlap of minicalendar block on smaller screens */
+.section .label .mod-indent-outer {display: table;} /* Correct upstream bug that prevented indented labels. */
+nav#page-header {margin-bottom:10px;} /* Add spacing below page header. */
+.nav-tabs.nav-justified {width: auto;} /* Override tabs width setting to prevent overlap. */
+.block .minicalendar th, .block .minicalendar td  {padding: 0px;} /* Remove overlap of minicalendar block on smaller screens. */
 .flexibasecats.panel {height: 230px;} /* Fix height of category panels. */
 .has_dock .navbar-header {margin-left:30px;} /* Add spacing to header when dock is used. */
 .eventlist .event .icon {display:none;} /* Hide calendar icon on event view. */
@@ -442,5 +442,7 @@ nav#page-header {margin-bottom:10px;} /* Add spacing below page header */
 #page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscussion.movediscussion {margin-top:0;}
 /* Bring Course category page controls onto single line. */
 #page-course-index-category .categorypicker, #page-course-index-category #coursesearch {float:right;width:auto; margin:0 0 0 20px}
-.atto-fullscreen #awesomebar {display: none;visibility: hidden;} /* Hide awesomebar when atto-fullscreen plugin is used */
+.atto-fullscreen #awesomebar {display: none;visibility: hidden;} /* Hide awesomebar when atto-fullscreen plugin is used. */
 div math mfrac mi {font-size: 0;visibility: hidden;}
+.breadcrumbcourse a{font-weight:900;} /* Style added to new class on breadcrumb to highlight course. */
+.breadcrumbcategory a{} /* Style added to new class on breadcrumb to highlight category - note this is deliberately empty as I dont want to change anything at the moment, but do want it to appear on firebug for development - remove later. */

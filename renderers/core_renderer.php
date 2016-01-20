@@ -126,7 +126,15 @@ class theme_flexibase_core_renderer extends core_renderer {
         $breadcrumbs = '';
         foreach ($items as $item) {
             $item->hideicon = true;
-            $breadcrumbs .= '<li>'.$this->render($item).'</li>';
+            $crumb = $this->render($item);
+            $class = '';
+            if (strpos($crumb, "course/view.php")) {
+				$class = 'class="breadcrumbcourse"';
+			}
+			if (strpos($crumb, "categoryid")) {
+				$class = 'class="breadcrumbcategory"';
+			}
+            $breadcrumbs .= '<li '.$class.'>'.$crumb.'</li>';
         }
         return "<ol class=breadcrumb>$breadcrumbs</ol>";
     }
