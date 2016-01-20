@@ -27,22 +27,11 @@
  *             Decaf - Paul Nichols
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-$temp = null;
-$settings = null;
 
-defined('MOODLE_INTERNAL') || die;
+// Docs for Settings.
+$temp = new admin_settingpage('theme_flexibase_settingsdocs',  get_string('settingsdocs', 'theme_flexibase'));
+$temp->add(new admin_setting_heading('theme_flexibase_settingsdocs', get_string('docsheadingsub', 'theme_flexibase'),
+    format_text(get_string('docsheadingdesc', 'theme_flexibase'), FORMAT_MARKDOWN)));
 
-    $ADMIN->add('themes', new admin_category('theme_flexibase', 'FlexiBase Settings'));
 
-    require('settings/settingsdocs.php');
-    require('settings/generalsettings.php');
-    require('settings/mainless.php');
-    require('settings/additionalless.php');
-    require('settings/layoutsettings.php');
-    require('settings/awesomebar.php');
-    require('settings/alerts.php');
-    require('settings/carousel.php');
-    require('settings/marketing.php');
-    require('settings/coursetiles.php');
-    require('settings/categoryicons.php');
-    require('settings/socialicons.php');
+$ADMIN->add('theme_flexibase', $temp);

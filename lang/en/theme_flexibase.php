@@ -56,9 +56,28 @@ $string['readme_title'] = 'FlexiBase read-me';
 $string['readme_desc'] = 'Please {$a->url} containing more information about the FlexiBase theme.';
 $string['readme_click'] = 'click for README.txt';
 
+// Docs.
+$string['settingsdocs'] = 'Settings Pages Help Docs';
+$string['docsheadingsub'] = 'Quick Settings Links:<br>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_carousel">Carousel Slideshow</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_marketing">Marketing</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_frontpage_courses">Course Images</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_categoryicon">Category Icons</a>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_social">Social Networking</a>
+<br><br>Settings Docs';
+$string['docsheadingdesc'] = 'Page information - text here to create a help page for settings pages';
+
 // General.
 $string['genericsettings'] = 'General';
 $string['generalheadingsub'] = 'Quick Settings Links:<br>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
 <a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
@@ -104,6 +123,7 @@ $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be 
 // Brand Colour Settings.
 $string['lessbrandsettings'] = 'Main Brand Colours';
 $string['lessbrandsub'] = 'Quick Settings Links:<br>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
 <a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
@@ -135,6 +155,7 @@ $string['graybase'] = 'Gray Base';
 $string['graybasedesc'] = 'Gray Base setting - Default will be #000, but this can be adapted if there is a need to adjust contrast levels';
 $string['lessadditionalsettings'] = 'Additional LESS';
 $string['lessadditionalsub'] = 'Quick Settings Links:<br>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
 <a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
@@ -183,6 +204,7 @@ $string['lessvariablesfiledesc'] = 'For reference purposes when editing the addi
 // Layouts.
 $string['layoutheading'] = 'Layout';
 $string['layoutheadingsub'] = 'Quick Settings Links:<br>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
 <a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
@@ -210,6 +232,7 @@ $string['myhomelayoutdesc'] = 'SideBar layout for the My Home dashboard page';
 // Alerts.
 $string['alertsheading'] = 'User alerts';
 $string['alertsheadingsub'] = 'Quick Settings Links:<br>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
 <a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
@@ -242,6 +265,7 @@ $string['alert_general'] = 'Announcement';
 // Carousel.
 $string['carouselheading'] = 'Carousel Slideshow';
 $string['carouselheadingsub'] = 'Quick Settings Links:<br>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
 <a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
@@ -290,6 +314,7 @@ $string['captiontheme'] = 'Theme primary brand colour';
 // Course Image rendering.
 $string['frontpagecoursesettings'] = 'Course Images';
 $string['frontpagesettingsheading'] = 'Quick Settings Links:<br>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
 <a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
@@ -330,6 +355,7 @@ $string['courseheaderimageheightdesc'] = 'Set the height for any images used as 
 // Category Icons.
 $string['categoryiconheading'] = 'Category icons';
 $string['categoryiconheadingsub'] = 'Quick Settings Links:<br>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
 <a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
@@ -358,6 +384,7 @@ $string['categoryiconinfodesc'] = 'Category Icon';
 // Social Networks.
 $string['socialheading'] = 'Social Networking';
 $string['socialheadingsub'] = 'Quick Settings Links:<br>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
 <a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
@@ -409,6 +436,7 @@ $string['sociallinkicondesc'] = 'Enter the fontawesome name of the icon for your
 $string['marketingheading'] = 'Marketing Spots';
 $string['marketinginfodesc'] = 'Enter the settings for your marketing spot.';
 $string['marketingheadingsub'] = 'Quick Settings Links:<br>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
 <a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
@@ -496,6 +524,7 @@ $string['coursesloggedinonlydesc'] = 'If you do not want users who are not logge
 $string['expandtoactivities'] = 'Expand to show activities within sections';
 $string['expandtoactivitiesdesc'] = 'Enabling this option shows activities underneath the sections in the Awesomebar, but degrades performance - especially in courses with lots of activities/resources.';
 $string['awesomebarsettings'] = 'Quick Settings Links:<br>
+<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
 <a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
