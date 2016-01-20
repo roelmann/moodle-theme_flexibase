@@ -72,6 +72,8 @@ $string['generalheadingsub'] = 'Quick Settings Links:<br>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_social">Social Networking</a>
 <br><br>General settings';
 $string['generalheadingdesc'] = 'Configure the general settings for the theme here.';
+$string['favicon'] = 'Favicon';
+$string['favicondesc'] = 'Please upload your favicon here.';
 $string['logo'] = 'Main Header Logo';
 $string['logodesc'] = 'Please upload your custom logo for the Main Heading here if you want to add it to the header.<br>
 If the height of your logo is more than 75px add the following CSS rule to the Custom CSS box below.<br>

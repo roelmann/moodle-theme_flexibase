@@ -47,7 +47,7 @@ require('courseimage.php');?>
             ?>
                 <a class="navbar-brand" href="<?php echo $CFG->wwwroot;?>">
                     <i class="fa fa-lg fa-<?php echo theme_flexibase_get_setting('falogo'); ?>">&nbsp;</i>
-                    <?php echo $SITE->shortname; ?>
+                    <?php echo $SITE->shortname?>
                 </a>
             <?php
             }

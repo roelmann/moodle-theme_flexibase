@@ -33,6 +33,14 @@ $temp = new admin_settingpage('theme_flexibase_generic',  get_string('genericset
 $temp->add(new admin_setting_heading('theme_flexibase_generalheading', get_string('generalheadingsub', 'theme_flexibase'),
     format_text(get_string('generalheadingdesc', 'theme_flexibase'), FORMAT_MARKDOWN)));
 
+// Favicon file setting.
+$name = 'theme_flexibase/favicon';
+$title = get_string('favicon', 'theme_flexibase');
+$description = get_string('favicondesc', 'theme_flexibase');
+$setting = new admin_setting_configstoredfile($name, $title, $description, 'favicon');
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
 // Logo file setting.
 $name = 'theme_flexibase/logo';
 $title = get_string('logo', 'theme_flexibase');

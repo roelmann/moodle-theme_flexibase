@@ -581,5 +581,14 @@ class theme_flexibase_core_renderer extends core_renderer {
         }
         return $output;
     }
+    public function favicon() {
+		global $PAGE;
+        $favicon = $PAGE->theme->setting_file_url('favicon', 'favicon');
 
+        if (empty($favicon)) {
+            return $this->page->theme->pix_url('favicon', 'theme');
+        } else {
+            return $favicon;
+        }
+    }
 }
