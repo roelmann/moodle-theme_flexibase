@@ -81,8 +81,8 @@
     text-align: center;
     color: [[setting:rendereroverlayfontcolour]] !important;
     padding: 15px;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     display: none;
 }
 
@@ -126,9 +126,9 @@
     float: none;
     display: block;
     width: 100%;
-    margin: 0px auto 15px;
-    padding-left: 0px;
-    padding-right: 0px;
+    margin: 0 auto 15px;
+    padding-left: 0;
+    padding-right: 0;
     border: 1px solid #eee;
     box-shadow: none;
     color: inherit;

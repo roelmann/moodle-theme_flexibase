@@ -351,7 +351,7 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
                 $totalcount = $DB->count_records('course') - 1;
             }
             $chelper->set_show_courses(self::COURSECAT_SHOW_COURSES_EXPANDED)->set_attributes(
-                    array('class' =>'frontpage-course-list-enrolled'));
+                    array('class' => 'frontpage-course-list-enrolled'));
             $output .= $this->coursecat_courses($chelper, $sortedcourses, $totalcount);
 
             if (!empty($rcourses)) {

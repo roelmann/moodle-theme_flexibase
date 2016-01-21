@@ -118,7 +118,7 @@ hr.sep {
     padding-left:5px;
 }
 body.has_dock .moodleheader .container-fluid {
-    padding-left:0px;
+    padding-left:0;
 }
 .navbar-header {
     margin:0 5px !important;
@@ -431,7 +431,7 @@ body.has_dock.dir-rtl .navbar-collapse {
 .section .label .mod-indent-outer {display: table;} /* Correct upstream bug that prevented indented labels. */
 nav#page-header {margin-bottom:10px;} /* Add spacing below page header. */
 .nav-tabs.nav-justified {width: auto;} /* Override tabs width setting to prevent overlap. */
-.block .minicalendar th, .block .minicalendar td  {padding: 0px;} /* Remove overlap of minicalendar block on smaller screens. */
+.block .minicalendar th, .block .minicalendar td  {padding: 0;} /* Remove overlap of minicalendar block on smaller screens. */
 .flexibasecats.panel {height: 230px;} /* Fix height of category panels. */
 .has_dock .navbar-header {margin-left:30px;} /* Add spacing to header when dock is used. */
 .eventlist .event .icon {display:none;} /* Hide calendar icon on event view. */
