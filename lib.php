@@ -35,4 +35,3 @@ require('lib/pageinitlib.php');
 require('lib/activitieslib.php');
 require('lib/awesomelib.php');
 require('lib/alertslib.php');
-//require('lib/forumpostlib.php');

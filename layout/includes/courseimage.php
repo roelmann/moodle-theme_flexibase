@@ -73,7 +73,7 @@ if ($courseimage == '') {
     $courseimage = $PAGE->theme->setting_file_url('courseimagedefaultheader', 'courseimagedefaultheader');
 }
 
-$headerimagetype=(empty($PAGE->theme->settings->courseimageheader)) ? 1 : $PAGE->theme->settings->courseimageheader;
+$headerimagetype = (empty($PAGE->theme->settings->courseimageheader)) ? 1 : $PAGE->theme->settings->courseimageheader;
 
 $moodleheaderclass = '';
 $courseheaderclass = '';
@@ -86,7 +86,7 @@ if ($PAGE->pagelayout == 'course' || $PAGE->pagelayout == 'incourse') {
     }
     if ($headerimagetype == 2) {
         if ($courseimage) {
-			$moodleheaderclass = '';
+            $moodleheaderclass = '';
             $courseheaderclass = 'withimage';
         }
     }
