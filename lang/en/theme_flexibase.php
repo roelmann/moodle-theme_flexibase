@@ -62,7 +62,7 @@ $string['docsheadingsub'] = 'Quick Settings Links:<br>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
-<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>
@@ -80,7 +80,7 @@ $string['generalheadingsub'] = 'Quick Settings Links:<br>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
-<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>
@@ -126,7 +126,7 @@ $string['lessbrandsub'] = 'Quick Settings Links:<br>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
-<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>
@@ -158,7 +158,7 @@ $string['lessadditionalsub'] = 'Quick Settings Links:<br>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
-<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>
@@ -207,7 +207,7 @@ $string['layoutheadingsub'] = 'Quick Settings Links:<br>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
-<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>
@@ -235,7 +235,7 @@ $string['alertsheadingsub'] = 'Quick Settings Links:<br>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
-<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>
@@ -268,7 +268,7 @@ $string['carouselheadingsub'] = 'Quick Settings Links:<br>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
-<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>
@@ -317,7 +317,7 @@ $string['frontpagesettingsheading'] = 'Quick Settings Links:<br>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
-<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>
@@ -358,7 +358,7 @@ $string['categoryiconheadingsub'] = 'Quick Settings Links:<br>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
-<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>
@@ -387,7 +387,7 @@ $string['socialheadingsub'] = 'Quick Settings Links:<br>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
-<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>
@@ -439,7 +439,7 @@ $string['marketingheadingsub'] = 'Quick Settings Links:<br>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
-<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>
@@ -527,7 +527,7 @@ $string['awesomebarsettings'] = 'Quick Settings Links:<br>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
-<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a> 
+<a class="btn btn-success"  href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_lessadditional">Additional LESS</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_layout">Layout</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
 <a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section=theme_flexibase_alerts">User Alerts</a>

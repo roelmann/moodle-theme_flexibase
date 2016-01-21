@@ -43,14 +43,14 @@ require_once($CFG->libdir. '/coursecatlib.php');
  */
 class theme_flexibase_core_renderer extends core_renderer {
 
-	public function __construct(moodle_page $page, $target) {
+    public function __construct(moodle_page $page, $target) {
         global $PAGE, $USER;
         if (!empty($PAGE->theme->settings->alwaysexpandsiteadmin)) {
             navigation_node::require_admin_tree();
         }
         parent::__construct($page, $target);
     }
-    
+
     /*
      * Render Editing link as a bootstrap style button with fontawesome icon.
      * @param stdclass moodle_url
@@ -129,11 +129,11 @@ class theme_flexibase_core_renderer extends core_renderer {
             $crumb = $this->render($item);
             $class = '';
             if (strpos($crumb, "course/view.php")) {
-				$class = 'class="breadcrumbcourse"';
-			}
-			if (strpos($crumb, "categoryid")) {
-				$class = 'class="breadcrumbcategory"';
-			}
+                $class = 'class="breadcrumbcourse"';
+            }
+            if (strpos($crumb, "categoryid")) {
+                $class = 'class="breadcrumbcategory"';
+            }
             $breadcrumbs .= '<li '.$class.'>'.$crumb.'</li>';
         }
         return "<ol class=breadcrumb>$breadcrumbs</ol>";
@@ -590,7 +590,7 @@ class theme_flexibase_core_renderer extends core_renderer {
         return $output;
     }
     public function favicon() {
-		global $PAGE;
+        global $PAGE;
         $favicon = $PAGE->theme->setting_file_url('favicon', 'favicon');
 
         if (empty($favicon)) {

@@ -37,8 +37,8 @@ require_once($CFG->libdir. '/coursecatlib.php');
  * The theme course renderer extends core course renderer
  */
 class theme_flexibase_core_course_renderer extends core_course_renderer {
-	
-	public function __construct(moodle_page $page, $target) {
+
+    public function __construct(moodle_page $page, $target) {
         global $PAGE, $USER;
         if (!empty($PAGE->theme->settings->alwaysexpandsiteadmin)) {
             navigation_node::require_admin_tree();
@@ -46,7 +46,7 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
         parent::__construct($page, $target);
     }
 
-	
+
     /**
      * Renders a course box object.
      *
@@ -205,7 +205,7 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
                         html_writer::link($url, $filename),
                         array('class' => 'coursefile fp-filename-icon'));
             }
-		    }
+            }
         }
         if (strlen($contentimages) == 0 && $type == 2) {
             // Default image.
@@ -350,8 +350,8 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
                     ));
                 $totalcount = $DB->count_records('course') - 1;
             }
-            $chelper->set_show_courses(self::COURSECAT_SHOW_COURSES_EXPANDED)->set_attributes(array('class' =>
-                    'frontpage-course-list-enrolled'));
+            $chelper->set_show_courses(self::COURSECAT_SHOW_COURSES_EXPANDED)->set_attributes(
+                    array('class' =>'frontpage-course-list-enrolled'));
             $output .= $this->coursecat_courses($chelper, $sortedcourses, $totalcount);
 
             if (!empty($rcourses)) {
