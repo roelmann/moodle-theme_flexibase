@@ -92,6 +92,13 @@ function theme_flexibase_process_css($css, $theme) {
         $courseheaderimageheight = '175px';
     }
     $css = theme_flexibase_set_courseheaderimageheight($css, $courseheaderimageheight);
+    // Category fa-icon size.
+    if (!empty($theme->settings->categoryiconsize)) {
+        $categoryiconsize = $theme->settings->categoryiconsize;
+    } else {
+        $categoryiconsize = '140%';
+    }
+    $css = theme_flexibase_set_categoryiconsize($css, $categoryiconsize);
 
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
@@ -354,6 +361,25 @@ function theme_flexibase_set_courseheaderimageheight($css, $courseheaderimagehei
     $replacement = $courseheaderimageheight;
     if (is_null($replacement)) {
         $replacement = '175px';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+/**
+ * Set the category icon size.
+ *
+ * @param string $css
+ * @param string $categoryiconsize
+ * @param string $tag
+ * @param string $replacement
+ *
+ * @return string
+ */
+function theme_flexibase_set_categoryiconsize($css, $categoryiconsize) {
+    $tag = '[[setting:categoryiconsize]]';
+    $replacement = $categoryiconsize;
+    if (is_null($replacement)) {
+        $replacement = '400%';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;

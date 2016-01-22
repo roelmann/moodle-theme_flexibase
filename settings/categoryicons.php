@@ -54,6 +54,16 @@ if (get_config('theme_flexibase', 'enablecategoryicon')) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Default Icon Size.
+    $name = 'theme_flexibase/categoryiconsize';
+    $title = get_string('categoryiconsize', 'theme_flexibase');
+    $description = get_string('categoryiconsizedesc', 'theme_flexibase');
+    $default = '400%';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+
     // Category Icons.
     $name = 'theme_flexibase/enablecustomcategoryicon';
     $title = get_string('enablecustomcategoryicon', 'theme_flexibase');

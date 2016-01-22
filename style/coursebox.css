@@ -290,7 +290,7 @@
     font-size:18px;
 }
 .categoryicons .course_category_tree .fa {
-    font-size:140px;
+    font-size:[[setting:categoryiconsize]];
     width:100%;
 }
 .categoryicons .course_category_tree .category[data-categoryid]:hover {
