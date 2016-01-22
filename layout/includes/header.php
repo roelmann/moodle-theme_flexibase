@@ -108,6 +108,7 @@ if (isloggedin() ) {
         </div>
     </div>
 </nav>
+
 <!-- Browser flexbox warnings -->
 <div class="browserwarningnoflex useralerts alert alert-danger">
     <span class="fa fa-stack"><i class="fa fa-square fa-stack-2x"></i>

@@ -129,7 +129,12 @@ body.has_dock .moodleheader .container-fluid {
 .has_dock .navbar-header {
     padding-left:30px;
 }
-
+.themesettingsnav h3 {
+    margin-top:0;
+}
+.themesettingsnav {
+    margin-bottom:15px;
+}
 form label {
     margin-right:10px;
 }
@@ -176,19 +181,19 @@ form label {
     padding: 2px 8px;
 }
 .headerimage.withimage {
-	height:[[setting:courseheaderimageheight]];
+    height:[[setting:courseheaderimageheight]];
     background-size: cover;
     background-repeat:no-repeat;
 }
 .courseimage {
-	display:none;
+    display:none;
 }
 .courseimage.withimage {
-	display:block;
-	width:600px;height:300px;
-	margin:auto;
-	border:3px solid #000;
-	border-radius:18px;
+    display:block;
+    width:600px;height:300px;
+    margin:auto;
+    border:3px solid #000;
+    border-radius:18px;
     background-size: 600px 300px;
     background-repeat:no-repeat;
 }

@@ -40,6 +40,18 @@ require('includes/header.php');
 
 <div id="page" class="container-fluid">
     <?php require('includes/breadcrumb.php'); ?>
+    
+    <!-- Theme Settings Buttons -->
+    <?php
+    $search = 'admin-setting-theme_flexibase';
+    $pos = strpos($pageid, $search);
+    if ($pos > 0) {
+    ?>
+        <div class='themesettingsnav'>
+            <?php include('includes/themesettingsnav.php');?>
+        </div>
+    <?php } ?>
+    <!-- -------------------- -->
 
     <div id="page-content" class="flexcontainer">
         <div id="region-main" class="flexcontentmain <?php echo $layoutoption; ?>">
