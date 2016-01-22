@@ -481,6 +481,10 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
                 $classes[] = 'with_children';
             }
         }
+        if (theme_flexibase_get_setting('enablecategoryicon')) {
+            $classes[] = 'withicon';
+        }
+
         $classes[] = 'flexibasecats panel panel-primary';
 
         if (intval($CFG->version) >= 2013111800) {

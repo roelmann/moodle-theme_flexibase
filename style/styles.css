@@ -437,7 +437,7 @@ body.has_dock.dir-rtl .navbar-collapse {
 nav#page-header {margin-bottom:10px;} /* Add spacing below page header. */
 .nav-tabs.nav-justified {width: auto;} /* Override tabs width setting to prevent overlap. */
 .block .minicalendar th, .block .minicalendar td  {padding: 0;} /* Remove overlap of minicalendar block on smaller screens. */
-.flexibasecats.panel {height: 230px;} /* Fix height of category panels. */
+.flexibasecats.panel.withicon {height: 230px;} /* Fix height of category panels with icon. */
 .has_dock .navbar-header {margin-left:30px;} /* Add spacing to header when dock is used. */
 .eventlist .event .icon {display:none;} /* Hide calendar icon on event view. */
 .eventlist .event h3 {margin-top:0;} /* Then improves the top spacing as well. */
