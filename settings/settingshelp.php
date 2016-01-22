@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of The Bootstrap 3 Moodle theme
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Theme Flexibase settings file.
+ * Theme Flexibase settings help page.
  *
  * @package    theme_flexibase
  * @author     2015 Richard Oelmann
@@ -28,10 +28,31 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-// Docs for Settings.
-$temp = new admin_settingpage('theme_flexibase_settingsdocs',  get_string('settingsdocs', 'theme_flexibase'));
-$temp->add(new admin_setting_heading('theme_flexibase_settingsdocs', get_string('docsheadingsub', 'theme_flexibase'),
-    format_text(get_string('docsheadingdesc', 'theme_flexibase'), FORMAT_MARKDOWN)));
+// Ref: http://docs.moodle.org/dev/Page_API.
+require_once('../../../config.php');
+require_once('../lib.php');
 
+$PAGE->set_context(context_system::instance());
+$thispageurl = new moodle_url('/theme/flexibase/settings/settingshelp.php');
+$PAGE->set_url($thispageurl, $thispageurl->params());
+$PAGE->set_docs_path('');
+$PAGE->set_pagelayout('standard');
 
-$ADMIN->add('theme_flexibase', $temp);
+$PAGE->set_title('Flexibase Settings Support');
+$PAGE->set_heading('Flexibase Settings Support');
+
+// No edit.
+$USER->editing = $edit = 0;
+
+$PAGE->navbar->ignore_active();
+$PAGE->navbar->add($PAGE->title, $thispageurl);
+
+// Output.
+echo $OUTPUT->header();
+echo $OUTPUT->box_start();
+
+echo 'content goes here';
+
+echo $OUTPUT->box_end();
+
+echo $OUTPUT->footer();

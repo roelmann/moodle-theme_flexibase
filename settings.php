@@ -34,7 +34,6 @@ defined('MOODLE_INTERNAL') || die;
 
     $ADMIN->add('themes', new admin_category('theme_flexibase', 'FlexiBase Settings'));
 
-    require('settings/settingsdocs.php');
     require('settings/generalsettings.php');
     require('settings/mainless.php');
     require('settings/additionalless.php');

@@ -1,5 +1,5 @@
 <h3>Quick Settings Links:</h3>
-<a class="btn btn-success" href="settings.php?section=theme_flexibase_settingsdocs">Help Docs</a>
+<a class="btn btn-success" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/settings/settingshelp.php">Help Docs</a>
 <a class="btn btn-success" href="settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
 <a class="btn btn-success"  href="settings.php?section=theme_flexibase_lessadditional">Additional LESS</a>
