@@ -50,7 +50,9 @@ require('includes/header.php');
         <div class='themesettingsnav'>
             <?php include('includes/themesettingsnav.php');?>
         </div>
-    <?php } ?>
+    <?php
+    }
+    ?>
     <!-- -------------------- -->
 
     <div id="page-content" class="flexcontainer">
