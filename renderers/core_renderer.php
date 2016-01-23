@@ -205,7 +205,7 @@ class theme_flexibase_core_renderer extends core_renderer {
           if (theme_flexibase_get_setting('mmthiscourse')) {
             if (ISSET($COURSE->id) && $COURSE->id > 1) {
                 $branchtitle = get_string('thiscourse', 'theme_flexibase');
-                $branchlabel = '<i class="fa fa-sitemap"></i>&nbsp;<span class="menutitle">'.$branchtitle.'</span>';
+                $branchlabel = '<i class="fa fa-sitemap"></i>&nbsp;'.$branchtitle;
                 $branchurl = new moodle_url('#');
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, -9980);
 

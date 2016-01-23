@@ -51,6 +51,10 @@ require('courseimage.php');?>
                 </a>
             <?php
             }
+            if (theme_flexibase_get_setting('mainmenulocation') === 'branding') {
+                echo $OUTPUT->custom_menu();
+            }
+
             ?>
 
         </div>
@@ -101,7 +105,9 @@ if (isloggedin() ) {
         </div>
 
         <div id="moodle-navbar" class="navbar-collapse collapse">
-            <?php echo $OUTPUT->custom_menu(); ?>
+            <?php if (theme_flexibase_get_setting('mainmenulocation') === 'main') {
+                echo $OUTPUT->custom_menu();
+            } ?>
             <ul class="nav pull-right">
                 <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
             </ul>

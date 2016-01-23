@@ -45,6 +45,11 @@ if (!empty($PAGE->theme->settings->showawesomebar) && $PAGE->theme->settings->sh
  *                  echo $custommenu;
  *              }
  */
+
+                if (theme_flexibase_get_setting('mainmenulocation') === 'awesome') {
+                    echo $OUTPUT->custom_menu();
+                }
+
                 echo $flexibase->awesome_settings;
 /*              Awesomebar setting not used in flexibase but left in for porting to other themes.
  *              if ($hascustommenu && !empty($flexibase->custommenuinawesomebar)
