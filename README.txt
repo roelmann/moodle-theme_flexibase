@@ -81,6 +81,15 @@ Richard
 
 CHANGELOG:
 ==========
+3.1.0Beta
+        - Style fixes
+        - Settings navigation moved to layout files to clear language strings
+        - Image Bank added (theme specific adaptation of work by Gareth Barnard)
+        - favicon setting added
+        - Category font-awesome icon size setting added
+        - Category tiles height css fixed to only apply to icon display not main panel when icon not used
+        - Classes added to allow custom styling of category and course in breadcrumb
+
 3.0.7   - Style fixes (thanks Derek Chirnside for valuable extended use and testing)
         - Updated modernizr.js
 3.0.6   - Bug fixes to awesomebar (hiding nav & settings, correctly applying yui)

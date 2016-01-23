@@ -184,6 +184,20 @@ $string['alert_info'] = 'Information';
 $string['alert_warning'] = 'Warning';
 $string['alert_general'] = 'Announcement';
 
+// Image bank.
+$string['imagebanksettings'] = 'Image Bank';
+$string['imagebankheadingsub'] = 'Image Bank settings';
+$string['imagebankheadingdesc'] = 'Create a bank of images for your site here.';
+
+$string['numberofimagebankimages'] = 'Number of images in the image bank';
+$string['numberofimagebankimages_desc'] = 'Number of images you want in the image bank.';
+$string['imagebankheading'] = 'Image bank';
+$string['imagebankheadingsub'] = 'Use images anywhere by using the image bank.';
+$string['imagebankheadingdesc'] = "To change the number of available images in the image bank change the 'Number of images in the image bank' below and save the page to update.";
+$string['imagebankimage'] = 'Image ';
+$string['imagebankimage_desc'] = 'Image URL to copy: \'{$a->imagedesc}\' and use, i.e. insert in an HTML editor.';
+$string['none'] = 'none';
+
 // Carousel.
 $string['carouselheading'] = 'Carousel Slideshow';
 $string['carouselheadingsub'] = 'Set images and captions for the frontpage carousel';
