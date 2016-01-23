@@ -288,7 +288,7 @@ class theme_flexibase_core_renderer extends core_renderer {
                 $userpic = parent::user_picture($USER, array('link' => false));
                 $usermenu = $menu->add(fullname($USER), new moodle_url('#'), fullname($USER), 10001);
                 // RO Added based on flexibase.
-            if  (theme_flexibase_get_setting('umprofile')) {
+            if (theme_flexibase_get_setting('umprofile')) {
                 if (\core\session\manager::is_loggedinas()) {
                     $realuser = \core\session\manager::get_realuser();
                     $usermenu->add(
@@ -324,25 +324,25 @@ class theme_flexibase_core_renderer extends core_renderer {
                 }
                 $usermenu->add('<hr class="sep">');
             }
-            if  (theme_flexibase_get_setting('umdashboard')) {
+            if (theme_flexibase_get_setting('umdashboard')) {
                     $usermenu->add(
                         '<em><i class="fa fa-dashboard"></i>' .' '. get_string('myhome') . '</em>',
-                        new moodle_url('/my/index.php'),get_string('myhome')
+                        new moodle_url('/my/index.php'), get_string('myhome')
                     );
             }
-            if  (theme_flexibase_get_setting('umcalendar')) {
+            if (theme_flexibase_get_setting('umcalendar')) {
                     $usermenu->add(
                         '<em><i class="fa fa-calendar"></i>' .' '. get_string('calendar', 'calendar') . '</em>',
                         new moodle_url('/calendar/view.php'),
                         get_string('calendar', 'calendar')
                     );
             }
-            if  (theme_flexibase_get_setting('umdashboard') ||
+            if (theme_flexibase_get_setting('umdashboard') ||
             theme_flexibase_get_setting('umcalendar')) {
                 $usermenu->add('<hr class="sep">');
             }
 
-            if  (theme_flexibase_get_setting('umeditprofile')) {
+            if (theme_flexibase_get_setting('umeditprofile')) {
                 if (has_capability('moodle/user:editownprofile', $context)) {
                     $usermenu->add(
                         '<em><i class="fa fa-user"></i>' .' '. get_string('editmyprofile') . '</em>',
@@ -351,7 +351,7 @@ class theme_flexibase_core_renderer extends core_renderer {
                     );
                 }
             }
-            if  (theme_flexibase_get_setting('umpassword')) {
+            if (theme_flexibase_get_setting('umpassword')) {
                 if (has_capability('moodle/user:changeownpassword', $context)) {
                     $usermenu->add(
                         '<em><i class="fa fa-key"></i>' .' '. get_string('changepassword') . '</em>',
@@ -360,7 +360,7 @@ class theme_flexibase_core_renderer extends core_renderer {
                     );
                 }
             }
-            if  (theme_flexibase_get_setting('umpreferences')) {
+            if (theme_flexibase_get_setting('umpreferences')) {
                     $usermenu->add(
                         '<em><i class="fa fa-cog"></i>' .' '. get_string('preferences') . '</em>',
                         new moodle_url('/user/preferences.php'),
@@ -368,7 +368,7 @@ class theme_flexibase_core_renderer extends core_renderer {
                     );
             }
 
-            if  (theme_flexibase_get_setting('ummessagepreferences')) {
+            if (theme_flexibase_get_setting('ummessagepreferences')) {
                 if (has_capability('moodle/user:editownmessageprofile', $context)) {
                     $usermenu->add(
                         '<em><i class="fa fa-comments"></i>' .' '. get_string('messagepreferences', 'theme_flexibase') . '</em>',
@@ -377,7 +377,7 @@ class theme_flexibase_core_renderer extends core_renderer {
                     );
                 }
             }
-            if  (theme_flexibase_get_setting('umblogpreferences')) {
+            if (theme_flexibase_get_setting('umblogpreferences')) {
                 if ($CFG->enableblogs) {
                     $usermenu->add(
                         '<em><i class="fa fa-rss-square"></i>' .' '. get_string('blogpreferences', 'theme_flexibase') . '</em>',
@@ -386,7 +386,7 @@ class theme_flexibase_core_renderer extends core_renderer {
                     );
                 }
             }
-            if  (theme_flexibase_get_setting('umbadgepreferences')) {
+            if (theme_flexibase_get_setting('umbadgepreferences')) {
                 if ($CFG->enablebadges && has_capability('moodle/badges:manageownbadges', $context)) {
                     $usermenu->add(
                         '<em><i class="fa fa-certificate"></i>' .' '. get_string('badgepreferences', 'theme_flexibase') . '</em>',
@@ -395,7 +395,7 @@ class theme_flexibase_core_renderer extends core_renderer {
                     );
                 }
             }
-            if  (theme_flexibase_get_setting('umeditprofile') ||
+            if (theme_flexibase_get_setting('umeditprofile') ||
             theme_flexibase_get_setting('umpassword') ||
             theme_flexibase_get_setting('umpreferences') ||
             theme_flexibase_get_setting('ummessagepreferences') ||
@@ -403,7 +403,7 @@ class theme_flexibase_core_renderer extends core_renderer {
             theme_flexibase_get_setting('umbadgepreferences')) {
                 $usermenu->add('<hr class="sep">');
             }
-            if  (theme_flexibase_get_setting('ummessages')) {
+            if (theme_flexibase_get_setting('ummessages')) {
                 // Check if messaging is enabled.
                 if (!empty($CFG->messaging)) {
                     $usermenu->add(
@@ -413,7 +413,7 @@ class theme_flexibase_core_renderer extends core_renderer {
                     );
                 }
             }
-            if  (theme_flexibase_get_setting('umfiles')) {
+            if (theme_flexibase_get_setting('umfiles')) {
                 // Check if user is allowed to manage files.
                 if (has_capability('moodle/user:manageownfiles', $context)) {
                     $usermenu->add(
@@ -440,7 +440,7 @@ class theme_flexibase_core_renderer extends core_renderer {
                     );
                   }
                 }
-            if  (theme_flexibase_get_setting('ummessages') ||
+            if (theme_flexibase_get_setting('ummessages') ||
             theme_flexibase_get_setting('umfiles') ||
             theme_flexibase_get_setting('umposts') ||
             theme_flexibase_get_setting('umdiscussions')) {
@@ -488,17 +488,17 @@ class theme_flexibase_core_renderer extends core_renderer {
                     );
                 }
             }
-            if  (theme_flexibase_get_setting('umgrades') ||
+            if (theme_flexibase_get_setting('umgrades') ||
             theme_flexibase_get_setting('umbadges')) {
                 $usermenu->add('<hr class="sep">');
             }
 
             if (theme_flexibase_get_setting('usermenus')) {
                 // User custom menu.
-                $usermenus=theme_flexibase_get_setting('usermenus');
-                $rows        = explode("\n", $usermenus);
+                $usermenus = theme_flexibase_get_setting('usermenus');
+                $rows = explode("\n", $usermenus);
                 $n = 0;
-                foreach($rows as $row) {
+                foreach ($rows as $row) {
                     $data = explode('|', $row);
                     $usermenu->add(
                         '<em><i class="fa fa-'.$data[2].'"></i> '.$data[0].'</em>',
