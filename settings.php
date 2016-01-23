@@ -39,6 +39,7 @@ defined('MOODLE_INTERNAL') || die;
     require('settings/additionalless.php');
     require('settings/layoutsettings.php');
     require('settings/imagebank.php');
+    require('settings/menusettings.php');
     require('settings/awesomebar.php');
     require('settings/alerts.php');
     require('settings/carousel.php');

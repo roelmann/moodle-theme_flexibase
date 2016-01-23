@@ -188,7 +188,6 @@ $string['alert_general'] = 'Announcement';
 $string['imagebanksettings'] = 'Image Bank';
 $string['imagebankheadingsub'] = 'Image Bank settings';
 $string['imagebankheadingdesc'] = 'Create a bank of images for your site here.';
-
 $string['numberofimagebankimages'] = 'Number of images in the image bank';
 $string['numberofimagebankimages_desc'] = 'Number of images you want in the image bank.';
 $string['imagebankheading'] = 'Image bank';
@@ -197,6 +196,65 @@ $string['imagebankheadingdesc'] = "To change the number of available images in t
 $string['imagebankimage'] = 'Image ';
 $string['imagebankimage_desc'] = 'Image URL to copy: \'{$a->imagedesc}\' and use, i.e. insert in an HTML editor.';
 $string['none'] = 'none';
+
+// User menus.
+$string['menussettings'] = 'Menu Settings';
+$string['menusheadingsub'] = 'Settings related to the Main and User menus';
+$string['menusheadingdesc'] = 'These settings can be used to control menu options such as which items appear on the Main Menu Bar or in the User Menu dropdown and where the Main Menu appears. Some of the items may be available to both the main menu and the user dropdown - it is upto the site administrator to determine which location (or both) is required for their site.';
+
+$string['mainmenusheadingsub'] = 'Main Menu Bar options';
+$string['mainmenusheadingdesc'] = 'These settings allow the site admin to determine options for the main menu.';
+$string['mainmenulocation'] = 'Main Menu Bar location';
+$string['mainmenulocationdesc'] = 'Where should the main menu bar appear. Note: If the AwesomeBar is not enabled, selecting the AwesomeBar location will cause the main menu, and all its options, to be hidden.<br><strong> This setting is not yet active</strong>';
+$string['mmmain'] = 'On the main menu bar (below the heading)';
+$string['mmbranding'] = 'On the branding bar (above the heading)';
+$string['mmawesome'] = 'On the AwesomeBar (if enabled).';
+$string['mmsitehome'] = 'Main Menu -Site Home';
+$string['mmsitehomedesc'] = 'Display Site Home link on Main menu - This bypasses the redirect to MyHome if that option is selected';
+$string['mmdashboard'] = 'Main Menu -Dashboard';
+$string['mmdashboarddesc'] = 'Display Dashboard link on Main menu';
+$string['mmthiscourse'] = 'Main Menu -This Course';
+$string['mmthiscoursedesc'] = 'Display This Course link on Main menu, within a course page';
+$string['mmcalendar'] = 'Main Menu -Calendar';
+$string['mmcalendardesc'] = 'Display Calendar link on Main menu, within a course page';
+
+$string['usermenusheadingsub'] = 'User Drop Down Menu options';
+$string['usermenusheadingdesc'] = 'These settings allow the site admin to determine what items appear on the user dropdown menu.<br>There is currently no option to reorder these items, however they can be hidden in the main options and then added in a different order in the custom user menu setting box.';
+$string['usermenus'] = 'Custom User Menu';
+$string['usermenusdesc'] = 'This option replaces the main user menu option on the Appearance > Themes > Settings page.<br>It is in the format name|url|fontawesome icon name<br>eg.<br><pre>My Profile|/user/profile.php|user<br>
+Messages|/message/index.php|envelope</pre>';
+$string['umdashboard'] = 'User Menu - Dashboard';
+$string['umdashboarddesc'] = 'Display Dashboard Link in User menu';
+$string['umcalendar'] = 'User Menu - Calendar';
+$string['umcalendardesc'] = 'Display Calendar Link in User menu';
+$string['umprofile'] = 'User Menu - Profile';
+$string['umprofiledesc'] = 'Display Profile Link in User menu';
+$string['umeditprofile'] = 'User Menu - Edit Profile';
+$string['umeditprofiledesc'] = 'Display Edit Profile Link in User menu';
+$string['umpassword'] = 'User Menu - Change Password';
+$string['umpassworddesc'] = 'Display Change Password link in User menu';
+$string['umpreferences'] = 'User Menu - Preferences';
+$string['umpreferencesdesc'] = 'Display User Preferences link in User menu';
+$string['ummessagepreferences'] = 'User Menu - Message Prefereneces';
+$string['ummessagepreferencesdesc'] = 'Display Message Preferences Link in User menu';
+$string['umblogpreferences'] = 'User Menu - Blog Preferences';
+$string['umblogpreferencesdesc'] = 'Display Blog Preferences Link in User menu';
+$string['umbadgepreferences'] = 'User Menu - Badge Preferences';
+$string['umbadgepreferencesdesc'] = 'Display Badge Preferences Link in User menu';
+$string['ummessages'] = 'User Menu - Messages';
+$string['ummessagesdesc'] = 'Display Messages Link in User menu';
+$string['umfiles'] = 'User Menu - Private Files';
+$string['umfilesdesc'] = 'Display Private Files Link in User menu';
+$string['umposts'] = 'User Menu - Forum Posts';
+$string['umpostsdesc'] = 'Display Forum Posts Link in User menu';
+$string['umdiscussions'] = 'User Menu - Forum Discussions';
+$string['umdiscussionsdesc'] = 'Display Forum Discussions Link in User menu';
+$string['umgrades'] = 'User Menu - My Grades';
+$string['umgradesdesc'] = 'Display My Grades Link in User menu';
+$string['umbadges'] = 'User Menu - Badges';
+$string['umbadgesdesc'] = 'Display Badges Link in User menu';
+$string['umlogout'] = 'User Menu - Logout';
+$string['umlogoutdesc'] = 'Display Logout Link in User menu';
 
 // Carousel.
 $string['carouselheading'] = 'Carousel Slideshow';

@@ -34,6 +34,8 @@
 <a class="btn btn-success" href="settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
 <a class="btn btn-success"  href="settings.php?section=theme_flexibase_lessadditional">Additional LESS</a>
 <a class="btn btn-success" href="settings.php?section=theme_flexibase_layout">Layout</a>
+<a class="btn btn-success" href="settings.php?section=theme_flexibase_imagebank">Image Bank</a>
+<a class="btn btn-success" href="settings.php?section=theme_flexibase_menusettings">Menu Settings</a>
 <a class="btn btn-success" href="settings.php?section=theme_flexibase_awesomebar">Awesomebar</a>
 <a class="btn btn-success" href="settings.php?section=theme_flexibase_alerts">User Alerts</a>
 <a class="btn btn-success" href="settings.php?section=theme_flexibase_carousel">Carousel Slideshow</a>

@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Theme Flexibase settings file.
+ * Theme flexibase settings file.
  *
  * @package    theme_flexibase
  * @author     2015 Richard Oelmann
