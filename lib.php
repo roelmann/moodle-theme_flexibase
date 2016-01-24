@@ -29,7 +29,7 @@
  */
 
 require('lib/lesslib.php');
-require('lib/lesscss.php');
+require('lib/csslib.php');
 require('lib/filesettingslib.php');
 require('lib/pageinitlib.php');
 require('lib/activitieslib.php');

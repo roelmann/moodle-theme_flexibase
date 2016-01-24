@@ -197,6 +197,17 @@ $string['imagebankimage'] = 'Image ';
 $string['imagebankimage_desc'] = 'Image URL to copy: \'{$a->imagedesc}\' and use, i.e. insert in an HTML editor.';
 $string['none'] = 'none';
 
+// Fonts.
+$string['fontsettings'] = 'Web fonts';
+$string['fontheadingsub'] = 'Web Font settings';
+$string['fontheadingdesc'] = "This settings page allows you to link to upto 6 different web fonts (e.g. <a href='https://www.google.com/fonts'>Google fonts</a>). Copy and paste the <code><link\></code> code provided for your selected font into one of the setting boxes. You can add web available fonts from any source in this way, not just Google ones.";
+$string['fontsep'] = 'Web fonts Links';
+$string['fontsepdesc'] = '';
+$string['numberoffonts'] = 'Number of web fonts';
+$string['numberoffontsdesc'] = 'You can opt to download upto 6 web based fonts.';
+$string['fontlink'] = 'Font Link';
+$string['fontlinkdesc'] = "Copy the <code><link\></code> code from the web source of your font. e.g. <code>< link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700italic,500,700' rel='stylesheet' type='text/css'\></code>";
+
 // User menus.
 $string['menussettings'] = 'Menu Settings';
 $string['menusheadingsub'] = 'Settings related to the Main and User menus';

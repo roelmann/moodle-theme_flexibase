@@ -80,6 +80,14 @@ echo $OUTPUT->doctype() ?>
 <head>
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
+    <?php
+    if (theme_flexibase_get_setting('numberoffonts')) {
+		$numberoffonts = theme_flexibase_get_setting('numberoffonts');
+		for ($i = 1; $i <= $numberoffonts; $i++) {
+			echo theme_flexibase_get_setting('font' . $i . 'link');
+		}
+	}
+	?>
     <?php echo $OUTPUT->standard_head_html(); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
     <script>Modernizr.addTest('flexbox', Modernizr.testAllProps('flex'));</script>
