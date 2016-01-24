@@ -50,7 +50,7 @@ $temp->add(new admin_setting_configselect($name, $title, $description, $default,
 
 $numberoffonts = get_config('theme_flexibase', 'numberoffonts');
 if ($numberoffonts > 0) {
-	// Separator.
+    // Separator.
     $name = 'theme_flexibase/fontsep';
     $heading = get_string('fontsep', 'theme_flexibase');
     $information = get_string('fontsepdesc', 'theme_flexibase');

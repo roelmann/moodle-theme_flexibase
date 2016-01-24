@@ -81,13 +81,25 @@ echo $OUTPUT->doctype() ?>
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
     <?php
+    // Add custom web fonts.
     if (theme_flexibase_get_setting('numberoffonts')) {
-		$numberoffonts = theme_flexibase_get_setting('numberoffonts');
-		for ($i = 1; $i <= $numberoffonts; $i++) {
-			echo theme_flexibase_get_setting('font' . $i . 'link');
-		}
-	}
-	?>
+        $numberoffonts = theme_flexibase_get_setting('numberoffonts');
+        for ($i = 1; $i <= $numberoffonts; $i++) {
+            $fontlink = '';
+            $fontlinkdata = $fontlinkhref = array();
+            $fontlink = theme_flexibase_get_setting('font' . $i . 'link');
+            // Break up fontlink and rebuild to ensure security
+            $fontlinkdata = explode('href=', $fontlink);
+            $explode = '"';
+            if (substr($fontlinkdata[1], 0, 1) === "'") {
+                $explode = "'";
+            }
+            $fontlinkhref = explode($explode, $fontlinkdata[1]);
+            $linkline = '<link href="'.$fontlinkhref[1].'" rel="stylesheet" type="text/css">';
+            echo $linkline;
+        }
+    }
+    ?>
     <?php echo $OUTPUT->standard_head_html(); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
     <script>Modernizr.addTest('flexbox', Modernizr.testAllProps('flex'));</script>
