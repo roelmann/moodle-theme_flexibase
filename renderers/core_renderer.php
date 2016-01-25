@@ -681,4 +681,68 @@ class theme_flexibase_core_renderer extends core_renderer {
             return $favicon;
         }
     }
+    
+    /**
+     * Renders preferences groups.
+     *
+     * @param  preferences_groups $renderable The renderable
+     * @return string The output.
+     */
+    public function render_preferences_groups(preferences_groups $renderable) {
+        $html = '';
+        $html .= html_writer::start_tag('div', array('class' => 'panel panel-primary preferences-groups'));
+        $html .= html_writer::start_tag('div', array('class' => 'panel-heading'));
+        $html .= html_writer::start_tag('h2');
+        $html .= get_string('preferences');
+        $html .= html_writer::end_tag('h2');
+        $html .= html_writer::end_tag('div'); // Panel-Heading
+        $html .= html_writer::start_tag('div', array('class' => 'panel-body prefgrp '));
+        $i = 0;
+        $open = false;
+        foreach ($renderable->groups as $group) {
+            if ($i == 0 || $i % 3 == 0) {
+                if ($open) {
+                    $html .= html_writer::end_tag('div');
+                }
+                $html .= html_writer::start_tag('div', array('class' => 'flexpreferencescontainer'));
+                $open = true;
+            }
+            $html .= $this->render($group);
+            $i++;
+        }
+
+        $html .= html_writer::end_tag('div');
+
+        $html .= html_writer::end_tag('ul');
+        $html .= html_writer::end_tag('div'); // Panel-Body
+        $html .= html_writer::end_tag('div'); // Panel
+        return $html;
+    }
+    /**
+     * Renders preferences group.
+     *
+     * @param  preferences_group $renderable The renderable
+     * @return string The output.
+     */
+    public function render_preferences_group(preferences_group $renderable) {
+        $html = '';
+        $html .= html_writer::start_tag('div', array('class' => 'panel panel-info preferences-group flexpreferencesitem'));
+        $titleclass = preg_replace('/\s+/', '', $renderable->title);
+        $html .= html_writer::start_tag('div', array('class' => 'panel-heading '.$titleclass));
+        $html .= $this->heading($renderable->title, 3);
+        $html .= html_writer::end_tag('div'); // Panel_Heading
+        $html .= html_writer::start_tag('div', array('class' => 'panel-body'));
+        $html .= html_writer::start_tag('ul');
+        foreach ($renderable->nodes as $node) {
+            if ($node->has_children()) {
+                debugging('Preferences nodes do not support children', DEBUG_DEVELOPER);
+            }
+            $html .= html_writer::tag('li', $this->render($node));
+        }
+        $html .= html_writer::end_tag('ul');
+        $html .= html_writer::end_tag('div');
+        $html .= html_writer::end_tag('div');  // Panel
+        return $html;
+    }
+
 }

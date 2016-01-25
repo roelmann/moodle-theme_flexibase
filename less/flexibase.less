@@ -96,6 +96,29 @@ header {
 .block .header h2 {
     color: @white;
 }
+/* Panels */
+.panel.panel-primary .panel-heading {
+    #gradient > .vertical-three-colors(lighten(@panel-primary-heading-bg, 25%), @panel-primary-heading-bg, 60%, darken(@panel-primary-heading-bg, 10%));
+}
+.panel.panel-info .panel-heading {
+    #gradient > .vertical-three-colors(lighten(@panel-info-heading-bg, 25%), @panel-info-heading-bg, 60%, darken(@panel-info-heading-bg, 10%));
+}
+.panel.panel-default .panel-heading {
+    #gradient > .vertical-three-colors(lighten(@panel-default-heading-bg, 25%), @panel-default-heading-bg, 60%, darken(@panel-default-heading-bg, 10%));
+}
+.panel.panel-success .panel-heading {
+    #gradient > .vertical-three-colors(lighten(@panel-success-heading-bg, 25%), @panel-success-heading-bg, 60%, darken(@panel-success-heading-bg, 10%));
+}
+.panel.panel-warning .panel-heading {
+    #gradient > .vertical-three-colors(lighten(@panel-warning-heading-bg, 25%), @panel-warning-heading-bg, 60%, darken(@panel-warning-heading-bg, 10%));
+}
+.panel.panel-danger .panel-heading {
+    #gradient > .vertical-three-colors(lighten(@panel-danger-heading-bg, 25%), @panel-danger-heading-bg, 60%, darken(@panel-danger-heading-bg, 10%));
+}
+.panel .panel-heading h2, 
+.panel .panel-heading h3 {
+    color:@white;
+}
 /* Tabs */
 .tab-content {
     border: 1px solid @brand-primary;

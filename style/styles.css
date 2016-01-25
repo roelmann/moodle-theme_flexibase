@@ -428,6 +428,29 @@ body.has_dock.dir-rtl .navbar-collapse {
     height:46px;
     width:46px;
 }
+/* User Preferences restyle
+ * ------------------------ */
+#page-user-preferences.path-user #region-main .maincontentwrap .maincontentinnerwrap,
+#page-user-preferences.path-user #region-main .maincontentwrap .maincontentinnerwrap div[role="main"] {margin:0; width:100%;max-width:100%}
+#page-user-preferences.path-user #region-main .maincontentwrap .maincontentinnerwrap div h2 {display:none;}
+#page-user-preferences.path-user #region-main .maincontentwrap .maincontentinnerwrap div .panel h2 {display:inline;}
+#page-user-preferences .panel.preferences-groups {margin-bottom:0}
+#page-user-preferences .panel.preferences-group {margin:10px;padding:0;}
+.flexpreferencescontainer{display: -webkit-flex; display: flex; -webkit-flex-flow: row wrap; flex-flow: row wrap; }
+.flexpreferencesitem { -webkit-flex: 1 1 25%; flex: 1 1 25%; }
+.panel-body.prefgrp {padding:0}
+.preferences-group h3 {margin-top:5px;margin-bottom:5px;}
+.panel-heading h3::before {
+  font-family: 'FontAwesome';
+  font-weight:500;
+  margin-right: 5px;
+}
+.panel-heading.Useraccount h3::before {content: "\f007";}
+.panel-heading.Roles h3::before {content: "\f0c0";}
+.panel-heading.Portfolios h3::before {content: "\f19c";}
+.panel-heading.Blogs h3::before {content: "\f02d";}
+.panel-heading.Badges h3::before {content: "\f0a3";}
+
 
 /* Style bug fixes - to be organised
  * --------------------------------- */
