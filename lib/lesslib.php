@@ -103,6 +103,27 @@ function theme_flexibase_less_variables($theme) {
     if (!empty($theme->settings->graylightest)) {
         $variables['gray-lightest'] = $theme->settings->graylightest;
     }
+    if (!empty($theme->settings->fontfacebody)) {
+        $faceb = $theme->settings->fontfacebody;
+        $familyb = '';
+        if(!empty($theme->settings->fontfamilybody)) {
+            $familyb =", ".$theme->settings->fontfamilybody;
+        }
+        $fontb = '"'.$faceb.'"'.$familyb;
+        $variables['font-family-base'] = $fontb;
+    }
+    if (!empty($theme->settings->fontsizebody)) {
+        $variables['font-size-base'] = $theme->settings->fontsizebody;
+    }
+        if (!empty($theme->settings->fontfaceheadings)) {
+        $faceh = $theme->settings->fontfaceheadings;
+        $familyh = '';
+        if(!empty($theme->settings->fontfamilyheadings)) {
+            $familyh =", ".$theme->settings->fontfamilyheadings;
+        }
+        $fonth = '"'.$faceh.'"'.$familyh;
+        $variables['headings-font-family'] = $fonth;
+    }
 
     return $variables;
 }

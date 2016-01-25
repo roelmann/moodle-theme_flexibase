@@ -198,15 +198,29 @@ $string['imagebankimage_desc'] = 'Image URL to copy: \'{$a->imagedesc}\' and use
 $string['none'] = 'none';
 
 // Fonts.
-$string['fontsettings'] = 'Web fonts';
-$string['fontheadingsub'] = 'Web Font settings';
+$string['fontsettings'] = 'Fonts';
+$string['fontheadingsub'] = 'Font settings';
 $string['fontheadingdesc'] = "This settings page allows you to link to upto 6 different web fonts (e.g. <a href='https://www.google.com/fonts'>Google fonts</a>). Copy and paste the <code><link\></code> code provided for your selected font into one of the setting boxes. You can add web available fonts from any source in this way, not just Google ones.";
 $string['fontsep'] = 'Web fonts Links';
 $string['fontsepdesc'] = '';
+$string['fontsep2'] = 'Font Usage';
+$string['fontsep2desc'] = 'Note: you can use any font that is generally considered "web-safe" ie would normally be installed on your users\' computers, or any of the web fonts you have linked above. ';
 $string['numberoffonts'] = 'Number of web fonts';
 $string['numberoffontsdesc'] = 'You can opt to download upto 6 web based fonts.';
 $string['fontlink'] = 'Font Link';
 $string['fontlinkdesc'] = "Copy the <code><link\></code> code from the web source of your font. e.g. <code>< link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700italic,500,700' rel='stylesheet' type='text/css'\></code>";
+$string['fontfacebody'] = 'Body text font-face';
+$string['fontfacebodydesc'] = 'Add the name of the font you want to use for body text';
+$string['fontfamilybody'] = 'Body text font-family';
+$string['fontfamilybodydesc'] = 'Fall back font type incase of failure (e.g. lost connection to web-font link). Serif/Sans-Serif';
+$string['fontsizebody'] = 'Body font size';
+$string['fontsizebodydesc'] = 'This can be as a px, pt or em, but please ensure the units are specified.';
+$string['fontfaceheadings'] = 'Header text font-face';
+$string['fontfaceheadingsdesc'] = 'Add the name of the font you want to use for header text (H1-H6)';
+$string['fontfamilyheadings'] = 'Header text font-family';
+$string['fontfamilyheadingsdesc'] = 'Fall back font type incase of failure (e.g. lost connection to web-font link). Serif/Sans-Serif';
+$string['fontheader'] = '';
+$string['fontheaderdesc'] = 'Note: Header font sizes are calculated from the body text size in order to maintain a perspective. They are also preset as bold (font-weight:700).<br>However, once a web-based font is loaded above, it can be used to override any preset values, so that different fonts and weights can be set for each header type (or any other css selector) as required by using customcss. eg. <code>h3 {font-family:"your font", serif;font-weight:900;font-size:18pt;font-color:red</code><br>Be aware that changing those font-sizes manually may mean you need to think about adjusting line height (also calculated from the body font-size) and margins in order to maintain an appropriate look and feel for your typography.';
 
 // User menus.
 $string['menussettings'] = 'Menu Settings';
