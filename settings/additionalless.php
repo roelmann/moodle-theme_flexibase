@@ -150,6 +150,15 @@ $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
+// Border Radius setting.
+$name = 'theme_flexibase/borderradius';
+$title = get_string('borderradius', 'theme_flexibase');
+$description = get_string('borderradiusdesc', 'theme_flexibase');
+$default = '4px';
+$setting = new admin_setting_configtext($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
 // Custom LESS file.
 $name = 'theme_flexibase/customless';
 $title = get_string('customless', 'theme_flexibase');

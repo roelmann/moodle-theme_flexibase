@@ -103,6 +103,10 @@ function theme_flexibase_less_variables($theme) {
     if (!empty($theme->settings->graylightest)) {
         $variables['gray-lightest'] = $theme->settings->graylightest;
     }
+    if (!empty($theme->settings->borderradius)) {
+        $variables['border-radius-base'] = $theme->settings->borderradius;
+    }
+
     if (!empty($theme->settings->fontfacebody)) {
         $faceb = $theme->settings->fontfacebody;
         $familyb = '';

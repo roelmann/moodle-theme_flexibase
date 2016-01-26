@@ -148,6 +148,8 @@ $string['customlessdesc'] = 'Whatever LESS rules you add to this textarea will b
 $string['lessvarclick'] = 'LESS Variables file';
 $string['lessvariablesfile'] = 'LESS Variables';
 $string['lessvariablesfiledesc'] = 'For reference purposes when editing the additional LESS settings or CustomLESS, please click to see a text version of the {$a->url}';
+$string['borderradius'] = 'Border radius';
+$string['borderradiusdesc'] = 'Border radius';
 
 // Layouts.
 $string['layoutheading'] = 'Layout';
