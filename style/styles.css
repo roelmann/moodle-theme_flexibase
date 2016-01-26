@@ -451,6 +451,11 @@ body.has_dock.dir-rtl .navbar-collapse {
 .panel-heading.Blogs h3::before {content: "\f02d";}
 .panel-heading.Badges h3::before {content: "\f0a3";}
 
+/* Help pages
+ * ---------- */
+.flexhelpcontainer{display: -webkit-flex; display: flex; -webkit-flex-flow: row wrap; flex-flow: row wrap; }
+.flexhelpitem { -webkit-flex: 1 1 33%; flex: 1 1 33%; margin:5px;}
+
 
 /* Style bug fixes - to be organised
  * --------------------------------- */

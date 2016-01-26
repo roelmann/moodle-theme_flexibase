@@ -28,11 +28,11 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
  ?>
- <h3>Quick Settings Links:</h3>
-<a class="btn btn-success" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/settings/settingshelp.php">Help Docs</a>
+<h3>Quick Settings Links:</h3>
+<a class="btn btn-success" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/settingshelp.php">Help Docs</a>
 <a class="btn btn-success" href="settings.php?section=theme_flexibase_generic">General</a>
 <a class="btn btn-success" href="settings.php?section=theme_flexibase_lessbrand">Main Branding</a>
-<a class="btn btn-success"  href="settings.php?section=theme_flexibase_lessadditional">Additional LESS</a>
+<a class="btn btn-success" href="settings.php?section=theme_flexibase_lessadditional">Additional LESS</a>
 <a class="btn btn-success" href="settings.php?section=theme_flexibase_layout">Layout</a>
 <a class="btn btn-success" href="settings.php?section=theme_flexibase_fonts">Fonts</a>
 <a class="btn btn-success" href="settings.php?section=theme_flexibase_imagebank">Image Bank</a>

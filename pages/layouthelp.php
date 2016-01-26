@@ -33,7 +33,7 @@ require_once('../../../config.php');
 require_once('../lib.php');
 
 $PAGE->set_context(context_system::instance());
-$thispageurl = new moodle_url('/theme/flexibase/settings/settingshelp.php');
+$thispageurl = new moodle_url('/theme/flexibase/pages/layouthelp.php');
 $PAGE->set_url($thispageurl, $thispageurl->params());
 $PAGE->set_docs_path('');
 $PAGE->set_pagelayout('standard');
@@ -50,6 +50,7 @@ $PAGE->navbar->add($PAGE->title, $thispageurl);
 // Output.
 echo $OUTPUT->header();
 echo $OUTPUT->box_start();
+include ('helpnavbuttons.php');
 
 echo 'content goes here';
 
