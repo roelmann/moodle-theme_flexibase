@@ -100,6 +100,12 @@ echo $OUTPUT->doctype() ?>
         }
     }
     ?>
+    <!-- Add FontAwesome CDN. -->
+    <!-- Note: FA CSS and fonts are left in place, but commented out for now as development
+    work is sometimes carried out offline and FA can be restored by uncommenting the line in
+    config.php. TODO - remove FA CSS and font folder, or update correctly before final release -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    
     <?php echo $OUTPUT->standard_head_html(); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
     <script>Modernizr.addTest('flexbox', Modernizr.testAllProps('flex'));</script>

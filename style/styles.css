@@ -455,8 +455,36 @@ body.has_dock.dir-rtl .navbar-collapse {
  * ---------- */
 .flexhelpcontainer{display: -webkit-flex; display: flex; -webkit-flex-flow: row wrap; flex-flow: row wrap; }
 .flexhelpitem { -webkit-flex: 1 1 33%; flex: 1 1 33%; margin:5px;}
-
-
+.helpinstallation h3:before {
+  font-family: 'FontAwesome';
+  font-weight:500;
+  content: "\f1c0";
+  margin-right: 5px;
+}
+.helpsettings h3:before {
+  font-family: 'FontAwesome';
+  font-weight:500;
+  content: "\f013";
+  margin-right: 5px;
+}
+.helplayouts h3:before {
+  font-family: 'FontAwesome';
+  font-weight:500;
+  content: "\f1b3";
+  margin-right: 5px;
+}
+.helpthemecode h3:before {
+  font-family: 'FontAwesome';
+  font-weight:500;
+  content: "\f121";
+  margin-right: 5px;
+}
+.helpcssless h3:before {
+  font-family: 'FontAwesome';
+  font-weight:500;
+  content: "\f1fc";
+  margin-right: 5px;
+}
 /* Style bug fixes - to be organised
  * --------------------------------- */
 .maincontentinnerwrap div[role="main"] {max-width:99%;}
