@@ -485,6 +485,29 @@ body.has_dock.dir-rtl .navbar-collapse {
   content: "\f1fc";
   margin-right: 5px;
 }
+.layoutdiagrams img {
+    width:150px;
+    height:150px;
+}
+.layoutdiagrams h3:before {
+  font-family: 'FontAwesome';
+  font-weight:500;
+  content: "\f1b3";
+  margin-right: 5px;
+}
+.layoutsadminhelp h3:before {
+  font-family: 'FontAwesome';
+  font-weight:500;
+  content: "\f013";
+  margin-right: 5px;
+}
+.regionshelp h3:before {
+  font-family: 'FontAwesome';
+  font-weight:500;
+  content: "\f247";
+  margin-right: 5px;
+}
+
 /* Style bug fixes - to be organised
  * --------------------------------- */
 .maincontentinnerwrap div[role="main"] {max-width:99%;}

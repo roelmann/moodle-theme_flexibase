@@ -54,15 +54,15 @@ include ('helpnavbuttons.php');
 ?>
 <h3>Layouts and Regions</h3>
 <div class="flexhelpcontainer">
-    <div class="panel panel-info flexhelpitem helpinstallation">
+    <div class="panel panel-info flexhelpitem layoutdiagrams">
         <div class="panel-heading">
             <h3 class="panel-title">Layout diagrams</h3>
         </div>
         <div class="panel-body">
-            <p><img src="<?php echo $OUTPUT->pix_url('settings/layout1', 'theme'); ?>" alt="Pre and Post Layout" />  <img src="<?php echo $OUTPUT->pix_url('settings/layout2', 'theme'); ?>" alt="Pre and Post Layout" />  <img src="<?php echo $OUTPUT->pix_url('settings/layout3', 'theme'); ?>" alt="Pre and Post Layout" />  <img src="<?php echo $OUTPUT->pix_url('settings/layout4', 'theme'); ?>" alt="Pre and Post Layout" />  <img src="<?php echo $OUTPUT->pix_url('settings/layout5', 'theme'); ?>" alt="Pre and Post Layout" /></p>
+            <p><img src="<?php echo $OUTPUT->pix_url('settings/layout1', 'theme'); ?>" alt="Pre and Post Layout" />  <img src="<?php echo $OUTPUT->pix_url('settings/layout2', 'theme'); ?>" alt="Pre and Post Layout" />  <img src="<?php echo $OUTPUT->pix_url('settings/layout3', 'theme'); ?>" alt="Pre and Post Layout" />  <img src="<?php echo $OUTPUT->pix_url('settings/layout4', 'theme'); ?>" alt="Pre and Post Layout" />  <img src="<?php echo $OUTPUT->pix_url('settings/layout5', 'theme'); ?>" alt="Pre and Post Layout" />  Full size versions of these diagrams can be seen on the Layout Settings page.</p>
         </div>
     </div>
-    <div class="panel panel-info flexhelpitem helpinstallation">
+    <div class="panel panel-info flexhelpitem layoutsadminhelp">
         <div class="panel-heading">
             <h3 class="panel-title">Layouts - for administrators</h3>
         </div>
@@ -72,7 +72,7 @@ include ('helpnavbuttons.php');
             <p>These layouts can be applied to the default page, front page, course page or my home page. One additional note is that the two layouts with single side bars, so in fact use both side-pre and side-post, but they display side-post below side-pre in a single visual region. While no 'content only' layout is provided, this can be achieved easily by removing all blocks from all regions - the main content space will expand to fill the entire page.</p>
         </div>
     </div>
-    <div class="panel panel-info flexhelpitem helpinstallation">
+    <div class="panel panel-info flexhelpitem regionshelp">
         <div class="panel-heading">
             <h3 class="panel-title">Regions - for content creators</h3>
         </div>
