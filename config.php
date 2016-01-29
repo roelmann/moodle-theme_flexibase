@@ -72,7 +72,17 @@ $THEME->layouts = array(
     // Standard layout with blocks, this is recommended for most pages with general information.
     'standard' => array(
         'file' => 'default.php',
-        'regions' => array('side-pre', 'side-post'),
+        'regions' => array(
+            'side-pre',
+            'side-post',
+            'side-top',
+            'side-bottom',
+            'side-mainpre',
+            'side-mainpost',
+            'side-maintop',
+            'side-mainbottom',
+            'side-adminbottom'
+        ),
         'defaultregion' => 'side-pre',
     ),
     // Main course page.
@@ -86,7 +96,8 @@ $THEME->layouts = array(
             'side-mainpre',
             'side-mainpost',
             'side-maintop',
-            'side-mainbottom'
+            'side-mainbottom',
+            'side-adminbottom'
         ),
         'defaultregion' => 'side-pre',
         'options' => array('langmenu' => true),
@@ -102,13 +113,24 @@ $THEME->layouts = array(
             'side-mainpre',
             'side-mainpost',
             'side-maintop',
-            'side-mainbottom'
+            'side-mainbottom',
+            'side-adminbottom'
         ),
         'defaultregion' => 'side-pre',
     ),
     'coursecategory' => array(
         'file' => 'default.php',
-        'regions' => array('side-pre', 'side-post'),
+        'regions' => array(
+            'side-pre',
+            'side-post',
+            'side-top',
+            'side-bottom',
+            'side-mainpre',
+            'side-mainpost',
+            'side-maintop',
+            'side-mainbottom',
+            'side-adminbottom'
+        ),
         'defaultregion' => 'side-pre',
     ),
     // The site home page.
@@ -122,7 +144,8 @@ $THEME->layouts = array(
             'side-mainpre',
             'side-mainpost',
             'side-maintop',
-            'side-mainbottom'
+            'side-mainbottom',
+            'side-adminbottom'
         ),
         'defaultregion' => 'side-pre',
         'options' => array('nonavbar' => true),
@@ -130,7 +153,7 @@ $THEME->layouts = array(
     // Server administration scripts.
     'admin' => array(
         'file' => 'default.php',
-        'regions' => array('side-pre'),
+        'regions' => array('side-pre', 'side-adminbottom'),
         'defaultregion' => 'side-pre',
         'options' => array('fluid' => true),
     ),
@@ -145,7 +168,8 @@ $THEME->layouts = array(
             'side-mainpre',
             'side-mainpost',
             'side-maintop',
-            'side-mainbottom'
+            'side-mainbottom',
+            'side-adminbottom'
         ),
         'defaultregion' => 'side-pre',
         'options' => array('langmenu' => true),
@@ -161,7 +185,8 @@ $THEME->layouts = array(
             'side-mainpre',
             'side-mainpost',
             'side-maintop',
-            'side-mainbottom'
+            'side-mainbottom',
+            'side-adminbottom'
         ),
         'defaultregion' => 'side-pre',
     ),

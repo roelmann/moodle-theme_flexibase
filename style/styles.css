@@ -451,6 +451,16 @@ body.has_dock.dir-rtl .navbar-collapse {
 .panel-heading.Blogs h3::before {content: "\f02d";}
 .panel-heading.Badges h3::before {content: "\f0a3";}
 
+/* Block Regions
+ * ------------- */
+.editing .block-region {
+    min-height:150px;
+    min-width:100px;
+    border:dotted 3px gray;
+}
+#region-adminbottom {
+    text-align:left;
+}
 /* Help pages
  * ---------- */
 .flexhelpcontainer{display: -webkit-flex; display: flex; -webkit-flex-flow: row wrap; flex-flow: row wrap; }
@@ -484,10 +494,6 @@ body.has_dock.dir-rtl .navbar-collapse {
   font-weight:500;
   content: "\f1fc";
   margin-right: 5px;
-}
-.layoutdiagrams img {
-    width:150px;
-    height:150px;
 }
 .layoutdiagrams h3:before {
   font-family: 'FontAwesome';

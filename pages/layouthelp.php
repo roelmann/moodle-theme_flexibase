@@ -54,14 +54,6 @@ include ('helpnavbuttons.php');
 ?>
 <h3>Layouts and Regions</h3>
 <div class="flexhelpcontainer">
-    <div class="panel panel-info flexhelpitem layoutdiagrams">
-        <div class="panel-heading">
-            <h3 class="panel-title">Layout diagrams</h3>
-        </div>
-        <div class="panel-body">
-            <p><img src="<?php echo $OUTPUT->pix_url('settings/layout1', 'theme'); ?>" alt="Pre and Post Layout" />  <img src="<?php echo $OUTPUT->pix_url('settings/layout2', 'theme'); ?>" alt="Pre and Post Layout" />  <img src="<?php echo $OUTPUT->pix_url('settings/layout3', 'theme'); ?>" alt="Pre and Post Layout" />  <img src="<?php echo $OUTPUT->pix_url('settings/layout4', 'theme'); ?>" alt="Pre and Post Layout" />  <img src="<?php echo $OUTPUT->pix_url('settings/layout5', 'theme'); ?>" alt="Pre and Post Layout" />  Full size versions of these diagrams can be seen on the Layout Settings page.</p>
-        </div>
-    </div>
     <div class="panel panel-info flexhelpitem layoutsadminhelp">
         <div class="panel-heading">
             <h3 class="panel-title">Layouts - for administrators</h3>
@@ -81,6 +73,15 @@ include ('helpnavbuttons.php');
             <p>As shown in the diagrams, Flexibase also has a range of regions to hold content blocks. Those blocks can be the predefined blocks (Turn Editing On > Add a Block) or from that list you can add an HTML block which allows you to add your own content to any region being used on the page. As a design tip - the number of regions is provided to allow flexibility, it is not anticipated that most sites will use every region on any single page. While this may be appropriate in a very few cases, it is likely to create an overly busy look to the page and distract from the content in the vast majority of circumstances.</p>
         </div>
     </div>
+    <div class="panel panel-info flexhelpitem layoutdiagrams">
+        <div class="panel-heading">
+            <h3 class="panel-title">Layout diagrams</h3>
+        </div>
+        <div class="panel-body">
+            <p><img src="<?php echo $OUTPUT->pix_url('settings/layout1', 'theme'); ?>" alt="Pre and Post Layout" />  <img src="<?php echo $OUTPUT->pix_url('settings/layout2', 'theme'); ?>" alt="Pre and Post Layout" />  <img src="<?php echo $OUTPUT->pix_url('settings/layout3', 'theme'); ?>" alt="Pre and Post Layout" />  <img src="<?php echo $OUTPUT->pix_url('settings/layout4', 'theme'); ?>" alt="Pre and Post Layout" />  <img src="<?php echo $OUTPUT->pix_url('settings/layout5', 'theme'); ?>" alt="Pre and Post Layout" /> </p>
+        </div>
+    </div>
+
 </div>
 <?php
 echo $OUTPUT->box_end();

@@ -29,6 +29,18 @@
 ?>
 
 <footer id="page-footer">
+    <?php if (is_siteadmin()) { ?>
+        <div id="region-adminbottom" class="well">
+            <?php
+            if ($knownregionadminbottom) {
+                echo '<h3>'.get_string('region-side-adminbottom', 'theme_flexibase').'</h3>';
+                echo $OUTPUT->blocks('side-adminbottom', "sideadminbottom flexcontainer");
+            }
+            ?>
+        </div>
+    <?php
+    }
+    ?>
     <div id="course-footer"><?php echo $OUTPUT->course_footer(); ?></div>
     <p class="helplink"><?php echo $OUTPUT->page_doc_link(); ?></p>
     <?php

@@ -49,6 +49,7 @@ $string['region-side-maintop'] = 'Main Content Top';
 $string['region-side-mainbottom'] = 'Main Content Bottom';
 $string['region-side-top'] = 'Top';
 $string['region-side-bottom'] = 'Bottom';
+$string['region-side-adminbottom'] = 'Site Administrator Only';
 
 // Settings.
 // Readme.
@@ -488,7 +489,7 @@ $string['coursesleafonlydesc'] = 'On sites with large numbers of courses, genera
 $string['alwaysexpandsiteadmin'] = 'Always populate site administration menu';
 $string['alwaysexpandsiteadmindesc'] = 'Enabling this option will populate the Site Administration menu (if applicable), at the expense of performance.';
 
-// Regions.
+// Layouts.
 $string['preandpost'] = 'Pre and Post sidebars';
 $string['twopre'] = 'Two sidebars - Pre';
 $string['twopost'] = 'Two sidebars - Post';
