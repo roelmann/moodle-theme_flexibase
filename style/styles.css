@@ -513,6 +513,36 @@ body.has_dock.dir-rtl .navbar-collapse {
   content: "\f247";
   margin-right: 5px;
 }
+.buttonspanel h3:before {
+  font-family: 'FontAwesome';
+  font-weight:500;
+  content: "\f019";
+  margin-right: 5px;
+}
+.imagespanel h3:before {
+  font-family: 'FontAwesome';
+  font-weight:500;
+  content: "\f03e";
+  margin-right: 5px;
+}
+.contenttippanel h3:before {
+  font-family: 'FontAwesome';
+  font-weight:500;
+  content: "\f022";
+  margin-right: 5px;
+}
+.tabspanel h3:before {
+  font-family: 'FontAwesome';
+  font-weight:500;
+  content: "\f00a";
+  margin-right: 5px;
+}
+.carouselpanel h3:before {
+  font-family: 'FontAwesome';
+  font-weight:500;
+  content: "\f110";
+  margin-right: 5px;
+}
 
 /* Style bug fixes - to be organised
  * --------------------------------- */
