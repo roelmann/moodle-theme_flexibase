@@ -34,6 +34,5 @@
     <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/settingshelp.php">Settings help</a>
     <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/layouthelp.php">Layout and regions help</a>
     <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/contenthelp.php">Tips for content creation</a>
-    <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/bscss.php">Bootstrap CSS tips</a>
-    <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/bscomponents.php">Bootstrap Components</a>
+    <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/bscss.php">Bootstrap Examples</a>
 </div>

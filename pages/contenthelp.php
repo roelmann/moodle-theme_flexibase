@@ -91,6 +91,14 @@ include ('helpnavbuttons.php');
             <p>If its a 'one-off' panel, you could add a css rule such as style="width:200px; float:right" into the initial <code>div class=panel</code> line to create a breakout box panel. Alternatively if you will be using it regularly, you could add a class and create some customcss for styling your own panels (This particular tips page is not intended to cover more advanced topics such as custom styling as these can only be added by the site administrator).<br><br>The class "panel-danger" can be replaced with any of the other standard bootstrap types - panel-primary, panel-success, panel-warning, panel-danger, panel-info or panel-default, for different colour combinations.</p>
         </div>
     </div>
+    <div class="panel panel-info flexhelpitem fontawesomepanel">
+        <div class="panel-heading">
+            <h3 class="panel-title">Using fontawesome</h3>
+        </div>
+        <div class="panel-body">
+            <p>Flexibase is built using fontawesome font based icons, which means you can use font awesome in your own content as well. There is a <a href="https://moodle.org/plugins/filter_fontawesome">font-awesome filter</a> available in the plugins database to avoid going into the html. but if you are not able to install the filter, then you can still use font-awesome icons either via the html, if you want to use some of the more advanced effect, OR for really simple use - just copy and paste the icon you want from the <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/">fontawesome icon page</a>.</p>
+        </div>
+    </div>
     <div class="panel panel-info flexhelpitem tabspanel" >
         <div class="panel-heading">
             <h3 class="panel-title">Adding tabs</h3>

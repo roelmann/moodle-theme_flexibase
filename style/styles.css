@@ -543,7 +543,9 @@ body.has_dock.dir-rtl .navbar-collapse {
   content: "\f110";
   margin-right: 5px;
 }
-
+.panelgroup.flexhelpitem {
+    margin:0;
+}
 /* Style bug fixes - to be organised
  * --------------------------------- */
 .maincontentinnerwrap div[role="main"] {max-width:99%;}
