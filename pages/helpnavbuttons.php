@@ -30,10 +30,12 @@
 ?>
 <div class="helppagenavbuttons">
     <h3>Help Page Links:</h3>
-    <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/adminhelp.php">Admin help</a>
-    <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/settingshelp.php">Settings help</a>
-    <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/customisationshelp.php">Customisations help</a>
-    <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/layouthelp.php">Layout and regions help</a>
-    <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/contenthelp.php">Tips for content creation</a>
-    <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/bscss.php">Bootstrap Examples</a>
+    <?php if (is_siteadmin()){ ?>
+        <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/adminhelp.php">Admin help</a>
+        <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/settingshelp.php">Settings help</a>
+        <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/customisationshelp.php">Customisations help</a>
+    <?php } ?>
+        <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/layouthelp.php">Layout and regions help</a>
+        <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/contenthelp.php">Tips for content creation</a>
+        <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/bscss.php">Bootstrap Examples</a>
 </div>

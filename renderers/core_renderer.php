@@ -179,6 +179,14 @@ class theme_flexibase_core_renderer extends core_renderer {
             $branchsort  = -9970;
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
           }
+          if (theme_flexibase_get_setting('mmthemehelp')) {
+            $branchtitle = "Theme Help";
+            $branchlabel = '<i class="fa fa-question-circle"></i> '.$branchtitle;
+            $branchurl   = new moodle_url('/theme/flexibase/pages/contenthelp.php');
+            $branchsort  = -9960;
+            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+          }
+
           if (theme_flexibase_get_setting('mmdashboard')) {
             $branchtitle = get_string('myhome');
             $branchlabel = '<i class="fa fa-dashboard"></i> '.$branchtitle;

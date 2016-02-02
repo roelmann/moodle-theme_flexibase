@@ -83,6 +83,14 @@ $default = true;
 $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
+// Enable Main Menu - Theme help.
+$name = 'theme_flexibase/mmthemehelp';
+$title = get_string('mmthemehelp', 'theme_flexibase');
+$description = get_string('mmthemehelpdesc', 'theme_flexibase');
+$default = true;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
 
 // User menus heading.
 $temp->add(new admin_setting_heading('theme_flexibase_usermenusheading', get_string('usermenusheadingsub', 'theme_flexibase'),

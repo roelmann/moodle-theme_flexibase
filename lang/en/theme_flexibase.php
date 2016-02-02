@@ -244,7 +244,9 @@ $string['mmdashboarddesc'] = 'Display Dashboard link on Main menu';
 $string['mmthiscourse'] = 'Main Menu -This Course';
 $string['mmthiscoursedesc'] = 'Display This Course link on Main menu, within a course page';
 $string['mmcalendar'] = 'Main Menu -Calendar';
-$string['mmcalendardesc'] = 'Display Calendar link on Main menu, within a course page';
+$string['mmcalendardesc'] = 'Display Calendar link on Main menu';
+$string['mmthemehelp'] = 'Main Menu -Theme Help';
+$string['mmthemehelpdesc'] = 'Display link to theme help on Main menu';
 
 $string['usermenusheadingsub'] = 'User Drop Down Menu options';
 $string['usermenusheadingdesc'] = 'These settings allow the site admin to determine what items appear on the user dropdown menu.<br>There is currently no option to reorder these items, however they can be hidden in the main options and then added in a different order in the custom user menu setting box.';
