@@ -37,8 +37,9 @@ $temp->add(new admin_setting_heading('theme_flexibase_fontheading', get_string('
 $name = 'theme_flexibase/numberoffonts';
 $title = get_string('numberoffonts', 'theme_flexibase');
 $description = get_string('numberoffontsdesc', 'theme_flexibase');
-$default = 3;
+$default = 0;
 $choices = array(
+    0 => '0',
     1 => '1',
     2 => '2',
     3 => '3',
