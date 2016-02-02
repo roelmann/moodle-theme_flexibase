@@ -72,7 +72,7 @@ class theme_flexibase_expand_navigation extends global_navigation {
      * @return array The expandable nodes
      */
     public function initialise() {
-        global $CFG, $DB, $SITE, $PAGE;
+        global $CFG, $SITE, $PAGE;
 
         if ($this->initialised || during_initial_install()) {
             return $this->expandable;

@@ -29,7 +29,9 @@
 ?>
 
 <footer id="page-footer">
-    <?php if (is_siteadmin()) { ?>
+    <?php
+    if (is_siteadmin()) {
+    ?>
         <div id="region-adminbottom" class="well">
             <?php
             if ($knownregionadminbottom) {

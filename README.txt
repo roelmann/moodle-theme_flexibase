@@ -61,7 +61,8 @@ the features as 'plugable' options for other themes, which you can find in the
 instructions, but these can vary according to the theme the component is being added
 to - as folder structure, existance/inheritance of layout files, lib.php etc will
 all have a bearing on implementing these components. The plugins have been tested
-on Clean and should work on any reasonably modern theme.
+on Clean and should work on any reasonably modern theme. THESE HAVE NOW BEEN RETIRED
+FROM THE THEME AND WILL BE DEVELOPED AS A SEPARATE REPOSITORY.
 
 A readmes folder is also provided which contains some of the theme support
 materials - in this case a text version of the base css and less that is used to
@@ -93,9 +94,10 @@ CHANGELOG:
         - Settings to show/hide the items on the main menu (Home, Dashboard)
         - Block renderer override to render blocks as Bootstrap3 panels
         - Admin Only block region added
-        - user/preferences.php restyles as panels (to match restyled user/profile.php)
-        - web font settings (e.g. google fonts) added
+        - User/preferences.php restyles as panels (to match restyled user/profile.php)
+        - Web font settings (e.g. google fonts) added
         - Theme documentation pages added
+        - Remove 'Plugins' folder to separate repository
 3.0.7   - Style fixes (thanks Derek Chirnside for valuable extended use and testing)
         - Updated modernizr.js
 3.0.6   - Bug fixes to awesomebar (hiding nav & settings, correctly applying yui)

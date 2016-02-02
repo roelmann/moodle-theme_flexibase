@@ -41,9 +41,7 @@
  * @param stdClass $page
  */
 function theme_flexibase_page_init(moodle_page $page) {
-    global $CFG;
     $page->requires->jquery_plugin('modernizr', 'theme_flexibase');
-
     $page->requires->jquery_plugin('carousel', 'theme_flexibase');
     $page->requires->jquery_plugin('alertdismissal', 'theme_flexibase');
     $page->requires->jquery_plugin('transitions', 'theme_flexibase');

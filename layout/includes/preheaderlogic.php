@@ -91,7 +91,7 @@ echo $OUTPUT->doctype() ?>
             $fontlink = '';
             $fontlinkdata = $fontlinkhref = array();
             $fontlink = theme_flexibase_get_setting('font' . $i . 'link');
-            // Break up fontlink and rebuild to ensure security
+            // Break up fontlink and rebuild to ensure security.
             $fontlinkdata = explode('href=', $fontlink);
             $explode = '"';
             if (substr($fontlinkdata[1], 0, 1) === "'") {

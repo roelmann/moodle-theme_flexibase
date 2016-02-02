@@ -39,7 +39,7 @@ require_once($CFG->libdir. '/coursecatlib.php');
 class theme_flexibase_core_course_renderer extends core_course_renderer {
 
     public function __construct(moodle_page $page, $target) {
-        global $PAGE, $USER;
+        global $PAGE;
         if (!empty($PAGE->theme->settings->alwaysexpandsiteadmin)) {
             navigation_node::require_admin_tree();
         }
@@ -97,7 +97,6 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
         // If we display course in collapsed form but the course has summary or course contacts, display the link to the info page.
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
             if ($course->has_summary() || $course->has_course_contacts() || $course->has_course_overviewfiles()) {
-                $url = new moodle_url('/course/info.php', array('id' => $course->id));
                 $arrow = html_writer::tag('span', '', array('class' => 'glyphicon glyphicon-info-sign'));
                 $content .= html_writer::link('#coursecollapse' . $course->id , '&nbsp;' . $arrow,
                         array('data-toggle' => 'collapse', 'data-parent' => '#frontpage-category-combo'));
@@ -168,7 +167,7 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
      * @return string $content
      */
     protected function coursecat_coursebox_content(coursecat_helper $chelper, $course, $type=1) {
-        global $CFG, $OUTPUT, $PAGE;
+        global $CFG, $PAGE;
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
             return '';
         }
@@ -323,7 +322,7 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
      */
 
     public function frontpage_my_courses() {
-        global $USER, $CFG, $DB;
+        global $CFG, $DB;
         $output = '';
         if (!isloggedin() or isguestuser()) {
             return '';

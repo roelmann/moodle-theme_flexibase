@@ -49,7 +49,6 @@ if (has_capability('moodle/grade:view', $context) and $COURSE->showgrades) {
     $report = new grade_report_user($courseid, $gpr, $context, $userid);
 
     if ($report->fill_table()) {
-//        echo '<a href="http://localhost/moodle/grade/report/user/index.php?id='.$COURSE->id.'"';
         echo '<a href="'.$CFG->wwwroot.'/grade/report/user/index.php?id='.$COURSE->id.'"';
 
             echo '<div class="courseheadergradepercentage">';

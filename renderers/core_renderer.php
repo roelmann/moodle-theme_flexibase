@@ -44,7 +44,7 @@ require_once($CFG->libdir. '/coursecatlib.php');
 class theme_flexibase_core_renderer extends core_renderer {
 
     public function __construct(moodle_page $page, $target) {
-        global $PAGE, $USER;
+        global $PAGE;
         if (!empty($PAGE->theme->settings->alwaysexpandsiteadmin)) {
             navigation_node::require_admin_tree();
         }
@@ -160,7 +160,7 @@ class theme_flexibase_core_renderer extends core_renderer {
      * return string $content
      */
     protected function render_custom_menu(custom_menu $menu) {
-        global $CFG, $PAGE, $OUTPUT, $COURSE;
+        global $PAGE, $OUTPUT, $COURSE;
 
         if (isloggedin() && !isguestuser()) {
           if (theme_flexibase_get_setting('mmsitehome')) {
@@ -259,8 +259,7 @@ class theme_flexibase_core_renderer extends core_renderer {
      * @param string $withlinks
      * return stdclass $this
      */
-    public function flexibase_user_menu($user = null, $withlinks = null) {
-        global $CFG;
+    public function flexibase_user_menu() {
         $usermenu = new custom_menu('', current_language());
         return $this->flexibase_render_user_menu($usermenu);
     }
@@ -293,7 +292,6 @@ class theme_flexibase_core_renderer extends core_renderer {
             if (isloggedin()) {
                 $course = $this->page->course;
                 $context = context_course::instance($course->id);
-                $userpic = parent::user_picture($USER, array('link' => false));
                 $usermenu = $menu->add(fullname($USER), new moodle_url('#'), fullname($USER), 10001);
                 // RO Added based on flexibase.
             if (theme_flexibase_get_setting('umprofile')) {
@@ -650,7 +648,6 @@ class theme_flexibase_core_renderer extends core_renderer {
      */
     public function blocks_for_region($region) {
         global $USER;
-        $blockswanted = array();
         $blocks = $this->page->blocks->get_blocks_for_region($region);
         $blockcontents = theme_flexibase_block_manager::get_filtered_content($this->page->blocks, $this, $region);
         $lastblock = null;

@@ -41,10 +41,9 @@
  * @return array activities in course
  */
 function theme_flexibase_get_course_activities() {
-    GLOBAL $CFG, $PAGE, $OUTPUT;
+    GLOBAL $PAGE;
     // A copy of block_activity_modules.
     $course = $PAGE->course;
-    $content = new stdClass();
     $modinfo = get_fast_modinfo($course);
     $modfullnames = array();
 

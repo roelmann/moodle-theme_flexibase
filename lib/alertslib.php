@@ -42,7 +42,7 @@
  * @param stdclass $CFG
  * @return string
  */
-function theme_flexibase_get_alertsetting($setting, $format = false) {
+function theme_flexibase_get_alertsetting($setting) {
     global $CFG;
     require_once($CFG->dirroot . '/lib/weblib.php');
     static $theme;
@@ -51,13 +51,7 @@ function theme_flexibase_get_alertsetting($setting, $format = false) {
     }
     if (empty($theme->settings->$setting)) {
         return false;
-    } else if (!$format) {
-        return $theme->settings->$setting;
-    } else if ($format === 'format_text') {
-        return format_text($theme->settings->$setting, FORMAT_PLAIN);
-    } else if ($format === 'format_html') {
-        return format_text($theme->settings->$setting, FORMAT_HTML, array('trusted' => true, 'noclean' => true));
     } else {
-        return format_string($theme->settings->$setting);
+        return $theme->settings->$setting;
     }
 }

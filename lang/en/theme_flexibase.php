@@ -502,3 +502,90 @@ $string['singlepost'] = 'Single sidebar - Post';
 $string['colorheading'] = 'Colour';
 $string['colorheadingsub'] = 'Set the colours used in your theme';
 $string['colordesc'] = 'Here you can find various settings to change many of the colours found in this theme.';
+
+// Help Pages.
+// Buttons.
+$string['adminhelp'] = 'Admin Help';
+$string['settingshelp'] = 'Settings Help';
+$string['customisationshelp'] = 'Customisations Help';
+$string['layoutshelp'] = 'Layout and Regions Help';
+$string['contenthelp'] = 'Tips for Content Creation';
+$string['bootstraphelp'] = 'Bootstrap Examples';
+
+// Admin Help.
+$string['pagesadminhelpheading'] = 'Support for Administrators';
+$string['pagesadmininstallationtitle'] = 'Installation';
+$string['pagesadmininstallationtop'] = 'There are several ways to install flexibase to your site.';
+$string['pagesadmininstallationlista'] = 'Use github to clone the theme from <a href="https://github.com/roelmann/moodle-theme_flexibase">its repository.</a>
+<pre>cd /path/to/your/moodle/theme<br>git clone https://github.com/roelmann/moodle-theme_flexibase.git flexibase</pre>';
+$string['pagesadmininstallationlistb'] = 'Download the theme from the <a href="https://moodle.org/plugins/theme_flexibase">Moodle plugins database</a> and extract the folder to your /themes folder on your server.';
+$string['pagesadmininstallationlistc'] = 'Install from your site front-end at <code>Site Administration > Plugins > <a href="https://docs.moodle.org/30/en/Installing_plugins">Install Plugin</a></code>. This gives you the option to Install directly from the plugins database or to use a previously downloaded zip file.';
+$string['pagesadmininstallationbottom'] = 'However you upload your theme, you should then visit <code>Site Administration > Notifications</code> which will trigger the database upgrade process and finalise the installation of the theme.';
+$string['pagesadminsettingstitle'] = 'Settings';
+$string['pagesadminsettingsbodya'] = 'The flexibase theme can be largely managed, by the site administrators, through the settings pages and it is encouraged to use these settings where possible. This is because theme settings will persist when the theme is upgraded, while code changes will be overwritten on an upgrade.';
+$string['pagesadminsettingsbodyb'] = 'Full help about the theme settings can be found on the <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/settingshelp.php">Settings help</a> page.';
+$string['pagesadminsettingsbodyc'] = 'Settings exist for logos, colours, menus, fonts, course header images and many features such as alerts, layouts and the front page carousel. There are also customless and customcss settings to allow fine tuning of theme overrides.';
+$string['pagesadminlayoutstitle'] = 'Layouts';
+$string['pagesadminlayoutsbodya'] = 'There are two elements to page layouts in flexibase.';
+$string['pagesadminlayoutslista'] = 'Defined layouts - The defined layouts allow the site administrator to set a predefined layout for common page types.';
+$string['pagesadminlayoutslistb'] = 'Block Regions - There are a range of block regions in flexibase. These allow a content creator (e.g. a tutor) to position content blocks, other than the designated main content, in a wide variety of positions on the page. It is not anticipated that all regions would be used in any one page, but they provide a huge amount of flexibility of layout for the content creator without the need for administrator input.';
+$string['pagesadminlayoutsbodyb'] = 'Full details and support for the layout options can be found on the <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/layouthelp.php">Layout and regions help</a> page.';
+$string['pagesadmincloningtitle'] = 'Theme Cloning';
+$string['pagesadmincloningbody'] = 'If you wish to edit or alter any theme, it is often advisable to make a child theme of that main theme, or to make a clone of it. Given the way flexibase uses Moodle core LESS compiling and the extended use of LESS in the settings pages, creating a child theme can in fact become more complex than using and maintaining a clone. Therefore, it is recommended to use a clone of the theme - however this does need to be maintained for stable upgrades with the parent theme.<br>To create a clone of flexibase:';
+$string['pagesadmincloninglista'] = 'Copy theme';
+$string['pagesadmincloninglistb'] = 'Remove the /readmes and /plugins folders (not essential, they are not working parts of the theme so doesn\'t actually matter if they are there or not, but it gets them out of the way of the renaming - Note: the /plugins folder has been removed from)';
+$string['pagesadmincloninglistc'] = 'Rename folder';
+$string['pagesadmincloninglistd'] = 'Rename lang file (/lang/en/theme_themename.php)';
+$string['pagesadmincloningliste'] = 'Rename less file (/less/themename.less)';
+$string['pagesadmincloninglistf'] = 'Find and replace all instances of flexibase (including CAPS variations)
+<pre>On Linux you can use a grep command (had to do this 3 times - flexibase, Flexibase and FlexiBase) <br><code>grep -rl "flexibase" /var/www/html/moodle/theme/yourthemename/  | xargs sed -i \'s|flexibase|yourthemename|g\'</code></pre>';
+$string['pagesadmincloninglistg'] = 'Install as normal';
+$string['pagesadmincsstitle'] = 'CSS and LESS';
+$string['pagesadmincssbody'] = 'The flexibase theme is created with LESS and CSS to create the look and feel. The original LESS variables and CSS files used to create the theme can be found in the /readmes folder of the theme for reference. Flexibase uses LESS compilation on the fly (when Theme Designer Mode is enabled) allowing some of the settings to make use of the flexibility of LESS.<br><br>As a design decision, the theme colour options have been restricted to the main branding colours used in most bootstrap themes and their lighter/darker variations. These are applied through LESS, but can be overwritten as needed for more specific requirements using custom css.<br><br>One caution when using LESS settings - incorrect CSS will often simply be ignored by the browser, incorrect LESS will cause the entire LESS to fail and the look and feel of the site not to render. If this happens, simply correct or undo your last change and your site should return to normal. I recommend enabling theme changes by url (in <code>Site Admin > Appearance > Themes > Theme Settings</code>) when making changes as you can then fall-back to another theme such as Clean, if your changes should cause problems with your site.';
+
+$string['pagesbscsstitle'] = 'Bootstrap CSS Snippets';
+$string['pagesbscssbodya'] = 'These examples are from the bootstrap theme template at <a href="http://getbootstrap.com/examples/theme/">http://getbootstrap.com/examples/theme/</a></p>
+<p><strong>Any of these snippets can be copied and reused in your own content within Flexibase.</strong>';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';
+$string['colorheading'] = 'Colour';

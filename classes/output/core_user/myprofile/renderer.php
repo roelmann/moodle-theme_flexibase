@@ -31,9 +31,11 @@ class renderer extends \core_user\output\myprofile\renderer {
         $classes = $category->classes;
         $titleclass = preg_replace('/\s+/', '', $category->title);
         if (empty($classes)) {
-            $return = \html_writer::start_tag('section', array('class' => 'node_category  panel panel-info ' . $titleclass));
+            $return = \html_writer::start_tag('section',
+            array('class' => 'node_category  panel panel-info ' . $titleclass));
         } else {
-            $return = \html_writer::start_tag('section', array('class' => 'node_category  panel panel-info ' . $titleclass . $classes));
+            $return = \html_writer::start_tag('section',
+            array('class' => 'node_category  panel panel-info ' . $titleclass . $classes));
         }
         $return .= \html_writer::start_tag('div', array('class' => 'panel-heading'));
         $return .= \html_writer::tag('h3', $category->title);
