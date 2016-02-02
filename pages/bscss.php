@@ -38,8 +38,8 @@ $PAGE->set_url($thispageurl, $thispageurl->params());
 $PAGE->set_docs_path('');
 $PAGE->set_pagelayout('standard');
 
-$PAGE->set_title('Flexibase Settings Support');
-$PAGE->set_heading('Flexibase Settings Support');
+$PAGE->set_title('Bootstrap Snippets');
+$PAGE->set_heading('Bootstrap Snippets');
 
 // No edit.
 $USER->editing = $edit = 0;
@@ -53,7 +53,7 @@ echo $OUTPUT->box_start();
 include ('helpnavbuttons.php');
 ?>
 <h2>Bootstrap CSS Snippets</h2>
-<p>These examples are from the bootstrap theme template at <a href="http://getbootstrap.com/examples/theme/">http://getbootstrap.com/examples/theme/</a></p>
+<p class="lead">These examples are from the bootstrap theme template at <a href="http://getbootstrap.com/examples/theme/">http://getbootstrap.com/examples/theme/</a></p>
 <p><strong>Any of these snippets can be copied and reused in your own content within Flexibase.</strong></p>
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">

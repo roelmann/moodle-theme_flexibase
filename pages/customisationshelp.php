@@ -38,8 +38,8 @@ $PAGE->set_url($thispageurl, $thispageurl->params());
 $PAGE->set_docs_path('');
 $PAGE->set_pagelayout('standard');
 
-$PAGE->set_title('Flexibase Settings Support');
-$PAGE->set_heading('Flexibase Settings Support');
+$PAGE->set_title('Flexibase Customisations Help');
+$PAGE->set_heading('Flexibase Customisations Help');
 
 // No edit.
 $USER->editing = $edit = 0;

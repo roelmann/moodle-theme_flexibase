@@ -546,6 +546,25 @@ body.has_dock.dir-rtl .navbar-collapse {
 .panelgroup.flexhelpitem {
     margin:0;
 }
+.pixcorehelp h3:before {
+  font-family: 'FontAwesome';
+  font-weight:500;
+  content: "\f03e";
+  margin-right: 5px;
+}
+.blockheadershelp h3:before {
+  font-family: 'FontAwesome';
+  font-weight:500;
+  content: "\f1b3";
+  margin-right: 5px;
+}
+.textfileshelp h3:before {
+  font-family: 'FontAwesome';
+  font-weight:500;
+  content: "\f0f6";
+  margin-right: 5px;
+}
+
 /* Style bug fixes - to be organised
  * --------------------------------- */
 .maincontentinnerwrap div[role="main"] {max-width:99%;}
