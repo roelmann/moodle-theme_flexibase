@@ -97,7 +97,8 @@ CHANGELOG:
         - User/preferences.php restyles as panels (to match restyled user/profile.php)
         - Web font settings (e.g. google fonts) added
         - Theme documentation pages added
-        - Remove 'Plugins' folder to separate repository
+        - Remove 'Plugins' folder. These will eventually be added to a separate repository
+        - Sample course removed to reduce theme zip size. Course download will be made available from demo site
 3.0.7   - Style fixes (thanks Derek Chirnside for valuable extended use and testing)
         - Updated modernizr.js
 3.0.6   - Bug fixes to awesomebar (hiding nav & settings, correctly applying yui)
