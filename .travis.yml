@@ -20,13 +20,12 @@ matrix:
 env:
  global:
   - MOODLE_BRANCH=MOODLE_30_STABLE
-  - IGNORE_PATHS=jquery,lib/awesomelib.php,pages/bootstrapsamples_extract.php
+  - IGNORE_PATHS=jquery,lib/awesomelib.php
   # jquery files are all upstream files and will not be altered in the theme
   # lib/awesomelib.php is an upstream file from decaf theme (awesomebar)
-  # pages/bootstrapsamples_extract.php is an upstream file containing as much of the code as written in the BS page as possible
   # Ignore .css until CSSlint can be instructed to ignore lines for '[[setting:customcss]]'.
   # Also ignore generated CSS files and upstream files
-  - IGNORE_NAMES=*.txt,*.css,*.js
+  - IGNORE_NAMES=*.txt
  matrix:
   - DB=pgsql
   - DB=mysqli
@@ -42,7 +41,7 @@ install:
 
 script:
   - moodle-plugin-ci phplint
-  # moodle-plugin-ci phpcpd
+  - moodle-plugin-ci phpcpd
   - moodle-plugin-ci phpmd
   - moodle-plugin-ci codechecker
   - moodle-plugin-ci csslint

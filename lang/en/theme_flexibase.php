@@ -549,12 +549,12 @@ $string['pagesadmincloninglistg'] = 'Install as normal';
 $string['pagesadmincsstitle'] = 'CSS and LESS';
 $string['pagesadmincssbody'] = 'The flexibase theme is created with LESS and CSS to create the look and feel. The original LESS variables and CSS files used to create the theme can be found in the /readmes folder of the theme for reference. Flexibase uses LESS compilation on the fly (when Theme Designer Mode is enabled) allowing some of the settings to make use of the flexibility of LESS.<br><br>As a design decision, the theme colour options have been restricted to the main branding colours used in most bootstrap themes and their lighter/darker variations. These are applied through LESS, but can be overwritten as needed for more specific requirements using custom css.<br><br>One caution when using LESS settings - incorrect CSS will often simply be ignored by the browser, incorrect LESS will cause the entire LESS to fail and the look and feel of the site not to render. If this happens, simply correct or undo your last change and your site should return to normal. I recommend enabling theme changes by url (in <code>Site Admin > Appearance > Themes > Theme Settings</code>) when making changes as you can then fall-back to another theme such as Clean, if your changes should cause problems with your site.';
 
-// Bootstrap Examples
+// Bootstrap Examples.
 $string['pagesbscsstitle'] = 'Bootstrap CSS Snippets';
 $string['pagesbscssbodya'] = 'These examples are from the bootstrap theme template at <a href="http://getbootstrap.com/examples/theme/">http://getbootstrap.com/examples/theme/</a></p>
 <p><strong>Any of these snippets can be copied and reused in your own content within Flexibase.</strong>';
 
-// Content Creation
+// Content Creation.
 $string['pagescontenttitle'] = 'Useful code snippets';
 $string['pagescontenttopbody'] = 'While the full Bootstrap CSS and Components can be found on the appropriate buttons above, this page aims to collect just a few of the more useful ones together in one place for a quick reference and how they can be used in content within the flexibase theme. Note: Becuase flexibase is built around Bootstrap3, some of these features may not work if you then change theme to a Bootstrap2 based theme, or an older theme which has no bootstrap foundation at all.';
 $string['pagescontentbuttonstitle'] = 'Adding Buttons';
