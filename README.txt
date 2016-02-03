@@ -96,7 +96,7 @@ CHANGELOG:
         - Admin Only block region added
         - User/preferences.php restyles as panels (to match restyled user/profile.php)
         - Web font settings (e.g. google fonts) added
-        - Theme documentation pages added
+        - Theme documentation pages added - with a link from the main menu
         - Remove 'Plugins' folder. These will eventually be added to a separate repository
         - Sample course removed to reduce theme zip size. Course download will be made available from demo site
 3.0.7   - Style fixes (thanks Derek Chirnside for valuable extended use and testing)
