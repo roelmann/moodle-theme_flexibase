@@ -312,7 +312,7 @@ require('helpnavbuttons.php');
 
     <!-- User Menus. -->
     <div role="tabpanel" class="tab-pane" id="menus">
-        <a href = "<?php echo $CFG->wwwroot ?>/admin/settings.php?section=theme_flexibase_imagebank"
+        <a href = "<?php echo $CFG->wwwroot ?>/admin/settings.php?section=theme_flexibase_menusettings"
             class = "btn btn-success">
             <?php echo get_string('menussettings', 'theme_flexibase')?>
         </a>
@@ -361,7 +361,7 @@ require('helpnavbuttons.php');
 
     <!-- AwesomeBar. -->
     <div role="tabpanel" class="tab-pane" id="awesome">
-        <a href = "<?php echo $CFG->wwwroot ?>/admin/settings.php?section=theme_flexibase_imagebank"
+        <a href = "<?php echo $CFG->wwwroot ?>/admin/settings.php?section=theme_flexibase_awesomebar"
             class = "btn btn-success">
             <?php echo get_string('awesomebarheading', 'theme_flexibase')?>
         </a>
