@@ -302,9 +302,12 @@ require('helpnavbuttons.php');
         <h4><?php echo get_string('imagebanksettings', 'theme_flexibase')?></h4>
         <p class="lead"><?php echo get_string('imagebankheadingdesc', 'theme_flexibase')?></p>
         <h4><?php echo get_string('numberofimagebankimages', 'theme_flexibase')?></h4>
-        <p>Set the number of images you want to store in the bank (upto 16) and then save the page. This will provide a file picker for each of the number of images you have selected.</p>
+        <p><?php echo get_string('numberofimagebankimages_desc', 'theme_flexibase')?></p>
         <h4><?php echo get_string('pagesettingsimagebank', 'theme_flexibase')?></h4>
-        <p><?php echo get_string('imagebankheadingsub', 'theme_flexibase')?> <?php echo get_string('imagebankheadingdesc', 'theme_flexibase')?> <?php echo get_string('pagesettingsimagebankdesc', 'theme_flexibase')?></p>
+        <p><?php echo get_string('imagebankheadingsub', 'theme_flexibase')?>
+        <?php echo get_string('imagebankheadingdesc', 'theme_flexibase')?>
+        <?php echo get_string('pagesettingsimagebankdesc', 'theme_flexibase')?>
+        </p>
     </div>
 
     <!-- User Menus. -->
