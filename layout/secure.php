@@ -78,7 +78,7 @@ require('includes/header.php');
     <div id="page-content" class="flexcontainer">
     <?php
     require('includes/mainbody.php');
-    
+
     require('includes/footer.php');
     ?>
     <!-- Initialize slideshow -->

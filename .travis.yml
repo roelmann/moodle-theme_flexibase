@@ -20,7 +20,7 @@ matrix:
 env:
  global:
   - MOODLE_BRANCH=MOODLE_30_STABLE
-  - IGNORE_PATHS=jquery,lib/awesomelib.php,awesombar.js
+  - IGNORE_PATHS=jquery,lib/awesomelib.php,awesomebar.js
   # jquery files are all upstream files and will not be altered in the theme
   # lib/awesomelib.php and awesomebar.js are upstream files from decaf theme (awesomebar)
   # Ignore .css until CSSlint can be instructed to ignore lines for '[[setting:customcss]]'.

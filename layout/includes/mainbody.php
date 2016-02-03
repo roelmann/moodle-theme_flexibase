@@ -27,7 +27,7 @@
  *             Decaf - Paul Nichols
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-?> 
+?>
         <div id="region-main" class="flexcontentmain <?php echo $layoutoption; ?>">
             <?php
             echo $OUTPUT->course_content_header();

@@ -40,7 +40,7 @@ require('includes/header.php');
 
 <div id="page" class="container-fluid">
     <?php require('includes/breadcrumb.php'); ?>
-    
+
     <!-- Theme Settings Buttons -->
     <?php
     $search = 'admin-setting-theme_flexibase';
@@ -58,7 +58,7 @@ require('includes/header.php');
     <div id="page-content" class="flexcontainer">
     <?php
     require('includes/mainbody.php');
-    
+
     require('includes/footer.php');
     ?>
 </div>
