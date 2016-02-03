@@ -50,7 +50,7 @@ $PAGE->navbar->add($PAGE->title, $thispageurl);
 // Output.
 echo $OUTPUT->header();
 echo $OUTPUT->box_start();
-include ('helpnavbuttons.php');
+require('helpnavbuttons.php');
 ?>
 <h3><?php echo get_string('pagescontenttitle', 'theme_flexibase')?></h3>
 <p><?php echo get_string('pagescontenttopbody', 'theme_flexibase')?></p>

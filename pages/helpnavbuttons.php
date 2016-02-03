@@ -29,13 +29,25 @@
  */
 ?>
 <div class="helppagenavbuttons">
-    <h3>Help Page Links:</h3>
-    <?php if (is_siteadmin()){ ?>
-        <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/adminhelp.php">Admin help</a>
-        <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/settingshelp.php">Settings help</a>
-        <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/customisationshelp.php">Customisations help</a>
+    <h3><?php echo get_string('pageshelplinks', 'theme_flexibase')?></h3>
+    <?php if (is_siteadmin()) { ?>
+        <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/adminhelp.php">
+            <?php echo get_string('adminhelp', 'theme_flexibase')?>
+        </a>
+        <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/settingshelp.php">
+            <?php echo get_string('settingshelp', 'theme_flexibase')?>
+        </a>
+        <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/customisationshelp.php">
+            <?php echo get_string('customisationshelp', 'theme_flexibase')?>
+        </a>
     <?php } ?>
-        <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/layouthelp.php">Layout and regions help</a>
-        <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/contenthelp.php">Tips for content creation</a>
-        <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/bscss.php">Bootstrap Examples</a>
+        <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/layouthelp.php">
+            <?php echo get_string('layoutshelp', 'theme_flexibase')?>
+        </a>
+        <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/contenthelp.php">
+            <?php echo get_string('contenthelp', 'theme_flexibase')?>
+        </a>
+        <a class="btn btn-info" href="<?php echo $CFG->wwwroot ?>/theme/flexibase/pages/bscss.php">
+            <?php echo get_string('bootstraphelp', 'theme_flexibase')?>
+        </a>
 </div>

@@ -28,7 +28,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-/* CourseBox Spot Settings */
+/* CourseBox Spot Settings.
+ * ------------------------ */
 // Page heading.
 $temp = new admin_settingpage('theme_flexibase_frontpage_courses', get_string('frontpagecoursesettings', 'theme_flexibase'));
 

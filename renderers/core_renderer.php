@@ -660,10 +660,13 @@ class theme_flexibase_core_renderer extends core_renderer {
         foreach ($blockcontents as $bc) {
             if ($bc instanceof block_contents) {
                 // Skip settings and/or navigation blocks as per flexibase theme settings.
-                $skipsettings = $this->page->theme->settings->hidesettingsblock || !empty($USER->profile['flexibaseSkipSettingsBlock']);
-                $skipnavigation = $this->page->theme->settings->hidenavigationblock || !empty($USER->profile['flexibaseSkipNavigationBlock']);
+                $skipsettings = $this->page->theme->settings->hidesettingsblock
+                    || !empty($USER->profile['flexibaseSkipSettingsBlock']);
+                $skipnavigation = $this->page->theme->settings->hidenavigationblock
+                    || !empty($USER->profile['flexibaseSkipNavigationBlock']);
                 $skipblock = $skipsettings && substr($bc->attributes['class'], 0, 15) == 'block_settings ';
-                $skipblock = $skipblock || ($skipnavigation && substr($bc->attributes['class'], 0, 17) == 'block_navigation ');
+                $skipblock = $skipblock
+                    || ($skipnavigation && substr($bc->attributes['class'], 0, 17) == 'block_navigation ');
                 if (!$skipblock) {
                     $output .= $this->block($bc, $region);
                     $lastblock = $bc->title;
@@ -686,7 +689,7 @@ class theme_flexibase_core_renderer extends core_renderer {
             return $favicon;
         }
     }
-    
+
     /**
      * Renders preferences groups.
      *
@@ -700,7 +703,7 @@ class theme_flexibase_core_renderer extends core_renderer {
         $html .= html_writer::start_tag('h2');
         $html .= get_string('preferences');
         $html .= html_writer::end_tag('h2');
-        $html .= html_writer::end_tag('div'); // Panel-Heading
+        $html .= html_writer::end_tag('div'); // Panel-Heading.
         $html .= html_writer::start_tag('div', array('class' => 'panel-body prefgrp '));
         $i = 0;
         $open = false;
@@ -719,8 +722,8 @@ class theme_flexibase_core_renderer extends core_renderer {
         $html .= html_writer::end_tag('div');
 
         $html .= html_writer::end_tag('ul');
-        $html .= html_writer::end_tag('div'); // Panel-Body
-        $html .= html_writer::end_tag('div'); // Panel
+        $html .= html_writer::end_tag('div'); // Panel-Body.
+        $html .= html_writer::end_tag('div'); // Panel.
         return $html;
     }
     /**
@@ -735,7 +738,7 @@ class theme_flexibase_core_renderer extends core_renderer {
         $titleclass = preg_replace('/\s+/', '', $renderable->title);
         $html .= html_writer::start_tag('div', array('class' => 'panel-heading '.$titleclass));
         $html .= $this->heading($renderable->title, 3);
-        $html .= html_writer::end_tag('div'); // Panel_Heading
+        $html .= html_writer::end_tag('div'); // Panel_Heading.
         $html .= html_writer::start_tag('div', array('class' => 'panel-body'));
         $html .= html_writer::start_tag('ul');
         foreach ($renderable->nodes as $node) {
@@ -746,7 +749,7 @@ class theme_flexibase_core_renderer extends core_renderer {
         }
         $html .= html_writer::end_tag('ul');
         $html .= html_writer::end_tag('div');
-        $html .= html_writer::end_tag('div');  // Panel
+        $html .= html_writer::end_tag('div');  // Panel.
         return $html;
     }
     /**
@@ -845,7 +848,10 @@ class theme_flexibase_core_renderer extends core_renderer {
 
         $output = '';
         if ($title || $controlshtml) {
-            $output .= html_writer::tag('div', html_writer::tag('div', html_writer::tag('div', '', array('class'=>'block_action')). $title . $controlshtml, array('class' => 'title')), array('class' => 'header panel-heading'));
+            $output .= html_writer::tag('div', html_writer::tag('div', html_writer::tag('div', '',
+                array('class' => 'block_action')). $title . $controlshtml,
+                array('class' => 'title')),
+                array('class' => 'header panel-heading'));
         }
         return $output;
     }
@@ -859,7 +865,7 @@ class theme_flexibase_core_renderer extends core_renderer {
     protected function block_content(block_contents $bc) {
         $output = html_writer::start_tag('div', array('class' => 'content panel-body'));
         if (!$bc->title && !$this->block_controls($bc->controls)) {
-            $output .= html_writer::tag('div', '', array('class'=>'block_action notitle'));
+            $output .= html_writer::tag('div', '', array('class' => 'block_action notitle'));
         }
         $output .= $bc->content;
         $output .= $this->block_footer($bc);

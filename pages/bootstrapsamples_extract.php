@@ -26,7 +26,7 @@
  *             BCU - Jez H, Mike Grant
  *             Decaf - Paul Nichols
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- * 
+ *
  * This file is an extract of the bootstrap sample theme as linked from the content below
  * Therefore it is not recreated as language strings as it is intended to mirror,
  * as closely as possible, the original bootstrap page.
@@ -35,11 +35,14 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <h1>Theme example</h1>
-        <p>This is a template showcasing the optional theme stylesheet included in Bootstrap [But applied within the flexibase theme, so showing you how these elements look in flexibase]. Use it as a starting point to make use of Bootstrap snippets in your own code.</p>
+        <p>This is a template showcasing the optional theme stylesheet included in Bootstrap
+        [But applied within the flexibase theme, so showing you how these elements look in flexibase].
+        Use it as a starting point to make use of Bootstrap snippets in your own code.</p>
       </div>
       <pre>&lt;div class="jumbotron"&gt;
     &lt;h1&gt;Theme example&lt;/h1&gt;
-    &lt;p&gt;This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point to create something more unique by building on or modifying it.&lt;/p&gt;
+    &lt;p&gt;This is a template showcasing the optional theme stylesheet included in Bootstrap.
+    Use it as a starting point to create something more unique by building on or modifying it.&lt;/p&gt;
 &lt;/div&gt;</pre>
 
 
@@ -378,7 +381,8 @@
       <div class="page-header">
         <h1>Thumbnails</h1>
       </div>
-      <img src="../pix/example_small.png" class="img-thumbnail" alt="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera">
+      <img src="../pix/example_small.png" class="img-thumbnail"
+          alt="A generic square placeholder image with a white border around it">
       <pre>&lt;img src="image.png" class="img-thumbnail" alt="alt text here"&gt;</pre>
 
       <div class="page-header">
@@ -473,7 +477,8 @@ The different sizes of labels come from being wrapped in headings (h1, h2, h3, h
         <h1>Dropdown menus</h1>
       </div>
       <div class="dropdown theme-dropdown clearfix">
-        <a id="dropdownMenu1" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+        <a id="dropdownMenu1" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+            aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
           <li class="active"><a href="#">Action</a></li>
           <li><a href="#">Another action</a></li>
@@ -483,7 +488,8 @@ The different sizes of labels come from being wrapped in headings (h1, h2, h3, h
         </ul>
       </div>
       <pre>&lt;div class="dropdown theme-dropdown clearfix"&gt;
-  &lt;a id="dropdownMenu1" href="#" class="sr-only dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"&gt;Dropdown &lt;span class="caret"&gt;&lt;/span&gt;&lt;/a&gt;
+  &lt;a id="dropdownMenu1" href="#" class="sr-only dropdown-toggle" data-toggle="dropdown" role="button"
+      aria-haspopup="true" aria-expanded="false"&gt;Dropdown &lt;span class="caret"&gt;&lt;/span&gt;&lt;/a&gt;
   &lt;ul class="dropdown-menu" aria-labelledby="dropdownMenu1"&gt;
     &lt;li class="active"&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
@@ -507,7 +513,10 @@ The different sizes of labels come from being wrapped in headings (h1, h2, h3, h
   &lt;li role="presentation"&gt;&lt;a href="#"&gt;Messages&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-This displays tabs - but for more information on making working tabs (which need the javascript included in the theme) please see <a class="btn btn-info" href="contenthelp.php">Tips for content creation</a></pre>
+This displays tabs - but for more information on making working tabs
+(which need the javascript included in the theme) please see
+<a class="btn btn-info" href="contenthelp.php"><?php echo get_string('contenthelp', 'theme_flexibase')?></a>
+      </pre>
 
       <ul class="nav nav-pills" role="tablist">
         <li role="presentation" class="active"><a href="#">Home</a></li>
@@ -541,7 +550,8 @@ This displays tabs - but for more information on making working tabs (which need
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                    aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="#">Action</a></li>
                   <li><a href="#">Another action</a></li>
@@ -573,7 +583,8 @@ This displays tabs - but for more information on making working tabs (which need
       &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
       &lt;li class="dropdown"&gt;
-        &lt;a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"&gt;Dropdown &lt;span class="caret"&gt;&lt;/span&gt;&lt;/a&gt;
+        &lt;a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+            aria-haspopup="true" aria-expanded="false"&gt;Dropdown &lt;span class="caret"&gt;&lt;/span&gt;&lt;/a&gt;
         &lt;ul class="dropdown-menu"&gt;
           &lt;li&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
@@ -606,7 +617,8 @@ This displays tabs - but for more information on making working tabs (which need
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                    aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="#">Action</a></li>
                   <li><a href="#">Another action</a></li>
@@ -638,7 +650,8 @@ This displays tabs - but for more information on making working tabs (which need
       &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
       &lt;li class="dropdown"&gt;
-        &lt;a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"&gt;Dropdown &lt;span class="caret"&gt;&lt;/span&gt;&lt;/a&gt;
+        &lt;a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+            aria-haspopup="true" aria-expanded="false"&gt;Dropdown &lt;span class="caret"&gt;&lt;/span&gt;&lt;/a&gt;
         &lt;ul class="dropdown-menu"&gt;
           &lt;li&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
@@ -686,50 +699,74 @@ This displays tabs - but for more information on making working tabs (which need
         <h1>Progress bars</h1>
       </div>
       <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"><span class="sr-only">60% Complete</span></div>
+        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+            style="width: 60%;"><span class="sr-only">60% Complete</span></div>
       </div>
       <pre>&lt;div class="progress"&gt;
-  &lt;div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"&gt;&lt;span class="sr-only"&gt;60% Complete&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+      style="width: 60%;"&gt;&lt;span class="sr-only"&gt;60% Complete&lt;/span&gt;&lt;/div&gt;
 &lt;/div&gt;</pre>
       <div class="progress">
-        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"><span class="sr-only">40% Complete (success)</span></div>
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0"
+            aria-valuemax="100" style="width: 40%"><span class="sr-only">40% Complete (success)</span></div>
       </div>
       <pre>&lt;div class="progress"&gt;
-  &lt;div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"&gt;&lt;span class="sr-only"&gt;40% Complete (success)&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0"
+      aria-valuemax="100" style="width: 40%"&gt;&lt;span class="sr-only"&gt;40% Complete (success)&lt;/span&gt;&lt;/div&gt;
 &lt;/div&gt;</pre>
       <div class="progress">
-        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%"><span class="sr-only">20% Complete</span></div>
+        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0"
+            aria-valuemax="100" style="width: 20%"><span class="sr-only">20% Complete</span></div>
       </div>
       <pre>&lt;div class="progress"&gt;
-  &lt;div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%"&gt;&lt;span class="sr-only"&gt;20% Complete&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0"
+      aria-valuemax="100" style="width: 20%"&gt;&lt;span class="sr-only"&gt;20% Complete&lt;/span&gt;&lt;/div&gt;
 &lt;/div&gt;</pre>
       <div class="progress">
-        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"><span class="sr-only">60% Complete (warning)</span></div>
+        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+            aria-valuemax="100" style="width: 60%"><span class="sr-only">60% Complete (warning)</span></div>
       </div>
       <pre>&lt;div class="progress"&gt;
-  &lt;div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"&gt;&lt;span class="sr-only"&gt;60% Complete (warning)&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+      aria-valuemax="100" style="width: 60%"&gt;&lt;span class="sr-only"&gt;60% Complete (warning)&lt;/span&gt;&lt;/div&gt;
 &lt;/div&gt;</pre>
       <div class="progress">
-        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"><span class="sr-only">80% Complete (danger)</span></div>
+        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+            aria-valuemax="100" style="width: 80%"><span class="sr-only">80% Complete (danger)</span></div>
       </div>
       <pre>&lt;div class="progress"&gt;
-  &lt;div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"&gt;&lt;span class="sr-only"&gt;80% Complete (danger)&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+      aria-valuemax="100" style="width: 80%"&gt;&lt;span class="sr-only"&gt;80% Complete (danger)&lt;/span&gt;&lt;/div&gt;
 &lt;/div&gt;</pre>
       <div class="progress">
-        <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"><span class="sr-only">60% Complete</span></div>
+        <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+            aria-valuemax="100" style="width: 60%"><span class="sr-only">60% Complete</span></div>
       </div>
       <pre>&lt;div class="progress"&gt;
-  &lt;div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"&gt;&lt;span class="sr-only"&gt;60% Complete&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+      aria-valuemax="100" style="width: 60%"&gt;&lt;span class="sr-only"&gt;60% Complete&lt;/span&gt;&lt;/div&gt;
 &lt;/div&gt;</pre>
       <div class="progress">
-        <div class="progress-bar progress-bar-success" style="width: 35%"><span class="sr-only">35% Complete (success)</span></div>
-        <div class="progress-bar progress-bar-warning" style="width: 20%"><span class="sr-only">20% Complete (warning)</span></div>
-        <div class="progress-bar progress-bar-danger" style="width: 10%"><span class='sr-only'>10% Complete (danger)</span></div>
+        <div class="progress-bar progress-bar-success" style="width: 35%">
+            <span class="sr-only">35% Complete (success)</span>
+        </div>
+        <div class="progress-bar progress-bar-warning" style="width: 20%">
+            <span class="sr-only">20% Complete (warning)</span>
+        </div>
+        <div class="progress-bar progress-bar-danger" style="width: 10%">
+            <span class='sr-only'>10% Complete (danger)</span>
+        </div>
       </div>
       <pre>&lt;div class="progress"&gt;
-  &lt;div class="progress-bar progress-bar-success" style="width: 35%"&gt;&lt;span class="sr-only"&gt;35% Complete (success)&lt;/span&gt;&lt;/div&gt;
-  &lt;div class="progress-bar progress-bar-warning" style="width: 20%"&gt;&lt;span class="sr-only"&gt;20% Complete (warning)&lt;/span&gt;&lt;/div&gt;
-  &lt;div class="progress-bar progress-bar-danger" style="width: 10%"&gt;&lt;span class='sr-only'&gt;10% Complete (danger)&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="progress-bar progress-bar-success" style="width: 35%"&gt;
+      &lt;span class="sr-only"&gt;35% Complete (success)&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="progress-bar progress-bar-warning" style="width: 20%"&gt;
+      &lt;span class="sr-only"&gt;20% Complete (warning)&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="progress-bar progress-bar-danger" style="width: 10%"&gt;
+      &lt;span class='sr-only'&gt;10% Complete (danger)&lt;/span&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</pre>
 
 
@@ -777,29 +814,29 @@ This displays tabs - but for more information on making working tabs (which need
           <div class="list-group">
             <a href="#" class="list-group-item active">
               <h4 class="list-group-item-heading">List group item heading</h4>
-              <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>
             </a>
             <a href="#" class="list-group-item">
               <h4 class="list-group-item-heading">List group item heading</h4>
-              <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>
             </a>
             <a href="#" class="list-group-item">
               <h4 class="list-group-item-heading">List group item heading</h4>
-              <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>
             </a>
           </div>
           <pre>&lt;div class="list-group"&gt;
   &lt;a href="#" class="list-group-item active"&gt;
     &lt;h4 class="list-group-item-heading"&gt;List group item heading&lt;/h4&gt;
-    &lt;p class="list-group-item-text"&gt;Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.&lt;/p&gt;
+    &lt;p class="list-group-item-text"&gt;Donec id elit non mi porta gravida at eget metus.&lt;/p&gt;
   &lt;/a&gt;
   &lt;a href="#" class="list-group-item"&gt;
     &lt;h4 class="list-group-item-heading"&gt;List group item heading&lt;/h4&gt;
-    &lt;p class="list-group-item-text"&gt;Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.&lt;/p&gt;
+    &lt;p class="list-group-item-text"&gt;Donec id elit non mi porta gravida at eget metus.&lt;/p&gt;
   &lt;/a&gt;
   &lt;a href="#" class="list-group-item"&gt;
     &lt;h4 class="list-group-item-heading"&gt;List group item heading&lt;/h4&gt;
-    &lt;p class="list-group-item-text"&gt;Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.&lt;/p&gt;
+    &lt;p class="list-group-item-text"&gt;Donec id elit non mi porta gravida at eget metus.&lt;/p&gt;
   &lt;/a&gt;
 &lt;/div&gt;</pre>
         </div><!-- /.col-sm-4 -->

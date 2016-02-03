@@ -50,35 +50,42 @@ $PAGE->navbar->add($PAGE->title, $thispageurl);
 // Output.
 echo $OUTPUT->header();
 echo $OUTPUT->box_start();
-include ('helpnavbuttons.php');
+require('helpnavbuttons.php');
 ?>
-<h3>Layouts and Regions</h3>
+<h3><?php echo get_string('pageslayoutstitle', 'theme_flexibase')?></h3>
 <div class="flexhelpcontainer">
     <div class="panel panel-info flexhelpitem layoutsadminhelp">
         <div class="panel-heading">
-            <h3 class="panel-title">Layouts - for administrators</h3>
+            <h3 class="panel-title"><?php echo get_string(
+                'pageslayoutsadmintitle', 'theme_flexibase')?></h3>
         </div>
         <div class="panel-body">
-            <h4>Layouts - for administrators</h4>
-            <p>Flexibase has 5 different selectable layouts for 4 of the main page types.</p>
-            <p>These layouts can be applied to the default page, front page, course page or my home page. One additional note is that the two layouts with single side bars, so in fact use both side-pre and side-post, but they display side-post below side-pre in a single visual region. While no 'content only' layout is provided, this can be achieved easily by removing all blocks from all regions - the main content space will expand to fill the entire page.</p>
+            <h4><?php echo get_string('pageslayoutsadminhead', 'theme_flexibase')?></h4>
+            <p><?php echo get_string('pageslayoutsadminbody', 'theme_flexibase')?></p>
         </div>
     </div>
     <div class="panel panel-info flexhelpitem regionshelp">
         <div class="panel-heading">
-            <h3 class="panel-title">Regions - for content creators</h3>
+            <h3 class="panel-title"><?php echo get_string(
+                'pageslayoutsregionstitle', 'theme_flexibase')?></h3>
         </div>
         <div class="panel-body">
-            <h4>Regions - for content creators</h4>
-            <p>As shown in the diagrams, Flexibase also has a range of regions to hold content blocks. Those blocks can be the predefined blocks (Turn Editing On > Add a Block) or from that list you can add an HTML block which allows you to add your own content to any region being used on the page. As a design tip - the number of regions is provided to allow flexibility, it is not anticipated that most sites will use every region on any single page. While this may be appropriate in a very few cases, it is likely to create an overly busy look to the page and distract from the content in the vast majority of circumstances.</p>
+            <h4><?php echo get_string('pageslayoutsregionshead', 'theme_flexibase')?></h4>
+            <p><?php echo get_string('pageslayoutsregionsbody', 'theme_flexibase')?></p>
         </div>
     </div>
     <div class="panel panel-info flexhelpitem layoutdiagrams">
         <div class="panel-heading">
-            <h3 class="panel-title">Layout diagrams</h3>
+            <h3 class="panel-title"><?php echo get_string(
+                'pageslayoutsdiagramstitle', 'theme_flexibase')?></h3>
         </div>
         <div class="panel-body">
-            <p><img src="<?php echo $OUTPUT->pix_url('settings/layout1', 'theme'); ?>" alt="Pre and Post Layout" />  <img src="<?php echo $OUTPUT->pix_url('settings/layout2', 'theme'); ?>" alt="Pre and Post Layout" />  <img src="<?php echo $OUTPUT->pix_url('settings/layout3', 'theme'); ?>" alt="Pre and Post Layout" />  <img src="<?php echo $OUTPUT->pix_url('settings/layout4', 'theme'); ?>" alt="Pre and Post Layout" />  <img src="<?php echo $OUTPUT->pix_url('settings/layout5', 'theme'); ?>" alt="Pre and Post Layout" /> </p>
+            <p><img src="<?php echo $OUTPUT->pix_url('settings/layout1', 'theme'); ?>" alt="Pre and Post Layout" />
+                <img src="<?php echo $OUTPUT->pix_url('settings/layout2', 'theme'); ?>" alt="Pre and Post Layout" />
+                <img src="<?php echo $OUTPUT->pix_url('settings/layout3', 'theme'); ?>" alt="Pre and Post Layout" />
+                <img src="<?php echo $OUTPUT->pix_url('settings/layout4', 'theme'); ?>" alt="Pre and Post Layout" />
+                <img src="<?php echo $OUTPUT->pix_url('settings/layout5', 'theme'); ?>" alt="Pre and Post Layout" />
+            </p>
         </div>
     </div>
 

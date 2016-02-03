@@ -61,25 +61,6 @@ $choices = array(1 => 'Yes', 0 => 'No');
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $temp->add($setting);
 
-/* Add custom menu to Awesomebar - not used in Flexibase, but left in for porting to other themes.
- *    $name = 'theme_flexibase/custommenuinawesomebar';
- *    $title = get_string('custommenuinawesomebar', 'theme_flexibase');
- *    $description = get_string('custommenuinawesomebardesc', 'theme_flexibase');
- *    $default = 0;
- *    $choices = array(1 => 'Yes', 0 => 'No');
- *    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
- *    $temp->add($setting);
- */
-/* Place custom menu after Awesomebar - not used in Flexibase, but left in for porting to other themes.
- *    $name = 'theme_flexibase/custommenuafterawesomebar';
- *    $title = get_string('custommenuafterawesomebar', 'theme_flexibase');
- *    $description = get_string('custommenuafterawesomebardesc', 'theme_flexibase');
- *    $default = 0;
- *    $choices = array(0 => 'No', 1 => 'Yes');
- *    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
- *    $temp->add($setting);
- */
-
 // Hide courses menu from non-logged-in users.
 $name = 'theme_flexibase/coursesloggedinonly';
 $title = get_string('coursesloggedinonly', 'theme_flexibase');
