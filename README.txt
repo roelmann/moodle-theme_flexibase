@@ -82,7 +82,7 @@ Richard
 
 CHANGELOG:
 ==========
-3.1.0Beta
+3.1.0
         - Style fixes
         - Settings navigation moved to layout files to clear language strings
         - Image Bank added (theme specific adaptation of work by Gareth Barnard)
