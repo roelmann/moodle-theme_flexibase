@@ -43,7 +43,7 @@ class theme_flexibase_block_settings_renderer extends block_settings_renderer {
      */
     protected function navigation_node(navigation_node $node, $attrs=array(), $depth = 1) {
       global $CFG;
-      if ($CFG->version < 2016021100) {
+      if ($CFG->version < 2016012100) {
         $items = $node->children;
         // Exit if empty, we don't want an empty ul element.
         if ($items->count() == 0) {
