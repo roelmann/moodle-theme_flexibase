@@ -186,24 +186,24 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
                     '/'. $file->get_contextid(). '/'. $file->get_component(). '/'.
                     $file->get_filearea(). $file->get_filepath(). $file->get_filename(), !$isimage);
             if ($contentimages == '') {
-            if ($isimage) {
-                if ($type == 1) {
-                    $contentimages .= html_writer::start_tag('div', array('class' => 'courseimage'));
-                    $link = new moodle_url('/course/view.php', array('id' => $course->id));
-                    $contentimages .= html_writer::link($link, html_writer::empty_tag('img', array('src' => $url)));
-                    $contentimages .= html_writer::end_tag('div');
-                } else {
-                    $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center;
+                if ($isimage) {
+                    if ($type == 1) {
+                        $contentimages .= html_writer::start_tag('div', array('class' => 'courseimage'));
+                        $link = new moodle_url('/course/view.php', array('id' => $course->id));
+                        $contentimages .= html_writer::link($link, html_writer::empty_tag('img', array('src' => $url)));
+                        $contentimages .= html_writer::end_tag('div');
+                    } else {
+                        $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center;
                             background-size: contain;'></div>";
+                    }
+                } else {
+                    $image = $this->output->pix_icon(file_file_icon($file, 24), $file->get_filename(), 'moodle');
+                    $filename = html_writer::tag('span', $image, array('class' => 'fp-icon')).
+                                html_writer::tag('span', $file->get_filename(), array('class' => 'fp-filename'));
+                    $contentfiles .= html_writer::tag('span',
+                                     html_writer::link($url, $filename),
+                                        array('class' => 'coursefile fp-filename-icon'));
                 }
-            } else {
-                $image = $this->output->pix_icon(file_file_icon($file, 24), $file->get_filename(), 'moodle');
-                $filename = html_writer::tag('span', $image, array('class' => 'fp-icon')).
-                        html_writer::tag('span', $file->get_filename(), array('class' => 'fp-filename'));
-                $contentfiles .= html_writer::tag('span',
-                        html_writer::link($url, $filename),
-                        array('class' => 'coursefile fp-filename-icon'));
-            }
             }
         }
         if (strlen($contentimages) == 0 && $type == 2) {

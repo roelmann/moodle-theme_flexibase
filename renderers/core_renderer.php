@@ -163,85 +163,83 @@ class theme_flexibase_core_renderer extends core_renderer {
         global $PAGE, $OUTPUT, $COURSE;
 
         if (isloggedin() && !isguestuser()) {
-          if (theme_flexibase_get_setting('mmsitehome')) {
-            $mycoursetitle = "Site Home";
-            $branchtitle = "Site Home";
-            $branchlabel = '<i class="fa fa-home"></i> '.$branchtitle;
-            $branchurl   = new moodle_url('/', array('redirect' => 0));
-            $branchsort  = -9999;
-            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
-          }
-          if (theme_flexibase_get_setting('mmcalendar')) {
-            $mycoursetitle = "Calendar";
-            $branchtitle = "Calendar";
-            $branchlabel = '<i class="fa fa-calendar"></i> '.$branchtitle;
-            $branchurl   = new moodle_url('/calendar/view.php');
-            $branchsort  = -9970;
-            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
-          }
-          if (theme_flexibase_get_setting('mmthemehelp')) {
-            $branchtitle = "Theme Help";
-            $branchlabel = '<i class="fa fa-question-circle"></i> '.$branchtitle;
-            $branchurl   = new moodle_url('/theme/flexibase/pages/contenthelp.php');
-            $branchsort  = -9960;
-            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
-          }
+            if (theme_flexibase_get_setting('mmsitehome')) {
+                $mycoursetitle = "Site Home";
+                $branchtitle = "Site Home";
+                $branchlabel = '<i class="fa fa-home"></i> '.$branchtitle;
+                $branchurl   = new moodle_url('/', array('redirect' => 0));
+                $branchsort  = -9999;
+                $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+            }
+            if (theme_flexibase_get_setting('mmcalendar')) {
+                $mycoursetitle = "Calendar";
+                $branchtitle = "Calendar";
+                $branchlabel = '<i class="fa fa-calendar"></i> '.$branchtitle;
+                $branchurl   = new moodle_url('/calendar/view.php');
+                $branchsort  = -9970;
+                $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+            }
+            if (theme_flexibase_get_setting('mmthemehelp')) {
+                $branchtitle = "Theme Help";
+                $branchlabel = '<i class="fa fa-question-circle"></i> '.$branchtitle;
+                $branchurl   = new moodle_url('/theme/flexibase/pages/contenthelp.php');
+                $branchsort  = -9960;
+                $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+            }
+            if (theme_flexibase_get_setting('mmdashboard')) {
+                $branchtitle = get_string('myhome');
+                $branchlabel = '<i class="fa fa-dashboard"></i> '.$branchtitle;
+                $branchurl   = new moodle_url('/my/index.php');
+                $branchsort  = -9990;
+                $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 
-          if (theme_flexibase_get_setting('mmdashboard')) {
-            $branchtitle = get_string('myhome');
-            $branchlabel = '<i class="fa fa-dashboard"></i> '.$branchtitle;
-            $branchurl   = new moodle_url('/my/index.php');
-            $branchsort  = -9990;
+                list($sortedcourses, $sitecourses, $totalcourses) = block_course_overview_get_sorted_courses();
 
-            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
-
-            list($sortedcourses, $sitecourses, $totalcourses) = block_course_overview_get_sorted_courses();
-
-            if ($sortedcourses) {
-                foreach ($sortedcourses as $course) {
-                    if ($course->visible) {
-                        $branch->add(format_string($course->fullname),
+                if ($sortedcourses) {
+                    foreach ($sortedcourses as $course) {
+                        if ($course->visible) {
+                            $branch->add(format_string($course->fullname),
                                 new moodle_url('/course/view.php?id='.$course->id),
                                 format_string($course->shortname));
+                        }
                     }
-                }
-            } else {
-                $noenrolments = get_string('noenrolments', 'theme_flexibase');
-                $branch->add('<em>'.$noenrolments.'</em>', new moodle_url('/'), $noenrolments);
-            }
-          }
-          if (theme_flexibase_get_setting('mmthiscourse')) {
-            if (ISSET($COURSE->id) && $COURSE->id > 1) {
-                $branchtitle = get_string('thiscourse', 'theme_flexibase');
-                $branchlabel = '<i class="fa fa-sitemap"></i>&nbsp;'.$branchtitle;
-                $branchurl = new moodle_url('#');
-                $branch = $menu->add($branchlabel, $branchurl, $branchtitle, -9980);
-
-                $branchtitle = "People";
-                $branchlabel = $OUTPUT->pix_icon('i/group', '', '', array('class' => 'icon')).$branchtitle;
-                $branchurl = new moodle_url('/user/index.php', array('id' => $PAGE->course->id));
-                $branch->add($branchlabel, $branchurl, $branchtitle, -9979);
-
-                $branchtitle = "Grades";
-                $branchlabel = $OUTPUT->pix_icon('i/grades', '', '', array('class' => 'icon')).$branchtitle;
-                $branchurl = new moodle_url('/grade/report/index.php', array('id' => $PAGE->course->id));
-                $branch->add($branchlabel, $branchurl, $branchtitle, -9978);
-
-                $data = theme_flexibase_get_course_activities();
-
-                foreach ($data as $modname => $modfullname) {
-                    if ($modname === 'resources') {
-                        $icon = $OUTPUT->pix_icon('icon', '', 'mod_page', array('class' => 'icon'));
-                        $branch->add($icon.$modfullname, new moodle_url('/course/resources.php',
-                                array('id' => $PAGE->course->id)));
-                    } else {
-                        $icon = '<img src="'.$OUTPUT->pix_url('icon', $modname) . '" class="icon" alt="" />';
-                        $branch->add($icon.$modfullname, new moodle_url('/mod/'.$modname.'/index.php',
-                                array('id' => $PAGE->course->id)));
-                    }
+                } else {
+                    $noenrolments = get_string('noenrolments', 'theme_flexibase');
+                    $branch->add('<em>'.$noenrolments.'</em>', new moodle_url('/'), $noenrolments);
                 }
             }
-          }
+            if (theme_flexibase_get_setting('mmthiscourse')) {
+                if (ISSET($COURSE->id) && $COURSE->id > 1) {
+                    $branchtitle = get_string('thiscourse', 'theme_flexibase');
+                    $branchlabel = '<i class="fa fa-sitemap"></i>&nbsp;'.$branchtitle;
+                    $branchurl = new moodle_url('#');
+                    $branch = $menu->add($branchlabel, $branchurl, $branchtitle, -9980);
+
+                    $branchtitle = "People";
+                    $branchlabel = $OUTPUT->pix_icon('i/group', '', '', array('class' => 'icon')).$branchtitle;
+                    $branchurl = new moodle_url('/user/index.php', array('id' => $PAGE->course->id));
+                    $branch->add($branchlabel, $branchurl, $branchtitle, -9979);
+
+                    $branchtitle = "Grades";
+                    $branchlabel = $OUTPUT->pix_icon('i/grades', '', '', array('class' => 'icon')).$branchtitle;
+                    $branchurl = new moodle_url('/grade/report/index.php', array('id' => $PAGE->course->id));
+                    $branch->add($branchlabel, $branchurl, $branchtitle, -9978);
+
+                    $data = theme_flexibase_get_course_activities();
+
+                    foreach ($data as $modname => $modfullname) {
+                        if ($modname === 'resources') {
+                            $icon = $OUTPUT->pix_icon('icon', '', 'mod_page', array('class' => 'icon'));
+                            $branch->add($icon.$modfullname, new moodle_url('/course/resources.php',
+                                array('id' => $PAGE->course->id)));
+                        } else {
+                            $icon = '<img src="'.$OUTPUT->pix_url('icon', $modname) . '" class="icon" alt="" />';
+                            $branch->add($icon.$modfullname, new moodle_url('/mod/'.$modname.'/index.php',
+                                array('id' => $PAGE->course->id)));
+                        }
+                    }
+                }
+            }
         }
         // TODO: eliminate this duplicated logic, it belongs in core, not
         // here. See MDL-39565.
@@ -294,231 +292,236 @@ class theme_flexibase_core_renderer extends core_renderer {
                 $context = context_course::instance($course->id);
                 $usermenu = $menu->add(fullname($USER), new moodle_url('#'), fullname($USER), 10001);
                 // RO Added based on flexibase.
-            if (theme_flexibase_get_setting('umprofile')) {
-                if (\core\session\manager::is_loggedinas()) {
-                    $realuser = \core\session\manager::get_realuser();
-                    $usermenu->add(
-                        '<em><i class="fa fa-key"> </i>' .' '. fullname($realuser, true) .
-                                get_string('loggedinas', 'theme_flexibase') . fullname($USER, true) . '</em>',
-                        new moodle_url('/user/profile.php', array('id' => $USER->id)),
-                        get_string('loggedinas', 'theme_flexibase')
-                    );
-                } else {
-                    $usermenu->add(
-                        '<em><i class="fa fa-user"> </i>' .' '. fullname($USER, true) . '</em>',
-                        new moodle_url('/user/profile.php', array('id' => $USER->id)),
-                        fullname($USER, true)
-                    );
-                }
-                if (is_mnet_remote_user($USER) && $idprovider = $DB->get_record('mnet_host', array('id' => $USER->mnethostid))) {
-                    $usermenu->add(
-                        '<em><i class="fa fa-users"></i>' .' '. get_string('loggedinfrom', 'theme_flexibase')
+                if (theme_flexibase_get_setting('umprofile')) {
+                    if (\core\session\manager::is_loggedinas()) {
+                        $realuser = \core\session\manager::get_realuser();
+                        $usermenu->add(
+                            '<em><i class="fa fa-key"> </i>' .' '. fullname($realuser, true) .
+                            get_string('loggedinas', 'theme_flexibase') . fullname($USER, true) . '</em>',
+                            new moodle_url('/user/profile.php', array('id' => $USER->id)),
+                            get_string('loggedinas', 'theme_flexibase')
+                        );
+                    } else {
+                        $usermenu->add(
+                            '<em><i class="fa fa-user"> </i>' .' '. fullname($USER, true) . '</em>',
+                            new moodle_url('/user/profile.php', array('id' => $USER->id)),
+                            fullname($USER, true)
+                        );
+                    }
+                    if (is_mnet_remote_user($USER)
+                    && $idprovider = $DB->get_record('mnet_host', array('id' => $USER->mnethostid))) {
+                        $usermenu->add(
+                            '<em><i class="fa fa-users"></i>' .' '. get_string('loggedinfrom', 'theme_flexibase')
                                 . $idprovider->name . '</em>',
-                        new moodle_url($idprovider->wwwroot),
-                        get_string('loggedinfrom', 'theme_flexibase')
-                    );
+                            new moodle_url($idprovider->wwwroot),
+                            get_string('loggedinfrom', 'theme_flexibase')
+                        );
+                    }
+                    if (is_role_switched($course->id)) { // Has switched roles.
+                        $usermenu->add(
+                            '<em><i class="fa fa-users"></i>' .' '. get_string('switchrolereturn') . '</em>',
+                            new moodle_url('/course/switchrole.php', array(
+                                'id' => $course->id,
+                                'sesskey' => sesskey(),
+                                'switchrole' => 0,
+                                'returnurl' => $this->page->url->out_as_local_url(false))),
+                            get_string('switchrolereturn')
+                        );
+                    }
+                    $usermenu->add('<hr class="sep">');
                 }
-                if (is_role_switched($course->id)) { // Has switched roles.
-                    $usermenu->add(
-                        '<em><i class="fa fa-users"></i>' .' '. get_string('switchrolereturn') . '</em>',
-                        new moodle_url('/course/switchrole.php', array('id' => $course->id,
-                                                                       'sesskey' => sesskey(),
-                                                                       'switchrole' => 0,
-                                                                       'returnurl' => $this->page->url->out_as_local_url(false))),
-                        get_string('switchrolereturn')
-                    );
-                }
-                $usermenu->add('<hr class="sep">');
-            }
-            if (theme_flexibase_get_setting('umdashboard')) {
+                if (theme_flexibase_get_setting('umdashboard')) {
                     $usermenu->add(
                         '<em><i class="fa fa-dashboard"></i>' .' '. get_string('myhome') . '</em>',
                         new moodle_url('/my/index.php'), get_string('myhome')
                     );
-            }
-            if (theme_flexibase_get_setting('umcalendar')) {
+                }
+                if (theme_flexibase_get_setting('umcalendar')) {
                     $usermenu->add(
                         '<em><i class="fa fa-calendar"></i>' .' '. get_string('calendar', 'calendar') . '</em>',
                         new moodle_url('/calendar/view.php'),
                         get_string('calendar', 'calendar')
                     );
-            }
-            if (theme_flexibase_get_setting('umdashboard') ||
-            theme_flexibase_get_setting('umcalendar')) {
-                $usermenu->add('<hr class="sep">');
-            }
+                }
+                if (theme_flexibase_get_setting('umdashboard') ||
+                theme_flexibase_get_setting('umcalendar')) {
+                    $usermenu->add('<hr class="sep">');
+                }
 
-            if (theme_flexibase_get_setting('umeditprofile')) {
-                if (has_capability('moodle/user:editownprofile', $context)) {
-                    $usermenu->add(
-                        '<em><i class="fa fa-user"></i>' .' '. get_string('editmyprofile') . '</em>',
-                        new moodle_url('/user/edit.php', array('id' => $USER->id)),
-                        get_string('editmyprofile')
-                    );
+                if (theme_flexibase_get_setting('umeditprofile')) {
+                    if (has_capability('moodle/user:editownprofile', $context)) {
+                        $usermenu->add(
+                            '<em><i class="fa fa-user"></i>' .' '. get_string('editmyprofile') . '</em>',
+                            new moodle_url('/user/edit.php', array('id' => $USER->id)),
+                            get_string('editmyprofile')
+                        );
+                    }
                 }
-            }
-            if (theme_flexibase_get_setting('umpassword')) {
-                if (has_capability('moodle/user:changeownpassword', $context)) {
-                    $usermenu->add(
-                        '<em><i class="fa fa-key"></i>' .' '. get_string('changepassword') . '</em>',
-                        new moodle_url('/login/change_password.php'),
-                        get_string('changepassword')
-                    );
+                if (theme_flexibase_get_setting('umpassword')) {
+                    if (has_capability('moodle/user:changeownpassword', $context)) {
+                        $usermenu->add(
+                            '<em><i class="fa fa-key"></i>' .' '. get_string('changepassword') . '</em>',
+                            new moodle_url('/login/change_password.php'),
+                            get_string('changepassword')
+                        );
+                    }
                 }
-            }
-            if (theme_flexibase_get_setting('umpreferences')) {
+                if (theme_flexibase_get_setting('umpreferences')) {
                     $usermenu->add(
                         '<em><i class="fa fa-cog"></i>' .' '. get_string('preferences') . '</em>',
                         new moodle_url('/user/preferences.php'),
                         get_string('preferences')
                     );
-            }
+                }
 
-            if (theme_flexibase_get_setting('ummessagepreferences')) {
-                if (has_capability('moodle/user:editownmessageprofile', $context)) {
-                    $usermenu->add(
-                        '<em><i class="fa fa-comments"></i>' .' '. get_string('messagepreferences', 'theme_flexibase') . '</em>',
-                        new moodle_url('/message/edit.php', array('id' => $USER->id)),
-                        get_string('messagepreferences', 'theme_flexibase')
-                    );
+                if (theme_flexibase_get_setting('ummessagepreferences')) {
+                    if (has_capability('moodle/user:editownmessageprofile', $context)) {
+                        $usermenu->add(
+                            '<em><i class="fa fa-comments"></i>' .' '.
+                                get_string('messagepreferences', 'theme_flexibase') . '</em>',
+                            new moodle_url('/message/edit.php', array('id' => $USER->id)),
+                            get_string('messagepreferences', 'theme_flexibase')
+                        );
+                    }
                 }
-            }
-            if (theme_flexibase_get_setting('umblogpreferences')) {
-                if ($CFG->enableblogs) {
-                    $usermenu->add(
-                        '<em><i class="fa fa-rss-square"></i>' .' '. get_string('blogpreferences', 'theme_flexibase') . '</em>',
-                        new moodle_url('/blog/preferences.php'),
-                        get_string('blogpreferences', 'theme_flexibase')
-                    );
+                if (theme_flexibase_get_setting('umblogpreferences')) {
+                    if ($CFG->enableblogs) {
+                        $usermenu->add(
+                            '<em><i class="fa fa-rss-square"></i>' .' '.
+                                get_string('blogpreferences', 'theme_flexibase') . '</em>',
+                            new moodle_url('/blog/preferences.php'),
+                            get_string('blogpreferences', 'theme_flexibase')
+                        );
+                    }
                 }
-            }
-            if (theme_flexibase_get_setting('umbadgepreferences')) {
-                if ($CFG->enablebadges && has_capability('moodle/badges:manageownbadges', $context)) {
-                    $usermenu->add(
-                        '<em><i class="fa fa-certificate"></i>' .' '. get_string('badgepreferences', 'theme_flexibase') . '</em>',
-                        new moodle_url('/badges/preferences.php'),
-                        get_string('badgepreferences', 'theme_flexibase')
-                    );
+                if (theme_flexibase_get_setting('umbadgepreferences')) {
+                    if ($CFG->enablebadges && has_capability('moodle/badges:manageownbadges', $context)) {
+                        $usermenu->add(
+                            '<em><i class="fa fa-certificate"></i>' .' '.
+                                get_string('badgepreferences', 'theme_flexibase') . '</em>',
+                            new moodle_url('/badges/preferences.php'),
+                            get_string('badgepreferences', 'theme_flexibase')
+                        );
+                    }
                 }
-            }
-            if (theme_flexibase_get_setting('umeditprofile') ||
-            theme_flexibase_get_setting('umpassword') ||
-            theme_flexibase_get_setting('umpreferences') ||
-            theme_flexibase_get_setting('ummessagepreferences') ||
-            theme_flexibase_get_setting('umblogpreferences') ||
-            theme_flexibase_get_setting('umbadgepreferences')) {
-                $usermenu->add('<hr class="sep">');
-            }
-            if (theme_flexibase_get_setting('ummessages')) {
-                // Check if messaging is enabled.
-                if (!empty($CFG->messaging)) {
-                    $usermenu->add(
-                        '<em><i class="fa fa-envelope"></i>' .' '. get_string('pluginname', 'block_messages') . '</em>',
-                        new moodle_url('/message/index.php'),
-                        get_string('pluginname', 'block_messages')
-                    );
+                if (theme_flexibase_get_setting('umeditprofile') ||
+                theme_flexibase_get_setting('umpassword') ||
+                theme_flexibase_get_setting('umpreferences') ||
+                theme_flexibase_get_setting('ummessagepreferences') ||
+                theme_flexibase_get_setting('umblogpreferences') ||
+                theme_flexibase_get_setting('umbadgepreferences')) {
+                    $usermenu->add('<hr class="sep">');
                 }
-            }
-            if (theme_flexibase_get_setting('umfiles')) {
-                // Check if user is allowed to manage files.
-                if (has_capability('moodle/user:manageownfiles', $context)) {
-                    $usermenu->add(
-                        '<em><i class="fa fa-file"></i>' .' '. get_string('privatefiles', 'block_private_files') . '</em>',
-                        new moodle_url('/user/files.php'),
-                        get_string('privatefiles', 'block_private_files')
-                    );
+                if (theme_flexibase_get_setting('ummessages')) {
+                    // Check if messaging is enabled.
+                    if (!empty($CFG->messaging)) {
+                        $usermenu->add(
+                            '<em><i class="fa fa-envelope"></i>' .' '. get_string('pluginname', 'block_messages') . '</em>',
+                            new moodle_url('/message/index.php'),
+                            get_string('pluginname', 'block_messages')
+                        );
+                    }
                 }
-            }
+                if (theme_flexibase_get_setting('umfiles')) {
+                    // Check if user is allowed to manage files.
+                    if (has_capability('moodle/user:manageownfiles', $context)) {
+                        $usermenu->add(
+                            '<em><i class="fa fa-file"></i>' .' '. get_string('privatefiles', 'block_private_files') . '</em>',
+                            new moodle_url('/user/files.php'),
+                            get_string('privatefiles', 'block_private_files')
+                        );
+                    }
+                }
                 // Check if user is allowed to view discussions.
                 if (has_capability('mod/forum:viewdiscussion', $context)) {
-                  if (theme_flexibase_get_setting('umposts')) {
-                    $usermenu->add(
-                        '<em><i class="fa fa-list-alt"></i>' .' '. get_string('forumposts', 'mod_forum') . '</em>',
-                        new moodle_url('/mod/forum/user.php', array('id' => $USER->id)),
-                        get_string('forumposts', 'mod_forum')
-                    );
-                  }
-                  if (theme_flexibase_get_setting('umdiscussions')) {
-                    $usermenu->add(
-                        '<em><i class="fa fa-list"></i>' .' '. get_string('discussions', 'mod_forum') . '</em>',
-                        new moodle_url('/mod/forum/user.php', array('id' => $USER->id, 'mode' => 'discussions')),
-                        get_string('discussions', 'mod_forum')
-                    );
-                  }
-                }
-            if (theme_flexibase_get_setting('ummessages') ||
-            theme_flexibase_get_setting('umfiles') ||
-            theme_flexibase_get_setting('umposts') ||
-            theme_flexibase_get_setting('umdiscussions')) {
-                $usermenu->add('<hr class="sep">');
-            }
-
-            if (theme_flexibase_get_setting('umgrades')) {
-                // Output user grade links course sensitive, workaround for frontpage, selecting first enrolled course.
-                if ($course->id == 1) {
-                    $hascourses = enrol_get_my_courses(null, 'visible DESC,id ASC', 1);
-                    foreach ($hascourses as $hascourse) {
-                        $reportcontext = context_course::instance($hascourse->id);
-                        if (has_capability('gradereport/user:view', $reportcontext) && $hascourse->visible) {
-                            $usermenu->add(
-                                '<em><i class="fa fa-list-alt"></i>' .' '. get_string('mygrades', 'theme_flexibase') . '</em>',
-                                new moodle_url('/grade/report/overview/index.php',
-                                        array('id' => $hascourse->id, 'userid' => $USER->id)),
-                                get_string('mygrades', 'theme_flexibase')
-                            );
-                        }
+                    if (theme_flexibase_get_setting('umposts')) {
+                        $usermenu->add(
+                            '<em><i class="fa fa-list-alt"></i>' .' '. get_string('forumposts', 'mod_forum') . '</em>',
+                            new moodle_url('/mod/forum/user.php', array('id' => $USER->id)),
+                            get_string('forumposts', 'mod_forum')
+                        );
                     }
-                } else if (has_capability('gradereport/user:view', $context)) {
-                            $usermenu->add(
-                                '<em><i class="fa fa-list-alt"></i>' .' '. get_string('mygrades', 'theme_flexibase') . '</em>',
-                                new moodle_url('/grade/report/overview/index.php',
-                                        array('id' => $course->id, 'userid' => $USER->id)),
+                    if (theme_flexibase_get_setting('umdiscussions')) {
+                        $usermenu->add(
+                            '<em><i class="fa fa-list"></i>' .' '. get_string('discussions', 'mod_forum') . '</em>',
+                            new moodle_url('/mod/forum/user.php', array('id' => $USER->id, 'mode' => 'discussions')),
+                            get_string('discussions', 'mod_forum')
+                        );
+                    }
+                }
+                if (theme_flexibase_get_setting('ummessages') ||
+                theme_flexibase_get_setting('umfiles') ||
+                theme_flexibase_get_setting('umposts') ||
+                theme_flexibase_get_setting('umdiscussions')) {
+                    $usermenu->add('<hr class="sep">');
+                }
+
+                if (theme_flexibase_get_setting('umgrades')) {
+                    // Output user grade links course sensitive, workaround for frontpage, selecting first enrolled course.
+                    if ($course->id == 1) {
+                        $hascourses = enrol_get_my_courses(null, 'visible DESC,id ASC', 1);
+                        foreach ($hascourses as $hascourse) {
+                            $reportcontext = context_course::instance($hascourse->id);
+                            if (has_capability('gradereport/user:view', $reportcontext) && $hascourse->visible) {
+                                $usermenu->add(
+                                    '<em><i class="fa fa-list-alt"></i>' .' '. get_string('mygrades', 'theme_flexibase') . '</em>',
+                                    new moodle_url('/grade/report/overview/index.php',
+                                        array('id' => $hascourse->id, 'userid' => $USER->id)),
+                                        get_string('mygrades', 'theme_flexibase')
+                                );
+                            }
+                        }
+                    } else if (has_capability('gradereport/user:view', $context)) {
+                        $usermenu->add(
+                            '<em><i class="fa fa-list-alt"></i>' .' '. get_string('mygrades', 'theme_flexibase') . '</em>',
+                            new moodle_url('/grade/report/overview/index.php',
+                                array('id' => $course->id, 'userid' => $USER->id)),
                                 get_string('mygrades', 'theme_flexibase')
-                            );
-                            $usermenu->add(
-                                '<em><i class="fa fa-list-alt"></i>' .' '. get_string('coursegrades', 'theme_flexibase') . '</em>',
-                                new moodle_url('/grade/report/user/index.php',
-                                        array('id' => $course->id, 'userid' => $USER->id)),
+                        );
+                        $usermenu->add(
+                            '<em><i class="fa fa-list-alt"></i>' .' '. get_string('coursegrades', 'theme_flexibase') . '</em>',
+                            new moodle_url('/grade/report/user/index.php',
+                                array('id' => $course->id, 'userid' => $USER->id)),
                                 get_string('coursegrades', 'theme_flexibase')
-                            );
+                        );
+                    }
+                }
+                if (theme_flexibase_get_setting('umbadges')) {
+                    // Check if badges are enabled.
+                    if (!empty($CFG->enablebadges) && has_capability('moodle/badges:manageownbadges', $context)) {
+                        $usermenu->add(
+                            '<em><i class="fa fa-certificate"></i>' .' '. get_string('badges') . '</em>',
+                            new moodle_url('/badges/mybadges.php'),
+                            get_string('badges')
+                        );
+                    }
+                }
+                if (theme_flexibase_get_setting('umgrades') ||
+                theme_flexibase_get_setting('umbadges')) {
+                    $usermenu->add('<hr class="sep">');
+                }
 
+                if (theme_flexibase_get_setting('usermenus')) {
+                    // User custom menu.
+                    $usermenus = theme_flexibase_get_setting('usermenus');
+                    $rows = explode("\n", $usermenus);
+                    $n = 0;
+                    foreach ($rows as $row) {
+                        $data = explode('|', $row);
+                        $usermenu->add(
+                            '<em><i class="fa fa-'.$data[2].'"></i> '.$data[0].'</em>',
+                            new moodle_url($data[1]), $data[0]
+                        );
+                        $n++;
+                    }
+                    $usermenu->add('<hr class="sep">');
                 }
-            }
-            if (theme_flexibase_get_setting('umbadges')) {
-                // Check if badges are enabled.
-                if (!empty($CFG->enablebadges) && has_capability('moodle/badges:manageownbadges', $context)) {
-                    $usermenu->add(
-                        '<em><i class="fa fa-certificate"></i>' .' '. get_string('badges') . '</em>',
-                        new moodle_url('/badges/mybadges.php'),
-                        get_string('badges')
-                    );
-                }
-            }
-            if (theme_flexibase_get_setting('umgrades') ||
-            theme_flexibase_get_setting('umbadges')) {
-                $usermenu->add('<hr class="sep">');
-            }
-
-            if (theme_flexibase_get_setting('usermenus')) {
-                // User custom menu.
-                $usermenus = theme_flexibase_get_setting('usermenus');
-                $rows = explode("\n", $usermenus);
-                $n = 0;
-                foreach ($rows as $row) {
-                    $data = explode('|', $row);
-                    $usermenu->add(
-                        '<em><i class="fa fa-'.$data[2].'"></i> '.$data[0].'</em>',
-                        new moodle_url($data[1]), $data[0]);
-                    $n++;
-                }
-                $usermenu->add('<hr class="sep">');
-            }
                 // Render direct logout link.
-                    $usermenu->add(
-                        '<em><i class="fa fa-sign-out"></i>' .' '. get_string('logout') . '</em>',
-                        new moodle_url('/login/logout.php?sesskey=' . sesskey()),
-                        get_string('logout')
-                    );
+                $usermenu->add(
+                    '<em><i class="fa fa-sign-out"></i>' .' '. get_string('logout') . '</em>',
+                    new moodle_url('/login/logout.php?sesskey=' . sesskey()),
+                    get_string('logout')
+                );
 
             } else {
                 $usermenu = $menu->add(get_string('login'), new moodle_url('/login/index.php'), get_string('login'), 10001);

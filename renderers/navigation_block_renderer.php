@@ -161,7 +161,7 @@ class theme_flexibase_block_navigation_renderer extends block_navigation_rendere
             return '';
         }
       } else {
-                  // Exit if empty, we don't want an empty ul element.
+        // Exit if empty, we don't want an empty ul element.
         if (count($items) === 0) {
             return '';
         }
