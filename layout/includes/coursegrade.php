@@ -38,23 +38,21 @@ $context = context_course::instance($COURSE->id);
 $report = '';
 
 if ($PAGE->pagelayout == 'course') {
-if (has_capability('moodle/grade:view', $context) and $COURSE->showgrades) {
+    if (has_capability('moodle/grade:view', $context) and $COURSE->showgrades) {
 
-    // First make sure we have proper final grades - this must be done before constructing of the grade tree.
-    grade_regrade_final_grades($courseid);
+        // First make sure we have proper final grades - this must be done before constructing of the grade tree.
+        grade_regrade_final_grades($courseid);
 
-    // Return tracking object.
-    $gpr = new grade_plugin_return(array('type' => 'report', 'plugin' => 'user', 'courseid' => $courseid, 'userid' => $userid));
+        // Return tracking object.
+        $gpr = new grade_plugin_return(array('type' => 'report', 'plugin' => 'user', 'courseid' => $courseid, 'userid' => $userid));
+        $report = new grade_report_user($courseid, $gpr, $context, $userid);
 
-    $report = new grade_report_user($courseid, $gpr, $context, $userid);
-
-    if ($report->fill_table()) {
-        echo '<a href="'.$CFG->wwwroot.'/grade/report/user/index.php?id='.$COURSE->id.'"';
-
+        if ($report->fill_table()) {
+            echo '<a href="'.$CFG->wwwroot.'/grade/report/user/index.php?id='.$COURSE->id.'"';
             echo '<div class="courseheadergradepercentage">';
             echo $report->print_table(true);
             echo '</div>';
-        echo '</a>';
+            echo '</a>';
+        }
     }
-}
 }

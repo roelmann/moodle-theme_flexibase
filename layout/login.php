@@ -52,9 +52,10 @@ require('includes/header.php');
             </div>
         </div>
     </div>
+
     <?php
     require('includes/footer.php');
     ?>
 </div>
-</body>
-</html>
+</body> <!-- Opened in includes/header -->
+</html> <!-- Opened in includes/header -->

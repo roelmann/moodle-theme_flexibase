@@ -30,7 +30,6 @@
 
 $hassidepre = $PAGE->blocks->region_has_content('side-pre', $OUTPUT);
 $hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
-
 $hassidetop = $PAGE->blocks->region_has_content('side-top', $OUTPUT);
 $hassidebottom = $PAGE->blocks->region_has_content('side-bottom', $OUTPUT);
 $hassidemainpre = $PAGE->blocks->region_has_content('side-mainpre', $OUTPUT);
@@ -40,14 +39,13 @@ $hassidemainbottom = $PAGE->blocks->region_has_content('side-mainbottom', $OUTPU
 $hassideadminbottom = $PAGE->blocks->region_has_content('side-adminbottom', $OUTPUT);
 
 if ($PAGE->user_is_editing()) {
-    $hassidepre = $hassidepost = $hassidetop = $hassidebottom = TRUE;
-    $hassidemainpre = $hassidemainpost = $hassidemaintop = $hassidemainbottom = TRUE;
-    $hassideadminbottom = TRUE;
+    $hassidepre = $hassidepost = $hassidetop = $hassidebottom = true;
+    $hassidemainpre = $hassidemainpost = $hassidemaintop = $hassidemainbottom = true;
+    $hassideadminbottom = true;
 }
 
 $knownregionpre = $PAGE->blocks->is_known_region('side-pre');
 $knownregionpost = $PAGE->blocks->is_known_region('side-post');
-
 $knownregiontop = $PAGE->blocks->is_known_region('side-top');
 $knownregionbottom = $PAGE->blocks->is_known_region('side-bottom');
 $knownregionmainpre = $PAGE->blocks->is_known_region('side-mainpre');
@@ -56,10 +54,7 @@ $knownregionmaintop = $PAGE->blocks->is_known_region('side-maintop');
 $knownregionmainbottom = $PAGE->blocks->is_known_region('side-mainbottom');
 $knownregionadminbottom = $PAGE->blocks->is_known_region('side-adminbottom');
 
-
-
 $hasnavbarlogo = (empty($PAGE->theme->settings->minilogo)) ? false : true;
-
 $topbarcolour = (empty($PAGE->theme->settings->topbarcolour)) ? 'default' : $PAGE->theme->settings->topbarcolour;
 $menunavbarcolour = (empty($PAGE->theme->settings->menunavbarcolour)) ? 'default' : $PAGE->theme->settings->menunavbarcolour;
 
@@ -87,42 +82,38 @@ require('awesomebarpreheaderinc.php');
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
-<head>
-    <title><?php echo $OUTPUT->page_title(); ?></title>
-    <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
-    <?php
-    // Add custom web fonts.
-    if (theme_flexibase_get_setting('numberoffonts')) {
-        $numberoffonts = theme_flexibase_get_setting('numberoffonts');
-        for ($i = 1; $i <= $numberoffonts; $i++) {
-            $fontlink = '';
-            $fontlinkdata = $fontlinkhref = array();
-            $fontlink = theme_flexibase_get_setting('font' . $i . 'link');
-            // Break up fontlink and rebuild to ensure security.
-            $fontlinkdata = explode('href=', $fontlink);
-            $explode = '"';
-            if (substr($fontlinkdata[1], 0, 1) === "'") {
-                $explode = "'";
+    <head>
+        <title><?php echo $OUTPUT->page_title(); ?></title>
+        <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
+        <?php
+        // Add custom web fonts.
+        if (theme_flexibase_get_setting('numberoffonts')) {
+            $numberoffonts = theme_flexibase_get_setting('numberoffonts');
+            for ($i = 1; $i <= $numberoffonts; $i++) {
+                $fontlink = '';
+                $fontlinkdata = $fontlinkhref = array();
+                $fontlink = theme_flexibase_get_setting('font' . $i . 'link');
+                // Break up fontlink and rebuild to ensure security.
+                $fontlinkdata = explode('href=', $fontlink);
+                $explode = '"';
+                if (substr($fontlinkdata[1], 0, 1) === "'") {
+                    $explode = "'";
+                }
+                $fontlinkhref = explode($explode, $fontlinkdata[1]);
+                $linkline = '<link href="'.$fontlinkhref[1].'" rel="stylesheet" type="text/css">';
+                echo $linkline;
             }
-            $fontlinkhref = explode($explode, $fontlinkdata[1]);
-            $linkline = '<link href="'.$fontlinkhref[1].'" rel="stylesheet" type="text/css">';
-            echo $linkline;
         }
-    }
-    ?>
-    <!-- Add FontAwesome CDN. -->
-    <!-- Note: FA CSS and fonts are left in place, but commented out for now as development
-    work is sometimes carried out offline and FA can be restored by uncommenting the line in
-    config.php. TODO - remove FA CSS and font folder, or update correctly before final release -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        ?>
+        <!-- Add FontAwesome CDN. -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     
-    <?php echo $OUTPUT->standard_head_html(); ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
-    <script>Modernizr.addTest('flexbox', Modernizr.testAllProps('flex'));</script>
-    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+        <?php echo $OUTPUT->standard_head_html(); ?>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+        <script>Modernizr.addTest('flexbox', Modernizr.testAllProps('flex'));</script>
+        <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
-</head>
+    </head>
 
-<body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
-
-<?php echo $OUTPUT->standard_top_of_body_html();
+    <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
+    <?php echo $OUTPUT->standard_top_of_body_html();

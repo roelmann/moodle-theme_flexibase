@@ -28,8 +28,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later */
 
 global $PAGE, $USER;
-    $pageid = $PAGE->bodyid;
-    $showlogo = (empty($PAGE->theme->settings->showlogo)) ? 'everywhere' : $PAGE->theme->settings->showlogo;
+$pageid = $PAGE->bodyid;
+$showlogo = (empty($PAGE->theme->settings->showlogo)) ? 'everywhere' : $PAGE->theme->settings->showlogo;
 
 require('awesomebarinc.php');
 require('courseimage.php');?>
@@ -37,6 +37,7 @@ require('courseimage.php');?>
 <nav role="navigation" class='navbar navbar-<?php echo $topbarcolour; ?> navbarbranding'>
     <div class="container-fluid">
         <div class="navbar-header">
+
             <?php
             if ($hasnavbarlogo) {
             ?>
@@ -54,7 +55,6 @@ require('courseimage.php');?>
             if (theme_flexibase_get_setting('mainmenulocation') === 'branding') {
                 echo $OUTPUT->custom_menu();
             }
-
             ?>
 
         </div>
@@ -70,27 +70,28 @@ if (isloggedin() ) {
 <?php
 }
 ?>
+
 <header class="moodleheader">
-  <div class="headerimage <?php echo $moodleheaderclass;?>"  style="background-image: url('<?php echo $headerimage;?>')">
-    <div class="container-fluid">
-        <div class="headerlogo col-md-8 pull-left">
-            <?php
-            if ($pageid !== 'page-site-index' && $showlogo == 'frontpage') {
-            ?>
-                <a href="<?php echo $CFG->wwwroot ?>" class="nologo"></a>
-            <?php
-            } else {
-            ?>
-                <a href="<?php echo $CFG->wwwroot ?>" class="logo"></a>
-            <?php
-            }
-            ?>
-            <?php echo $OUTPUT->page_heading(); ?>
+    <div class="headerimage <?php echo $moodleheaderclass;?>"  style="background-image: url('<?php echo $headerimage;?>')">
+        <div class="container-fluid">
+            <div class="headerlogo col-md-8 pull-left">
+                <?php
+                if ($pageid !== 'page-site-index' && $showlogo == 'frontpage') {
+                ?>
+                    <a href="<?php echo $CFG->wwwroot ?>" class="nologo"></a>
+                <?php
+                } else {
+                ?>
+                    <a href="<?php echo $CFG->wwwroot ?>" class="logo"></a>
+                <?php
+                }
+                ?>
+                <?php echo $OUTPUT->page_heading(); ?>
+            </div>
+            <?php require('social.php');?>
+            <?php require('coursegrade.php');?>
         </div>
-        <?php require('social.php');?>
-        <?php require('coursegrade.php');?>
     </div>
-  </div>
 </header>
 
 <nav role="navigation" class="navbar navbar-<?php echo $menunavbarcolour ?>">
@@ -119,23 +120,22 @@ if (isloggedin() ) {
 
 <!-- Browser flexbox warnings -->
 <div class="browserwarningnoflex useralerts alert alert-danger">
-    <span class="fa fa-stack"><i class="fa fa-square fa-stack-2x"></i>
-    <i class="fa fa-warning fa-stack-1x fa-inverse"></i></span>
-    <?php
-    $warning = get_string('noflexbox', 'theme_flexibase');
-    echo $warning;
-    ?>
+    <span class="fa fa-stack">
+        <i class="fa fa-square fa-stack-2x"></i>
+        <i class="fa fa-warning fa-stack-1x fa-inverse"></i>
+    </span>
+    <?php echo get_string('noflexbox', 'theme_flexibase');?>
 </div>
 <div class="browserwarningflexleg useralerts alert alert-danger">
-    <span class="fa fa-stack"><i class="fa fa-square fa-stack-2x"></i>
-    <i class="fa fa-warning fa-stack-1x fa-inverse"></i></span>
-    <?php
-    $warning = get_string('legacyflexbox', 'theme_flexibase');
-    echo $warning;
-    ?>
+    <span class="fa fa-stack">
+        <i class="fa fa-square fa-stack-2x"></i>
+        <i class="fa fa-warning fa-stack-1x fa-inverse"></i>
+    </span>
+    <?php echo get_string('legacyflexbox', 'theme_flexibase');?>
 </div>
 
 <div class="courseheaderimage">
-  <div class="courseimage <?php echo $courseheaderclass;?>" 
-      style="background-image: url('<?php echo $courseimage;?>')">&nbsp;</div>
+    <div class="courseimage <?php echo $courseheaderclass;?>" 
+        style="background-image: url('<?php echo $courseimage;?>')">&nbsp;
+    </div>
 </div>

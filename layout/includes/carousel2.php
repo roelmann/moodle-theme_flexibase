@@ -44,7 +44,7 @@ if ($numslides) {
 ?>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-        <?php
+            <?php
             for ($carouselindicators = 1; $carouselindicators <= $numslides; $carouselindicators++) {
                 echo '<li data-target="#flexibaseCarousel" data-slide-to="'.$carouselindicators.'"';
                 if ($carouselindicators == 0) {
@@ -52,10 +52,10 @@ if ($numslides) {
                 }
                 echo '></li>';
             }
-        ?>
+            ?>
         </ol>
         <div class="carousel-inner" role="listbox">
-        <?php
+            <?php
             for ($carouselslide = 1; $carouselslide <= $numslides; $carouselslide++) {
                 $slideurl = theme_flexibase_get_setting('slide' . $carouselslide . 'url');
                 $slideurltarget = theme_flexibase_get_setting('slide' . $carouselslide . 'target');
@@ -70,7 +70,7 @@ if ($numslides) {
                 if ($carouselslide === 1 ) {
                     $active = "active";
                 }
-        ?>
+                ?>
                 <div class="item <?php echo $active;?>">
                     <img src="<?php echo $slideimage; ?>" alt="<?php echo $slidetitle; ?>"/>
                     <div class="container">

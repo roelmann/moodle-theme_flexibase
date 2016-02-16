@@ -61,6 +61,7 @@ if ($hasmarketing4) {
     $marketing4content = $PAGE->theme->settings->marketing4content;
     $mktingcount += 1;
 }
+
 $evenflexmkting = '';
 if (!empty($PAGE->theme->settings->flexmarketing)) {
     if ($PAGE->theme->settings->flexmarketing == 2) {
@@ -70,16 +71,8 @@ if (!empty($PAGE->theme->settings->flexmarketing)) {
 ?>
 
 <div id="page-marketing" class="">
-    <?php
-/* Section hidden as not used in flexibase but left in for porting to other themes.
- *  <h2 class="marketingheader panel-title header">
- *    <i class="fa fa-<?php echo $PAGE->theme->settings->marketingtitleicon ?>"></i>
- *    <?php echo $PAGE->theme->settings->marketingtitle ?>
- *  </h2>
- */
-    ?>
-
     <div class="marketing-wrapper <?php echo $evenflexmkting; ?>">
+
         <!-- Start Spot One -->
         <?php
         if ($hasmarketing1) {

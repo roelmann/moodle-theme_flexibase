@@ -41,22 +41,18 @@ require('includes/header.php');
 ?>
 
 <div id="page" class="container-fluid">
-    <?php require('includes/alerts.php');?>
-
-    <?php require('includes/breadcrumb.php'); ?>
-
-    <div id="page-content" class="flexcontainer">
     <?php
+    require('includes/alerts.php');
+    require('includes/breadcrumb.php');
     require('includes/mainbody.php');
-
     require('includes/footer.php');
     ?>
     <!-- Initialize slideshow -->
-<script type="text/javascript">
-    jQuery(document).ready(function () {
-    $('.carousel').carousel();
-    });
-</script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            $('.carousel').carousel();
+        });
+    </script>
 </div>
 </body>
 </html>

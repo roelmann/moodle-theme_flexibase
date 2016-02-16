@@ -38,26 +38,14 @@ if (!empty($PAGE->theme->settings->showawesomebar) && $PAGE->theme->settings->sh
             // Don't show awesomebar if site is being upgraded or when forcibly changing password.
             if ($this->page->pagelayout != 'maintenance' && !(get_user_preferences('auth_forcepasswordchange')
             && !session_is_loggedinas())) {
-                echo $flexibase->awesome_nav;
-/*              Awesomebar setting not used in flexibase but left in for porting to other themes.
- *              if ($hascustommenu && !empty($flexibase->custommenuinawesomebar)
- *                      && empty($flexibase->custommenuafterawesomebar)) {
- *                  echo $custommenu;
- *              }
- */
 
+                echo $flexibase->awesome_nav;
                 if (theme_flexibase_get_setting('mainmenulocation') === 'awesome') {
                     echo $OUTPUT->custom_menu();
                 }
-
                 echo $flexibase->awesome_settings;
-/*              Awesomebar setting not used in flexibase but left in for porting to other themes.
- *              if ($hascustommenu && !empty($flexibase->custommenuinawesomebar)
- *                      && !empty($flexibase->custommenuafterawesomebar)) {
- *                  echo $custommenu;
- *              }
- */
                 echo $flexibase->topsettings->settings_search_box();
+
             }
             ?>
         </div>

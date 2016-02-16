@@ -40,14 +40,11 @@ require('includes/header.php');
 ?>
 
 <div id="page" class="container-fluid">
-    <?php require('includes/breadcrumb.php'); ?>
-
-    <div id="page-content" class="flexcontainer">
     <?php
+    require('includes/breadcrumb.php');
     require('includes/mainbody.php');
-
     require('includes/footer.php');
     ?>
 </div>
-</body>
-</html>
+</body> <!-- Opened in includes/header -->
+</html> <!-- Opened in includes/header -->

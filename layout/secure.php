@@ -42,7 +42,6 @@ require('includes/header.php');
 
 <div id="page" class="container-fluid">
     <?php require('includes/alerts.php'); ?>
-
     <?php require('includes/breadcrumb.php'); ?>
 
     <div id="page-header" class="clearfix">
@@ -52,16 +51,15 @@ require('includes/header.php');
 
         <!-- Start Marketing Spots -->
         <?php
-            if ($hasmarketing == 1) {
-                require_once(dirname(__FILE__).'/includes/marketing.php');
-            } else if ($hasmarketing == 2 && !isloggedin()) {
-                require_once(dirname(__FILE__).'/includes/marketing.php');
-            } else if ($hasmarketing == 3 && isloggedin()) {
-                require_once(dirname(__FILE__).'/includes/marketing.php');
-            }
+        if ($hasmarketing == 1) {
+            require_once(dirname(__FILE__).'/includes/marketing.php');
+        } else if ($hasmarketing == 2 && !isloggedin()) {
+            require_once(dirname(__FILE__).'/includes/marketing.php');
+        } else if ($hasmarketing == 3 && isloggedin()) {
+            require_once(dirname(__FILE__).'/includes/marketing.php');
+        }
         ?>
         <!-- End Marketing Spots -->
-
 
         <div id="course-header">
             <?php echo $OUTPUT->course_header(); ?>
@@ -75,18 +73,16 @@ require('includes/header.php');
         </div>
     </div>
 
-    <div id="page-content" class="flexcontainer">
     <?php
     require('includes/mainbody.php');
-
     require('includes/footer.php');
     ?>
     <!-- Initialize slideshow -->
-<script type="text/javascript">
-    jQuery(document).ready(function () {
-    $('.carousel').carousel();
-    });
-</script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            $('.carousel').carousel();
+        });
+    </script>
 </div>
-</body>
-</html>
+</body> <!-- Opened in includes/header -->
+</html> <!-- Opened in includes/header -->

@@ -30,26 +30,25 @@
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
-<head>
-    <title><?php echo $OUTPUT->page_title(); ?></title>
-    <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
-    <?php echo $OUTPUT->standard_head_html() ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
-</head>
+    <head>
+        <title><?php echo $OUTPUT->page_title(); ?></title>
+        <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
+        <?php echo $OUTPUT->standard_head_html() ?>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+    </head>
 
-<body <?php echo $OUTPUT->body_attributes(); ?>>
+    <body <?php echo $OUTPUT->body_attributes(); ?>>
 
-<div id="page-content" class="row-fluid">
-    <section id="region-main" class="col-md-12">
-    <?php
-    echo $OUTPUT->standard_top_of_body_html();
-    echo $OUTPUT->main_content();
-    echo $OUTPUT->standard_footer_html();
-    echo $OUTPUT->standard_end_of_body_html();
-    ?>
-    </section>
-</div>
+        <div id="page-content" class="row-fluid">
+            <section id="region-main" class="col-md-12">
+                <?php
+                echo $OUTPUT->standard_top_of_body_html();
+                echo $OUTPUT->main_content();
+                echo $OUTPUT->standard_footer_html();
+                echo $OUTPUT->standard_end_of_body_html();
+                ?>
+            </section>
+        </div>
 
-</div>
-</body>
+    </body>
 </html>

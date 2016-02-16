@@ -79,18 +79,16 @@ require('includes/header.php');
         </div>
     </div>
 
-    <div id="page-content" class="flexcontainer">
     <?php
     require('includes/mainbody.php');
-
     require('includes/footer.php');
     ?>
     <!-- Initialize slideshow -->
-<script type="text/javascript">
-    jQuery(document).ready(function () {
-    $('.carousel').carousel();
-    });
-</script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            $('.carousel').carousel();
+        });
+    </script>
 </div>
-</body>
-</html>
+</body> <!-- Opened in includes/header -->
+</html> <!-- Opened in includes/header -->

@@ -43,7 +43,9 @@
     <?php
     }
     ?>
-    <div id="course-footer"><?php echo $OUTPUT->course_footer(); ?></div>
+    <div id="course-footer">
+        <?php echo $OUTPUT->course_footer(); ?>
+    </div>
     <p class="helplink"><?php echo $OUTPUT->page_doc_link(); ?></p>
     <?php
     echo $OUTPUT->login_info();
