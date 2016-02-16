@@ -195,4 +195,4 @@ $temp->add(new admin_setting_heading('theme_flexibase_marketing', get_string('ma
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-$ADMIN->add('theme_flexibase', $temp);
+    $ADMIN->add('theme_flexibase', $temp);

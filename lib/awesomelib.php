@@ -417,11 +417,6 @@ class theme_flexibase_expand_navigation extends global_navigation {
         $coursecontext = context_course::instance($course->id);
 
         if ($course->id != $SITE->id && !$course->visible) {
-/*          Remove empty IF statement from upstream awesomebar code - left in for reference.
- *          if (is_role_switched($course->id)) {
- *              // User has to be able to access course in order to switch, let's skip the visibility test here.
- *          } else if (!has_capability('moodle/course:viewhiddencourses', $coursecontext)) {
- */
             if (!has_capability('moodle/course:viewhiddencourses', $coursecontext)) {
                 return false;
             }
@@ -487,8 +482,10 @@ class theme_flexibase_block_manager extends block_manager {
         $manager->check_is_loaded();
         $manager->ensure_instances_exist($region);
 
-        $skipsettings = $manager->page->theme->settings->hidesettingsblock || !empty($USER->profile['flexibaseSkipSettingsBlock']);
-        $skipnavigation = $manager->page->theme->settings->hidenavigationblock || !empty($USER->profile['flexibaseSkipNavigationBlock']);
+        $skipsettings = $manager->page->theme->settings->hidesettingsblock
+        || !empty($USER->profile['flexibaseSkipSettingsBlock']);
+        $skipnavigation = $manager->page->theme->settings->hidenavigationblock
+        || !empty($USER->profile['flexibaseSkipNavigationBlock']);
 
         if (!array_key_exists($region, $manager->visibleblockcontent)) {
             $blockinstances = array();

@@ -31,15 +31,15 @@
  * Therefore it is not recreated as language strings as it is intended to mirror,
  * as closely as possible, the original bootstrap page.
  */
- ?>
+?>
     <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
+    <div class="jumbotron">
         <h1>Theme example</h1>
         <p>This is a template showcasing the optional theme stylesheet included in Bootstrap
         [But applied within the flexibase theme, so showing you how these elements look in flexibase].
         Use it as a starting point to make use of Bootstrap snippets in your own code.</p>
-      </div>
-      <pre>&lt;div class="jumbotron"&gt;
+    </div>
+    <pre>&lt;div class="jumbotron"&gt;
     &lt;h1&gt;Theme example&lt;/h1&gt;
     &lt;p&gt;This is a template showcasing the optional theme stylesheet included in Bootstrap.
     Use it as a starting point to create something more unique by building on or modifying it.&lt;/p&gt;

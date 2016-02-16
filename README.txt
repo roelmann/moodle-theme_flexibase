@@ -70,7 +70,7 @@ create the theme. The less file in particular is useful as a starting point if
 editing the customLESS setting as it allows you to copy and paste the existing
 LESS which can then be edited, without necesarily searching for it in the
 parent theme or bootswatch. This folder also contains a demo course backup. This
-can be restored to any Moodle3+ site and will give an example of some of the 
+can be restored to any Moodle3+ site and will give an example of some of the
 layout options as well as some documentation about the theme and its settings
 pages.
 
@@ -104,15 +104,15 @@ CHANGELOG:
 3.0.6   - Bug fixes to awesomebar (hiding nav & settings, correctly applying yui)
           Adding a site header background setting
           Various minor styling and minor bug fixes
-3.0 	- (There is no 2.x release - major version numbering updated to match Moodle)
-	- Course page header images
-	- Course grade display on course header
-	- 'theme feature plugins' development feature added (including example 'cleanplugged' theme suing those features)
-	- example course backup added to readmes folder to demonstrate some features and provide documentation for theme
-	- Various minor style developments
-	- horizontal 'quick links' added to settings pages
-	- No major changes to flex layout or bootstrap upstream code
+3.0     - (There is no 2.x release - major version numbering updated to match Moodle)
+    - Course page header images
+    - Course grade display on course header
+    - 'theme feature plugins' development feature added (including example 'cleanplugged' theme suing those features)
+    - example course backup added to readmes folder to demonstrate some features and provide documentation for theme
+    - Various minor style developments
+    - horizontal 'quick links' added to settings pages
+    - No major changes to flex layout or bootstrap upstream code
 
-1.1 	- Update for 2.9 - Update parent requirement for changes to Bootstrap parent
+1.1     - Update for 2.9 - Update parent requirement for changes to Bootstrap parent
 
-1.0 	- Initial Release
+1.0     - Initial Release
