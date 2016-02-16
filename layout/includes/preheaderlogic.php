@@ -39,6 +39,12 @@ $hassidemaintop = $PAGE->blocks->region_has_content('side-maintop', $OUTPUT);
 $hassidemainbottom = $PAGE->blocks->region_has_content('side-mainbottom', $OUTPUT);
 $hassideadminbottom = $PAGE->blocks->region_has_content('side-adminbottom', $OUTPUT);
 
+if ($PAGE->user_is_editing()) {
+    $hassidepre = $hassidepost = $hassidetop = $hassidebottom = TRUE;
+    $hassidemainpre = $hassidemainpost = $hassidemaintop = $hassidemainbottom = TRUE;
+    $hassideadminbottom = TRUE;
+}
+
 $knownregionpre = $PAGE->blocks->is_known_region('side-pre');
 $knownregionpost = $PAGE->blocks->is_known_region('side-post');
 
@@ -49,6 +55,7 @@ $knownregionmainpost = $PAGE->blocks->is_known_region('side-mainpost');
 $knownregionmaintop = $PAGE->blocks->is_known_region('side-maintop');
 $knownregionmainbottom = $PAGE->blocks->is_known_region('side-mainbottom');
 $knownregionadminbottom = $PAGE->blocks->is_known_region('side-adminbottom');
+
 
 
 $hasnavbarlogo = (empty($PAGE->theme->settings->minilogo)) ? false : true;
