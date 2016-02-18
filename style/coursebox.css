@@ -1,6 +1,6 @@
 /* This file is part of Moodle - http://moodle.org/
  *
- * Moodle is free software: you can redistribute it and/or modify
+ * Moodle is free software:you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -29,179 +29,167 @@
  */
 
 .coursebox > .info > .coursename a {
-    font-weight: normal;
-    font-size: 80%;
+    font-weight:normal;
+    font-size:80%;
 }
 
-.coursebox > .info > h3.name, .course_category_tree .category > .info .name {
-    font-size: 120%;
-    font-weight: normal;
-    margin: 0;
+.coursebox > .info > h3.name,
+.course_category_tree .category > .info .name {
+    font-size:120%;
+    font-weight:normal;
+    margin:0;
 }
 
 .coursebox .content {
-    clear: none;
+    clear:none;
 }
 
 .coursebox {
-    padding: 0 0;
+    padding:0 0;
     margin:10px;
 }
 
 .panel-body .courseimage img {
-    float: right;
-    margin-bottom: 10px;
-    max-width: 60px;
-    margin-left: 5px;
+    float:right;
+    margin-bottom:10px;
+    max-width:60px;
+    margin-left:5px;
 }
 
 .coursebox.panel.hover .panel-heading {
-    display: none;
+    display:none;
 }
 
 .cimbox {
-    height: 175px;
-    position: relative;
-    margin-right: -1px;
-    -webkit-transition: all .5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
-    -o-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
+    height:175px;
+    position:relative;
+    margin-right:-1px;
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+    transition:all .5s ease-in-out;
 }
 
 .coursebox-content {
-    padding: 5px 15px 10px;
-    text-align: center;
+    padding:5px 15px 10px;
+    text-align:center;
 }
 
 .coursebox.hover .summary {
-    min-height: 50px;
-    overflow: auto;
-    position: absolute;
-    text-align: center;
-    color: [[setting:rendereroverlayfontcolour]] !important;
-    padding: 15px;
-    top: 0;
-    left: 0;
-    display: none;
+    min-height:50px;
+    overflow:auto;
+    position:absolute;
+    text-align:center;
+    color:[[setting:rendereroverlayfontcolour]] !important;
+    padding:15px;
+    top:0;
+    left:0;
+    display:none;
 }
 
 .coursebox.panel.hover .panel-body:hover .coursebox-content h3 a {
-    color: [[setting:rendereroverlayfontcolour]] !important;
+    color:[[setting:rendereroverlayfontcolour]] !important;
 }
 
-.coursebox.hover .teachers li a, .coursebox.hover .summary > a:link, .coursebox.hover .summary > a:visited {
-    color: [[setting:rendereroverlayfontcolour]] !important;
+.coursebox.hover .teachers li a,
+.coursebox.hover .summary > a:link,
+.coursebox.hover .summary > a:visited {
+    color:[[setting:rendereroverlayfontcolour]] !important;
 }
 
 .coursebox.hover .teachers {
-    text-align: left;
-    padding-top: 2px;
+    text-align:left;
+    padding-top:2px;
 }
 
 .coursebox.hover:hover .summary {
-    height: auto;
-    width: auto;
-    min-width: 90%;
-    min-height: 50px;
-    display: block;
+    height:auto;
+    width:auto;
+    min-width:90%;
+    min-height:50px;
+    display:block;
 }
 
 .coursebox.panel.hover .panel-body:hover {
-    background: [[setting:rendereroverlaycolour]] !important;
-    -webkit-transition: all .5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
-    -o-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
+    background:[[setting:rendereroverlaycolour]] !important;
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+    transition:all .5s ease-in-out;
 }
 
 .coursebox.panel .panel-body:hover .cimbox {
-    opacity: .3;
-    -webkit-transition: all .5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
-    -o-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
+    opacity:.3;
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+    transition:all .5s ease-in-out;
 }
+
 .coursebtn.submit.btn {
-    float: none;
-    display: block;
-    width: 100%;
-    margin: 0 auto 15px;
-    padding-left: 0;
-    padding-right: 0;
-    border: 1px solid #eee;
-    box-shadow: none;
-    color: inherit;
-    font-weight: 300;
-    position: inherit;
+    width:100%;
+    position:inherit;
 }
 
 .coursebox.panel.hover {
-    height: 100%;
+    height:100%;
 }
 
 .coursebox.panel.hover .panel-body .coursebox-content h3 {
-    font-weight: normal;
-    font-size: 20px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 100%;
-    line-height: normal;
+    font-weight:normal;
+    font-size:20px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    max-width:100%;
+    line-height:normal;
 }
 
 .coursebox.hover .boxfooter {
-    clear: none;
-    margin-bottom: 0;
+    clear:none;
+    margin-bottom:0;
 }
 
 .coursebox .content .courseimage img {
-    max-width: 300px;
+    max-width:300px;
 }
 
 .coursebox.panel {
-    position: relative;
-    height: 275px;
-    margin-bottom: 20px;
+    position:relative;
+    height:275px;
+    margin-bottom:20px;
 }
 #frontpage-course-list .coursebox .summary {
 	height:130px;
 }
 .coursebox .boxfooter {
-    clear: both;
-    margin-bottom: 30px;
-}
-
-.coursebox .coursebtn {
-   bottom: 10px;
-    position: absolute;
-    right: 28%;
-    width: 30%;
+    clear:both;
+    margin-bottom:30px;
 }
 
 .coursebox.panel ul.teachers li {
-    display: none;
+    display:none;
 }
 
 .coursebox.panel ul.teachers li:first-child {
-    display: block;
+    display:block;
 }
 
 #changenumsections .smallicon {
-    width: 24px;
+    width:24px;
 }
 
 #id_category, #id_parent {
-    width: 100%;
-    max-width: 100%;
+    width:100%;
+    max-width:100%;
 }
 
 .coursebox .panel-heading {
-    padding: 12px 10px 10px;
+    padding:12px 10px 10px;
 }
 
 .coursebox .panel-heading a {
-    font-size: 105%;
+    font-size:105%;
     color:#fff;
 }
 
@@ -213,8 +201,8 @@
 #frontpage-category-names:before,
 #frontpage-category-combo:before,
 #site-news-forum:before {
-      content: " ";
-    display: table;
+    content:" ";
+    display:table;
     clear:both;
 }
 
@@ -223,6 +211,7 @@
 .categoryicons .frontpage-category-names .collapsible-actions {
     display:none;
 }
+
 .categoryicons .frontpage-category-names.course_category_tree .category.with_children>.info>.categoryname,
 .categoryicons .frontpage-category-names.course_category_tree .category>.info>.categoryname {
     line-height:15px;
@@ -323,6 +312,7 @@
     float:right;
     width:65%;
 }
-.course_category_tree .coursebox, .block_course_overview .coursebox {
+.course_category_tree .coursebox,
+.block_course_overview .coursebox {
     border-bottom:2px solid #ccc;
 }

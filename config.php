@@ -34,8 +34,8 @@ $THEME->parents_exclude_sheets = array('bootstrap' => array('moodle', 'moodle-rt
 
 $THEME->sheets = array(
 // If the less files are removed below during development then the readmes/base.txt file can be added here.
-/*  'font-awesome', // Default FA css unaltered from upstream.  */
-    'flexlayout',   // Flexibox layout rules.
+    'flexlayoutlegacy', // Flexbox legacy rules - separated to simplify main flexbox layout code
+    'flexlayout',   // Flexbox layout rules.
     'awesomebar',   // Awesomebar css.
     'alerts',       // Alerts theme styles.
     'carousel',     // Carousel theme styles - no core styles as core carousel css is already included in bootstrap.

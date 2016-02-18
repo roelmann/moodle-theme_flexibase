@@ -29,264 +29,111 @@
  */
 
 /* Flexbox Layout CSS
- * TODO - Decide whether to separate vanilla code and fallbacks or keep
- * together
- * Keep together - probably easier future maintenance
- * Separate - proper visibilty of how straightforward FlexBox is on
- * modern browsers
+ * This file holds the standard layout css for flexbox and associated layout code.
+ * Any changes made to the flexbox rules here must be reflected in flexboxlegacy.css
  */
+
+/* Main flexcontainer rules */
 #page-content.flexcontainer {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
-    -webkit-box-direction: normal;
-    -moz-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    -moz-box-orient: horizontal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
-    -webkit-box-pack: start;
-    -moz-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
     justify-content: flex-start;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
     align-content: stretch;
-    -webkit-box-align: stretch;
-    -moz-box-align: stretch;
-    -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
     align-items: stretch;
+
     width:100%;
     padding:0 5px;
-    }
+}
+
 /* Default layout for pre&post - no additional class added to css as
  * this is the fallback option.
  * Order 3(main),1(pre),5(post) is used so that minimal changes are
  * needed for alternative layouts.
  * ----------------------------------------------------------------- */
 #region-main.flexcontentmain {
-    -webkit-box-ordinal-group: 4;
-    -moz-box-ordinal-group: 4;
-    -webkit-order: 3;
-    -ms-flex-order: 3;
     order: 3;
-    -webkit-box-flex: 4;
-    -moz-box-flex: 4;
-    -webkit-flex: 4 1 60%;
-    -ms-flex: 4 1 60%;
     flex: 4 1 60%;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
     align-self: stretch;
-    min-width:50%;
-    }
 
+    min-width:50%;
+}
 #block-region-side-pre.flexcontentpre {
-    -webkit-box-ordinal-group: 2;
-    -moz-box-ordinal-group: 2;
-    -webkit-order: 1;
-    -ms-flex-order: 1;
     order: 1;
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    -webkit-flex: 1 1 15%;
-    -ms-flex: 1 1 15%;
     flex: 1 1 15%;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
     align-self: stretch;
+
     margin-right:10px;
     max-width:25%;
     min-width:165px;
     padding:0;
-    }
+}
 #block-region-side-post.flexcontentpost {
-    -webkit-box-ordinal-group: 6;
-    -moz-box-ordinal-group: 6;
-    -webkit-order: 5;
-    -ms-flex-order: 5;
     order: 5;
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    -webkit-flex: 1 1 15%;
-    -ms-flex: 1 1 15%;
     flex: 1 1 15%;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
     align-self: stretch;
+
     margin-left:10px;
     max-width:25%;
     min-width:165px;
     padding:0;
-    }
+}
+
 /* Layoutoption2 - 2 post
  * Order 3(main),4(pre),5(post)
  * ---------------------------- */
 #region-main.flexcontentmain.twopost {
 /* Nothing to change */
-    }
-
+}
 #block-region-side-pre.flexcontentpre.twopost {
-    -webkit-box-ordinal-group: 5;
-    -moz-box-ordinal-group: 5;
-    -webkit-order: 4;
-    -ms-flex-order: 4;
     order: 4;
+
     margin-right:0;
     margin-left:10px;
-    }
-
+}
 #block-region-side-post.flexcontentpost.twopost {
 /* Nothing to change */
-    }
+}
+
 /* Layoutoption3 - 2 pre
  * Order 3(main),1(pre),2(post)
  * ---------------------------- */
 #region-main.flexcontentmain.twopre {
 /* Nothing to change */
-    }
-
+}
 #block-region-side-post.flexcontentpost.twopre {
-    -webkit-box-ordinal-group: 3;
-    -moz-box-ordinal-group: 3;
-    -webkit-order: 2;
-    -ms-flex-order: 2;
     order: 2;
+
     margin-left:0;
     margin-right:10px;
-    }
+}
+
 /* Layoutoption4 - singlepre
  * Additional wrap put in to put all sidebar content in single column
  * ------------------------------------------------------------------ */
 .flexcontentpre.singlepre {
-    -webkit-box-ordinal-group: 2;
-    -moz-box-ordinal-group: 2;
-    -webkit-order: 1;
-    -ms-flex-order: 1;
     order: 1;
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    -webkit-flex: 1 1 15%;
-    -ms-flex: 1 1 15%;
     flex: 1 1 15%;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
     align-self: stretch;
+
     margin-right:10px;
     max-width:25%;
     min-width:210px;
     padding:0;
 }
-.has_dock.empty-region-side-pre.empty-region-side-post .flexcontentpre {
-    display: none;
-}
+
 /* Layoutoption5 - singlepost
  * Additional wrap put in to put all sidebar content in single column
  * ------------------------------------------------------------------ */
 .flexcontentpost.singlepost {
-    -webkit-box-ordinal-group: 6;
-    -moz-box-ordinal-group: 6;
-    -webkit-order: 5;
-    -ms-flex-order: 5;
     order: 5;
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    -webkit-flex: 1 1 15%;
-    -ms-flex: 1 1 15%;
     flex: 1 1 15%;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
     align-self: stretch;
+
     margin-left:10px;
     max-width:25%;
     min-width:210px;
     padding:0;
-}
-.has_dock.empty-region-side-pre.empty-region-side-post .flexcontentpost {
-    display: none;
-}
-
-/* RTL positioning of blocks is handled automatically. Just requires
- * margins swapping around.
- * ----------------------------------------------------------------- */
-.dir-rtl #block-region-side-pre.flexcontentpre {
-    margin-right:0;
-    margin-left:10px;
-    }
-.dir-rtl #block-region-side-post.flexcontentpost {
-    margin-left:0;
-    margin-right:10px;
-    }
-/* Layoutoption2 - 2 post
- * Order 3(main),4(pre),5(post)
- * ---------------------------- */
-.dir-rtl #block-region-side-pre.flexcontentpre.twopost {
-    margin-right:10px;
-    margin-left:0;
-    }
-/* Layoutoption3 - 2 pre
- * Order 3(main),1(pre),2(post)
- * ---------------------------- */
-.dir-rtl #block-region-side-post.flexcontentpost.twopre {
-    margin-left:10px;
-    margin-right:0;
-    }
-/* Layoutoption4 - singlepre
- * Additional wrap put in to put all sidebar content in single column
- * ------------------------------------------------------------------ */
-.dir-rtl .flexcontentpre.singlepre {
-    margin-right:0;
-    margin-left:10px;
-}
-/* Layoutoption5 - singlepost
- * Additional wrap put in to put all sidebar content in single column
- * ------------------------------------------------------------------ */
-.dir-r
-.dir-rtl .flexcontentpost.singlepost {
-    margin-left:0;
-    margin-right:10px;
-}
-
-/* Replace essential parts of the base css that has been removed to allow
- * flexbox styling.
- * TO-DO - Ideally need to find where this comes from in the less so it
- * can be excluded at source, otherwise there are problems using LESS on
- * the fly.
- * ---------------------------------------------------------------------- */
-.dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-post {
-    min-height: 100px;
-}
-.dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
-    min-height: 100px;
-}
-.dir-rtl.editing.used-region-side-post.used-region-side-pre #region-main {
-    min-height: 1px;
-}
-.dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
-    min-height: 100px;
-}
-.dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-post {
-    min-height: 100px;
-}
-.has_dock.empty-region-side-pre #region-main, .has_dock.empty-region-side-post #region-main {
-    min-height: 1px;
-}
-.has_dock.empty-region-side-pre.used-region-side-post #region-main, .has_dock.empty-region-side-post.used-region-side-pre #region-main {
-    min-height: 1px;
-}
-.has_dock.empty-region-side-pre #block-region-side-pre {
-    display: none;
-}
-.has_dock.empty-region-side-post #block-region-side-post {
-    display: none;
 }
 
 /* Flexlayout for additional regions
@@ -296,202 +143,81 @@
 #block-region-side-adminbottom.flexcontainer,
 #block-region-side-maintop.flexcontainer,
 #block-region-side-mainbottom.flexcontainer {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
-    -webkit-box-direction: normal;
-    -moz-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    -moz-box-orient: horizontal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
-    -webkit-box-pack: start;
-    -moz-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
     justify-content: flex-start;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
     align-content: stretch;
-    -webkit-box-align: stretch;
-    -moz-box-align: stretch;
-    -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
     align-items: stretch;
+
     width:100%;
-    }
+}
 .maincontentwrap.flexcontainer {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
-    -webkit-box-direction: normal;
-    -moz-box-direction: normal;
-    -webkit-box-orient: vertical;
-    -moz-box-orient: vertical;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
-    -webkit-box-pack: start;
-    -moz-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
     justify-content: flex-start;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
     align-content: stretch;
-    -webkit-box-align: stretch;
-    -moz-box-align: stretch;
-    -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
     align-items: stretch;
+
     width:100%;
-    }
+}
 .maincontentinnerwrap.flexcontainer {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
-    -webkit-box-direction: normal;
-    -moz-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    -moz-box-orient: horizontal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
-    -webkit-box-pack: start;
-    -moz-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
     justify-content: flex-start;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
     align-content: stretch;
-    -webkit-box-align: stretch;
-    -moz-box-align: stretch;
-    -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
     align-items: stretch;
-    }
+}
 #block-region-side-top .block,
 #block-region-side-bottom .block,
 #block-region-side-adminbottom .block,
 #block-region-side-maintop .block,
 .maincontentinnerwrap,
 #block-region-side-mainbottom .block {
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    -webkit-flex: 1 1 33%;
-    -ms-flex: 1 1 33%;
     flex: 1 1 33%;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
     align-self: stretch;
+
     margin:5px 5px;
-    }
+}
 .maincontentinnerwrap .flexcontentmainpre,
 .maincontentinnerwrap .flexcontentmainpost {
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    -webkit-flex: 1 1 25%;
-    -ms-flex: 1 1 25%;
     flex: 1 1 25%;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
     align-self: stretch;
+
     margin:5px 5px;
-    }
+}
 .maincontentinnerwrap div[role=main] {
-    -webkit-box-flex: 2;
-    -moz-box-flex: 2;
-    -webkit-flex: 2 1 50%;
-    -ms-flex: 2 1 50%;
     flex: 2 1 50%;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
     align-self: stretch;
+
     margin:5px 5px;
-    }
+}
 .maincontentinnerwrap .flexcontentmainpre {
-        -webkit-box-ordinal-group: 2;
-        -moz-box-ordinal-group: 2;
-        -webkit-order: 1;
-        -ms-flex-order: 1;
-        order: 1;
-    }
-.maincontentinnerwrap .flexcontentmainpost {
-        -webkit-box-ordinal-group: 4;
-        -moz-box-ordinal-group: 4;
-        -webkit-order: 3;
-        -ms-flex-order: 3;
-        order: 3;
-    }
-.maincontentinnerwrap div[role=main] {
-        -webkit-box-ordinal-group: 3;
-        -moz-box-ordinal-group: 3;
-        -webkit-order: 2;
-        -ms-flex-order: 2;
-        order: 2;
-    }
-.maincontentwrap .maincontentinnerwrap {
-    -webkit-box-ordinal-group: 3;
-    -moz-box-ordinal-group: 3;
-    -webkit-order: 2;
-    -ms-flex-order: 2;
-    order: 2;
-    -webkit-box-flex: 4;
-    -moz-box-flex: 4;
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
-    align-self: stretch;
-    }
-.maincontentwrap .flexcontentmaintop {
-    -webkit-box-ordinal-group: 2;
-    -moz-box-ordinal-group: 2;
-    -webkit-order: 1;
-    -ms-flex-order: 1;
     order: 1;
-    -webkit-box-flex: 4;
-    -moz-box-flex: 4;
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
-    align-self: stretch;
-    }
-.maincontentwrap .flexcontentmainbottom {
-    -webkit-box-ordinal-group: 4;
-    -moz-box-ordinal-group: 4;
-    -webkit-order: 3;
-    -ms-flex-order: 3;
+}
+.maincontentinnerwrap .flexcontentmainpost {
     order: 3;
-    -webkit-box-flex: 4;
-    -moz-box-flex: 4;
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
+}
+.maincontentinnerwrap div[role=main] {
+    order: 2;
+}
+.maincontentwrap .maincontentinnerwrap {
+    order: 2;
     flex: 1 1 auto;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
     align-self: stretch;
-    }
+}
+.maincontentwrap .flexcontentmaintop {
+    order: 1;
+    flex: 1 1 auto;
+    align-self: stretch;
+}
+.maincontentwrap .flexcontentmainbottom {
+    order: 3;
+    flex: 1 1 auto;
+    align-self: stretch;
+}
 
 .maincontentinnerwrap div[role=main] {
     max-width:100%;
@@ -503,37 +229,29 @@
 .used-region-side-mainpost.used-region-side-mainpre .maincontentinnerwrap div[role=main] {
     max-width:60%;
 }
+#region-bottom {
+    margin-top:5px;
+}
+.container-fluid {
+    margin: 0 auto;
+    max-width: 100%;
+}
 .img-responsive {
     max-width:98%;
 }
+.flexcontainer > img {
+    max-width:250px;
+}
 
-
-/* Media calls to turn flexbox rows into columns.
- * TODO - StreamLine this code, remove elements which are repeated in
- * main body
- */
+/* Media calls to turn flexbox rows into columns. */
 @media (max-width: 768px) {
     #page-content.flexcontainer {
-        -webkit-box-orient: vertical;
-        -moz-box-orient: vertical;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
         flex-direction: column;
     }
     #block-region-side-pre.flexcontentpre,
     #block-region-side-pre.flexcontentpre.twopost,
     #block-region-side-pre.flexcontentpre.twopre,
-    .flexcontentpre.singlepre {
-        width:100%;
-        max-width: none;
-        margin-left:0;
-        margin-right:0;
-        -webkit-box-ordinal-group: 5;
-        -moz-box-ordinal-group: 5;
-        -webkit-order: 4;
-        -ms-flex-order: 4;
-        order: 4;
-    }
+    .flexcontentpre.singlepre,
     #block-region-side-post.flexcontentpost,
     #block-region-side-post.flexcontentpost.twopost,
     #block-region-side-post.flexcontentpost.twopre,
@@ -542,106 +260,82 @@
         max-width: none;
         margin-left:0;
         margin-right:0;
-        -webkit-box-ordinal-group: 6;
-        -moz-box-ordinal-group: 6;
-        -webkit-order: 5;
-        -ms-flex-order: 5;
+    }
+    #block-region-side-pre.flexcontentpre,
+    #block-region-side-pre.flexcontentpre.twopost,
+    #block-region-side-pre.flexcontentpre.twopre,
+    .flexcontentpre.singlepre {
+        order: 4;
+    }
+    #block-region-side-post.flexcontentpost,
+    #block-region-side-post.flexcontentpost.twopost,
+    #block-region-side-post.flexcontentpost.twopre,
+    .flexcontentpost.singlepost {
         order: 5;
     }
     .maincontentinnerwrap.flexcontainer {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-direction: normal;
-    -moz-box-direction: normal;
-    -webkit-box-orient: vertical;
-    -moz-box-orient: vertical;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-box-pack: start;
-    -moz-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-box-align: start;
-    -moz-box-align: start;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
+        display: flex;
+        flex-direction: column;
     }
     .maincontentinnerwrap div[role=main] {
-    -webkit-box-ordinal-group: 1;
-    -moz-box-ordinal-group: 1;
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-box-flex: 0;
-    -moz-box-flex: 0;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
-    align-self: stretch;
+        order: 0;
+        flex: 0 1 auto;
+        align-self: stretch;
     }
-.maincontentinnerwrap div[role=main] {
-    max-width:100%;
-}
-.used-region-side-mainpost .maincontentinnerwrap div[role=main],
-.used-region-side-mainpre .maincontentinnerwrap div[role=main] {
-    max-width:100%;
-}
-.used-region-side-mainpost.used-region-side-mainpre .maincontentinnerwrap div[role=main] {
-    max-width:100%;
-}
+    .maincontentinnerwrap div[role=main],
+    .used-region-side-mainpost .maincontentinnerwrap div[role=main],
+    .used-region-side-mainpre .maincontentinnerwrap div[role=main],
+    .used-region-side-mainpost.used-region-side-mainpre .maincontentinnerwrap div[role=main] {
+        max-width:100%;
+    }
 
-    .maincontentinnerwrap .flexcontentmainpre {
-    -webkit-box-ordinal-group: 1;
-    -moz-box-ordinal-group: 1;
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-box-flex: 0;
-    -moz-box-flex: 0;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
-    align-self: stretch;
-    }
+    .maincontentinnerwrap .flexcontentmainpre,
     .maincontentinnerwrap .flexcontentmainpost {
-    -webkit-box-ordinal-group: 1;
-    -moz-box-ordinal-group: 1;
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-box-flex: 0;
-    -moz-box-flex: 0;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
-    align-self: stretch;
+        order: 0;
+        flex: 0 1 auto;
+        align-self: stretch;
     }
 }
 
-#region-bottom {
-    margin-top:5px;
+/* RTL positioning of blocks is handled automatically. Just requires
+ * margins swapping around.
+ * ----------------------------------------------------------------- */
+.dir-rtl #block-region-side-pre.flexcontentpre, /* Default option. */
+.dir-rtl #block-region-side-post.flexcontentpost.twopre, /* Layoutoption3 - 2 pre. */
+.dir-rtl .flexcontentpre.singlepre /* Layoutoption4 - singlepre. */ {
+    margin-right:0;
+    margin-left:10px;
 }
-.container-fluid {
-    margin: 0 auto;
-    max-width: 100%;
+.dir-rtl #block-region-side-post.flexcontentpost, /* Default option. */
+.dir-rtl #block-region-side-pre.flexcontentpre.twopost, /* Layoutoption2 - 2 post. */
+.dir-rtl .flexcontentpost.singlepost /* Layoutoption5 - singlepost. */ {
+    margin-left:0;
+    margin-right:10px;
+}
+
+/* Replace essential parts of the base css that has been removed to allow
+ * flexbox styling.
+ * ---------------------------------------------------------------------- */
+.dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-post,
+.dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-post,
+.dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-pre,
+.dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
+    min-height: 100px;
+}
+.dir-rtl.editing.used-region-side-post.used-region-side-pre #region-main {
+    min-height: 1px;
+}
+.has_dock.empty-region-side-pre #region-main,
+.has_dock.empty-region-side-post #region-main,
+.has_dock.empty-region-side-pre.used-region-side-post #region-main,
+.has_dock.empty-region-side-post.used-region-side-pre #region-main {
+    min-height: 1px;
+}
+.has_dock.empty-region-side-pre #block-region-side-pre,
+.has_dock.empty-region-side-post #block-region-side-post,
+.has_dock.empty-region-side-pre.empty-region-side-post .flexcontentpost,
+.has_dock.empty-region-side-pre.empty-region-side-post .flexcontentpre {
+    display: none;
 }
 /* Hide empty regions
  * ------------------ */
@@ -664,26 +358,4 @@
 .empty-region-side-pre #block-region-side-pre,
 .empty-region-side-post #block-region-side-post {
     display:none;
-}
-/* Browser warnings
- * ---------------- */
-.no-js .browserwarningflexleg, .no-flexbox .browserwarningflexleg {
-    display:none;
-}
-.flexboxlegacy .browserwarningnoflex {
-    display:none;
-}
-.flexbox .browserwarningnoflex, .flexbox .browserwarningflexleg {
-    display:none;
-}
-
-.flexcontainer > img {
-    max-width:250px;
-}
-/* IE9 Fallback - blocks will appear in a single full width column
-.no-flexbox #block-region-side-pre,
-.no-flexbox #block-region-side-post,
-.no-flexbox #block-region-side-mainpre,
-.no-flexbox #block-region-side-mainpost {
-	max-width:100%;
 }

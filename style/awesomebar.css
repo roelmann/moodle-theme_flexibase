@@ -27,6 +27,13 @@
  *             Decaf - Paul Nichols
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+ 
+ /**
+  * Note: This is upstream code taken from the original Decaf version of awesomebar
+  * It should be maintained and copied direct from there with any overrides added
+  * spearately at the end of the file and not edited direct into the upstream
+  * content.
+  */
 
 /* Awesomebar - workings and structure */
 .flexibase-awesome-bar {left:0; width:100%; height:25px; z-index:999;font-size:13px;}
@@ -126,3 +133,12 @@ body #dock {top:26px; height:auto; bottom:0;} /* Start dock at bottom of Awesome
     .dir-rtl #awesomebar.touchmode-active {right:5%;}
     .dir-rtl #awesomebar.touchmode-active ul.dropdown li:hover > ul {right:0;}
 }
+
+/* Theme Adjustments */
+#awesomebar ul#awesomeHomeMenu > li > span, #awesomebar ul#awesomeHomeMenu > li > a {
+    padding: 2px 8px;
+}
+.atto-fullscreen #awesomebar {
+    display: none;
+    visibility: hidden;
+} /* Hide awesomebar when atto-fullscreen plugin is used. */

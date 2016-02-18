@@ -29,12 +29,12 @@
  */
 
 @font-face {
-  font-family: 'Glyphicons Halflings';
-  src: url('[[font:theme|glyphicons-halflings-regular.eot]]');
-  src: url('[[font:theme|glyphicons-halflings-regular.eot]]?#iefix') format('embedded-opentype'),
-       url('[[font:theme|glyphicons-halflings-regular.woff]]') format('woff'),
-       url('[[font:theme|glyphicons-halflings-regular.ttf]]') format('truetype'),
-       url('[[font:theme|glyphicons-halflings-regular.svg]]') format('svg');
+    font-family: 'Glyphicons Halflings';
+    src: url('[[font:theme|glyphicons-halflings-regular.eot]]');
+    src: url('[[font:theme|glyphicons-halflings-regular.eot]]?#iefix') format('embedded-opentype'),
+         url('[[font:theme|glyphicons-halflings-regular.woff]]') format('woff'),
+         url('[[font:theme|glyphicons-halflings-regular.ttf]]') format('truetype'),
+         url('[[font:theme|glyphicons-halflings-regular.svg]]') format('svg');
 }
 body {
     margin-top:25px;
@@ -47,11 +47,31 @@ body.flexibase_no_awesomebar {
     border: 1px solid #b6c3ea;
     border-radius: 6px;
 }
-input.form-submit, input#id_submitbutton, input#id_submitbutton2, .path-admin .buttons input[type="submit"], td.submit input {
-    background-color: #001122;
-    border-color: #001122;
-    color: #fff;
+hr.sep {
+    margin-top:0;
+    margin-bottom:0;
 }
+
+/* Header
+ * ------ */
+.socials {
+    margin-right:80px;
+}
+.socials .socialicon {
+    float:right;
+}
+.headerlogo {
+    padding-left:5px;
+}
+body.has_dock .moodleheader .container-fluid {
+    padding-left:0;
+}
+.moodleheader{
+    min-height:60px;
+}
+
+/* Navbar
+ * ------ */
 .navbar {
     margin-bottom: 10px;
 }
@@ -73,22 +93,6 @@ body.has_dock .navbar-collapse {
     border-radius:0;
     margin-bottom:0;
 }
-#dock .dockeditem_container {
-    margin-top:67px;
-}
-#dockeditempanel {
-    min-width:250px;
-}
-.block_docked .content {
-    padding: 4px;
-}
-.dockeditempanel_bd, .dockeditempanel_hd {
-    border:1px solid #000;
-}
-hr.sep {
-    margin-top:0;
-    margin-bottom:0;
-}
 .navbar-right {
     margin-right:85px;
 }
@@ -108,36 +112,64 @@ hr.sep {
     border-radius:30px;
     border: 4px ridge #fff;
 }
-.socials {
-    margin-right:80px;
-}
-.socials .socialicon {
-    float:right;
-}
-.headerlogo {
-    padding-left:5px;
-}
-body.has_dock .moodleheader .container-fluid {
-    padding-left:0;
-}
 .navbar-header {
-    margin:0 5px !important;
+    margin:0 5px 10px 5px!important;
 }
-.moodleheader{
-    min-height:60px;
+
+/* Breadcrumbs.
+ * ------------ */
+.breadcrumbcourse a{ /* Style added to new class on breadcrumb to highlight course. */
+    font-weight:900;
+}
+.breadcrumbcategory a{ /* Style added to new class on breadcrumb to highlight category */
+    font-weight:inherit; /* Does nothing, but acts as placeholder for other styling - requested feature */
+}
+
+/* Dock
+ * ---- */
+#dock .dockeditem_container {
+    margin-top:67px;
+}
+#dockeditempanel {
+    min-width:250px;
+}
+.block_docked .content {
+    padding: 4px;
+}
+.dockeditempanel_bd, .dockeditempanel_hd {
+    border:1px solid #000;
 }
 .has_dock .navbar-header {
     padding-left:30px;
+    margin-left:30px;
 }
+
+/* Theme Settings nav
+ * ------------------ */
 .themesettingsnav h3 {
     margin-top:0;
 }
 .themesettingsnav {
     margin-bottom:15px;
 }
+
+/* Forms
+ * ----- */
 form label {
     margin-right:10px;
 }
+.mform .fitem .fitemtitle {
+    min-height: 1px;
+    padding-left: 25px;
+    padding-right: 25px;
+    position: relative;
+}
+.mform fieldset.collapsible legend a.fheader {
+    margin-left: -5px;
+}
+
+/* Screen size adjustments
+ * ----------------------- */
 @media (max-width:1200px) {
     .navbaruserpicture img {
         height:75px;
@@ -161,6 +193,9 @@ form label {
         margin-right:-15px;
     }
 }
+
+/* Login Page
+ * ---------- */
 .loginbox .loginpanel {
     margin-bottom:0;
     filter:alpha(opacity=90); /* IE */
@@ -174,12 +209,9 @@ form label {
     opacity:0.8;
     border-radius:6px;
 }
-.marketing-block.panel .panel-title.header {
-    color:#fff;
-}
-#awesomebar ul#awesomeHomeMenu > li > span, #awesomebar ul#awesomeHomeMenu > li > a {
-    padding: 2px 8px;
-}
+
+/* Course images
+ * ------------- */
 .headerimage.withimage {
     height:[[setting:courseheaderimageheight]];
     background-size: cover;
@@ -200,7 +232,6 @@ form label {
 
 /* RTL Adjustments
  * --------------- */
-
 .dir-rtl .dropdown-submenu > .dropdown-menu {
     border-radius: 6px 0 6px 6px;
     margin-right: -1px;
@@ -225,20 +256,11 @@ form label {
 .dir-rtl .mform fieldset.collapsed legend a.fheader {
     background-image: url([[pix:core|t/collapsed_rtl]]);
 }
-.mform fieldset.collapsible legend a.fheader {
-    margin-left: -5px;
-}
 .dir-rtl .mform fieldset.collapsible legend a.fheader {
     background-position: right center;
     margin-left: 0;
     margin-right: -5px;
     padding: 0 20px 0 5px;
-}
-.mform .fitem .fitemtitle {
-    min-height: 1px;
-    padding-left: 25px;
-    padding-right: 25px;
-    position: relative;
 }
 .dir-rtl .mform .iconhelp {
     float: right;
@@ -257,13 +279,30 @@ dir-rtl .userenrolment .col_userdetails .subfield_picture {
     float: right;
     margin: 0 5px;
 }
-.dir-rtl .ygtvtn, .dir-rtl .ygtvtm, .dir-rtl .ygtvtmh, .dir-rtl .ygtvtmhh, .dir-rtl .ygtvtp, .dir-rtl .ygtvtph, .dir-rtl .ygtvtphh, .dir-rtl .ygtvln, .dir-rtl .ygtvlm, .dir-rtl .ygtvlmh, .dir-rtl .ygtvlmhh, .dir-rtl .ygtvlp, .dir-rtl .ygtvlph, .dir-rtl .ygtvlphh, .dir-rtl .ygtvdepthcell, .dir-rtl .ygtvok, .dir-rtl .ygtvok:hover, .dir-rtl .ygtvcancel, .dir-rtl .ygtvcancel:hover {
+.dir-rtl .ygtvtn,
+.dir-rtl .ygtvtm,
+.dir-rtl .ygtvtmh,
+.dir-rtl .ygtvtmhh,
+.dir-rtl .ygtvtp,
+.dir-rtl .ygtvtph,
+.dir-rtl .ygtvtphh,
+.dir-rtl .ygtvln,
+.dir-rtl .ygtvlm,
+.dir-rtl .ygtvlmh,
+.dir-rtl .ygtvlmhh,
+.dir-rtl .ygtvlp,
+.dir-rtl .ygtvlph,
+.dir-rtl .ygtvlphh,
+.dir-rtl .ygtvdepthcell,
+.dir-rtl .ygtvok,
+.dir-rtl .ygtvok:hover,
+.dir-rtl .ygtvcancel,
+.dir-rtl .ygtvcancel:hover {
     background-image: url([[pix:core|yui2-treeview-sprite-rtl]]);
 }
 caption {
     text-align: center;
 }
-
 .dir-rtl .navbar-header {
     float: right;
 }
@@ -323,38 +362,64 @@ body.has_dock.dir-rtl .navbar-collapse {
 }
 
 /* Course grades css */
-.courseheadergradepercentage {display:none;}
-.pagelayout-course .courseheadergradepercentage {display:block;}
-.courseheadergradepercentage {background-color:#fff; opacity:0.8; border-radius:6px; float:right; margin-top:15px; margin-right:125px;}
-.courseheadergradepercentage table.generaltable {margin:0;}
-
+.courseheadergradepercentage {
+    display:none;
+}
+.pagelayout-course .courseheadergradepercentage {
+    display:block;
+}
+.courseheadergradepercentage {
+    background-color:#fff;
+    opacity:0.8;
+    border-radius:6px;
+    float:right;
+    margin-top:15px;
+    margin-right:125px;
+}
+.courseheadergradepercentage table.generaltable {
+    margin:0;
+}
 .courseheadergradepercentage table tbody tr,
-.courseheadergradepercentage table thead {display:none;}
+.courseheadergradepercentage table thead {
+    display:none;
+}
 .courseheadergradepercentage table tbody tr:last-of-type th,
-.courseheadergradepercentage table tbody tr:last-of-type td {border-top:none;}
-
-.courseheadergradepercentage table tbody tr:last-of-type {display:block;border-radius:6px;}
-
-.courseheadergradepercentage table tbody tr:last-of-type .column-itemname {font-weight:900;font-size:150%;text-align:right;width:120px;}
-.courseheadergradepercentage table tbody tr:last-of-type .column-itemname img {display:none;}
-.courseheadergradepercentage table tbody tr:last-of-type .column-weight {display:none;}
-.courseheadergradepercentage table tbody tr:last-of-type .column-grade {display:none;}
-.courseheadergradepercentage table tbody tr:last-of-type .column-range {display:none;}
+.courseheadergradepercentage table tbody tr:last-of-type td {
+    border-top:none;
+}
+.courseheadergradepercentage table tbody tr:last-of-type {
+    display:block;
+    border-radius:6px;
+}
+.courseheadergradepercentage table tbody tr:last-of-type .column-itemname {
+    font-weight:900;
+    font-size:150%;
+    text-align:right;
+    width:120px;
+}
+.courseheadergradepercentage table tbody tr:last-of-type .column-itemname img,
+.courseheadergradepercentage table tbody tr:last-of-type .column-weight,
+.courseheadergradepercentage table tbody tr:last-of-type .column-grade,
+.courseheadergradepercentage table tbody tr:last-of-type .column-range,
+.courseheadergradepercentage table tbody tr:last-of-type .column-feedback,
+.courseheadergradepercentage table tbody tr:last-of-type .column-lettergrade,
+.courseheadergradepercentage table tbody tr:last-of-type .column-rank,
+.courseheadergradepercentage table tbody tr:last-of-type .column-average,
+.courseheadergradepercentage table tbody tr:last-of-type .column-contributiontocoursetotal {
+    display:none;
+}
 .courseheadergradepercentage table tbody tr:last-of-type .column-percentage {font-weight:900;font-size:150%;width:100px;}
-.courseheadergradepercentage table tbody tr:last-of-type .column-feedback {display:none;}
-.courseheadergradepercentage table tbody tr:last-of-type .column-lettergrade {display:none;}
-.courseheadergradepercentage table tbody tr:last-of-type .column-rank {display:none;}
-.courseheadergradepercentage table tbody tr:last-of-type .column-average {display:none;}
-.courseheadergradepercentage table tbody tr:last-of-type .column-contributiontocoursetotal {display:none;}
 
 /* Renderer - user menu
-*/
+ * -------------------- */
 .yui3-menu.useractionmenu {
-    /*width: 40px;*/
     width: 0;
     position: relative;
 }
-.yui3-menu.useractionmenu .yui3-menu-content {border: none;padding: 0;}
+.yui3-menu.useractionmenu .yui3-menu-content {
+    border: none;
+    padding: 0;
+}
 .yui3-skin-sam .yui3-menu .yui3-menu.yui3-loading .yui3-menu-content {
     display: none;
 }
@@ -366,44 +431,34 @@ body.has_dock.dir-rtl .navbar-collapse {
 .dir-rtl.yui3-skin-sam .yui3-menu-label,
 .dir-rtl.yui3-skin-sam .yui3-menu .yui3-menu .yui3-menu-label,
 .dir-rtl.yui3-skin-sam .yui3-menuitem-content,
-.dir-rtl.yui3-skin-sam .yui3-menu .yui3-menu .yui3-menuitem-content {text-align: right;}
+.dir-rtl.yui3-skin-sam .yui3-menu .yui3-menu .yui3-menuitem-content {
+    text-align: right;
+}
 
 /* User Profile. */
 .userprofile .profile_tree section {
     padding:0;
+    font-family: 'FontAwesome';
+    font-weight:500;
+    margin-right: 5px;
 }
 .userprofile .profile_tree section .panel-heading h3 {
     margin-top:10px;
 }
 .userprofile .profile_tree section.Userdetails .panel-heading h3:before {
-  font-family: 'FontAwesome';
-  font-weight:500;
-  content: "\f0c0";
-  margin-right: 5px;
+    content: "\f0c0";
 }
 .userprofile .profile_tree section.Coursedetails .panel-heading h3:before {
-  font-family: 'FontAwesome';
-  font-weight:500;
-  content: "\f0b1";
-  margin-right: 5px;
+    content: "\f0b1";
 }
 .userprofile .profile_tree section.Miscellaneous .panel-heading h3:before {
-  font-family: 'FontAwesome';
-  font-weight:500;
-  content: "\f1b3";
-  margin-right: 5px;
+    content: "\f1b3";
 }
 .userprofile .profile_tree section.Reports .panel-heading h3:before {
-  font-family: 'FontAwesome';
-  font-weight:500;
-  content: "\f1c0";
-  margin-right: 5px;
+    content: "\f1c0";
 }
 .userprofile .profile_tree section.Loginactivity .panel-heading h3:before {
-  font-family: 'FontAwesome';
-  font-weight:500;
-  content: "\f0ae";
-  margin-right: 5px;
+    content: "\f0ae";
 }
 .userprofile ul {
     margin-left: 15px;
@@ -412,6 +467,9 @@ body.has_dock.dir-rtl .navbar-collapse {
 .userprofile .profile_tree section ul li dl {
     margin-bottom:15px;
 }
+
+/* Forums
+ * ------ */
 .forumpost {
     padding:0;
 }
@@ -428,28 +486,65 @@ body.has_dock.dir-rtl .navbar-collapse {
     height:46px;
     width:46px;
 }
+
 /* User Preferences restyle
  * ------------------------ */
 #page-user-preferences.path-user #region-main .maincontentwrap .maincontentinnerwrap,
-#page-user-preferences.path-user #region-main .maincontentwrap .maincontentinnerwrap div[role="main"] {margin:0; width:100%;max-width:100%}
-#page-user-preferences.path-user #region-main .maincontentwrap .maincontentinnerwrap div h2 {display:none;}
-#page-user-preferences.path-user #region-main .maincontentwrap .maincontentinnerwrap div .panel h2 {display:inline;}
-#page-user-preferences .panel.preferences-groups {margin-bottom:0}
-#page-user-preferences .panel.preferences-group {margin:10px;padding:0;}
-.flexpreferencescontainer{display: -webkit-flex; display: flex; -webkit-flex-flow: row wrap; flex-flow: row wrap; }
-.flexpreferencesitem { -webkit-flex: 1 1 25%; flex: 1 1 25%; }
-.panel-body.prefgrp {padding:0}
-.preferences-group h3 {margin-top:5px;margin-bottom:5px;}
-.panel-heading h3::before {
-  font-family: 'FontAwesome';
-  font-weight:500;
-  margin-right: 5px;
+#page-user-preferences.path-user #region-main .maincontentwrap .maincontentinnerwrap div[role="main"] {
+    margin:0;
+    width:100%;
+    max-width:100%;
 }
-.panel-heading.Useraccount h3::before {content: "\f007";}
-.panel-heading.Roles h3::before {content: "\f0c0";}
-.panel-heading.Portfolios h3::before {content: "\f19c";}
-.panel-heading.Blogs h3::before {content: "\f02d";}
-.panel-heading.Badges h3::before {content: "\f0a3";}
+#page-user-preferences.path-user #region-main .maincontentwrap .maincontentinnerwrap div h2 {
+    display:none;
+}
+#page-user-preferences.path-user #region-main .maincontentwrap .maincontentinnerwrap div .panel h2 {
+    display:inline;
+}
+#page-user-preferences .panel.preferences-groups {
+    margin-bottom:0;
+}
+#page-user-preferences .panel.preferences-group {
+    margin:10px;
+    padding:0;
+}
+.flexpreferencescontainer{
+    display:-webkit-flex;
+    display:flex;
+    -webkit-flex-flow:row wrap;
+    flex-flow: row wrap;
+}
+.flexpreferencesitem {
+    -webkit-flex: 1 1 25%;
+    flex: 1 1 25%;
+}
+.panel-body.prefgrp {
+    padding:0;
+}
+.preferences-group h3 {
+    margin-top:5px;
+    margin-bottom:5px;
+}
+.panel-heading h3::before {
+    font-family: 'FontAwesome';
+    font-weight:500;
+    margin-right: 5px;
+}
+.panel-heading.Useraccount h3::before {
+    content: "\f007";
+}
+.panel-heading.Roles h3::before {
+    content: "\f0c0";
+}
+.panel-heading.Portfolios h3::before {
+    content: "\f19c";
+}
+.panel-heading.Blogs h3::before {
+    content: "\f02d";
+}
+.panel-heading.Badges h3::before {
+    content: "\f0a3";
+}
 
 /* Block Regions
  * ------------- */
@@ -461,129 +556,103 @@ body.has_dock.dir-rtl .navbar-collapse {
 #region-adminbottom {
     text-align:left;
 }
+
 /* Help pages
  * ---------- */
-.flexhelpcontainer{display: -webkit-flex; display: flex; -webkit-flex-flow: row wrap; flex-flow: row wrap; }
-.flexhelpitem { -webkit-flex: 1 1 33%; flex: 1 1 33%; margin:5px;}
-.helpinstallation h3:before {
-  font-family: 'FontAwesome';
-  font-weight:500;
-  content: "\f1c0";
-  margin-right: 5px;
+.flexhelpcontainer{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow:row wrap;
+    flex-flow: row wrap;
+    
+    font-family: 'FontAwesome';
+    font-weight:500;
+    margin-right: 5px;
 }
-.helpsettings h3:before {
-  font-family: 'FontAwesome';
-  font-weight:500;
-  content: "\f013";
-  margin-right: 5px;
-}
-.helplayouts h3:before {
-  font-family: 'FontAwesome';
-  font-weight:500;
-  content: "\f1b3";
-  margin-right: 5px;
-}
-.helpthemecode h3:before {
-  font-family: 'FontAwesome';
-  font-weight:500;
-  content: "\f121";
-  margin-right: 5px;
-}
-.helpcssless h3:before {
-  font-family: 'FontAwesome';
-  font-weight:500;
-  content: "\f1fc";
-  margin-right: 5px;
-}
-.layoutdiagrams h3:before {
-  font-family: 'FontAwesome';
-  font-weight:500;
-  content: "\f1b3";
-  margin-right: 5px;
-}
-.layoutsadminhelp h3:before {
-  font-family: 'FontAwesome';
-  font-weight:500;
-  content: "\f013";
-  margin-right: 5px;
-}
-.regionshelp h3:before {
-  font-family: 'FontAwesome';
-  font-weight:500;
-  content: "\f247";
-  margin-right: 5px;
-}
-.buttonspanel h3:before {
-  font-family: 'FontAwesome';
-  font-weight:500;
-  content: "\f019";
-  margin-right: 5px;
-}
-.imagespanel h3:before {
-  font-family: 'FontAwesome';
-  font-weight:500;
-  content: "\f03e";
-  margin-right: 5px;
-}
-.contenttippanel h3:before {
-  font-family: 'FontAwesome';
-  font-weight:500;
-  content: "\f022";
-  margin-right: 5px;
-}
-.tabspanel h3:before {
-  font-family: 'FontAwesome';
-  font-weight:500;
-  content: "\f00a";
-  margin-right: 5px;
-}
-.carouselpanel h3:before {
-  font-family: 'FontAwesome';
-  font-weight:500;
-  content: "\f110";
-  margin-right: 5px;
+.flexhelpitem {
+    -webkit-flex: 1 1 33%;
+    flex: 1 1 33%;
+    margin:5px;
 }
 .panelgroup.flexhelpitem {
     margin:0;
 }
+.helpinstallation h3:before {
+    content: "\f1c0";
+}
+.helpsettings h3:before {
+    content: "\f013";
+}
+.helplayouts h3:before {
+    content: "\f1b3";
+}
+.helpthemecode h3:before {
+    content: "\f121";
+}
+.helpcssless h3:before {
+    content: "\f1fc";
+}
+.layoutdiagrams h3:before {
+    content: "\f1b3";
+}
+.layoutsadminhelp h3:before {
+    content: "\f013";
+}
+.regionshelp h3:before {
+    content: "\f247";
+}
+.buttonspanel h3:before {
+    content: "\f019";
+}
+.imagespanel h3:before {
+    content: "\f03e";
+}
+.contenttippanel h3:before {
+    content: "\f022";
+}
+.tabspanel h3:before {
+    content: "\f00a";
+}
+.carouselpanel h3:before {
+    content: "\f110";
+}
 .pixcorehelp h3:before {
-  font-family: 'FontAwesome';
-  font-weight:500;
-  content: "\f03e";
-  margin-right: 5px;
+    content: "\f03e";
 }
 .blockheadershelp h3:before {
-  font-family: 'FontAwesome';
-  font-weight:500;
-  content: "\f1b3";
-  margin-right: 5px;
+    content: "\f1b3";
 }
 .textfileshelp h3:before {
-  font-family: 'FontAwesome';
-  font-weight:500;
-  content: "\f0f6";
-  margin-right: 5px;
+    content: "\f0f6";
 }
 
-/* Style bug fixes - to be organised
- * --------------------------------- */
-.maincontentinnerwrap div[role="main"] {max-width:99%;}
-#coursesearch.form-inline .btn {margin-top:-6px;} /* Correct button alignment. */
+/* Alignment issues
+ * ---------------- */
+#coursesearch.form-inline .btn {
+    margin-top:-6px;
+}
+#page-mod-forum-discuss .discussioncontrols .discussioncontrol,
+#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscussion.movediscussion {
+    width:auto;
+    float:right;
+}
+#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscussion.movediscussion {
+    margin-top:0;
+}
+/* Bring Course category page controls onto single line. */
+#page-course-index-category .categorypicker, #page-course-index-category #coursesearch {
+    float:right;
+    width:auto;
+    margin:0 0 0 20px;
+}
+
+/* Style bug fixes
+ * --------------- */
 .section .label .mod-indent-outer {display: table;} /* Correct upstream bug that prevented indented labels. */
-nav#page-header {margin-bottom:10px;} /* Add spacing below page header. */
 .nav-tabs.nav-justified {width: auto;} /* Override tabs width setting to prevent overlap. */
 .block .minicalendar th, .block .minicalendar td  {padding: 0;} /* Remove overlap of minicalendar block on smaller screens. */
 .flexibasecats.panel.withicon {height: 230px;} /* Fix height of category panels with icon. */
-.has_dock .navbar-header {margin-left:30px;} /* Add spacing to header when dock is used. */
 .eventlist .event .icon {display:none;} /* Hide calendar icon on event view. */
 .eventlist .event h3 {margin-top:0;} /* Then improves the top spacing as well. */
-/* Bring Forum controls onto single line. */
-#page-mod-forum-discuss .discussioncontrols .discussioncontrol,
-#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscussion.movediscussion {width:auto; float:right;}
-#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscussion.movediscussion {margin-top:0;}
-/* Bring Course category page controls onto single line. */
-#page-course-index-category .categorypicker, #page-course-index-category #coursesearch {float:right;width:auto; margin:0 0 0 20px}
-.atto-fullscreen #awesomebar {display: none;visibility: hidden;} /* Hide awesomebar when atto-fullscreen plugin is used. */
-div math mfrac mi {font-size: 0;visibility: hidden;}
-.breadcrumbcourse a{font-weight:900;} /* Style added to new class on breadcrumb to highlight course. */
-.breadcrumbcategory a{} /* Style added to new class on breadcrumb to highlight category - note this is deliberately empty as I dont want to change anything at the moment, but do want it to appear on firebug for development - remove later. */
+div math mfrac mi {font-size: 0;visibility: hidden;} /* Hide text produced by one of the modernizr.js tests */
+

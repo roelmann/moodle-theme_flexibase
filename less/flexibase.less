@@ -36,19 +36,21 @@
  * remove certain parts of the core.less file as we are dealing with layout
  * through flexbox code and not using the bootstrap grid.
  */
-//@import "../../bootstrap/less/moodle.less";
+// @import "../../bootstrap/less/moodle.less";
 
-// Upstream Bootstrap.
+/* Upstream Bootstrap. */
 @import "../../bootstrap/less/bootstrap3/bootstrap";
 
+/* Core Moodle LESS variables. */
 @import "../../bootstrap/less/moodle/variables";
-// Override Bootstrap defaults.
+
+/* Override Bootstrap defaults. */
 @import "../../bootstrap/less/moodle/bootstrapoverride";
 
-// Roll back nameclashes.
+/* Roll back nameclashes. */
 @import "../../bootstrap/less/moodle/undo";
 
-//@import "../../bootstrap/less/moodle/core";
+//@import "../../bootstrap/less/moodle/core"; // Not used - replaced without page layout sections.
 @import "core"; // local copy of core.less with page layout sections removed
 @import "../../bootstrap/less/moodle/admin";
 @import "../../bootstrap/less/moodle/calendar";
@@ -74,51 +76,157 @@
 @import "../../bootstrap/less/moodle/enrolment";
 @import "../../bootstrap/less/moodle/responsive";
 @import "../../bootstrap/less/moodle/debug";
-//@import "../../bootstrap/less/moodle/zoom";
 @import "../../bootstrap/less/moodle/dock";
 @import "../../bootstrap/less/moodle/grade";
 
 @import "variables.less";
-@import "bootswatch.less";
 
-header {
-    background-color: @brand-primary-lightest;
-}
+/* Theme less code
+ * --------------- */
+
+/* Core overrides. */
 .btn-shadow(@color) {
   #gradient > .vertical-three-colors(lighten(@color, 25%), @color, 60%, darken(@color, 10%));
   filter: none;
   border: 1px solid darken(@color, 10%);
 }
 
-.block .header {
-      .btn-shadow(@navbar-default-bg);
+/* Header. */
+header {
+    background-color: @brand-primary-lightest;
 }
-.block .header h2 {
-    color: @white;
-}
+
 /* Panels */
 .panel.panel-primary .panel-heading {
-    #gradient > .vertical-three-colors(lighten(@panel-primary-heading-bg, 25%), @panel-primary-heading-bg, 60%, darken(@panel-primary-heading-bg, 10%));
+    .btn-shadow(@panel-primary-heading-bg);
 }
 .panel.panel-info .panel-heading {
-    #gradient > .vertical-three-colors(lighten(@panel-info-heading-bg, 25%), @panel-info-heading-bg, 60%, darken(@panel-info-heading-bg, 10%));
+    .btn-shadow(@panel-info-heading-bg);
 }
 .panel.panel-default .panel-heading {
-    #gradient > .vertical-three-colors(lighten(@panel-default-heading-bg, 25%), @panel-default-heading-bg, 60%, darken(@panel-default-heading-bg, 10%));
+    .btn-shadow(@panel-default-heading-bg);
 }
 .panel.panel-success .panel-heading {
-    #gradient > .vertical-three-colors(lighten(@panel-success-heading-bg, 25%), @panel-success-heading-bg, 60%, darken(@panel-success-heading-bg, 10%));
+    .btn-shadow(@panel-success-heading-bg);
 }
 .panel.panel-warning .panel-heading {
-    #gradient > .vertical-three-colors(lighten(@panel-warning-heading-bg, 25%), @panel-warning-heading-bg, 60%, darken(@panel-warning-heading-bg, 10%));
+    .btn-shadow(@panel-warning-heading-bg);
 }
 .panel.panel-danger .panel-heading {
-    #gradient > .vertical-three-colors(lighten(@panel-danger-heading-bg, 25%), @panel-danger-heading-bg, 60%, darken(@panel-danger-heading-bg, 10%));
+    .btn-shadow(@panel-danger-heading-bg);
 }
 .panel .panel-heading h2, 
 .panel .panel-heading h3 {
     color:@white;
 }
+.panel.panel-default .panel-heading h2, 
+.panel.panel-default .panel-heading h3 {
+    color:@brand-primary;
+}
+
+/* Navbar. */
+.navbar {
+
+  .btn-shadow(@navbar-default-bg);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+
+  &-inverse {
+    .btn-shadow(@navbar-inverse-bg);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+
+    .badge {
+      background-color: #fff;
+      color: @navbar-inverse-bg;
+    }
+  }
+
+  .badge {
+    text-shadow: none;
+  }
+
+  &-nav > li > a,
+  &-nav > li > a:hover {
+    padding-top: @navbar-padding-vertical + 2px;
+    padding-bottom: @navbar-padding-vertical - 2px;
+    .transition(color ease-in-out .2s);
+  }
+  
+  &-brand,
+  &-brand:hover {
+    .transition(color ease-in-out .2s);
+  }
+
+  .caret,
+  .caret:hover {
+    .transition(border-color ease-in-out .2s);
+  }
+
+  .dropdown-menu {
+    text-shadow: none;
+  }
+}
+
+/* Buttons. */
+.btn {
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  &-default {
+    .btn-shadow(@btn-default-bg);
+    &:hover {
+      .btn-shadow(darken(@btn-default-bg, 4%));
+    }
+  }
+  &-primary {
+    .btn-shadow(@btn-primary-bg);
+    &:hover {
+      .btn-shadow(darken(@btn-primary-bg, 4%));
+    }
+  }
+  &-success {
+    .btn-shadow(@btn-success-bg);
+    &:hover {
+      .btn-shadow(darken(@btn-success-bg, 4%));
+    }
+  }
+  &-info {
+    .btn-shadow(@btn-info-bg);
+    &:hover {
+      .btn-shadow(darken(@btn-info-bg, 4%));
+    }
+  }
+  &-warning {
+    .btn-shadow(@btn-warning-bg);
+    &:hover {
+      .btn-shadow(darken(@btn-warning-bg, 4%));
+    }
+  }
+  &-danger {
+    .btn-shadow(@btn-danger-bg);
+    &:hover {
+      .btn-shadow(darken(@btn-danger-bg, 4%));
+    }
+  }
+  &:active,
+  &.active {
+    background-image: none;
+    .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+  }
+}
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input.form-submit,
+input#id_submitbutton,
+input#id_submitbutton2,
+td.submit input {
+    .btn-shadow(@btn-primary-bg);
+    color:@white;
+    &:hover {
+        .btn-shadow(darken(@btn-primary-bg, 4%));
+        color:@white;
+    }
+}
+
 /* Tabs */
 .tab-content {
     border: 1px solid @brand-primary;
@@ -136,7 +244,24 @@ header {
 .nav-tabs > li.active >a {
     border-bottom: none;
 }
+
+/* Code. */
 pre code {
     background: @brand-success-light;
     font-weight:600;
+}
+
+/* Carousel. */
+.carousel,
+.carousel-inner,
+.carousel-caption {
+    border-radius:@border-radius-large;
+}
+.carousel-control.left {
+    border-top-left-radius:@border-radius-large;
+    border-bottom-left-radius:@border-radius-large;
+}
+.carousel-control.right {
+    border-top-right-radius:@border-radius-large;
+    border-bottom-right-radius:@border-radius-large;
 }
