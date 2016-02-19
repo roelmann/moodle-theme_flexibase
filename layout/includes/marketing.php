@@ -78,10 +78,12 @@ if (!empty($PAGE->theme->settings->flexmarketing)) {
         if ($hasmarketing1) {
         ?>
             <div class="marketing-block block panel panel-default">
-                <h3 class="panel-title header">
-                    <i class="fa fa-<?php echo $PAGE->theme->settings->marketing1icon ?>"></i>
-                    <?php echo $PAGE->theme->settings->marketing1 ?>
-                </h3>
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<i class="fa fa-<?php echo $PAGE->theme->settings->marketing1icon ?>"></i>
+						<?php echo $PAGE->theme->settings->marketing1 ?>
+					</h3>
+                </div>
                 <div class="marketing-block-content">
                     <?php echo $PAGE->theme->settings->marketing1content ?>
                 </div>
@@ -96,10 +98,12 @@ if (!empty($PAGE->theme->settings->flexmarketing)) {
         if ($hasmarketing2) {
         ?>
             <div class="marketing-block block panel panel-default">
-                <h3 class="panel-title header">
-                    <i class="fa fa-<?php echo $PAGE->theme->settings->marketing2icon ?>"></i>
-                    <?php echo $PAGE->theme->settings->marketing2 ?>
-                </h3>
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<i class="fa fa-<?php echo $PAGE->theme->settings->marketing2icon ?>"></i>
+						<?php echo $PAGE->theme->settings->marketing2 ?>
+					</h3>
+				</div>
                 <div class="marketing-block-content">
                     <?php echo $PAGE->theme->settings->marketing2content ?>
                 </div>
@@ -114,10 +118,12 @@ if (!empty($PAGE->theme->settings->flexmarketing)) {
         if ($hasmarketing3) {
         ?>
             <div class="marketing-block block panel panel-default">
-                <h3 class="panel-title header">
-                    <i class="fa fa-<?php echo $PAGE->theme->settings->marketing3icon ?>"></i>
-                    <?php echo $PAGE->theme->settings->marketing3 ?>
-                </h3>
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<i class="fa fa-<?php echo $PAGE->theme->settings->marketing3icon ?>"></i>
+						<?php echo $PAGE->theme->settings->marketing3 ?>
+					</h3>
+				</div>
                 <div class="marketing-block-content">
                     <?php echo $PAGE->theme->settings->marketing3content ?>
                 </div>
@@ -132,10 +138,12 @@ if (!empty($PAGE->theme->settings->flexmarketing)) {
         if ($hasmarketing4) {
         ?>
             <div class="marketing-block block panel panel-default">
-                <h3 class="panel-title header">
-                    <i class="fa fa-<?php echo $PAGE->theme->settings->marketing4icon ?>"></i>
-                    <?php echo $PAGE->theme->settings->marketing4 ?>
-                </h3>
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<i class="fa fa-<?php echo $PAGE->theme->settings->marketing4icon ?>"></i>
+						<?php echo $PAGE->theme->settings->marketing4 ?>
+					</h3>
+				</div>
                 <div class="marketing-block-content">
                     <?php echo $PAGE->theme->settings->marketing4content ?>
                 </div>

@@ -57,13 +57,18 @@ require('includes/header.php');
         <!-- Marketing Spots -->
         <?php
         $hasmarketing = (empty($PAGE->theme->settings->togglemarketing)) ? false : $PAGE->theme->settings->togglemarketing;
-
+		if ($PAGE->theme->settings->stylemarketing == 2) {
+			$marketingfile = "includes/marketing.php";
+		} else {
+			$marketingfile = "includes/marketing2.php";
+		}
+		
         if ($hasmarketing == 1) {
-            require('includes/marketing.php');
+            require($marketingfile);
         } else if ($hasmarketing == 2 && !isloggedin()) {
-            require('includes/marketing.php');
+            require($marketingfile);
         } else if ($hasmarketing == 3 && isloggedin()) {
-            require('includes/marketing.php');
+            require($marketingfile);
         }
         ?>
 

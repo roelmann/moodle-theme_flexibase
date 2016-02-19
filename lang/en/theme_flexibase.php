@@ -424,6 +424,12 @@ $string['flexmarketing'] = 'Flex marketing spots';
 $string['flexmarketingdesc'] = 'Set whether marketing spots flex with content or are even widths. For example if 3 marketing spots are used and the middle one has more content, then it will \'flex\' so that it is larger than the spots either side.';
 $string['flexmktingspots'] = 'Flex with content';
 $string['evenmktingspots'] = 'Even width';
+
+$string['stylemarketing'] = 'Style marketing spots';
+$string['stylemarketingdesc'] = 'Set whether marketing spots are displayed styled as spots with large icons, or as \'standard\' block styling.';
+$string['stylemarketingblocks'] = 'Block style';
+$string['stylemarketingspots'] = 'Icon spot style';
+
 $string['marketingtitleicon'] = 'Heading Icon';
 $string['marketingtitleicondesc'] = 'Name of the icon you wish to use in the heading for the marketing spots. List is <a href="http://fontawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "fa-".';
 $string['marketing1'] = 'Marketing Spot One';

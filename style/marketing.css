@@ -81,14 +81,20 @@
     flex: 1 1 auto;
     align-self: stretch;
     margin:0 5px;
+    text-align:center;
 }
 /* Styles for marketing blocks */
-.marketing-block.panel .panel-title.header {
+.marketing-block.panel .panel-title {
     font-size:175%;
-    color:#fff;
+}
+.marketing-block .fa-stack {
+    font-size:300%;
 }
 .marketing-block-content {
     padding: 5px 10px;
+}
+.marketing-block-content h3 {
+    margin-top:0;
 }
 /* no need for evenmkting1 setting as that is 100% anyway */
 .evenmkting2 .marketing-block {

@@ -51,6 +51,21 @@ $temp->add(new admin_setting_heading('theme_flexibase_marketing', get_string('ma
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+    
+    // Marketing Spot Style.
+    $name = 'theme_flexibase/stylemarketing';
+    $title = get_string('stylemarketing' , 'theme_flexibase');
+    $description = get_string('stylemarketingdesc', 'theme_flexibase');
+    $stylemarketingblocks = get_string('stylemarketingblocks', 'theme_flexibase');
+    $stylemarketingspots = get_string('stylemarketingspots', 'theme_flexibase');
+    $default = '1';
+    $choices = array(
+        '1' => $stylemarketingspots,
+        '2' => $stylemarketingblocks,
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
     // Flex Marketing Spots.
     $name = 'theme_flexibase/flexmarketing';

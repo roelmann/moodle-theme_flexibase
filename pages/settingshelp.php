@@ -463,6 +463,12 @@ require('helpnavbuttons.php');
         <p><strong><?php echo get_string('flexmarketing', 'theme_flexibase')?></strong>
             &nbsp;-&nbsp;<?php echo get_string('flexmarketingdesc', 'theme_flexibase')?>
         </p>
+        <p><strong><?php echo get_string('stylemarketing', 'theme_flexibase')?></strong>
+            &nbsp;-&nbsp;<?php echo get_string('stylemarketingdesc', 'theme_flexibase')?>
+        </p>
+        <p><img src = "<?php echo $OUTPUT->pix_url('settings/marketingspot', 'theme'); ?>" alt="Icon Spot Marketing" /> or
+        <img src = "<?php echo $OUTPUT->pix_url('settings/marketingblock', 'theme'); ?>" alt="Icon Spot Marketing" />
+        </p>
         <h4><?php echo get_string('pagesettingsmarketinghead2', 'theme_flexibase')?></h4>
         <p><strong><?php echo get_string('marketingtitle', 'theme_flexibase')?>Title</strong>
             &nbsp;-&nbsp;<?php echo get_string('marketingtitledesc', 'theme_flexibase')?>
