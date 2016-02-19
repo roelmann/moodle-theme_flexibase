@@ -51,7 +51,7 @@ $temp->add(new admin_setting_heading('theme_flexibase_marketing', get_string('ma
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     // Marketing Spot Style.
     $name = 'theme_flexibase/stylemarketing';
     $title = get_string('stylemarketing' , 'theme_flexibase');
