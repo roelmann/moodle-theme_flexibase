@@ -27,47 +27,6 @@
  *             Decaf - Paul Nichols
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-$mktingcount = 0;
-
-$hasmarketing1 = (!empty($PAGE->theme->settings->marketing1));
-if ($hasmarketing1) {
-    $marketing1title = $PAGE->theme->settings->marketing1;
-    $marketing1icon = $PAGE->theme->settings->marketing1icon;
-    $marketing1content = $PAGE->theme->settings->marketing1content;
-    $mktingcount += 1;
-}
-
-$hasmarketing2 = (!empty($PAGE->theme->settings->marketing2));
-if ($hasmarketing2) {
-    $marketing2title = $PAGE->theme->settings->marketing2;
-    $marketing2icon = $PAGE->theme->settings->marketing2icon;
-    $marketing2content = $PAGE->theme->settings->marketing2content;
-    $mktingcount += 1;
-}
-
-$hasmarketing3 = (!empty($PAGE->theme->settings->marketing3));
-if ($hasmarketing3) {
-    $marketing3title = $PAGE->theme->settings->marketing3;
-    $marketing3icon = $PAGE->theme->settings->marketing3icon;
-    $marketing3content = $PAGE->theme->settings->marketing3content;
-    $mktingcount += 1;
-}
-
-$hasmarketing4 = (!empty($PAGE->theme->settings->marketing4));
-if ($hasmarketing4) {
-    $marketing4title = $PAGE->theme->settings->marketing4;
-    $marketing4icon = $PAGE->theme->settings->marketing4icon;
-    $marketing4content = $PAGE->theme->settings->marketing4content;
-    $mktingcount += 1;
-}
-
-$evenflexmkting = '';
-if (!empty($PAGE->theme->settings->flexmarketing)) {
-    if ($PAGE->theme->settings->flexmarketing == 2) {
-        $evenflexmkting = 'evenmkting'.$mktingcount;
-    }
-}
 ?>
 
 <div id="page-marketing" class="">
