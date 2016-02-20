@@ -359,3 +359,36 @@
 .empty-region-side-post #block-region-side-post {
     display:none;
 }
+
+/* Marketing Spots CSS
+ * ------------------- */
+
+/* Flexbox layout for marketing. */
+.marketing-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+    width:100%;
+    margin-bottom:5px;
+}
+.marketing-block {
+    order: 0;
+    flex: 1 1 auto;
+    align-self: stretch;
+    margin:0 5px;
+    text-align:center;
+}
+
+/* no need for evenmkting1 setting as that is 100% anyway */
+.evenmkting2 .marketing-block {
+    flex: 1 1 50%;
+}
+.evenmkting3 .marketing-block {
+    flex: 1 1 33.3%;
+}
+.evenmkting4 .marketing-block {
+    flex: 1 1 25%;
+}

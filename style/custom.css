@@ -60,10 +60,57 @@ a.logo {
 #page-login-index .maincontentwrap {
     background:url([[setting:loginbg]]) no-repeat;
     background-size: 100% 100%;
-    border-radius:6px;
     height: [[loginbgheight]];
     width: [[loginbgwidth]];
 
+}
+.carousel {
+    border:10px solid [[setting:carouselbordercolour]];
+    background-color:[[setting:carouselbordercolour]];
+}
+.carousel-inner {
+    background-color:[[setting:carouselbordercolour]];
+}
+@media (min-width: 481px) {
+    .carousel-caption {
+        background-color: [[setting:captionbackgroundcolour]];
+        border:5px solid [[setting:captionbackgroundcolour]];
+    }
+    .carousel-caption p.carousel-caption-text,
+    .carousel-caption h1 {
+        color: [[setting:captiontextcolour]] ;
+    }
+}
+/* Course images
+ * ------------- */
+.headerimage.withimage {
+    height:[[setting:courseheaderimageheight]];
+    background-size: cover;
+    background-repeat:no-repeat;
+}
+/* Course Box.
+ * ----------- */
+.coursebox.hover .summary {
+    color:[[setting:rendereroverlayfontcolour]] !important;
+}
+.coursebox.panel.hover .panel-body:hover .coursebox-content h3 a {
+    color:[[setting:rendereroverlayfontcolour]] !important;
+}
+.coursebox.hover .teachers li a,
+.coursebox.hover .summary > a:link,
+.coursebox.hover .summary > a:visited {
+    color:[[setting:rendereroverlayfontcolour]] !important;
+}
+.coursebox.panel.hover .panel-body:hover {
+    background:[[setting:rendereroverlaycolour]] !important;
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+    transition:all .5s ease-in-out;
+}
+.categoryicons .course_category_tree .fa {
+    font-size:[[setting:categoryiconsize]];
+    width:100%;
 }
 /* Custom CSS Settings
 -------------------------*/

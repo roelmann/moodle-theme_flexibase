@@ -212,11 +212,6 @@ form label {
 
 /* Course images
  * ------------- */
-.headerimage.withimage {
-    height:[[setting:courseheaderimageheight]];
-    background-size: cover;
-    background-repeat:no-repeat;
-}
 .courseimage {
     display:none;
 }
@@ -230,8 +225,333 @@ form label {
     background-repeat:no-repeat;
 }
 
-/* RTL Adjustments
- * --------------- */
+/* Alerts.
+ * ------- */
+.alert .title {
+    font-weight:800;
+    font-size:110%;
+    padding:0 5px;
+}
+.alert .fa-stack {
+    font-size:150%;
+}
+.alert {
+    border-radius: 4px;
+    margin: 0 5px 10px 5px;
+    padding: 5px;
+}
+.alertmessage {
+    padding-left:70px;
+    text-indent:-48px;
+}
+.rtl .alertmessage {
+    padding-right:70px;
+}
+
+/* Carousel.
+ * --------- */
+.carousel {
+    margin:0 5px 10px 5px;
+}
+@media (max-width: 768px) {
+    .carousel-caption p.carousel-caption-text {
+        display:none;
+    }
+}
+@media (max-width: 480px) {
+    .carousel-caption p.carousel-caption-text,
+    .carousel-caption h1 {
+        display:none;
+    }
+}
+
+/* Marketing.
+ * ---------- */
+/* Styles for marketing blocks */
+.marketing-block.panel .panel-title {
+    font-size:175%;
+}
+.marketing-block .fa-stack {
+    font-size:300%;
+}
+.marketing-block-content {
+    padding: 5px 10px;
+}
+.marketing-block-content h3 {
+    margin-top:0;
+}
+
+/* Course Box.
+ * ----------- */
+.coursebox > .info > .coursename a {
+    font-weight:normal;
+    font-size:80%;
+}
+
+.coursebox > .info > h3.name,
+.course_category_tree .category > .info .name {
+    font-size:120%;
+    font-weight:normal;
+    margin:0;
+}
+
+.coursebox .content {
+    clear:none;
+}
+
+.coursebox {
+    padding:0 0;
+    margin:10px;
+}
+
+.panel-body .courseimage img {
+    float:right;
+    margin-bottom:10px;
+    max-width:60px;
+    margin-left:5px;
+}
+
+.coursebox.panel.hover .panel-heading {
+    display:none;
+}
+
+.cimbox {
+    height:175px;
+    position:relative;
+    margin-right:-1px;
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+    transition:all .5s ease-in-out;
+}
+
+.coursebox-content {
+    padding:5px 15px 10px;
+    text-align:center;
+}
+
+.coursebox.hover .summary {
+    min-height:50px;
+    overflow:auto;
+    position:absolute;
+    text-align:center;
+    padding:15px;
+    top:0;
+    left:0;
+    display:none;
+}
+
+.coursebox.hover .teachers {
+    text-align:left;
+    padding-top:2px;
+}
+
+.coursebox.hover:hover .summary {
+    height:auto;
+    width:auto;
+    min-width:90%;
+    min-height:50px;
+    display:block;
+}
+
+.coursebox.panel .panel-body:hover .cimbox {
+    opacity:.3;
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+    transition:all .5s ease-in-out;
+}
+
+.coursebtn.submit.btn {
+    width:100%;
+    position:inherit;
+}
+
+.coursebox.panel.hover {
+    height:100%;
+}
+
+.coursebox.panel.hover .panel-body .coursebox-content h3 {
+    font-weight:normal;
+    font-size:20px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    max-width:100%;
+    line-height:normal;
+}
+
+.coursebox.hover .boxfooter {
+    clear:none;
+    margin-bottom:0;
+}
+
+.coursebox .content .courseimage img {
+    max-width:300px;
+}
+
+.coursebox.panel {
+    position:relative;
+    height:275px;
+    margin-bottom:20px;
+}
+#frontpage-course-list .coursebox .summary {
+	height:130px;
+}
+.coursebox .boxfooter {
+    clear:both;
+    margin-bottom:30px;
+}
+
+.coursebox.panel ul.teachers li {
+    display:none;
+}
+
+.coursebox.panel ul.teachers li:first-child {
+    display:block;
+}
+
+#changenumsections .smallicon {
+    width:24px;
+}
+
+#id_category, #id_parent {
+    width:100%;
+    max-width:100%;
+}
+
+.coursebox .panel-heading {
+    padding:12px 10px 10px;
+}
+
+.coursebox .panel-heading a {
+    font-size:105%;
+    color:#fff;
+}
+
+#frontpage-course-list:after,
+#frontpage-category-names:after,
+#frontpage-category-combo:after,
+#site-news-forum:after,
+#frontpage-course-list:before,
+#frontpage-category-names:before,
+#frontpage-category-combo:before,
+#site-news-forum:before {
+    content:" ";
+    display:table;
+    clear:both;
+}
+
+.categoryicons #frontpage-category-combo .collapsible-actions,
+.categoryicons .course_category_tree .collapsible-actions,
+.categoryicons .frontpage-category-names .collapsible-actions {
+    display:none;
+}
+
+.categoryicons .frontpage-category-names.course_category_tree .category.with_children>.info>.categoryname,
+.categoryicons .frontpage-category-names.course_category_tree .category>.info>.categoryname {
+    line-height:15px;
+}
+.categoryicons .category-browse{
+    overflow:auto;
+    width:100%;
+}
+.categoryicons .course_category_tree .category.with_children.collapsed>.info>.categoryname,
+.categoryicons .course_category_tree .category.with_children>.info>.categoryname,
+.categoryicons .course_category_tree .category>.info>.categoryname {
+    background-image:none !important;
+    padding:0;
+    margin:0;
+}
+.categoryicons .course_category_tree .category.dimmed_category{
+    border-color:#AAA;
+}
+.categoryicons .course_category_tree .category{
+    float:left;
+    margin:0 5px 10px;
+}
+.categoryicons .course_category_tree .category .numberofcourse{
+    background:#666;
+    color:#fff;
+    padding:7px;
+    border-radius:50%;
+    position:relative;
+    top:8px;
+    left:80%;
+    font-weight:600;
+    font-size:1em;
+    -moz-box-shadow:1px 1px 5px 0 #ccc;
+    -webkit-box-shadow:1px 1px 5px 0 #ccc;
+    box-shadow:1px 1px 5px 0 #ccc;
+    border:2px solid #fff;
+}
+.categoryicons .course_category_tree .category .content {
+    display:none;
+}
+.categoryicons .course_category_tree .category .info .name {
+    padding:0;
+    text-align:center;
+}
+.categoryicons .course_category_tree .category>.info,.categoryicons .course_category_tree .category>.info>.categoryname {
+    background:0 0;
+    border:0;
+    text-align:center;
+    box-shadow:none;
+    margin:0;
+}
+.categoryicons .course_category_tree .category>.info a,
+.categoryicons .course_category_tree .category>.info>.categoryname a {
+    display:block;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    width:176px;
+}
+.categoryicons .course_category_tree .category>.info a>i,
+.categoryicons .course_category_tree .category>.info>.categoryname a>i {
+    padding-top:6px;
+}
+.categoryicons .course_category_tree .category>.info a>span,
+.categoryicons .course_category_tree .category>.info>.categoryname a>span {
+    font-size:18px;
+}
+.categoryicons .course_category_tree .category[data-categoryid]:hover {
+    -webkit-transition:all .3s ease;
+    -moz-transition:all .3s ease;
+    -o-transition:all .3s ease;
+    transition:all .3s ease;
+}
+.categoryicons .course_category_tree .category[data-categoryid]>.info>.categoryname a{
+    line-height:30px;
+}
+.categoryicons .course_category_tree .category[data-categoryid]>.info>.categoryname a:hover {
+    text-decoration:none;
+}
+.categoryicons .course_category_tree .content .teachers .fa {
+    display:inline;
+    font-size:inherit;
+}
+.categoryicons .jsenabled .course_category_tree .controls {
+    display:none;
+}
+.categoryicons .subcategories+.category-browse {
+    clear:both;
+}
+.course_category_tree .coursebox .content .courseimage {
+    float:left;
+    width:30%;
+}
+.course_category_tree .coursebox .content .summary {
+    float:right;
+    width:65%;
+}
+.course_category_tree .coursebox,
+.block_course_overview .coursebox {
+    border-bottom:2px solid #ccc;
+}
+
+
+/* RTL Adjustments.
+ * ---------------- */
 .dir-rtl .dropdown-submenu > .dropdown-menu {
     border-radius: 6px 0 6px 6px;
     margin-right: -1px;
@@ -408,7 +728,9 @@ body.has_dock.dir-rtl .navbar-collapse {
 .courseheadergradepercentage table tbody tr:last-of-type .column-contributiontocoursetotal {
     display:none;
 }
-.courseheadergradepercentage table tbody tr:last-of-type .column-percentage {font-weight:900;font-size:150%;width:100px;}
+.courseheadergradepercentage table tbody tr:last-of-type .column-percentage {
+    font-weight:900;font-size:150%;width:100px;
+}
 
 /* Renderer - user menu
  * -------------------- */

@@ -35,14 +35,10 @@ $THEME->parents_exclude_sheets = array('bootstrap' => array('moodle', 'moodle-rt
 $THEME->sheets = array(
 // If the less files are removed below during development then the readmes/base.txt file can be added here.
     'flexlayoutlegacy', // Flexbox legacy rules - separated to simplify main flexbox layout code
-    'flexlayout',   // Flexbox layout rules.
-    'awesomebar',   // Awesomebar css.
-    'alerts',       // Alerts theme styles.
-    'carousel',     // Carousel theme styles - no core styles as core carousel css is already included in bootstrap.
-    'marketing',    // Marketing blocks core styles.
-    'coursebox',    // Course tile listing styles.
-    'styles',       // Last but one - theme style overrides.
-    'custom'        // Must be last - contains the css settings to override other css.
+    'flexlayout',   // Flexbox layout rules for all areas (main layouts, marketing spots, etc).
+    'awesomebar',   // Awesomebar css - Upstream file from Decaf theme
+    'styles',       // Last but one - Main theme styles.
+    'custom'        // Must be last - contains all the css settings options to override other css.
     );
 $THEME->editor_sheets = array(); // TODO.
 

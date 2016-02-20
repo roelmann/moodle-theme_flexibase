@@ -83,7 +83,7 @@ Richard
 CHANGELOG:
 ==========
 3.1.0a  - Refactor less and css
-        - Refactor php layout, renderer, etc files to allow for changes in core Travis code checker
+        - Refactor php layout, renderer, css, etc files to allow for changes in core Travis code checker
         - Add new setting and style for marketing spots - large icon style or 'blocks' format
 3.1.0
         - Style fixes

@@ -388,3 +388,58 @@
 .flexbox .browserwarningnoflex, .flexbox .browserwarningflexleg {
     display:none;
 }
+
+/* Marketing Spots CSS
+ * ------------------- */
+
+/* Flexbox layout for marketing. */
+.marketing-wrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    -webkit-box-align: stretch;
+    -moz-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+}
+.marketing-block {
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+}
+
+/* no need for evenmkting1 setting as that is 100% anyway */
+.evenmkting2 .marketing-block {
+    -webkit-flex: 1 1 50%;
+    -ms-flex: 1 1 50%;
+}
+.evenmkting3 .marketing-block {
+    -webkit-flex: 1 1 33.3%;
+    -ms-flex: 1 1 33.3%;
+}
+.evenmkting4 .marketing-block {
+    -webkit-flex: 1 1 25%;
+    -ms-flex: 1 1 25%;
+}
