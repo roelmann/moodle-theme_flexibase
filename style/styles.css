@@ -112,8 +112,8 @@ body.has_dock .navbar-collapse {
     border-radius:30px;
     border: 4px ridge #fff;
 }
-.navbar-header {
-    margin:0 5px 10px 5px!important;
+.container-fluid .navbar-header {
+    margin:5px;
 }
 
 /* Breadcrumbs.
@@ -459,7 +459,7 @@ form label {
 .categoryicons .course_category_tree .category.with_children.collapsed>.info>.categoryname,
 .categoryicons .course_category_tree .category.with_children>.info>.categoryname,
 .categoryicons .course_category_tree .category>.info>.categoryname {
-    background-image:none !important;
+    background-image:none;
     padding:0;
     margin:0;
 }
@@ -514,7 +514,7 @@ form label {
 .categoryicons .course_category_tree .category>.info>.categoryname a>span {
     font-size:18px;
 }
-.categoryicons .course_category_tree .category[data-categoryid]:hover {
+.categoryicons .course_category_tree .category:hover {
     -webkit-transition:all .3s ease;
     -moz-transition:all .3s ease;
     -o-transition:all .3s ease;
@@ -573,7 +573,8 @@ form label {
     float: right;
     text-align: left;
 }
-.dir-rtl .mform fieldset.collapsed legend a.fheader {
+.dir-rtl .mform fieldset.collapsed legend a.fheader,
+.dir-rtl .collapsible-actions .collapseexpand {
     background-image: url([[pix:core|t/collapsed_rtl]]);
 }
 .dir-rtl .mform fieldset.collapsible legend a.fheader {
@@ -587,7 +588,6 @@ form label {
     margin-right:4px;
 }
 .dir-rtl .collapsible-actions .collapseexpand {
-    background-image: url([[pix:core|t/collapsed_rtl]]);
     background-position: right center;
     background-repeat: no-repeat;
     padding-right: 20px;
@@ -627,7 +627,7 @@ caption {
     float: right;
 }
 .dir-rtl .navbar-right {
-    float: left !important;
+    float: left !important; /* !important required to override another !important in inherited upstream css */
     margin-left: 85px;
 }
 .dir-rtl .navbar-nav > li > a {
@@ -645,10 +645,10 @@ body.has_dock.dir-rtl .navbar-collapse {
     padding-right: 40px;
 }
 .dir-rtl header .pull-right {
-    float:left !important;
+    float:left !important; /* !important required to override another !important in inherited upstream css */
 }
 .dir-rtl header .pull-left {
-    float:right !important;
+    float:right !important; /* !important required to override another !important in inherited upstream css */
 }
 .dir-rtl .socials {
     margin-right:0;
@@ -729,7 +729,9 @@ body.has_dock.dir-rtl .navbar-collapse {
     display:none;
 }
 .courseheadergradepercentage table tbody tr:last-of-type .column-percentage {
-    font-weight:900;font-size:150%;width:100px;
+    font-weight:900;
+    font-size:150%;
+    width:100px;
 }
 
 /* Renderer - user menu

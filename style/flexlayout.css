@@ -82,25 +82,19 @@
 /* Layoutoption2 - 2 post
  * Order 3(main),4(pre),5(post)
  * ---------------------------- */
-#region-main.flexcontentmain.twopost {
-/* Nothing to change */
-}
+/* #region-main.flexcontentmain.twopost {Nothing to change} Placeholder only */
 #block-region-side-pre.flexcontentpre.twopost {
     order: 4;
 
     margin-right:0;
     margin-left:10px;
 }
-#block-region-side-post.flexcontentpost.twopost {
-/* Nothing to change */
-}
+/* #block-region-side-post.flexcontentpost.twopost {Nothing to change} Placeholder only */
 
 /* Layoutoption3 - 2 pre
  * Order 3(main),1(pre),2(post)
  * ---------------------------- */
-#region-main.flexcontentmain.twopre {
-/* Nothing to change */
-}
+/* #region-main.flexcontentmain.twopre {Nothing to change} Placeholder only */
 #block-region-side-post.flexcontentpost.twopre {
     order: 2;
 
