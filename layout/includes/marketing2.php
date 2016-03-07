@@ -36,16 +36,16 @@
         <?php
         if ($hasmarketing1) {
         ?>
-			<div class="marketing-block">
-				<div class="marketing-block-content">
-					<span class="fa-stack fa-lg">
-						<i class="fa fa-circle fa-stack-2x"></i>
-						<i class="fa fa-<?php echo $PAGE->theme->settings->marketing1icon ?> fa-stack-1x fa-inverse"></i>
-					</span>
-					<h3><?php echo $PAGE->theme->settings->marketing1 ?></h3>
-					<?php echo $PAGE->theme->settings->marketing1content ?>
-				</div>
-			</div>
+            <div class="marketing-block">
+                <div class="marketing-block-content">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-<?php echo $PAGE->theme->settings->marketing1icon ?> fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h3><?php echo $PAGE->theme->settings->marketing1 ?></h3>
+                    <?php echo $PAGE->theme->settings->marketing1content ?>
+                </div>
+            </div>
         <?php
         }
         ?>
@@ -55,16 +55,16 @@
         <?php
         if ($hasmarketing2) {
         ?>
-			<div class="marketing-block">
-				<div class="marketing-block-content">
-					<span class="fa-stack fa-lg">
-						<i class="fa fa-circle fa-stack-2x"></i>
-						<i class="fa fa-<?php echo $PAGE->theme->settings->marketing2icon ?> fa-stack-1x fa-inverse"></i>
-					</span>
-					<h3><?php echo $PAGE->theme->settings->marketing2 ?></h3>
-					<?php echo $PAGE->theme->settings->marketing2content ?>
-				</div>
-			</div>
+            <div class="marketing-block">
+                <div class="marketing-block-content">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-<?php echo $PAGE->theme->settings->marketing2icon ?> fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h3><?php echo $PAGE->theme->settings->marketing2 ?></h3>
+                    <?php echo $PAGE->theme->settings->marketing2content ?>
+                </div>
+            </div>
         <?php
         }
         ?>
@@ -74,16 +74,16 @@
         <?php
         if ($hasmarketing3) {
         ?>
-			<div class="marketing-block">
-				<div class="marketing-block-content">
-					<span class="fa-stack fa-lg">
-						<i class="fa fa-circle fa-stack-2x"></i>
-						<i class="fa fa-<?php echo $PAGE->theme->settings->marketing3icon ?> fa-stack-1x fa-inverse"></i>
-					</span>
-					<h3><?php echo $PAGE->theme->settings->marketing3 ?></h3>
-					<?php echo $PAGE->theme->settings->marketing3content ?>
-				</div>
-			</div>
+            <div class="marketing-block">
+                <div class="marketing-block-content">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-<?php echo $PAGE->theme->settings->marketing3icon ?> fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h3><?php echo $PAGE->theme->settings->marketing3 ?></h3>
+                    <?php echo $PAGE->theme->settings->marketing3content ?>
+                </div>
+            </div>
         <?php
         }
         ?>
@@ -93,16 +93,16 @@
         <?php
         if ($hasmarketing4) {
         ?>
-			<div class="marketing-block">
-				<div class="marketing-block-content">
-					<span class="fa-stack fa-lg">
-						<i class="fa fa-circle fa-stack-2x"></i>
-						<i class="fa fa-<?php echo $PAGE->theme->settings->marketing4icon ?> fa-stack-1x fa-inverse"></i>
-					</span>
-					<h3><?php echo $PAGE->theme->settings->marketing4 ?></h3>
-					<?php echo $PAGE->theme->settings->marketing4content ?>
-				</div>
-			</div>
+            <div class="marketing-block">
+                <div class="marketing-block-content">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-<?php echo $PAGE->theme->settings->marketing4icon ?> fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h3><?php echo $PAGE->theme->settings->marketing4 ?></h3>
+                    <?php echo $PAGE->theme->settings->marketing4content ?>
+                </div>
+            </div>
         <?php
         }
         ?>

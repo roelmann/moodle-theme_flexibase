@@ -35,7 +35,7 @@
         ?>
         <div class="maincontentwrap flexcontainer">
             <div class="maincontentinnerwrap flexcontainer">
-               <?php
+                <?php
                 echo $OUTPUT->main_content();
                 if ($knownregionmainpre) {
                     echo $OUTPUT->blocks('side-mainpre', "flexcontentmainpre $layoutoption");

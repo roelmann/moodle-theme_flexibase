@@ -888,7 +888,7 @@ body.has_dock.dir-rtl .navbar-collapse {
     display: flex;
     -webkit-flex-flow:row wrap;
     flex-flow: row wrap;
-    
+
     font-family: 'FontAwesome';
     font-weight:500;
     margin-right: 5px;
@@ -979,4 +979,3 @@ body.has_dock.dir-rtl .navbar-collapse {
 .eventlist .event .icon {display:none;} /* Hide calendar icon on event view. */
 .eventlist .event h3 {margin-top:0;} /* Then improves the top spacing as well. */
 div math mfrac mi {font-size: 0;visibility: hidden;} /* Hide text produced by one of the modernizr.js tests */
-
