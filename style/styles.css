@@ -979,3 +979,6 @@ body.has_dock.dir-rtl .navbar-collapse {
 .eventlist .event .icon {display:none;} /* Hide calendar icon on event view. */
 .eventlist .event h3 {margin-top:0;} /* Then improves the top spacing as well. */
 div math mfrac mi {font-size: 0;visibility: hidden;} /* Hide text produced by one of the modernizr.js tests */
+.block_navigation .block_tree .tree_item.hasicon {white-space: normal; word-wrap: break-word;} /* Fix overflow bug in
+                                                                                                * block_navigation and
+                                                                                                * block_course_menu */
