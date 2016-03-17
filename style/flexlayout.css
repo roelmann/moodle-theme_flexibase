@@ -237,60 +237,6 @@
     max-width:250px;
 }
 
-/* Media calls to turn flexbox rows into columns. */
-@media (max-width: 768px) {
-    #page-content.flexcontainer {
-        flex-direction: column;
-    }
-    #block-region-side-pre.flexcontentpre,
-    #block-region-side-pre.flexcontentpre.twopost,
-    #block-region-side-pre.flexcontentpre.twopre,
-    .flexcontentpre.singlepre,
-    #block-region-side-post.flexcontentpost,
-    #block-region-side-post.flexcontentpost.twopost,
-    #block-region-side-post.flexcontentpost.twopre,
-    .flexcontentpost.singlepost {
-        width:100%;
-        max-width: none;
-        margin-left:0;
-        margin-right:0;
-    }
-    #block-region-side-pre.flexcontentpre,
-    #block-region-side-pre.flexcontentpre.twopost,
-    #block-region-side-pre.flexcontentpre.twopre,
-    .flexcontentpre.singlepre {
-        order: 4;
-    }
-    #block-region-side-post.flexcontentpost,
-    #block-region-side-post.flexcontentpost.twopost,
-    #block-region-side-post.flexcontentpost.twopre,
-    .flexcontentpost.singlepost {
-        order: 5;
-    }
-    .maincontentinnerwrap.flexcontainer {
-        display: flex;
-        flex-direction: column;
-    }
-    .maincontentinnerwrap div[role=main] {
-        order: 0;
-        flex: 0 1 auto;
-        align-self: stretch;
-    }
-    .maincontentinnerwrap div[role=main],
-    .used-region-side-mainpost .maincontentinnerwrap div[role=main],
-    .used-region-side-mainpre .maincontentinnerwrap div[role=main],
-    .used-region-side-mainpost.used-region-side-mainpre .maincontentinnerwrap div[role=main] {
-        max-width:100%;
-    }
-
-    .maincontentinnerwrap .flexcontentmainpre,
-    .maincontentinnerwrap .flexcontentmainpost {
-        order: 0;
-        flex: 0 1 auto;
-        align-self: stretch;
-    }
-}
-
 /* RTL positioning of blocks is handled automatically. Just requires
  * margins swapping around.
  * ----------------------------------------------------------------- */
@@ -385,4 +331,67 @@
 }
 .evenmkting4 .marketing-block {
     flex: 1 1 25%;
+}
+
+/* Media calls to turn flexbox rows into columns. */
+@media (max-width: 768px) {
+    #page-content.flexcontainer {
+        flex-direction: column;
+    }
+    #block-region-side-pre.flexcontentpre,
+    #block-region-side-pre.flexcontentpre.twopost,
+    #block-region-side-pre.flexcontentpre.twopre,
+    .flexcontentpre.singlepre,
+    #block-region-side-post.flexcontentpost,
+    #block-region-side-post.flexcontentpost.twopost,
+    #block-region-side-post.flexcontentpost.twopre,
+    .flexcontentpost.singlepost {
+        width:100%;
+        max-width: none;
+        margin-left:0;
+        margin-right:0;
+    }
+    #block-region-side-pre.flexcontentpre,
+    #block-region-side-pre.flexcontentpre.twopost,
+    #block-region-side-pre.flexcontentpre.twopre,
+    .flexcontentpre.singlepre {
+        order: 4;
+    }
+    #block-region-side-post.flexcontentpost,
+    #block-region-side-post.flexcontentpost.twopost,
+    #block-region-side-post.flexcontentpost.twopre,
+    .flexcontentpost.singlepost {
+        order: 5;
+    }
+    .maincontentinnerwrap.flexcontainer {
+        display: flex;
+        flex-direction: column;
+    }
+    .maincontentinnerwrap div[role=main] {
+        order: 0;
+        flex: 0 1 auto;
+        align-self: stretch;
+    }
+    .maincontentinnerwrap div[role=main],
+    .used-region-side-mainpost .maincontentinnerwrap div[role=main],
+    .used-region-side-mainpre .maincontentinnerwrap div[role=main],
+    .used-region-side-mainpost.used-region-side-mainpre .maincontentinnerwrap div[role=main] {
+        max-width:100%;
+    }
+
+    .maincontentinnerwrap .flexcontentmainpre,
+    .maincontentinnerwrap .flexcontentmainpost {
+        order: 0;
+        flex: 0 1 auto;
+        align-self: stretch;
+    }
+/* Fix for IE11 bug. */
+    #region-main.flexcontentmain,
+    #block-region-side-pre.flexcontentpre,
+    #block-region-side-post.flexcontentpost {
+        flex: 1 1 auto;
+    }
+    #region-main.flexcontentmain {
+        margin-bottom:15px;
+    }
 }

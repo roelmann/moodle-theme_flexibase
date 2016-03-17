@@ -82,6 +82,7 @@ Richard
 
 CHANGELOG:
 ==========
+3.1.0b  - Fix Issue #62 - Blocks not working correctly in IE 10/11 on smaller screens
 3.1.0a  - Refactor less and css
         - Refactor php layout, renderer, css, etc files to allow for changes in core Travis code checker
         - Add new setting and style for marketing spots - large icon style or 'blocks' format
