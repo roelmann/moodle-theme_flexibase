@@ -77,7 +77,8 @@ $THEME->layouts = array(
             'side-mainpost',
             'side-maintop',
             'side-mainbottom',
-            'side-adminbottom'
+            'side-adminbottom',
+            'side-teachbtm'
         ),
         'defaultregion' => 'side-pre',
     ),
@@ -93,7 +94,8 @@ $THEME->layouts = array(
             'side-mainpost',
             'side-maintop',
             'side-mainbottom',
-            'side-adminbottom'
+            'side-adminbottom',
+            'side-teachbtm'
         ),
         'defaultregion' => 'side-pre',
         'options' => array('langmenu' => true),
@@ -110,7 +112,8 @@ $THEME->layouts = array(
             'side-mainpost',
             'side-maintop',
             'side-mainbottom',
-            'side-adminbottom'
+            'side-adminbottom',
+            'side-teachbtm'
         ),
         'defaultregion' => 'side-pre',
     ),
@@ -125,7 +128,8 @@ $THEME->layouts = array(
             'side-mainpost',
             'side-maintop',
             'side-mainbottom',
-            'side-adminbottom'
+            'side-adminbottom',
+            'side-teachbtm'
         ),
         'defaultregion' => 'side-pre',
     ),
@@ -141,7 +145,8 @@ $THEME->layouts = array(
             'side-mainpost',
             'side-maintop',
             'side-mainbottom',
-            'side-adminbottom'
+            'side-adminbottom',
+            'side-teachbtm'
         ),
         'defaultregion' => 'side-pre',
         'options' => array('nonavbar' => true),
@@ -165,7 +170,8 @@ $THEME->layouts = array(
             'side-mainpost',
             'side-maintop',
             'side-mainbottom',
-            'side-adminbottom'
+            'side-adminbottom',
+            'side-teachbtm'
         ),
         'defaultregion' => 'side-pre',
         'options' => array('langmenu' => true),
@@ -182,7 +188,8 @@ $THEME->layouts = array(
             'side-mainpost',
             'side-maintop',
             'side-mainbottom',
-            'side-adminbottom'
+            'side-adminbottom',
+            'side-teachbtm'
         ),
         'defaultregion' => 'side-pre',
     ),

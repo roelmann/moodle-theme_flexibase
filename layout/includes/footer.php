@@ -30,6 +30,18 @@
 
 <footer id="page-footer">
     <?php
+    $context = context_system::instance();
+    if (has_capability('moodle/site:viewreports', $context)) {?>
+        <div id="region-teachbtm" class="well">
+            <?php
+            if ($knownregionadminbottom) {
+                echo '<h3>'.get_string('region-side-teachbtm', 'theme_flexibase').'</h3>';
+                echo $OUTPUT->blocks('side-teachbtm', "sideteachbtm flexcontainer");
+            }
+            ?>
+        </div>
+    <?php
+    }
     if (is_siteadmin()) {
     ?>
         <div id="region-adminbottom" class="well">

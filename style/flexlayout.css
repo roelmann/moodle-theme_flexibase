@@ -135,6 +135,7 @@
 #block-region-side-top.flexcontainer,
 #block-region-side-bottom.flexcontainer,
 #block-region-side-adminbottom.flexcontainer,
+#block-region-side-teachbtm.flexcontainer,
 #block-region-side-maintop.flexcontainer,
 #block-region-side-mainbottom.flexcontainer {
     display: flex;
@@ -167,6 +168,7 @@
 #block-region-side-top .block,
 #block-region-side-bottom .block,
 #block-region-side-adminbottom .block,
+#block-region-side-teachbtm .block,
 #block-region-side-maintop .block,
 .maincontentinnerwrap,
 #block-region-side-mainbottom .block {
