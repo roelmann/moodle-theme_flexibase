@@ -135,7 +135,15 @@ if (isloggedin() ) {
 </div>
 
 <div class="courseheaderimage">
-    <div class="courseimage <?php echo $courseheaderclass;?>" 
+    <div class="courseimage <?php echo $courseheaderclass;?>"
         style="background-image: url('<?php echo $courseimage;?>')">&nbsp;
     </div>
+</div>
+
+<div id="region-alert">
+    <?php
+    if ($knownregionalert) {
+         echo $OUTPUT->blocks('side-alert', "sidealert flexcontainer");
+    }
+    ?>
 </div>

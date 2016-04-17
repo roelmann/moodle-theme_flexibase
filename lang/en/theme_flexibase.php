@@ -51,6 +51,7 @@ $string['region-side-top'] = 'Top';
 $string['region-side-bottom'] = 'Bottom';
 $string['region-side-adminbottom'] = 'Site Administrator Only';
 $string['region-side-teachbtm'] = 'Course Teachers Only';
+$string['region-side-alert'] = 'Optional Alert Region';
 
 
 // Settings.

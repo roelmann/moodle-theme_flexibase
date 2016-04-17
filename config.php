@@ -78,7 +78,8 @@ $THEME->layouts = array(
             'side-maintop',
             'side-mainbottom',
             'side-adminbottom',
-            'side-teachbtm'
+            'side-teachbtm',
+            'side-alert'
         ),
         'defaultregion' => 'side-pre',
     ),
@@ -95,7 +96,8 @@ $THEME->layouts = array(
             'side-maintop',
             'side-mainbottom',
             'side-adminbottom',
-            'side-teachbtm'
+            'side-teachbtm',
+            'side-alert'
         ),
         'defaultregion' => 'side-pre',
         'options' => array('langmenu' => true),
@@ -113,7 +115,8 @@ $THEME->layouts = array(
             'side-maintop',
             'side-mainbottom',
             'side-adminbottom',
-            'side-teachbtm'
+            'side-teachbtm',
+            'side-alert'
         ),
         'defaultregion' => 'side-pre',
     ),
@@ -129,7 +132,8 @@ $THEME->layouts = array(
             'side-maintop',
             'side-mainbottom',
             'side-adminbottom',
-            'side-teachbtm'
+            'side-teachbtm',
+            'side-alert'
         ),
         'defaultregion' => 'side-pre',
     ),
@@ -146,7 +150,8 @@ $THEME->layouts = array(
             'side-maintop',
             'side-mainbottom',
             'side-adminbottom',
-            'side-teachbtm'
+            'side-teachbtm',
+            'side-alert'
         ),
         'defaultregion' => 'side-pre',
         'options' => array('nonavbar' => true),
@@ -171,7 +176,8 @@ $THEME->layouts = array(
             'side-maintop',
             'side-mainbottom',
             'side-adminbottom',
-            'side-teachbtm'
+            'side-teachbtm',
+            'side-alert'
         ),
         'defaultregion' => 'side-pre',
         'options' => array('langmenu' => true),
@@ -189,7 +195,8 @@ $THEME->layouts = array(
             'side-maintop',
             'side-mainbottom',
             'side-adminbottom',
-            'side-teachbtm'
+            'side-teachbtm',
+            'side-alert'
         ),
         'defaultregion' => 'side-pre',
     ),

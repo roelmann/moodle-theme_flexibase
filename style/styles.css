@@ -970,8 +970,8 @@ body.has_dock.dir-rtl .navbar-collapse {
     margin:0 0 0 20px;
 }
 
-/* Style bug fixes
- * --------------- */
+/* Style fixes
+ * ----------- */
 .section .label .mod-indent-outer {display: table;} /* Correct upstream bug that prevented indented labels. */
 .nav-tabs.nav-justified {width: auto;} /* Override tabs width setting to prevent overlap. */
 .block .minicalendar th, .block .minicalendar td  {padding: 0;} /* Remove overlap of minicalendar block on smaller screens. */
@@ -982,3 +982,5 @@ div math mfrac mi {font-size: 0;visibility: hidden;} /* Hide text produced by on
 .block_navigation .block_tree .tree_item.hasicon {white-space: normal; word-wrap: break-word;} /* Fix overflow bug in
                                                                                                 * block_navigation and
                                                                                                 * block_course_menu */
+#block-region-side-alert.sidealert .block .header.panel-heading {display:none;}
+.editing #block-region-side-alert.sidealert .block .header.panel-heading {display:block;}
