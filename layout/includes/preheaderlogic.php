@@ -151,7 +151,7 @@ echo $OUTPUT->doctype() ?>
         }
         ?>
         <!-- Add FontAwesome CDN. -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
         <?php echo $OUTPUT->standard_head_html(); ?>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
