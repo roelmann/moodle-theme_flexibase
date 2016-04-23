@@ -925,6 +925,9 @@ body.has_dock.dir-rtl .navbar-collapse {
 .regionshelp h3:before {
     content: "\f247";
 }
+.additionalregions h3:before {
+    content: "\f18d";
+}
 .buttonspanel h3:before {
     content: "\f019";
 }

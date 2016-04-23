@@ -74,6 +74,17 @@ require('helpnavbuttons.php');
             <p><?php echo get_string('pageslayoutsregionsbody', 'theme_flexibase')?></p>
         </div>
     </div>
+    <div class="panel panel-info flexhelpitem additionalregions">
+        <div class="panel-heading">
+            <h3 class="panel-title"><?php echo get_string(
+                'pagesadditionalregionstitle', 'theme_flexibase')?></h3>
+        </div>
+        <div class="panel-body">
+            <h4><?php echo get_string('pagesadditionalregionshead', 'theme_flexibase')?></h4>
+            <p><?php echo get_string('pagesadditionalregionsbody', 'theme_flexibase')?></p>
+        </div>
+    </div>
+
     <div class="panel panel-info flexhelpitem layoutdiagrams">
         <div class="panel-heading">
             <h3 class="panel-title"><?php echo get_string(

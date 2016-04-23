@@ -82,12 +82,17 @@ Richard
 
 CHANGELOG:
 ==========
+3.1.1   - 2 new block regions:
+              Teacher only (similar to existing Admin only region)
+              Alerts region - an alternative to the Alerts settings where an html block can be added
+                  and controlled by anyone with appropriate editing rights (Alert theme setting is Admin
+                  only)
+          FontAwesome CDN updated to 4.6.1
 3.1.0b  - Fix Issue #62 - Blocks not working correctly in IE 10/11 on smaller screens
 3.1.0a  - Refactor less and css
         - Refactor php layout, renderer, css, etc files to allow for changes in core Travis code checker
         - Add new setting and style for marketing spots - large icon style or 'blocks' format
-3.1.0
-        - Style fixes
+3.1.0   - Style fixes
         - Settings navigation moved to layout files to clear language strings
         - Image Bank added (theme specific adaptation of work by Gareth Barnard)
         - favicon setting added
