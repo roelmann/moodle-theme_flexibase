@@ -15,21 +15,33 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * course_overview block rendrer
+ * Theme Flexibase renderer file.
+ *
+ * @package    theme_flexibase
+ * @author     2015 Richard Oelmann
+ * @copyright  2015 R. Oelmann
+ * @copyright  Bootstrap - 2014 Bas Brands
+ *             Essential - Julian Ridden, Gareth Barnard;
+ *             Elegance - Julian Ridden, Danny Wahl;
+ *             BCU - Jez H, Mike Grant
+ *             Decaf - Paul Nichols
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+/**
+ * course_overview block renderer
  *
  * @package    block_course_overview
  * @copyright  2012 Adam Olley <adam.olley@netspot.com.au>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-defined('MOODLE_INTERNAL') || die;
 
-/**
- * Course_overview block rendrer
- *
- * @copyright  2012 Adam Olley <adam.olley@netspot.com.au>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class block_course_overview_renderer extends plugin_renderer_base {
+require_once($CFG->dirroot."/blocks/course_overview/renderer.php");
+require_once($CFG->dirroot.'/blocks/course_overview/locallib.php');
+require_once($CFG->dirroot . "/course/renderer.php");
+require_once($CFG->libdir. '/coursecatlib.php');
+
+class theme_flexibase_block_course_overview_renderer extends block_course_overview_renderer {
 
     /**
      * Construct contents of course_overview block
@@ -39,6 +51,8 @@ class block_course_overview_renderer extends plugin_renderer_base {
      * @return string html to be displayed in course_overview block
      */
     public function course_overview($courses, $overviews) {
+        global $CFG;
+        global $PAGE;
         $html = '';
         $config = get_config('block_course_overview');
         if ($config->showcategories != BLOCKS_COURSE_OVERVIEW_SHOWCATEGORIES_NONE) {
@@ -88,8 +102,35 @@ class block_course_overview_renderer extends plugin_renderer_base {
             if ($ismovingcourse && ($course->id == $movingcourseid)) {
                 continue;
             }
-            $html .= $this->output->box_start('coursebox', "course-{$course->id}");
-            $html .= html_writer::start_tag('div', array('class' => 'course_title'));
+
+            // Display course overview files.
+            if ($course instanceof stdClass) {
+                require_once($CFG->libdir. '/coursecatlib.php');
+                $course = new course_in_list($course);
+            }
+
+            $contentimages = '';
+            foreach ($course->get_course_overviewfiles() as $file) {
+                $isimage = $file->is_valid_image();
+                $url = file_encode_url("$CFG->wwwroot/pluginfile.php",
+                        '/'. $file->get_contextid(). '/'. $file->get_component(). '/'.
+                        $file->get_filearea(). $file->get_filepath(). $file->get_filename(), !$isimage);
+                if ($contentimages == '') {
+                    if ($isimage) {
+                        $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center;
+                                background-size: contain;'></div>";
+                    }
+                }
+            }
+            if (strlen($contentimages) == 0) {
+                // Default image.
+                $url = $PAGE->theme->setting_file_url('frontpagerendererdefaultimage', 'frontpagerendererdefaultimage');
+                $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center;
+                        background-size: contain;'></div>";
+            }
+
+            $html .= $this->output->box_start('panel panel-primary coursebox coursebox-content', "course-{$course->id}");
+            $html .= html_writer::start_tag('div', array('class' => 'panel-body clearfix'));
             // If user is editing, then add move icons.
             if ($userediting && !$ismovingcourse) {
                 $moveicon = html_writer::empty_tag('img',
@@ -108,10 +149,20 @@ class block_course_overview_renderer extends plugin_renderer_base {
                 if (empty($course->visible)) {
                     $attributes['class'] = 'dimmed';
                 }
+                $html .= $contentimages;
                 $courseurl = new moodle_url('/course/view.php', array('id' => $course->id));
                 $coursefullname = format_string(get_course_display_name_for_list($course), true, $course->id);
                 $link = html_writer::link($courseurl, $coursefullname, $attributes);
-                $html .= $this->output->heading($link, 2, 'title');
+                $html .= $this->output->heading($link, 3, 'title');
+                if (isset($overviews[$course->id]) && !$ismovingcourse) {
+                    if ($this->activity_display($course, $overviews[$course->id]) == '') {
+                        continue;
+                    } else {
+                        $html .= html_writer::start_tag('div', array('class' => 'courseboxactivitynotice'));
+                        $html .= '<p>'.get_string('courseboxactivitynotice', 'theme_flexibase').'</p>>';
+                        $html .= html_writer::end_tag('div');
+                    }
+                }
             } else {
                 $html .= $this->output->heading(html_writer::link(
                     new moodle_url('/auth/mnet/jump.php', array('hostid' => $course->hostid, 'wantsurl' => '/course/view.php?id='.$course->remoteid)),
@@ -129,7 +180,7 @@ class block_course_overview_renderer extends plugin_renderer_base {
 
             // If user is moving courses, then down't show overview.
             if (isset($overviews[$course->id]) && !$ismovingcourse) {
-                $html .= $this->activity_display($course->id, $overviews[$course->id]);
+                $html .= $this->activity_display($course, $overviews[$course->id]);
             }
 
             if ($config->showcategories != BLOCKS_COURSE_OVERVIEW_SHOWCATEGORIES_NONE) {
@@ -178,8 +229,14 @@ class block_course_overview_renderer extends plugin_renderer_base {
      * @param array $overview overview of activities in course
      * @return string html of activities overview
      */
-    protected function activity_display($cid, $overview) {
-        $output = html_writer::start_tag('div', array('class' => 'activity_info'));
+    protected function activity_display($course, $overview) {
+        $cid = $course->id;
+        $output = html_writer::start_tag('div', array('class' => 'activity_info summary'));
+        $courseurl = new moodle_url('/course/view.php', array('id' => $cid));
+        $coursefullname = format_string(get_course_display_name_for_list($course), true, $cid);
+        $attributes['class'] = '';
+        $link = html_writer::link($courseurl, $coursefullname, $attributes);
+        $output .= $this->output->heading($link, 3, 'title');
         foreach (array_keys($overview) as $module) {
             $output .= html_writer::start_tag('div', array('class' => 'activity_overview'));
             $url = new moodle_url("/mod/$module/index.php", array('id' => $cid));

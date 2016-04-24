@@ -973,6 +973,55 @@ body.has_dock.dir-rtl .navbar-collapse {
     margin:0 0 0 20px;
 }
 
+/* Dashboard Course-Overview
+ * ------------------------- */
+.block_course_overview .coursebox.panel {width:48%;margin:10px 1%;float:left;}
+.block_course_overview .coursebox.panel.coursebox-content h3 {
+    font-weight:normal;
+    font-size:20px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    max-width:100%;
+    line-height:normal;
+}
+.block_course_overview .coursebox .summary {
+    height:100%;
+    overflow:auto;
+    position:absolute;
+    text-align:center;
+    padding:15px;
+    top:0;
+    left:0;
+    visibility:hidden;
+}
+.block_course_overview .coursebox:hover .summary {
+    height:100%;
+    visibility:visible;
+    opacity:0.9;
+}
+.block_course_overview .coursebox.panel .panel-body:hover .cimbox {
+    opacity:.3;
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+    transition:all .5s ease-in-out;
+}
+.block_course_overview .coursebox .courseboxactivitynotice {
+    border-radius: 25px;
+    height: 50px;
+    left: -7px;
+    padding: 5px 20px;
+    position: absolute;
+    text-align: center;
+    top: 18px;
+    -ms-transform: rotate(-45deg); /* IE 9 */
+    -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+    transform: rotate(-45deg);
+    width: 100px;
+    font-weight:700;
+}
+    
 /* Style fixes
  * ----------- */
 .section .label .mod-indent-outer {display: table;} /* Correct upstream bug that prevented indented labels. */

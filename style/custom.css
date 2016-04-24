@@ -90,7 +90,8 @@ a.logo {
 }
 /* Course Box.
  * ----------- */
-.coursebox.hover .summary {
+.coursebox.hover .summary,
+.block_course_overview .coursebox:hover .summary {
     color:[[setting:rendereroverlayfontcolour]] !important;
 }
 .coursebox.panel.hover .panel-body:hover .coursebox-content h3 a {
@@ -101,7 +102,16 @@ a.logo {
 .coursebox.hover .summary > a:visited {
     color:[[setting:rendereroverlayfontcolour]] !important;
 }
-.coursebox.panel.hover .panel-body:hover {
+.block_course_overview .coursebox:hover .summary a {
+    color:[[setting:rendereroverlayfontcolour]] !important;
+    font-weight:700;
+}
+.block_course_overview .coursebox .courseboxactivitynotice {
+    background:[[setting:rendereroverlaycolour]];
+    color:[[setting:rendereroverlayfontcolour]]
+}
+.coursebox.panel.hover .panel-body:hover,
+.block_course_overview .coursebox:hover .summary {
     background:[[setting:rendereroverlaycolour]] !important;
     -webkit-transition:all .5s ease-in-out;
     -moz-transition:all .5s ease-in-out;
