@@ -63,13 +63,13 @@ class theme_flexibase_block_course_overview_renderer extends block_course_overvi
         $courseordernumber = 0;
         $maxcourses = count($courses);
         $userediting = false;
-        // Intialise string/icon etc if user is editing and courses > 1
+        // Intialise string/icon etc if user is editing and courses > 1.
         if ($this->page->user_is_editing() && (count($courses) > 1)) {
             $userediting = true;
             $this->page->requires->js_init_call('M.block_course_overview.add_handles');
 
-            // Check if course is moving
-            $ismovingcourse = optional_param('movecourse', FALSE, PARAM_BOOL);
+            // Check if course is moving.
+            $ismovingcourse = optional_param('movecourse', false, PARAM_BOOL);
             $movingcourseid = optional_param('courseid', 0, PARAM_INT);
         }
 
@@ -87,7 +87,7 @@ class theme_flexibase_block_course_overview_renderer extends block_course_overvi
             $html .= $this->output->box_end();
 
             $moveurl = new moodle_url('/blocks/course_overview/move.php',
-                        array('sesskey' => sesskey(), 'moveto' => 0, 'courseid' => $movingcourseid));
+                    array('sesskey' => sesskey(), 'moveto' => 0, 'courseid' => $movingcourseid));
             // Create move icon, so it can be used.
             $movetofirsticon = html_writer::empty_tag('img',
                     array('src' => $this->output->pix_url('movehere'),
@@ -137,7 +137,8 @@ class theme_flexibase_block_course_overview_renderer extends block_course_overvi
                         array('src' => $this->pix_url('t/move')->out(false),
                             'alt' => get_string('movecourse', 'block_course_overview', $course->fullname),
                             'title' => get_string('move')));
-                $moveurl = new moodle_url($this->page->url, array('sesskey' => sesskey(), 'movecourse' => 1, 'courseid' => $course->id));
+                $moveurl = new moodle_url($this->page->url,
+                        array('sesskey' => sesskey(), 'movecourse' => 1, 'courseid' => $course->id));
                 $moveurl = html_writer::link($moveurl, $moveicon);
                 $html .= html_writer::tag('div', $moveurl, array('class' => 'move'));
 
@@ -165,7 +166,8 @@ class theme_flexibase_block_course_overview_renderer extends block_course_overvi
                 }
             } else {
                 $html .= $this->output->heading(html_writer::link(
-                    new moodle_url('/auth/mnet/jump.php', array('hostid' => $course->hostid, 'wantsurl' => '/course/view.php?id='.$course->remoteid)),
+                    new moodle_url('/auth/mnet/jump.php',
+                            array('hostid' => $course->hostid, 'wantsurl' => '/course/view.php?id='.$course->remoteid)),
                     format_string($course->shortname, true), $attributes) . ' (' . format_string($course->hostname) . ')', 2, 'title');
             }
             $html .= $this->output->box('', 'flush');
@@ -241,7 +243,8 @@ class theme_flexibase_block_course_overview_renderer extends block_course_overvi
             $output .= html_writer::start_tag('div', array('class' => 'activity_overview'));
             $url = new moodle_url("/mod/$module/index.php", array('id' => $cid));
             $modulename = get_string('modulename', $module);
-            $icontext = html_writer::link($url, $this->output->pix_icon('icon', $modulename, 'mod_'.$module, array('class'=>'iconlarge')));
+            $icontext = html_writer::link($url, $this->output->pix_icon('icon', $modulename, 'mod_'.$module,
+                    array('class' => 'iconlarge')));
             if (get_string_manager()->string_exists("activityoverview", $module)) {
                 $icontext .= get_string("activityoverview", $module);
             } else {
@@ -298,7 +301,8 @@ class theme_flexibase_block_course_overview_renderer extends block_course_overvi
         } else {
             $a = new stdClass();
             $a->coursecount = $total;
-            $a->showalllink = html_writer::link(new moodle_url('/my/index.php', array('mynumber' => block_course_overview::SHOW_ALL_COURSES)),
+            $a->showalllink = html_writer::link(new moodle_url('/my/index.php',
+                    array('mynumber' => block_course_overview::SHOW_ALL_COURSES)),
                     get_string('showallcourses'));
             $output .= get_string('hiddencoursecountwithshowall'.$plural, 'block_course_overview', $a);
         }
@@ -325,7 +329,7 @@ class theme_flexibase_block_course_overview_renderer extends block_course_overvi
             $output .= $this->collapsible_region_end();
 
             return $output;
-        }
+    }
 
     /**
      * Print (or return) the start of a collapsible region, that has a caption that can
@@ -360,7 +364,8 @@ class theme_flexibase_block_course_overview_renderer extends block_course_overvi
         $output .= '<div id="' . $id . '_caption" class="collapsibleregioncaption">';
         $output .= $caption . ' ';
         $output .= '</div><div id="' . $id . '_inner" class="collapsibleregioninner">';
-        $this->page->requires->js_init_call('M.block_course_overview.collapsible', array($id, $userpref, get_string('clicktohideshow')));
+        $this->page->requires->js_init_call('M.block_course_overview.collapsible',
+                array($id, $userpref, get_string('clicktohideshow')));
 
         return $output;
     }
