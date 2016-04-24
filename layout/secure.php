@@ -28,61 +28,21 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-if (!empty($PAGE->theme->settings->frontpagelayout)) {
-    $layoutoption = $PAGE->theme->settings->frontpagelayout;
+if (!empty($PAGE->theme->settings->defaultlayout)) {
+    $layoutoption = $PAGE->theme->settings->defaultlayout;
 } else {
     $layoutoption = 'preandpost';
 }
 
-$hasmarketing = (empty($PAGE->theme->settings->togglemarketing)) ? false : $PAGE->theme->settings->togglemarketing;
-
 require('includes/preheaderlogic.php');
-require('includes/header.php');
+require('includes/secureheader.php');
 ?>
 
 <div id="page" class="container-fluid">
-    <?php require('includes/alerts.php'); ?>
-    <?php require('includes/breadcrumb.php'); ?>
-
-    <div id="page-header" class="clearfix">
-        <!-- Start Carousel -->
-        <?php require('includes/carousel2.php');?>
-        <!-- End Carousel -->
-
-        <!-- Start Marketing Spots -->
-        <?php
-        if ($hasmarketing == 1) {
-            require_once(dirname(__FILE__).'/includes/marketing.php');
-        } else if ($hasmarketing == 2 && !isloggedin()) {
-            require_once(dirname(__FILE__).'/includes/marketing.php');
-        } else if ($hasmarketing == 3 && isloggedin()) {
-            require_once(dirname(__FILE__).'/includes/marketing.php');
-        }
-        ?>
-        <!-- End Marketing Spots -->
-
-        <div id="course-header">
-            <?php echo $OUTPUT->course_header(); ?>
-        </div>
-        <div id="region-top">
-            <?php
-            if ($knownregiontop) {
-                echo $OUTPUT->blocks('side-top', "sidetop flexcontainer");
-            }
-            ?>
-        </div>
-    </div>
-
     <?php
+    require('includes/breadcrumb.php');
     require('includes/mainbody.php');
-    require('includes/footer.php');
     ?>
-    <!-- Initialize slideshow -->
-    <script type="text/javascript">
-        jQuery(document).ready(function () {
-            $('.carousel').carousel();
-        });
-    </script>
 </div>
-</body> <!-- Opened in includes/header -->
-</html> <!-- Opened in includes/header -->
+</body>
+</html>

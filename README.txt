@@ -88,6 +88,7 @@ CHANGELOG:
                   and controlled by anyone with appropriate editing rights (Alert theme setting is Admin
                   only)
           FontAwesome CDN updated to 4.6.1
+          Dashboard now uses Course Tiles look - additional info for course on hover, with banner notice
 3.1.0b  - Fix Issue #62 - Blocks not working correctly in IE 10/11 on smaller screens
 3.1.0a  - Refactor less and css
         - Refactor php layout, renderer, css, etc files to allow for changes in core Travis code checker
