@@ -578,14 +578,32 @@ class theme_flexibase_core_renderer extends core_renderer {
             }
             $content .= '</ul>';
         } else {
-            $content = '<li>';
-            // The node doesn't have children so produce a final menuitem.
-            if ($menunode->get_url() !== null) {
-                $url = $menunode->get_url();
+                        // The node doesn't have children so produce a final menuitem.
+            // Also, if the node's text matches '####', add a class so we can treat it as a divider.
+            $content = '';
+            if (preg_match("/^#+$/", $menunode->get_text())) {
+
+                // This is a divider.
+                $content = html_writer::start_tag('li', array('class' => 'yui3-menuitem divider'));
             } else {
-                $url = '#';
+                $content = html_writer::start_tag(
+                    'li',
+                    array(
+                        'class' => 'yui3-menuitem'
+                    )
+                );
+                if ($menunode->get_url() !== null) {
+                    $url = $menunode->get_url();
+                } else {
+                    $url = '#';
+                }
+                $content .= html_writer::link(
+                    $url,
+                    $menunode->get_text(),
+                    array('class' => 'yui3-menuitem-content', 'title' => $menunode->get_title())
+                );
             }
-            $content .= html_writer::link($url, $menunode->get_text(), array('title' => $menunode->get_title()));
+            $content .= html_writer::end_tag('li');
         }
         return $content;
     }
