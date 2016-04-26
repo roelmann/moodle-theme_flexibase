@@ -128,8 +128,9 @@ class theme_flexibase_block_course_overview_renderer extends block_course_overvi
                 $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center;
                         background-size: contain;'></div>";
             }
+            $panelclasses = 'panel panel-primary ';
 
-            $html .= $this->output->box_start('panel panel-primary coursebox coursebox-content', "course-{$course->id}");
+            $html .= $this->output->box_start($panelclasses . 'coursebox coursebox-content', "course-{$course->id}");
             $html .= html_writer::start_tag('div', array('class' => 'panel-body clearfix'));
             // If user is editing, then add move icons.
             if ($userediting && !$ismovingcourse) {

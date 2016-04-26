@@ -1038,3 +1038,7 @@ div math mfrac mi {font-size: 0;visibility: hidden;} /* Hide text produced by on
                                                                                                 * block_course_menu */
 #block-region-side-alert.sidealert .block .header.panel-heading {display:none;}
 .editing #block-region-side-alert.sidealert .block .header.panel-heading {display:block;}
+
+.pagelayout-secure aside#block-region-side-pre .block {display:none;}
+.pagelayout-secure aside#block-region-side-pre #mod_quiz_navblock.block {display:block;}
+body.pagelayout-secure {margin-top:0;}
