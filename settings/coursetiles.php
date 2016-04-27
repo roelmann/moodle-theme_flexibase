@@ -80,6 +80,25 @@ $previewconfig = null;
 $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFF', $previewconfig);
 $temp->add($setting);
 
+// Dashboard Course tiles.
+$name = 'theme_flexibase/dashboardcoursetileinfo';
+$heading = get_string('dashboardcoursetileinfo', 'theme_flexibase');
+$information = get_string('dashboardcoursetileinfodesc', 'theme_flexibase');
+$setting = new admin_setting_heading($name, $heading, $information);
+$temp->add($setting);
+
+// Dashboard course tiles option.
+$name = 'theme_flexibase/dashboardrenderer';
+$title = get_string('dashboardrenderer', 'theme_flexibase');
+$description = get_string('dashboardrendererdesc', 'theme_flexibase');
+$choices = array(
+    1 => get_string('dashboardrendereroption1', 'theme_flexibase'),
+    2 => get_string('dashboardrendereroption2', 'theme_flexibase'),
+);
+$setting = new admin_setting_configselect($name, $title, $description, 1, $choices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
 // Course page images.
 $name = 'theme_flexibase/coursepageimagesinfo';
 $heading = get_string('coursepageimagesinfo', 'theme_flexibase');

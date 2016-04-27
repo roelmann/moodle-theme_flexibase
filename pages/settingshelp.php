@@ -499,6 +499,10 @@ require('helpnavbuttons.php');
         <p><strong><?php echo get_string('rendereroverlaycolour', 'theme_flexibase')?></strong>
             &nbsp;-&nbsp;<?php echo get_string('rendereroverlaycolourdesc', 'theme_flexibase')?>
         </p>
+        <h4><?php echo get_string('dashboardcoursetileinfo', 'theme_flexibase')?></h4>
+        <p><strong><?php echo get_string('dashboardrenderer', 'theme_flexibase')?></strong>
+            &nbsp;-&nbsp;<?php echo get_string('dashboardrendererdesc', 'theme_flexibase')?>
+        </p>
         <h4><?php echo get_string('coursepageimagesinfodesc', 'theme_flexibase')?></h4>
         <p><strong><?php echo get_string('courseimageheaderoption', 'theme_flexibase')?></strong>
             &nbsp;-&nbsp;<?php echo get_string('courseimageheaderoptiondesc', 'theme_flexibase')?>

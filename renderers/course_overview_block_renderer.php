@@ -53,6 +53,7 @@ class theme_flexibase_block_course_overview_renderer extends block_course_overvi
     public function course_overview($courses, $overviews) {
         global $CFG;
         global $PAGE;
+        $type = theme_flexibase_get_setting('dashboardrenderer');
         $html = '';
         $config = get_config('block_course_overview');
         if ($config->showcategories != BLOCKS_COURSE_OVERVIEW_SHOWCATEGORIES_NONE) {
@@ -90,9 +91,9 @@ class theme_flexibase_block_course_overview_renderer extends block_course_overvi
                     array('sesskey' => sesskey(), 'moveto' => 0, 'courseid' => $movingcourseid));
             // Create move icon, so it can be used.
             $movetofirsticon = html_writer::empty_tag('img',
-                    array('src' => $this->output->pix_url('movehere'),
-                        'alt' => get_string('movetofirst', 'block_course_overview', $courses[$movingcourseid]->fullname),
-                        'title' => get_string('movehere')));
+            array('src' => $this->output->pix_url('movehere'),
+            'alt' => get_string('movetofirst', 'block_course_overview', $courses[$movingcourseid]->fullname),
+            'title' => get_string('movehere')));
             $moveurl = html_writer::link($moveurl, $movetofirsticon);
             $html .= html_writer::tag('div', $moveurl, array('class' => 'movehere'));
         }
@@ -128,21 +129,28 @@ class theme_flexibase_block_course_overview_renderer extends block_course_overvi
                 $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center;
                         background-size: contain;'></div>";
             }
-            $panelclasses = 'panel panel-primary ';
+            if ($type == 1) {
+                $panelclasses = 'coursebox panel panel-primary coursebox-content';
+                $wrapperclass = 'panel-body clearfix';
+                $headerlevel = 3;
+            } else {
+                $panelclasses = 'coursebox';
+                $wrapperclass = 'course_title';
+                $headerlevel = 2;
+            }
 
-            $html .= $this->output->box_start($panelclasses . 'coursebox coursebox-content', "course-{$course->id}");
-            $html .= html_writer::start_tag('div', array('class' => 'panel-body clearfix'));
+            $html .= $this->output->box_start($panelclasses, "course-{$course->id}");
+            $html .= html_writer::start_tag('div', array('class' => $wrapperclass));
             // If user is editing, then add move icons.
             if ($userediting && !$ismovingcourse) {
                 $moveicon = html_writer::empty_tag('img',
-                        array('src' => $this->pix_url('t/move')->out(false),
-                            'alt' => get_string('movecourse', 'block_course_overview', $course->fullname),
-                            'title' => get_string('move')));
+                array('src' => $this->pix_url('t/move')->out(false),
+                'alt' => get_string('movecourse', 'block_course_overview', $course->fullname),
+                'title' => get_string('move')));
                 $moveurl = new moodle_url($this->page->url,
-                        array('sesskey' => sesskey(), 'movecourse' => 1, 'courseid' => $course->id));
+                array('sesskey' => sesskey(), 'movecourse' => 1, 'courseid' => $course->id));
                 $moveurl = html_writer::link($moveurl, $moveicon);
                 $html .= html_writer::tag('div', $moveurl, array('class' => 'move'));
-
             }
 
             // No need to pass title through s() here as it will be done automatically by html_writer.
@@ -151,12 +159,14 @@ class theme_flexibase_block_course_overview_renderer extends block_course_overvi
                 if (empty($course->visible)) {
                     $attributes['class'] = 'dimmed';
                 }
-                $html .= $contentimages;
+                if ($type == 1) {
+                    $html .= $contentimages;
+                }
                 $courseurl = new moodle_url('/course/view.php', array('id' => $course->id));
                 $coursefullname = format_string(get_course_display_name_for_list($course), true, $course->id);
                 $link = html_writer::link($courseurl, $coursefullname, $attributes);
-                $html .= $this->output->heading($link, 3, 'title');
-                if (isset($overviews[$course->id]) && !$ismovingcourse) {
+                $html .= $this->output->heading($link, $headerlevel, 'title');
+                if ($type == 1 && isset($overviews[$course->id]) && !$ismovingcourse) {
                     if ($this->activity_display($course, $overviews[$course->id]) == '') {
                         continue;
                     } else {
@@ -169,7 +179,8 @@ class theme_flexibase_block_course_overview_renderer extends block_course_overvi
                 $html .= $this->output->heading(html_writer::link(
                     new moodle_url('/auth/mnet/jump.php',
                             array('hostid' => $course->hostid, 'wantsurl' => '/course/view.php?id='.$course->remoteid)),
-                    format_string($course->shortname, true), $attributes) . ' (' . format_string($course->hostname) . ')', 2, 'title');
+                    format_string($course->shortname, true), $attributes)
+                    . ' (' . format_string($course->hostname) . ')', 2, 'title');
             }
             $html .= $this->output->box('', 'flush');
             $html .= html_writer::end_tag('div');
@@ -214,9 +225,9 @@ class theme_flexibase_block_course_overview_renderer extends block_course_overvi
                 $a->movingcoursename = $courses[$movingcourseid]->fullname;
                 $a->currentcoursename = $course->fullname;
                 $movehereicon = html_writer::empty_tag('img',
-                        array('src' => $this->output->pix_url('movehere'),
-                            'alt' => get_string('moveafterhere', 'block_course_overview', $a),
-                            'title' => get_string('movehere')));
+                array('src' => $this->output->pix_url('movehere'),
+                'alt' => get_string('moveafterhere', 'block_course_overview', $a),
+                'title' => get_string('movehere')));
                 $moveurl = html_writer::link($moveurl, $movehereicon);
                 $html .= html_writer::tag('div', $moveurl, array('class' => 'movehere'));
             }
@@ -233,19 +244,32 @@ class theme_flexibase_block_course_overview_renderer extends block_course_overvi
      * @return string html of activities overview
      */
     protected function activity_display($course, $overview) {
+        $type = theme_flexibase_get_setting('dashboardrenderer');
         $cid = $course->id;
-        $output = html_writer::start_tag('div', array('class' => 'activity_info summary'));
-        $courseurl = new moodle_url('/course/view.php', array('id' => $cid));
-        $coursefullname = format_string(get_course_display_name_for_list($course), true, $cid);
-        $attributes['class'] = '';
-        $link = html_writer::link($courseurl, $coursefullname, $attributes);
-        $output .= $this->output->heading($link, 3, 'title');
+        if ($type == 1) {
+            $output = html_writer::start_tag('div', array('class' => 'activity_info summary'));
+            $courseurl = new moodle_url('/course/view.php', array('id' => $cid));
+            $coursefullname = format_string(get_course_display_name_for_list($course), true, $cid);
+            $attributes['class'] = '';
+            $link = html_writer::link($courseurl, $coursefullname, $attributes);
+            $output .= $this->output->heading($link, 3, 'title');
+        } else {
+            $output = html_writer::start_tag('div', array('class' => 'activity_info'));
+        }
+
         foreach (array_keys($overview) as $module) {
             $output .= html_writer::start_tag('div', array('class' => 'activity_overview'));
             $url = new moodle_url("/mod/$module/index.php", array('id' => $cid));
             $modulename = get_string('modulename', $module);
-            $icontext = html_writer::link($url, $this->output->pix_icon('icon', $modulename, 'mod_'.$module,
-                    array('class' => 'iconlarge')));
+            $datatarget = '#region_'.$cid.'_'.$module.'_inner';
+            if ($type == 1) {
+                $icontext = "<button class='btn btn-info' data-toggle = 'collapse' data-target = $datatarget>"
+                    .$this->output->pix_icon('icon', $modulename, 'mod_'
+                    .$module, array('class' => 'iconlarge'))."</button> ";
+            } else {
+                $icontext = html_writer::link($url, $this->output->pix_icon('icon', $modulename, 'mod_'
+                .$module, array('class' => 'iconlarge')));
+            }
             if (get_string_manager()->string_exists("activityoverview", $module)) {
                 $icontext .= get_string("activityoverview", $module);
             } else {
@@ -346,6 +370,7 @@ class theme_flexibase_block_course_overview_renderer extends block_course_overvi
      * @return bool if true, return the HTML as a string, rather than printing it.
      */
     protected function collapsible_region_start($classes, $id, $caption, $userpref = '', $default = false) {
+        $type = theme_flexibase_get_setting('dashboardrenderer');
         // Work out the initial state.
         if (!empty($userpref) and is_string($userpref)) {
             user_preference_allow_ajax_update($userpref, PARAM_BOOL);
@@ -360,14 +385,18 @@ class theme_flexibase_block_course_overview_renderer extends block_course_overvi
         }
 
         $output = '';
-        $output .= '<div id="' . $id . '" class="collapsibleregion ' . $classes . '">';
-        $output .= '<div id="' . $id . '_sizer">';
-        $output .= '<div id="' . $id . '_caption" class="collapsibleregioncaption">';
-        $output .= $caption . ' ';
-        $output .= '</div><div id="' . $id . '_inner" class="collapsibleregioninner">';
-        $this->page->requires->js_init_call('M.block_course_overview.collapsible',
-                array($id, $userpref, get_string('clicktohideshow')));
-
+        if ($type == 1) {
+            $output .= $caption . ' ';
+            $output .= '</div><div id="' . $id . '_inner" class="collapse">';
+        } else {
+            $output .= '<div id="' . $id . '" class="collapsibleregion ' . $classes . '">';
+            $output .= '<div id="' . $id . '_sizer">';
+            $output .= '<div id="' . $id . '_caption" class="collapsibleregioncaption">';
+            $output .= $caption . ' ';
+            $output .= '</div><div id="' . $id . '_inner" class="collapsibleregioninner">';
+            $this->page->requires->js_init_call('M.block_course_overview.collapsible',
+            array($id, $userpref, get_string('clicktohideshow')));
+        }
         return $output;
     }
 
@@ -377,7 +406,12 @@ class theme_flexibase_block_course_overview_renderer extends block_course_overvi
      * @return string return the HTML as a string, rather than printing it.
      */
     protected function collapsible_region_end() {
-        $output = '</div></div></div>';
+        $type = theme_flexibase_get_setting('dashboardrenderer');
+        if ($type == 1) {
+            $output = '';
+        } else {
+            $output = '</div></div></div>';
+        }
         return $output;
     }
 
