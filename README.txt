@@ -82,6 +82,7 @@ Richard
 
 CHANGELOG:
 ==========
+3.1.1c  - Added editor.css
 3.1.1b  - Setting added to select/deselect tiles view on dashboard
           Secure.php bug corrected (thanks for the heads up to Mary E)
 3.1.1   - 2 new block regions:

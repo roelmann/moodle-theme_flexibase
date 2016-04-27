@@ -40,7 +40,7 @@ $THEME->sheets = array(
     'styles',       // Last but one - Main theme styles.
     'custom'        // Must be last - contains all the css settings options to override other css.
     );
-$THEME->editor_sheets = array(); // TODO.
+$THEME->editor_sheets = array('editor');
 
 // Remove these if not using less compilation.
 $THEME->lessfile = 'flexibase';
