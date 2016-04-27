@@ -1,8 +1,9 @@
-This file is a text copy of the variables.less file used in the theme. It is presented for reference for any user modifying the cusomLESS box.
-There is no purpose to editing this file as it is a text readme file and not an active part of the theme.
-/****************************************************************************************************************/
+// This is a text version of the main theme LESS variables file. It is provided
+// for reference only. It can be copied out of the theme folder and provided to
+// site administrators to assist in adapting customless and other less settings.
+// -----------------------------------------------------------------------------
 
-// This file is part of Moodle - http://moodle.org/
+/// This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -18,7 +19,7 @@ There is no purpose to editing this file as it is a text readme file and not an 
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Theme Flexibase LESS file.
+ * Theme Flexibase language file.
  *
  * @package    theme_flexibase
  * @author     2015 Richard Oelmann
@@ -28,6 +29,7 @@ There is no purpose to editing this file as it is a text readme file and not an 
  * @credits    Essential - Julian Ridden, Gareth Barnard;
  *             Elegance - Julian Ridden, Danny Wahl;
  *             BCU - Jez H, Mike Grant
+ *             Decaf - Paul Nichols
  *             Many others for non-specific but vital inspirations,
  *             suggestions and support
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -68,9 +70,9 @@ There is no purpose to editing this file as it is a text readme file and not an 
 @brand-danger:          #D92C33;
 
 //Note - if you change the @brand colours these lightening values will need to be checked or they may all come out white
-@brand-primary-light:   lighten(@brand-primary, 80%);
-@brand-primary-lighter: lighten(@brand-primary, 85%);
-@brand-primary-lightest:lighten(@brand-primary, 89%);
+@brand-primary-light:   lighten(@brand-primary, 70%);
+@brand-primary-lighter: lighten(@brand-primary, 80%);
+@brand-primary-lightest:lighten(@brand-primary, 85%);
 @brand-success-light:   lighten(@brand-success, 42%);
 @brand-info-light:      lighten(@brand-info, 32%);
 @brand-warning-light:   lighten(@brand-warning, 38%);
@@ -96,6 +98,8 @@ There is no purpose to editing this file as it is a text readme file and not an 
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
+
+@import url("//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700");
 
 @font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
@@ -158,8 +162,8 @@ There is no purpose to editing this file as it is a text readme file and not an 
 @line-height-small:         1.5;
 
 @border-radius-base:        4px;
-@border-radius-large:       6px;
-@border-radius-small:       3px;
+@border-radius-large:       @border-radius-base*1.5;
+@border-radius-small:       @border-radius-base*0.5;
 
 //** Global color for active items (e.g., navs or dropdowns).
 @component-active-color:    @white;
@@ -441,7 +445,7 @@ There is no purpose to editing this file as it is a text readme file and not an 
 
 // Inverted navbar links
 @navbar-inverse-link-color:                 @gray-dark;
-@navbar-inverse-link-hover-color:           @white;
+@navbar-inverse-link-hover-color:           @gray;
 @navbar-inverse-link-hover-bg:              transparent;
 @navbar-inverse-link-active-color:          @navbar-inverse-link-hover-color;
 @navbar-inverse-link-active-bg:             transparent;

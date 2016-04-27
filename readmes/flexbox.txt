@@ -1,16 +1,44 @@
-/**
- * This page is included for reference only - This is the pure flexbox
- * layout required for this theme: No alterations via lib files or pre-
- * and post-processing. Just about 100 lines of css. The main file which
- * is used in the theme, however, also contains all the fallbacks for older
- * browsers with partial (prefixed) support for flexbox. No fallbacks
- * are provided for older browsers with no flexbox support, although an
- * alert is provided suggesting users upgrade their browser, or apply a
- * different theme.
+// This is a text version of the main theme flex layout css file. It is provided
+// for reference only. It can be copied out of the theme folder and provided to
+// site administrators to assist in adapting layout css and other settings.
+// -----------------------------------------------------------------------------
+
+/* This file is part of Moodle - http://moodle.org/
  *
- * http://caniuse.com#feat=flexbox
- * 
- **/
+ * Moodle is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Moodle is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/**
+ * Theme Flexibase css file.
+ *
+ * @package    theme_flexibase
+ * @author     2015 Richard Oelmann
+ * @copyright  2015 R. Oelmann
+ * @copyright  Bootstrap - 2014 Bas Brands
+ *             Essential - Julian Ridden, Gareth Barnard;
+ *             Elegance - Julian Ridden, Danny Wahl;
+ *             BCU - Jez H, Mike Grant
+ *             Decaf - Paul Nichols
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+/* Flexbox Layout CSS
+ * This file holds the standard layout css for flexbox and associated layout code.
+ * Any changes made to the flexbox rules here must be reflected in flexboxlegacy.css
+ */
+
+/* Main flexcontainer rules */
 #page-content.flexcontainer {
     display: flex;
     flex-direction: row;
@@ -18,111 +46,363 @@
     justify-content: flex-start;
     align-content: stretch;
     align-items: stretch;
+
     width:100%;
-    }
+    padding:0 5px;
+}
+
+/* Default layout for pre&post - no additional class added to css as
+ * this is the fallback option.
+ * Order 3(main),1(pre),5(post) is used so that minimal changes are
+ * needed for alternative layouts.
+ * ----------------------------------------------------------------- */
 #region-main.flexcontentmain {
     order: 3;
     flex: 4 1 60%;
     align-self: stretch;
+
     min-width:50%;
-    }
+}
 #block-region-side-pre.flexcontentpre {
     order: 1;
     flex: 1 1 15%;
     align-self: stretch;
+
     margin-right:10px;
     max-width:25%;
-    min-width:210px;
+    min-width:165px;
     padding:0;
-    }
+}
 #block-region-side-post.flexcontentpost {
     order: 5;
     flex: 1 1 15%;
     align-self: stretch;
+
     margin-left:10px;
     max-width:25%;
-    min-width:210px;
+    min-width:165px;
     padding:0;
-    }
+}
+
+/* Layoutoption2 - 2 post
+ * Order 3(main),4(pre),5(post)
+ * ---------------------------- */
+/* #region-main.flexcontentmain.twopost {Nothing to change} Placeholder only */
 #block-region-side-pre.flexcontentpre.twopost {
     order: 4;
+
     margin-right:0;
     margin-left:10px;
-    }
+}
+/* #block-region-side-post.flexcontentpost.twopost {Nothing to change} Placeholder only */
+
+/* Layoutoption3 - 2 pre
+ * Order 3(main),1(pre),2(post)
+ * ---------------------------- */
+/* #region-main.flexcontentmain.twopre {Nothing to change} Placeholder only */
 #block-region-side-post.flexcontentpost.twopre {
     order: 2;
+
     margin-left:0;
     margin-right:10px;
-    }
+}
+
+/* Layoutoption4 - singlepre
+ * Additional wrap put in to put all sidebar content in single column
+ * ------------------------------------------------------------------ */
 .flexcontentpre.singlepre {
     order: 1;
     flex: 1 1 15%;
     align-self: stretch;
+
     margin-right:10px;
     max-width:25%;
     min-width:210px;
     padding:0;
 }
-.has_dock.empty-region-side-pre.empty-region-side-post .flexcontentpre {
-    display: none;
-}
+
+/* Layoutoption5 - singlepost
+ * Additional wrap put in to put all sidebar content in single column
+ * ------------------------------------------------------------------ */
 .flexcontentpost.singlepost {
     order: 5;
     flex: 1 1 15%;
     align-self: stretch;
+
     margin-left:10px;
     max-width:25%;
     min-width:210px;
     padding:0;
 }
-.has_dock.empty-region-side-pre.empty-region-side-post .flexcontentpost {
-    display: none;
+
+/* Flexlayout for additional regions
+ * --------------------------------- */
+#block-region-side-alert.flexcontainer,
+#block-region-side-top.flexcontainer,
+#block-region-side-bottom.flexcontainer,
+#block-region-side-adminbottom.flexcontainer,
+#block-region-side-teachbtm.flexcontainer,
+#block-region-side-maintop.flexcontainer,
+#block-region-side-mainbottom.flexcontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+
+    width:100%;
 }
-.dir-rtl #block-region-side-pre.flexcontentpre {
-    margin-right:0;
-    margin-left:10px;
-    }
-.dir-rtl #block-region-side-post.flexcontentpost {
-    margin-left:0;
-    margin-right:10px;
-    }
-.dir-rtl #block-region-side-pre.flexcontentpre.twopost {
-    margin-right:10px;
-    margin-left:0;
-    }
-.dir-rtl #block-region-side-post.flexcontentpost.twopre {
-    margin-left:10px;
-    margin-right:0;
-    }
-.dir-rtl .flexcontentpre.singlepre {
-    margin-right:0;
-    margin-left:10px;
+.maincontentwrap.flexcontainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+
+    width:100%;
 }
-.dir-rtl .flexcontentpost.singlepost {
-    margin-left:0;
-    margin-right:10px;
+.maincontentinnerwrap.flexcontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
 }
-@media (max-width: 768px) {
-	#page-content.flexcontainer {
-		flex-direction: column;
-	}
+#block-region-side-alert .block,
+#block-region-side-top .block,
+#block-region-side-bottom .block,
+#block-region-side-adminbottom .block,
+#block-region-side-teachbtm .block,
+#block-region-side-maintop .block,
+.maincontentinnerwrap,
+#block-region-side-mainbottom .block {
+    flex: 1 1 33%;
+    align-self: stretch;
+
+    margin:5px 5px;
 }
-@media (max-width: 768px) {
-	#block-region-side-pre.flexcontentpre,
-	#block-region-side-pre.flexcontentpre.twopost,
-	#block-region-side-pre.flexcontentpre.twopre, 
-	.flexcontentpre.singlepre {
-		width:100%;
-		max-width: none;
-		order: 4;
-	}
-	#block-region-side-post.flexcontentpost,
-	#block-region-side-post.flexcontentpost.twopost,
-	#block-region-side-post.flexcontentpost.twopre,
-	.flexcontentpost.singlepost {
-		width:100%;
-		max-width: none;
-		order: 5;
-	}
+.maincontentinnerwrap .flexcontentmainpre,
+.maincontentinnerwrap .flexcontentmainpost {
+    flex: 1 1 25%;
+    align-self: stretch;
+
+    margin:5px 5px;
+}
+.maincontentinnerwrap div[role=main] {
+    flex: 2 1 50%;
+    align-self: stretch;
+
+    margin:5px 5px;
+}
+.maincontentinnerwrap .flexcontentmainpre {
+    order: 1;
+}
+.maincontentinnerwrap .flexcontentmainpost {
+    order: 3;
+}
+.maincontentinnerwrap div[role=main] {
+    order: 2;
+}
+.maincontentwrap .maincontentinnerwrap {
+    order: 2;
+    flex: 1 1 auto;
+    align-self: stretch;
+}
+.maincontentwrap .flexcontentmaintop {
+    order: 1;
+    flex: 1 1 auto;
+    align-self: stretch;
+}
+.maincontentwrap .flexcontentmainbottom {
+    order: 3;
+    flex: 1 1 auto;
+    align-self: stretch;
 }
 
+.maincontentinnerwrap div[role=main] {
+    max-width:100%;
+}
+.used-region-side-mainpost .maincontentinnerwrap div[role=main],
+.used-region-side-mainpre .maincontentinnerwrap div[role=main] {
+    max-width:80%;
+}
+.used-region-side-mainpost.used-region-side-mainpre .maincontentinnerwrap div[role=main] {
+    max-width:60%;
+}
+#region-bottom {
+    margin-top:5px;
+}
+.container-fluid {
+    margin: 0 auto;
+    max-width: 100%;
+}
+.img-responsive {
+    max-width:98%;
+}
+.flexcontainer > img {
+    max-width:250px;
+}
+
+/* RTL positioning of blocks is handled automatically. Just requires
+ * margins swapping around.
+ * ----------------------------------------------------------------- */
+.dir-rtl #block-region-side-pre.flexcontentpre, /* Default option. */
+.dir-rtl #block-region-side-post.flexcontentpost.twopre, /* Layoutoption3 - 2 pre. */
+.dir-rtl .flexcontentpre.singlepre /* Layoutoption4 - singlepre. */ {
+    margin-right:0;
+    margin-left:10px;
+}
+.dir-rtl #block-region-side-post.flexcontentpost, /* Default option. */
+.dir-rtl #block-region-side-pre.flexcontentpre.twopost, /* Layoutoption2 - 2 post. */
+.dir-rtl .flexcontentpost.singlepost /* Layoutoption5 - singlepost. */ {
+    margin-left:0;
+    margin-right:10px;
+}
+
+/* Replace essential parts of the base css that has been removed to allow
+ * flexbox styling.
+ * ---------------------------------------------------------------------- */
+.dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-post,
+.dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-post,
+.dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-pre,
+.dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
+    min-height: 100px;
+}
+.dir-rtl.editing.used-region-side-post.used-region-side-pre #region-main {
+    min-height: 1px;
+}
+.has_dock.empty-region-side-pre #region-main,
+.has_dock.empty-region-side-post #region-main,
+.has_dock.empty-region-side-pre.used-region-side-post #region-main,
+.has_dock.empty-region-side-post.used-region-side-pre #region-main {
+    min-height: 1px;
+}
+.has_dock.empty-region-side-pre #block-region-side-pre,
+.has_dock.empty-region-side-post #block-region-side-post,
+.has_dock.empty-region-side-pre.empty-region-side-post .flexcontentpost,
+.has_dock.empty-region-side-pre.empty-region-side-post .flexcontentpre {
+    display: none;
+}
+/* Hide empty regions
+ * ------------------ */
+.has_dock.empty-region-side-mainpre #block-region-side-mainpre,
+.has_dock.empty-region-side-mainpost #block-region-side-mainpost,
+.has_dock.empty-region-side-maintop #block-region-side-maintop,
+.has_dock.empty-region-side-mainbottom #block-region-side-mainbottom,
+.has_dock.empty-region-side-top #block-region-side-top,
+.has_dock.empty-region-side-top #block-region-side-alert,
+.has_dock.empty-region-side-bottom #block-region-side-bottom,
+.has_dock.empty-region-side-pre #block-region-side-pre,
+.has_dock.empty-region-side-post #block-region-side-post {
+    display:none;
+}
+.empty-region-side-mainpre #block-region-side-mainpre,
+.empty-region-side-mainpost #block-region-side-mainpost,
+.empty-region-side-maintop #block-region-side-maintop,
+.empty-region-side-mainbottom #block-region-side-mainbottom,
+.empty-region-side-top #block-region-side-top,
+.empty-region-side-top #block-region-side-alert,
+.empty-region-side-bottom #block-region-side-bottom,
+.empty-region-side-pre #block-region-side-pre,
+.empty-region-side-post #block-region-side-post {
+    display:none;
+}
+
+/* Marketing Spots CSS
+ * ------------------- */
+
+/* Flexbox layout for marketing. */
+.marketing-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+    width:100%;
+    margin-bottom:5px;
+}
+.marketing-block {
+    order: 0;
+    flex: 1 1 auto;
+    align-self: stretch;
+    margin:0 5px;
+    text-align:center;
+}
+
+/* no need for evenmkting1 setting as that is 100% anyway */
+.evenmkting2 .marketing-block {
+    flex: 1 1 50%;
+}
+.evenmkting3 .marketing-block {
+    flex: 1 1 33.3%;
+}
+.evenmkting4 .marketing-block {
+    flex: 1 1 25%;
+}
+
+/* Media calls to turn flexbox rows into columns. */
+@media (max-width: 768px) {
+    #page-content.flexcontainer {
+        flex-direction: column;
+    }
+    #block-region-side-pre.flexcontentpre,
+    #block-region-side-pre.flexcontentpre.twopost,
+    #block-region-side-pre.flexcontentpre.twopre,
+    .flexcontentpre.singlepre,
+    #block-region-side-post.flexcontentpost,
+    #block-region-side-post.flexcontentpost.twopost,
+    #block-region-side-post.flexcontentpost.twopre,
+    .flexcontentpost.singlepost {
+        width:100%;
+        max-width: none;
+        margin-left:0;
+        margin-right:0;
+    }
+    #block-region-side-pre.flexcontentpre,
+    #block-region-side-pre.flexcontentpre.twopost,
+    #block-region-side-pre.flexcontentpre.twopre,
+    .flexcontentpre.singlepre {
+        order: 4;
+    }
+    #block-region-side-post.flexcontentpost,
+    #block-region-side-post.flexcontentpost.twopost,
+    #block-region-side-post.flexcontentpost.twopre,
+    .flexcontentpost.singlepost {
+        order: 5;
+    }
+    .maincontentinnerwrap.flexcontainer {
+        display: flex;
+        flex-direction: column;
+    }
+    .maincontentinnerwrap div[role=main] {
+        order: 0;
+        flex: 0 1 auto;
+        align-self: stretch;
+    }
+    .maincontentinnerwrap div[role=main],
+    .used-region-side-mainpost .maincontentinnerwrap div[role=main],
+    .used-region-side-mainpre .maincontentinnerwrap div[role=main],
+    .used-region-side-mainpost.used-region-side-mainpre .maincontentinnerwrap div[role=main] {
+        max-width:100%;
+    }
+
+    .maincontentinnerwrap .flexcontentmainpre,
+    .maincontentinnerwrap .flexcontentmainpost {
+        order: 0;
+        flex: 0 1 auto;
+        align-self: stretch;
+    }
+/* Fix for IE11 bug. */
+    #region-main.flexcontentmain,
+    #block-region-side-pre.flexcontentpre,
+    #block-region-side-post.flexcontentpost {
+        flex: 1 1 auto;
+    }
+    #region-main.flexcontentmain {
+        margin-bottom:15px;
+    }
+}

@@ -1,3 +1,7 @@
+// This is a text version of the main cached css (all). It is provided for
+// reference only. It can be copied out of the theme folder and provided to
+// site administrators to assist in adapting css and other settings.
+// -----------------------------------------------------------------------------
 
 #fitem_id_availabilityconditionsjson .availability_grade input[type="text"] {
     width: 3em;
