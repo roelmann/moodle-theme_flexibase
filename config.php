@@ -252,8 +252,8 @@ $THEME->layouts = array(
         'file' => 'secure.php',
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
-        'options' => array('nofooter'=>true, 'nonavbar'=>true,
-            'nocustommenu'=>true, 'nologinlinks'=>true,
-            'nocourseheaderfooter'=>true),
+        'options' => array('nofooter' => true, 'nonavbar' => true,
+            'nocustommenu' => true, 'nologinlinks' => true,
+            'nocourseheaderfooter' => true),
     ),
 );
