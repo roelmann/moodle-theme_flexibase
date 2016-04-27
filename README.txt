@@ -82,6 +82,8 @@ Richard
 
 CHANGELOG:
 ==========
+3.1.1b  - Setting added to select/deselect tiles view on dashboard
+          Secure.php bug corrected (thanks for the heads up to Mary E)
 3.1.1   - 2 new block regions:
               Teacher only (similar to existing Admin only region)
               Alerts region - an alternative to the Alerts settings where an html block can be added
