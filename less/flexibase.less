@@ -78,6 +78,8 @@
 @import "../../bootstrap/less/moodle/debug";
 @import "../../bootstrap/less/moodle/dock";
 @import "../../bootstrap/less/moodle/grade";
+@import "../../bootstrap/less/moodle/feedback";
+@import "../../bootstrap/less/moodle/undo";
 
 @import "variables.less";
 
@@ -173,37 +175,48 @@ header {
 /* Buttons. */
 .btn {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
+  .btn-shadow(@btn-default-bg);
+  &:hover {
+      .btn-shadow(darken(@btn-default-bg, 4%));
+    }
   &-default {
+    .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
     .btn-shadow(@btn-default-bg);
     &:hover {
       .btn-shadow(darken(@btn-default-bg, 4%));
     }
   }
   &-primary {
+    .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
     .btn-shadow(@btn-primary-bg);
     &:hover {
       .btn-shadow(darken(@btn-primary-bg, 4%));
     }
   }
   &-success {
+    .button-variant(@btn-success-color; @btn-success-bg; @btn-success-border);
     .btn-shadow(@btn-success-bg);
     &:hover {
       .btn-shadow(darken(@btn-success-bg, 4%));
     }
   }
   &-info {
+    .button-variant(@btn-info-color; @btn-info-bg; @btn-info-border);
     .btn-shadow(@btn-info-bg);
     &:hover {
       .btn-shadow(darken(@btn-info-bg, 4%));
     }
   }
   &-warning {
+    .button-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-border);
     .btn-shadow(@btn-warning-bg);
     &:hover {
       .btn-shadow(darken(@btn-warning-bg, 4%));
     }
   }
   &-danger {
+    .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
     .btn-shadow(@btn-danger-bg);
     &:hover {
       .btn-shadow(darken(@btn-danger-bg, 4%));
@@ -277,3 +290,6 @@ pre code {
 .marketing-block .fa-stack .fa-inverse {
 	text-shadow:3px 3px 2px @brand-info,-1px -1px 1px @brand-primary,1px -1px 1px @brand-primary,-1px 1px 1px @brand-primary,1px 1px 1px @brand-primary;
 }
+
+/* mod-assign */
+.path-mod-assign a.btn.btn-primary {.btn-primary}

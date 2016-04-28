@@ -37,5 +37,5 @@ $plugin->release  = 'v3.1.1b';
 $plugin->maturity  = MATURITY_STABLE;
 $plugin->component = 'theme_flexibase';
 $plugin->dependencies = array(
-    'theme_bootstrap'  => 2015103000
+    'theme_bootstrap'  => 2016042200
 );
