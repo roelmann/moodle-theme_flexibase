@@ -30,8 +30,13 @@
 
 <footer id="page-footer">
     <?php
-    $context = context_system::instance();
-    if (has_capability('moodle/site:viewreports', $context)) {?>
+    global $course, $PAGE;
+    if ($PAGE->pagelayout == 'course' || $PAGE->pagelayout == 'incourse') {
+        $context = context_course::instance($course->id);
+    } else {
+        $context = context_system::instance();
+    }
+    if (has_capability('mod/assign:addinstance', $context)) {?>
         <div id="region-teachbtm" class="well">
             <?php
             if ($knownregionadminbottom) {
