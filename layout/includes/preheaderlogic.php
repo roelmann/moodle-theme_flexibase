@@ -38,12 +38,13 @@ $hassidemaintop = $PAGE->blocks->region_has_content('side-maintop', $OUTPUT);
 $hassidemainbottom = $PAGE->blocks->region_has_content('side-mainbottom', $OUTPUT);
 $hassideadminbottom = $PAGE->blocks->region_has_content('side-adminbottom', $OUTPUT);
 $hassideteachbtm = $PAGE->blocks->region_has_content('side-teachbtm', $OUTPUT);
+$hassidecreatorbtm = $PAGE->blocks->region_has_content('side-creatorbtm', $OUTPUT);
 $hassidealert = $PAGE->blocks->region_has_content('side-alert', $OUTPUT);
 
 if ($PAGE->user_is_editing()) {
     $hassidepre = $hassidepost = $hassidetop = $hassidebottom = $hassidealert = true;
     $hassidemainpre = $hassidemainpost = $hassidemaintop = $hassidemainbottom = true;
-    $hassideadminbottom = true;
+    $hassideadminbottom = $hassideteachbtm = $hassidecreatorbtm = true;
 }
 
 $knownregionpre = $PAGE->blocks->is_known_region('side-pre');
@@ -56,6 +57,7 @@ $knownregionmaintop = $PAGE->blocks->is_known_region('side-maintop');
 $knownregionmainbottom = $PAGE->blocks->is_known_region('side-mainbottom');
 $knownregionadminbottom = $PAGE->blocks->is_known_region('side-adminbottom');
 $knownregionteachbtm = $PAGE->blocks->is_known_region('side-teachbtm');
+$knownregioncreatorbtm = $PAGE->blocks->is_known_region('side-creatorbtm');
 $knownregionalert = $PAGE->blocks->is_known_region('side-alert');
 
 $hasnavbarlogo = (empty($PAGE->theme->settings->minilogo)) ? false : true;

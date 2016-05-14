@@ -79,6 +79,7 @@ $THEME->layouts = array(
             'side-mainbottom',
             'side-adminbottom',
             'side-teachbtm',
+            'side-creatorbtm',
             'side-alert'
         ),
         'defaultregion' => 'side-pre',
@@ -97,6 +98,7 @@ $THEME->layouts = array(
             'side-mainbottom',
             'side-adminbottom',
             'side-teachbtm',
+            'side-creatorbtm',
             'side-alert'
         ),
         'defaultregion' => 'side-pre',
@@ -116,6 +118,7 @@ $THEME->layouts = array(
             'side-mainbottom',
             'side-adminbottom',
             'side-teachbtm',
+            'side-creatorbtm',
             'side-alert'
         ),
         'defaultregion' => 'side-pre',
@@ -133,6 +136,7 @@ $THEME->layouts = array(
             'side-mainbottom',
             'side-adminbottom',
             'side-teachbtm',
+            'side-creatorbtm',
             'side-alert'
         ),
         'defaultregion' => 'side-pre',
@@ -151,6 +155,7 @@ $THEME->layouts = array(
             'side-mainbottom',
             'side-adminbottom',
             'side-teachbtm',
+            'side-creatorbtm',
             'side-alert'
         ),
         'defaultregion' => 'side-pre',
@@ -177,6 +182,7 @@ $THEME->layouts = array(
             'side-mainbottom',
             'side-adminbottom',
             'side-teachbtm',
+            'side-creatorbtm',
             'side-alert'
         ),
         'defaultregion' => 'side-pre',
@@ -196,6 +202,7 @@ $THEME->layouts = array(
             'side-mainbottom',
             'side-adminbottom',
             'side-teachbtm',
+            'side-creatorbtm',
             'side-alert'
         ),
         'defaultregion' => 'side-pre',

@@ -877,7 +877,7 @@ body.has_dock.dir-rtl .navbar-collapse {
     min-width:100px;
     border:dotted 3px gray;
 }
-#region-adminbottom, #region-teachbtm {
+#region-adminbottom, #region-teachbtm, #region-creatorbtm {
     text-align:left;
 }
 

@@ -44,8 +44,20 @@
             </div>
         <?php
         }
-
     }
+    $context = context_system::instance();
+    if (has_capability('moodle/course:create', $context)) {?>
+        <div id="region-creatorbtm" class="well">
+            <?php
+            if ($knownregionadminbottom) {
+                echo '<h3>'.get_string('region-side-creatorbtm', 'theme_flexibase').'</h3>';
+                echo $OUTPUT->blocks('side-creatorbtm', "sidecreatorbtm flexcontainer");
+            }
+            ?>
+        </div>
+    <?php
+    }
+
     if (is_siteadmin()) {
     ?>
         <div id="region-adminbottom" class="well">
