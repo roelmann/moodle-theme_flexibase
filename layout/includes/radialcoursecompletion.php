@@ -113,12 +113,14 @@
 	
 	<!-- Find completion numbers -->
 	<?php
-	global $USER, $DB;
-	$table = 'course_modules_completion';
-	$where = 'userid = '.$USER->id;
-	$completions = $DB->count_records_select($table, $where);
-    $table = 'course_modules';
-    $totalcompletions = $DB->count_records($table);
+	global $USER, $COURSE, $DB, $CFG;
+	$table1 = $CFG->prefix.'course_modules';
+	$table2 = 'course_modules_completion';
+	$where2 = 'userid = '.$USER->id.' AND coursemoduleid IN (SELECT id FROM '.$table1.' WHERE course = '.$COURSE->id.')';
+	$completions = $DB->count_records_select($table2, $where2);
+    $table3 = 'course_modules';
+    $where3 = 'course = '.$COURSE->id.' AND completion > 0';
+    $totalcompletions = $DB->count_records_select($table3, $where3);
     $percentagecompletions = $completions/$totalcompletions*100;
     ?>
     <div id='percentagecompletions' style='display:none;'>
