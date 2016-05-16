@@ -114,6 +114,15 @@ if (isloggedin() ) {
             <ul class="nav pull-right">
                 <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
             </ul>
+            <?php
+            $layout = $PAGE->pagelayout;
+            if ($layout == 'standard' OR $layout == 'course' OR $layout == 'incourse' OR $layout == 'coursecategory' OR
+                $layout == 'frontpage' OR $layout == 'mydashboard' OR $layout == 'mypublic') {
+            ?>
+                <button id="pageblockbtn" type="button" class="btn btn-warning" data-toggle="modal" data-target="#blockmodal">Page Blocks</button>
+            <?php
+            }
+            ?>
         </div>
     </div>
 </nav>
@@ -147,3 +156,7 @@ if (isloggedin() ) {
     }
     ?>
 </div>
+
+<?php
+require ('blocksmodal.php');
+?>

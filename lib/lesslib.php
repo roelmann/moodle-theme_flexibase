@@ -68,10 +68,10 @@ function theme_flexibase_less_variables($theme) {
         $variables['brand-primary-light'] = $theme->settings->brandprimarylight;
     }
     if (!empty($theme->settings->brandprimarylighter)) {
-        $variables['brand-primary-light'] = $theme->settings->brandprimarylighter;
+        $variables['brand-primary-lighter'] = $theme->settings->brandprimarylighter;
     }
     if (!empty($theme->settings->brandprimarylightest)) {
-        $variables['brand-primary-light'] = $theme->settings->brandprimarylightest;
+        $variables['brand-primary-lightest'] = $theme->settings->brandprimarylightest;
     }
     if (!empty($theme->settings->brandsuccesslight)) {
         $variables['brand-success-light'] = $theme->settings->brandsuccesslight;

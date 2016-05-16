@@ -139,7 +139,10 @@
 #block-region-side-teachbtm.flexcontainer,
 #block-region-side-creatorbtm.flexcontainer,
 #block-region-side-maintop.flexcontainer,
-#block-region-side-mainbottom.flexcontainer {
+#block-region-side-mainbottom.flexcontainer,
+#block-region-side-modalmain.flexcontainer,
+#block-region-side-modaltop.flexcontainer,
+.modal-contentwrapper.flexcontainer {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -175,7 +178,9 @@
 #block-region-side-creatorbtm .block,
 #block-region-side-maintop .block,
 .maincontentinnerwrap,
-#block-region-side-mainbottom .block {
+#block-region-side-mainbottom .block,
+#block-region-side-modalmain .block,
+#block-region-side-modaltop .block {
     flex: 1 1 33%;
     align-self: stretch;
 
@@ -216,6 +221,14 @@
 .maincontentwrap .flexcontentmainbottom {
     order: 3;
     flex: 1 1 auto;
+    align-self: stretch;
+}
+.modal-mainregion.flexitem {
+    flex: 1 1 75%;
+    align-self: stretch;
+}
+.modal-sideregion.flexitem {
+    flex: 1 1 25%;
     align-self: stretch;
 }
 
@@ -343,9 +356,12 @@
 
 /* Media calls to turn flexbox rows into columns. */
 @media (max-width: 768px) {
-    #page-content.flexcontainer {
+    #page-content.flexcontainer,
+    #block-region-side-modalmain.flexcontainer,
+    #block-region-side-modaltop.flexcontainer {
         flex-direction: column;
     }
+
     #block-region-side-pre.flexcontentpre,
     #block-region-side-pre.flexcontentpre.twopost,
     #block-region-side-pre.flexcontentpre.twopre,
@@ -371,7 +387,8 @@
     .flexcontentpost.singlepost {
         order: 5;
     }
-    .maincontentinnerwrap.flexcontainer {
+    .maincontentinnerwrap.flexcontainer,
+    .modal-contentwrapper.flexcontainer {
         display: flex;
         flex-direction: column;
     }

@@ -53,7 +53,9 @@ $string['region-side-adminbottom'] = 'Site Administrator Only';
 $string['region-side-teachbtm'] = 'Course Teachers Only';
 $string['region-side-creatorbtm'] = 'Course Creators Only';
 $string['region-side-alert'] = 'Optional Alert Region';
-
+$string['region-side-modalmain'] = 'PopUp Modal main block region';
+$string['region-side-modaltop'] = 'PopUp Modal top block region';
+$string['region-side-modalside'] = 'PopUp Modal side block region';
 
 // Settings.
 // Readme.

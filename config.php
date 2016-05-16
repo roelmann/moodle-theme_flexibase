@@ -32,6 +32,24 @@ $THEME->name = 'flexibase';
 $THEME->parents = array('bootstrap');
 $THEME->parents_exclude_sheets = array('bootstrap' => array('moodle', 'moodle-rtl'));
 
+$allblockregions = array(
+            'side-pre',
+            'side-post',
+            'side-top',
+            'side-bottom',
+            'side-mainpre',
+            'side-mainpost',
+            'side-maintop',
+            'side-mainbottom',
+            'side-adminbottom',
+            'side-teachbtm',
+            'side-creatorbtm',
+            'side-alert',
+            'side-modaltop',
+            'side-modalmain',
+            'side-modalside'
+        );
+
 $THEME->sheets = array(
 // If the less files are removed below during development then the readmes/base.txt file can be added here.
     'flexlayoutlegacy', // Flexbox legacy rules - separated to simplify main flexbox layout code
@@ -68,97 +86,32 @@ $THEME->layouts = array(
     // Standard layout with blocks, this is recommended for most pages with general information.
     'standard' => array(
         'file' => 'default.php',
-        'regions' => array(
-            'side-pre',
-            'side-post',
-            'side-top',
-            'side-bottom',
-            'side-mainpre',
-            'side-mainpost',
-            'side-maintop',
-            'side-mainbottom',
-            'side-adminbottom',
-            'side-teachbtm',
-            'side-creatorbtm',
-            'side-alert'
-        ),
-        'defaultregion' => 'side-pre',
+        'regions' => $allblockregions,
+        'defaultregion' => 'side-modalside',
     ),
     // Main course page.
     'course' => array(
         'file' => 'course.php',
-        'regions' => array(
-            'side-pre',
-            'side-post',
-            'side-top',
-            'side-bottom',
-            'side-mainpre',
-            'side-mainpost',
-            'side-maintop',
-            'side-mainbottom',
-            'side-adminbottom',
-            'side-teachbtm',
-            'side-creatorbtm',
-            'side-alert'
-        ),
-        'defaultregion' => 'side-pre',
+        'regions' => $allblockregions,
+        'defaultregion' => 'side-modalside',
         'options' => array('langmenu' => true),
     ),
     // Part of course, typical for modules - default page layout if $cm specified in require_login().
     'incourse' => array(
         'file' => 'course.php',
-        'regions' => array(
-            'side-pre',
-            'side-post',
-            'side-top',
-            'side-bottom',
-            'side-mainpre',
-            'side-mainpost',
-            'side-maintop',
-            'side-mainbottom',
-            'side-adminbottom',
-            'side-teachbtm',
-            'side-creatorbtm',
-            'side-alert'
-        ),
-        'defaultregion' => 'side-pre',
+        'regions' => $allblockregions,
+        'defaultregion' => 'side-modalside',
     ),
     'coursecategory' => array(
         'file' => 'default.php',
-        'regions' => array(
-            'side-pre',
-            'side-post',
-            'side-top',
-            'side-bottom',
-            'side-mainpre',
-            'side-mainpost',
-            'side-maintop',
-            'side-mainbottom',
-            'side-adminbottom',
-            'side-teachbtm',
-            'side-creatorbtm',
-            'side-alert'
-        ),
-        'defaultregion' => 'side-pre',
+        'regions' => $allblockregions,
+        'defaultregion' => 'side-modalside',
     ),
     // The site home page.
     'frontpage' => array(
         'file' => 'frontpage.php',
-        'regions' => array(
-            'side-pre',
-            'side-post',
-            'side-top',
-            'side-bottom',
-            'side-mainpre',
-            'side-mainpost',
-            'side-maintop',
-            'side-mainbottom',
-            'side-adminbottom',
-            'side-teachbtm',
-            'side-creatorbtm',
-            'side-alert'
-        ),
-        'defaultregion' => 'side-pre',
+        'regions' => $allblockregions,
+        'defaultregion' => 'side-modalside',
         'options' => array('nonavbar' => true),
     ),
     // Server administration scripts.
@@ -171,58 +124,32 @@ $THEME->layouts = array(
     // My dashboard page.
     'mydashboard' => array(
         'file' => 'myhome.php',
-        'regions' => array(
-            'side-pre',
-            'side-post',
-            'side-top',
-            'side-bottom',
-            'side-mainpre',
-            'side-mainpost',
-            'side-maintop',
-            'side-mainbottom',
-            'side-adminbottom',
-            'side-teachbtm',
-            'side-creatorbtm',
-            'side-alert'
-        ),
-        'defaultregion' => 'side-pre',
+        'regions' => $allblockregions,
+        'defaultregion' => 'side-modalside',
         'options' => array('langmenu' => true),
     ),
     // My public page.
     'mypublic' => array(
         'file' => 'default.php',
-        'regions' => array(
-            'side-pre',
-            'side-post',
-            'side-top',
-            'side-bottom',
-            'side-mainpre',
-            'side-mainpost',
-            'side-maintop',
-            'side-mainbottom',
-            'side-adminbottom',
-            'side-teachbtm',
-            'side-creatorbtm',
-            'side-alert'
-        ),
-        'defaultregion' => 'side-pre',
+        'regions' => $allblockregions,
+        'defaultregion' => 'side-modalside',
     ),
     'login' => array(
         'file' => 'login.php',
         'regions' => array(),
-        'options' => array('langmenu' => true, 'nonavbar' => true, 'noawesomebar' => true),
+        'options' => array('langmenu' => true, 'nonavbar' => true, 'nocoursefooter' => true, 'noawesomebar' => true),
     ),
     // Pages that appear in pop-up windows - no navigation, no blocks, no header.
     'popup' => array(
         'file' => 'popup.php',
         'regions' => array(),
-        'options' => array('nofooter' => true, 'nonavbar' => true, 'noawesomebar' => true),
+        'options' => array('nofooter' => true, 'nocoursefooter' => true, 'nonavbar' => true, 'noawesomebar' => true),
     ),
     // No blocks and minimal footer - used for legacy frame layouts only!
     'frametop' => array(
         'file' => 'default.php',
         'regions' => array(),
-        'options' => array('nofooter' => true, 'nocoursefooter' => true, 'noawesomebar' => true),
+        'options' => array('nofooter' => true, 'nocoursefooter' => true, 'nonavbar' => true, 'noawesomebar' => true),
     ),
     // Embeded pages, like iframe/object embeded in moodleform - it needs as much space as possible.
     'embedded' => array(
@@ -251,7 +178,7 @@ $THEME->layouts = array(
     // The pagelayout used for reports - minimal blocks to maximise space.
     'report' => array(
         'file' => 'default.php',
-        'regions' => array('side-pre'),
+        'regions' => array('side-pre', 'side-adminbottom'),
         'defaultregion' => 'side-pre',
     ),
     // The pagelayout used for safebrowser and securewindow.

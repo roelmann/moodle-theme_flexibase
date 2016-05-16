@@ -28,37 +28,35 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$hassidepre = $PAGE->blocks->region_has_content('side-pre', $OUTPUT);
-$hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
-$hassidetop = $PAGE->blocks->region_has_content('side-top', $OUTPUT);
-$hassidebottom = $PAGE->blocks->region_has_content('side-bottom', $OUTPUT);
-$hassidemainpre = $PAGE->blocks->region_has_content('side-mainpre', $OUTPUT);
-$hassidemainpost = $PAGE->blocks->region_has_content('side-mainpost', $OUTPUT);
-$hassidemaintop = $PAGE->blocks->region_has_content('side-maintop', $OUTPUT);
-$hassidemainbottom = $PAGE->blocks->region_has_content('side-mainbottom', $OUTPUT);
-$hassideadminbottom = $PAGE->blocks->region_has_content('side-adminbottom', $OUTPUT);
-$hassideteachbtm = $PAGE->blocks->region_has_content('side-teachbtm', $OUTPUT);
-$hassidecreatorbtm = $PAGE->blocks->region_has_content('side-creatorbtm', $OUTPUT);
-$hassidealert = $PAGE->blocks->region_has_content('side-alert', $OUTPUT);
-
-if ($PAGE->user_is_editing()) {
-    $hassidepre = $hassidepost = $hassidetop = $hassidebottom = $hassidealert = true;
-    $hassidemainpre = $hassidemainpost = $hassidemaintop = $hassidemainbottom = true;
-    $hassideadminbottom = $hassideteachbtm = $hassidecreatorbtm = true;
+$allblockregions = array('pre', 'post', 'top', 'bottom',
+            'mainpre', 'mainpost', 'maintop', 'mainbottom',
+            'adminbottom', 'teachbtm', 'creatorbtm', 'alert',
+            'modaltop', 'modalmain', 'modalside');
+foreach (array_keys($allblockregions) as $i) {
+    $region = $allblockregions[$i];
+    $hasside[$region] = $PAGE->blocks->region_has_content('side-'.$region, $OUTPUT);
+    $knownregion[$region] = $PAGE->blocks->is_known_region('side-'.$region);
+    if ($PAGE->user_is_editing()) {
+        $hasside[$region] = true;
+    }
 }
-
-$knownregionpre = $PAGE->blocks->is_known_region('side-pre');
-$knownregionpost = $PAGE->blocks->is_known_region('side-post');
-$knownregiontop = $PAGE->blocks->is_known_region('side-top');
-$knownregionbottom = $PAGE->blocks->is_known_region('side-bottom');
-$knownregionmainpre = $PAGE->blocks->is_known_region('side-mainpre');
-$knownregionmainpost = $PAGE->blocks->is_known_region('side-mainpost');
-$knownregionmaintop = $PAGE->blocks->is_known_region('side-maintop');
-$knownregionmainbottom = $PAGE->blocks->is_known_region('side-mainbottom');
-$knownregionadminbottom = $PAGE->blocks->is_known_region('side-adminbottom');
-$knownregionteachbtm = $PAGE->blocks->is_known_region('side-teachbtm');
-$knownregioncreatorbtm = $PAGE->blocks->is_known_region('side-creatorbtm');
-$knownregionalert = $PAGE->blocks->is_known_region('side-alert');
+/* Leave these in for now while refactoring flexibase code - but also need
+ * to check if they are used in any core JS etc. */
+$hassidepre = $hasside['pre']; $knownregionpre = $knownregion['pre'];
+$hassidepost = $hasside['post']; $knownregionpost = $knownregion['post'];
+$hassidetop = $hasside['top']; $knownregiontop = $knownregion['top'];
+$hassidebottom = $hasside['bottom']; $knownregionbottom = $knownregion['bottom'];
+$hassidemainpre = $hasside['mainpre']; $knownregionmainpre = $knownregion['mainpre'];
+$hassidemainpost = $hasside['mainpost']; $knownregionmainpost = $knownregion['mainpost'];
+$hassidemaintop = $hasside['maintop']; $knownregionmaintop = $knownregion['maintop'];
+$hassidemainbottom = $hasside['mainbottom']; $knownregionmainbottom = $knownregion['mainbottom'];
+$hassideadminbottom = $hasside['adminbottom']; $knownregionadminbottom = $knownregion['adminbottom'];
+$hassideteachbtm = $hasside['teachbtm']; $knownregionteachbtm = $knownregion['teachbtm'];
+$hassidecreatorbtm = $hasside['creatorbtm']; $knownregioncreatorbtm = $knownregion['creatorbtm'];
+$hassidealert = $hasside['alert']; $knownregionalert = $knownregion['alert'];
+$hassidemodalmain = $hasside['modalmain']; $knownregionmodalmain = $knownregion['modalmain'];
+$hassidemodaltop = $hasside['modaltop']; $knownregionmodaltop = $knownregion['modaltop'];
+$hassidemodalside = $hasside['modalside']; $knownregionmodalside = $knownregion['modalside'];
 
 $hasnavbarlogo = (empty($PAGE->theme->settings->minilogo)) ? false : true;
 $topbarcolour = (empty($PAGE->theme->settings->topbarcolour)) ? 'default' : $PAGE->theme->settings->topbarcolour;
