@@ -186,6 +186,12 @@
 
     margin:5px 5px;
 }
+#block-region-side-modalmain.flexcontainer {
+    flex-wrap:wrap;
+}
+#block-region-side-modalmain .block {
+    flex: 1 1 25%;
+}
 .maincontentinnerwrap .flexcontentmainpre,
 .maincontentinnerwrap .flexcontentmainpost {
     flex: 1 1 25%;
