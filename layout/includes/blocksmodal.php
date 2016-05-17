@@ -9,30 +9,34 @@
             </div>
             <div class="modal-body">
                 <div class="modal-topcontent">
-					<?php
-					require('radialcoursecompletion.php');
-					require('radialcoursegrade.php');
-
-					if ($hasside['modaltop']) {
+                    <?php
+                    if (isloggedin() ) {
+                        echo $OUTPUT->user_picture($USER, array('link' => false, 'size' => 200));
+                    }
+                    if ($PAGE->pagelayout == 'course' OR $PAGE->pagelayout == 'incourse') {
+                        require('radialcoursecompletion.php');
+                        require('radialcoursegrade.php');
+                    }
+                    if ($hasside['modaltop']) {
                         echo $OUTPUT->blocks('side-modaltop', "flexcontentmodaltop flexcontainer");
                     }
                     ?>
                 </div>
                 <div class="modal-contentwrapper flexcontainer">
-					<div class="modal-mainregion flexitem">
-					    <?php
-					    if ($hasside['modalmain']) {
+                    <div class="modal-mainregion flexitem">
+                        <?php
+                        if ($hasside['modalmain']) {
                             echo $OUTPUT->blocks('side-modalmain', "flexcontentmodalmain flexcontainer");
                         }
                         ?>
-					</div>
-					<div class="modal-sideregion flexitem">
-				        <?php
-					    if ($hasside['modalside']) {
+                    </div>
+                    <div class="modal-sideregion flexitem">
+                        <?php
+                        if ($hasside['modalside']) {
                             echo $OUTPUT->blocks('side-modalside', "flexcontentmodalside flexcontainer");
                         }
                         ?>
-					</div>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">

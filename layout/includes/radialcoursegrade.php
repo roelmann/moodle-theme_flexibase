@@ -172,10 +172,10 @@ if ($PAGE->pagelayout == 'course') {
     }
     .radialgradedisplay {
         width:200px;
-        padding:15px;
-        margin:10px;
-        border:1px solid #fff;
-        border-radius:8px;
+        height:200px;
+        margin:0 5px;
+        border:3px ridge #fff;
+        border-radius:16px;
         background:#fff;
     }
     .radialgradedisplay h4 {text-align:center;}

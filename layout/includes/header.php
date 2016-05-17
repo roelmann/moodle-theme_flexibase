@@ -158,5 +158,5 @@ if (isloggedin() ) {
 </div>
 
 <?php
-require ('blocksmodal.php');
+ require ('blocksmodal.php');
 ?>

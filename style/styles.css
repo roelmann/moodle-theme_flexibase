@@ -1073,3 +1073,11 @@ body {padding-right:0 !important}
 #blockmodal .radialcompletiondisplay {
 	float:right;
 }
+#blockmodal .userpicture {
+	float:left;
+	border:3px ridge #fff;
+	border-radius:16px;
+}
+#blockmodal .block_action {
+    display:none;
+}
