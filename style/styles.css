@@ -396,7 +396,7 @@ form label {
     margin-bottom:20px;
 }
 #frontpage-course-list .coursebox .summary {
-	height:130px;
+    height:130px;
 }
 .coursebox .boxfooter {
     clear:both;
@@ -1023,7 +1023,7 @@ body.has_dock.dir-rtl .navbar-collapse {
     width: 100px;
     font-weight:700;
 }
-    
+
 /* Style fixes
  * ----------- */
 .section .label .mod-indent-outer {display: table;} /* Correct upstream bug that prevented indented labels. */
@@ -1054,16 +1054,16 @@ body {padding-right:0 !important}
 
 /* modal blocks style */
 #blockmodal .block.panel.panel-primary {
-	border:none;
-	background-color:transparent;
-	box-shadow:none;
+    border:none;
+    background-color:transparent;
+    box-shadow:none;
 }
 #blockmodal .block.panel.panel-primary .panel-heading {
     background:none;
     border:none;
 }
 #blockmodal .modal-mainregion {
-	border-top:1px solid;
+    border-top:1px solid;
 }
 #blockmodal .modal-sideregion {
     border-left:1px solid;
@@ -1071,12 +1071,12 @@ body {padding-right:0 !important}
 }
 #blockmodal .radialgradedisplay,
 #blockmodal .radialcompletiondisplay {
-	float:right;
+    float:right;
 }
 #blockmodal .userpicture {
-	float:left;
-	border:3px ridge #fff;
-	border-radius:16px;
+    float:left;
+    border:3px ridge #fff;
+    border-radius:16px;
 }
 #blockmodal .block_action {
     display:none;
@@ -1087,8 +1087,8 @@ body {padding-right:0 !important}
     width:450px;
 }
 #blockmodal .blockmodallinks a.btn {
-	width:200px;
-	height:50px;
-	font-size:120%;
-	margin:0 10px 10px;
+    width:200px;
+    height:50px;
+    font-size:120%;
+    margin:0 10px 10px;
 }

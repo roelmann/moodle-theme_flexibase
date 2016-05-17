@@ -46,7 +46,7 @@ $temp->add($setting);
 $name = 'theme_flexibase/brandsuccess';
 $title = get_string('brandsuccess', 'theme_flexibase');
 $description = get_string('brandsuccessdesc', 'theme_flexibase');
-$default = '#28C41B';
+$default = '#1aa610';
 $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);

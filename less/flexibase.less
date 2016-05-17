@@ -121,11 +121,11 @@ header {
 .panel.panel-danger .panel-heading {
     .btn-shadow(@panel-danger-heading-bg);
 }
-.panel .panel-heading h2, 
+.panel .panel-heading h2,
 .panel .panel-heading h3 {
     color:@white;
 }
-.panel.panel-default .panel-heading h2, 
+.panel.panel-default .panel-heading h2,
 .panel.panel-default .panel-heading h3 {
     color:@brand-primary;
 }
@@ -156,7 +156,7 @@ header {
     padding-bottom: @navbar-padding-vertical - 2px;
     .transition(color ease-in-out .2s);
   }
-  
+
   &-brand,
   &-brand:hover {
     .transition(color ease-in-out .2s);
@@ -288,7 +288,7 @@ pre code {
     color:@brand-primary-light
 }
 .marketing-block .fa-stack .fa-inverse {
-	text-shadow:3px 3px 2px @brand-info,-1px -1px 1px @brand-primary,1px -1px 1px @brand-primary,-1px 1px 1px @brand-primary,1px 1px 1px @brand-primary;
+    text-shadow:3px 3px 2px @brand-info,-1px -1px 1px @brand-primary,1px -1px 1px @brand-primary,-1px 1px 1px @brand-primary,1px 1px 1px @brand-primary;
 }
 
 /* mod-assign */
@@ -312,3 +312,123 @@ pre code {
 #blockmodal .modal-content h2 {
     font-size:185%;
 }
+
+
+/* Radial displays */
+    @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+    .radial-progress,
+    .radial-grade {
+        @circle-size: 120px;
+        @circle-background: @gray-lighter;
+        @circle-color: @brand-success;
+        @inset-size: 90px;
+        @inset-color: @white;
+        @transition-length: 1s;
+        @shadow: 6px 6px 10px rgba(0,0,0,0.25);
+        @percentage-color: @brand-success;
+        @percentage-font-size: 22px;
+        @percentage-text-width: 57px;
+        margin: 50px;
+        width:  @circle-size;
+        height: @circle-size;
+        background-color: @circle-background;
+        border-radius: 50%;
+        .circle {
+            .mask, .fill, .shadow {
+                width:    @circle-size;
+                height:   @circle-size;
+                position: absolute;
+                border-radius: 50%;
+            }
+            .shadow {
+                box-shadow: @shadow inset;
+            }
+            .mask, .fill {
+                -webkit-backface-visibility: hidden;
+                transition: -webkit-transform @transition-length;
+                transition: -ms-transform @transition-length;
+                transition: transform @transition-length;
+                border-radius: 50%;
+            }
+            .mask {
+                clip: rect(0px, @circle-size, @circle-size, @circle-size/2);
+                .fill {
+                    clip: rect(0px, @circle-size/2, @circle-size, 0px);
+                    background-color: @circle-color;
+                }
+            }
+        }
+        .inset {
+            width:       @inset-size;
+            height:      @inset-size;
+            position:    absolute;
+            margin-left: (@circle-size - @inset-size)/2;
+            margin-top:  (@circle-size - @inset-size)/2;
+            background-color: @inset-color;
+            border-radius: 50%;
+            box-shadow: @shadow;
+            .percentage {
+                height:   @percentage-font-size;
+                width:    @percentage-text-width;
+                overflow: hidden;
+                position: absolute;
+                top:      (@inset-size - @percentage-font-size) / 2;
+                left:     (@inset-size - @percentage-text-width) / 2;
+                line-height: 1;
+                .numbers {
+                    margin-top: -@percentage-font-size;
+                    transition: width @transition-length;
+                    span {
+                        width:          @percentage-text-width;
+                        display:        inline-block;
+                        vertical-align: top;
+                        text-align:     center;
+                        font-weight:    800;
+                        font-size:      @percentage-font-size;
+                        font-family:    "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+                        color:          @percentage-color;
+                    }
+                }
+            }
+        }
+        @i: 0;
+        @increment: 180deg / 100;
+        .loop (@i) when (@i <= 100) {
+            &[data-progress="@{i}"] {
+                .circle {
+                    .mask.full, .fill {
+                        -webkit-transform: rotate(@increment * @i);
+                        -ms-transform: rotate(@increment * @i);
+                        transform: rotate(@increment * @i);
+                    }
+                    .fill.fix {
+                        -webkit-transform: rotate(@increment * @i * 2);
+                        -ms-transform: rotate(@increment * @i * 2);
+                        transform: rotate(@increment * @i * 2);
+                    }
+                }
+                .inset .percentage .numbers {
+                    width: @i * @percentage-text-width + @percentage-text-width;
+                }
+            }
+            .loop(@i + 1);
+        }
+        .loop(@i);
+    }
+    .radialcompletiondisplay,
+    .radialgradedisplay {
+        width:200px;
+        height:200px;
+        margin:0 5px;
+        border:3px ridge @white;
+        border-radius:16px;
+        background: @white;
+    }
+    .radialcompletiondisplay h4,
+    .radialgradedisplay h4 {
+        text-align:center;
+    }
+    .radialcompletiondisplay .radial-progress,
+    .radialgradedisplay .radial-grade {
+        margin:auto;
+    }
