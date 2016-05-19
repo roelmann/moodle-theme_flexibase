@@ -542,20 +542,48 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
         $content .= html_writer::end_tag('div');
         return $content;
     }
-    
-    public function promoted_courses() {
+
+    public function promoted_courses($type) {
         global $CFG, $OUTPUT, $DB, $PAGE, $USER;
+        if ($type == '') {
+            return false;
+        }
 
         $featuredcontent = '';
-        /* Get Featured courses id from DB */
-        $sql = 'SELECT DISTINCT itemid FROM {tag_instance} WHERE itemtype = "course" AND tagid IN(SELECT tagid FROM {tag_instance} WHERE itemtype = "user" AND itemid = '.$USER->id.')';
-        $featuredidsarray = $DB->get_records_sql($sql, array());
         $featuredids = '';
-        foreach ($featuredidsarray as $fid) {
-			$featuredids .= $fid->itemid.',';
-		}
-//        $featuredids = theme_flexibase_get_setting('promotedcourses');
+
+        $promotedlinktext = get_string('promotedcourseslinkdefault', 'theme_flexibase');
+        $promotedlink = $CFG->wwwroot.'/course/index.php';
+
+        /* Get tagged courses from DB */
+        if ($type == 'tags') {
+            $sql = 'SELECT DISTINCT itemid FROM {tag_instance} WHERE itemtype = "course" AND tagid IN(SELECT tagid FROM {tag_instance} WHERE itemtype = "user" AND itemid = '.$USER->id.')';
+            $featuredidsarray = $DB->get_records_sql($sql, array());
+            foreach ($featuredidsarray as $fid) {
+                $featuredids .= $fid->itemid.',';
+            }
+            $promotedtitle = get_string($type.'coursestitle', 'theme_flexibase');
+        }
+        /* Get promoted courses from setting */
+        if ($type == 'setting') {
+            $featuredids = theme_flexibase_get_setting('promotedcourses');
+            $promotedlinktext = theme_flexibase_get_setting('promotedlinktext', 'format_text');
+            $promotedlink = theme_flexibase_get_setting('promotedlink', 'format_text');
+            $promotedtitle = get_string($type.'coursestitle', 'theme_flexibase');
+        }
+        if ($type == 'my') {
+            $courses = enrol_get_all_users_courses($USER->id);
+            foreach ($courses as $fid) {
+                $featuredids .= $fid->id.',';
+            }
+            $promotedtitle = get_string($type.'coursestitle', 'theme_flexibase');
+        }
+        /* Add other Types and their course identifying logic here. */
+
+
+        /* Explode course id list into array. */
         $rcourseids = (!empty($featuredids)) ? explode(",", $featuredids, 12) : array();
+        /* Error trap - if array is empty return nothing - this will also be the case if $type is not recognised. */
         if (empty($rcourseids)) {
             return false;
         }
@@ -584,18 +612,14 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
 
         $fcourseids = array_chunk($rcourseids, 12);
         $totalfcourse = count($fcourseids);
-        $promotedtitle = theme_flexibase_get_setting('promotedtitle', 'format_text');
-        $promotedtitle = theme_flexibase_lang($promotedtitle);
-        $promotedlinktext = theme_flexibase_get_setting('promotedlinktext', 'format_text');
-        $promotedlink = theme_flexibase_get_setting('promotedlink', 'format_text');
 
         $featuredheader = '<div class="custom-courses-list" id="Promoted-Courses">
-							  <div class="container-fluid">
-								<div class="titlebar with-felements">
-									<h2>'.$promotedtitle.'  |  <a href="'.$promotedlink.'">'.$promotedlinktext.'</a></h2>
-									<div class="clearfix"></div>
-								</div>
-								<div class="promoted_courses" data-crow="'.$totalfcourse.'">';
+                              <div class="container-fluid">
+                                <div class="titlebar with-felements">
+                                    <h2>'.$promotedtitle.'  |  <a href="'.$promotedlink.'">'.$promotedlinktext.'</a></h2>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="promoted_courses" data-crow="'.$totalfcourse.'">';
 
         $featuredfooter = ' </div>
                             </div>
@@ -610,7 +634,7 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
                     $no = get_config('theme_flexibase', 'patternselect');
                     $nimgp = (empty($no)|| $no == "default") ? 'no-image' : 'cs0'.$no.'/no-image';
 
-                    $noimgurl = $OUTPUT->pix_url($nimgp, 'theme');
+                    $noimgurl = $OUTPUT->pix_url('courses', 'theme');
 
                     $courseurl = new moodle_url('/course/view.php', array('id' => $courseid ));
 

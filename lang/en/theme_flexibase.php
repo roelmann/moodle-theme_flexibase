@@ -369,22 +369,29 @@ $string['courseheaderimageheightdesc'] = 'Set the height for any images used as 
 $string['courseboxactivitynotice'] = 'Activity<br>Notices';
 
 //promoted courses Bottom
-$string['promotedtitledefault'] = 'Bottom Featured courses';
+$string['promotedtitledefault'] = 'Featured courses';
 $string['promotedtitledesc'] = 'Please give the Promoted courses block title,
 either language key or Text.For ex: lang:display or Display';
-$string['pcourseenable'] = 'Enable Featured courses';
-$string['pcourses'] = 'Bottom Featured Courses';
-$string['pcoursesdesc'] = 'LIMIT=9 You cannot enter more than 9 course ids. Please give the featured courses id should separated by comma.';
-$string['promotedcoursesheading'] = 'Bottom Featured Courses Slider';
-$string['title'] = 'Title';
+$string['pcourseenable'] = 'Enable admin set promoted courses slider';
+$string['pcoursetagenable'] = 'Enable Tagged recommended courses slider';
+$string['pcoursemyenable'] = 'Enable My courses slider';
 
+$string['pcourses'] = 'Featured Courses';
+$string['pcoursesdesc'] = 'LIMIT=9 You cannot enter more than 9 course ids. Please give the featured courses id should separated by comma.';
+$string['promotedcoursesheading'] = 'Featured Courses Slider';
+$string['title'] = 'Title';
 $string['promotedlinktext'] = 'View More Courses Text';
 $string['promotedlinktext_desc'] = 'This provides an option to link to a course category to show more courses.  Enter a URL below.';
 $string['promotedlink'] = 'View More Courses URL';
 $string['promotedlink_desc'] = 'Enter a URL to one of your course catagories.  This is displayed next to the featured courses title.';
 $string['settingpromotedlinktext'] = 'View More Courses';
-$string['settingpromotedlink'] = 'http://mymoodlesite/course/index.php?categoryid=2';
+$string['settingpromotedlink'] = $CFG->wwwroot.'/course/index.php?categoryid=1';
 $string['settingfeaturedslider'] = 'Featured Courses';
+
+$string['tagscoursestitle'] = 'Tagged courses recommended for you';
+$string['settingcoursestitle'] = 'Promoted courses';
+$string['mycoursestitle'] = 'My courses';
+$string['promotedcourseslinkdefault'] = 'View all courses';
 
 // Category Icons.
 $string['categoryiconheading'] = 'Category icons';
