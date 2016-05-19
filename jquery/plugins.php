@@ -47,4 +47,6 @@ $plugins = array(
     'togglabletabs' => array('files' => array('togglabletabs.js')),
     'affix' => array('files' => array('affix.js')),
     'scrollspy' => array('files' => array('scrollspy.js')),
+    'promo' => array('files' => array('promo.js')),
+    'slick' => array('files' => array('slick.js')),
 );

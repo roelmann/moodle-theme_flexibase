@@ -368,6 +368,24 @@ $string['courseheaderimageheight'] = 'Course Header image height';
 $string['courseheaderimageheightdesc'] = 'Set the height for any images used as header banners (recommended height 150-175px)<br>Note: If you set this to less than 125px, you may also need to alter the font-size on the course grade to bring it to a single line (add <code>.courseheadergradepercentage table tbody tr:last-of-type .column-itemname, .courseheadergradepercentage table tbody tr:last-of-type .column-percentage {font-size:120%;}</code> to your customcss.';
 $string['courseboxactivitynotice'] = 'Activity<br>Notices';
 
+//promoted courses Bottom
+$string['promotedtitledefault'] = 'Bottom Featured courses';
+$string['promotedtitledesc'] = 'Please give the Promoted courses block title,
+either language key or Text.For ex: lang:display or Display';
+$string['pcourseenable'] = 'Enable Featured courses';
+$string['pcourses'] = 'Bottom Featured Courses';
+$string['pcoursesdesc'] = 'LIMIT=9 You cannot enter more than 9 course ids. Please give the featured courses id should separated by comma.';
+$string['promotedcoursesheading'] = 'Bottom Featured Courses Slider';
+$string['title'] = 'Title';
+
+$string['promotedlinktext'] = 'View More Courses Text';
+$string['promotedlinktext_desc'] = 'This provides an option to link to a course category to show more courses.  Enter a URL below.';
+$string['promotedlink'] = 'View More Courses URL';
+$string['promotedlink_desc'] = 'Enter a URL to one of your course catagories.  This is displayed next to the featured courses title.';
+$string['settingpromotedlinktext'] = 'View More Courses';
+$string['settingpromotedlink'] = 'http://mymoodlesite/course/index.php?categoryid=2';
+$string['settingfeaturedslider'] = 'Featured Courses';
+
 // Category Icons.
 $string['categoryiconheading'] = 'Category icons';
 $string['categoryiconheadingsub'] = 'Use icons to represent your categories';

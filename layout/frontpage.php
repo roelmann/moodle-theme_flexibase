@@ -86,6 +86,7 @@ require('includes/header.php');
 
     <?php
     require('includes/mainbody.php');
+        echo $courserenderer->promoted_courses();
     require('includes/footer.php');
     ?>
     <!-- Initialize slideshow -->

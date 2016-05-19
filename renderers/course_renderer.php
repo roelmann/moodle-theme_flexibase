@@ -542,4 +542,136 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
         $content .= html_writer::end_tag('div');
         return $content;
     }
+    
+    public function promoted_courses() {
+        global $CFG, $OUTPUT, $DB, $PAGE, $USER;
+
+        $featuredcontent = '';
+        /* Get Featured courses id from DB */
+        $sql = 'SELECT DISTINCT itemid FROM {tag_instance} WHERE itemtype = "course" AND tagid IN(SELECT tagid FROM {tag_instance} WHERE itemtype = "user" AND itemid = '.$USER->id.')';
+        $featuredidsarray = $DB->get_records_sql($sql, array());
+        $featuredids = '';
+        foreach ($featuredidsarray as $fid) {
+			$featuredids .= $fid->itemid.',';
+		}
+//        $featuredids = theme_flexibase_get_setting('promotedcourses');
+        $rcourseids = (!empty($featuredids)) ? explode(",", $featuredids, 12) : array();
+        if (empty($rcourseids)) {
+            return false;
+        }
+
+        $hcourseids = theme_flexibase_hidden_courses_ids();
+
+        if (!empty($hcourseids)) {
+            foreach ($rcourseids as $key => $val) {
+                if (in_array($val, $hcourseids)) {
+                    unset($rcourseids[$key]);
+                }
+            }
+        }
+
+        foreach ($rcourseids as $key => $val) {
+            $ccourse = $DB->get_record('course', array('id' => $val));
+            if (empty($ccourse)) {
+                unset($rcourseids[$key]);
+                continue;
+            }
+        }
+
+        if (empty($rcourseids)) {
+            return false;
+        }
+
+        $fcourseids = array_chunk($rcourseids, 12);
+        $totalfcourse = count($fcourseids);
+        $promotedtitle = theme_flexibase_get_setting('promotedtitle', 'format_text');
+        $promotedtitle = theme_flexibase_lang($promotedtitle);
+        $promotedlinktext = theme_flexibase_get_setting('promotedlinktext', 'format_text');
+        $promotedlink = theme_flexibase_get_setting('promotedlink', 'format_text');
+
+        $featuredheader = '<div class="custom-courses-list" id="Promoted-Courses">
+							  <div class="container-fluid">
+								<div class="titlebar with-felements">
+									<h2>'.$promotedtitle.'  |  <a href="'.$promotedlink.'">'.$promotedlinktext.'</a></h2>
+									<div class="clearfix"></div>
+								</div>
+								<div class="promoted_courses" data-crow="'.$totalfcourse.'">';
+
+        $featuredfooter = ' </div>
+                            </div>
+                            </div>';
+
+        if (!empty($fcourseids)) {
+            foreach ($fcourseids as $courseids) {
+                $rowcontent = '<div><div class="row-fluid promocarousel">';
+
+                foreach ($courseids as $courseid) {
+                    $course = get_course($courseid);
+                    $no = get_config('theme_flexibase', 'patternselect');
+                    $nimgp = (empty($no)|| $no == "default") ? 'no-image' : 'cs0'.$no.'/no-image';
+
+                    $noimgurl = $OUTPUT->pix_url($nimgp, 'theme');
+
+                    $courseurl = new moodle_url('/course/view.php', array('id' => $courseid ));
+
+                    if ($course instanceof stdClass) {
+                        require_once($CFG->libdir. '/coursecatlib.php');
+                        $course = new course_in_list($course);
+                    }
+
+                    $imgurl = '';
+
+                    $summary = theme_flexibase_strip_html_tags($course->summary);
+                    $summary = theme_flexibase_course_trim_char($summary, 125);
+                    $trimtitle = theme_flexibase_course_trim_char($course->fullname, 25);
+
+                    $context = context_course::instance($course->id);
+                    $nostudents = count_role_users(5, $context);
+
+                    foreach ($course->get_course_overviewfiles() as $file) {
+                        $isimage = $file->is_valid_image();
+                        $imgurl = file_encode_url("$CFG->wwwroot/pluginfile.php",
+                        '/'. $file->get_contextid(). '/'. $file->get_component(). '/'.
+                        $file->get_filearea(). $file->get_filepath(). $file->get_filename(), !$isimage);
+                        if (!$isimage) {
+                            $imgurl = $noimgurl;
+                        }
+                    }
+
+                    if (empty($imgurl)) {
+                        $imgurl = $PAGE->theme->setting_file_url('headerbackgroundimage', 'headerbackgroundimage', true);
+                        if (!$imgurl) {
+                            $imgurl = $noimgurl;
+                        }
+                    }
+
+                        $coursehtml = '
+                        <div class="promowrap">
+                        <div class="fp-coursebox">
+                        <div class="fp-coursethumb">
+                        <a href="'.$courseurl.'">
+                        <img src="'.$imgurl.'" width="100%" height="125" title="'.$course->fullname.'">
+                        </a>
+                        <div class="fp-courseinfo">
+                        <h5><a href="'.$courseurl.'" id="button" data-toggle="tooltip" data-placement="bottom" title="'.$course->fullname.'" >'.$trimtitle.'</a></h5>
+                        </div>
+                        <div class="promo-summary">'.$summary.'</div>
+                        </div>
+                        </div>
+                        </div>';
+
+                        $rowcontent .= $coursehtml;
+
+                }
+
+                    $rowcontent .= '</div></div>';
+                    $featuredcontent .= $rowcontent;
+            }
+
+        }
+
+        $featuredcourses = $featuredheader.$featuredcontent.$featuredfooter;
+        return $featuredcourses;
+    }
+
 }

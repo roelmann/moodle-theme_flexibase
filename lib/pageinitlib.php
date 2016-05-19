@@ -52,4 +52,6 @@ function theme_flexibase_page_init(moodle_page $page) {
     $page->requires->jquery_plugin('togglabletabs', 'theme_flexibase');
     $page->requires->jquery_plugin('affix', 'theme_flexibase');
     $page->requires->jquery_plugin('scrollspy', 'theme_flexibase');
+    $page->requires->jquery_plugin('promo', 'theme_flexibase');
+    $page->requires->jquery_plugin('slick', 'theme_flexibase');
 }

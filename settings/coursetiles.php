@@ -37,6 +37,83 @@ $temp = new admin_settingpage('theme_flexibase_frontpage_courses', get_string('f
 $temp->add(new admin_setting_heading('theme_flexibase_frontpage_courses', get_string('frontpagesettingsheading', 'theme_flexibase'),
     format_text(get_string('frontpagedesc', 'theme_flexibase'), FORMAT_MARKDOWN)));
 
+// Promoted Courses Start.
+    // Promoted Courses Heading.
+    $name = 'theme_flexibase_promotedcoursesheading';
+    $heading = get_string('promotedcoursesheading', 'theme_flexibase');
+    $information = '';
+    $setting = new admin_setting_heading($name, $heading, $information);
+    $temp->add($setting);
+
+    // Enable / Disable Promoted Courses.
+    $name = 'theme_flexibase/pcourseenable';
+    $title = get_string('pcourseenable', 'theme_flexibase');
+    $description = '';
+    $alwaysdisplay = get_string('alwaysdisplay', 'theme_flexibase');
+    $displaybeforelogin = get_string('displaybeforelogin', 'theme_flexibase');
+    $displayafterlogin = get_string('displayafterlogin', 'theme_flexibase');
+    $dontdisplay = get_string('dontdisplay', 'theme_flexibase');
+    $default = '0';
+    $choices = array('1'=>$alwaysdisplay, '2'=>$displaybeforelogin, '3'=>$displayafterlogin, '0'=>$dontdisplay);
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Promoted courses Block title.
+    $name = 'theme_flexibase/promotedtitle';
+    $title = get_string('pcourses', 'theme_flexibase').' '.get_string('title', 'theme_flexibase');
+    $description = get_string('promotedtitledesc', 'theme_flexibase');
+    $default =  get_string('settingfeaturedslider', 'theme_flexibase');
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Promoted courses Link Text.
+    $name = 'theme_flexibase/promotedlinktext';
+    $title = get_string('promotedlinktext', 'theme_flexibase');
+    $description = get_string('promotedlinktext_desc', 'theme_flexibase');
+    $default =  get_string('settingpromotedlinktext', 'theme_flexibase');
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Promoted courses Link.
+    $name = 'theme_flexibase/promotedlink';
+    $title = get_string('promotedlink', 'theme_flexibase');
+    $description = get_string('promotedlink_desc', 'theme_flexibase');
+    $default =  get_string('settingpromotedlink', 'theme_flexibase');
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $name = 'theme_flexibase/promotedcourses';
+    $title = get_string('pcourses', 'theme_flexibase');
+    $description = get_string('pcoursesdesc', 'theme_flexibase');
+    $default = array();
+
+    $courses[0] = '';
+    $cnt = 0;
+    if ($ccc = get_courses('all', 'c.sortorder ASC', 'c.id,c.shortname,c.visible,c.category')) {
+        foreach ($ccc as $cc) {
+            if ($cc->visible == "0" || $cc->id == "1") {
+                continue;
+            }
+            $cnt++;
+            $courses[$cc->id] = $cc->shortname;
+            // Set some courses for default option.
+            if ($cnt < 12) {
+                $default[] = $cc->id;
+            }
+        }
+    }
+    $coursedefault = implode(",", $default);
+    $setting = new admin_setting_configtextarea($name, $title, $description, $coursedefault);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    // Promoted Courses End.
+
+
+
 // Front Page Course tile images.
 $name = 'theme_flexibase/coursetileimagesinfo';
 $heading = get_string('coursetileimagesinfo', 'theme_flexibase');

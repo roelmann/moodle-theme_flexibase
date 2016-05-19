@@ -114,6 +114,7 @@ if (!empty($PAGE->theme->settings->flexmarketing)) {
     }
 }
 
+$courserenderer = $PAGE->get_renderer('core', 'course');
 $PAGE->set_popup_notification_allowed(false);
 
 $bodyclasses = array();
