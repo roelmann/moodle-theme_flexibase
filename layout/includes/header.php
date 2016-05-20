@@ -119,7 +119,8 @@ if (isloggedin() ) {
             if ($layout == 'standard' OR $layout == 'course' OR $layout == 'incourse' OR $layout == 'coursecategory' OR
                 $layout == 'frontpage' OR $layout == 'mydashboard' OR $layout == 'mypublic') {
             ?>
-                <button id="pageblockbtn" type="button" class="btn btn-warning" data-toggle="modal" data-target="#blockmodal">Page Blocks</button>
+                <button id="pageblockbtn" type="button" class="btn btn-warning" data-toggle="modal"
+                    data-target="#blockmodal">Page Blocks</button>
             <?php
             }
             ?>
@@ -158,5 +159,4 @@ if (isloggedin() ) {
 </div>
 
 <?php
- require ('blocksmodal.php');
-?>
+require('blocksmodal.php');

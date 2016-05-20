@@ -557,7 +557,8 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
 
         /* Get tagged courses from DB */
         if ($type == 'tags') {
-            $sql = 'SELECT DISTINCT itemid FROM {tag_instance} WHERE itemtype = "course" AND tagid IN(SELECT tagid FROM {tag_instance} WHERE itemtype = "user" AND itemid = '.$USER->id.')';
+            $sql = 'SELECT DISTINCT itemid FROM {tag_instance} WHERE itemtype = "course" AND tagid IN
+                (SELECT tagid FROM {tag_instance} WHERE itemtype = "user" AND itemid = '.$USER->id.')';
             $featuredidsarray = $DB->get_records_sql($sql, array());
             foreach ($featuredidsarray as $fid) {
                 $featuredids .= $fid->itemid.',';
@@ -579,7 +580,6 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
             $promotedtitle = get_string($type.'coursestitle', 'theme_flexibase');
         }
         /* Add other Types and their course identifying logic here. */
-
 
         /* Explode course id list into array. */
         $rcourseids = (!empty($featuredids)) ? explode(",", $featuredids, 12) : array();
@@ -677,7 +677,8 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
                         <img src="'.$imgurl.'" width="100%" height="125" title="'.$course->fullname.'">
                         </a>
                         <div class="fp-courseinfo">
-                        <h5><a href="'.$courseurl.'" id="button" data-toggle="tooltip" data-placement="bottom" title="'.$course->fullname.'" >'.$trimtitle.'</a></h5>
+                        <h5><a href="'.$courseurl.'" id="button" data-toggle="tooltip" data-placement="bottom"
+                            title="'.$course->fullname.'" >'.$trimtitle.'</a></h5>
                         </div>
                         <div class="promo-summary">'.$summary.'</div>
                         </div>

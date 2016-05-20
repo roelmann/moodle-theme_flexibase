@@ -368,7 +368,7 @@ $string['courseheaderimageheight'] = 'Course Header image height';
 $string['courseheaderimageheightdesc'] = 'Set the height for any images used as header banners (recommended height 150-175px)<br>Note: If you set this to less than 125px, you may also need to alter the font-size on the course grade to bring it to a single line (add <code>.courseheadergradepercentage table tbody tr:last-of-type .column-itemname, .courseheadergradepercentage table tbody tr:last-of-type .column-percentage {font-size:120%;}</code> to your customcss.';
 $string['courseboxactivitynotice'] = 'Activity<br>Notices';
 
-//promoted courses Bottom
+// Promoted courses.
 $string['promotedtitledefault'] = 'Featured courses';
 $string['promotedtitledesc'] = 'Please give the Promoted courses block title,
 either language key or Text.For ex: lang:display or Display';

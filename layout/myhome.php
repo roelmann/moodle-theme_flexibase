@@ -45,6 +45,19 @@ require('includes/header.php');
     require('includes/alerts.php');
     require('includes/breadcrumb.php');
     require('includes/mainbody.php');
+
+    if ($PAGE->theme->settings->pcoursetagenable == 1) {
+        echo $courserenderer->promoted_courses('tags');
+    } else if ($PAGE->theme->settings->pcoursetagenable == 2 && !isloggedin()) {
+        echo $courserenderer->promoted_courses('tags');
+    } else if ($PAGE->theme->settings->pcoursetagenable == 3 && isloggedin()) {
+        echo $courserenderer->promoted_courses('tags');
+    }
+    /* Call my course slider. */
+    if ($PAGE->theme->settings->pcoursemyenable == 3 && isloggedin()) {
+        echo $courserenderer->promoted_courses('my');
+    }
+
     require('includes/footer.php');
     ?>
     <!-- Initialize slideshow -->

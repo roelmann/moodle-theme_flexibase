@@ -86,23 +86,23 @@ require('includes/header.php');
 
     <?php
     require('includes/mainbody.php');
-    if($PAGE->theme->settings->pcoursetagenable == 1) {
+    if ($PAGE->theme->settings->pcoursetagenable == 1) {
         echo $courserenderer->promoted_courses('tags');
-    } else if($PAGE->theme->settings->pcoursetagenable == 2 && !isloggedin()) {
+    } else if ($PAGE->theme->settings->pcoursetagenable == 2 && !isloggedin()) {
         echo $courserenderer->promoted_courses('tags');
-    } else if($PAGE->theme->settings->pcoursetagenable == 3 && isloggedin()) {
+    } else if ($PAGE->theme->settings->pcoursetagenable == 3 && isloggedin()) {
         echo $courserenderer->promoted_courses('tags');
     }
     /* Call admin promoted course slider. */
-    if($PAGE->theme->settings->pcourseenable == 1) {
+    if ($PAGE->theme->settings->pcourseenable == 1) {
         echo $courserenderer->promoted_courses('setting');
-    } else if($PAGE->theme->settings->pcourseenable == 2 && !isloggedin()) {
+    } else if ($PAGE->theme->settings->pcourseenable == 2 && !isloggedin()) {
         echo $courserenderer->promoted_courses('setting');
-    } else if($PAGE->theme->settings->pcourseenable == 3 && isloggedin()) {
+    } else if ($PAGE->theme->settings->pcourseenable == 3 && isloggedin()) {
         echo $courserenderer->promoted_courses('setting');
     }
     /* Call my course slider. */
-    if($PAGE->theme->settings->pcoursemyenable == 3 && isloggedin()) {
+    if ($PAGE->theme->settings->pcoursemyenable == 3 && isloggedin()) {
         echo $courserenderer->promoted_courses('my');
     }
 
