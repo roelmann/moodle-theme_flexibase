@@ -1103,8 +1103,6 @@ body {padding-right:0 !important}
   }
 }
 
-
-
 #frontpage-course-list .promo-summary {
     text-align: left;
     max-width: 450px;
@@ -1122,7 +1120,6 @@ body {padding-right:0 !important}
     max-width:100%;
 }
 #frontpage-course-list .promowrap {
-    background-color: [[setting:topicweekcolor]];
     box-shadow: 0 1px 4px 0 rgba(0,0,0,0.4);
     margin:10px;
     position: inherit;
@@ -1153,7 +1150,6 @@ div#frontpage-course-list {
 
 }
 #frontpage-course-list .fp-avail-courses{
-  background-color: [[setting:topicweekcolor]];
     box-shadow: 0 1px 4px 0 rgba(0,0,0,0.4);
     margin:10px;
     padding:0px;
@@ -1163,77 +1159,14 @@ div#frontpage-course-list {
     min-height: 150px;
     max-width: 150px;
 }
-
-
-
-div#topPromoted-Courses .titlebar {
-    position: relative;
-    bottom: 0px;
+#Promoted-Courses {
+    margin-bottom:15px;
 }
-
-#topPromoted-Courses .promo-summary {
-    text-align: left;
-    max-width: 450px;
-    margin: auto;
-}
-#topPromoted-Courses .promoted_courses {
-    padding: 0px;
-    margin:0px;
-    text-align: center;
-}
-#topPromoted-Courses .titlebar h2 {
-    margin: 0px;
-    text-align: center;
-}
-#topPromoted-Courses .row-fluid {
-    max-width:100%;
-}
-#topPromoted-Courses .promowrap {
-    background-color: [[setting:topicweekcolor]];
-    margin:0px;
-    padding:0px;
-    position: inherit;
-    display: inline-block;
-    float:none;
-    vertical-align: top;
-    min-height: [[setting:toppromotedpadding]];
-}
-div#topPromoted-Courses {
-margin:0px;
-padding:0px;
-}
-#topPromoted-Courses .fp-coursebox {
-  text-align: center;
-  margin:0px;
-  padding:0px;
-}
-#topPromoted-Courses .fp-coursethumb {
-  margin-left: auto;
-  margin-right:auto;
-  padding:5px;
-}
-/*#topPromoted-Courses .fp-courseinfo {
-    text-align: center;
-    padding: 5px 0px;
-    margin:0px;
-    background-color: [[setting:coursetitlebkg]];
-}*/
-#topPromoted-Courses .fp-courseinfo {
-    display: inline-block;
-    text-align: center;
-    padding: 5px 20px;
-    margin: 0px;
-    border-radius: 0px 0px 15px 15px;
-    background-color: [[setting:coursetitlebkg]];
-}
-
-
 #Promoted-Courses .promo-summary {
     text-align: left;
   }
 #Promoted-Courses .promoted_courses {
     padding: 10px;
-    background-color: [[setting:blockcolor]];
     text-align: center;
 }
 #Promoted-Courses .titlebar h2 {
@@ -1246,7 +1179,6 @@ padding:0px;
     width:100%;
 }
 #Promoted-Courses .promowrap {
-    background-color: [[setting:topicweekcolor]];
     box-shadow: 0 1px 4px 0 rgba(0,0,0,0.4);
     margin:10px;
     display: inline-block;
@@ -1271,7 +1203,6 @@ div#Promoted-Courses {
 }
 
 #frontpage-course-list #Promoted-Courses .fp-avail-courses{
-  background-color: [[setting:topicweekcolor]];
     box-shadow: 0 1px 4px 0 rgba(0,0,0,0.4);
     margin:10px;
     padding:5px;
@@ -1420,8 +1351,7 @@ div#Promoted-Courses {
     padding: 0;
     cursor: pointer;
 }
-.slick-dots li button!important
-{
+.slick-dots li button {
     font-size: 0;
     line-height: 0;
 
