@@ -1144,7 +1144,6 @@ div#frontpage-course-list {
 #frontpage-course-list .fp-courseinfo {
     text-align: center;
     padding: 5px 0px;
-    background-color: [[setting:coursetitlebkg]];
     min-height: 60px;
     font-weight: bold;
 

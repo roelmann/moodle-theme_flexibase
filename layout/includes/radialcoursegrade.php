@@ -32,24 +32,24 @@ require_once($CFG->libdir.'/gradelib.php');
 require_once($CFG->dirroot.'/grade/lib.php');
 require_once($CFG->dirroot.'/grade/report/user/lib.php');
 
-$courseid = $COURSE->id;
-$userid = $USER->id;
-$context = context_course::instance($COURSE->id);
-$report = '';
+$rcourseid = $COURSE->id;
+$ruserid = $USER->id;
+$rcontext = context_course::instance($COURSE->id);
+$rreport = '';
 
 if ($PAGE->pagelayout == 'course') {
-    if (has_capability('moodle/grade:view', $context) and $COURSE->showgrades) {
+    if (has_capability('moodle/grade:view', $rcontext) and $COURSE->showgrades) {
 
         // First make sure we have proper final grades - this must be done before constructing of the grade tree.
-        grade_regrade_final_grades($courseid);
+        grade_regrade_final_grades($rcourseid);
 
         // Return tracking object.
-        $gpr = new grade_plugin_return(array('type' => 'report', 'plugin' => 'user', 'courseid' => $courseid, 'userid' => $userid));
-        $report = new grade_report_user($courseid, $gpr, $context, $userid);
+        $gpr = new grade_plugin_return(array('type' => 'report', 'plugin' => 'user', 'courseid' => $rcourseid, 'userid' => $ruserid));
+        $rreport = new grade_report_user($rcourseid, $gpr, $rcontext, $ruserid);
 
-        if ($report->fill_table()) {
+        if ($rreport->fill_table()) {
             // Get course overall grade value from User Grade Report
-            $html = $report->print_table(true); // Get User Grade report table.
+            $html = $rreport->print_table(true); // Get User Grade report table.
             $t = explode("<tr>", $html); // Split table into individual lines.
             $text = explode("</span>", $t[count($t) - 1]); // Split initial html out of last line.
             $gradetext = explode(" ", $text[1]); // Split last line into chunks.
