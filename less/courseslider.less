@@ -1,0 +1,262 @@
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Theme Flexibase LESS file.
+ *
+ * @package    theme_flexibase
+ * @author     2015 Richard Oelmann
+ * @copyright  2015 R. Oelmann
+ * @parents    Bootstrap
+ * @copyright  2014 Bas Brands
+ * @credits    Essential - Julian Ridden, Gareth Barnard;
+ *             Elegance - Julian Ridden, Danny Wahl;
+ *             BCU - Jez H, Mike Grant
+ *             Decaf - Paul Nichols
+ *             Many others for non-specific but vital inspirations,
+ *             suggestions and support
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+#frontpage-course-list #Promoted-Courses .fp-avail-courses,
+#Promoted-Courses .promowrap,
+#frontpage-course-list .fp-avail-courses,
+#frontpage-course-list .fp-courseinfo {
+  background-color: @gray-lightest;
+}
+#Promoted-Courses .promoted_courses {
+    background-color: @gray-lighter;
+}
+
+/* Promoted Courses Adapted from Pioneer/Eguru*/
+
+@media (max-width: 900px) {
+  #Promoted-Courses .promo-summary {
+    display:none;
+    height:auto;
+    text-align: left;
+  }
+}
+
+
+#Promoted-Courses {
+    margin-bottom:15px;
+    .promo-summary {
+        text-align:left;
+    }
+    .promoted_courses {
+        padding:10px;
+        text-align:center;
+    }
+    .titlebar {
+        h2 {
+            margin:0px;
+            text-align:center;
+            font-size:18px;
+        }
+    }
+    .row-fluid {
+        width:100%;
+    }
+    .promowrap {
+        box-shadow:0 1px 4px 0 rgba(0,0,0,0.4);
+        margin:10px;
+        display:inline-block;
+        float:none;
+        vertical-align:bottom;
+        min-height:250px;
+    }
+    .fp-coursebox {
+        text-align:center;
+    }
+    .fp-coursethumb {
+        margin-left:auto;
+        margin-right:auto;
+        padding:5px;
+    }
+    .fp-courseinfo {
+        text-align:center;
+    }
+}
+
+/* Slider */
+
+/* Arrows */
+.slick-prev,
+.slick-next {
+    display:none;
+}
+
+/* Dots */
+.slick-dotted.slick-slider {
+    margin-bottom: 40px;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: -35px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    li {
+        position: relative;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin: 0 5px;
+        padding: 0;
+        cursor: pointer;
+        button {
+            display: block;
+            width: 30px;
+            height: 30px;
+            padding: 5px;
+            cursor: pointer;
+            border: 0;
+            border-radius: 15px;
+            outline: none;
+            &:hover {
+                outline: none;
+                &:before {
+                    opacity: 1;
+                }
+            }
+            &:focus {
+                outline: none;
+                &:before {
+                    opacity: 1;
+                }
+            }
+            &:before {
+                font-size: 6px;
+                line-height: 20px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                opacity: .25;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+        }
+        &.slick-active {
+            button {
+                color: @white;
+                &:before {
+                    opacity: .75;
+                }
+            }
+        }
+    }
+}
+/* Slider */
+
+.slick-slider {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+    .slick-track {
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        position: relative;
+        top: 0;
+        left: 0;
+        display: block;
+        &:before {
+            display: table;
+            content: '';
+        }
+        &:after {
+            display: table;
+            content: '';
+            clear: both;
+        }
+    }
+    .slick-list {
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        position: relative;
+        display: block;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        &:focus {
+            outline: none;
+        }
+        &.dragging {
+        cursor: pointer;
+        cursor: hand;
+        }
+    }
+}
+.slick-loading .slick-track {
+    visibility: hidden;
+}
+.slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    img {
+        display: block;
+    }
+    &.slick-loading {
+        img {
+            display: none;
+        }
+    }
+    &.dragging {
+        img {
+            pointer-events: none;
+        }
+    }
+}
+[dir='rtl'] .slick-slide {
+    float: right;
+}
+.slick-initialized .slick-slide {
+    display: block;
+}
+.slick-loading .slick-slide {
+    visibility: hidden;
+}
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}

@@ -1,0 +1,97 @@
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Theme Flexibase LESS file.
+ *
+ * @package    theme_flexibase
+ * @author     2015 Richard Oelmann
+ * @copyright  2015 R. Oelmann
+ * @parents    Bootstrap
+ * @copyright  2014 Bas Brands
+ * @credits    Essential - Julian Ridden, Gareth Barnard;
+ *             Elegance - Julian Ridden, Danny Wahl;
+ *             BCU - Jez H, Mike Grant
+ *             Decaf - Paul Nichols
+ *             Many others for non-specific but vital inspirations,
+ *             suggestions and support
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+/* Dashboard Course-Overview
+ * ------------------------- */
+.block_course_overview {
+    .coursebox {
+        &.panel {
+            width:48%;
+            margin:10px 1%;
+            float:left;
+            &.coursebox-content {
+                h3 {
+                    font-weight:normal;
+                    font-size:20px;
+                    overflow:hidden;
+                    text-overflow:ellipsis;
+                    white-space:nowrap;
+                    max-width:100%;
+                    line-height:normal;
+                }
+            }
+            .panel-body {
+                &:hover {
+                    .cimbox {
+                        opacity:.3;
+                        -webkit-transition:all .5s ease-in-out;
+                        -moz-transition:all .5s ease-in-out;
+                        -o-transition:all .5s ease-in-out;
+                        transition:all .5s ease-in-out;
+                    }
+                }
+            }
+        }
+        .summary {
+            height:100%;
+            width:100%;
+            overflow:auto;
+            position:absolute;
+            text-align:center;
+            padding:15px;
+            top:0;
+            left:0;
+            visibility:hidden;
+        }
+        &:hover {
+            .summary {
+                height:100%;
+                width:100%;
+                visibility:visible;
+                opacity:0.9;
+            }
+        }
+        .courseboxactivitynotice {
+            border-radius: 25px;
+            height: 50px;
+            left: -7px;
+            padding: 5px 20px;
+            position: absolute;
+            text-align: center;
+            top: 18px;
+            -ms-transform: rotate(-45deg); /* IE 9 */
+            -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+            transform: rotate(-45deg);
+            width: 100px;
+            font-weight:700;
+        }
+    }
+}

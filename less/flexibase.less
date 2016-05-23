@@ -14,7 +14,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Theme Flexibase language file.
+ * Theme Flexibase LESS file.
  *
  * @package    theme_flexibase
  * @author     2015 Richard Oelmann
@@ -81,10 +81,28 @@
 @import "../../bootstrap/less/moodle/feedback";
 @import "../../bootstrap/less/moodle/undo";
 
+/* Flexibase Theme less files
+ *--------------------------- */
 @import "variables.less";
 
-/* Theme less code
- * --------------- */
+@import "radial";
+@import "courseslider";
+@import "carousel";
+@import "blockspage";
+@import "buttons";
+@import "panels";
+@import "navbar";
+@import "tabs";
+@import "marketing";
+@import "alerts";
+@import "coursebox";
+@import "categoryicons";
+@import "user";
+@import "themehelp";
+@import "courseoverview";
+
+/* Miscellaneous theme less code
+ * ----------------------------- */
 
 /* Core overrides. */
 .btn-shadow(@color) {
@@ -92,8 +110,11 @@
   filter: none;
   border: 1px solid darken(@color, 10%);
 }
-
-/* Header. */
+#region-main {
+    background-color: @white;
+    border: 1px solid @gray-lighter;
+    border-radius: @border-radius-large;
+}
 header {
     background-color: @brand-primary-lightest;
 }
@@ -102,342 +123,11 @@ header {
     border-radius:@border-radius-large;
 }
 
-/* Panels */
-.panel.panel-primary .panel-heading {
-    .btn-shadow(@panel-primary-heading-bg);
-}
-.panel.panel-info .panel-heading {
-    .btn-shadow(@panel-info-heading-bg);
-}
-.panel.panel-default .panel-heading {
-    .btn-shadow(@panel-default-heading-bg);
-}
-.panel.panel-success .panel-heading {
-    .btn-shadow(@panel-success-heading-bg);
-}
-.panel.panel-warning .panel-heading {
-    .btn-shadow(@panel-warning-heading-bg);
-}
-.panel.panel-danger .panel-heading {
-    .btn-shadow(@panel-danger-heading-bg);
-}
-.panel .panel-heading h2,
-.panel .panel-heading h3 {
-    color:@white;
-}
-.panel.panel-default .panel-heading h2,
-.panel.panel-default .panel-heading h3 {
-    color:@brand-primary;
-}
-
-/* Navbar. */
-.navbar {
-
-  .btn-shadow(@navbar-default-bg);
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
-
-  &-inverse {
-    .btn-shadow(@navbar-inverse-bg);
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
-
-    .badge {
-      background-color: #fff;
-      color: @navbar-inverse-bg;
-    }
-  }
-
-  .badge {
-    text-shadow: none;
-  }
-
-  &-nav > li > a,
-  &-nav > li > a:hover {
-    padding-top: @navbar-padding-vertical + 2px;
-    padding-bottom: @navbar-padding-vertical - 2px;
-    .transition(color ease-in-out .2s);
-  }
-
-  &-brand,
-  &-brand:hover {
-    .transition(color ease-in-out .2s);
-  }
-
-  .caret,
-  .caret:hover {
-    .transition(border-color ease-in-out .2s);
-  }
-
-  .dropdown-menu {
-    text-shadow: none;
-  }
-}
-
-/* Buttons. */
-.btn {
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
-  .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
-  .btn-shadow(@btn-default-bg);
-  &:hover {
-      .btn-shadow(darken(@btn-default-bg, 4%));
-    }
-  &-default {
-    .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
-    .btn-shadow(@btn-default-bg);
-    &:hover {
-      .btn-shadow(darken(@btn-default-bg, 4%));
-    }
-  }
-  &-primary {
-    .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
-    .btn-shadow(@btn-primary-bg);
-    &:hover {
-      .btn-shadow(darken(@btn-primary-bg, 4%));
-    }
-  }
-  &-success {
-    .button-variant(@btn-success-color; @btn-success-bg; @btn-success-border);
-    .btn-shadow(@btn-success-bg);
-    &:hover {
-      .btn-shadow(darken(@btn-success-bg, 4%));
-    }
-  }
-  &-info {
-    .button-variant(@btn-info-color; @btn-info-bg; @btn-info-border);
-    .btn-shadow(@btn-info-bg);
-    &:hover {
-      .btn-shadow(darken(@btn-info-bg, 4%));
-    }
-  }
-  &-warning {
-    .button-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-border);
-    .btn-shadow(@btn-warning-bg);
-    &:hover {
-      .btn-shadow(darken(@btn-warning-bg, 4%));
-    }
-  }
-  &-danger {
-    .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
-    .btn-shadow(@btn-danger-bg);
-    &:hover {
-      .btn-shadow(darken(@btn-danger-bg, 4%));
-    }
-  }
-  &:active,
-  &.active {
-    background-image: none;
-    .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
-  }
-}
-button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-input.form-submit,
-input#id_submitbutton,
-input#id_submitbutton2,
-td.submit input {
-    .btn-shadow(@btn-primary-bg);
-    color:@white;
-    &:hover {
-        .btn-shadow(darken(@btn-primary-bg, 4%));
-        color:@white;
-    }
-}
-
-/* Tabs */
-.tab-content {
-    border: 1px solid @brand-primary;
-    padding: 5px;
-    border-radius: 6px;
-}
-.nav-tabs {
-    border-bottom: none;
-}
-.nav-tabs > li > a {
-    border: 1px solid @brand-primary;
-    border-radius: @border-radius-large @border-radius-large 0 0;
-    background: @brand-primary-light;
-}
-.nav-tabs > li.active >a {
-    border-bottom: none;
-}
-
 /* Code. */
 pre code {
     background: @brand-success-light;
     font-weight:600;
 }
 
-/* Carousel. */
-.carousel,
-.carousel-inner,
-.carousel-caption {
-    border-radius:@border-radius-large;
-}
-.carousel-control.left {
-    border-top-left-radius:@border-radius-large;
-    border-bottom-left-radius:@border-radius-large;
-}
-.carousel-control.right {
-    border-top-right-radius:@border-radius-large;
-    border-bottom-right-radius:@border-radius-large;
-}
-
-/* Marketing */
-.marketing-block .fa-stack {
-    color:@brand-primary-light
-}
-.marketing-block .fa-stack .fa-inverse {
-    text-shadow:3px 3px 2px @brand-info,-1px -1px 1px @brand-primary,1px -1px 1px @brand-primary,-1px 1px 1px @brand-primary,1px 1px 1px @brand-primary;
-}
-
 /* mod-assign */
 .path-mod-assign a.btn.btn-primary {.btn-primary}
-
-/* page blocks modal */
-.modal-backdrop.in {opacity:1;}
-.modal-backdrop {
-    background-color: @brand-primary-light;
-}
-#blockmodal {
-    background-color: @brand-primary-light;
-}
-#blockmodal .modal-content {
-    background-color:transparent;
-    border:none;
-    box-shadow:none;
-    color: @white;
-    font-size:120%;
-}
-#blockmodal .modal-content h2 {
-    font-size:185%;
-}
-
-
-/* Radial displays */
-    @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
-    .radial-progress,
-    .radial-grade {
-        @circle-size: 120px;
-        @circle-background: @gray-lighter;
-        @circle-color: @brand-success;
-        @inset-size: 90px;
-        @inset-color: @white;
-        @transition-length: 1s;
-        @shadow: 6px 6px 10px rgba(0,0,0,0.25);
-        @percentage-color: @brand-success;
-        @percentage-font-size: 22px;
-        @percentage-text-width: 57px;
-        margin: 50px;
-        width:  @circle-size;
-        height: @circle-size;
-        background-color: @circle-background;
-        border-radius: 50%;
-        .circle {
-            .mask, .fill, .shadow {
-                width:    @circle-size;
-                height:   @circle-size;
-                position: absolute;
-                border-radius: 50%;
-            }
-            .shadow {
-                box-shadow: @shadow inset;
-            }
-            .mask, .fill {
-                -webkit-backface-visibility: hidden;
-                transition: -webkit-transform @transition-length;
-                transition: -ms-transform @transition-length;
-                transition: transform @transition-length;
-                border-radius: 50%;
-            }
-            .mask {
-                clip: rect(0px, @circle-size, @circle-size, @circle-size/2);
-                .fill {
-                    clip: rect(0px, @circle-size/2, @circle-size, 0px);
-                    background-color: @circle-color;
-                }
-            }
-        }
-        .inset {
-            width:       @inset-size;
-            height:      @inset-size;
-            position:    absolute;
-            margin-left: (@circle-size - @inset-size)/2;
-            margin-top:  (@circle-size - @inset-size)/2;
-            background-color: @inset-color;
-            border-radius: 50%;
-            box-shadow: @shadow;
-            .percentage {
-                height:   @percentage-font-size;
-                width:    @percentage-text-width;
-                overflow: hidden;
-                position: absolute;
-                top:      (@inset-size - @percentage-font-size) / 2;
-                left:     (@inset-size - @percentage-text-width) / 2;
-                line-height: 1;
-                .numbers {
-                    margin-top: -@percentage-font-size;
-                    transition: width @transition-length;
-                    span {
-                        width:          @percentage-text-width;
-                        display:        inline-block;
-                        vertical-align: top;
-                        text-align:     center;
-                        font-weight:    800;
-                        font-size:      @percentage-font-size;
-                        font-family:    "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-                        color:          @percentage-color;
-                    }
-                }
-            }
-        }
-        @i: 0;
-        @increment: 180deg / 100;
-        .loop (@i) when (@i <= 100) {
-            &[data-progress="@{i}"] {
-                .circle {
-                    .mask.full, .fill {
-                        -webkit-transform: rotate(@increment * @i);
-                        -ms-transform: rotate(@increment * @i);
-                        transform: rotate(@increment * @i);
-                    }
-                    .fill.fix {
-                        -webkit-transform: rotate(@increment * @i * 2);
-                        -ms-transform: rotate(@increment * @i * 2);
-                        transform: rotate(@increment * @i * 2);
-                    }
-                }
-                .inset .percentage .numbers {
-                    width: @i * @percentage-text-width + @percentage-text-width;
-                }
-            }
-            .loop(@i + 1);
-        }
-        .loop(@i);
-    }
-    .radialcompletiondisplay,
-    .radialgradedisplay {
-        width:200px;
-        height:200px;
-        margin:0 5px;
-        border:3px ridge @white;
-        border-radius:16px;
-        background: @white;
-    }
-    .radialcompletiondisplay h4,
-    .radialgradedisplay h4 {
-        text-align:center;
-    }
-    .radialcompletiondisplay .radial-progress,
-    .radialgradedisplay .radial-grade {
-        margin:auto;
-    }
-
-#frontpage-course-list #Promoted-Courses .fp-avail-courses,
-#Promoted-Courses .promowrap,
-#frontpage-course-list .fp-avail-courses {
-  background-color: @gray-lightest;
-}
-#Promoted-Courses .promoted_courses {
-    background-color: @gray-lighter;
-}

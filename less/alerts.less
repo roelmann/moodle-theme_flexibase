@@ -1,4 +1,3 @@
-<?php
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -15,24 +14,41 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Theme Flexibase renderers file.
- * Link to individual renderer files for easier organisation
+ * Theme Flexibase LESS file.
  *
  * @package    theme_flexibase
  * @author     2015 Richard Oelmann
  * @copyright  2015 R. Oelmann
- * @copyright  Bootstrap - 2014 Bas Brands
- *             Essential - Julian Ridden, Gareth Barnard;
+ * @parents    Bootstrap
+ * @copyright  2014 Bas Brands
+ * @credits    Essential - Julian Ridden, Gareth Barnard;
  *             Elegance - Julian Ridden, Danny Wahl;
  *             BCU - Jez H, Mike Grant
  *             Decaf - Paul Nichols
+ *             Many others for non-specific but vital inspirations,
+ *             suggestions and support
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once('renderers/core_renderer.php');
-require_once('renderers/course_renderer.php');
-//require_once('renderers/navigation_block_renderer.php');
-//require_once('renderers/settings_block_renderer.php');
-require_once('renderers/course_overview_block_renderer.php');
-require_once('renderers/topsettings_renderer.php');
-require_once('classes/output/core_user/myprofile/renderer.php');
+/* Alerts.
+ * ------- */
+.alert {
+    border-radius: @border-radius-base;
+    margin: 0 5px 10px 5px;
+    padding: @padding-small;
+    .title {
+        font-weight:800;
+        font-size:110%;
+        padding:0 @padding-xs-horizontal;
+    }
+    .fa-stack {
+        font-size:150%;
+    }
+}
+.alertmessage {
+    padding-left:70px;
+    text-indent:-48px;
+}
+.rtl .alertmessage {
+    padding-right:70px;
+}

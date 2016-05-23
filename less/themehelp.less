@@ -1,0 +1,103 @@
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Theme Flexibase LESS file.
+ *
+ * @package    theme_flexibase
+ * @author     2015 Richard Oelmann
+ * @copyright  2015 R. Oelmann
+ * @parents    Bootstrap
+ * @copyright  2014 Bas Brands
+ * @credits    Essential - Julian Ridden, Gareth Barnard;
+ *             Elegance - Julian Ridden, Danny Wahl;
+ *             BCU - Jez H, Mike Grant
+ *             Decaf - Paul Nichols
+ *             Many others for non-specific but vital inspirations,
+ *             suggestions and support
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+/* Help pages
+ * ---------- */
+.flexhelpcontainer{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow:row wrap;
+    flex-flow: row wrap;
+
+    font-family: 'FontAwesome';
+    font-weight:500;
+    margin-right: 5px;
+}
+.flexhelpitem {
+    -webkit-flex: 1 1 33%;
+    flex: 1 1 33%;
+    margin:5px;
+}
+.panelgroup.flexhelpitem {
+    margin:0;
+}
+.helpinstallation h3:before {
+    content: "\f1c0";
+}
+.helpsettings h3:before {
+    content: "\f013";
+}
+.helplayouts h3:before {
+    content: "\f1b3";
+}
+.helpthemecode h3:before {
+    content: "\f121";
+}
+.helpcssless h3:before {
+    content: "\f1fc";
+}
+.layoutdiagrams h3:before {
+    content: "\f1b3";
+}
+.layoutsadminhelp h3:before {
+    content: "\f013";
+}
+.regionshelp h3:before {
+    content: "\f247";
+}
+.additionalregions h3:before {
+    content: "\f18d";
+}
+.buttonspanel h3:before {
+    content: "\f019";
+}
+.imagespanel h3:before {
+    content: "\f03e";
+}
+.contenttippanel h3:before {
+    content: "\f022";
+}
+.tabspanel h3:before {
+    content: "\f00a";
+}
+.carouselpanel h3:before {
+    content: "\f110";
+}
+.pixcorehelp h3:before {
+    content: "\f03e";
+}
+.blockheadershelp h3:before {
+    content: "\f1b3";
+}
+.textfileshelp h3:before {
+    content: "\f0f6";
+}

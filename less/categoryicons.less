@@ -1,0 +1,128 @@
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Theme Flexibase LESS file.
+ *
+ * @package    theme_flexibase
+ * @author     2015 Richard Oelmann
+ * @copyright  2015 R. Oelmann
+ * @parents    Bootstrap
+ * @copyright  2014 Bas Brands
+ * @credits    Essential - Julian Ridden, Gareth Barnard;
+ *             Elegance - Julian Ridden, Danny Wahl;
+ *             BCU - Jez H, Mike Grant
+ *             Decaf - Paul Nichols
+ *             Many others for non-specific but vital inspirations,
+ *             suggestions and support
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+.categoryicons #frontpage-category-combo .collapsible-actions,
+.categoryicons .course_category_tree .collapsible-actions,
+.categoryicons .frontpage-category-names .collapsible-actions {
+    display:none;
+}
+
+.categoryicons .frontpage-category-names.course_category_tree .category.with_children>.info>.categoryname,
+.categoryicons .frontpage-category-names.course_category_tree .category>.info>.categoryname {
+    line-height:15px;
+}
+.categoryicons .category-browse{
+    overflow:auto;
+    width:100%;
+}
+.categoryicons .course_category_tree .category.with_children.collapsed>.info>.categoryname,
+.categoryicons .course_category_tree .category.with_children>.info>.categoryname,
+.categoryicons .course_category_tree .category>.info>.categoryname {
+    background-image:none;
+    padding:0;
+    margin:0;
+}
+.categoryicons .course_category_tree .category.dimmed_category{
+    border-color:#AAA;
+}
+.categoryicons .course_category_tree .category{
+    float:left;
+    margin:0 5px 10px;
+}
+.categoryicons .course_category_tree .category .numberofcourse{
+    background:#666;
+    color:#fff;
+    padding:7px;
+    border-radius:50%;
+    position:relative;
+    top:8px;
+    left:80%;
+    font-weight:600;
+    font-size:1em;
+    -moz-box-shadow:1px 1px 5px 0 #ccc;
+    -webkit-box-shadow:1px 1px 5px 0 #ccc;
+    box-shadow:1px 1px 5px 0 #ccc;
+    border:2px solid #fff;
+}
+.categoryicons .course_category_tree .category .content {
+    display:none;
+}
+.categoryicons .course_category_tree .category .info .name {
+    padding:0;
+    text-align:center;
+}
+
+.categoryicons .course_category_tree .category>.info,.categoryicons .course_category_tree .category>.info>.categoryname {
+    background:0 0;
+    border:0;
+    text-align:center;
+    box-shadow:none;
+    margin:0;
+}
+.categoryicons .course_category_tree .category>.info a,
+.categoryicons .course_category_tree .category>.info>.categoryname a {
+    display:block;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    width:176px;
+}
+.categoryicons .course_category_tree .category>.info a>i,
+.categoryicons .course_category_tree .category>.info>.categoryname a>i {
+    padding-top:6px;
+}
+.categoryicons .course_category_tree .category>.info a>span,
+.categoryicons .course_category_tree .category>.info>.categoryname a>span {
+    font-size:18px;
+}
+.categoryicons .course_category_tree .category:hover {
+    -webkit-transition:all .3s ease;
+    -moz-transition:all .3s ease;
+    -o-transition:all .3s ease;
+    transition:all .3s ease;
+}
+.categoryicons .course_category_tree .category[data-categoryid]>.info>.categoryname a{
+    line-height:30px;
+}
+.categoryicons .course_category_tree .category[data-categoryid]>.info>.categoryname a:hover {
+    text-decoration:none;
+}
+.categoryicons .course_category_tree .content .teachers .fa {
+    display:inline;
+    font-size:inherit;
+}
+.categoryicons .jsenabled .course_category_tree .controls {
+    display:none;
+}
+
+.categoryicons .subcategories+.category-browse {
+    clear:both;
+}

@@ -36,6 +36,7 @@
   */
 
 /* Awesomebar - workings and structure */
+body.flexibase_no_awesomebar {margin-top:0;}
 .flexibase-awesome-bar {left:0; width:100%; height:25px; z-index:999;font-size:13px;}
 #awesomebar {position:fixed; top:0;}
 #awesomebar ul#awesomeHomeMenu > li {padding-bottom:0;}

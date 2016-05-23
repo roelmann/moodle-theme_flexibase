@@ -14,8 +14,15 @@
 
 @import "variables.less";
 
-/* Theme less code
- * --------------- */
+@import "carousel";
+@import "buttons";
+@import "panels";
+@import "navbar";
+@import "tabs";
+@import "alerts";
+
+/* Miscellaneous theme less code
+ * ----------------------------- */
 
 /* Core overrides. */
 .btn-shadow(@color) {
@@ -23,105 +30,17 @@
   filter: none;
   border: 1px solid darken(@color, 10%);
 }
-
-/* Panels */
-.panel.panel-primary .panel-heading {
-    .btn-shadow(@panel-primary-heading-bg);
+#region-main {
+    background-color: @white;
+    border: 1px solid @gray-lighter;
+    border-radius: @border-radius-large;
 }
-.panel.panel-info .panel-heading {
-    .btn-shadow(@panel-info-heading-bg);
-}
-.panel.panel-default .panel-heading {
-    .btn-shadow(@panel-default-heading-bg);
-}
-.panel.panel-success .panel-heading {
-    .btn-shadow(@panel-success-heading-bg);
-}
-.panel.panel-warning .panel-heading {
-    .btn-shadow(@panel-warning-heading-bg);
-}
-.panel.panel-danger .panel-heading {
-    .btn-shadow(@panel-danger-heading-bg);
-}
-.panel .panel-heading h2, 
-.panel .panel-heading h3 {
-    color:@white;
-}
-.panel.panel-default .panel-heading h2, 
-.panel.panel-default .panel-heading h3 {
-    color:@brand-primary;
+header {
+    background-color: @brand-primary-lightest;
 }
 
-/* Buttons. */
-.btn {
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
-  &-default {
-    .btn-shadow(@btn-default-bg);
-    &:hover {
-      .btn-shadow(darken(@btn-default-bg, 4%));
-    }
-  }
-  &-primary {
-    .btn-shadow(@btn-primary-bg);
-    &:hover {
-      .btn-shadow(darken(@btn-primary-bg, 4%));
-    }
-  }
-  &-success {
-    .btn-shadow(@btn-success-bg);
-    &:hover {
-      .btn-shadow(darken(@btn-success-bg, 4%));
-    }
-  }
-  &-info {
-    .btn-shadow(@btn-info-bg);
-    &:hover {
-      .btn-shadow(darken(@btn-info-bg, 4%));
-    }
-  }
-  &-warning {
-    .btn-shadow(@btn-warning-bg);
-    &:hover {
-      .btn-shadow(darken(@btn-warning-bg, 4%));
-    }
-  }
-  &-danger {
-    .btn-shadow(@btn-danger-bg);
-    &:hover {
-      .btn-shadow(darken(@btn-danger-bg, 4%));
-    }
-  }
-  &:active,
-  &.active {
-    background-image: none;
-    .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
-  }
-}
-button {
-    .btn-shadow(@btn-primary-bg);
-    color:@white;
-    &:hover {
-        .btn-shadow(darken(@btn-primary-bg, 4%));
-        color:@white;
-    }
-}
-
-/* Tabs */
-.tab-content {
-    border: 1px solid @brand-primary;
-    padding: 5px;
-    border-radius: 6px;
-}
-.nav-tabs {
-    border-bottom: none;
-}
-.nav-tabs > li > a {
-    border: 1px solid @brand-primary;
-    border-radius: @border-radius-large @border-radius-large 0 0;
-    background: @brand-primary-light;
-}
-.nav-tabs > li.active >a {
-    border-bottom: none;
+#page-login-index .maincontentwrap {
+    border-radius:@border-radius-large;
 }
 
 /* Code. */
@@ -129,3 +48,6 @@ pre code {
     background: @brand-success-light;
     font-weight:600;
 }
+
+/* mod-assign */
+.path-mod-assign a.btn.btn-primary {.btn-primary}

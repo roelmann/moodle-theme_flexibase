@@ -1,0 +1,148 @@
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Theme Flexibase LESS file.
+ *
+ * @package    theme_flexibase
+ * @author     2015 Richard Oelmann
+ * @copyright  2015 R. Oelmann
+ * @parents    Bootstrap
+ * @copyright  2014 Bas Brands
+ * @credits    Essential - Julian Ridden, Gareth Barnard;
+ *             Elegance - Julian Ridden, Danny Wahl;
+ *             BCU - Jez H, Mike Grant
+ *             Decaf - Paul Nichols
+ *             Many others for non-specific but vital inspirations,
+ *             suggestions and support
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+/* Renderer - user menu
+ * -------------------- */
+.yui3-menu.useractionmenu {
+    width: 0;
+    position: relative;
+}
+.yui3-menu.useractionmenu .yui3-menu-content {
+    border: none;
+    padding: 0;
+}
+.yui3-skin-sam .yui3-menu .yui3-menu.yui3-loading .yui3-menu-content {
+    display: none;
+}
+.dir-rtl.yui3-skin-sam .yui3-menu.yui3-menu.useractionmenu .yui3-menu .yui3-menu-content {
+    font-size: 100%;
+    right: 110px;
+    position: relative;
+}
+.dir-rtl.yui3-skin-sam .yui3-menu-label,
+.dir-rtl.yui3-skin-sam .yui3-menu .yui3-menu .yui3-menu-label,
+.dir-rtl.yui3-skin-sam .yui3-menuitem-content,
+.dir-rtl.yui3-skin-sam .yui3-menu .yui3-menu .yui3-menuitem-content {
+    text-align: right;
+}
+
+/* User Profile. */
+.userprofile .profile_tree section {
+    padding:0;
+    font-family: 'FontAwesome';
+    font-weight:500;
+    margin-right: 5px;
+}
+.userprofile .profile_tree section .panel-heading h3 {
+    margin-top:10px;
+}
+.userprofile .profile_tree section.Userdetails .panel-heading h3:before {
+    content: "\f0c0";
+}
+.userprofile .profile_tree section.Coursedetails .panel-heading h3:before {
+    content: "\f0b1";
+}
+.userprofile .profile_tree section.Miscellaneous .panel-heading h3:before {
+    content: "\f1b3";
+}
+.userprofile .profile_tree section.Reports .panel-heading h3:before {
+    content: "\f1c0";
+}
+.userprofile .profile_tree section.Loginactivity .panel-heading h3:before {
+    content: "\f0ae";
+}
+.userprofile ul {
+    margin-left: 15px;
+    margin-top:10px;
+}
+.userprofile .profile_tree section ul li dl {
+    margin-bottom:15px;
+}
+
+/* User Preferences restyle
+ * ------------------------ */
+#page-user-preferences.path-user #region-main .maincontentwrap .maincontentinnerwrap,
+#page-user-preferences.path-user #region-main .maincontentwrap .maincontentinnerwrap div[role="main"] {
+    margin:0;
+    width:100%;
+    max-width:100%;
+}
+#page-user-preferences.path-user #region-main .maincontentwrap .maincontentinnerwrap div h2 {
+    display:none;
+}
+#page-user-preferences.path-user #region-main .maincontentwrap .maincontentinnerwrap div .panel h2 {
+    display:inline;
+}
+#page-user-preferences .panel.preferences-groups {
+    margin-bottom:0;
+}
+#page-user-preferences .panel.preferences-group {
+    margin:10px;
+    padding:0;
+}
+.flexpreferencescontainer{
+    display:-webkit-flex;
+    display:flex;
+    -webkit-flex-flow:row wrap;
+    flex-flow: row wrap;
+}
+.flexpreferencesitem {
+    -webkit-flex: 1 1 25%;
+    flex: 1 1 25%;
+}
+.panel-body.prefgrp {
+    padding:0;
+}
+.preferences-group h3 {
+    margin-top:5px;
+    margin-bottom:5px;
+}
+.panel-heading h3::before {
+    font-family: 'FontAwesome';
+    font-weight:500;
+    margin-right: 5px;
+}
+.panel-heading.Useraccount h3::before {
+    content: "\f007";
+}
+.panel-heading.Roles h3::before {
+    content: "\f0c0";
+}
+.panel-heading.Portfolios h3::before {
+    content: "\f19c";
+}
+.panel-heading.Blogs h3::before {
+    content: "\f02d";
+}
+.panel-heading.Badges h3::before {
+    content: "\f0a3";
+}
