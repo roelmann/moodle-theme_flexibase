@@ -82,6 +82,11 @@ Richard
 
 CHANGELOG:
 ==========
+3.2.0   - CSS styling moved to LESS where appropriate
+        - New BLOCK Page - with additional regions and as default region
+        - Radial course grade display replaces previous display on header
+        - Radial completion display
+        - Several 3.1 compatability issues fixed
 3.1.1c  - Added editor.css
 3.1.1b  - Setting added to select/deselect tiles view on dashboard
           Secure.php bug corrected (thanks for the heads up to Mary E)
