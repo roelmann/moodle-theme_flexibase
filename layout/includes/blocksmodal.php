@@ -52,8 +52,8 @@
                         <?php
                         echo $OUTPUT->page_heading_button();
                         $participantslink = $CFG->wwwroot.'/user/index.php?id='.$COURSE->id.'&mode=1';
-                        $dashboardlink = $CFG->wwwroot.'my/index.php';
-                        $messageslink = $CFG->wwwroot.'message/index.php';
+                        $dashboardlink = $CFG->wwwroot.'/my/index.php';
+                        $messageslink = $CFG->wwwroot.'/message/index.php';
                         ?>
                         <a href=<?php echo $participantslink; ?> class="btn btn-success" title="Participants">
                             <i class="fa-users fa fa-fw"></i>Participants
