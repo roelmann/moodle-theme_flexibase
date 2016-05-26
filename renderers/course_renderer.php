@@ -602,11 +602,11 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
             if ($val == '') {
                 unset($rcourseids[$key]);
             }
-                $ccourse = $DB->get_record('course', array('id' => $val));
-                if (empty($ccourse)) {
-                    unset($rcourseids[$key]);
-                    continue;
-                }
+            $ccourse = $DB->get_record('course', array('id' => $val));
+            if (empty($ccourse)) {
+                unset($rcourseids[$key]);
+                continue;
+            }
         }
 
         if (empty($rcourseids)) {
