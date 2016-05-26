@@ -119,7 +119,7 @@ if (isloggedin() ) {
                 $layout == 'frontpage' OR $layout == 'mydashboard' OR $layout == 'mypublic') {
             ?>
                 <button id="pageblockbtn" type="button" class="btn btn-warning" data-toggle="modal"
-                    data-target="#blockmodal">Page Blocks</button>
+                    data-target="#blockmodal"><?php echo get_string('pageblocks', 'theme_flexibase');?></button>
             <?php
             }
             ?>

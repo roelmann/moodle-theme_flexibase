@@ -557,8 +557,8 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
 
         /* Get tagged courses from DB */
         if ($type == 'tags') {
-            $sql = 'SELECT DISTINCT itemid FROM {tag_instance} WHERE itemtype = "course" AND tagid IN
-                (SELECT tagid FROM {tag_instance} WHERE itemtype = "user" AND itemid = '.$USER->id.')';
+            $sql = "SELECT DISTINCT itemid FROM {tag_instance} WHERE itemtype = 'course' AND tagid IN
+                (SELECT tagid FROM {tag_instance} WHERE itemtype = 'user' AND itemid = ".$USER->id.")";
             $featuredidsarray = $DB->get_records_sql($sql, array());
             foreach ($featuredidsarray as $fid) {
                 $featuredids .= $fid->itemid.',';
@@ -599,11 +599,14 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
         }
 
         foreach ($rcourseids as $key => $val) {
-            $ccourse = $DB->get_record('course', array('id' => $val));
-            if (empty($ccourse)) {
+            if ($val == '') {
                 unset($rcourseids[$key]);
-                continue;
             }
+                $ccourse = $DB->get_record('course', array('id' => $val));
+                if (empty($ccourse)) {
+                    unset($rcourseids[$key]);
+                    continue;
+                }
         }
 
         if (empty($rcourseids)) {

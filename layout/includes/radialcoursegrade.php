@@ -88,7 +88,7 @@ if ($PAGE->pagelayout == 'course') {
 
     <!-- Display radial grade -->
     <div class="radialgradedisplay">
-        <h4>Total Course<br />Grade</h4>
+        <h4><?php echo get_string('radial_grade', 'theme_flexibase');?></h4>
         <div class="radial-grade" data-progress="0">
             <div class="circle">
                 <div class="mask full">

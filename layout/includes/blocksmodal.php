@@ -56,13 +56,16 @@
                         $messageslink = $CFG->wwwroot.'/message/index.php';
                         ?>
                         <a href=<?php echo $participantslink; ?> class="btn btn-success" title="Participants">
-                            <i class="fa-users fa fa-fw"></i>Participants
+                            <i class="fa-users fa fa-fw"></i>
+                            <?php echo get_string('pageblocks_participants', 'theme_flexibase');?>
                         </a>
                         <a href=<?php echo $dashboardlink; ?> class="btn btn-success" title="Dashboard">
-                            <i class="fa-dashboard fa fa-fw"></i>My Dashboard
+                            <i class="fa-dashboard fa fa-fw"></i>
+                            <?php echo get_string('pageblocks_dashboard', 'theme_flexibase');?>
                         </a>
                         <a href=<?php echo $messageslink; ?> class="btn btn-success" title="Messages">
-                            <i class="fa-envelope fa fa-fw"></i>My Messages
+                            <i class="fa-envelope fa fa-fw"></i>
+                            <?php echo get_string('pageblocks_messages', 'theme_flexibase');?>
                         </a>
                     </div>
                     <?php

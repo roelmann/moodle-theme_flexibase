@@ -698,3 +698,13 @@ $string['pagesettingspresetsocial'] = 'Preset social icons';
 $string['pagesettingspresetsocialdesc'] = 'The most common links are provided with set icons, so all you need to do is add your relevant URL. If no URL is provided and the setting is left empty, then the icon will not be displayed, so you only get the icons you want.';
 $string['pagesettingscustomsocial'] = 'Custom Social Links';
 $string['pagesettingscustomsocialdesc'] = 'There are also three custom links where you can add both a URL and an associated fontawesome icon. This enables you to target institution specific links (e.g. an internal page on an intranet site) or new/regional technologies that have not been applied as part of the theme default list.';
+
+// Radials
+$string['radial_activitycompletion'] = 'Activity<br />Completion';
+$string['radial_grade'] = 'Total Course<br />Grade';
+
+// Page BlocksModal
+$string['pageblocks'] = 'Page Blocks';
+$string['pageblocks_participants'] = 'Participants';
+$string['pageblocks_dashboard'] = 'My Dashboard';
+$string['pageblocks_messages'] = 'My Messages';

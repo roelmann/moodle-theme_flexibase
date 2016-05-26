@@ -50,7 +50,7 @@
 
     <!-- Display radial completion -->
     <div class="radialcompletiondisplay">
-        <h4>Activity<br />completion</h4>
+        <h4><?php echo get_string('radial_activitycompletion', 'theme_flexibase');?></h4>
         <div class="radial-progress" data-progress="0">
             <div class="circle">
                 <div class="mask full">
