@@ -414,3 +414,6 @@ div math mfrac mi {font-size: 0;visibility: hidden;} /* Hide text produced by on
 .pagelayout-secure aside#block-region-side-pre .block {display:none;}
 .pagelayout-secure aside#block-region-side-pre #mod_quiz_navblock.block {display:block;}
 body.pagelayout-secure {margin-top:0;}
+
+.courses .courseimage {display:block;}
+.courses .coursebox > .info > .coursename a {font-size:150%;font-weight:700;}

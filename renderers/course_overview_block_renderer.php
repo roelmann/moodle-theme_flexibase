@@ -171,7 +171,7 @@ class theme_flexibase_block_course_overview_renderer extends block_course_overvi
                         continue;
                     } else {
                         $html .= html_writer::start_tag('div', array('class' => 'courseboxactivitynotice'));
-                        $html .= '<p>'.get_string('courseboxactivitynotice', 'theme_flexibase').'</p>>';
+                        $html .= '<p>'.get_string('courseboxactivitynotice', 'theme_flexibase').'</p>';
                         $html .= html_writer::end_tag('div');
                     }
                 }

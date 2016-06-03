@@ -31,12 +31,12 @@
 <footer id="page-footer">
     <?php
     global $course, $PAGE;
-    if ($PAGE->pagelayout == 'course' || $PAGE->pagelayout == 'incourse') {
+    if ($PAGE->pagelayout == 'course' || $PAGE->pagelayout == 'incourse' && $PAGE->pagetype !== 'mod-quiz-attempt') {
         $context = context_course::instance($course->id);
         if (has_capability('mod/assign:addinstance', $context)) {?>
             <div id="region-teachbtm" class="well">
                 <?php
-                if ($knownregionadminbottom) {
+                if ($knownregionteachbtm) {
                     echo '<h3>'.get_string('region-side-teachbtm', 'theme_flexibase').'</h3>';
                     echo $OUTPUT->blocks('side-teachbtm', "sideteachbtm flexcontainer");
                 }
