@@ -55,13 +55,6 @@ hr.sep {
 .headerlogo {
     padding-left:5px;
 }
-body.has_dock .moodleheader {
-    padding-left:0;
-}
-
-body.has_dock .moodleheader .container-fluid {
-    padding-left:45px;
-}
 .moodleheader{
     min-height:60px;
 }
@@ -94,8 +87,14 @@ body.has_dock .moodleheader .container-fluid {
     border:1px solid #000;
 }
 .has_dock .navbar-header {
-    padding-left:30px;
-    margin-left:30px;
+    padding-left:0;
+    margin-left:0;
+}
+body.has_dock .moodleheader {
+    padding-left:0;
+}
+body.has_dock .moodleheader .container-fluid {
+    padding-left:45px;
 }
 
 /* Theme Settings nav
