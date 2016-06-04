@@ -31,7 +31,6 @@
 <footer id="page-footer">
     <?php
     global $course, $PAGE;
-    echo substr($PAGE->pagetype,0,8);
     if ($PAGE->pagelayout == 'course' || $PAGE->pagelayout == 'incourse' && substr($PAGE->pagetype,0,8) !== 'mod-quiz') {
         $context = context_course::instance($course->id);
         if (has_capability('mod/assign:addinstance', $context)) {?>

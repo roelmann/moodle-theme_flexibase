@@ -59,6 +59,11 @@ if ($numslides) {
             for ($carouselslide = 1; $carouselslide <= $numslides; $carouselslide++) {
                 $slideurl = theme_flexibase_get_setting('slide' . $carouselslide . 'url');
                 $slideurltarget = theme_flexibase_get_setting('slide' . $carouselslide . 'target');
+                if (theme_flexibase_get_setting('slide' . $carouselslide . 'button')) {
+                    $slidebutton = theme_flexibase_get_setting('slide' . $carouselslide . 'button');
+                } else {
+                    $slidebutton = get_string('readmore', 'theme_flexibase');
+                }
                 $slidetitle = theme_flexibase_get_setting('slide' . $carouselslide . 'title', true);
                 $slidecaption = theme_flexibase_get_setting('slide' . $carouselslide . 'caption', true);
                 $slideimage = $OUTPUT->pix_url('carousel/default', 'theme');
@@ -78,7 +83,7 @@ if ($numslides) {
                             <h1><?php echo $slidetitle?></h1>
                             <p class="carousel-caption-text"><?php echo $slidecaption; ?></p>
                             <p><a class="btn btn-lg btn-primary" href="<?php echo $slideurl; ?>" role="button">
-                                <?php echo get_string('readmore', 'theme_flexibase')?></a></p>
+                                <?php echo $slidebutton ?></a></p>
                         </div>
                     </div>
                 </div>

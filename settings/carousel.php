@@ -150,6 +150,15 @@ for ($i = 1; $i <= $numberofslides; $i++) {
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+
+    // Button text
+    $name = 'theme_flexibase/slide' . $i . 'button';
+    $title = get_string('slidebutton', 'theme_flexibase');
+    $description = get_string('slidebuttondesc', 'theme_flexibase');
+    $default = 'Read More...';
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_TEXT);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 }
 
 $ADMIN->add('theme_flexibase', $temp);
