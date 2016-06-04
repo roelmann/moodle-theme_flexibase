@@ -55,8 +55,12 @@ hr.sep {
 .headerlogo {
     padding-left:5px;
 }
-body.has_dock .moodleheader .container-fluid {
+body.has_dock .moodleheader {
     padding-left:0;
+}
+
+body.has_dock .moodleheader .container-fluid {
+    padding-left:45px;
 }
 .moodleheader{
     min-height:60px;
