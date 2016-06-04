@@ -233,9 +233,9 @@ class theme_flexibase_core_course_renderer extends core_course_renderer {
 
             $summs = $chelper->get_course_formatted_summary($course, array('overflowdiv' => false, 'noclean' => true,
                     'para' => false));
-            $summs = strip_tags($summs);
             $var = $PAGE->bodyid;
             if ($var == 'page-site-index') {
+                $summs = strip_tags($summs);
                 $truncsum = strlen($summs) > 70 ? substr($summs, 0, 70)."..." : $summs;
                 $content .= html_writer::tag('span', $truncsum, array('title' => $summs));
             } else {
