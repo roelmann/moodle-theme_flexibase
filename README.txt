@@ -82,8 +82,13 @@ Richard
 
 CHANGELOG:
 ==========
+3.2.0d  - Quiz bug fixed on conditional block regions (no course->id on quiz pages?)
+          Minor style/bug fixes
+          Set 'Read More' button text per slide in the carousel
+          Block display options - standard (coloured heading background etc) or borderless (no header background or
+              borders), separately selectable for main pages or block modal page.
 3.2.0   - CSS styling moved to LESS where appropriate
-        - New BLOCK Page - with additional regions and as default region
+        - New BLOCK Modal Page - with additional regions and as default region
         - Radial course grade display replaces previous display on header
         - Radial completion display
         - Several 3.1 compatability issues fixed
