@@ -103,6 +103,13 @@ $string['inverse'] = 'inverse';
 $string['loginbg'] = 'Login Background';
 $string['loginbgdesc'] = 'This setting allows you to upload a background image for the login page. The suggested image size is around 1200x800px, although this may vary with your expected user screen size, or institutional branding design.';
 
+$string['mainblocksdisplay'] = 'Blocks display on main pages';
+$string['mainblocksdisplaydesc'] = 'Blocks display on main pages - standard view with header background, icon and borders OR borderless with no header background or borders';
+$string['bpblocksdisplay'] = 'Blocks display on separate blocks page';
+$string['bpblocksdisplaydesc'] = 'Blocks display on separate blocks page - standard view with header background, icon and borders OR borderless with no header background or borders';
+$string['borderless'] = 'Borderless';
+$string['standard'] = 'Standard';
+
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'The customcss setting box effictively allows you full control over any and all css within the theme as this setting can override everything within the theme styles, including those items set in other areas of the settings pages. It is worth noting that the Flexibase theme also has a customLESS setting (see the additional LESS page) which allows you to utilise LESS as well as the CSS.';
 

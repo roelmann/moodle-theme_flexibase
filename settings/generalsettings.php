@@ -120,6 +120,33 @@ $setting = new admin_setting_configstoredfile($name, $title, $description, 'logi
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
+// Main pages blocks display.
+$name = 'theme_flexibase/mainblocksdisplay';
+$title = get_string('mainblocksdisplay', 'theme_flexibase');
+$description = get_string('mainblocksdisplaydesc', 'theme_flexibase');
+$default = 1;
+$choices = array(
+    'standard' => get_string('standard', 'theme_flexibase'),
+    'borderless' => get_string('borderless', 'theme_flexibase'),
+);
+$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+// Blocks pages blocks display.
+$name = 'theme_flexibase/bpblocksdisplay';
+$title = get_string('bpblocksdisplay', 'theme_flexibase');
+$description = get_string('bpblocksdisplaydesc', 'theme_flexibase');
+$default = 1;
+$choices = array(
+    'borderless' => get_string('borderless', 'theme_flexibase'),
+    'standard' => get_string('standard', 'theme_flexibase'),
+);
+$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+
 // Custom CSS file.
 $name = 'theme_flexibase/customcss';
 $title = get_string('customcss', 'theme_flexibase');

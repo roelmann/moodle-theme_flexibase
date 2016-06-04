@@ -121,7 +121,13 @@ $bodyclasses = array();
 if (theme_flexibase_get_setting('enablecategoryicon')) {
     $bodyclasses[] = 'categoryicons';
 }
-    $bodyclasses[] = $mainlayouts;
+if (theme_flexibase_get_setting('mainblocksdisplay')) {
+    $bodyclasses[] = 'mb_'.theme_flexibase_get_setting('mainblocksdisplay');
+}
+if (theme_flexibase_get_setting('bpblocksdisplay')) {
+    $bodyclasses[] = 'bp_'.theme_flexibase_get_setting('bpblocksdisplay');
+}
+$bodyclasses[] = $mainlayouts;
 
 // AwesomeBar.
 require('awesomebarpreheaderinc.php');
