@@ -31,20 +31,7 @@
 <footer id="page-footer">
     <?php
     global $course, $PAGE;
-    if ($PAGE->pagelayout == 'course' || $PAGE->pagelayout == 'incourse' && substr($PAGE->pagetype,0,8) !== 'mod-quiz') {
-        $context = context_course::instance($course->id);
-        if (has_capability('mod/assign:addinstance', $context)) {?>
-            <div id="region-teachbtm" class="well">
-                <?php
-                if ($knownregionteachbtm) {
-                    echo '<h3>'.get_string('region-side-teachbtm', 'theme_flexibase').'</h3>';
-                    echo $OUTPUT->blocks('side-teachbtm', "sideteachbtm flexcontainer");
-                }
-                ?>
-            </div>
-        <?php
-        }
-    }
+    
     $context = context_system::instance();
     if (has_capability('moodle/course:create', $context)) {?>
         <div id="region-creatorbtm" class="well">
