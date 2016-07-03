@@ -401,6 +401,7 @@ body.has_dock.dir-rtl .navbar-collapse {
 
 /* Style fixes
  * ----------- */
+#page-course-index-category .generalbox.info {clear: both;}
 .section .label .mod-indent-outer {display: table;} /* Correct upstream bug that prevented indented labels. */
 .nav-tabs.nav-justified {width: auto;} /* Override tabs width setting to prevent overlap. */
 .block .minicalendar th, .block .minicalendar td  {padding: 0;} /* Remove overlap of minicalendar block on smaller screens. */
