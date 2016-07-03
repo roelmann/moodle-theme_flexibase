@@ -44,7 +44,11 @@ if ($PAGE->pagelayout == 'course') {
         grade_regrade_final_grades($rcourseid);
 
         // Return tracking object.
-        $gpr = new grade_plugin_return(array('type' => 'report', 'plugin' => 'user', 'courseid' => $rcourseid, 'userid' => $ruserid));
+        $gpr = new grade_plugin_return(array(
+            'type' => 'report',
+            'plugin' => 'user',
+            'courseid' => $rcourseid,
+            'userid' => $ruserid));
         $rreport = new grade_report_user($rcourseid, $gpr, $rcontext, $ruserid);
 
         if ($rreport->fill_table()) {

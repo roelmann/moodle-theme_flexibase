@@ -708,11 +708,11 @@ $string['pagesettingspresetsocialdesc'] = 'The most common links are provided wi
 $string['pagesettingscustomsocial'] = 'Custom Social Links';
 $string['pagesettingscustomsocialdesc'] = 'There are also three custom links where you can add both a URL and an associated fontawesome icon. This enables you to target institution specific links (e.g. an internal page on an intranet site) or new/regional technologies that have not been applied as part of the theme default list.';
 
-// Radials
+// Radials.
 $string['radial_activitycompletion'] = 'Activity<br />Completion';
 $string['radial_grade'] = 'Total Course<br />Grade';
 
-// Page BlocksModal
+// Page BlocksModal.
 $string['pageblocks'] = 'Page Blocks';
 $string['pageblocks_participants'] = 'Participants';
 $string['pageblocks_dashboard'] = 'My Dashboard';

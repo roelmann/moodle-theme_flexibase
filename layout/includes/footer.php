@@ -31,7 +31,7 @@
 <footer id="page-footer">
     <?php
     global $course, $PAGE;
-    
+
     $context = context_system::instance();
     if (has_capability('moodle/course:create', $context)) {?>
         <div id="region-creatorbtm" class="well">

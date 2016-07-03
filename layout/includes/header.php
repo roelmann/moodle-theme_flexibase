@@ -72,7 +72,9 @@ if (isloggedin() ) {
 ?>
 
 <header class="moodleheader">
-    <div class="headerimage <?php echo $moodleheaderclass;?>"  style="background-image: url('<?php echo $headerimage;?>'); background-size:cover;">
+    <div class="headerimage <?php echo $moodleheaderclass;?>"
+        style="background-image: url('<?php echo $headerimage;?>');
+        background-size:cover;">
         <div class="container-fluid">
             <div class="headerlogo col-md-8 pull-left">
                 <?php
