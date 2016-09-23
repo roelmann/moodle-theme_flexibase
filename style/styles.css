@@ -421,3 +421,5 @@ body.pagelayout-secure {margin-top:0;}
 
 .courses .courseimage {display:block;}
 .courses .coursebox > .info > .coursename a {font-size:150%;font-weight:700;}
+
+.editing .course-content ul li.section.hidden:hover {background-color: #f2f2f2;opacity: 1;}
