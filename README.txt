@@ -82,6 +82,8 @@ Richard
 
 CHANGELOG:
 ==========
+3.2.1   - Bug and style fixes
+        - Block Modal Page - default region reverted back to standard side-pre
 3.2.0d  - Quiz bug fixed on conditional block regions (no course->id on quiz pages?)
           Minor style/bug fixes
           Set 'Read More' button text per slide in the carousel
@@ -89,6 +91,10 @@ CHANGELOG:
               borders), separately selectable for main pages or block modal page.
 3.2.0   - CSS styling moved to LESS where appropriate
         - New BLOCK Modal Page - with additional regions and as default region
+			This page was requested to give those who require it an opportunity to create a 'blockless' main course
+			page. Block regions remain (and will continue to remain) available on the main page as previously, but
+			users now have the option to move blocks onto this secondary page, making them still available, but not
+			part of the initial course main page. The page itself has a top region, a side region and the main region.
         - Radial course grade display replaces previous display on header
         - Radial completion display
         - Several 3.1 compatability issues fixed
