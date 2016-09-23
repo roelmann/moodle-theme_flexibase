@@ -37,7 +37,7 @@ if (!empty($PAGE->theme->settings->showawesomebar) && $PAGE->theme->settings->sh
             <?php
             // Don't show awesomebar if site is being upgraded or when forcibly changing password.
             if ($this->page->pagelayout != 'maintenance' && !(get_user_preferences('auth_forcepasswordchange')
-            && !session_is_loggedinas())) {
+            && !\core\session\manager::is_loggedinas())) {
 
                 echo $flexibase->awesome_nav;
                 if (theme_flexibase_get_setting('mainmenulocation') === 'awesome') {

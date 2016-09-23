@@ -87,13 +87,13 @@ $THEME->layouts = array(
     'standard' => array(
         'file' => 'default.php',
         'regions' => $allblockregions,
-        'defaultregion' => 'side-modalside',
+        'defaultregion' => 'side-pre',
     ),
     // Main course page.
     'course' => array(
         'file' => 'course.php',
         'regions' => $allblockregions,
-        'defaultregion' => 'side-modalside',
+        'defaultregion' => 'side-pre',
         'options' => array('langmenu' => true),
     ),
     // Part of course, typical for modules - default page layout if $cm specified in require_login().
@@ -111,7 +111,7 @@ $THEME->layouts = array(
     'frontpage' => array(
         'file' => 'frontpage.php',
         'regions' => $allblockregions,
-        'defaultregion' => 'side-modalside',
+        'defaultregion' => 'side-pre',
         'options' => array('nonavbar' => true),
     ),
     // Server administration scripts.
@@ -125,14 +125,14 @@ $THEME->layouts = array(
     'mydashboard' => array(
         'file' => 'myhome.php',
         'regions' => $allblockregions,
-        'defaultregion' => 'side-modalside',
+        'defaultregion' => 'side-pre',
         'options' => array('langmenu' => true),
     ),
     // My public page.
     'mypublic' => array(
         'file' => 'default.php',
         'regions' => $allblockregions,
-        'defaultregion' => 'side-modalside',
+        'defaultregion' => 'side-pre',
     ),
     'login' => array(
         'file' => 'login.php',

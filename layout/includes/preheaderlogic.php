@@ -162,7 +162,7 @@ echo $OUTPUT->doctype() ?>
 
         <?php echo $OUTPUT->standard_head_html(); ?>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
-        <script>Modernizr.addTest('flexbox', Modernizr.testAllProps('flex'));</script>
+
         <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
     </head>
