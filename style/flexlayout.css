@@ -426,3 +426,6 @@
         margin-bottom:15px;
     }
 }
+
+/* Fix for login block additional button style */
+.c1.btn, .c1.btn:hover {background-image:none;background-color:transparent;border:none;padding:0}
