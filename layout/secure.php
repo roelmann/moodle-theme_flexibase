@@ -42,6 +42,7 @@ require('includes/secureheader.php');
     <?php
     require('includes/breadcrumb.php');
     require('includes/mainbody.php');
+    require('includes/footer.php');
     ?>
 </div>
 </body>
