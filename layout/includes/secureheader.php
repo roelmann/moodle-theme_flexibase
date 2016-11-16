@@ -40,14 +40,14 @@ $showlogo = (empty($PAGE->theme->settings->showlogo)) ? 'everywhere' : $PAGE->th
             if ($hasnavbarlogo) {
             ?>
                 <div class="navbar-image">&nbsp;</div>
-                <a class="navbar-brand" href="#"><?php echo $SITE->shortname; ?></a>
+                <span class="navbar-brand"><?php echo $SITE->shortname; ?></span>
             <?php
             } else {
             ?>
-                <a class="navbar-brand" href="#">
+                <span class="navbar-brand">
                     <i class="fa fa-lg fa-<?php echo theme_flexibase_get_setting('falogo'); ?>">&nbsp;</i>
                     <?php echo $SITE->shortname?>
-                </a>
+                </span>
             <?php
             }
             ?>
