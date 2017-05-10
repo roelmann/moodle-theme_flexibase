@@ -31,9 +31,9 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2016082302;
+$plugin->version   = 2017050100;
 $plugin->requires  = 2015051100;
-$plugin->release  = 'v3.2.1b';
+$plugin->release  = 'v3.2.2';
 $plugin->maturity  = MATURITY_STABLE;
 $plugin->component = 'theme_flexibase';
 $plugin->dependencies = array(

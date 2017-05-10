@@ -165,7 +165,19 @@ echo $OUTPUT->doctype() ?>
 
         <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
-    </head>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();
+    });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();
+    });
+    </script>
+
+</head>
 
     <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
     <?php echo $OUTPUT->standard_top_of_body_html();

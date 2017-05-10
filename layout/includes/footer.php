@@ -68,5 +68,11 @@
     echo $OUTPUT->standard_footer_html();
     ?>
     <script>Modernizr.addTest('flexbox', Modernizr.testAllProps('flex'));</script>
+    <script>$(function () {
+        $('[data-toggle="popover"]').popover()
+    })</script>
+    <script>$(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })</script>
 </footer>
 <?php echo $OUTPUT->standard_end_of_body_html();
